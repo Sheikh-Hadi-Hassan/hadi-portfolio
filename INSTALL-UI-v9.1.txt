@@ -1,0 +1,41 @@
+HADI WEBSITE — UI REFINEMENT 9.1
+
+WEBSITE
+1. Extract this full ZIP directly into public_html/hadi/, replacing matching files.
+   index.html, _next/, assets/, api/ and intellignce-support/ must be directly inside it.
+2. Preserve your private config files. They are intentionally not included.
+3. PHP 8.2+ and cURL are required. Clear Hostinger cache, then hard refresh.
+4. Open /api/leads.php. It must show available:true and code:READY before live booking tests.
+   CONFIG_INVALID_OR_MISSING: put the correct Apps Script URL and matching API key in
+   hadi-leads-config.php at the site root or its parent. Use the example in api/.
+   The latest proxy skips invalid placeholder configs instead of hiding a valid fallback.
+   CURL_MISSING: enable the PHP cURL extension in hosting settings.
+5. Open /intellignce-support/ask.php. It must return JSON with version 9.0.0 and code:READY.
+   This API protocol version is expected; the visible UI host version is 9.1.0.
+   Follow the returned configuration checks using private-config.example.php.
+   Do not paste real keys into chat, GitHub, HTML or JavaScript.
+
+BRANDED EMAILS AND CALENDAR
+6. Back up the existing Apps Script. Use _source/integrations/calendar-v8/Code.gs
+   and its appsscript.json. Preserve API_KEY and SHEET_ID script properties.
+   Run activateSetup, authorize, and deploy a new version of the SAME web deployment.
+   Execute as yourself, access Anyone, keep the existing /exec URL in PHP config.
+   This step activates the new email template; uploading the website does not.
+
+PRIVATE LEAD WORKSPACE
+7. Open the Leads Google Sheet > Extensions > Apps Script.
+   Follow _source/integrations/leads-portal/SETUP.txt. Add LeadsDesk.gs and the HTML
+   file named LeadsDesk. Reload the Sheet and choose Flow Leads > Open lead workspace.
+   This must be Sheet-bound, not a public Apps Script web app. No API keys needed.
+
+VERIFY
+8. Open Explore & connect; search a project and open it. Try a service CTA.
+   Only Sera should open. On mobile the dock and Sera launcher must not overlap.
+9. Make one test booking. Confirm the reference, Sheet row, calendar event,
+   actual Meet link and both owner inboxes. Do not treat a pending screen as confirmed.
+   If pending, use Check confirmation; the reference is kept on this browser.
+10. Test a project enquiry and verify its Sheet row and delivery. Microphone and
+    female voice availability depend on the browser/device.
+
+Editable source and all original assets remain included. Use the shared-assets
+restore script before rebuilding. See UI-REVIEW-v9.1.md for verification limits.

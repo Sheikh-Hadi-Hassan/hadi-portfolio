@@ -3,9 +3,9 @@ declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');header('X-Content-Type-Options: nosniff');
 function respond(int $code,array $body):never{http_response_code($code);echo json_encode($body,JSON_UNESCAPED_UNICODE);exit;}
 function fail(int $code,string $message,string $delivery='not_sent',string $reason='SERVICE_UNAVAILABLE'):never{respond($code,['ok'=>false,'code'=>$reason,'error'=>$message,'delivery'=>$delivery]);}
-function readConfig():array{foreach([dirname(__DIR__,2).'/hadi-leads-config.php',dirname(__DIR__).'/hadi-leads-config.php'] as $path){if(!is_file($path))continue;$value=require $path;if(is_array($value))return $value;}return [];}
+function readConfig():array{foreach([dirname(__DIR__,2).'/hadi-leads-config.php',dirname(__DIR__).'/hadi-leads-config.php'] as $path){if(!is_file($path))continue;$value=require $path;if(!is_array($value))continue;$value['url']=trim((string)($value['url']??''));$value['key']=trim((string)($value['key']??''));if(preg_match('~^https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec$~',$value['url'])&&strlen($value['key'])>=32)return $value;}return [];}
 $c=readConfig();$ready=preg_match('~^https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec$~',$c['url']??'')&&strlen($c['key']??'')>=32&&function_exists('curl_init');
-if(($_SERVER['REQUEST_METHOD']??'')==='GET')respond(200,['ok'=>true,'version'=>'8.0.0','available'=>(bool)$ready]);
+if(($_SERVER['REQUEST_METHOD']??'')==='GET')respond(200,['ok'=>true,'version'=>'8.0.0','available'=>(bool)$ready,'code'=>$ready?'READY':(!$c?'CONFIG_INVALID_OR_MISSING':'CURL_MISSING')]);
 if(($_SERVER['REQUEST_METHOD']??'')!=='POST')fail(405,'Use the booking portal.');
 if(($_SERVER['HTTP_ORIGIN']??'')!=='https://hadi.intellignce.net')fail(403,'Open the portal on hadi.intellignce.net.');
 if(!$ready)fail(503,'Booking connection is not configured. Please contact Hadi.');

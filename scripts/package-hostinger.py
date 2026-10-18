@@ -12,8 +12,6 @@ subprocess.run([sys.executable,str(root/'tests/export-hydration.py'),str(out)],c
 with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
  for p in sorted(out.rglob('*')):
   if p.is_file():z.write(p,p.relative_to(out))
- z.write(root/'integrations/leads/leads.php','api/leads.php')
- z.writestr('.htaccess','DirectoryIndex index.html\nErrorDocument 404 /404.html\nOptions -Indexes\n')
 with zipfile.ZipFile(target) as z:
  assert z.testzip() is None
  assert 'index.html' in z.namelist() and any(n.startswith('_next/static/') for n in z.namelist())

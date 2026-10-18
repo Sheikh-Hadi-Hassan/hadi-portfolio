@@ -1,0 +1,8 @@
+PRIVATE LEADS WORKSPACE
+1. Open your existing Leads Google Sheet.
+2. Extensions > Apps Script. This must be the project bound to the Sheet.
+3. Add LeadsDesk.gs and add an HTML file named LeadsDesk with LeadsDesk.html contents.
+4. If your project already has onOpen, merge the Flow Leads menu line into it; do not duplicate onOpen.
+5. Save, reload the Sheet, choose Flow Leads > Open lead workspace. Authorize access if prompted.
+No web-app deployment or API key is needed for this private portal. Access follows Sheet sharing.
+This is an inbox and brief viewer; it does not change booking status or fabricate a sales pipeline.

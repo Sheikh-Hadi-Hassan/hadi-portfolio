@@ -7,6 +7,25 @@
   "intro": "Clear thinking. Useful answers. Tell me what you’re working on.",
   "faqs": [
     {
+      "id": "experience",
+      "question": "How much experience does Hadi Hassan have?",
+      "answer": "Hadi Hassan has over ten years of experience across brand identity, digital experiences and video production. He is based in Lahore, Pakistan and is founder of INTELLIGNCE.",
+      "keywords": [
+        "experience",
+        "experiance",
+        "years"
+      ]
+    },
+    {
+      "id": "morganics",
+      "question": "Tell me about Morganics.",
+      "answer": "Morganics is Hadi Hassan’s brand identity and packaging project. The work connects brand positioning and audience guidelines with a botanical M monogram, English and Urdu wordmarks, colour and typography systems, jar/pouch/box packaging, printed collateral and product campaign visuals. Each product keeps its own character while belonging to a shared brand family. Case study: https://hadi.intellignce.net/morganics/. Do not invent sales, revenue or performance results.",
+      "keywords": [
+        "morganics",
+        "organic brand"
+      ]
+    },
+    {
       "id": "services",
       "keywords": [
         "service",

@@ -131,3 +131,5 @@ print(f'Built {len(projects)+2} pages with shared templates and Pixelarticons.')
 
 (DIST/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(url)+'</loc></url>' for url in urls)+'</urlset>')
 (DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+BASE+'/sitemap.xml\n')
+
+with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text())
