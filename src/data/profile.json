@@ -1,0 +1,27 @@
+{
+  "email": "hadi@intellignce.net",
+  "phone": "+92 308 454 2868",
+  "whatsapp": "https://wa.me/923084542868",
+  "website": "https://hadi.intellignce.net/",
+  "company": "https://intellignce.net",
+  "socials": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/hadi-hasssan/"
+    },
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/sheikh.hadi.hassan/"
+    },
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/Sheikh.Hadi.Hassan"
+    },
+    {
+      "label": "Behance",
+      "url": "https://www.behance.net/hadihasssan"
+    }
+  ],
+  "source": "https://hadi.intellignce.net/",
+  "verified_on": "2026-10-13"
+}

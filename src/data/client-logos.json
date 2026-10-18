@@ -1,0 +1,262 @@
+[
+  {
+    "name": "Abyan Capital",
+    "source": "1(2).png",
+    "asset": "client-mark-01.png",
+    "ink_bbox": [
+      340,
+      849,
+      1708,
+      1199
+    ],
+    "visible_width": 98.85053652574967,
+    "visible_height": 25.2907074444535
+  },
+  {
+    "name": "Jules Capital Partners",
+    "source": "2(2).png",
+    "asset": "client-mark-02.png",
+    "ink_bbox": [
+      283,
+      862,
+      1765,
+      1186
+    ],
+    "visible_width": 106.93542530511199,
+    "visible_height": 23.3785950059759
+  },
+  {
+    "name": "A&E",
+    "source": "3(2).png",
+    "asset": "client-mark-03.png",
+    "ink_bbox": [
+      503,
+      779,
+      1536,
+      1269
+    ],
+    "visible_width": 72.59757684155379,
+    "visible_height": 34.43641108650663
+  },
+  {
+    "name": "Morganics",
+    "source": "4(2).png",
+    "asset": "client-mark-04.png",
+    "ink_bbox": [
+      272,
+      869,
+      1776,
+      1153
+    ],
+    "visible_width": 115.06275079154987,
+    "visible_height": 21.727274750532025
+  },
+  {
+    "name": "OmniHelp",
+    "source": "6(2).png",
+    "asset": "client-mark-05.png",
+    "ink_bbox": [
+      323,
+      821,
+      1725,
+      1227
+    ],
+    "visible_width": 92.91396518343394,
+    "visible_height": 26.906611886215536
+  },
+  {
+    "name": "Sukena",
+    "source": "client-logo-two1.webp",
+    "asset": "client-mark-06.webp",
+    "ink_bbox": [
+      128,
+      168,
+      472,
+      433
+    ],
+    "visible_width": 56.967385571640236,
+    "visible_height": 43.884759233967046
+  },
+  {
+    "name": "The Foccus",
+    "source": "client-logo-two2.webp",
+    "asset": "client-mark-07.webp",
+    "ink_bbox": [
+      31,
+      202,
+      569,
+      398
+    ],
+    "visible_width": 82.83866789102287,
+    "visible_height": 30.179142949145877
+  },
+  {
+    "name": "S. Printing Solutions",
+    "source": "client-logo-two3.webp",
+    "asset": "client-mark-08.webp",
+    "ink_bbox": [
+      57,
+      227,
+      543,
+      373
+    ],
+    "visible_width": 91.2245460839306,
+    "visible_height": 27.40490479064582
+  },
+  {
+    "name": "The Creative Skills",
+    "source": "client-logo-two4.webp",
+    "asset": "client-mark-09.webp",
+    "ink_bbox": [
+      97,
+      203,
+      503,
+      397
+    ],
+    "visible_width": 72.33228022734109,
+    "visible_height": 34.56271518252259
+  },
+  {
+    "name": "DevJar Technologies",
+    "source": "client-logo-two5.webp",
+    "asset": "client-mark-10.webp",
+    "ink_bbox": [
+      170,
+      119,
+      430,
+      481
+    ],
+    "visible_width": 34.47513812154696,
+    "visible_height": 48
+  },
+  {
+    "name": "Jawa Fragrance",
+    "source": "client-logo-two6.webp",
+    "asset": "client-mark-11.webp",
+    "ink_bbox": [
+      121,
+      173,
+      479,
+      427
+    ],
+    "visible_width": 59.3601048452923,
+    "visible_height": 42.11582857738616
+  },
+  {
+    "name": "Zainjee",
+    "source": "client-logo-two7.webp",
+    "asset": "client-mark-12.webp",
+    "ink_bbox": [
+      98,
+      211,
+      502,
+      389
+    ],
+    "visible_width": 75.32700248497073,
+    "visible_height": 33.18862980773463
+  },
+  {
+    "name": "BW Strike",
+    "source": "client-logo-two8.webp",
+    "asset": "client-mark-13.webp",
+    "ink_bbox": [
+      92,
+      206,
+      508,
+      394
+    ],
+    "visible_width": 74.376843799781,
+    "visible_height": 33.612612101824105
+  },
+  {
+    "name": "The Creative OAK",
+    "source": "client-logo-two9.webp",
+    "asset": "client-mark-14.webp",
+    "ink_bbox": [
+      59,
+      206,
+      541,
+      394
+    ],
+    "visible_width": 80.0598180617787,
+    "visible_height": 31.226651028245634
+  },
+  {
+    "name": "Liberty Land",
+    "source": "client-logo-two10.webp",
+    "asset": "client-mark-15.webp",
+    "ink_bbox": [
+      122,
+      184,
+      478,
+      416
+    ],
+    "visible_width": 61.93712050581399,
+    "visible_height": 40.36351673412597
+  },
+  {
+    "name": "Glacier Engineering",
+    "source": "client-logo-two11.webp",
+    "asset": "client-mark-16.webp",
+    "ink_bbox": [
+      147,
+      147,
+      453,
+      453
+    ],
+    "visible_width": 48.0,
+    "visible_height": 48
+  },
+  {
+    "name": "Salezpeak",
+    "source": "client-logo-two12.webp",
+    "asset": "client-mark-17.webp",
+    "ink_bbox": [
+      119,
+      146,
+      481,
+      454
+    ],
+    "visible_width": 54.20619603248035,
+    "visible_height": 46.12018888951367
+  },
+  {
+    "name": "Raz4",
+    "source": "client-logo-two13.webp",
+    "asset": "client-mark-18.webp",
+    "ink_bbox": [
+      107,
+      212,
+      519,
+      404
+    ],
+    "visible_width": 73.24331596352894,
+    "visible_height": 34.132807439314455
+  },
+  {
+    "name": "Glitch",
+    "source": "client-logo-two14.webp",
+    "asset": "client-mark-19.webp",
+    "ink_bbox": [
+      79,
+      231,
+      520,
+      369
+    ],
+    "visible_width": 89.3819357296686,
+    "visible_height": 27.969857439216025
+  },
+  {
+    "name": "Agility",
+    "source": "client-logo-two16.webp",
+    "asset": "client-mark-20.webp",
+    "ink_bbox": [
+      148,
+      126,
+      452,
+      474
+    ],
+    "visible_width": 41.93103448275862,
+    "visible_height": 48
+  }
+]

@@ -1,0 +1,26 @@
+<main class="case glide-case" id="top" style="--project:{{accent}}">
+  <a class="back" href="/#work">← BACK HOME</a>
+  <header class="case-header">
+    <h1>{{title}}</h1>
+    <div class="case-meta">
+      <p class="case-deck">{{deck}}</p>
+      <dl><dt>CLIENT</dt><dd>{{client}}</dd></dl>
+      <dl><dt>SERVICES</dt><dd>{{services}}</dd></dl>
+      <dl><dt>TYPE</dt><dd>{{category}}</dd></dl>
+    </div>
+  </header>
+  {{availability_note}}
+  {{top_carousel}}
+  <figure class="case-hero"><img src="{{hero}}" width="{{hero_width}}" height="{{hero_height}}" fetchpriority="high" style="max-width:min(100%,{{hero_width}}px);margin-inline:auto" alt="{{title}} — project overview"></figure>
+  <section class="case-introduction editorial-block"><h2>INTRODUCTION</h2><p>{{intro}}</p></section>
+  <section class="case-objectives editorial-block"><div class="editorial-column"><h2>GOALS</h2>{{goals}}</div><div class="editorial-column"><h2>PROJECT DISCIPLINES</h2>{{disciplines}}</div></section>
+  <section class="editorial-block case-direction"><h2>DESIGN DIRECTION</h2><div><p>{{decision}}</p></div></section>
+  {{article}}
+  <section class="editorial-block case-system"><h2>{{system_title}}</h2><div><p>{{system}}</p></div></section>
+  <section class="editorial-block case-design"><h2>{{design_title}}</h2><div><p>{{design_copy}}</p>{{source_link}}</div></section>
+  {{media}}
+  <div class="case-gallery">{{gallery}}</div>
+  <section class="editorial-block case-deliverables"><h2>DELIVERABLES</h2>{{deliverables}}</section>
+  <section class="next-case"><span class="eyebrow">NEXT PROJECT</span><a href="/{{next_slug}}/"><h2>{{next_title}}</h2><span>↗</span></a></section>
+</main>
+<dialog class="lightbox" aria-label="Project image viewer"><button class="close" aria-label="Close image">CLOSE {{close_icon}}</button><img alt=""><p></p></dialog>

@@ -1,0 +1,4 @@
+Options -Indexes
+<FilesMatch "^(private-config.*\.php|.*\.(log|bak))$">
+Require all denied
+</FilesMatch>

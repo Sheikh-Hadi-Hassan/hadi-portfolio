@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {findAnswer,readDraft} from '../../public/intellignce-support/engine.mjs';
+const kb=JSON.parse(fs.readFileSync(new URL('../../public/intellignce-support/knowledge.json',import.meta.url)));
+assert.equal(findAnswer('What is the pricing?',kb).id,'pricing');
+assert.equal(findAnswer('Need Shopify support',kb).id,'commerce');
+assert.equal(findAnswer('book a meeting',kb).action,'meeting');
+assert.equal(findAnswer('quantum potatoes',kb).id,'unknown');
+assert.equal(readDraft('{invalid').length,0);
+assert.equal(readDraft(JSON.stringify({savedAt:1,messages:[]})).length,0);
+assert.equal(readDraft(JSON.stringify({savedAt:Date.now(),messages:[{role:'user',text:'Hello'}]})).length,1);
+assert(!findAnswer('quote',kb).answer.match(/\$\d/));
+console.log('Support engine: 8 checks passed');

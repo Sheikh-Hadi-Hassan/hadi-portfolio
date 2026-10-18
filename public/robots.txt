@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://hadi-hassan-editorial.lemony-morel-0696.chatgpt.site/sitemap.xml
+Sitemap: https://hadi-hassan-editorial.lemony-morel-0696.chatgpt.site/image-sitemap.xml

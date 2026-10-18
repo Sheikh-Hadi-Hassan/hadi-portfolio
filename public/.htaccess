@@ -1,0 +1,14 @@
+Options -Indexes
+DirectoryIndex index.html
+AddType application/javascript .js .mjs
+AddType text/css .css
+AddType image/svg+xml .svg
+ErrorDocument 404 /404.html
+<FilesMatch "(?i)^(private-config\.php|hadi-ai-config\.php|hadi-leads-config\.php|\.env.*)$">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+  <FilesMatch "(?i)^(widget.*\.js|index\.html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

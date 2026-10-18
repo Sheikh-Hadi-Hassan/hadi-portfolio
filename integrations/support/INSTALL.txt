@@ -1,0 +1,37 @@
+INTELLIGNCE support extension — 17 October 2026
+
+WHAT IS INCLUDED
+- Responsive, keyboard-accessible chat in the portfolio's charcoal/plum/lavender theme.
+- Editable public FAQ knowledge.json. No paid AI is required for the service guide.
+- Handoff to the existing project consultation and booking entry point. It does not replace leads.php or store new leads independently.
+- Direct WhatsApp link: visitor chooses to send the message. No automatic WhatsApp delivery or Cloud API is enabled.
+- Optional Gemini adapter, disabled by default, with explicit visitor consent, daily/IP limits, timeout and FAQ fallback.
+- PHP and Google Apps Script HTML email helpers, plus an authenticated-portal detail renderer.
+
+INSTALL (HOSTINGER)
+1. Back up your current website files.
+2. Extract this ZIP into the ACTUAL website root, beside index.html. This creates intellignce-support/. Existing api/leads.php and hadi-leads-config.php are NOT included or overwritten.
+3. Remove the old <script src="https://watsrag.com/widget.js" data-slug="intellignce"></script> from your current layout. Do not run both widgets.
+4. Add before </body>:
+   <script defer src="/intellignce-support/widget.js"></script>
+   On a Next.js build use next/script with strategy="lazyOnload" in the shared layout. The saved Sites source already has this change.
+5. Visit /intellignce-support/preview.html to inspect the widget. Test the real homepage handoff to the enquiry form. Refresh once after installation; the widget retains the current tab's chat for up to 24 hours. Clear chat removes it.
+
+NO-NEW-CHARGES DEFAULT
+Leave private-config.php absent: no external AI request is made by PHP. FAQ chat works without a provider key. The AI option falls back honestly when unconfigured.
+Optional AI activation is a SEPARATE account step: use a Google project without a billing account, choose a currently supported free-tier model, set gemini_key/model and set both flags true in private-config.php copied from the example. The code cannot remotely prove your Google billing tier; do not enable AI on a billed project. We have not activated or tested a real model key. Never add a card or upgrade billing for this extension.
+Review current terms: https://ai.google.dev/gemini-api/docs/pricing and https://ai.google.dev/gemini-api/docs/billing
+Google may use free-tier input for product improvement. Visitors explicitly opt in; recognisable phone/email/URL inputs are rejected by the AI adapter. This filter cannot guarantee all private text is identifiable. Keep all contact collection in the existing enquiry flow.
+No tokens, names or contact details are sent to AI automatically. Server rate limits contain only keyed hashes of IPs and counters. No chat content is logged by the extension server.
+
+EMAIL AND PORTAL INTEGRATION
+integration-helpers/presentation.php contains ih_email($lead, $visitor) and ih_portal_details($lead). Include it in the EXISTING authenticated application and map your stored record to the documented field names. Use ih_email output as HTML email with a separate plain-text alternative. Render the portal helper only after the current login/access checks.
+integration-helpers/email-presentation.gs supplies an Apps Script htmlBody helper and the exact sendEmail addition. Do NOT replace your complete working Code.gs with this helper. It does not run setup, migrate storage or send any mail by itself.
+The current Hostinger portal/backend source is not present in the recovered Sites repository. Therefore those helpers are prepared but NOT integrated into the live email sender or portal. Send a sanitized copy of the current portal/email code (no credentials, lead records or tokens) for that final wiring.
+
+VERIFICATION AND LIMITS
+JavaScript syntax and FAQ engine checks pass. Hero markup/styles are unchanged. The restored source predates manual Hostinger backend updates, so never upload its old api files over the working backend. PHP syntax/runtime and mobile visual rendering require the host/browser checks; no live delivery is claimed for this package. No real client enquiry, email or calendar event was created by these tests.
+PHP must be 8.1+ with cURL. Apache/LiteSpeed must honour .htaccess to block private-config.php and disable directory listing. Do not expose backups of config files.
+
+ROLLBACK
+Remove the one extension script tag to disable chat immediately. Remove intellignce-support/ only after backup. Your existing inquiry and calendar backend are unchanged.

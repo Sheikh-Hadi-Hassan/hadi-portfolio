@@ -1,0 +1,28 @@
+<?php
+declare(strict_types=1);
+header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');header('X-Content-Type-Options: nosniff');
+function respond(int $code,array $body):never{http_response_code($code);echo json_encode($body,JSON_UNESCAPED_UNICODE);exit;}
+function fail(int $code,string $message,string $delivery='not_sent',string $reason='SERVICE_UNAVAILABLE'):never{respond($code,['ok'=>false,'code'=>$reason,'error'=>$message,'delivery'=>$delivery]);}
+function readConfig():array{foreach([dirname(__DIR__,2).'/hadi-leads-config.php',dirname(__DIR__).'/hadi-leads-config.php'] as $path){if(!is_file($path))continue;$value=require $path;if(is_array($value))return $value;}return [];}
+$c=readConfig();$ready=preg_match('~^https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec$~',$c['url']??'')&&strlen($c['key']??'')>=32&&function_exists('curl_init');
+if(($_SERVER['REQUEST_METHOD']??'')==='GET')respond(200,['ok'=>true,'version'=>'8.0.0','available'=>(bool)$ready]);
+if(($_SERVER['REQUEST_METHOD']??'')!=='POST')fail(405,'Use the booking portal.');
+if(($_SERVER['HTTP_ORIGIN']??'')!=='https://hadi.intellignce.net')fail(403,'Open the portal on hadi.intellignce.net.');
+if(!$ready)fail(503,'Booking connection is not configured. Please contact Hadi.');
+$raw=file_get_contents('php://input',false,null,0,60001);if(!is_string($raw)||strlen($raw)>60000)fail(413,'Please shorten your enquiry.');$p=json_decode($raw,true);if(!is_array($p)||!in_array($p['action']??'',['availability','status','booking','enquiry'],true))fail(400,'Invalid request.');if(!empty($p['website']))fail(400,'Unable to accept this request.');$action=$p['action'];
+if($action==='availability'&&(!is_string($p['date']??null)||!preg_match('/^\d{4}-\d{2}-\d{2}$/',$p['date'])||!is_string($p['timezone']??null)||strlen($p['timezone'])>80))fail(400,'Choose a valid date and time zone.');
+if($action!=='availability'&&(!is_string($p['requestId']??null)||!preg_match('/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i',$p['requestId'])))fail(400,'Invalid booking reference.');
+$dir=sys_get_temp_dir().'/hadi-calendar-v8';if(!is_dir($dir)&&!mkdir($dir,0700,true)&&!is_dir($dir))fail(503,'Please try again later.');
+$ip=hash_hmac('sha256',$_SERVER['REMOTE_ADDR']??'unknown',$c['key']);$f=fopen($dir.'/rate-'.$ip.'.json','c+');if(!$f||!flock($f,LOCK_EX))fail(503,'Please try again.');$times=json_decode(stream_get_contents($f),true)?:[];$times=array_values(array_filter($times,fn($t)=>is_numeric($t)&&$t>time()-600));if(count($times)>=80){flock($f,LOCK_UN);fclose($f);fail(429,'Too many checks. Please wait a few minutes.','not_sent','RATE_LIMIT');}$times[]=time();rewind($f);ftruncate($f,0);fwrite($f,json_encode($times));flock($f,LOCK_UN);fclose($f);
+// Cache is server-private, short-lived, and used ONLY for availability display. Booking rechecks live.
+$cachePath='';if($action==='availability'){$namespace=hash_hmac('sha256',$c['url'],$c['key']);$cachePath=$dir.'/av-'.hash('sha256',$namespace.'|'.$p['date'].'|'.$p['timezone']).'.json';if(is_file($cachePath)&&filemtime($cachePath)>time()-20){$cached=json_decode(file_get_contents($cachePath),true);if(is_array($cached)&&($cached['ok']??false)&&is_array($cached['slots']??null)&&strtotime($cached['checkedAt']??'1970-01-01')>time()-20){$cached['slots']=array_values(array_filter($cached['slots'],fn($s)=>is_array($s)&&is_string($s['start']??null)&&strtotime($s['start'])>time()+1800));$cached['cache']='host';respond(200,$cached);}}}
+// Never automatically repeat a write after an unknown result. Client checks status with the SAME UUID.
+$p['key']=$c['key'];$ch=curl_init($c['url']);$began=microtime(true);curl_setopt_array($ch,[CURLOPT_POST=>true,CURLOPT_POSTFIELDS=>json_encode($p),CURLOPT_HTTPHEADER=>['Content-Type: application/json'],CURLOPT_RETURNTRANSFER=>true,CURLOPT_FOLLOWLOCATION=>true,CURLOPT_MAXREDIRS=>4,CURLOPT_CONNECTTIMEOUT=>5,CURLOPT_TIMEOUT=>in_array($action,['booking','enquiry'],true)?22:15,CURLOPT_PROTOCOLS=>CURLPROTO_HTTPS,CURLOPT_REDIR_PROTOCOLS=>CURLPROTO_HTTPS]);$response=curl_exec($ch);$status=(int)curl_getinfo($ch,CURLINFO_HTTP_CODE);$errno=curl_errno($ch);curl_close($ch);$result=is_string($response)?json_decode($response,true):null;
+// A timeout can happen AFTER Google created an event. Never report failure as certainty or generate a new UUID.
+if($status!==200||!is_array($result)||!array_key_exists('ok',$result)){if(in_array($action,['booking','enquiry'],true)){if(($p['protocol']??0)!==8)fail(502,'Confirmation is pending. Retry with the same reference.','unknown','CONFIRMATION_PENDING');respond(202,['ok'=>true,'status'=>'pending','booking'=>false,'reference'=>'HADI-'.$p['requestId'],'delivery'=>'unknown','retryAfter'=>4]);}fail(502,$action==='availability'?'Availability is taking longer than expected. Please retry; no time has been reserved.':'Confirmation could not be checked yet. Keep this reference and retry.','unknown',$errno===28?'UPSTREAM_TIMEOUT':'UPSTREAM_RESPONSE');}
+if(($result['status']??'')==='pending'&&($p['protocol']??0)!==8)fail(502,'Confirmation is pending. Retry with the same reference.','unknown','CONFIRMATION_PENDING');
+$result['gatewayMs']=(int)((microtime(true)-$began)*1000);
+if(!$result['ok']){$code=$result['code']??'';respond(in_array($code,['BUSY','SERVICE_ERROR','CALENDAR_ACCESS'],true)?503:400,$result);}
+if($action==='availability'&&is_array($result['slots']??null)){$tmp=tempnam($dir,'avwrite-');if($tmp!==false){file_put_contents($tmp,json_encode($result),LOCK_EX);chmod($tmp,0600);rename($tmp,$cachePath);}}
+if($action==='booking'){foreach(glob($dir.'/av-*.json')?:[] as $path){if(is_file($path))unlink($path);}}
+respond(($result['status']??'')==='pending'?202:200,$result);

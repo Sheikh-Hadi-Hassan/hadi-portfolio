@@ -1,5 +1,6 @@
 {
-  "d1": null,
-  "project_id": "appgprj_6a9333c405588191a21e458ae6d83c7d",
-  "r2": null
+  "project_id": "appgprj_6ace6d4470d48191b519a987326e4c76",
+  "static": {
+    "directory": "out"
+  }
 }

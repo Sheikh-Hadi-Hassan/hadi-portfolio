@@ -1,0 +1,1 @@
+export function resizeProcessCamera(camera,width,height){if(!width||!height)return;const aspect=width/height;if(camera.isPerspectiveCamera)camera.aspect=aspect;else{camera.left=-9*aspect/2;camera.right=9*aspect/2;}camera.zoom=Math.min(1,aspect/.85);camera.updateProjectionMatrix();}

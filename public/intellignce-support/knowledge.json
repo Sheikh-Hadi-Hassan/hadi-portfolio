@@ -1,0 +1,182 @@
+{
+  "brand": "INTELLIGNCE",
+  "contact": {
+    "email": "hadi@intellignce.net",
+    "whatsapp": "https://wa.me/923084542868"
+  },
+  "intro": "Clear thinking. Useful answers. Tell me what you’re working on.",
+  "faqs": [
+    {
+      "id": "services",
+      "keywords": [
+        "service",
+        "help",
+        "offer",
+        "kya kar",
+        "what do"
+      ],
+      "question": "What can you help with?",
+      "answer": "Hadi works across brand identity, graphic and UI/UX design, social creatives, e-commerce, SaaS and app development, and landing pages. Share your goal and we can find the closest fit.",
+      "action": "brief"
+    },
+    {
+      "id": "branding",
+      "keywords": [
+        "logo",
+        "brand",
+        "identity",
+        "packaging",
+        "rebrand"
+      ],
+      "question": "Can you create a brand identity?",
+      "answer": "Yes. Branding can cover logo design, visual identity, brand guidelines, packaging and research. The scope depends on where your business is today and what you need to launch or improve.",
+      "service": "branding",
+      "action": "brief"
+    },
+    {
+      "id": "design",
+      "keywords": [
+        "ui",
+        "ux",
+        "graphic",
+        "pitch",
+        "presentation",
+        "brochure",
+        "design"
+      ],
+      "question": "Do you offer design and UI/UX?",
+      "answer": "Design support includes websites and apps, pitch decks, presentations, print collateral and social graphics. Tell me the format, quantity and intended audience.",
+      "service": "design",
+      "action": "brief"
+    },
+    {
+      "id": "social",
+      "keywords": [
+        "social",
+        "instagram",
+        "linkedin",
+        "campaign",
+        "reels",
+        "video"
+      ],
+      "question": "Can you help with social content?",
+      "answer": "Social support includes static visuals, carousels, videos and reels, content strategy, and campaign concepts and execution. The right mix depends on your platforms, goals and monthly volume.",
+      "service": "social",
+      "action": "brief"
+    },
+    {
+      "id": "commerce",
+      "keywords": [
+        "shopify",
+        "woocommerce",
+        "store",
+        "ecommerce",
+        "e-commerce",
+        "product photo"
+      ],
+      "question": "Do you work on online stores?",
+      "answer": "E-commerce support includes platform setup, store design, product photography, product pages and copywriting. Let’s clarify what you sell, your platform and the main challenge.",
+      "service": "commerce",
+      "action": "brief"
+    },
+    {
+      "id": "app",
+      "keywords": [
+        "saas",
+        "software",
+        "application",
+        "android",
+        "ios",
+        "app development"
+      ],
+      "question": "Can you help with an app or SaaS?",
+      "answer": "Application work can include product UI/UX, web and SaaS development, mobile applications and integrations. Share the problem, users and three most important features so Hadi can review the scope.",
+      "service": "app",
+      "action": "brief"
+    },
+    {
+      "id": "landing",
+      "keywords": [
+        "landing",
+        "website",
+        "conversion",
+        "web page"
+      ],
+      "question": "Can you create a landing page?",
+      "answer": "Landing pages focus on a clear offer, useful content and a meaningful action such as an enquiry, booking or signup. Share your offer, traffic source and available assets.",
+      "service": "landing",
+      "action": "brief"
+    },
+    {
+      "id": "pricing",
+      "keywords": [
+        "price",
+        "pricing",
+        "cost",
+        "quote",
+        "rate",
+        "budget",
+        "charges",
+        "kitna"
+      ],
+      "question": "How much will my project cost?",
+      "answer": "A project quote needs a defined scope, deliverables and timeline. I can help prepare that brief for Hadi. Any budget ranges in the consultation are planning ranges, not a confirmed price.",
+      "action": "brief"
+    },
+    {
+      "id": "meeting",
+      "keywords": [
+        "meeting",
+        "book",
+        "call",
+        "calendar",
+        "schedule"
+      ],
+      "question": "Can I book a call?",
+      "answer": "Use the website’s booking flow for a 30-minute conversation with Hadi. It checks live availability before confirmation. A time is reserved only after the booking is confirmed.",
+      "action": "meeting"
+    },
+    {
+      "id": "human",
+      "keywords": [
+        "human",
+        "person",
+        "support",
+        "hadi",
+        "contact",
+        "email",
+        "whatsapp",
+        "agent"
+      ],
+      "question": "I’d like to speak with Hadi.",
+      "answer": "You can email hadi@intellignce.net, open WhatsApp, or prepare a project enquiry. WhatsApp opens your app with a draft; you choose whether to send it.",
+      "action": "human"
+    },
+    {
+      "id": "portfolio",
+      "keywords": [
+        "portfolio",
+        "case stud",
+        "work",
+        "example",
+        "project"
+      ],
+      "question": "Where can I see the work?",
+      "answer": "The case-study archive includes brand identities, packaging, digital design, campaigns, photography and motion work. Choose a relevant example, then discuss what your own project needs.",
+      "action": "work"
+    },
+    {
+      "id": "timeline",
+      "keywords": [
+        "deadline",
+        "timeline",
+        "how long",
+        "delivery",
+        "urgent"
+      ],
+      "question": "How long will it take?",
+      "answer": "Timelines depend on scope, supplied assets, feedback and availability. Share your target date in the brief. Hadi will confirm feasibility; this assistant cannot promise a delivery date.",
+      "action": "brief"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "intellignce": {
+    "status": "article_recovered",
+    "source": "Owner-supplied saved Behance page: 017-user's profile.html"
+  },
+  "edlytics": {
+    "status": "article_recovered",
+    "source": "Owner-supplied saved Behance page: 003-user's profile.html",
+    "editorial_note": "Removed speculative wording from the original article."
+  },
+  "fakhr-e-qoum": {
+    "status": "article_and_video_recovered",
+    "source": "Owner-supplied saved Behance page: 004-user's profile.html",
+    "video": "https://www.youtube.com/watch?v=knNT5FfBOyo",
+    "video_verification": "YouTube player loaded; duration 9:58. Playback not tested."
+  },
+  "al-faraj-media": {
+    "status": "article_recovered_images_pending",
+    "source": "https://www.behance.net/gallery/200947393/The-Al-Faraj-Media-Logo-A-Case-Study"
+  },
+  "bits-hr-link": {
+    "status": "summary_recovered_images_pending",
+    "source": "https://www.linkedin.com/posts/hadi-hasssan_bits-hr-brand-identity-project-on-behance-activity-7510590363812765696-4mW8"
+  },
+  "linkedin-personal-brand": {
+    "status": "full_article_and_images_pending",
+    "source": "https://www.behance.net/gallery/240918657/LinkedIn-Personal-Brand-Design-System"
+  },
+  "jules-capital-partners": {
+    "status": "full_article_and_images_pending",
+    "source": "https://www.behance.net/hadihasssan"
+  },
+  "bw-strike": {
+    "status": "original_article_and_supplied_images_added",
+    "route": "/bw-sports/",
+    "source": "Owner-supplied saved Behance article: 003-user's profile(1).html",
+    "note": "Production details recovered from original text; unquantified engagement claims omitted."
+  },
+  "nicemd-ai": {
+    "status": "full_article_and_images_pending",
+    "source": "https://www.behance.net/gallery/220638491/"
+  },
+  "blogs": {
+    "status": "no_owner_authored_blog_collection_recovered",
+    "note": "Behance global /blog links are platform navigation, not Hadi Hassan articles."
+  },
+  "community-campaign": {
+    "status": "article_and_images_supplied",
+    "source": "Owner-supplied campaign article and 19 WebP images, 16 October 2026",
+    "editorial_note": "Retrospective case study; unsuccessful election outcome retained. Repeated keyword strings and ambiguous demographic claim omitted."
+  }
+}

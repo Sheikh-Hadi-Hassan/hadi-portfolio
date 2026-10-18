@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Mackenzie Cramblit",
+    "category": "Personal brand identity",
+    "cover": "/assets/work-cover-01.webp",
+    "slug": "mackenzie-cramblit"
+  },
+  {
+    "title": "Morganics",
+    "category": "Brand identity & packaging",
+    "cover": "/assets/work-cover-02.webp",
+    "slug": "morganics"
+  },
+  {
+    "title": "LinkedIn Personal Brand",
+    "category": "Personal brand design system",
+    "cover": "/assets/work-cover-03.webp",
+    "slug": "linkedin-personal-brand"
+  },
+  {
+    "title": "Intellignce",
+    "category": "Brand identity",
+    "cover": "/assets/work-cover-04.webp",
+    "slug": "intellignce"
+  },
+  {
+    "title": "Bits HR Link",
+    "category": "Brand identity",
+    "cover": "/assets/work-cover-05.webp",
+    "slug": "bits-hr-link"
+  },
+  {
+    "title": "Fakhr-e-Qoum",
+    "category": "Documentary & storytelling",
+    "cover": "/assets/work-cover-06.webp",
+    "slug": "fakhr-e-qoum"
+  },
+  {
+    "title": "Jules Capital Partners",
+    "category": "Brand identity & visual system",
+    "cover": "/assets/work-cover-07.webp",
+    "slug": "jules-capital-partners"
+  },
+  {
+    "title": "BW Sports",
+    "category": "Product photography",
+    "cover": "/assets/work-cover-08.webp",
+    "slug": "bw-sports"
+  },
+  {
+    "title": "Edlytics",
+    "category": "Logo design",
+    "cover": "/assets/work-cover-09.webp",
+    "slug": "edlytics"
+  },
+  {
+    "title": "NiceMD.ai",
+    "category": "Healthcare brand identity",
+    "cover": "/assets/work-cover-10.webp",
+    "slug": "nicemd-ai"
+  },
+  {
+    "title": "Al Faraj Media",
+    "category": "Logo design",
+    "cover": "/assets/work-cover-11.webp",
+    "slug": "al-faraj-media"
+  },
+  {
+    "title": "Accessorize by HL",
+    "category": "Brand identity & guidelines",
+    "cover": "/assets/work-cover-12.webp",
+    "slug": "accessorize-by-hl"
+  }
+]

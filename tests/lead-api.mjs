@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {leadApi} from '../src/app/lead-api.mjs';
+const json=(body,ok=true)=>({ok,headers:new Headers({'Content-Type':'application/json'}),json:async()=>body});
+let sent;
+const payload={requestId:'stable-reference',name:'Example'};
+assert.deepEqual(await leadApi('enquiry',payload,{fetcher:async(url,options)=>{sent={url,options};return json({ok:true,reference:'HADI-stable-reference'})}}),{ok:true,reference:'HADI-stable-reference'});
+assert.equal(sent.url,'/api/leads.php');assert.equal(JSON.parse(sent.options.body).requestId,payload.requestId);
+await assert.rejects(leadApi('enquiry',payload,{fetcher:async()=>({ok:false,headers:new Headers({'Content-Type':'text/html'})})}),/not been confirmed/);
+await assert.rejects(leadApi('enquiry',payload,{fetcher:async()=>json({ok:false,error:'That time was just booked.'},false)}),/just booked/);
+await assert.rejects(leadApi('enquiry',payload,{fetcher:async()=>json(null)}),/not been confirmed/);
+await assert.rejects(leadApi('enquiry',payload,{fetcher:async()=>{throw new TypeError('Failed to fetch')}}),/same reference/);
+await assert.rejects(leadApi('enquiry',payload,{timeout:5,fetcher:async(_,options)=>new Promise((resolve,reject)=>options.signal.addEventListener('abort',()=>reject(new DOMException('Aborted','AbortError'))))}),/same reference/);
+console.log('Lead transport: confirmed success, HTML 404, server rejection, invalid response, network failure and timeout pass.');
+
+const {checkLeadService}=await import('../src/app/lead-api.mjs');
+await assert.rejects(leadApi('enquiry',payload,{fetcher:async()=>({status:404,ok:false,headers:new Headers({'Content-Type':'text/html'})})}),e=>e.delivery==='not_sent');
+assert.deepEqual(await checkLeadService({fetcher:async()=>({status:404})}),{status:'unavailable',delivery:'not_sent'});
+assert.equal((await checkLeadService({fetcher:async()=>json({ok:true,available:false})})).status,'unavailable');
+assert.equal((await checkLeadService({fetcher:async()=>json({ok:true,available:true})})).status,'available');
+assert.equal((await checkLeadService({fetcher:async()=>{throw Error('offline')}})).status,'unknown');
+await assert.rejects(leadApi('enquiry',payload,{fetcher:async()=>{throw new TypeError('offline')}}),e=>e.delivery!=='not_sent');
+console.log('Delivery recovery: missing endpoint is not-sent; readiness uses GET only; ambiguous network errors preserve the existing reference.');
