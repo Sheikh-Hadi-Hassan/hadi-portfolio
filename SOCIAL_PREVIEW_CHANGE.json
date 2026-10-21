@@ -1,0 +1,517 @@
+{
+  "base_commit": "c4097990bccabea53af798eaf80012c239d6a418",
+  "image": "https://hadi.intellignce.net/assets/hadi-hassan-social-preview-20261021.png",
+  "dimensions": [
+    1200,
+    630
+  ],
+  "public_pages": [
+    "index.html",
+    "community-campaign/index.html",
+    "morganics/index.html",
+    "ai-animation/index.html",
+    "archive/index.html",
+    "bw-sports/index.html",
+    "uiux-web-saas/index.html",
+    "al-faraj-media/index.html",
+    "mackenzie-cramblit/index.html",
+    "edlytics/index.html",
+    "nicemd-ai/index.html",
+    "bits-hr-link/index.html",
+    "linkedin-personal-brand/index.html",
+    "jules-capital-partners/index.html",
+    "intellignce/index.html",
+    "fakhr-e-qoum/index.html",
+    "accessorize-by-hl/index.html"
+  ],
+  "changed_files": [
+    "index.html",
+    "community-campaign/index.html",
+    "morganics/index.html",
+    "ai-animation/index.html",
+    "archive/index.html",
+    "bw-sports/index.html",
+    "uiux-web-saas/index.html",
+    "al-faraj-media/index.html",
+    "mackenzie-cramblit/index.html",
+    "edlytics/index.html",
+    "nicemd-ai/index.html",
+    "bits-hr-link/index.html",
+    "linkedin-personal-brand/index.html",
+    "jules-capital-partners/index.html",
+    "intellignce/index.html",
+    "fakhr-e-qoum/index.html",
+    "accessorize-by-hl/index.html",
+    "__next.__PAGE__.txt",
+    "index.txt",
+    "__next._full.txt",
+    "community-campaign/__next.$d$slug.__PAGE__.txt",
+    "community-campaign/index.txt",
+    "community-campaign/__next._full.txt",
+    "morganics/__next.$d$slug.__PAGE__.txt",
+    "morganics/index.txt",
+    "morganics/__next._full.txt",
+    "ai-animation/__next.$d$slug.__PAGE__.txt",
+    "ai-animation/index.txt",
+    "ai-animation/__next._full.txt",
+    "archive/__next.$d$slug.__PAGE__.txt",
+    "archive/index.txt",
+    "archive/__next._full.txt",
+    "bw-sports/__next.$d$slug.__PAGE__.txt",
+    "bw-sports/index.txt",
+    "bw-sports/__next._full.txt",
+    "uiux-web-saas/__next.$d$slug.__PAGE__.txt",
+    "uiux-web-saas/index.txt",
+    "uiux-web-saas/__next._full.txt",
+    "al-faraj-media/__next.$d$slug.__PAGE__.txt",
+    "al-faraj-media/index.txt",
+    "al-faraj-media/__next._full.txt",
+    "mackenzie-cramblit/__next.$d$slug.__PAGE__.txt",
+    "mackenzie-cramblit/index.txt",
+    "mackenzie-cramblit/__next._full.txt",
+    "edlytics/__next.$d$slug.__PAGE__.txt",
+    "edlytics/index.txt",
+    "edlytics/__next._full.txt",
+    "nicemd-ai/__next.$d$slug.__PAGE__.txt",
+    "nicemd-ai/index.txt",
+    "nicemd-ai/__next._full.txt",
+    "bits-hr-link/__next.$d$slug.__PAGE__.txt",
+    "bits-hr-link/index.txt",
+    "bits-hr-link/__next._full.txt",
+    "linkedin-personal-brand/__next.$d$slug.__PAGE__.txt",
+    "linkedin-personal-brand/index.txt",
+    "linkedin-personal-brand/__next._full.txt",
+    "jules-capital-partners/__next.$d$slug.__PAGE__.txt",
+    "jules-capital-partners/index.txt",
+    "jules-capital-partners/__next._full.txt",
+    "intellignce/__next.$d$slug.__PAGE__.txt",
+    "intellignce/index.txt",
+    "intellignce/__next._full.txt",
+    "fakhr-e-qoum/__next.$d$slug.__PAGE__.txt",
+    "fakhr-e-qoum/index.txt",
+    "fakhr-e-qoum/__next._full.txt",
+    "accessorize-by-hl/__next.$d$slug.__PAGE__.txt",
+    "accessorize-by-hl/index.txt",
+    "accessorize-by-hl/__next._full.txt",
+    "assets/hadi-hassan-social-preview-20261021.png"
+  ],
+  "status": "PASS",
+  "deployment": "NOT DEPLOYED: authenticated Hostinger File Manager unavailable in this browser",
+  "image_sha256": "139377b9f59f241ceae293668ce9646cc4a1e8d5e37e75a8aecd325cbff6e200",
+  "file_checksums": [
+    {
+      "path": "production/index.html",
+      "sha256": "65f5fa857a14ab885e32e0507a67f243b2ac2da320ea60588576810272f84c2c",
+      "bytes": 289877,
+      "previous_sha256": "98f83367a0bdfbe0db57e14a9771981eeacb69cb66f4be995de6bfa2ea164bdc"
+    },
+    {
+      "path": "production/community-campaign/index.html",
+      "sha256": "687cdcf96f8aeb555494e48cd0929369ea99f832fccdd2a7664cd6e3cc1daff2",
+      "bytes": 216798,
+      "previous_sha256": "c4b85b664986a3b51c404a7b70078a0b741c427dde8e84aa67f39dcb2b72d0b2"
+    },
+    {
+      "path": "production/morganics/index.html",
+      "sha256": "9d42c69ae24b74b6d2b445d60d7514bc5347184a38683ce02b0214e0dd070329",
+      "bytes": 483606,
+      "previous_sha256": "8797e00c9471ea7e25baea529c419641853ba503dfa5c6ec357785764fdf40c9"
+    },
+    {
+      "path": "production/ai-animation/index.html",
+      "sha256": "fe00106f9dcb349b4023f60a8f778ee4c00ca30427e6e272bb1b3c6d9c308f55",
+      "bytes": 374197,
+      "previous_sha256": "5db58d74a9672c43f215c515db6e1627f2e7f9e0bf2b0e28f0a404675c5b9f53"
+    },
+    {
+      "path": "production/archive/index.html",
+      "sha256": "3263102d6deae1f430ab76aaa286010c1bca9eae65c84d7c690079ae045adae8",
+      "bytes": 173481,
+      "previous_sha256": "9cbc203c00cd2a77ebf049832914031b53fa76301d834b145daa4a5d013e722b"
+    },
+    {
+      "path": "production/bw-sports/index.html",
+      "sha256": "57a6e7e7e040c57e7341c1cee1a28c7ef8bfa4dea4d2b3858e3ab0ef2c28b26c",
+      "bytes": 197051,
+      "previous_sha256": "62b8ebe6827c64eab61f07dae0b3383240a62c2882421b87fb68d5ab92e7cd17"
+    },
+    {
+      "path": "production/uiux-web-saas/index.html",
+      "sha256": "38b44ad9c77e8fbc852ed59373bb3bdcb956da283314b12d363ad1c4d0db5fa3",
+      "bytes": 160986,
+      "previous_sha256": "739b26c010a0121b3560abbefd611b6fba8c0cbb9439ef9c1660044ef9c8c834"
+    },
+    {
+      "path": "production/al-faraj-media/index.html",
+      "sha256": "bd1db935b64197d0cc48972744db9fe4b56c134cfaf77f2233dde1b62f04ab8b",
+      "bytes": 102431,
+      "previous_sha256": "25eeabf4c93fe70ff9b33d77efd6f5351940d771a32ea304a6315056bab0577a"
+    },
+    {
+      "path": "production/mackenzie-cramblit/index.html",
+      "sha256": "2551a481d42b23f7c42c1643a011c0dd3a9ce98f97e5d5f26e23c46114f9849e",
+      "bytes": 144408,
+      "previous_sha256": "93749b615365afabed0f78d52a081544bbe2cb4c1d274a2f6baf0e46400504e5"
+    },
+    {
+      "path": "production/edlytics/index.html",
+      "sha256": "523f9851e6bf3f48a47dbec77c42f9374b9c47fa4c15d7f79b82b7684a1a35f8",
+      "bytes": 93254,
+      "previous_sha256": "5e5b788fe524cb38e20b4021793c7a04f62b4444f20a0642bb70799c785f6580"
+    },
+    {
+      "path": "production/nicemd-ai/index.html",
+      "sha256": "34dda075a0f287e791fc59e39d92cd472ce80087a4cd36e562abc9638833c817",
+      "bytes": 104981,
+      "previous_sha256": "6d2f7867627a535f8af5f75adb3a11d2a618d74e13fda27115f7e35089afa74b"
+    },
+    {
+      "path": "production/bits-hr-link/index.html",
+      "sha256": "66bec11ef4ee3afbd499e28b9d091503f227263231144b9ba9d2d208c1555af1",
+      "bytes": 115582,
+      "previous_sha256": "e9704cf58a549e1bde05c5bca4d10dbca955c60275041c0cdfbd5cfbc20dbbcc"
+    },
+    {
+      "path": "production/linkedin-personal-brand/index.html",
+      "sha256": "09322edcd3f3f5be26c6dc9456776cf736657a6735022bdc6fd6d87ee82a0d99",
+      "bytes": 197222,
+      "previous_sha256": "00e66c7e11983a5eaf3b596aba7125a2950dc7f3b35832ace34b6337a1bcc6de"
+    },
+    {
+      "path": "production/jules-capital-partners/index.html",
+      "sha256": "9ac37c7979eda00920556c03094a45fbbf637570079cb5651b3517665e26a4df",
+      "bytes": 116796,
+      "previous_sha256": "61cc3a920970898a3092443317931f7d87d8e77cee030c3ea0a3813d963106bd"
+    },
+    {
+      "path": "production/intellignce/index.html",
+      "sha256": "7c8feef54c5a5ffd6f0919bcdeea6640fd189de8a04b8c986005f77323de1952",
+      "bytes": 130532,
+      "previous_sha256": "a1742830dcaa2120029ee5c7972ccee9862c258d2f21f06f9d7e82af66ad8b05"
+    },
+    {
+      "path": "production/fakhr-e-qoum/index.html",
+      "sha256": "31428334c6dad5cdf49150b335636b2fedbb241de1c18f926378c460490ca64c",
+      "bytes": 91052,
+      "previous_sha256": "22cd86e4bd575dd82a5813d5b496a0c1b0eb514981b5711da626078f74c67d67"
+    },
+    {
+      "path": "production/accessorize-by-hl/index.html",
+      "sha256": "8a43d8fbe2a46d88688913298562bd6092df0a6a7d9fe334a1fab4f5c04bf62b",
+      "bytes": 137504,
+      "previous_sha256": "5962dfde139d4b92c6b0e6a1eb30c478ca4d6a9f52c8079b55480a019bd603b5"
+    },
+    {
+      "path": "production/__next.__PAGE__.txt",
+      "sha256": "81d923b9e95fda2d23cf568634d26c563870c964bb3c2c6d0a62dd1f35f375a0",
+      "bytes": 134020,
+      "previous_sha256": "5f84003771df9ef0e264c7f6ef9b3e13c801184dd9b86a3c42d2a51f72690232"
+    },
+    {
+      "path": "production/index.txt",
+      "sha256": "5e39973717a165b4d49fe9260c8f2070c8dc8188316c2ee36f0b7ea74910c3a9",
+      "bytes": 134347,
+      "previous_sha256": "4c50fbebfd214acfda7b4c000da028db1d3f5b7a749a00e75d202603657c4e36"
+    },
+    {
+      "path": "production/__next._full.txt",
+      "sha256": "5e39973717a165b4d49fe9260c8f2070c8dc8188316c2ee36f0b7ea74910c3a9",
+      "bytes": 134347,
+      "previous_sha256": "4c50fbebfd214acfda7b4c000da028db1d3f5b7a749a00e75d202603657c4e36"
+    },
+    {
+      "path": "production/community-campaign/__next.$d$slug.__PAGE__.txt",
+      "sha256": "02f8a8313de1d99f08ae5b20ad19b80c61533bff976f542b9feca2a4edda4227",
+      "bytes": 102183,
+      "previous_sha256": "858fdf46ed33a432ce7aea3e320746887ecb16cd6b2d3e54c015d28f9ee13667"
+    },
+    {
+      "path": "production/community-campaign/index.txt",
+      "sha256": "9dcadb1328728ecee3f696092980cd1559b0ee81b09c16c22825bb42b418dd3e",
+      "bytes": 102708,
+      "previous_sha256": "e3551213eda92d202575dda70b1aa219bb3f21fd0ed84abc2ffc36606af627e7"
+    },
+    {
+      "path": "production/community-campaign/__next._full.txt",
+      "sha256": "9dcadb1328728ecee3f696092980cd1559b0ee81b09c16c22825bb42b418dd3e",
+      "bytes": 102708,
+      "previous_sha256": "e3551213eda92d202575dda70b1aa219bb3f21fd0ed84abc2ffc36606af627e7"
+    },
+    {
+      "path": "production/morganics/__next.$d$slug.__PAGE__.txt",
+      "sha256": "53e7148d0ec89a6ef83959cf84880c86ea4c400f9f4d18faf8053cc57cc9261a",
+      "bytes": 229710,
+      "previous_sha256": "cf9ff356bf96a61605e88a6157e26f8359428afb8392f666a5c3c25063676f47"
+    },
+    {
+      "path": "production/morganics/index.txt",
+      "sha256": "9618bf68ead3eb5bbab2183a0bcfed8727965f306b03100acd0398b7c2cab076",
+      "bytes": 230236,
+      "previous_sha256": "337a4b026e0c40812c11fbd83454e5ef90c033cb99c6ba6d7e1ea8b0575a93b2"
+    },
+    {
+      "path": "production/morganics/__next._full.txt",
+      "sha256": "9618bf68ead3eb5bbab2183a0bcfed8727965f306b03100acd0398b7c2cab076",
+      "bytes": 230236,
+      "previous_sha256": "337a4b026e0c40812c11fbd83454e5ef90c033cb99c6ba6d7e1ea8b0575a93b2"
+    },
+    {
+      "path": "production/ai-animation/__next.$d$slug.__PAGE__.txt",
+      "sha256": "ce6c52181e1d8ded5e8b7f28e0448a7ba58f83eb6980151fd94ffc87524d8494",
+      "bytes": 177570,
+      "previous_sha256": "e1384acf07082d35390fe859fafec5a3217a07afa7016683f2feec640db1b233"
+    },
+    {
+      "path": "production/ai-animation/index.txt",
+      "sha256": "8933ab9bd2024d40ba1346dcaed7057338dd72a74bc0493d54e236d24f96cb2c",
+      "bytes": 178099,
+      "previous_sha256": "f3e9a88eb5137b5e85b5c5e006905d935b1bf04c247a0c248ca79ff7fd267d30"
+    },
+    {
+      "path": "production/ai-animation/__next._full.txt",
+      "sha256": "8933ab9bd2024d40ba1346dcaed7057338dd72a74bc0493d54e236d24f96cb2c",
+      "bytes": 178099,
+      "previous_sha256": "f3e9a88eb5137b5e85b5c5e006905d935b1bf04c247a0c248ca79ff7fd267d30"
+    },
+    {
+      "path": "production/archive/__next.$d$slug.__PAGE__.txt",
+      "sha256": "482d22da9ac4699d92867acf913f0848b1340e90649e7fc34420e05d36defeb8",
+      "bytes": 80778,
+      "previous_sha256": "61cab6d7888459acfc5d28c95ed12a535da17a50173533fd2ab33f8b2bc68d53"
+    },
+    {
+      "path": "production/archive/index.txt",
+      "sha256": "296baa9fa5dbc796c7b5c87baa3e4186423fcb4c614d86819b69d0c024f074a5",
+      "bytes": 81302,
+      "previous_sha256": "f6bf58fa7b6ca113e73196b978bd5842254cf03e0d458190143883ec4645806d"
+    },
+    {
+      "path": "production/archive/__next._full.txt",
+      "sha256": "296baa9fa5dbc796c7b5c87baa3e4186423fcb4c614d86819b69d0c024f074a5",
+      "bytes": 81302,
+      "previous_sha256": "f6bf58fa7b6ca113e73196b978bd5842254cf03e0d458190143883ec4645806d"
+    },
+    {
+      "path": "production/bw-sports/__next.$d$slug.__PAGE__.txt",
+      "sha256": "e8d9b6ff3f2f9fc3cf64fc371090281babb65b6d205f9130ca7c5f0585ff891e",
+      "bytes": 92787,
+      "previous_sha256": "4710d161b5eb801a286b85aa4306212a5d88cce7b1a94735b14a462df4158c9a"
+    },
+    {
+      "path": "production/bw-sports/index.txt",
+      "sha256": "77710e7d651ec23e8f1547d7e755cf87715705b66ea96a1d8d30c6df8bd7d0ad",
+      "bytes": 93313,
+      "previous_sha256": "1dc7f7566b31a0a5e53abaa5251dea330bee3e08031ea88d8fb71d59772cffe7"
+    },
+    {
+      "path": "production/bw-sports/__next._full.txt",
+      "sha256": "77710e7d651ec23e8f1547d7e755cf87715705b66ea96a1d8d30c6df8bd7d0ad",
+      "bytes": 93313,
+      "previous_sha256": "1dc7f7566b31a0a5e53abaa5251dea330bee3e08031ea88d8fb71d59772cffe7"
+    },
+    {
+      "path": "production/uiux-web-saas/__next.$d$slug.__PAGE__.txt",
+      "sha256": "f55c8d6c27076f6febef324e0a46363eb47ddd8ce59770df0f10d899c47a811e",
+      "bytes": 75471,
+      "previous_sha256": "f6ea444c2baca5ff506eb5a95dc3aac9621208fec6872587cadd8c2a8f814ceb"
+    },
+    {
+      "path": "production/uiux-web-saas/index.txt",
+      "sha256": "7027b4cf424013d9e94ed0ac178ac494f8e395513d94a86c1b2980ce971f1fd9",
+      "bytes": 76001,
+      "previous_sha256": "15d18a148442c869dce7834f6e324e350227c848c84fefab7c5b8ade72e96928"
+    },
+    {
+      "path": "production/uiux-web-saas/__next._full.txt",
+      "sha256": "7027b4cf424013d9e94ed0ac178ac494f8e395513d94a86c1b2980ce971f1fd9",
+      "bytes": 76001,
+      "previous_sha256": "15d18a148442c869dce7834f6e324e350227c848c84fefab7c5b8ade72e96928"
+    },
+    {
+      "path": "production/al-faraj-media/__next.$d$slug.__PAGE__.txt",
+      "sha256": "7cea23edd419d9f37becf5e43f5f3885f4120ad0d2ea9b7cf0665307c9860530",
+      "bytes": 47506,
+      "previous_sha256": "a4adb056001de91a184dfb69ecd00ed72a9c35ed9dd3e6670a199ac27c55e2de"
+    },
+    {
+      "path": "production/al-faraj-media/index.txt",
+      "sha256": "05a84fba286468cb483697d524ef1c5bcaf20639e57f63ae9430f0a796b19934",
+      "bytes": 48037,
+      "previous_sha256": "f00a7d9c3aaa52e332f4b74678574ca132d0fa82ff6bd2efba6091e687e03baa"
+    },
+    {
+      "path": "production/al-faraj-media/__next._full.txt",
+      "sha256": "05a84fba286468cb483697d524ef1c5bcaf20639e57f63ae9430f0a796b19934",
+      "bytes": 48037,
+      "previous_sha256": "f00a7d9c3aaa52e332f4b74678574ca132d0fa82ff6bd2efba6091e687e03baa"
+    },
+    {
+      "path": "production/mackenzie-cramblit/__next.$d$slug.__PAGE__.txt",
+      "sha256": "7b3986e2f9ef866695b58aa7d3ac5067914c9be75fe2f83a689b4d1d3712c28e",
+      "bytes": 67614,
+      "previous_sha256": "5314e640083adb725d1b4da0605cee5004dd870901920d41e9522d0bd80763db"
+    },
+    {
+      "path": "production/mackenzie-cramblit/index.txt",
+      "sha256": "2012a33c102dbaebeaec484d0e35e8aeebe02990bbd42c48ddd36a1f571ff8a7",
+      "bytes": 68149,
+      "previous_sha256": "b7e25fdb526d38d471319002318e0e5265c01672c4b41d6af6bf0208633d0e3e"
+    },
+    {
+      "path": "production/mackenzie-cramblit/__next._full.txt",
+      "sha256": "2012a33c102dbaebeaec484d0e35e8aeebe02990bbd42c48ddd36a1f571ff8a7",
+      "bytes": 68149,
+      "previous_sha256": "b7e25fdb526d38d471319002318e0e5265c01672c4b41d6af6bf0208633d0e3e"
+    },
+    {
+      "path": "production/edlytics/__next.$d$slug.__PAGE__.txt",
+      "sha256": "c54b26df6adbf47e531bb44ec4137eb16135c4106ffa9d39ea420251b9146e61",
+      "bytes": 43117,
+      "previous_sha256": "c343ac340840f09594272581ba0b01fff549a5b5d528ab6507e044c7421f39cb"
+    },
+    {
+      "path": "production/edlytics/index.txt",
+      "sha256": "f145be453a397f35ed429fba5e7617c199619bbf39b02987d4550e2e3455a612",
+      "bytes": 43642,
+      "previous_sha256": "80cd325375a3696e52cff1381eed80480519133a6b96cbf4a40595bb796284f2"
+    },
+    {
+      "path": "production/edlytics/__next._full.txt",
+      "sha256": "f145be453a397f35ed429fba5e7617c199619bbf39b02987d4550e2e3455a612",
+      "bytes": 43642,
+      "previous_sha256": "80cd325375a3696e52cff1381eed80480519133a6b96cbf4a40595bb796284f2"
+    },
+    {
+      "path": "production/nicemd-ai/__next.$d$slug.__PAGE__.txt",
+      "sha256": "b82e4ca370fb8d6694c3592e6b4da3b1c46961250892801b54024903315752ac",
+      "bytes": 48685,
+      "previous_sha256": "313d643ea2b3238142efce564cccb93e24806a1ca76917e2c3dd709ac580529a"
+    },
+    {
+      "path": "production/nicemd-ai/index.txt",
+      "sha256": "0bf6b3b862f1c660da0a03fcddc4e3b40bc98610a3ab90177c579b0c6937bf37",
+      "bytes": 49211,
+      "previous_sha256": "9b8d98a168e71dc68693a3b3e15101a08939584b46ae1ffb3a8e062c0c6ba175"
+    },
+    {
+      "path": "production/nicemd-ai/__next._full.txt",
+      "sha256": "0bf6b3b862f1c660da0a03fcddc4e3b40bc98610a3ab90177c579b0c6937bf37",
+      "bytes": 49211,
+      "previous_sha256": "9b8d98a168e71dc68693a3b3e15101a08939584b46ae1ffb3a8e062c0c6ba175"
+    },
+    {
+      "path": "production/bits-hr-link/__next.$d$slug.__PAGE__.txt",
+      "sha256": "858ea86dc839aa0c50e458a2af3f555b6a5e76bff70d098e41465ca0ad48db2d",
+      "bytes": 53793,
+      "previous_sha256": "edbd871b6b0987d5ea0093ddb1f5063b523c1cf2e8e1a0273a4c818cb999cd6a"
+    },
+    {
+      "path": "production/bits-hr-link/index.txt",
+      "sha256": "a875f1115ef16fd90b6f5f3e2ea4e097fd369cc5c557187df5251bd8c35cda2f",
+      "bytes": 54322,
+      "previous_sha256": "74e84e93ab06b172ecd71b8384573e24e899ca551c78c1266dd0d9016035ce97"
+    },
+    {
+      "path": "production/bits-hr-link/__next._full.txt",
+      "sha256": "a875f1115ef16fd90b6f5f3e2ea4e097fd369cc5c557187df5251bd8c35cda2f",
+      "bytes": 54322,
+      "previous_sha256": "74e84e93ab06b172ecd71b8384573e24e899ca551c78c1266dd0d9016035ce97"
+    },
+    {
+      "path": "production/linkedin-personal-brand/__next.$d$slug.__PAGE__.txt",
+      "sha256": "6b917badde1f4678bcc8930f1514a6dddc3132e680e370d5bded05c0393a4477",
+      "bytes": 92898,
+      "previous_sha256": "291f2a196d2d19c744d3fc9c31ee26d55abac6995945fcccad19746422640df1"
+    },
+    {
+      "path": "production/linkedin-personal-brand/index.txt",
+      "sha256": "fb75b8ad61abd7b4f2e7ee24f9656983885edd9362dc90e120d95ba0deb0c715",
+      "bytes": 93438,
+      "previous_sha256": "cf4066240bbcef10412734151d951de79d8d4ecab222d0d6983f28cc1a800008"
+    },
+    {
+      "path": "production/linkedin-personal-brand/__next._full.txt",
+      "sha256": "fb75b8ad61abd7b4f2e7ee24f9656983885edd9362dc90e120d95ba0deb0c715",
+      "bytes": 93438,
+      "previous_sha256": "cf4066240bbcef10412734151d951de79d8d4ecab222d0d6983f28cc1a800008"
+    },
+    {
+      "path": "production/jules-capital-partners/__next.$d$slug.__PAGE__.txt",
+      "sha256": "5c63445cc07ca86b4995e52395dc06d93cf3ef08c2453c1bd9f0686ce452af18",
+      "bytes": 54411,
+      "previous_sha256": "ef001606333c58704dfa421414f259bee8db08f4d067c0c778fa026cae5b3090"
+    },
+    {
+      "path": "production/jules-capital-partners/index.txt",
+      "sha256": "86d592fcee5c7b8b02855582ccee680f9f789980a409c6790cb6b53125db5792",
+      "bytes": 54950,
+      "previous_sha256": "8ba2a40669df826cb1a34f98c62c19789a99a13bfb08ea857a1cf3510c219b2b"
+    },
+    {
+      "path": "production/jules-capital-partners/__next._full.txt",
+      "sha256": "86d592fcee5c7b8b02855582ccee680f9f789980a409c6790cb6b53125db5792",
+      "bytes": 54950,
+      "previous_sha256": "8ba2a40669df826cb1a34f98c62c19789a99a13bfb08ea857a1cf3510c219b2b"
+    },
+    {
+      "path": "production/intellignce/__next.$d$slug.__PAGE__.txt",
+      "sha256": "b1cecc0f410b1ee02ded26d0750f04d81c88bf5516cc04c2aa5e00fa3b3b7a6b",
+      "bytes": 60849,
+      "previous_sha256": "4053c54f87c0afdcdf5174cc27f9455ccf66c07ed3a3de839c0937ec7b2dcf3f"
+    },
+    {
+      "path": "production/intellignce/index.txt",
+      "sha256": "7ab84e279f00e94a1d27ffb1981a205efe1f474c155c0d0e30415bd7ae541546",
+      "bytes": 61377,
+      "previous_sha256": "0ef307153ec8d8f1fccb5786d6bbae9981d23dd2ff826fd01bcd8aa76cef8a06"
+    },
+    {
+      "path": "production/intellignce/__next._full.txt",
+      "sha256": "7ab84e279f00e94a1d27ffb1981a205efe1f474c155c0d0e30415bd7ae541546",
+      "bytes": 61377,
+      "previous_sha256": "0ef307153ec8d8f1fccb5786d6bbae9981d23dd2ff826fd01bcd8aa76cef8a06"
+    },
+    {
+      "path": "production/fakhr-e-qoum/__next.$d$slug.__PAGE__.txt",
+      "sha256": "50bab1976c9ee3a69bc6adf4e7b62f7d62054113a4e6e86f5c4e5baf076f13d8",
+      "bytes": 42075,
+      "previous_sha256": "b612a469f267a65ac1a16d35e9697597576e7faffe207d445883c38bffdb173d"
+    },
+    {
+      "path": "production/fakhr-e-qoum/index.txt",
+      "sha256": "382b4460092e02afb8387536320551765fbe75863e071409bd112949bd239f49",
+      "bytes": 42604,
+      "previous_sha256": "03ccbbf02a025b3c42ec5e61a316be015264b873978af99e111db553e3a48b25"
+    },
+    {
+      "path": "production/fakhr-e-qoum/__next._full.txt",
+      "sha256": "382b4460092e02afb8387536320551765fbe75863e071409bd112949bd239f49",
+      "bytes": 42604,
+      "previous_sha256": "03ccbbf02a025b3c42ec5e61a316be015264b873978af99e111db553e3a48b25"
+    },
+    {
+      "path": "production/accessorize-by-hl/__next.$d$slug.__PAGE__.txt",
+      "sha256": "e57a8a485eba76f9d45fc1aa1a4a037bc8c42b35bd4239d4609a3777402b248c",
+      "bytes": 64221,
+      "previous_sha256": "31af4bc28fcf933a64c4f973bea875ff1c92f726b16c969a62579316d34c4784"
+    },
+    {
+      "path": "production/accessorize-by-hl/index.txt",
+      "sha256": "a0bb5a82796a756cd40c23b99c1f7f85ac6f8a3091823770b0526eed6ad9b3de",
+      "bytes": 64755,
+      "previous_sha256": "a2cefc52d4b08afe1adf6afa158a30c841a57a8d06a29d10cfad6e858526153e"
+    },
+    {
+      "path": "production/accessorize-by-hl/__next._full.txt",
+      "sha256": "a0bb5a82796a756cd40c23b99c1f7f85ac6f8a3091823770b0526eed6ad9b3de",
+      "bytes": 64755,
+      "previous_sha256": "a2cefc52d4b08afe1adf6afa158a30c841a57a8d06a29d10cfad6e858526153e"
+    },
+    {
+      "path": "production/assets/hadi-hassan-social-preview-20261021.png",
+      "sha256": "139377b9f59f241ceae293668ce9646cc4a1e8d5e37e75a8aecd325cbff6e200",
+      "bytes": 967028,
+      "previous_sha256": null
+    }
+  ]
+}
