@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://hadi.intellignce.net/sitemap.xml
+Sitemap: https://hadi.intellignce.net/image-sitemap.xml

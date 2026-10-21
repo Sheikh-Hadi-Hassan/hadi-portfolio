@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "bytes": 288923,
+    "sha256": "98f83367a0bdfbe0db57e14a9771981eeacb69cb66f4be995de6bfa2ea164bdc",
+    "cache": "DYNAMIC",
+    "last_modified": "Wed, 21 Oct 2026 03:13:38 GMT"
+  },
+  {
+    "path": "/style.css",
+    "status": 200,
+    "bytes": 13236,
+    "sha256": "6ba35bb48d121375de474741163edf88d2ab8b71d615b46654f08002defbe3dc",
+    "cache": "MISS",
+    "last_modified": "Tue, 20 Oct 2026 21:59:25 GMT"
+  },
+  {
+    "path": "/style.css?v=7255e1f9fe90",
+    "status": 200,
+    "bytes": 13236,
+    "sha256": "6ba35bb48d121375de474741163edf88d2ab8b71d615b46654f08002defbe3dc",
+    "cache": "MISS",
+    "last_modified": "Tue, 20 Oct 2026 21:59:25 GMT"
+  }
+]

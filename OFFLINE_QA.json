@@ -1,0 +1,15 @@
+{
+  "included_files": 1768,
+  "html_pages": 22,
+  "checksum_verification": true,
+  "homepage_enquire_markup_absent": true,
+  "missing_local_references": [],
+  "javascript_syntax_failures": [],
+  "php_runtime_available": false,
+  "php_execution": "NOT RUN",
+  "calendar_email_crm_writes": "NOT PERFORMED",
+  "live_transaction_tests": "NOT PERFORMED",
+  "mjs_syntax_check": "PASS",
+  "secret_pattern_scan": "PASS",
+  "actual_shared_key_and_gemini_key_absent_from_included_text": true
+}

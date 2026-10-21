@@ -1,0 +1,36 @@
+1:"$Sreact.fragment"
+2:"static/chunks/584-e63ee3bf4551677f.js"
+3:"static/chunks/app/layout-9dd42b929010aa67.js"
+4:I[6703,["584","$2","177","$3"],"default"]
+5:I[7121,[],""]
+6:I[4581,[],""]
+7:I[2593,["584","$2","177","$3"],""]
+8:I[5669,["584","$2","177","$3"],"default"]
+9:I[3523,["584","$2","177","$3"],"default"]
+a:I[5479,["584","$2","177","$3"],"default"]
+d:I[1304,[],"ClientPageRoot"]
+e:"static/chunks/app/studio-preview/page-f9926d9fb045d804.js"
+f:I[1077,["388","$e"],"default"]
+12:I[484,[],"OutletBoundary"]
+13:"$Sreact.suspense"
+15:"ViewportBoundary"
+16:I[484,[],"$15"]
+18:"MetadataBoundary"
+19:I[484,[],"$18"]
+1b:I[7123,[],"default",1]
+:HL["/_next/static/css/08f5d43e80e50b5e.css","style"]
+:HL["/_next/static/css/68f6d1cfbfb36310.css","style"]
+:HL["/assets/intellignce-loader-logo.webp","image"]
+:HL["/assets/fonts/fonts.css?v=6f27ff554c4c","style"]
+:HL["/style.css?v=7255e1f9fe90","style"]
+:HL["/hero.css?v=fc5224e4a0ab","style"]
+:HL["/bayfi-port.css?v=6d79c3c27918","style"]
+:HL["/bayfi-brand.css?v=77564513d6ea","style"]
+c:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[["$","$Ld",null,{"Component":"$f","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@10","$@11"]}}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/68f6d1cfbfb36310.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]]}],"p":false,"v":null}}]]
+b:[["children",{"s":"studio-preview","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":null},"c":"$Qc"}]]
+0:{"P":null,"c":["","studio-preview",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/08f5d43e80e50b5e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"preload","as":"image","href":"/assets/intellignce-loader-logo.webp"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading','is-opening');var c=document.getElementById('site-content');if(c)c.inert=false},4000);"}}],["$","link",null,{"rel":"stylesheet","href":"/assets/fonts/fonts.css?v=6f27ff554c4c"}],["$","link",null,{"rel":"stylesheet","href":"/style.css?v=7255e1f9fe90"}],["$","link",null,{"rel":"stylesheet","href":"/hero.css?v=fc5224e4a0ab"}],["$","link",null,{"rel":"stylesheet","href":"/bayfi-port.css?v=6d79c3c27918"}],["$","link",null,{"rel":"stylesheet","href":"/bayfi-brand.css?v=77564513d6ea"}],["$","link",null,{"rel":"icon","href":"/assets/favicon.svg"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-navigation","href":"#main-content","children":"Skip to main content"}],["$","$L4",null,{}],["$","div",null,{"id":"site-content","children":["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","main",null,{"style":{"minHeight":"65vh","maxWidth":1000,"margin":"auto","padding":"100px 24px"},"children":[["$","p",null,{"children":"404 / PAGE NOT FOUND"}],["$","h1",null,{"style":{"fontSize":"clamp(44px,7vw,88px)","margin":"24px 0"},"children":["Let’s get you",["$","br",null,{}],"back to the work."]}],["$","p",null,{"style":{"maxWidth":480,"marginBottom":32},"children":"This page may have moved, or the address may be incomplete."}],["$","a",null,{"className":"button","href":"/archive/","children":"Explore the portfolio"}],["$","a",null,{"className":"small-link","style":{"marginLeft":24},"href":"/","children":"Back home"}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L7",null,{"src":"/script.js?v=8e7eba8b384b","strategy":"afterInteractive"}],["$","$L7",null,{"id":"intellignce-support-widget","src":"/intellignce-support/widget-v9.js?v=9401","strategy":"lazyOnload"}],["$","$L8",null,{}],["$","$L9",null,{}],["$","$La",null,{}]]}]]}]]}],"p":false,"v":null},"c":"$Qb"},"h":{"r":["$","$1","h",{"children":[null,["$","$L16",null,{"children":"$L17"}],["$","$L19",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$13",null,{"name":"Next.Metadata","children":"$L1a"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$1b",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"MS4Sj5PXj2glfw7ysH_1_"}
+10:{}
+11:"$c:0:1:d:r:props:children:0:props:serverProvidedParams:params"
+17:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+14:null
+1a:[["$","title","0",{"children":"Experience preview | Hadi Hassan"}],["$","meta","1",{"name":"description","content":"Email and private leads workspace design preview with sample data."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}]]
