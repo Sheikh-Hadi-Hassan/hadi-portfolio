@@ -19,3 +19,7 @@ Restore only modified files from recovery/verified-production-20261021 commit c4
 ## Additional supplied image variants
 
 Wide 1200 × 630 PNG remains the first Open Graph image, the Twitter large card image and the Google preferred-image hint. Square 1080 × 1080 JPEG and portrait 1080 × 1350 JPEG are derived from the two additional supplied PNGs, with no crop or artwork changes. They are optional second and third Open Graph images with correctly grouped dimensions, type and alt text, mirrored in navigation payloads. Platforms control selection and cropping; these are not platform-specific automatic routing rules. The portrait is also suitable as a separately attached social post asset. Deployment remains pending.
+
+## Favicon update
+
+Use supplied Intellignce-logo-22(1).webp as the favicon artwork, preserving its purple/white colors and transparency. Generated a six-size favicon.ico (16/32/48/64/128/256), PNG icons (32/192/512) and a 180px Apple touch icon. Updated HTML and navigation payload icon references. Original captured SVG remains untouched. Live deployment is still pending authenticated Hostinger access.
