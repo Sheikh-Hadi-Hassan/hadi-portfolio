@@ -15,3 +15,7 @@ First compare deployed files to the base production capture. If they differ, rec
 ## Rollback
 
 Restore only modified files from recovery/verified-production-20261021 commit c4097990bccabea53af798eaf80012c239d6a418. The added image can remain unused. No secrets or configuration changes are required.
+
+## Additional supplied image variants
+
+Wide 1200 × 630 PNG remains the first Open Graph image, the Twitter large card image and the Google preferred-image hint. Square 1080 × 1080 JPEG and portrait 1080 × 1350 JPEG are derived from the two additional supplied PNGs, with no crop or artwork changes. They are optional second and third Open Graph images with correctly grouped dimensions, type and alt text, mirrored in navigation payloads. Platforms control selection and cropping; these are not platform-specific automatic routing rules. The portrait is also suitable as a separately attached social post asset. Deployment remains pending.
