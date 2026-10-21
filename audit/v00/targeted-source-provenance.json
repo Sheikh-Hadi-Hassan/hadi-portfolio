@@ -1,0 +1,59 @@
+{
+  "scope": "Exact source locations, not repeated dist history sampling",
+  "objects": [
+    {
+      "git_blob": "f37e79f8ba19d639934838289c7330eb2f2799a1",
+      "source_path": "integrations/hostinger-runtime/intellignce-support/ask.php",
+      "sha256": "19c06e18547fce0850d25c9b3534f991b6117739486147fe4bf01c21090dca52",
+      "matches_production_path": null
+    },
+    {
+      "git_blob": "0d9556b63ba0cb7cf853f231f7e8bce12090d7c4",
+      "source_path": "public/intellignce-support/widget-v9.js",
+      "sha256": "2fcc41e8568ac1f9e166ef08b8db71e067f36786210a0b42cc7d66eaafd37cf2",
+      "matches_production_path": null
+    },
+    {
+      "git_blob": "e4549fb1d04ae2281ec5b2056e90d1fac4335ece",
+      "source_path": "public/style.css",
+      "sha256": "7255e1f9fe90310502abca9c422d82cc135bf0dcba5aa574650513fd807a8b33",
+      "matches_production_path": null
+    },
+    {
+      "git_blob": "ab59421f77f3fac29e3c5264a7ea6901b404b983",
+      "source_path": "public/intellignce-support/widget-v9.js",
+      "sha256": "9bdf9d116fe4d853a63f038a49dd28e64f6398b8b0087d7b5f85bd4bcc5ed767",
+      "matches_production_path": null
+    },
+    {
+      "git_blob": "e30cd3a46ddaf74df958c5a5b98b68d64d19968d",
+      "source_path": "public/intellignce-support/widget-v9.js",
+      "sha256": "3bfe2b85a618f1c730aede50a3ecac54c498501e75635ee8b49543ab804c9693",
+      "matches_production_path": null
+    },
+    {
+      "git_blob": "4d0ae15c2d2fbc7c51fa2d592515220316fd034d",
+      "source_path": "public/intellignce-support/widget-v9.js",
+      "sha256": "2a260633277076fbfdec61de9eeb8e725f310ce76f8d4d864a0b5e2ee02413de",
+      "matches_production_path": null
+    },
+    {
+      "git_blob": "9336ff242d0f58ff6490b4786e6d6e8a307b89a4",
+      "source_path": "src/styles/site.css",
+      "sha256": "cf220fd3aa64ce09357a9467a993b68072034a4f7e9446ead11ad7a7d84623a3",
+      "matches_production_path": null
+    },
+    {
+      "git_blob": "3f63e96d869a34f94abf11f8b653719a51dea96d",
+      "source_path": "src/styles/site.css",
+      "sha256": "ee52a4917e449484b2a009d671962ec32f61839d0b2a44a5ab4def0795f35b4c",
+      "matches_production_path": null
+    },
+    {
+      "git_blob": "185b93eca29bbe2261de09a2515da9852806d9dc",
+      "source_path": "src/styles/site.css",
+      "sha256": "7a074c79ac06af2efa8e6a27949fd635d9538f5dacd8afb711221c27dad896a8",
+      "matches_production_path": null
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "release_sha256": "52e8b5b4bb9b4d6fcb40c79ae049c42b9ce6b8a1051b268d7d6fa5089a209d88",
+  "production_sha256": "98f83367a0bdfbe0db57e14a9771981eeacb69cb66f4be995de6bfa2ea164bdc",
+  "release_has_enquiry": true,
+  "production_has_enquiry": false,
+  "release_has_appbar": false,
+  "production_has_appbar": false
+}
