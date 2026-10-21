@@ -1,0 +1,22 @@
+[
+  {
+    "file": "integrations/calendar-v8/Code.gs",
+    "sha256": "32a80a8b781992a306435e65597b0993bbe936d5aae3bef879b6fe56e42dad6c",
+    "bytes": 24215
+  },
+  {
+    "file": "integrations/calendar-v8/appsscript.json",
+    "sha256": "4351152638ec13623fd7d37d6ae209b07fceb6898268816d61d1f6d5105f9ea4",
+    "bytes": 400
+  },
+  {
+    "file": "integrations/leads/Code.gs",
+    "sha256": "32a80a8b781992a306435e65597b0993bbe936d5aae3bef879b6fe56e42dad6c",
+    "bytes": 24215
+  },
+  {
+    "file": "integrations/leads/appsscript.json",
+    "sha256": "98d78e1a69cf1b55a0dbf18ea89e07008ae668634ea89752487ba3775de40287",
+    "bytes": 349
+  }
+]
