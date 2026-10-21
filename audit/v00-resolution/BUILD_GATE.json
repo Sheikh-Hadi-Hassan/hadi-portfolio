@@ -1,0 +1,13 @@
+{
+  "checked_at_utc": "2026-10-21T16:40:09.789657+00:00",
+  "previous_install_error": "EAI_AGAIN registry.npmjs.org and ENOTCACHED offline",
+  "retry_condition": "Materially changed DNS/registry or populated exact lockfile cache required",
+  "dns_probe": {
+    "error_type": "gaierror",
+    "message": "[Errno -3] Temporary failure in name resolution"
+  },
+  "dependency_install_retried": false,
+  "reason": "DNS remains unavailable; no new cache was supplied; do not repeat failed installs/build.",
+  "full_build": "BLOCKED",
+  "packaging": "NOT EXECUTED"
+}

@@ -1,0 +1,51 @@
+{
+  "scope": "Only missing patch provenance and cancellation-contract evidence; prior classification/history sampling reused",
+  "patchSearch": {
+    "queries": [
+      "appbar.css",
+      "syncChatViewport",
+      "ask(1).php",
+      "historical Version7 fingerprint",
+      "navigation patch",
+      "Sera mobile"
+    ],
+    "results": "No indexed source/patch hits. Zero results do not prove no original records exist."
+  },
+  "targetedRecords": [
+    {
+      "record": "Original interrupted-transfer transcript, lines1–55 and525–542",
+      "finding": "Confirms patched homepage/appbar were already present in File Manager and capture; contains no patch commands or editable revision. Says fresh Script editor access redirected to public documentation."
+    },
+    {
+      "record": "Pending development notes, lines40–64",
+      "finding": "Cancellation/rescheduling and synchronization are requested acceptance criteria, not proof of deployed implementation."
+    }
+  ],
+  "candidateCancellation": {
+    "source": "66e3e1df67331a92b2966dcab9724e70c8f11d90:integrations/calendar-v8/Code.gs",
+    "functions": [
+      "bookingResult_",
+      "status_",
+      "processOutbox",
+      "finishJob_"
+    ],
+    "finding": "Queued jobs can observe cancelled status; completed jobs are deleted. No persistent completed-booking cancellation sweep/watch is implemented in this candidate. status_ returns cancelled without updating the CRM row.",
+    "productionApplicability": "Unverified; actual immutable deployed source unavailable"
+  },
+  "actualDeploymentAccess": {
+    "projectId": "NOT RECOVERED",
+    "activeVersionMapping": "BLOCKED",
+    "version7Source": "BLOCKED",
+    "logs": "UNAVAILABLE THROUGH EXPOSED SUPPORTED ACCESS; retention not determined",
+    "newCapabilityCheck": "No Apps Script source/deployment/execution or Calendar audit tool exposed; previously completed access failures reused"
+  },
+  "historicalIncident": {
+    "matchingEventExists": true,
+    "lastVerifiedStatus": "cancelled",
+    "verification": "Inherited authoritative read in parent evidence; no repeated event search or read claimed",
+    "actor": null,
+    "cancellationTimestamp": null,
+    "statusAtConfirmation": null
+  },
+  "liveMutations": 0
+}

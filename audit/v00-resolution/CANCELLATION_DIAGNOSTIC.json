@@ -1,0 +1,18 @@
+{
+  "scope": "Recovered candidate only; VM mocks; no network, mail, Calendar or CRM action",
+  "tests": [
+    {
+      "case": "Cancellation after completed job deletion",
+      "result": "PASS diagnostic: CRM stays Booked because no job remains"
+    },
+    {
+      "case": "Cancellation while job still queued",
+      "result": "PASS diagnostic: CRM becomes Cancelled"
+    },
+    {
+      "case": "Status read sees cancellation",
+      "result": "PASS diagnostic: returns CANCELLED without reconciling CRM row"
+    }
+  ],
+  "productionConclusion": "Unknown until actual deployed Version 7 is verified"
+}

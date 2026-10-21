@@ -1,0 +1,86 @@
+[
+  {
+    "production_path": "appbar.css",
+    "production_sha256": "86b03fb5d9e47e6466503c9b178da3371ee66fd8d182db950d0955e443fa9b01",
+    "release_sha256": null,
+    "proposed_source_path": "public/appbar.css",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "style.css",
+    "production_sha256": "6ba35bb48d121375de474741163edf88d2ab8b71d615b46654f08002defbe3dc",
+    "release_sha256": "7255e1f9fe90310502abca9c422d82cc135bf0dcba5aa574650513fd807a8b33",
+    "proposed_source_path": "src/styles/site.css (preserved) + new src/styles/appbar.css; scripts/prepare-next.py generates concatenation",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "index.html",
+    "production_sha256": "98f83367a0bdfbe0db57e14a9771981eeacb69cb66f4be995de6bfa2ea164bdc",
+    "release_sha256": "52e8b5b4bb9b4d6fcb40c79ae049c42b9ce6b8a1051b268d7d6fa5089a209d88",
+    "proposed_source_path": "src/components/navigation.html",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "intellignce-support/widget-v9.js",
+    "production_sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+    "release_sha256": "2fcc41e8568ac1f9e166ef08b8db71e067f36786210a0b42cc7d66eaafd37cf2",
+    "proposed_source_path": "public/intellignce-support/widget-v9.js",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "intellignce-support/ask.php",
+    "production_sha256": "8f35180ba7267d6f8413a3add5b7c6626099f5b296c80f70762b989ab772e270",
+    "release_sha256": "19c06e18547fce0850d25c9b3534f991b6117739486147fe4bf01c21090dca52",
+    "proposed_source_path": "integrations/hostinger-runtime/intellignce-support/ask.php",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "intellignce-support/widget-v4.1.js",
+    "production_sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+    "release_sha256": "2fcc41e8568ac1f9e166ef08b8db71e067f36786210a0b42cc7d66eaafd37cf2",
+    "proposed_source_path": "public/intellignce-support/widget-v4.1.js",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "intellignce-support/widget-v5.js",
+    "production_sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+    "release_sha256": "2fcc41e8568ac1f9e166ef08b8db71e067f36786210a0b42cc7d66eaafd37cf2",
+    "proposed_source_path": "public/intellignce-support/widget-v5.js",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "intellignce-support/widget-v6.js",
+    "production_sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+    "release_sha256": "2fcc41e8568ac1f9e166ef08b8db71e067f36786210a0b42cc7d66eaafd37cf2",
+    "proposed_source_path": "public/intellignce-support/widget-v6.js",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "intellignce-support/ask(1).php",
+    "production_sha256": "19c06e18547fce0850d25c9b3534f991b6117739486147fe4bf01c21090dca52",
+    "release_sha256": null,
+    "proposed_source_path": "Owner decision: non-web audit archive OR explicitly retained integrations/hostinger-runtime/intellignce-support/ask(1).php",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "intellignce-support/widget-v8.js",
+    "production_sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+    "release_sha256": "2fcc41e8568ac1f9e166ef08b8db71e067f36786210a0b42cc7d66eaafd37cf2",
+    "proposed_source_path": "public/intellignce-support/widget-v8.js",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "intellignce-support/widget.js",
+    "production_sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+    "release_sha256": "2fcc41e8568ac1f9e166ef08b8db71e067f36786210a0b42cc7d66eaafd37cf2",
+    "proposed_source_path": "public/intellignce-support/widget.js",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  },
+  {
+    "production_path": "intellignce-support/widget-v7.js",
+    "production_sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+    "release_sha256": "2fcc41e8568ac1f9e166ef08b8db71e067f36786210a0b42cc7d66eaafd37cf2",
+    "proposed_source_path": "public/intellignce-support/widget-v7.js",
+    "status": "PROPOSAL ONLY \u2014 not applied"
+  }
+]
