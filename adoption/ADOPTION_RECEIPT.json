@@ -1,0 +1,178 @@
+{
+  "adoption_commit": "9fc62ae286f4e3d9946dc507d6b6c83efb7bdd52",
+  "parent": "66e3e1df67331a92b2966dcab9724e70c8f11d90",
+  "label": "owner-adopted captured-production baseline",
+  "changed_files": [
+    {
+      "path": "ADOPTION-MANIFEST.json",
+      "sha256": "69d5a480a99929be63dd1b2c6e7686b28ca1295904625915f464dfb71704743f",
+      "bytes": 2363
+    },
+    {
+      "path": "BUILD_HANDOFF.md",
+      "sha256": "caa5047efd2af760b00efc3ca71f9981ae0c98a73b01c984dd1dc5c2bac4064f",
+      "bytes": 4002
+    },
+    {
+      "path": "RELEASE-STATUS.md",
+      "sha256": "5df553167acb4f916a773035d1951eabb608a95a2ef01539842b5bf0ad9cd832",
+      "bytes": 253
+    },
+    {
+      "path": "audit/adoption/OWNER_EXPORT_CHECKLIST.md",
+      "sha256": "ac3e08d2d281c28c58bf62c2821d0b546e087c00820e01397205140221bf1b2d",
+      "bytes": 4644
+    },
+    {
+      "path": "audit/adoption/SOURCE_TESTS.json",
+      "sha256": "fdaaf316122baf80d234f3c5f65964e712ddbdfe8ea858257163d1ab2061d3d8",
+      "bytes": 868
+    },
+    {
+      "path": "integrations/hostinger-runtime/intellignce-support/ask.php",
+      "sha256": "8f35180ba7267d6f8413a3add5b7c6626099f5b296c80f70762b989ab772e270",
+      "bytes": 8720
+    },
+    {
+      "path": "public/appbar.css",
+      "sha256": "86b03fb5d9e47e6466503c9b178da3371ee66fd8d182db950d0955e443fa9b01",
+      "bytes": 3079
+    },
+    {
+      "path": "public/intellignce-support/widget-v4.1.js",
+      "sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+      "bytes": 197513
+    },
+    {
+      "path": "public/intellignce-support/widget-v5.js",
+      "sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+      "bytes": 197513
+    },
+    {
+      "path": "public/intellignce-support/widget-v6.js",
+      "sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+      "bytes": 197513
+    },
+    {
+      "path": "public/intellignce-support/widget-v7.js",
+      "sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+      "bytes": 197513
+    },
+    {
+      "path": "public/intellignce-support/widget-v8.js",
+      "sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+      "bytes": 197513
+    },
+    {
+      "path": "public/intellignce-support/widget-v9.js",
+      "sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+      "bytes": 197513
+    },
+    {
+      "path": "public/intellignce-support/widget.js",
+      "sha256": "942a768afe2309a2dd3cf11fe939fdf3ad4622b499e5cd8f429ae5d911058b0f",
+      "bytes": 197513
+    },
+    {
+      "path": "public/style.css",
+      "sha256": "6ba35bb48d121375de474741163edf88d2ab8b71d615b46654f08002defbe3dc",
+      "bytes": 13236
+    },
+    {
+      "path": "recovery/README.md",
+      "sha256": "6f72454df8eed8bce060e10e78cd9167fa614d33a4dd167b74dd07c804057168",
+      "bytes": 863
+    },
+    {
+      "path": "recovery/non-web/ask(1).php",
+      "sha256": "19c06e18547fce0850d25c9b3534f991b6117739486147fe4bf01c21090dca52",
+      "bytes": 3609
+    },
+    {
+      "path": "scripts/generate-adopted-runtime.py",
+      "sha256": "58d24db2d7e26b87e19aefe37abfc2f441f4afe5b27e5617e08c77c04cbf81d9",
+      "bytes": 753
+    },
+    {
+      "path": "scripts/package-hostinger.py",
+      "sha256": "953a6eaf643b5dc8bc36ee036dc1dcd4944aa13d0d4247d610d241b8067a70ab",
+      "bytes": 3808
+    },
+    {
+      "path": "scripts/prepare-next.py",
+      "sha256": "873658ab4d54afe5c81264d5be61f4981137a4fb0903ee142b666f7e38e73268",
+      "bytes": 1840
+    },
+    {
+      "path": "scripts/verify-adoption.py",
+      "sha256": "02239ffc9590d3caf6fbb4de094e9109fbb82df245d0797a950efe6ffd09686d",
+      "bytes": 1313
+    },
+    {
+      "path": "src/components/navigation.html",
+      "sha256": "576cd5369e8a7a739c8c7dfa014979c92e76819f377cd5539e296b0ab98fffb4",
+      "bytes": 12058
+    },
+    {
+      "path": "src/styles/appbar.css",
+      "sha256": "86b03fb5d9e47e6466503c9b178da3371ee66fd8d182db950d0955e443fa9b01",
+      "bytes": 3079
+    },
+    {
+      "path": "tests/adoption-static.py",
+      "sha256": "9731a443ef3dfb94de905f50382bbb1a592065c320b3e12999c612d53c497cde",
+      "bytes": 2467
+    },
+    {
+      "path": "tests/php-adoption.py",
+      "sha256": "2794aa569a5d3955f5dd1656c9f603c24005bf959fe654e0d0f8a2f3a3d44d07",
+      "bytes": 1819
+    }
+  ],
+  "bundle_sha256": "deb3f1abe6e6b7215e69e674a3765a61121ef704d7fae305c8b70efb68146b82",
+  "bundle_requires": "66e3e1df67331a92b2966dcab9724e70c8f11d90",
+  "github_implementation_ref": "BLOCKED: parent absent from GitHub and Git push unauthenticated",
+  "static_tests": {
+    "scope": "offline source checks only; no Next/hydration/provider certification",
+    "results": [
+      {
+        "test": "adopted fingerprints and archive separation",
+        "status": "PASS"
+      },
+      {
+        "test": "generation idempotent across two runs",
+        "status": "PASS"
+      },
+      {
+        "test": "navigation changes only identified Enquire anchor; other CTAs byte-preserved",
+        "status": "PASS"
+      },
+      {
+        "test": "widget syntax",
+        "status": "PASS"
+      },
+      {
+        "test": "hero preserved",
+        "status": "PASS"
+      },
+      {
+        "test": "booking, viewport and dependency inputs unchanged",
+        "status": "PASS"
+      },
+      {
+        "test": "PHP syntax and isolated configuration/failure execution",
+        "status": "BLOCKED",
+        "reason": "PHP executable unavailable; no PHP execution or provider requests attempted"
+      }
+    ]
+  },
+  "template_generation": {
+    "pages": 17,
+    "removed_anchor_absent": 17,
+    "scope": "not Next or Flight"
+  },
+  "full_build": "BLOCKED registry DNS unchanged; no install retry",
+  "package": "not produced",
+  "php": "BLOCKED executable unavailable",
+  "php_harness": "Four isolated config/method/origin/fallback cases implemented; 0 executed (PHP absent)"
+}
