@@ -16,7 +16,7 @@ const nebulica = localFont({
   display: "swap",
 });
 
-const siteUrl = "https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site";
+const siteUrl = "https://hadi.intellignce.net";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
