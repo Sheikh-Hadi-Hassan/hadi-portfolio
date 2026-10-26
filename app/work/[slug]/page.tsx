@@ -8,8 +8,8 @@ export function generateStaticParams() { return projects.map(({ slug }) => ({ sl
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const project = getProject((await params).slug);
   if (!project) return {};
-  const url = `https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site/work/${project.slug}`;
-  const image = `https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site${project.cover.src}`;
+  const url = `https://hadi.intellignce.net/work/${project.slug}`;
+  const image = `https://hadi.intellignce.net${project.cover.src}`;
   return {
     title: `${project.title} Case Study`,
     description: project.summary,
@@ -24,16 +24,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   if (!project) notFound();
   const currentIndex = projects.findIndex((item) => item.slug === project.slug);
   const next = projects[(currentIndex + 1) % projects.length];
-  const projectUrl = `https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site/work/${project.slug}`;
+  const projectUrl = `https://hadi.intellignce.net/work/${project.slug}`;
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: project.title,
     url: projectUrl,
     description: project.summary,
-    image: `https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site${project.cover.src}`,
+    image: `https://hadi.intellignce.net${project.cover.src}`,
     genre: project.category,
-    creator: { "@type": "Person", "@id": "https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site/#hadi-hassan", name: "Hadi Hassan" },
+    creator: { "@type": "Person", "@id": "https://hadi.intellignce.net/#hadi-hassan", name: "Hadi Hassan" },
     sameAs: [project.sourceUrl, project.secondaryUrl].filter(Boolean),
   };
 
