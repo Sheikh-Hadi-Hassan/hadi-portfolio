@@ -20,8 +20,8 @@ const siteUrl = "https://hadi.intellignce.net";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Hadi Hassan — Creative Director & Founder of Intellignce", template: "%s — Hadi Hassan" },
-  description: "Hadi Hassan is a Pakistan-based Creative Director, product designer, and Founder of Intellignce. Explore brand identity, digital product, e-commerce, SaaS, and AI business-system case studies.",
+  title: { default: "Hadi Hassan | Creative Director & Brand Identity Designer", template: "%s | Hadi Hassan" },
+  description: "Hadi Hassan is a Pakistan-based Creative Director and Brand Identity Designer working with businesses worldwide. Explore brand strategy, visual identity, rebranding, creative campaigns, digital products, and selected case studies.",
   keywords: ["Hadi Hassan", "Creative Director Pakistan", "Brand identity designer Pakistan", "Product designer Pakistan", "UI UX designer Lahore", "E-commerce designer and developer", "SaaS product designer", "Intellignce", "FLOW Business OS", "AI business systems", "Next.js developer Pakistan"],
   authors: [{ name: "Hadi Hassan", url: siteUrl }],
   creator: "Hadi Hassan",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   category: "Design and Technology",
   alternates: { canonical: siteUrl },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
-  openGraph: { title: "Hadi Hassan — Ideas into Brands, Products & Systems", description: "Creative direction across brand identity, digital products, commerce, software, and AI business systems.", type: "profile", url: siteUrl, siteName: "Hadi Hassan", locale: "en_PK", firstName: "Hadi", lastName: "Hassan", images: [{ url: "/images/hadi-halftone-hero.webp", width: 2048, height: 1190, alt: "Hadi Hassan, Creative Director and Founder of Intellignce" }] },
-  twitter: { card: "summary_large_image", title: "Hadi Hassan — Creative Director & Founder", description: "Ideas into brands, products, and intelligent business systems.", images: ["/images/hadi-halftone-hero.webp"] },
+  openGraph: { title: "Hadi Hassan | Creative Director & Brand Identity Designer", description: "Explore Hadi Hassan’s brand identity, rebranding, creative direction, campaign design, and digital product portfolio. Based in Pakistan, working worldwide.", type: "profile", url: siteUrl, siteName: "Hadi Hassan", locale: "en_PK", firstName: "Hadi", lastName: "Hassan", images: [{ url: "/images/hadi-halftone-hero.webp", width: 2048, height: 1190, alt: "Hadi Hassan, Creative Director and Founder of Intellignce" }] },
+  twitter: { card: "summary_large_image", title: "Hadi Hassan | Creative Director & Brand Identity Designer", description: "Brand identity, rebranding, creative direction, campaigns, and digital product work by Hadi Hassan.", images: ["/images/hadi-halftone-hero.webp"] },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -56,7 +56,7 @@ const structuredData = {
       alternateName: "Sheikh Hadi Hassan",
       url: siteUrl,
       image: `${siteUrl}/images/hadi-hero-clear.webp`,
-      jobTitle: ["Creative Director", "Product Designer", "Founder of Intellignce"],
+      jobTitle: ["Creative Director", "Brand Identity Designer", "Product Designer", "Founder of Intellignce"],
       email: "mailto:sheikh.hadi.hassan@gmail.com",
       homeLocation: { "@type": "Country", name: "Pakistan" },
       worksFor: { "@type": "Organization", name: "Intellignce", url: "https://intellignce.net/" },
