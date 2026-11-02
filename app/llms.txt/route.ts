@@ -1,6 +1,6 @@
 import { projects, services } from "@/lib/content";
 
-const base = "https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site";
+const base = (process.env.NEXT_PUBLIC_SITE_URL || "https://hadi.intellignce.net").replace(/\/$/, "");
 
 export function GET() {
   const content = [
@@ -9,6 +9,8 @@ export function GET() {
     "> Pakistan-based Creative Director, product designer, and Founder of Intellignce. Hadi works across brand identity, digital products, e-commerce, software, and AI-assisted business systems.",
     "",
     "## Primary pages",
+    "- Resume: " + base + "/resume",
+    "- Archive: " + base + "/archive",
     "- Portfolio: " + base + "/work",
     "- Story: " + base + "/about",
     "- Systems Lab: " + base + "/systems-lab",
