@@ -33,18 +33,11 @@ jobs:
       - name: Install Python build dependency
         run: python -m pip install Pillow
 
-      - name: Checkout preserved production snapshot for asset hydration
+      - name: Checkout preserved production snapshot for parity evidence
         uses: actions/checkout@v4
         with:
           ref: recovery/verified-production-20261021
           path: production-snapshot
-
-      - name: Hydrate preserved production assets
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p public/assets
-          cp -a production-snapshot/production/assets/. public/assets/
 
       - name: Run source behavior tests
         shell: bash
@@ -63,7 +56,7 @@ jobs:
           python3 integrations/sera-v9-source/build.py
           cmp integrations/sera-v9-source/intellignce-support/widget-v9.js public/intellignce-support/widget-v9.js
 
-      - name: Build production-origin output
+      - name: Build production-origin output from repository source only
         env:
           SITE_URL: https://hadi.intellignce.net
           NEXT_TELEMETRY_DISABLED: '1'
