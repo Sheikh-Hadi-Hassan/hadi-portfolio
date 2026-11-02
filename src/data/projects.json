@@ -2641,12 +2641,12 @@
       "Media and editorial artwork applications"
     ],
     "link": "https://www.behance.net/gallery/200947393/The-Al-Faraj-Media-Logo-A-Case-Study",
-    "hero": "/assets/al-faraj-01.png",
+    "hero": "/assets/al-faraj-01-lossless.webp",
     "hero_width": 2048,
     "hero_height": 1364,
     "images": [
       {
-        "src": "/assets/al-faraj-01.png",
+        "src": "/assets/al-faraj-01-lossless.webp",
         "width": 2048,
         "height": 1364,
         "alt": "Al Faraj Media — Al Faraj Media emblem presentation"
@@ -2676,7 +2676,7 @@
         "alt": "Al Faraj Media — editorial and social media artwork"
       },
       {
-        "src": "/assets/al-faraj-07.png",
+        "src": "/assets/al-faraj-07-lossless.webp",
         "width": 2048,
         "height": 1364,
         "alt": "Al Faraj Media — poster and visual storytelling applications"
@@ -2704,7 +2704,7 @@
         "layout": "guidelines",
         "copy": "The emblem takes inspiration from the calligraphy engraved in Masjid Jamkaran’s dome and its minaret. These references connect the organisation’s educational mission with Islamic visual tradition. Simplified forms keep the symbol adaptable across different sizes and media.",
         "images": [
-          "/assets/al-faraj-01.png",
+          "/assets/al-faraj-01-lossless.webp",
           "/assets/al-faraj-03.webp"
         ]
       },
@@ -2727,7 +2727,7 @@
         "copy": "Editorial compositions and poster artwork demonstrate a broader visual voice, combining imagery, typography and cultural references across communication formats.",
         "images": [
           "/assets/al-faraj-06.webp",
-          "/assets/al-faraj-07.png"
+          "/assets/al-faraj-07-lossless.webp"
         ]
       }
     ]
