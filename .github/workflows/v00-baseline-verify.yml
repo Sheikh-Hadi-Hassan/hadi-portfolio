@@ -44,6 +44,7 @@ jobs:
         run: |
           set -euo pipefail
           npm test
+          python3 tests/source-assets.py
           for test_file in tests/*.mjs tests/*.cjs tests/support/*.mjs; do
             echo "Running ${test_file}"
             node "${test_file}"
