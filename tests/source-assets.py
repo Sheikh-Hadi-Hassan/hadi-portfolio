@@ -6,7 +6,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOTS = [ROOT / "src"]
 TEXT_SUFFIXES = {".html", ".json", ".css", ".js", ".jsx", ".mjs", ".cjs"}
-ASSET_RE = re.compile(r"/assets/[A-Za-z0-9._\-/]+")
+ASSET_RE = re.compile(r"/assets/[A-Za-z0-9._\-/]+\.(?:webp|png|jpe?g|svg|mp4|webm|woff2?|ttf|otf|css)", re.I)
 
 refs = {}
 for source_root in SOURCE_ROOTS:
