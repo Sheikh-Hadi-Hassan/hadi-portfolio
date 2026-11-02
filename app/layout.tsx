@@ -16,7 +16,7 @@ const nebulica = localFont({
   display: "swap",
 });
 
-const siteUrl = "https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site";
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://hadi.intellignce.net").replace(/\/$/, "");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   creator: "Hadi Hassan",
   publisher: "Intellignce",
   category: "Design and Technology",
-  alternates: { canonical: siteUrl },
+  alternates: { canonical: "/" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   openGraph: { title: "Hadi Hassan — Ideas into Brands, Products & Systems", description: "Creative direction across brand identity, digital products, commerce, software, and AI business systems.", type: "profile", url: siteUrl, siteName: "Hadi Hassan", locale: "en_PK", firstName: "Hadi", lastName: "Hassan", images: [{ url: "/images/hadi-halftone-hero.webp", width: 2048, height: 1190, alt: "Hadi Hassan, Creative Director and Founder of Intellignce" }] },
   twitter: { card: "summary_large_image", title: "Hadi Hassan — Creative Director & Founder", description: "Ideas into brands, products, and intelligent business systems.", images: ["/images/hadi-halftone-hero.webp"] },

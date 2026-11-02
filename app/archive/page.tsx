@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ArchivePage() {
   const count = projects.length + portfolioGroups.reduce((total, group) => total + group.projects.length, 0);
   return (
-    <main className="paper" style={{ maxWidth: 1200, margin: "auto", padding: "clamp(2rem, 7vw, 7rem)" }}>
+    <div className="paper" style={{ maxWidth: 1200, margin: "auto", padding: "clamp(2rem, 7vw, 7rem)" }}>
       <p className="eyebrow">Project directory / Archive</p>
       <h1>Work, beyond the highlights.</h1>
       <p>{count} documented entries across selected case studies and grouped project records. The archive distinguishes full stories from external references.</p>
@@ -37,6 +37,6 @@ export default function ArchivePage() {
         </section>
       ))}
       <p><Link href="/resume">View resume →</Link> · <Link href="/contact">Discuss a project →</Link></p>
-    </main>
+    </div>
   );
 }

@@ -17,7 +17,7 @@ const work = [
 ];
 
 export default function ResumePage() {
-  return <main className="paper" style={{padding:"clamp(2rem,7vw,7rem)",maxWidth:1200,margin:"auto"}}>
+  return <div className="paper" style={{padding:"clamp(2rem,7vw,7rem)",maxWidth:1200,margin:"auto"}}>
     <p className="eyebrow">Experience / Resume</p>
     <h1>Hadi Hassan</h1>
     <p>Senior Creative Designer · Brand Identity · Creative Direction</p>
@@ -41,5 +41,5 @@ export default function ResumePage() {
     <p>BS Information Technology, PUCIT (2018–2021). Diploma of Associate Engineering in IT (2014–2017).</p>
     <p><strong>PDF download:</strong> The verified resume PDF still needs to be uploaded to this site's public assets. This page does not present a nonworking download button.</p>
     <p><Link href="/archive">Explore the complete archive →</Link></p>
-  </main>;
+  </div>;
 }

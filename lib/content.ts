@@ -48,7 +48,10 @@ export const profile = {
 };
 
 export const navigation = [
+  { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
+  { label: "Archive", href: "/archive" },
+  { label: "Resume", href: "/resume" },
   { label: "Story", href: "/about" },
   { label: "Systems Lab", href: "/systems-lab" },
   { label: "FLOW", href: "/flow" },
