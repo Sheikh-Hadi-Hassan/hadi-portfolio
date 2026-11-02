@@ -6,7 +6,7 @@ from urllib.parse import urlsplit
 root=Path(__file__).resolve().parents[1]
 class Document(HTMLParser):
  def __init__(self):
-  super().__init__();self.meta={};self.canonicals=[];self.h1=0;self.title='';self.in_title=False;self.in_schema=False;self.schema=[];self.buf='';self.images=[]
+  super().__init__();self.meta={};self.canonicals=[];self.h1=0;self.title='';self.in_title=False;self.in_schema=False;self.schema=[];self.buf='';self.images=[];self.links=[];self.text=[]
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
   if tag=='meta':self.meta[a.get('name',a.get('property'))]=a.get('content')
@@ -15,9 +15,11 @@ class Document(HTMLParser):
   if tag=='title':self.in_title=True
   if tag=='script' and a.get('type')=='application/ld+json':self.in_schema=True;self.buf=''
   if tag=='img':self.images.append(a)
+  if tag=='a' and a.get('href'):self.links.append(a['href'])
  def handle_data(self,d):
   if self.in_title:self.title+=d
   if self.in_schema:self.buf+=d
+  if d.strip():self.text.append(d.strip())
  def handle_endtag(self,tag):
   if tag=='title':self.in_title=False
   if tag=='script' and self.in_schema:self.schema.append(json.loads(self.buf));self.in_schema=False
@@ -27,8 +29,10 @@ for slug,page in pages.items():
  doc=Document();doc.feed(path.read_text())
  assert doc.h1==1,(slug,'expected one h1',doc.h1)
  assert doc.title==page['title'] and 'Hadi Hassan' in doc.title,(slug,doc.title)
+ assert 35<=len(doc.title)<=65,(slug,'title length',len(doc.title),doc.title)
  assert doc.title not in titles,(slug,'duplicate title');titles.add(doc.title)
  assert doc.meta['description']==page['description'] and doc.meta['description'] not in descriptions,slug
+ assert 120<=len(doc.meta['description'])<=170,(slug,'description length',len(doc.meta['description']))
  descriptions.add(doc.meta['description'])
  assert doc.canonicals==[page['canonical']],(slug,doc.canonicals)
  assert doc.meta['og:url']==page['canonical'] and doc.meta['og:title']==doc.title,slug
@@ -39,6 +43,14 @@ for slug,page in pages.items():
  if slug!='home':assert any(x['@type']=='BreadcrumbList' for x in graph),slug
  for img in doc.images:
   assert 'alt' in img,(slug,'missing alt')
+ if slug not in ('home','archive'):
+  words=' '.join(doc.text).split();assert len(words)>=120,(slug,'thin content',len(words))
+ for href in doc.links:
+  if href.startswith('/') and not href.startswith('//'):
+   clean=href.split('#',1)[0].split('?',1)[0]
+   if not clean:continue
+   target=root/'out'/('index.html' if clean=='/' else clean.strip('/')+'/index.html')
+   assert target.exists(),(slug,'broken internal link',href)
  image=urlsplit(page['image']).path;assert (root/'public'/image.lstrip('/')).exists(),(slug,'social image missing')
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 sitemap={x.text for x in ET.parse(root/'out/sitemap.xml').findall('.//s:loc',ns)}
