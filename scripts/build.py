@@ -23,7 +23,7 @@ profile_values['social_links']=''.join(f'<a href="{esc(item["url"])}" target="_b
 social_marks={'LinkedIn':'in','Instagram':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>','Facebook':'f','Behance':'Bē'}
 profile_values['footer_socials']=''.join(f'<a href="{esc(item["url"])}" class="v2ft-bottom-social" target="_blank" rel="noopener noreferrer" aria-label="{esc(item["label"])}"><span aria-hidden="true">{social_marks[item["label"]]}</span></a>' for item in profile['socials'])
 head=read(Path('components/head.html'));navigation=render(read(Path('components/navigation.html')),profile_values);footer=render(read(Path('components/footer.html')),profile_values)
-BASE=os.environ.get('SITE_URL','https://hadi-hassan-editorial.lemony-morel-0696.chatgpt.site').rstrip('/')
+BASE=os.environ.get('SITE_URL','https://hadi.intellignce.net').rstrip('/')
 urls=[]
 def page(title,description,body,body_class='',path='/',image='/assets/hadi-speaking-original.png',creative=None):
  url=BASE+path;urls.append(url)
