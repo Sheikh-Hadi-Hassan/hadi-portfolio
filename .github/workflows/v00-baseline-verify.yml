@@ -33,6 +33,19 @@ jobs:
       - name: Run existing tests
         run: npm test
 
+      - name: Checkout preserved production snapshot for asset hydration
+        uses: actions/checkout@v4
+        with:
+          ref: recovery/verified-production-20261021
+          path: production-snapshot
+
+      - name: Hydrate preserved production assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public/assets
+          cp -a production-snapshot/production/assets/. public/assets/
+
       - name: Build production-origin output
         env:
           SITE_URL: https://hadi.intellignce.net
