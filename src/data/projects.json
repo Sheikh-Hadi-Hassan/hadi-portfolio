@@ -2777,13 +2777,13 @@
         "alt": "BW Strike product photography — Athlete portrait in the gym"
       },
       {
-        "src": "/assets/bw-sports-04.png",
+        "src": "/assets/bw-sports-04-lossless.webp",
         "width": 2000,
         "height": 2000,
         "alt": "BW Strike product photography — Training gloves and ball close-up"
       },
       {
-        "src": "/assets/bw-sports-05.png",
+        "src": "/assets/bw-sports-05-lossless.webp",
         "width": 2000,
         "height": 2000,
         "alt": "BW Strike product photography — Athlete wearing fingerless gloves"
@@ -3003,8 +3003,8 @@
         "layout": "guidelines",
         "copy": "Close views bring gloves, wraps and training accessories into focus, showing the equipment from the athlete’s perspective.",
         "images": [
-          "/assets/bw-sports-04.png",
-          "/assets/bw-sports-05.png",
+          "/assets/bw-sports-04-lossless.webp",
+          "/assets/bw-sports-05-lossless.webp",
           "/assets/bw-sports-07.webp",
           "/assets/bw-sports-08.webp",
           "/assets/bw-sports-11.webp",
