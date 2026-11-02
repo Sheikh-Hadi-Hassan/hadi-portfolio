@@ -56,6 +56,13 @@ jobs:
             node "${test_file}"
           done
 
+      - name: Verify Sera v9 bundle reproducibility
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 integrations/sera-v9-source/build.py
+          cmp integrations/sera-v9-source/intellignce-support/widget-v9.js public/intellignce-support/widget-v9.js
+
       - name: Build production-origin output
         env:
           SITE_URL: https://hadi.intellignce.net
