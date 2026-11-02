@@ -123,7 +123,18 @@ for i,p in enumerate(projects):
  if p['slug'] in ('ai-animation','community-campaign'):
   page_template=page_template.replace('{{top_carousel}}','').replace('{{media}}','').replace('<header class="case-header">','{{top_carousel}}{{media}}<header class="case-header">')
  nxt=projects[(i+1)%len(projects)];values['next_slug']=nxt['slug'];values['next_title']=esc(nxt['title'])
- consultation_cta='<section class="case-enquiry" aria-label="Discuss a similar project"><span class="eyebrow">YOUR NEXT CHAPTER</span><h2>Have a project in mind?</h2><p>Share what you’re building. Let’s find a clear direction together.</p><a class="case-enquiry-primary" href="/?enquiry=1" data-lead-form>Talk through my project ↗</a><a href="/archive/">Explore more work →</a></section>'
+ # Related-work links are chosen by service/category overlap, not arbitrary sequence.
+ current_terms=set(x.strip().lower() for x in (p.get('services','')+'/'+p.get('category','')).replace('&','/').split('/') if x.strip())
+ def related_score(other):
+  if other['slug']==p['slug']:return -1
+  terms=set(x.strip().lower() for x in (other.get('services','')+'/'+other.get('category','')).replace('&','/').split('/') if x.strip())
+  overlap=len(current_terms & terms)
+  # Small semantic boosts for common portfolio families.
+  family=lambda x:('identity' if any(k in (x.get('category','')+' '+x.get('services','')).lower() for k in ['brand','logo','identity','packaging']) else 'digital' if any(k in (x.get('category','')+' '+x.get('services','')).lower() for k in ['ui/ux','website','saas','digital product']) else 'story' if any(k in (x.get('category','')+' '+x.get('services','')).lower() for k in ['campaign','film','storytelling','animation']) else 'other')
+  return overlap+(2 if family(other)==family(p) else 0)
+ related=sorted((x for x in projects if x['slug']!=p['slug']),key=related_score,reverse=True)[:2]
+ related_links=''.join(f'<a href="/{esc(x["slug"])}/">{esc(x["title"])}</a>' for x in related)
+ consultation_cta='<section class="case-enquiry" aria-label="Discuss a similar project"><span class="eyebrow">YOUR NEXT CHAPTER</span><h2>Have a project in mind?</h2><p>Share what you’re building. Let’s find a clear direction together.</p><a class="case-enquiry-primary" href="/?enquiry=1" data-lead-form>Talk through my project ↗</a><div class="case-related" aria-label="Related work"><span>Related work</span>'+related_links+'</div><a href="/archive/">Explore the full portfolio →</a></section>'
  page_template=page_template.replace('<section class="next-case">',consultation_cta+'<section class="next-case">')
  target=DIST/p['slug'];target.mkdir(exist_ok=True);(target/'index.html').write_text(page(p['seo_title'],p['seo_description'],render(page_template,values),'case-page',path='/'+p['slug']+'/',image=p['hero'],creative=p))
 shutil.copyfile(SRC/'styles/hero.css',DIST/'hero.css');shutil.copyfile(SRC/'styles/clarity.css',DIST/'clarity.css');shutil.copyfile(SRC/'styles/studio.css',DIST/'studio.css');shutil.copyfile(SRC/'styles/home.css',DIST/'home.css');shutil.copyfile(SRC/'styles/site.css',DIST/'style.css');shutil.copyfile(SRC/'styles/case-study.css',DIST/'case-study.css');shutil.copyfile(SRC/'site.js',DIST/'script.js')
