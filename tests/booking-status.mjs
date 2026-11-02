@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import vm from 'node:vm';
 
-const props=new Map();
+const props=new Map([['SHEET_ID','test-sheet']]);
 const cache=new Map();
 let currentEvent=null;
 const sheet={
