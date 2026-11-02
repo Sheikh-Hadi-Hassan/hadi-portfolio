@@ -2,6 +2,8 @@ import { projects, services } from "@/lib/content";
 
 const base = (process.env.NEXT_PUBLIC_SITE_URL || "https://hadi.intellignce.net").replace(/\/$/, "");
 
+export const dynamic = "force-static";
+
 export function GET() {
   const content = [
     "# Hadi Hassan",
