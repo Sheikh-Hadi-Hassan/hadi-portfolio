@@ -61,6 +61,15 @@ Evidence must come from the portfolio source, approved Behance projects, and the
 - Search-engine crawler access must be tested without weakening WAF/security globally.
 - Google, Bing and AI-search inclusion are measured, not assumed.
 
+### Story-preservation rule for articles and case studies
+- Preserve the original narrative arc, chronology, factual sequence, project context and authorial point of view before any SEO edit.
+- Do not flatten a story into keyword-led paragraphs or replace specific moments with generic marketing language.
+- Keywords must support the story, not drive it. Use head terms, long-tail phrases and related semantic terms only where they read naturally.
+- Keep project-specific nouns, client/context details, process moments and concrete decisions that make each story distinctive.
+- Prefer one clear primary intent per page plus a small supporting cluster; avoid repeating variants simply to increase keyword density.
+- When an SEO phrase weakens rhythm, clarity or authenticity, keep the stronger human sentence.
+- No invented outcomes, metrics, quotes, awards, testimonials or project facts.
+
 ### Content quality
 - Senior creative-director / recruiter-level English.
 - Human, specific and evidence-led.
