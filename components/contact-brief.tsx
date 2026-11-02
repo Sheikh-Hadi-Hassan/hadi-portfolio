@@ -35,7 +35,7 @@ export function ContactBrief() {
 
       form.reset();
       setState("success");
-      setStatus("Your brief has been delivered. Hadi will review the context and reply by email.");
+      setStatus("The form provider accepted your inquiry. Inbox delivery has not been independently verified. For urgent requests, please email directly.");
       window.dispatchEvent(new Event("hadi:sound-success"));
     } catch {
       setState("error");
@@ -47,7 +47,7 @@ export function ContactBrief() {
     return (
       <div className="form-success" role="status">
         <CheckCircle2 aria-hidden="true" />
-        <p className="eyebrow">Project brief received</p>
+        <p className="eyebrow">Inquiry accepted by form provider</p>
         <h2>Good context creates a better beginning.</h2>
         <p>{status}</p>
         <button type="button" className="button-primary" onClick={() => { setState("idle"); setStatus(""); }}>Send another inquiry</button>
@@ -80,7 +80,7 @@ export function ContactBrief() {
       <button className="button-primary" type="submit" disabled={state === "sending"}>{state === "sending" ? "Sending brief…" : "Submit project brief"} <ArrowRight aria-hidden="true" /></button>
       <p className={`form-status ${state === "error" ? "is-error" : ""}`} aria-live="polite">{status}</p>
       {state === "error" ? <a className="form-fallback" href={`mailto:${profile.email}`}>Email {profile.email} directly</a> : null}
-      <p className="form-provider-note">Secure email delivery is handled by FormSubmit. The first live submission may require a one-time inbox confirmation before subsequent briefs are forwarded.</p>
+      <p className="form-provider-note">Email delivery is handled by the external FormSubmit provider. The first live submission may require a one-time inbox confirmation before subsequent briefs are forwarded.</p>
     </form>
   );
 }

@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 const work = [
   ["Morganics", "/work/morganics", "Brand identity and packaging"],
-  ["Accessorize by HL", "https://hadi.intellignce.net/accessorize-by-hl", "Retail brand identity"],
-  ["Edlytics", "https://hadi.intellignce.net/edlytics/", "SaaS branding"],
+  ["Accessorize by HL", "/archive", "Retail brand identity"],
+  ["Edlytics", "/archive", "SaaS branding"],
   ["Bits HR Link", "/work/bits-hr-link", "Brand and digital design"],
-  ["UI/UX Web & SaaS", "https://hadi.intellignce.net/uiux-web-saas", "Web and SaaS interfaces"],
+  ["UI/UX Web & SaaS", "/archive", "Web and SaaS interfaces"],
   ["Consumer Connect", "/work/consumer-connect", "Creative direction"],
 ];
 

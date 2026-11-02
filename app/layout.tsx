@@ -57,7 +57,7 @@ const structuredData = {
       url: siteUrl,
       image: `${siteUrl}/images/hadi-hero-clear.webp`,
       jobTitle: ["Creative Director", "Product Designer", "Founder of Intellignce"],
-      email: "mailto:sheikh.hadi.hassan@gmail.com",
+      email: "mailto:hadi@intellignce.net",
       homeLocation: { "@type": "Country", name: "Pakistan" },
       worksFor: { "@type": "Organization", name: "Intellignce", url: "https://intellignce.net/" },
       sameAs: ["https://www.linkedin.com/in/hadi-hasssan/", "https://www.behance.net/hadihasssan", "https://intellignce.net/"],
@@ -78,7 +78,7 @@ const structuredData = {
       url: `${siteUrl}/#services`,
       areaServed: "Worldwide",
       founder: { "@id": personId },
-      email: "sheikh.hadi.hassan@gmail.com",
+      email: "hadi@intellignce.net",
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Creative and technology services",

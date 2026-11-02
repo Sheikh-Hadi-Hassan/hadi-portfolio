@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     description: project.summary,
     image: `${SITE_URL}${project.cover.src}`,
     genre: project.category,
-    creator: { "@type": "Person", "@id": "${SITE_URL}/#hadi-hassan", name: "Hadi Hassan" },
+    creator: { "@type": "Person", "@id": `${SITE_URL}/#hadi-hassan`, name: "Hadi Hassan" },
     sameAs: [project.sourceUrl, project.secondaryUrl].filter(Boolean),
   };
 
