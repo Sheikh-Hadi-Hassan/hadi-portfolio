@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from PIL import Image, ImageOps
 import hashlib,re,html,json,mimetypes
 ROOT=Path(__file__).resolve().parents[1];PUBLIC=ROOT/'public';output=PUBLIC/'assets/responsive';output.mkdir(exist_ok=True)
-BASE=os.environ.get('SITE_URL','https://hadi-hassan-editorial.lemony-morel-0696.chatgpt.site').rstrip('/')
+BASE=os.environ.get('SITE_URL','https://hadi.intellignce.net').rstrip('/')
 cache={};saved=0;image_urls=[]
 VOID={'img','meta','link','input','br','hr','source','area','base','embed','param','track','wbr'}
 class Images(HTMLParser):
