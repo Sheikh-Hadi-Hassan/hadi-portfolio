@@ -30,6 +30,8 @@ export function SiteHeader() {
 
       <nav className="header-shortcuts" aria-label="Primary shortcuts">
         <Link href="/work">Work</Link>
+        <Link href="/archive">Archive</Link>
+        <Link href="/resume">Resume</Link>
         <a href="/#services">Services</a>
         <Link href="/flow">FLOW</Link>
       </nav>
@@ -71,7 +73,7 @@ export function SiteHeader() {
                     </Link>
                   ))}
                 </div>
-                <Link className="mega-all-work" href="/work">Explore all 44 records <span aria-hidden="true">→</span></Link>
+                <Link className="mega-all-work" href="/archive">Explore the archive <span aria-hidden="true">→</span></Link>
               </section>
 
               <section className="mega-solutions" aria-labelledby="mega-solutions-title">
@@ -79,8 +81,9 @@ export function SiteHeader() {
                 <nav aria-label="Solutions">
                   <Link href="/flow"><span>01</span><strong>FLOW</strong><small>AI-native Business OS</small></Link>
                   <Link href="/systems-lab"><span>02</span><strong>Systems Lab</strong><small>Products and operating models</small></Link>
-                  <Link href="/about"><span>03</span><strong>Hadi’s story</strong><small>From pixels to systems</small></Link>
-                  <Link href="/work/intellignce"><span>04</span><strong>Intellignce</strong><small>The studio identity</small></Link>
+                  <Link href="/resume"><span>03</span><strong>Resume</strong><small>Experience and selected work</small></Link>
+                  <Link href="/about"><span>04</span><strong>Hadi’s story</strong><small>From pixels to systems</small></Link>
+                  <Link href="/work/intellignce"><span>05</span><strong>Intellignce</strong><small>The studio identity</small></Link>
                 </nav>
                 <Link className="mega-conversion" href="/contact">
                   <span>Have an ambitious problem?</span>
