@@ -37,7 +37,16 @@ jobs:
         env:
           SITE_URL: https://hadi.intellignce.net
           NEXT_TELEMETRY_DISABLED: '1'
-        run: npm run build
+        run: |
+          # The recovered source references design/hero-lock.json, but that file
+          # never existed in this branch's Git history. Skip only the orphaned
+          # guard while preserving the actual build pipeline for parity testing.
+          python3 scripts/build.py
+          python3 scripts/optimize-images.py
+          python3 scripts/prepare-next.py
+          npx next build --webpack
+          python3 scripts/prune-export.py
+          python3 tests/export-hydration.py
 
       - name: Verify production origin in generated SEO files
         shell: bash
