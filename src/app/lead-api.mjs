@@ -1,6 +1,6 @@
 export function submissionError(message,delivery='unknown'){const error=new Error(message);error.delivery=delivery;return error;}
 
-// A failed transport must never be reported as a saved enquiry.
+// A failed or indeterminate transport must never be reported as a saved enquiry.
 export async function leadApi(action,payload,{fetcher=globalThis.fetch,timeout=65000}={}){
  const controller=new AbortController();
  const timer=setTimeout(()=>controller.abort(),timeout);
@@ -12,9 +12,10 @@ export async function leadApi(action,payload,{fetcher=globalThis.fetch,timeout=6
   if(!response.ok||!result?.ok)throw submissionError(result?.error||'Your enquiry has not been confirmed. Please try again.',result?.delivery==='not_sent'?'not_sent':'unknown');
   if(action!=='availability'&&(typeof result.reference!=='string'||!result.reference))throw Error('Unable to confirm your submission reference. Please retry using this form.');
   if(action==='availability'&&!Array.isArray(result.slots))throw Error('Availability could not be confirmed. Please try another date.');
+  if(['booking','enquiry'].includes(action)&&result.status==='pending')throw submissionError('Confirmation is still pending. Keep this form open and retry with the same reference.','unknown');
   return result;
  }catch(error){
-  if(error.name==='AbortError'||error instanceof TypeError)throw Error('The connection was interrupted. Keep this form open and try again; the same reference prevents duplicate submissions.');
+  if(error.name==='AbortError'||error instanceof TypeError)throw submissionError('The connection was interrupted. Keep this form open and try again; the same reference prevents duplicate submissions.','unknown');
   throw error;
  }finally{clearTimeout(timer)}
 }
