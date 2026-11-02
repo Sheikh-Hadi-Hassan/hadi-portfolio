@@ -1,0 +1,123 @@
+name: V0.0 baseline verification
+
+on:
+  push:
+    branches:
+      - integration/v00-authoritative-baseline-20261102
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout working baseline
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Run existing tests
+        run: npm test
+
+      - name: Build production-origin output
+        env:
+          SITE_URL: https://hadi.intellignce.net
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: npm run build
+
+      - name: Verify production origin in generated SEO files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f out/robots.txt
+          test -f out/sitemap.xml
+          test -f out/image-sitemap.xml
+          grep -Fq "Sitemap: https://hadi.intellignce.net/sitemap.xml" out/robots.txt
+          grep -Fq "https://hadi.intellignce.net/" out/sitemap.xml
+          if grep -R -Fq "hadi-hassan-editorial.lemony-morel-0696.chatgpt.site" out; then
+            echo "Legacy ChatGPT Site origin remains in generated output."
+            exit 1
+          fi
+
+      - name: Checkout preserved production snapshot
+        uses: actions/checkout@v4
+        with:
+          ref: recovery/verified-production-20261021
+          path: production-snapshot
+
+      - name: Compare fresh build with preserved production snapshot
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json
+
+          built = Path("out")
+          snap = Path("production-snapshot/production")
+          if not snap.exists():
+              raise SystemExit("production snapshot directory is missing")
+
+          ignore_names = {
+              "RELEASE-MANIFEST.json",
+              "RELEASE-STATUS.md",
+              "BUILD_HANDOFF.md",
+              "PRODUCTION_VERIFICATION.md",
+              "QA_REPORT.md",
+          }
+
+          def inventory(root):
+              result = {}
+              for p in root.rglob("*"):
+                  if not p.is_file() or p.name in ignore_names:
+                      continue
+                  rel = p.relative_to(root).as_posix()
+                  result[rel] = {
+                      "size": p.stat().st_size,
+                      "sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
+                  }
+              return result
+
+          b = inventory(built)
+          s = inventory(snap)
+          only_built = sorted(set(b)-set(s))
+          only_snapshot = sorted(set(s)-set(b))
+          changed = sorted(k for k in set(b)&set(s) if b[k]["sha256"] != s[k]["sha256"])
+          same = sorted(k for k in set(b)&set(s) if b[k]["sha256"] == s[k]["sha256"])
+
+          report = {
+              "built_files": len(b),
+              "snapshot_files": len(s),
+              "same_files": len(same),
+              "changed_files": len(changed),
+              "only_built": len(only_built),
+              "only_snapshot": len(only_snapshot),
+              "changed_sample": changed[:100],
+              "only_built_sample": only_built[:100],
+              "only_snapshot_sample": only_snapshot[:100],
+          }
+          Path("v00-parity-report.json").write_text(json.dumps(report, indent=2))
+          print(json.dumps(report, indent=2))
+
+          critical = ["index.html", "robots.txt", "sitemap.xml"]
+          missing = [p for p in critical if p not in b]
+          if missing:
+              raise SystemExit("fresh build missing critical files: " + ", ".join(missing))
+
+      - name: Upload V0.0 parity report
+        uses: actions/upload-artifact@v4
+        with:
+          name: v00-parity-report
+          path: v00-parity-report.json
