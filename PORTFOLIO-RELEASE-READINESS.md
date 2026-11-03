@@ -105,3 +105,7 @@ For rollback, restore only approved changed application/static files and compati
 See docs/sera/SERA-IMPLEMENTATION-STATE.md and SERA-TEST-EVIDENCE.md. Deterministic guided UI and non-binding brief implemented; six service-tree units and one isolated browser journey pass. Router/knowledge/error foundations are explicitly distinguished from live integration. Original catalogue stays 22/243; no automatic count increase. Platform/support scope remains future. Hero approval/198-case export acceptance remain blocked. NO-GO; manifest STALE.
 
 Sera follow-up: all eleven isolated intent journeys now pass. Relevant backend retrieval is wired with bounded context. Multi-provider routing remains a mock policy foundation; no new provider enabled. Portfolio counts remain 22/243. No change to hero or release gates.
+
+## Business control center development slice
+
+See docs/admin/ADMIN-IMPLEMENTATION-STATE.md. Bound-Sheet admin foundation and private versioned knowledge/FAQ/personality/voice, disabled provider drafts, CRM annotations, appointment requests and metadata reports have local tests. No standalone portal, encrypted key management, CMS publishing, live analytics/marketing or admin AI agent acceptance is claimed. No production installation. Portfolio catalogue unchanged at 22/243; admin expansion tracked separately. NO-GO; manifest STALE.

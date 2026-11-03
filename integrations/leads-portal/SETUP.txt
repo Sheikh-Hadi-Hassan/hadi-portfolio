@@ -6,3 +6,6 @@ PRIVATE LEADS WORKSPACE
 5. Save, reload the Sheet, choose Flow Leads > Open lead workspace. Authorize access if prompted.
 No web-app deployment or API key is needed for this private portal. Access follows Sheet sharing.
 This is an inbox and brief viewer; it does not change booking status or fabricate a sales pipeline.
+
+CONTROL CENTER DEVELOPMENT EXTENSION (NOT DEPLOYED)
+The modified LeadsDesk.gs now requires ControlCenter.gs and an explicit private ADMIN_ROLES configuration. Do not upload that file alone or existing workspace access will fail closed. Read docs/admin/SETUP-AND-ROLLBACK.md before any authorized installation. ControlCenter.html adds private versioned draft workflows; it is not a deployed CMS, credential vault or standalone website login. Sheet/script editor ACLs remain an independent security boundary.

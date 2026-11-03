@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "Isolated admin UI with fake Google RPC; not live authentication",
+  "checks": [
+    "create draft",
+    "edit version",
+    "explicit owner approval dialog",
+    "refresh persisted mock state",
+    "three viewport overflow",
+    "automated axe scan"
+  ],
+  "widths": [
+    {
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280
+    }
+  ],
+  "axe_violations": 0
+}
