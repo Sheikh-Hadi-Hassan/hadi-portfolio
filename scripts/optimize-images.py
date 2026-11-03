@@ -35,8 +35,22 @@ def variants_for(src):
   digest=hashlib.sha256(f.read_bytes()).hexdigest()[:12];variants=[]
   for target in sorted(set([x for x in [160,480,800,1280] if x<w]+([w] if w<=1280 or src in ['/assets/hero-subject-enhanced.png','/assets/hero-stage.webp'] else []))):
    dest=output/f'{digest}-q90-{target}.webp'
-   if not dest.exists():
-    preview=im.resize((target,max(1,round(h*target/w))),Image.Resampling.LANCZOS);preview.save(dest,'WEBP',quality=90,method=6)
+   expected=(target,max(1,round(h*target/w)))
+   valid=False
+   try:
+    with Image.open(dest) as cached:
+     valid=cached.size==expected and cached.format=='WEBP'
+     cached.verify()
+   except (OSError,ValueError):valid=False
+   if not valid:
+    # Never let an interrupted write become a reusable cache entry.
+    temporary=dest.with_suffix('.tmp')
+    try:
+     preview=im.resize(expected,Image.Resampling.LANCZOS)
+     preview.save(temporary,'WEBP',quality=90,method=6)
+     temporary.replace(dest)
+    finally:
+     temporary.unlink(missing_ok=True)
    if dest.stat().st_size<f.stat().st_size:variants.append(('/assets/responsive/'+dest.name,target))
   if variants:saved+=max(0,f.stat().st_size-(PUBLIC/variants[-1][0].lstrip('/')).stat().st_size)
   cache[src]=(variants,w,h)

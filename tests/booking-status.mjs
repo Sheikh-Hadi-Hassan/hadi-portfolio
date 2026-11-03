@@ -62,8 +62,8 @@ assert.deepEqual(
 
 let result=ctx.bookingResult_({...baseEvent,conferenceData:{createRequest:{status:{statusCode:'pending'}}}},ref);
 assert.equal(result.ok,true);
-assert.equal(result.status,'booked');
-assert.equal(result.booking,true);
+assert.equal(result.status,'pending');
+assert.equal(result.booking,false);
 assert.equal(result.meetingStatus,'pending');
 assert.equal(result.meetUrl,'');
 
@@ -80,7 +80,8 @@ assert.equal(result.delivery,'not_sent');
 
 currentEvent={...baseEvent,conferenceData:{createRequest:{status:{statusCode:'pending'}}}};
 result=ctx.status_({requestId:'12345678-1234-1234-1234-123456789abc'});
-assert.equal(result.status,'booked');
+assert.equal(result.status,'pending');
+assert.equal(result.booking,false);
 assert.equal(result.meetingStatus,'pending');
 
 currentEvent={...baseEvent,hangoutLink:'https://meet.google.com/abc-defg-hij'};
@@ -94,3 +95,15 @@ assert.equal(result.status,'not_found');
 assert.equal(result.booking,false);
 
 console.log('Booking status contract: event reservation, Meet pending/ready/failed, cancellation and not-found recovery states pass.');
+
+for (const overrides of [
+  {status:'tentative'}, {id:''}, {start:{dateTime:'invalid'}},
+  {hangoutLink:'https://example.com/fake'},
+  {hangoutLink:'',conferenceData:{createRequest:{status:{statusCode:'failure'}}}},
+]) {
+  const response=ctx.bookingResult_({...baseEvent,hangoutLink:'https://meet.google.com/abc-defg-hij',...overrides},ref);
+  assert.equal(response.status,'pending');
+  assert.equal(response.booking,false);
+}
+assert.equal(fs.readFileSync('integrations/calendar-v8/Code.gs','utf8'),fs.readFileSync('integrations/leads/Code.gs','utf8'));
+console.log('Pending/failed Meet, invalid event identity/time and tentative events never confirm; integration copies match.');

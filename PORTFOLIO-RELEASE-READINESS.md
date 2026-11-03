@@ -1,27 +1,62 @@
 # Portfolio V0.1 release readiness
 
-**Decision: NO-GO** (2026-11-03). Production unchanged. Release manifest STALE.
+**NO-GO — 2026-11-03. Production unchanged. Manifest STALE.** This checkpoint completes targeted development, not the entire original-plan acceptance.
 
-## Completed in this work session
-- Located original pending-fixes notes and November 2 execution instructions in Library; inspected backend acceptance report and integration branch README.
-- Confirmed GitHub repository access and branch inventory.
-- Created isolated branch `work/portfolio-v01-requirements-20261103` from `integration/v00-authoritative-baseline-20261102`.
-- Added preliminary documentation only; no application code modifications.
+## Provenance and branch
 
-## Not completed
-- Full extraction of original plan and exhaustive requirement count.
-- Build, unit tests, browser tests, Lighthouse and live backend acceptance: **not executed**.
-- Validated Hostinger deployment ZIP: **not produced**.
+Local branch: `work/v01-booking-contract-20261103`.
+Source downloaded from GitHub branch `work/portfolio-v01-requirements-20261103`, observed commit `22c9579dfc6ddea2aec37b652c01710fc0aa0c62`. Local Git history starts with a snapshot commit; it is not the remote ancestor history. No push, merge or deployment performed.
+Recovery commit `c4097990bccabea53af798eaf80012c239d6a418` remains preserved and untouched. No live booking/email or diagnostic deployment performed. Existing reviewed verification kit reused by reference; no regeneration or repeated authentication attempt.
 
-## Mandatory external gates
-1. Authenticated live web-handler PHP/cURL identity.
-2. Effective deployed gateway configuration, without secret disclosure.
-3. Active Apps Script deployment/version, identity, calendar mapping and permissions.
-4. Temporary diagnostic cleanup evidence if applicable.
-5. Explicit authorization and correlated end-to-end booking acceptance.
+## Changes
 
-## Rollback prerequisites
-Preserve recovery commit `c4097990bccabea53af798eaf80012c239d6a418`. Pin production artifact and Apps Script mapping before any authorized deployment. Preserve live leads and events. Never blindly restore old booking code against newer records.
+- Apps Script returns pending until event status, identity, start time and Meet readiness satisfy the local confirmation contract. Both source copies remain identical; pending rows/outbox records remain Pending.
+- Sera no longer turns legacy successful booking envelopes into booked status. Incomplete confirmation keeps the pending draft/reference. Generated public widget aliases rebuilt.
+- Next.js 16.4.0 upgraded to 16.4.4 after registry advisory; dependency audit reports zero vulnerabilities at this checkpoint. This is not a guarantee against undisclosed vulnerabilities.
+- Image optimizer rejects corrupt/empty/wrong-size cached WebPs and writes atomically. Isolated corruption regression added.
+- Footer privacy copy corrected to Google Gemini. Full consent/privacy acceptance remains open.
+- Footer width and dock text inheritance corrected; statistic labels given a permitted accessible role.
+
+## Verification
+
+- 19 local JavaScript suites passed after dependency installation (`docs/v01-local-test-results.json`). These do not exercise live providers.
+- `npm test`: reel motion, backend booking status and new client confirmation contract pass.
+- Source-asset preflight: 461 referenced assets exist. Package-security tests pass.
+- Isolated corrupt-image cache regression passes.
+- CI-equivalent export on Next 16.4.4 succeeds: 17 content routes plus framework missing-page outputs.
+- Hydration, SEO, production links/assets/IDs and image export checks pass; 480 responsive images and 432 image metadata/sitemap entries.
+- Browser evidence: `docs/v01-browser-results.json`; all nine widths pass horizontal-overflow/dock bounds, menu opens/closes with Escape, zero automated axe findings at the tested final viewport; local Chromium, nine requested widths, external requests blocked, reduced motion, no submissions. This is a homepage smoke test, not full visual/WCAG acceptance.
+- `npm run verify` and therefore the standard `npm run build` entry remain blocked by absent historical `design/hero-lock.json`. CI explicitly uses the remaining pipeline without that orphaned guard. No substitute approval hash has been invented.
+
+## Remaining mandatory gates
+
+|Gate|Status|Required evidence/action|
+|---|---|---|
+|Web PHP/cURL/runtime restrictions|BLOCKED|Authenticated web-handler output using reviewed kit|
+|Actual selected private configuration|BLOCKED|Runtime-selected path and non-reversible deployment fingerprint|
+|Apps Script deployed identity|BLOCKED|Project, active deployment/version, deployed source, executor/access, Calendar identity/scopes and timezones|
+|Diagnostic cleanup|BLOCKED|Owner cleanup.json if diagnostics were installed; otherwise explicit no-install evidence|
+|End-to-end booking/delivery|BLOCKED|Prior identity gates then explicit approval, isolated recipients and correlated records|
+|Failure/concurrency/reconciliation acceptance|BLOCKED|Isolated full provider/Calendar/email crash scenarios; no production injection|
+|Release build entry/hero approval baseline|FAIL|Resolve missing historical lock without silently redefining approved design|
+|Full page/mobile/accessibility/Lighthouse|BLOCKED|Extend beyond homepage smoke; manual keyboard/screenreader and measured performance|
+|Manifest and full production comparison|STALE|Validated candidate and full authenticated comparison before generation|
+
+## Deployment preparation (not authorization)
+
+1. Rebase/apply the reviewed source patch to the known GitHub work-branch ancestor; never overwrite main or recovery.
+2. Restore approved hero-lock provenance/policy, complete remaining acceptance, then run clean dependency install, all unit/security tests, full export audits and browser checks.
+3. Pin source revision, lockfile, Apps Script version/mapping and artifact hashes; generate corrected manifest only then. Inspect package for private configs, credentials, logs, leads and diagnostics.
+4. Compare candidate with actual production read-only. Preserve a dated full hosting snapshot and current private/live data separately with restricted access.
+5. Obtain explicit production and Apps Script deployment approvals. Plan compatibility: older deployed Apps Script responses will remain pending under the stricter client; do not deploy only the new client against an unverified old integration.
+6. Upload only the approved artifact via authorized hosting access; preserve private configuration and data. Verify static smoke tests first. A booking test needs separate explicit approval.
+
+## Rollback
+
+Record the exact predeployment hosting artifact and Apps Script deployment version. Restore only changed application/static files from that artifact, not database/Sheet lead data or event history. Restore the compatible Apps Script version only with approval. Purge relevant caches, verify routes, health and existing request-status recovery. Preserve logs and newly saved leads/events for reconciliation. Do not blindly replay notifications or create replacement events. The recovery baseline is evidence, not permission to overwrite current live state.
 
 ## Owner actions
-Provide authenticated hosting and Apps Script evidence through approved channels; separately approve any live booking test or production deployment. No credentials should be pasted into repository files.
+
+Return sanitized `EVIDENCE.md`, `evidence.json`, `cleanup.json` from authenticated sessions using the reviewed kit. Do not send credentials. Supply the original approved hero-lock artifact or decide its replacement approval policy. Authorize a controlled booking only after runtime/config/deployment gates pass. Deployment remains separately gated.
+
+Next local work: exhaustive plan decomposition, remaining route/resume parity, broader Sera/consent/fault-injection and all-page visual/accessibility acceptance. No overall portfolio completion percentage is claimed.

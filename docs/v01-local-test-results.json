@@ -1,0 +1,97 @@
+[
+  {
+    "test": "tests/booking-client-contract.cjs",
+    "exit": 0,
+    "output": "Client rejects incomplete confirmations, retains pending drafts, accepts full event/Meet contract, and does not promote legacy responses.\n"
+  },
+  {
+    "test": "tests/booking-status.mjs",
+    "exit": 0,
+    "output": "Booking status contract: event reservation, Meet pending/ready/failed, cancellation and not-found recovery states pass.\nPending/failed Meet, invalid event identity/time and tentative events never confirm; integration copies match.\n"
+  },
+  {
+    "test": "tests/consultation.mjs",
+    "exit": 0,
+    "output": "Consultation: all six service branches, shared-question deduplication, changed-answer cleanup, contact validation, full transcript, consent, pending retry persistence, unfinished drafts, expiry and AI failure fallback passed.\nReview edits skip completed questions; changing contact preference requests newly required phone.\nSeparate entry paths: meeting bypasses the detailed questionnaire and collects essential booking details.\n"
+  },
+  {
+    "test": "tests/design-scene.cjs",
+    "exit": 0,
+    "output": "Actual design scene initializes six nested cubes, 90 radial ticks and 12 dots; animation, resize and cleanup pass. GPU rendering is not exercised.\n"
+  },
+  {
+    "test": "tests/folder-geometry.mjs",
+    "exit": 0,
+    "output": "Six phone/tablet/desktop folder layouts: bounded cards, no overlap, count endpoints and reverse reset passed.\n"
+  },
+  {
+    "test": "tests/footer-controls.cjs",
+    "exit": 0,
+    "output": "Unified consultation CTA, privacy dialog, copy-email success and event cleanup passed.\n"
+  },
+  {
+    "test": "tests/gateway-logging.mjs",
+    "exit": 0,
+    "output": "Gateway observability: outcome logs are mirrored, hashed-reference only, and exclude PII/secrets.\n"
+  },
+  {
+    "test": "tests/hero-dither.cjs",
+    "exit": 0,
+    "output": "Backdrop-only glow, sparse pixels, no image inversion, touch opt-out and cleanup passed.\n"
+  },
+  {
+    "test": "tests/intro-loader.cjs",
+    "exit": 0,
+    "output": "Preloader waits for assets/minimum hold, handles failed assets, times out safely and releases interaction.\n"
+  },
+  {
+    "test": "tests/lead-api.mjs",
+    "exit": 0,
+    "output": "Lead transport: confirmed success, HTML 404, server rejection, invalid response, pending 202, network failure and timeout pass.\nDelivery recovery: missing endpoint is not-sent; readiness uses GET only; ambiguous or pending writes preserve the existing reference.\n"
+  },
+  {
+    "test": "tests/leads-desk.mjs",
+    "exit": 0,
+    "output": "Lead CRM contract: contact details, email/call/WhatsApp, source, meeting and brief actions are present.\n"
+  },
+  {
+    "test": "tests/leads.mjs",
+    "exit": 0,
+    "output": "Lead tests passed: conditional services, v8 input validation, 18 daily slots, 12\u20139 PM Pakistan hours, busy overlap, fail-closed Calendar, cache/property dependencies and spreadsheet injection.\n"
+  },
+  {
+    "test": "tests/motion-clips.cjs",
+    "exit": 0,
+    "output": "Motion clip checks passed: visible playback, deferred loading, pause/play, tab visibility, reduced motion and cleanup.\n"
+  },
+  {
+    "test": "tests/process-camera.mjs",
+    "exit": 0,
+    "output": "Three.js r185: perspective/orthographic projections preserve proportions across seven viewport ratios.\n"
+  },
+  {
+    "test": "tests/process-motion.cjs",
+    "exit": 0,
+    "output": "Desktop/mobile process progress, active cards, SVG motion, reverse reset and cleanup passed.\n"
+  },
+  {
+    "test": "tests/reel-motion.cjs",
+    "exit": 0,
+    "output": "Desktop/mobile expansion endpoints, statement reveal/reverse timing at 0%, 31%, 100%, sound toggle, pause and cleanup passed.\n"
+  },
+  {
+    "test": "tests/services.cjs",
+    "exit": 0,
+    "output": "Service hover, pointer bounds, keyboard focus, mobile tap, exclusive expansion and cleanup passed.\n"
+  },
+  {
+    "test": "tests/social-carousel.cjs",
+    "exit": 0,
+    "output": "Social carousel checks passed: autoplay, loop, controls, hover/focus/touch pauses, reduced motion and cleanup.\n"
+  },
+  {
+    "test": "tests/support/engine.mjs",
+    "exit": 0,
+    "output": "Support engine: 8 checks passed\n"
+  }
+]

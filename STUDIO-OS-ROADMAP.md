@@ -1,14 +1,16 @@
 # Studio OS roadmap
 
-Separate from Portfolio V0.1 release. Implementation status below is **unverified**, not a claim of absence.
+FUTURE_SCOPE for Portfolio V0.1. Original plan §§8–11 and version roadmap V0.2–V0.6. No platform implementation is claimed from directory names alone.
 
-|Module|Existing implementation|Missing / unverified|Dependencies|Complexity|Phase|
+|Module|Existing implementation/evidence|Missing functionality|Dependencies|Complexity|Phase|
 |---|---|---|---|---|---|
-|Identity and access|Unverified|Private admin authentication, roles, audit|Security architecture|High|1|
-|Content CMS|Unverified|Case study editing and publishing|Identity, content model|Medium|2|
-|Lead CRM|Unverified|Durable pipeline, deduplication, reconciliation|Booking/lead contracts|High|2|
-|Booking operations|Unverified|Status, reschedule, cancel, audit|Calendar integration|High|2|
-|Analytics and SEO|Unverified|Consent-aware analytics, SEO controls|Data governance|Medium|3|
-|Private Sera administration|Unverified|Knowledge controls, logs, access policies|Identity and AI gateway|High|3|
+|Identity/RBAC/security|No accepted authenticated platform|Owner login, MFA, roles, session/CSRF controls, audit, backups|Verified hosting/runtime and threat model|High|V0.2 foundation|
+|CRM|Google Sheet lead persistence source; leads-portal directory, operation unverified|Pipeline, dedupe, assignment, notes/tags/tasks, UTM/consent, export/delete, migration/reconciliation|Keep Sheet until parity; secure identity|High|V0.2|
+|Overview/analytics|No accepted collection/reporting|Event taxonomy, freshness, funnels, bot filtering, retention, consent and exports|Measurement plan; hosting budget|Medium|V0.2–V0.4|
+|CMS/media|Portfolio structured project data/build templates|Posts/pages/projects, autosave/drafts, preview/review/schedule, media, revisions/rollback, redirects/metadata|Content model, secure publication interface|High|V0.3|
+|Booking operations|Apps Script source with locks/outbox/status; production identity blocked|Owner calendar view, cancellation/reschedule, audit and manual recovery|V0.1 booking acceptance|High|V0.2–V0.3|
+|SEO/off-page reporting|Existing content keyword/SEO strategy docs|GSC ingestion, measured technical health, citations/link provenance, campaign/report exports|Authorized GSC and metrics sources|Medium|V0.4|
+|Private Sera|Public Sera source only; not private admin authorization|Typed tools, scoped data access, citations, drafts, approvals, prompt/version audits, cost limits, manual parity|Identity, CRM/CMS contracts|High|V0.4–V0.5|
+|Integrations/automation|Portfolio gateway integration exists|Site-scoped keys/rotation, signed webhooks/replay/retries, schema/versioning, OAuth, optional MCP|Validated API contracts and approval policy|High|V0.5–V0.6|
 
-No Studio OS feature is a prerequisite for V0.1 unless explicitly linked to an approved portfolio acceptance criterion.
+Start with owner-only workflows. Verify Hostinger PHP/database/cron/resource limits before architecture selection; do not assume persistent workers, Redis, containers, local LLMs or free unlimited AI. No new recurring service without approval. Each phase requires tests, migration/rollback and separate live approval.
