@@ -62,3 +62,14 @@ The five new standalone routes and original CV pass `tests/utility-routes.py` at
 |Original downloadable CV|Current directive|Implemented but unverified|Original Library PDF copied byte-for-byte; SHA-256 pinned in test|Browser download after approved build|
 |Every-route/nine-width browser suite|Current directive; §12|Partially implemented|Harness covers 22 routes × 9 widths; 198 cases explicitly BLOCKED|Approved hero lock and resulting export|
 |Hero preservation|§12; existing README|Implemented and verified locally|Utility test compares home/hero/shared CSS bytes to checkpoint|Approval artifact itself unavailable|
+
+## Consent and integrity continuation
+
+- Confirmed defect: public Sera defaulted AI on; both consent buttons only dismissed the notice. Corrected `integrations/sera-v9-source/runtime.js`: default off; distinct Enable optional AI and Continue without AI actions; opening Privacy does not enable AI; no provider readiness request on initial open without opt-in. Generated public widget aliases rebuilt.
+- `node tests/sera-consent.cjs`: PASS default/handler/focus checks and static request-gate assertion. This is not a browser/network consent acceptance test. `npm test` booking/reel suites pass after client bundle changes.
+- Inactive replacement proposal: `docs/hero-baseline-PROPOSED-NOT-APPROVED.json`. Contains current hashes, explicit unknown approved-baseline differences and owner activation instructions. It is outside `design/` and cannot satisfy the build guard. Approved artifact still unavailable; earlier bounded recovery evidence retained. No integrity bypass or approved-baseline substitution.
+- Cancellation/rescheduling source review: existing Calendar-cancelled events are recognized; no authenticated customer cancellation/rescheduling actions are exposed by the public gateway. Safe owner-contact workflow remains available. Do not expose unauthenticated destructive actions as a shortcut. Full lifecycle functionality and acceptance remain P1.
+- Contact/booking errors: prior regression tests cover pending reference retention, invalid confirmations, duplicate keys, unavailable slots, provider/Calendar failures and partial notification retry. Mail send-before-durable-metadata crash ambiguity remains P0; no claim of exactly-once email delivery.
+- Privacy remains incomplete as a full policy: backend/Google retention, access and deletion procedures need owner-confirmed operational facts. No invented retention commitments.
+- Original-plan atomic traceability remains incomplete. Full-plan denominator and verified percentage are unavailable; prior 5/39 is historical grouped evidence only. This continuation is not all requested local work complete.
+- Build integrity and browser acceptance remain BLOCKED. Browser coverage completed for current all-route suite: 0/198. Manual accessibility not performed. Existing reports remain NO-GO; manifest STALE.

@@ -1,0 +1,13 @@
+{
+  "status": "PROPOSED_NOT_APPROVED",
+  "active": false,
+  "observed_source_commit": "89d3aa7e0dd332081fda19f7aa2dd5f852f3aeee",
+  "proposal": {
+    "hero_html": "bafe2419c5332ebc59e93519ed7c94c125a684f9c05d2dee3e55b41f06de608e",
+    "hero_css": "fc5224e4a0ab4bc2957f8be69ac8f84e6b48b125b771e7123e84c552e77b035f",
+    "shared_css": "7255e1f9fe90310502abca9c422d82cc135bf0dcba5aa574650513fd807a8b33"
+  },
+  "differences_from_approved": "UNKNOWN: original approved artifact unavailable",
+  "differences_from_previous_checkpoint": "No changes to current home/hero/shared CSS in this continuation.",
+  "activation": "Owner must review and explicitly approve these exact hashes. Do not copy to design/hero-lock.json without approval."
+}
