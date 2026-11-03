@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Isolated widget fixture, no providers/bookings/email",
+  "checks": [
+    "select branding",
+    "required project answer",
+    "skip optional questions",
+    "invalid answer preserves draft",
+    "Back retains answer",
+    "reload resumes guided state",
+    "contact validation",
+    "deterministic brief",
+    "booking CTA",
+    "zero AI calls"
+  ],
+  "production_acceptance_cases": 0
+}

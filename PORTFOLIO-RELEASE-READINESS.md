@@ -99,3 +99,7 @@ Harness requires a passing integrity guard and existing export. It verifies exac
 After accepted build and local QA, compare candidate with actual production read-only; pin source, artifact, private-config mapping and Apps Script version. Preserve full recovery baseline and dated production snapshot. Generate a corrected manifest only from the validated candidate. Inspect package for secrets/private files. Request explicit deployment approval; never overwrite main or private/live data.
 
 For rollback, restore only approved changed application/static files and compatible integration version, with separate authorization. Preserve newly saved leads, events and delivery records. Do not replay uncertain notifications. Verify routes and pending-reference recovery; retain incident evidence. Rolling back a future hero-lock activation means reverting only that activation and allowing the integrity guard to block again.
+
+## Sera guided-discovery milestone
+
+See docs/sera/SERA-IMPLEMENTATION-STATE.md and SERA-TEST-EVIDENCE.md. Deterministic guided UI and non-binding brief implemented; six service-tree units and one isolated browser journey pass. Router/knowledge/error foundations are explicitly distinguished from live integration. Original catalogue stays 22/243; no automatic count increase. Platform/support scope remains future. Hero approval/198-case export acceptance remain blocked. NO-GO; manifest STALE.

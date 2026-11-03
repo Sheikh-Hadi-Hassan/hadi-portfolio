@@ -484,3 +484,7 @@ New passes are isolated widget opt-in/withdrawal checks, not route acceptance. B
 |GEO-BD66FDAA|Source-specific KPI definitions|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
 |GEO-C009CA50|30/60/90-day measurement plan|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
 |GEO-93736516|Outreach tracking|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
+
+## Sera guided-discovery milestone
+
+See docs/sera/SERA-IMPLEMENTATION-STATE.md and SERA-TEST-EVIDENCE.md. Deterministic guided UI and non-binding brief implemented; six service-tree units and one isolated browser journey pass. Router/knowledge/error foundations are explicitly distinguished from live integration. Original catalogue stays 22/243; no automatic count increase. Platform/support scope remains future. Hero approval/198-case export acceptance remain blocked. NO-GO; manifest STALE.

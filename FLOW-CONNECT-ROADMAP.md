@@ -30,3 +30,7 @@ The source-referenced atomic catalogue is `docs/atomic-requirements.json`. 87 FC
 Evidence update: portfolio local acceptance is 20/243 (8.23%). The 233 future obligations remain excluded and no platform capability is promoted. Current source/test boundary remains in the atomic catalogue.
 
 Latest portfolio acceptance: 22/243 (9.05%). Future 233 remain excluded. Durable no-auto-replay intents are a portfolio reliability change, not delivery proof or platform lifecycle completion. See NOTIFICATION-RECONCILIATION and BOOKING-LIFECYCLE-CONTRACT.
+
+## Sera guided-discovery milestone
+
+See docs/sera/SERA-IMPLEMENTATION-STATE.md and SERA-TEST-EVIDENCE.md. Deterministic guided UI and non-binding brief implemented; six service-tree units and one isolated browser journey pass. Router/knowledge/error foundations are explicitly distinguished from live integration. Original catalogue stays 22/243; no automatic count increase. Platform/support scope remains future. Hero approval/198-case export acceptance remain blocked. NO-GO; manifest STALE.

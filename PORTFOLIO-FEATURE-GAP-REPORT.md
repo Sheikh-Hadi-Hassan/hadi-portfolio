@@ -316,3 +316,7 @@ Every row below states the plan obligation, observed source mapping, current evi
 |PV-913EF220|Validated release manifest|scripts; .github/workflows; tests; release documents|Blocked by external dependency: Manifest STALE; validated current artifact unavailable|Hero approval, accepted build and authenticated comparison|P0|
 |PV-27545F5D|Source-to-production difference register|scripts; .github/workflows; tests; release documents|Blocked by external dependency: Manifest STALE; validated current artifact unavailable|Hero approval, accepted build and authenticated comparison|P0|
 |PV-BE6BAB72|Dated test environment evidence|scripts; .github/workflows; tests; release documents|Partially implemented: No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
+
+## Sera guided-discovery milestone
+
+See docs/sera/SERA-IMPLEMENTATION-STATE.md and SERA-TEST-EVIDENCE.md. Deterministic guided UI and non-binding brief implemented; six service-tree units and one isolated browser journey pass. Router/knowledge/error foundations are explicitly distinguished from live integration. Original catalogue stays 22/243; no automatic count increase. Platform/support scope remains future. Hero approval/198-case export acceptance remain blocked. NO-GO; manifest STALE.
