@@ -1,0 +1,16 @@
+<?php
+declare(strict_types=1);
+require __DIR__.'/../integrations/admin-runtime/CredentialVault.php';
+function vaultCheck(bool $v):void{if(!$v)throw new RuntimeException('Vault test failed');}
+function rejects(callable $fn,string $code):void{try{$fn();throw new RuntimeException('Expected rejection');}catch(RuntimeException $e){vaultCheck($e->getMessage()===$code);}}
+$root=sys_get_temp_dir().'/vault-test-'.bin2hex(random_bytes(8));mkdir($root,0700);mkdir($root.'/public',0700);mkdir($root.'/private',0700);$key=random_bytes(32);$auth=fn($permission)=>'owner-fixture';$keys=fn()=>$key;$uuid=fn()=>vsprintf('%s%s-%s-%s-%s-%s%s%s',str_split(bin2hex(random_bytes(16)),4));
+try{
+ $blocked=new SeraCredentialVault($root.'/private',$root.'/public',$auth,$keys);rejects(fn()=>$blocked->change('groq','rotate','synthetic-key-one',0,$uuid()),'VAULT_CUSTODY_UNVERIFIED');vaultCheck(!file_exists($root.'/private/credentials.json'));
+ $denied=new SeraCredentialVault($root.'/private',$root.'/public',fn()=>false,$keys,true);rejects(fn()=>$denied->masked(),'VAULT_FORBIDDEN');
+ $vault=new SeraCredentialVault($root.'/private',$root.'/public',$auth,$keys,true);$op=$uuid();$one=$vault->change('groq','rotate','synthetic-key-one',0,$op);vaultCheck($one['revision']===1);vaultCheck($vault->resolve('groq')==='synthetic-key-one');vaultCheck(!str_contains(file_get_contents($root.'/private/credentials.json'),'synthetic-key-one'));vaultCheck(!str_contains(json_encode($vault->masked()),'synthetic-key-one'));vaultCheck($vault->change('groq','rotate','synthetic-key-one',0,$op)['replayed']);
+ rejects(fn()=>$vault->change('groq','rotate','synthetic-key-other',0,$op),'VAULT_OPERATION_MISMATCH');rejects(fn()=>$vault->change('groq','rotate','synthetic-key-two',0,$uuid()),'VAULT_REVISION_CONFLICT');$vault->change('groq','rotate','synthetic-key-two',1,$uuid());vaultCheck($vault->resolve('groq')==='synthetic-key-two');$wrong=new SeraCredentialVault($root.'/private',$root.'/public',$auth,fn()=>random_bytes(32),true);rejects(fn()=>$wrong->resolve('groq'),'VAULT_DECRYPT_FAILED');
+ $vault->change('groq','revoke',null,2,$uuid());rejects(fn()=>$vault->resolve('groq'),'VAULT_CREDENTIAL_UNAVAILABLE');vaultCheck(count($vault->masked()['audit'])===3);
+ $vault->change('groq','rotate','synthetic-key-three',3,$uuid());$file=$root.'/private/credentials.json';$record=json_decode(file_get_contents($file),true);$record['providers']['groq']['ciphertext']=base64_encode('tampered');file_put_contents($file,json_encode($record));rejects(fn()=>$vault->resolve('groq'),'VAULT_DECRYPT_FAILED');
+ $unsafe=new SeraCredentialVault($root.'/public',$root.'/public',$auth,$keys,true);rejects(fn()=>$unsafe->masked(),'VAULT_STORAGE_UNSAFE');
+}finally{foreach(glob($root.'/private/*') as $f)unlink($f);rmdir($root.'/private');rmdir($root.'/public');rmdir($root);}
+echo "PASS: vault defaults disabled; authorization, outside-public private storage, AEAD encryption, masked reads, rotation/revocation, audit, idempotent lost-ack replay, conflict and tamper/wrong-key rejection. Synthetic fixtures only.\n";

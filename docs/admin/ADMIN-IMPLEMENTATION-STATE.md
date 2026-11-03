@@ -37,3 +37,7 @@
   ]
 }
 ```
+
+## Phase 3 in progress
+
+Base HEAD: 1f62f3d096ea2a96710c9e4b937ff0e9f6e17752. Encrypted vault library is offline-tested with synthetic keys; actual workspace credential writes remain disabled. Full case schema, admin import/preview, sanitized media import and isolated release/pointer publication/rollback are implemented with focused tests. Browser restored from a test-only npm Chromium distribution plus axe; current admin fixture passes at 320/768/1280. Next: complete Sera policy/tree controls, expand browser/error tests and owner package. Production build remains hero-blocked; manifest STALE, NO-GO.
