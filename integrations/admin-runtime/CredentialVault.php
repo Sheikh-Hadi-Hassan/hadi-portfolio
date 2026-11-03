@@ -17,8 +17,25 @@ final class SeraCredentialVault {
   $lock=fopen($this->directory.'/vault.lock','c+');if(!$lock)throw new RuntimeException('VAULT_STORAGE_FAILED');chmod($this->directory.'/vault.lock',0600);
   try{if(!flock($lock,LOCK_EX))throw new RuntimeException('VAULT_BUSY');$file=$this->directory.'/credentials.json';$data=['schemaVersion'=>1,'revision'=>0,'providers'=>[],'audit'=>[],'operations'=>[]];
    if(is_file($file)){$bytes=file_get_contents($file);if($bytes===false||strlen($bytes)>262144)throw new RuntimeException('VAULT_CORRUPT');$data=json_decode($bytes,true);if(!is_array($data)||($data['schemaVersion']??0)!==1||!is_int($data['revision']??null)||!is_array($data['providers']??null)||!is_array($data['audit']??null)||!is_array($data['operations']??null))throw new RuntimeException('VAULT_CORRUPT');}
-   return $operation($data,$file);
+   $this->validate($data);return $operation($data,$file);
   }finally{flock($lock,LOCK_UN);fclose($lock);}
+ }
+ private function validate(array $data):void{
+  $bad=static function():never{throw new RuntimeException('VAULT_CORRUPT');};
+  if(array_diff(array_keys($data),['schemaVersion','revision','providers','audit','operations'])||$data['revision']<0||$data['revision']!==count($data['audit'])||count($data['operations'])!==count($data['audit'])||count($data['providers'])>100||count($data['audit'])>500||count($data['operations'])>500||!array_is_list($data['audit']))$bad();
+  foreach($data['providers'] as $id=>$row){
+   if(!is_string($id)||!preg_match('/^[a-z][a-z0-9_-]{2,63}$/',$id)||!is_array($row)||!is_int($row['version']??null)||$row['version']<1||$row['version']>$data['revision']||!in_array($row['status']??null,['active','revoked'],true)||!is_string($row['suffix']??null))$bad();
+   $active=$row['status']==='active';$fields=$active?['version','status','suffix','nonce','ciphertext']:['version','status','suffix'];
+   if(array_diff(array_keys($row),$fields)||($active?strlen($row['suffix'])!==4:$row['suffix']!==''))$bad();
+   if($active&&(!is_string($row['nonce']??null)||!is_string($row['ciphertext']??null)||base64_decode($row['nonce'],true)===false||strlen(base64_decode($row['nonce'],true))!==24||base64_decode($row['ciphertext'],true)===false))$bad();
+  }
+  foreach($data['audit'] as $entry){
+   if(!is_array($entry)||array_diff(array_keys($entry),['actor','provider','action','version','at','operationId'])||!is_string($entry['actor']??null)||!preg_match('/^[a-zA-Z0-9@._-]{1,100}$/',$entry['actor'])||!is_string($entry['provider']??null)||!preg_match('/^[a-z][a-z0-9_-]{2,63}$/',$entry['provider'])||!in_array($entry['action']??null,['rotate','revoke'],true)||!is_int($entry['version']??null)||$entry['version']<1||!is_string($entry['at']??null)||!preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+00:00$/D',$entry['at'])||!is_string($entry['operationId']??null)||!preg_match('/^[a-f0-9-]{36}$/i',$entry['operationId']))$bad();
+  }
+  foreach($data['operations'] as $id=>$op){
+   if(!is_string($id)||!preg_match('/^[a-f0-9-]{36}$/i',$id)||!is_array($op)||array_diff(array_keys($op),['hash','result'])||!is_string($op['hash']??null)||!preg_match('/^[a-f0-9]{64}$/D',$op['hash'])||!is_array($op['result']??null))$bad();
+   $r=$op['result'];if(array_diff(array_keys($r),['revision','version','status'])||!is_int($r['revision']??null)||$r['revision']<1||$r['revision']>$data['revision']||!is_int($r['version']??null)||$r['version']<1||!in_array($r['status']??null,['active','revoked'],true))$bad();
+  }
  }
  private function commit(array $data,string $file):void{
   $bytes=json_encode($data,JSON_THROW_ON_ERROR);if(strlen($bytes)>262144)throw new RuntimeException('VAULT_CAPACITY');$temp=$this->directory.'/.vault-'.bin2hex(random_bytes(12));$h=fopen($temp,'x');if(!$h)throw new RuntimeException('VAULT_STORAGE_FAILED');

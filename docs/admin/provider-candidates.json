@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "paid_budget_usd": 0,
+  "automatic_import": false,
+  "models": [
+    {
+      "enabled": false,
+      "free_verified": false,
+      "unbilled_confirmed": false,
+      "privacy_approved": false,
+      "paid": false,
+      "capabilities": [
+        "json"
+      ],
+      "remaining": 0,
+      "circuit_until": 0,
+      "account_quota": null,
+      "evaluation_passed": false,
+      "live_test_authorized": false,
+      "outputTokens": 400,
+      "contextChars": 12000,
+      "id": "gemini-review-candidate",
+      "provider": "gemini",
+      "modelId": "gemini-2.5-flash-lite",
+      "reviewed_on": "2026-11-03",
+      "status": "DISABLED_DOCUMENTATION_CANDIDATE",
+      "notes": "Official standard free input/output is documented. Account/region eligibility is unverified. Unpaid-service terms prohibit sensitive/confidential/personal input and require paid service for EEA/Swiss/UK users; a global free public rollout is not approved.",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/pricing#gemini-2.5-flash-lite",
+        "https://ai.google.dev/gemini-api/terms",
+        "https://ai.google.dev/gemini-api/docs/rate-limits"
+      ]
+    },
+    {
+      "enabled": false,
+      "free_verified": false,
+      "unbilled_confirmed": false,
+      "privacy_approved": false,
+      "paid": false,
+      "capabilities": [
+        "json"
+      ],
+      "remaining": 0,
+      "circuit_until": 0,
+      "account_quota": null,
+      "evaluation_passed": false,
+      "live_test_authorized": false,
+      "outputTokens": 400,
+      "contextChars": 12000,
+      "id": "groq-review-candidate",
+      "provider": "groq",
+      "modelId": "openai/gpt-oss-20b",
+      "reviewed_on": "2026-11-03",
+      "status": "DISABLED_DOCUMENTATION_CANDIDATE",
+      "notes": "Production model and public Free Plan table documented. Public table reference: 30 RPM / 1000 RPD / 8000 TPM / 200000 TPD; account limits may differ, so no operational quota is configured. Review organization data controls; abuse/reliability retention may apply and ZDR requires a verified setting.",
+      "sources": [
+        "https://console.groq.com/docs/models",
+        "https://console.groq.com/docs/rate-limits",
+        "https://console.groq.com/docs/structured-outputs",
+        "https://console.groq.com/docs/your-data"
+      ]
+    }
+  ]
+}
