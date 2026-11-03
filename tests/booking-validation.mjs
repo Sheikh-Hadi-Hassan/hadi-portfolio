@@ -1,0 +1,13 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const sleeps=[];const ctx={console,Date,JSON,Error,Math,Number,String,Array,Utilities:{sleep:n=>sleeps.push(n),formatDate:(_,zone)=>{new Intl.DateTimeFormat('en',{timeZone:zone}).format(new Date());return '2026-11-03'}},Calendar:{Freebusy:{query:()=>({})}}};vm.createContext(ctx);vm.runInContext(fs.readFileSync('integrations/calendar-v8/Code.gs','utf8'),ctx);
+const id='12345678-1234-1234-1234-123456789abc';assert.equal(ctx.eventId_(id),'hadi12345678123412341234123456789abc');ctx.checkId_(id);
+for(const bad of ['',null,'arbitrary','../1234'])assert.throws(()=>ctx.checkId_(bad),e=>e.code==='INVALID_REFERENCE');
+for(const prefix of ['=','+','-','@','\t','\r']){const value=prefix+'untrusted';assert.equal(ctx.safe_(value),"'"+value);assert.equal(ctx.plain_(ctx.safe_(value)),value)}assert.equal(ctx.safe_('Normal text'),'Normal text');
+let tries=0;assert.equal(ctx.readRetry_(()=>{if(++tries===1)throw Error('503 unavailable');return 'recovered'}),'recovered');assert.equal(tries,2);assert.equal(sleeps.length,1);
+tries=0;assert.throws(()=>ctx.readRetry_(()=>{tries++;throw Error('permission denied')}));assert.equal(tries,1);
+tries=0;assert.throws(()=>ctx.readRetry_(()=>{tries++;throw Error('503 unavailable')}));assert.equal(tries,2);
+assert.throws(()=>ctx.busy_(new Date(),new Date()),e=>e.code==='CALENDAR_ACCESS');
+const p={action:'enquiry',requestId:id,name:'Test',email:'test@example.invalid',services:['branding'],answers:{},timezone:'Asia/Karachi'};ctx.validate_(p);
+for(const patch of [{name:''},{name:'x'.repeat(121)},{email:'bad'},{phone:{}},{website:'bot'},{services:['unknown']},{answers:[]},{notes:'x'.repeat(3001)},{timezone:'Not/AZone'}])assert.throws(()=>ctx.validate_({...p,...patch}));
+const html=ctx.emailHtml_('<script>bad</script>',{Name:'<img src=x onerror=alert(1)>',Notes:'<script>x</script>'},'https://example.com/fake');assert(!html.includes('<script>'));assert(!html.includes('<img src=x'));assert(!html.includes('href="https://example.com/fake"'));
+console.log('PASS: stable event reference, malformed IDs/payloads, honeypot, spreadsheet formula escaping, bounded transient retry/no permission retry, fail-closed availability and escaped notification markup. Local contracts only.');

@@ -5,9 +5,10 @@ import vm from 'node:vm';
 
 const props=new Map([['SHEET_ID','test-sheet']]);
 const cache=new Map();
-let currentEvent=null;
+let currentEvent=null,savedRow=null;
 const sheet={
-  getLastRow:()=>1,
+  getLastRow:()=>savedRow?2:1,
+  getRange:()=>({getValues:()=>[savedRow]}),
   getSheetName:()=> 'Leads',
 };
 const ctx={
@@ -39,6 +40,7 @@ const ctx={
 vm.createContext(ctx);
 vm.runInContext(fs.readFileSync('integrations/calendar-v8/Code.gs','utf8'),ctx);
 
+ctx.row_=()=>savedRow?2:0;
 const ref='HADI-12345678-1234-1234-1234-123456789abc';
 const baseEvent={
   id:'hadi12345678123412341234123456789abc',
@@ -78,6 +80,7 @@ assert.equal(result.ok,false);
 assert.equal(result.code,'CANCELLED');
 assert.equal(result.delivery,'not_sent');
 
+savedRow=Array(18).fill('');savedRow[0]=ref;savedRow[11]=baseEvent.start.dateTime;savedRow[12]=baseEvent.id;
 currentEvent={...baseEvent,conferenceData:{createRequest:{status:{statusCode:'pending'}}}};
 result=ctx.status_({requestId:'12345678-1234-1234-1234-123456789abc'});
 assert.equal(result.status,'pending');
@@ -89,7 +92,7 @@ result=ctx.status_({requestId:'12345678-1234-1234-1234-123456789abc'});
 assert.equal(result.status,'booked');
 assert.equal(result.meetingStatus,'ready');
 
-currentEvent=null;
+savedRow=null;currentEvent=null;
 result=ctx.status_({requestId:'12345678-1234-1234-1234-123456789abc'});
 assert.equal(result.status,'not_found');
 assert.equal(result.booking,false);
@@ -107,3 +110,13 @@ for (const overrides of [
 }
 assert.equal(fs.readFileSync('integrations/calendar-v8/Code.gs','utf8'),fs.readFileSync('integrations/leads/Code.gs','utf8'));
 console.log('Pending/failed Meet, invalid event identity/time and tentative events never confirm; integration copies match.');
+
+currentEvent={...baseEvent,hangoutLink:'https://meet.google.com/abc-defg-hij'};savedRow=null;
+assert.equal(ctx.status_({requestId:ref.slice(5)}).status,'pending');
+savedRow=Array(18).fill('');savedRow[0]=ref;savedRow[11]=baseEvent.start.dateTime;savedRow[12]='wrong-event';
+assert.equal(ctx.status_({requestId:ref.slice(5)}).booking,false);
+savedRow[12]=baseEvent.id;savedRow[11]='2026-12-31T07:00:00Z';
+assert.equal(ctx.status_({requestId:ref.slice(5)}).booking,false);
+savedRow[11]=baseEvent.start.dateTime;
+assert.equal(ctx.status_({requestId:ref.slice(5)}).status,'booked');
+console.log('Persisted lead/event/time correlation required: orphan event and mismatched record stay pending.');

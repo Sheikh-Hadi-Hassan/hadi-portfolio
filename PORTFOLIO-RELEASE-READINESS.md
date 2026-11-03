@@ -1,3 +1,19 @@
+## Evidence acceptance update after ce1b299
+
+Verified before: 5/243 (2.06%). Verified after: 20/243 (8.23%). Denominator remains exactly 243 portfolio / 476 total; 233 future unchanged. Counts: {"Partially implemented": 190, "Implemented and verified": 20, "Missing": 2, "Blocked by external dependency": 31}.
+
+New checks: `node tests/booking-validation.mjs`, updated `node tests/booking-status.mjs` and `node tests/booking-recovery.mjs`, and `python3 tests/source-seo.py` PASS locally. Existing contact error transport, hashed gateway logging, consent/withdrawal, utility/CV/hero checks also passed when checked against these changes. Browser harness syntax passes; no browser run and no active hero lock.
+
+Fixed P0: status recovery formerly trusted a Calendar event without a saved lead. It now requires saved reference/event/start correlation. Orphan and mismatch regression fixtures stay pending. Both Apps Script source copies match. This is undeployed.
+
+New local acceptance covers deterministic references, saved mock contact/timezone/state/event ID, cancelled-event recognition, bounded provider read retry and standard spreadsheet formula prefixes. Seven generated source-template SEO obligations pass across 22 pages. Full Google persistence/delivery, deployed identity and current Next export remain unverified. No notification exactly-once claim.
+
+Remaining P0: approved hero integrity, authenticated runtime/config/deployment and cleanup evidence, controlled E2E authorization and notification send-before-record ambiguity. P1: remaining matrix acceptance including authenticated cancellation/rescheduling contracts, operational privacy retention and all-route visual/accessibility checks. Browser completed: 0/198. Manual accessibility not performed. Manifest STALE; NO-GO.
+
+---
+
+Historical checkpoint below (superseded counts; retained provenance):
+
 # Portfolio V0.1 release readiness
 
 **NO-GO. Manifest STALE.** No production, main, recovery or active Apps Script changes. No live bookings/emails. Branch: `work/v01-booking-contract-20261103`, continued from `925a3299844baff46414629cb4420341e090b8bb`.

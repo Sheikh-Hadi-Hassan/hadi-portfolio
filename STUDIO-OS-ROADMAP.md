@@ -24,3 +24,5 @@ Public Sera consent now defaults off in portfolio source. This is not completion
 ## Atomic traceability update
 
 The source-referenced atomic catalogue is `docs/atomic-requirements.json`. 116 SO obligations are Future scope, excluded from the portfolio denominator. Public consent withdrawal is a portfolio fix, not private-agent or commercial-platform completion. No platform implementation status is promoted.
+
+Evidence update: portfolio local acceptance is 20/243 (8.23%). The 233 future obligations remain excluded and no platform capability is promoted. Current source/test boundary remains in the atomic catalogue.
