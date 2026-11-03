@@ -7,7 +7,9 @@
     1440
   ],
   "checks": [
-    "new case rendering",
+    "new rich case rendering",
+    "article/chapter content",
+    "keyboard chapter anchor",
     "no horizontal overflow",
     "decoded image aspect ratio",
     "automated axe",

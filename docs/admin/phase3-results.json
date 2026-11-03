@@ -1,15 +1,15 @@
 {
-  "baseline": "1f62f3d096ea2a96710c9e4b937ff0e9f6e17752",
+  "baseline": "7882f82ede08b4186485f6745486f9c122dd8006",
   "release": "NO-GO",
   "manifest": "STALE",
   "tests": {
-    "javascript_suites": 16,
+    "javascript_suites": 17,
     "javascript": "PASS",
     "php_suites": 8,
     "php": "PASS",
     "quota_contention": "PASS: 20 processes, exactly 3 reservations under quota 3",
     "browser_suites": 7,
-    "browser": "PASS isolated fixtures",
+    "browser": "affected admin/CMS rich fixtures rerun PASS; prior five retained",
     "runner": "Playwright 1.64.1 / axe wrapper 4.14.0 / Chromium 153.0.8010.0",
     "viewports": "admin 320/768/1280 plus workflows/CMS 375/768/1440",
     "axe": "zero findings in tested admin/CMS states",
@@ -33,5 +33,7 @@
   "production_changes": 0,
   "live_bookings": 0,
   "live_emails": 0,
-  "owner_package": "OWNER-ACCEPTANCE.md"
+  "owner_package": "OWNER-ACCEPTANCE.md",
+  "cms_rich_authoring": "LOCAL_PASS",
+  "release_tree_verification": "LOCAL_PASS"
 }

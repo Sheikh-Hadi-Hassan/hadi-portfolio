@@ -2,11 +2,10 @@
 
 ```json
 {
-  "baseline_head": "1f62f3d096ea2a96710c9e4b937ff0e9f6e17752",
+  "baseline_head": "7882f82ede08b4186485f6745486f9c122dd8006",
   "branch": "work/v01-booking-contract-20261103",
   "phase": 3,
   "status": "LOCAL_INTEGRATION_VERIFIED_NO_GO",
-  "published_slice": "d3924cc347376d7adca12726486e388967762b7a",
   "architecture": "Existing Sheet-bound admin + approved public artifacts + private PHP libraries; no database/worker or live auth bridge assumed",
   "completed_local": [
     "gated AEAD credential vault: independent key-provider interface, server permissions, masked reads, provider-key rotation/revocation, audit/revision/idempotency",
@@ -17,16 +16,20 @@
     "tree release pinned across reload/config updates; required answers enter deterministic brief/lead contract; corrupt state retains answers",
     "vault/adapters/router/ledger private composition plus redacted context and default-disabled fixed-host HTTPS transport",
     "mutation token read-refresh no longer invalidates another tab; known validation errors unfreeze editor",
-    "source-backed fake-Google/public-widget browser workflow, role forgery rejection and no inherited public admin bridge"
+    "source-backed fake-Google/public-widget browser workflow, role forgery rejection and no inherited public admin bridge",
+    "bounded article/chapter authoring, safe rich previews and same-record source import; existing chapter anchors preserved",
+    "exact release-tree verification rejects unlisted files/directories, links and duplicate manifest entries before promotion/rollback",
+    "custom approval dialog no longer shadows native unsaved-change confirmation",
+    "Urdu provider-context clipping preserves UTF-8 without changing stored answers"
   ],
   "tests": {
-    "javascript_suites": 16,
+    "javascript_suites": 17,
     "javascript": "PASS",
     "php_suites": 8,
-    "php": "PASS",
+    "php": "previous eight suites retained; changed transport/private-runtime tests rerun PASS",
     "quota_contention": "PASS: 20 processes, exactly 3 reservations under quota 3",
     "browser_suites": 7,
-    "browser": "PASS isolated fixtures",
+    "browser": "previous seven suites retained; affected admin/CMS fixtures rerun PASS with rich content",
     "runner": "Playwright 1.64.1 / axe wrapper 4.14.0 / Chromium 153.0.8010.0",
     "viewports": "admin 320/768/1280 plus workflows/CMS 375/768/1440",
     "axe": "zero findings in tested admin/CMS states",
@@ -41,9 +44,9 @@
     "Hosted CMS upload/publication and actual candidate deployment require verified runtime/auth and explicit approval"
   ],
   "source_managed_scope": [
-    "Existing specialized chapter/video/social authoring remains source-managed; source data is preserved by standard case edits"
+    "Video/social authoring remains source-managed; article/chapter content and existing layout variants are editable; chapter anchor removal requires a separate migration policy"
   ],
-  "next_task": "Reconcile OWNER-ACCEPTANCE.md evidence; obtain hero/key/auth decisions, then prepare explicitly authorized isolated deployment/acceptance. No live activation now.",
+  "next_task": "Reconcile existing OWNER-ACCEPTANCE.md evidence; obtain verified hosting/key/auth and hero decisions before authorized isolated integration deployment. No live activation.",
   "portfolio_counts": {
     "verified": 22,
     "partial": 188,
@@ -53,6 +56,10 @@
     "future_excluded": 233
   },
   "manifest": "STALE",
-  "release": "NO-GO"
+  "release": "NO-GO",
+  "published_slices": [
+    "d3924cc347376d7adca12726486e388967762b7a",
+    "7882f82ede08b4186485f6745486f9c122dd8006"
+  ]
 }
 ```

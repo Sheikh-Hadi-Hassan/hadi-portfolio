@@ -3,6 +3,8 @@
   "scope": "Actual Apps Script source with mocked Google identity/storage; actual public widget in separate context. Not live login or production.",
   "checks": [
     "case source import and safe draft preview",
+    "existing-case reimport retains ID/revision",
+    "rich article/chapter editor preview",
     "commas preserved in structured arrays",
     "approval dialog keyboard cancel/confirm",
     "route-change rejection preserves editor",
