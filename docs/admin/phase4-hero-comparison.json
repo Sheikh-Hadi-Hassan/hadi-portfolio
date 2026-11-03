@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "status": "PROPOSAL_MATCH_NOT_APPROVAL",
+  "hashes": {
+    "hero_html": "bafe2419c5332ebc59e93519ed7c94c125a684f9c05d2dee3e55b41f06de608e",
+    "hero_css": "fc5224e4a0ab4bc2957f8be69ac8f84e6b48b125b771e7123e84c552e77b035f",
+    "shared_css": "7255e1f9fe90310502abca9c422d82cc135bf0dcba5aa574650513fd807a8b33"
+  },
+  "proposal_active": false,
+  "approval_observed": false,
+  "lock_present": false
+}

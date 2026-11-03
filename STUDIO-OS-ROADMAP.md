@@ -58,3 +58,7 @@ Evidence: docs/admin/PHASE3-TEST-EVIDENCE.md. 16 JS suites, eight PHP suites, 20
 Original Portfolio acceptance stays **22/243 = 9.05%**: 188 partial, 2 missing, 31 blocked; 233 future excluded. No atomic obligations were promoted solely for admin fixtures. Production-build routes remain **0/198**. Required owner inputs are in docs/admin/OWNER-ACCEPTANCE.md. Approved hero, live runtime/config/deployment identities, key custody/auth, cleanup and explicitly authorized booking acceptance remain gates. Manifest **STALE**; **NO-GO**.
 
 Continuation from 7882f82: article/chapter authoring and existing-case reimport are now locally tested; the native confirmation collision is fixed. Exact release manifests reject unapproved files/links before rollback. Full JS regression: 17 suites PASS; affected admin/CMS browser fixtures PASS. Video/social authoring remains source-managed. Owner gates and counts remain unchanged: 22/243 (9.05%), 188 partial, 2 missing, 31 blocked; production-build 0/198. Manifest STALE; NO-GO. See docs/admin/PHASE3-TEST-EVIDENCE.md.
+
+## Phase 4 boundary — 2026-11-03
+
+No analytics, marketing, administrative-AI or commercial expansion was started. Targeted security/provider/harness work is recorded in docs/admin/PHASE4-ACCEPTANCE.md; future-scope obligations remain excluded. Portfolio acceptance stays 22/243 (9.05%), production browser 0/198, manifest STALE, NO-GO.

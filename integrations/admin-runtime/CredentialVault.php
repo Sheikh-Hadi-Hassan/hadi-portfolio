@@ -47,7 +47,7 @@ final class SeraCredentialVault {
   $key=$this->key();try{return $this->transaction(function($data,$file)use($id,$action,$secret,$expectedRevision,$operationId,$actor,$key){
    $hash=hash_hmac('sha256',json_encode([$id,$action,$secret,$expectedRevision,$actor],JSON_THROW_ON_ERROR),$key);
    if(isset($data['operations'][$operationId])){if(!hash_equals($data['operations'][$operationId]['hash'],$hash))throw new RuntimeException('VAULT_OPERATION_MISMATCH');return $data['operations'][$operationId]['result']+['replayed'=>true];}
-   if($data['revision']!==$expectedRevision)throw new RuntimeException('VAULT_REVISION_CONFLICT');if(count($data['audit'])>=500)throw new RuntimeException('VAULT_CAPACITY');
+   if($data['revision']!==$expectedRevision)throw new RuntimeException('VAULT_REVISION_CONFLICT');if(count($data['audit'])>=500||(!isset($data['providers'][$id])&&count($data['providers'])>=100))throw new RuntimeException('VAULT_CAPACITY');
    $version=($data['providers'][$id]['version']??0)+1;$row=['version'=>$version,'status'=>$action==='rotate'?'active':'revoked','suffix'=>$action==='rotate'?substr($secret,-4):''];
    if($action==='rotate'){$nonce=random_bytes(SODIUM_CRYPTO_AEAD_XCHACHA20POLY1305_IETF_NPUBBYTES);$row['nonce']=base64_encode($nonce);$row['ciphertext']=base64_encode(sodium_crypto_aead_xchacha20poly1305_ietf_encrypt($secret,$id.':'.$version,$nonce,$key));}
    $data['providers'][$id]=$row;$data['revision']++;$data['audit'][]=['actor'=>$actor,'provider'=>$id,'action'=>$action,'version'=>$version,'at'=>gmdate('c'),'operationId'=>$operationId];$result=['revision'=>$data['revision'],'version'=>$version,'status'=>$row['status']];$data['operations'][$operationId]=['hash'=>$hash,'result'=>$result];$this->commit($data,$file);return $result;

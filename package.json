@@ -10,7 +10,10 @@
     "test:sera-guided-browser": "node tests/sera-guided-browser.cjs",
     "test:admin-browser": "node tests/admin-control-browser.cjs",
     "test:config-browser": "node tests/sera-config-browser.cjs",
-    "test:cms-cli": "python3 tests/admin-cms-cli.py"
+    "test:cms-cli": "python3 tests/admin-cms-cli.py",
+    "build:acceptance": "python3 scripts/qa/acceptance-build.py",
+    "test:browser-plan": "node tests/browser-plan.cjs && python3 tests/acceptance-build.py",
+    "test:browser-v01": "node tests/browser-v01.cjs"
   },
   "dependencies": {
     "gsap": "3.15.0",

@@ -34,3 +34,7 @@ No production change, integration activation, diagnostic installation or live bo
 Keep the existing kit cleanup.json unchanged as the primary cleanup evidence. Absence of an HTTP route alone is insufficient: correlate file identity/permissions, restored gateway hash and absence of the probe marker. No diagnostic was installed by this phase.
 
 References: https://developers.google.com/apps-script/concepts/deployments ; https://developers.google.com/apps-script/api/reference/rest/v1/projects/getContent ; https://developers.google.com/workspace/calendar/api/guides/create-events . Review is read-only; no Deploy/Edit/Archive, permission broadening, API enabling, cache reset or provider call is part of these instructions.
+
+## Phase 4 handoff
+
+Use PHASE4-ACCEPTANCE.md for the exact three-hash local hero approval wording and custody/hosted-CMS sequence; PROVIDER-READINESS.md for current official terms and disabled candidates; CONTROLLED-INTEGRATION-ACCEPTANCE.md for isolated test resources, evidence and cleanup. These documents do not authorize installation, credential writes, activation, publication or live calls. First return existing reviewed-kit evidence.json/cleanup.json plus request-level loader and deployed-version evidence. No new production evidence has been accepted.
