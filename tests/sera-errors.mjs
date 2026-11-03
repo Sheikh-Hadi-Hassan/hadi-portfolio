@@ -1,0 +1,3 @@
+import assert from 'node:assert/strict';import {SERA_ERRORS,seraError} from '../integrations/sera-v9-source/errors.mjs';
+for(const code of Object.keys(SERA_ERRORS)){const e=seraError(code);assert(e.preserveAnswers);assert(e.message&&e.action);assert(e.maxAttempts<=2);if(/PENDING|RECONCILIATION/.test(code)){assert.equal(e.maxAttempts,0);assert(!e.retryable)}}
+assert.equal(seraError('raw private upstream message').code,'UI_UNAVAILABLE');assert(!JSON.stringify(seraError('secret')).includes('secret'));console.log('PASS: typed recovery policies retain drafts, bound safe retries, forbid uncertain-write retries and replace raw diagnostics. Policy core only.');

@@ -38,7 +38,7 @@ async function routeWidgetVoice(t){if(!widgetKey)return false;const key=widgetKe
 if(key==='shared:timeline'){const parsed=voiceDate(raw);if(!parsed?.hasDay)return false;const date=localDate(parsed.date);setFact(key,date);widgetKey='';await handleMessage('My target date is '+date);return true}
 if(key==='shared:budget'){if(/not sure|need guidance|flexible|پتہ نہیں/i.test(raw)){setFact(key,'Need guidance');widgetKey='';await handleMessage('I need guidance with the budget.');return true}const n=raw.replace(/\btwo thousand\b/i,'2000').replace(/\bfive thousand\b/i,'5000').replace(/\bone thousand\b/i,'1000').match(/(?:[$£€]|USD|PKR)?\s*\d[\d,]*(?:\s*(?:USD|PKR|dollars|pounds|euros))?/i);if(n){widgetKey='';setFact(key,n[0].trim());await handleMessage('My planning budget is '+n[0].trim());return true}return false}
 if(q.options){const indexes=selectedVoiceOptions(raw,q.options);if(!indexes.length)return false;const values=indexes.map(i=>q.options[i]);setFact(key,values.join('|'));widgetKey='';widgetSelection=[];await handleMessage('My selected requirements: '+values.join(', '));return true}return false}
-async function routeVoice(t){if(!t.trim()||voiceTurnInFlight)return;voiceTurnInFlight=true;try{
+async function routeVoice(t){if(session.discovery?.active){session.discovery.transcript=String(t).slice(0,1500);error='Review the transcription, then use Continue or choose an option.';render();return}if(!t.trim()||voiceTurnInFlight)return;voiceTurnInFlight=true;try{
 if(/^(?:end voice|stop listening|stop voice|pause voice)[.!]*$/i.test(t.trim())){voiceStop();voiceMode=false;render();return}
 if(busy){readReply('One moment, I’m checking that.');return}
 if(booking){await routeBookingVoice(t);return}
