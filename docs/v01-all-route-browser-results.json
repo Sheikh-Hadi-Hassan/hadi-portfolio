@@ -1,0 +1,997 @@
+{
+  "status": "BLOCKED",
+  "reason": "Approved design/hero-lock.json unavailable; build integrity enforced; no current export accepted",
+  "manual_accessibility": "NOT_EXECUTED",
+  "cases": [
+    {
+      "route": "/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/archive/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/archive/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/archive/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/archive/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/archive/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/archive/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/archive/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/archive/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/archive/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/morganics/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/morganics/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/morganics/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/morganics/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/morganics/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/morganics/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/morganics/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/morganics/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/morganics/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/about/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/about/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/about/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/about/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/about/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/about/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/about/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/about/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/resume/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/resume/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/resume/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/resume/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/resume/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/resume/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/resume/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/resume/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/resume/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/contact/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/contact/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/contact/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/contact/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/contact/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/contact/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/contact/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/contact/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/contact/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/privacy/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/privacy/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/privacy/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/privacy/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/privacy/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/privacy/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/privacy/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/privacy/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/privacy/",
+      "width": 1440,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/work/",
+      "width": 320,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/work/",
+      "width": 360,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/work/",
+      "width": 375,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/work/",
+      "width": 390,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/work/",
+      "width": 430,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/work/",
+      "width": 768,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/work/",
+      "width": 1024,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/work/",
+      "width": 1280,
+      "status": "BLOCKED"
+    },
+    {
+      "route": "/work/",
+      "width": 1440,
+      "status": "BLOCKED"
+    }
+  ]
+}

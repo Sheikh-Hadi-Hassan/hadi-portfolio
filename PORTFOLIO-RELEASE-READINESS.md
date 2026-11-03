@@ -60,3 +60,25 @@ Record the exact predeployment hosting artifact and Apps Script deployment versi
 Return sanitized `EVIDENCE.md`, `evidence.json`, `cleanup.json` from authenticated sessions using the reviewed kit. Do not send credentials. Supply the original approved hero-lock artifact or decide its replacement approval policy. Authorize a controlled booking only after runtime/config/deployment gates pass. Deployment remains separately gated.
 
 Next local work: exhaustive plan decomposition, remaining route/resume parity, broader Sera/consent/fault-injection and all-page visual/accessibility acceptance. No overall portfolio completion percentage is claimed.
+
+## 3 November continuation evidence
+
+Added About, Work, Contact, Privacy and Resume routes using existing shared layout. Menu includes About/Resume/Contact; original 2026 CV PDF included with pinned SHA-256 identity. Fixed utility breadcrumb labels and removed spurious Portfolio ancestor for utility pages. Existing Archive/project data retained.
+
+Commands and current results:
+
+- `python3 scripts/build.py && python3 tests/utility-routes.py`: PASS, 22 source-template routes, 5 new utility pages, original PDF and unchanged home/hero/shared CSS. This is not the gated production export.
+- All 20 non-browser JavaScript suites: PASS, individual results in `docs/v01-local-test-results.json`.
+- `python3 tests/source-assets.py`: PASS (461 existing source asset references).
+- `python3 tests/package-security.py`: PASS.
+- `python3 tests/image-cache.py`: PASS.
+- `npm audit --json`: zero known vulnerabilities in current lockfile.
+- `npm run build`: FAIL at unchanged integrity guard because approved `design/hero-lock.json` is missing. No bypass performed.
+- `node --check tests/browser-v01.cjs`: PASS syntax. Runtime suite BLOCKED at integrity prerequisite. All 198 route/width cases are explicitly blocked in `docs/v01-all-route-browser-results.json`.
+- Current production-export SEO/image/hydration/type/build checks and manual keyboard/screen-reader/contrast acceptance remain BLOCKED after the new route changes. Earlier passing evidence is historical and is not promoted to a current pass.
+
+Hero investigation: no file in current snapshot, no PDF/hero lock in preserved hosting ZIP, no exact-name Library lock result; GitHub default-branch and integration-branch path-history queries returned no commits. This is bounded evidence, not proof that no artifact exists anywhere. Required owner artifact: original approved `design/hero-lock.json` with provenance, or explicit approval of a replacement baseline. Current hero inputs remain byte-identical to checkpoint. No automatic baseline generation.
+
+P0: hero integrity/build gate, authenticated runtime/config/Apps Script identity, cleanup and authorized E2E booking gates; notification send-before-record crash ambiguity remains. P1: full original-plan atomic mapping, all-route visual/accessibility/SEO acceptance after build, consent/privacy completeness and cancellation/rescheduling acceptance. Manual browser checks were not performed in this continuation.
+
+Manifest STALE. NO-GO. Production, main and recovery remain untouched. No real booking, email or diagnostic deployment. Existing five-report checkpoint remains in the development branch; this continuation does not claim every local task is finished.

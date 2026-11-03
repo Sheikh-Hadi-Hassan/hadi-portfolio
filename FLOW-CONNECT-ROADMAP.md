@@ -16,3 +16,7 @@ FUTURE_SCOPE: original plan §15, dual-mode blueprint and V0.7–V1.2 roadmap. N
 |Advanced automation|Plan only|Governed external actions and optional MCP ecosystem|Validated core and approval audits|High|V1.2|
 
 Prefer a modular monolith after runtime verification. No generic site builder, ecommerce platform, marketplace or enterprise suite in this scope. No mandatory paid service or unlimited-free-AI promise. Outreach, deployments and customer notifications require explicit authorization.
+
+## 3 November continuation
+
+Portfolio utility routes and original resume download have been prepared locally. These are portfolio work, not CMS/CRM or commercial-platform completion. No roadmap implementation status changes. Full original-plan source coverage is preserved in `docs/original-plan-source-coverage.json`; atomic requirement deduplication remains open.

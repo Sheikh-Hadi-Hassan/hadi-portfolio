@@ -14,3 +14,7 @@ FUTURE_SCOPE for Portfolio V0.1. Original plan §§8–11 and version roadmap V0
 |Integrations/automation|Portfolio gateway integration exists|Site-scoped keys/rotation, signed webhooks/replay/retries, schema/versioning, OAuth, optional MCP|Validated API contracts and approval policy|High|V0.5–V0.6|
 
 Start with owner-only workflows. Verify Hostinger PHP/database/cron/resource limits before architecture selection; do not assume persistent workers, Redis, containers, local LLMs or free unlimited AI. No new recurring service without approval. Each phase requires tests, migration/rollback and separate live approval.
+
+## 3 November continuation
+
+Portfolio utility routes and original resume download have been prepared locally. These are portfolio work, not CMS/CRM or commercial-platform completion. No roadmap implementation status changes. Full original-plan source coverage is preserved in `docs/original-plan-source-coverage.json`; atomic requirement deduplication remains open.

@@ -5,6 +5,11 @@
     "output": "Client rejects incomplete confirmations, retains pending drafts, accepts full event/Meet contract, and does not promote legacy responses.\n"
   },
   {
+    "test": "tests/booking-recovery.mjs",
+    "exit": 0,
+    "output": "PASS: isolated duplicate/mismatched keys, lost Calendar response reconciliation, pending Meet, timeout, Calendar denial, busy slot and partial notification retry. No external calls. Send-before-metadata crash ambiguity remains a documented limitation.\n"
+  },
+  {
     "test": "tests/booking-status.mjs",
     "exit": 0,
     "output": "Booking status contract: event reservation, Meet pending/ready/failed, cancellation and not-found recovery states pass.\nPending/failed Meet, invalid event identity/time and tentative events never confirm; integration copies match.\n"

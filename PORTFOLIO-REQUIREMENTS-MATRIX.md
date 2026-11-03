@@ -48,3 +48,17 @@ Evidence checkpoint: 2026-11-03. Original source: `Pasted markdown(20261102-0608
 Checkpoint count: **5/39** grouped applicable requirements locally verified; **34** remain unverified or incomplete. This is not an overall portfolio completion percentage; exhaustive plan decomposition and browser acceptance remain open.
 
 Studio OS and Flow Connect module requirements are tracked separately in their roadmaps as FUTURE_SCOPE; they do not gate this portfolio release.
+
+
+## Continuation: original-plan coverage and remaining decomposition
+
+All 869 original-plan lines were read. `docs/original-plan-source-coverage.json` retains every source paragraph, its line and scope context, including future product requirements and historical observations. This closes source availability/coverage, but **does not establish an approved atomic requirement count**. Comma-separated capability lists and overlapping historical roadmaps still need semantic deduplication and explicit acceptance mapping. Treating every sentence or comma as an independent requirement would fabricate precision.
+
+The five new standalone routes and original CV pass `tests/utility-routes.py` at source-template level. Their current exported/browser state is **Implemented but unverified**. The previous 5/39 figure remains a dated grouped checkpoint, not a full-plan completion percentage. Full-plan completed / total and percentage are **not yet established**; no denominator is invented.
+
+|Supplemental requirement|Source|Implementation|Evidence|Acceptance remaining|
+|---|---|---|---|---|
+|About / Work / Contact / Privacy / Resume routes|Current directive; original §§7,11–12 journeys|Implemented but unverified|Five generated source pages with own canonicals and unique headings/IDs|Approved export and browser journeys|
+|Original downloadable CV|Current directive|Implemented but unverified|Original Library PDF copied byte-for-byte; SHA-256 pinned in test|Browser download after approved build|
+|Every-route/nine-width browser suite|Current directive; §12|Partially implemented|Harness covers 22 routes × 9 widths; 198 cases explicitly BLOCKED|Approved hero lock and resulting export|
+|Hero preservation|§12; existing README|Implemented and verified locally|Utility test compares home/hero/shared CSS bytes to checkpoint|Approval artifact itself unavailable|

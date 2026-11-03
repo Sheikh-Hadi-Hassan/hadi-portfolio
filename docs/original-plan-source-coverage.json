@@ -1,0 +1,2224 @@
+{
+  "source_sha256": "6bbcd0c1df5716a4ff5ff94166396618df09bff4c8756fb681c9b0e9efd53d34",
+  "source_lines": 869,
+  "method": "Every nonempty source paragraph retained, with heading and line reference. Classification is a decomposition aid; not an approved atomic requirement denominator.",
+  "paragraphs": [
+    {
+      "line": 1,
+      "kind": "heading",
+      "text": "PORTFOLIO WEBSITE — PENDING FIXES & DEVELOPMENT NOTES"
+    },
+    {
+      "line": 3,
+      "kind": "heading",
+      "text": "Updated: 20 October 2026"
+    },
+    {
+      "line": 5,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "Updated: 20 October 2026",
+      "text": "Website: https\\://hadi.intellignce.net"
+    },
+    {
+      "line": 7,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "Updated: 20 October 2026",
+      "text": "Status: Open — investigation and remediation deferred by owner."
+    },
+    {
+      "line": 11,
+      "kind": "heading",
+      "text": "1\\. VERIFIED OBSERVATIONS"
+    },
+    {
+      "line": 13,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "1\\. VERIFIED OBSERVATIONS",
+      "text": "Owner tested website scrolling, one lead form submission, Sera AI responses, navigation buttons, email links, and WhatsApp; these worked in the owner's test. This is not a full security or production-readiness certification."
+    },
+    {
+      "line": 15,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "1\\. VERIFIED OBSERVATIONS",
+      "text": "Booking QA confirmation emails were generated on 20 October for “Hadi Booking QA Test”, scheduled Wednesday 21 October 2026 at 1:00 PM Asia/Karachi, 30 minutes. Booking reference: HADI-f603e552-3429-476f-a943-36ec896a1944."
+    },
+    {
+      "line": 17,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "1\\. VERIFIED OBSERVATIONS",
+      "text": "The confirmation contained Google Meet URL https\\://meet.google.com/wir-itbv-mbe. Calendar searches found no corresponding event in any of 11 connected calendars for the target time. Four earlier discovery calls existed in the primary calendar, showing past calendar use, but not proving the current booking flow works."
+    },
+    {
+      "line": 19,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "1\\. VERIFIED OBSERVATIONS",
+      "text": "Critical distinction: a generated confirmation email and Meet URL do not establish that a Google Calendar event was created."
+    },
+    {
+      "line": 23,
+      "kind": "heading",
+      "text": "2\\. RISK / CURRENT DECISION"
+    },
+    {
+      "line": 25,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "2\\. RISK / CURRENT DECISION",
+      "text": "A visitor may receive a “confirmed” booking email without the owner having a corresponding calendar appointment, creating a risk of missed meetings."
+    },
+    {
+      "line": 27,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "2\\. RISK / CURRENT DECISION",
+      "text": "Do not call booking fully production-ready until verified. Do not modify the live site or overwrite GitHub main without source verification and release QA."
+    },
+    {
+      "line": 29,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "2\\. RISK / CURRENT DECISION",
+      "text": "Owner requested to defer implementation and retain these notes for later."
+    },
+    {
+      "line": 33,
+      "kind": "heading",
+      "text": "3\\. INVESTIGATION WHEN RESUMED"
+    },
+    {
+      "line": 35,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "3\\. INVESTIGATION WHEN RESUMED",
+      "text": "Inspect the exact booking handler, Google Apps Script executions and Cloud logs around 20 October 2026 16:11 UTC (21:11 PKT). Correlate the reference above with request, response, errors, and calendar event ID."
+    },
+    {
+      "line": 37,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "3\\. INVESTIGATION WHEN RESUMED",
+      "text": "Check effective OAuth scopes, script executing identity, calendar ID, permissions, deployment version, time zone conversions, Google Calendar API errors, quotas, and whether event creation is attempted before email confirmation."
+    },
+    {
+      "line": 39,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "3\\. INVESTIGATION WHEN RESUMED",
+      "text": "Check whether the Meet link is static/reused or generated for the booking, and whether conference creation completed."
+    },
+    {
+      "line": 41,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "3\\. INVESTIGATION WHEN RESUMED",
+      "text": "Reproduce using a clearly marked QA booking in a staging environment, with consent before creating appointments or sending external mail. Verify the actual calendar event by ID and inspect all participant notifications."
+    },
+    {
+      "line": 45,
+      "kind": "heading",
+      "text": "4\\. RECOMMENDED RELIABLE DESIGN"
+    },
+    {
+      "line": 47,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "4\\. RECOMMENDED RELIABLE DESIGN",
+      "text": "Use an independent booking backend/database as source of truth, with appointment ID, UTC timestamps, original time zone, contact, state, external calendar ID, idempotency key, audit trail, and lead CRM association."
+    },
+    {
+      "line": 49,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "4\\. RECOMMENDED RELIABLE DESIGN",
+      "text": "Enforce server-side slot availability and transactional double-booking prevention. States: pending, confirmed, sync_failed, cancelled, rescheduled."
+    },
+    {
+      "line": 51,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "4\\. RECOMMENDED RELIABLE DESIGN",
+      "text": "Use a durable outbox/queue and idempotent workers for Calendar/Meet synchronization and email delivery; retry transient failures with exponential backoff and dead-letter handling. Distinguish internal reservation from externally confirmed calendar/Meet sync."
+    },
+    {
+      "line": 53,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "4\\. RECOMMENDED RELIABLE DESIGN",
+      "text": "Never send a “Calendar and Meet confirmed” email unless required external operations are verified. If sync fails, keep the reservation visible internally and alert the owner; offer a safe retry or fallback instead of silently losing a booking."
+    },
+    {
+      "line": 55,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "4\\. RECOMMENDED RELIABLE DESIGN",
+      "text": "Build a private calendar view inside the Lead CRM; Google Calendar and Google Meet remain optional external integrations. Implement monitoring, structured logs, alerts, reconciliation, and secure secrets management."
+    },
+    {
+      "line": 59,
+      "kind": "heading",
+      "text": "5\\. RELEASE ACCEPTANCE CRITERIA"
+    },
+    {
+      "line": 61,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "5\\. RELEASE ACCEPTANCE CRITERIA",
+      "text": "End-to-end tests: booking → persisted appointment → Calendar event with correct owner/time → Meet conference → correct customer and owner email; cancellation and rescheduling; duplicate clicks; simultaneous bookings; expired tokens; API downtime; retry and reconciliation; daylight-saving/time-zone edge cases; malicious input and spam/rate limiting; mobile accessibility and UX."
+    },
+    {
+      "line": 63,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "5\\. RELEASE ACCEPTANCE CRITERIA",
+      "text": "Preserve existing portfolio content, Sera AI, lead forms, CRM, emails, animations, and WhatsApp. Verify on staging before deploying; protect GitHub main and live Hostinger site."
+    },
+    {
+      "line": 67,
+      "kind": "heading",
+      "text": "6\\. FOLLOW-UP"
+    },
+    {
+      "line": 69,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "6\\. FOLLOW-UP",
+      "text": "When ready, inspect logs and original source first, identify root cause, repair the existing integration where appropriate, then scope the independent booking backend as a separate controlled upgrade. No fixes have been deployed and no new test appointments were created as part of this note."
+    },
+    {
+      "line": 75,
+      "kind": "heading",
+      "text": "7\\. SEO AUDIT — 20 OCTOBER 2026 (READ-ONLY, INITIAL SOURCE REVIEW)"
+    },
+    {
+      "line": 77,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "7\\. SEO AUDIT — 20 OCTOBER 2026 (READ-ONLY, INITIAL SOURCE REVIEW)",
+      "text": "Scope: GitHub repository Sheikh-Hadi-Hassan/hadi-portfolio, default branch main. User stated portfolio was launched approximately one hour before this review. Live deployment parity with GitHub has not yet been independently established. No production modifications authorized or performed."
+    },
+    {
+      "line": 81,
+      "kind": "heading",
+      "text": "CONFIRMED SOURCE FINDINGS"
+    },
+    {
+      "line": 83,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE FINDINGS",
+      "text": "HIGH — app/layout.tsx defines siteUrl as https\\://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site, not the intended production URL https\\://hadi.intellignce.net. This value feeds metadataBase, author URL, homepage canonical, Open Graph URL, and ProfilePage/Person structured-data identifiers. If deployed unchanged, this may send conflicting canonical and identity signals to search engines."
+    },
+    {
+      "line": 85,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE FINDINGS",
+      "text": "HIGH — app/robots.ts allows all user agents but its sitemap directive references https\\://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site/sitemap.xml."
+    },
+    {
+      "line": 87,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE FINDINGS",
+      "text": "HIGH — app/sitemap.ts constructs the homepage, /work, /about, /systems-lab, /flow, /contact, /privacy, and project URLs using the old ChatGPT-hosted domain."
+    },
+    {
+      "line": 89,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE FINDINGS",
+      "text": "POSITIVE — app/layout.tsx already declares descriptive titles, meta description, robots index/follow, Open Graph, Twitter card, and structured data. app/page.tsx includes an H1, supporting copy, calls to action, and internal navigation. The generated sitemap includes case-study URLs from project data."
+    },
+    {
+      "line": 91,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE FINDINGS",
+      "text": "NOT AN ISSUE — Absence of static public/robots.txt and public/sitemap.xml is expected when Next.js app/robots.ts and app/sitemap.ts generate those endpoints. Verify the generated endpoints in the deployed build rather than requiring static copies."
+    },
+    {
+      "line": 95,
+      "kind": "heading",
+      "text": "UNVERIFIED LIVE CONDITIONS"
+    },
+    {
+      "line": 97,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "UNVERIFIED LIVE CONDITIONS",
+      "text": "Earlier automated attempt reportedly received HTTP 403 from the live portfolio and search did not show indexed pages. These are observations from a previous check, not a definitive Googlebot crawl test. The website was newly launched, so non-indexing is unsurprising. The 403 may involve anti-bot/WAF controls; verify with server/CDN logs and Google's URL Inspection live test. Do not disable security protections globally to accommodate crawlers."
+    },
+    {
+      "line": 99,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "UNVERIFIED LIVE CONDITIONS",
+      "text": "No confirmed Core Web Vitals, PageSpeed Insights, Lighthouse, Search Console coverage, Googlebot response, sitemap status, structured-data validation, or mobile accessibility scores yet. No claim of Awwwards or 100% SEO compliance is warranted."
+    },
+    {
+      "line": 103,
+      "kind": "heading",
+      "text": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)"
+    },
+    {
+      "line": 105,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)",
+      "text": "P0. Establish source/deployment parity: identify the deployed commit hash/build artifact, compare with repository main, verify production environment variables and hosting configuration. Preserve original project source and do not overwrite main or change the live website before review."
+    },
+    {
+      "line": 107,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)",
+      "text": "P0. Centralize production origin in a validated config variable with safe default https\\://hadi.intellignce.net. Use it consistently in app/layout.tsx, app/robots.ts, app/sitemap.ts, and any other URL generators. Verify trailing-slash normalization and environment-specific previews to prevent preview domains from becoming production canonicals."
+    },
+    {
+      "line": 109,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)",
+      "text": "P0. Confirm correct self-referencing canonical per indexable page (not one homepage canonical inherited by every route); check metadata overrides in /work, /work/[slug], /about, /contact and other route layouts/pages. Avoid canonicalizing every project to the homepage."
+    },
+    {
+      "line": 111,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)",
+      "text": "P0. Build and test /robots.txt and /sitemap.xml on staging, check absolute URLs and correct HTTP 200 responses, ensure no accidental noindex/disallow, and exclude private/utility pages where appropriate. Check redirects from alternate hostnames to the primary HTTPS origin."
+    },
+    {
+      "line": 113,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)",
+      "text": "P1. Verify Search Console domain or URL-prefix property, use URL Inspection live test for the homepage and representative project, submit the production sitemap, and monitor coverage. Search Console access/verification may require owner action; do not claim submission until confirmed."
+    },
+    {
+      "line": 115,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)",
+      "text": "P1. Validate JSON-LD using Schema.org/Google rich-results tools; confirm Person, WebSite, ProfilePage, breadcrumbs and project types use consistent @id references and accurate claims. Confirm OG/Twitter preview image resolves with HTTP 200 and suitable dimensions."
+    },
+    {
+      "line": 117,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)",
+      "text": "P1. Improve page-specific titles/descriptions/H1 hierarchy, unique project narratives, internal links, image alt text, accessible semantic structure, and relevant intent targeting. Focus on Brand Identity Designer, Creative Director, Design Lead, and project-specific search intent. Avoid keyword stuffing and unsupported career claims."
+    },
+    {
+      "line": 119,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)",
+      "text": "P1. Benchmark mobile/desktop Core Web Vitals (LCP, INP, CLS), font loading, image size/formats, lazy loading, JavaScript weight, caching, and responsiveness. Capture baselines before making changes."
+    },
+    {
+      "line": 121,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "REMEDIATION PLAN (PROPOSED; NOT EXECUTED)",
+      "text": "P2. Test accessibility (keyboard navigation, focus, contrast, screen readers), security headers, form anti-abuse controls, and crawl behavior under Cloudflare/Hostinger protection. Preserve Sera AI, Lead CRM, email, calendar booking, animations and existing portfolio content."
+    },
+    {
+      "line": 125,
+      "kind": "heading",
+      "text": "ACCEPTANCE / EVIDENCE REQUIRED"
+    },
+    {
+      "line": 127,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "ACCEPTANCE / EVIDENCE REQUIRED",
+      "text": "Production metadata canonical and schema URLs consistently use hadi.intellignce.net; sitemap URLs use production origin; /robots.txt advertises correct sitemap; Googlebot can retrieve public pages without broad WAF bypass; Search Console reports valid sitemap receipt; representative project pages have distinct metadata; build/test and accessibility/performance checks pass against agreed thresholds. Record screenshots/logs, commit hash, deployed build ID, and rollback plan. SEO indexing and rankings are not guaranteed by technical fixes."
+    },
+    {
+      "line": 131,
+      "kind": "heading",
+      "text": "NEXT ACTION"
+    },
+    {
+      "line": 133,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "NEXT ACTION",
+      "text": "Continue read-only audit, create a reviewed change set on a separate branch only after confirming source parity and owner approval. No SEO code or live deployment changes were made during this report update."
+    },
+    {
+      "line": 139,
+      "kind": "heading",
+      "text": "8\\. STUDIO OS — PROPOSED UNIFIED WEBSITE OPERATIONS PLATFORM"
+    },
+    {
+      "line": 141,
+      "kind": "context",
+      "scope": "Studio OS",
+      "heading": "8\\. STUDIO OS — PROPOSED UNIFIED WEBSITE OPERATIONS PLATFORM",
+      "text": "Recorded: 20 October 2026 | Status: Product discovery / architecture proposal, not approved implementation"
+    },
+    {
+      "line": 143,
+      "kind": "heading",
+      "text": "Working name: Studio OS (provisional, subject to brand review)"
+    },
+    {
+      "line": 145,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "Working name: Studio OS (provisional, subject to brand review)",
+      "text": "Vision: Evolve the existing portfolio Leads Portal into a premium, reusable CMS + CRM + analytics + SEO + lead-generation platform. First connected website: hadi.intellignce.net. Future capability: connect multiple websites, including INTELLIGNCE or clients, without rebuilding the core."
+    },
+    {
+      "line": 149,
+      "kind": "heading",
+      "text": "PRODUCT GOALS"
+    },
+    {
+      "line": 151,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT GOALS",
+      "text": "One secure workspace to understand where traffic originates, which content and campaigns generate qualified leads, how organic search performs, and which actions should happen next. Provide practical website content management, lead operations, booking, Sera AI oversight, and trustworthy reporting. Do not confuse site visits with identified people, or Google Search Console impressions with analytics sessions."
+    },
+    {
+      "line": 155,
+      "kind": "heading",
+      "text": "MODULES AND CAPABILITIES"
+    },
+    {
+      "line": 157,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "MODULES AND CAPABILITIES",
+      "text": "A. Overview / Command Center: configurable KPI cards for sessions, engaged visitors, acquisition channels, conversions, qualified leads, booked calls, and pipeline value; trend comparisons; data freshness indicators; alerts and action queue."
+    },
+    {
+      "line": 159,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "MODULES AND CAPABILITIES",
+      "text": "B. CRM / Leads: unified lead records, deduplication, provenance and consent, attribution history, lifecycle stages, owner assignment, notes, tags, tasks, follow-ups, contact forms, email interactions, Sera AI conversations when appropriately disclosed, and booking status. Support export and deletion requests."
+    },
+    {
+      "line": 161,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "MODULES AND CAPABILITIES",
+      "text": "C. CMS / Content Studio: reusable page and case-study models, rich text and structured fields, media library, image optimization, draft/review/publish states, scheduled publishing, preview, version history, rollback, metadata and redirects. The CMS must not overwrite the original portfolio content during migration."
+    },
+    {
+      "line": 163,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "MODULES AND CAPABILITIES",
+      "text": "D. Traffic & Conversion Analytics: privacy-conscious event collection or integration with established analytics; acquisition channels, UTM campaigns, referral sources, landing pages, geographic aggregates, device classes, funnels, form submissions, AI interactions, and booking conversions. Apply bot filtering, retention rules, consent handling and aggregation. Anonymous events should not be retroactively linked to named leads without an appropriate lawful basis and clear user notice."
+    },
+    {
+      "line": 165,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "MODULES AND CAPABILITIES",
+      "text": "E. SEO Intelligence: Google Search Console integration for queries, clicks, impressions, average position, indexing/coverage where available; sitemap status, canonical and robots checks, technical crawl findings, page-specific metadata, internal links, and structured-data checks. Integrate PageSpeed Insights/CrUX where available for performance metrics. Clearly label sampled/estimated, delayed, and unavailable data. Off-page reporting may track backlinks, brand mentions, referral traffic, outreach opportunities and earned links, with source provenance; do not promise ranking or automate spam links."
+    },
+    {
+      "line": 167,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "MODULES AND CAPABILITIES",
+      "text": "F. Automations / Sera AI / Bookings: safe lead triage, approved notifications, email and calendar sync, meeting lifecycle, workflow builder, human approval gates for consequential actions, prompt/version controls, cost and usage limits, abuse safeguards, audit trails and failure alerts. Calendar confirmation must be verified; existing missing-calendar-event bug is a blocker for production booking claims."
+    },
+    {
+      "line": 169,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "MODULES AND CAPABILITIES",
+      "text": "G. Integrations / Site Connections: per-site API credentials with rotation, webhook signing, retry and replay controls, event schema versioning, SDK/embeddable capture where appropriate, OAuth connections for Google services, and optional MCP tools for governed AI-agent operations. MCP complements but does not replace a stable API and webhook layer."
+    },
+    {
+      "line": 173,
+      "kind": "heading",
+      "text": "REFERENCE ARCHITECTURE (PROPOSAL)"
+    },
+    {
+      "line": 175,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "REFERENCE ARCHITECTURE (PROPOSAL)",
+      "text": "Premium responsive admin UI (Next.js/React) → authenticated backend/API → PostgreSQL (Supabase) with strict tenant/site isolation and row-level security where appropriate → background jobs/outbox for integrations → analytics aggregation pipeline → audit and observability services. Keep public website delivery decoupled from the management platform. Use per-site identifiers and permission-scoped integrations from day one, even though launch starts with one website. Avoid claiming the stack is final until current infrastructure, hosting, data volumes and cost constraints are audited."
+    },
+    {
+      "line": 179,
+      "kind": "heading",
+      "text": "DATA MODEL — INITIAL ENTITIES"
+    },
+    {
+      "line": 181,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DATA MODEL — INITIAL ENTITIES",
+      "text": "Organizations/Tenants, Users, Memberships/Roles, Sites, SiteConnections, ContentTypes, Pages, Projects, MediaAssets, ContentVersions, PublishingJobs, Visitors/AnonymousSessions (privacy-safe), Events, Campaigns, UTMAttribution, Leads, LeadActivities, Tasks, Pipelines, Appointments, CalendarSyncJobs, Forms, ConsentRecords, SEOPageAudits, SearchConsoleMetrics, AnalyticsAggregates, AIInteractions, AutomationRules, IntegrationCredentials, WebhookDeliveries, AuditLogs, Notifications. Define ownership, lifecycle, retention and unique constraints before migrations."
+    },
+    {
+      "line": 185,
+      "kind": "heading",
+      "text": "SECURITY, PRIVACY, RELIABILITY AND UX QUALITY BAR"
+    },
+    {
+      "line": 187,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SECURITY, PRIVACY, RELIABILITY AND UX QUALITY BAR",
+      "text": "Use least-privilege RBAC, MFA for privileged users, encrypted transport and secret storage, server-side validation, rate limiting and bot protection, CSRF protection where relevant, secure session handling, tenant-isolation tests, signed webhooks, idempotency, backups and tested restoration, logging without sensitive payload leakage, monitoring and incident response. Establish privacy notices, cookie/consent controls where legally applicable, deletion/export workflows, retention schedules and minimal collection. Aim for WCAG 2.2 AA, responsive keyboard-accessible interfaces, clear empty/error/loading states, fast charts, reliable filters, and accurate time-zone/currency labeling. These are acceptance targets, not verified achievements."
+    },
+    {
+      "line": 191,
+      "kind": "heading",
+      "text": "DESIGN DIRECTION"
+    },
+    {
+      "line": 193,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DESIGN DIRECTION",
+      "text": "A premium editorial/SaaS hybrid: restrained palette, disciplined typography and spacing, consistent data visualization, meaningful motion, excellent contrast and mobile layouts. Navigation should prioritize Overview, Leads, Content, Analytics, SEO, Bookings, Automations, Integrations, and Settings. Primary overview answers: Where is traffic coming from? Which interactions generate qualified leads? What should I do next? Design system should be token-based, documented and reusable; avoid copying WordPress UI."
+    },
+    {
+      "line": 197,
+      "kind": "heading",
+      "text": "PHASED DELIVERY"
+    },
+    {
+      "line": 199,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PHASED DELIVERY",
+      "text": "Phase 0 — Read-only audit of existing GitHub source, live deployment parity, Leads Google Sheet, Sera AI, forms, email, booking scripts, data contracts, hosting and privacy requirements. Preserve original source and live operations."
+    },
+    {
+      "line": 201,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PHASED DELIVERY",
+      "text": "Phase 1 — Product requirements document, user journeys, information architecture, wireframes, polished visual design, entity relationship model, permissions matrix, integration contracts, event taxonomy, KPI definitions and test plan."
+    },
+    {
+      "line": 203,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PHASED DELIVERY",
+      "text": "Phase 2 — Secure authentication, organizations/sites, CRM ingestion, existing lead migration with backups, event collection and initial analytics overview. Validate tracking accuracy and consent behavior."
+    },
+    {
+      "line": 205,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PHASED DELIVERY",
+      "text": "Phase 3 — Content models, media library, staging previews, publishing workflow, rollback and portfolio integration."
+    },
+    {
+      "line": 207,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PHASED DELIVERY",
+      "text": "Phase 4 — Search Console/SEO reporting, off-page tracking, campaign attribution, dashboards, automated insights and reporting exports."
+    },
+    {
+      "line": 209,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PHASED DELIVERY",
+      "text": "Phase 5 — Governed Sera AI workflows, booking reliability fixes, multi-site onboarding, advanced automation and operational hardening."
+    },
+    {
+      "line": 211,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PHASED DELIVERY",
+      "text": "Each phase requires acceptance tests, security checks, migration/rollback plan, monitoring and owner approval before live release. Do not replace the Google Sheet or alter GitHub main or production website before validated parity and explicit approval."
+    },
+    {
+      "line": 215,
+      "kind": "heading",
+      "text": "DECISIONS TO RESOLVE"
+    },
+    {
+      "line": 217,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DECISIONS TO RESOLVE",
+      "text": "Final product name and branding; self-hosted vs managed deployment; single-owner vs team permissions; first-party analytics vs third-party integration; consent and retention policy; CMS editing scope and publishing controls; integration and data ownership; expected traffic and budget; whether external clients will eventually receive logins. No decision should be treated as finalized without user confirmation."
+    },
+    {
+      "line": 221,
+      "kind": "heading",
+      "text": "IMMEDIATE NEXT DELIVERABLE"
+    },
+    {
+      "line": 223,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "IMMEDIATE NEXT DELIVERABLE",
+      "text": "Create a formal PRD, architecture diagram, ERD, analytics measurement plan, UX wireframes and prioritized backlog after reviewing the existing implementation. No Studio OS code has been written or deployed as part of these notes."
+    },
+    {
+      "line": 229,
+      "kind": "heading",
+      "text": "9\\. HOSTINGER BUSINESS HOSTING — COST AND DEPLOYMENT CONSTRAINTS"
+    },
+    {
+      "line": 231,
+      "kind": "heading",
+      "text": "Recorded: 20 October 2026 | User-confirmed plan: Hostinger Business Web Hosting (not VPS)"
+    },
+    {
+      "line": 233,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "Recorded: 20 October 2026 | User-confirmed plan: Hostinger Business Web Hosting (not VPS)",
+      "text": "Goal: Studio OS should use existing paid hosting and free/open-source tools, with zero new recurring subscriptions where feasible. This is a target, NOT a verified guarantee. Preserve premium design and usability."
+    },
+    {
+      "line": 237,
+      "kind": "heading",
+      "text": "PLATFORM FIT / VALIDATION REQUIRED"
+    },
+    {
+      "line": 239,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PLATFORM FIT / VALIDATION REQUIRED",
+      "text": "Do not assume support for a persistent Node.js server, background workers, container orchestration, Redis, or local large-language-model inference. Confirm exact plan features and limits in hPanel or official plan documentation: PHP and Node.js app support/version and deployment mechanism, MySQL/MariaDB availability, cron jobs and minimum interval, SSH/terminal, resource quotas (CPU/RAM/processes/inodes/storage/bandwidth), database connections, SSL, DNS/subdomains, backups, logs, file uploads, outbound HTTPS requests, and any restrictions on long-running tasks. Check hosting renewal price and whether extra services are already paid for. Do not request or store passwords in project documentation."
+    },
+    {
+      "line": 243,
+      "kind": "heading",
+      "text": "COST-CONSCIOUS REFERENCE APPROACH"
+    },
+    {
+      "line": 245,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "COST-CONSCIOUS REFERENCE APPROACH",
+      "text": "\\- Host a separate authenticated Studio OS admin portal on a suitable subdomain, isolated from the public portfolio. Select a lightweight supported runtime only after verifying Business plan compatibility; PHP + MySQL/MariaDB is a viable fallback, while Node.js is conditional."
+    },
+    {
+      "line": 247,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "COST-CONSCIOUS REFERENCE APPROACH",
+      "text": "\\- CMS: structured content and media, autosave/drafts, review, preview, publish, revision history, rollback, image optimization, and secure edit access. Preserve current Next.js portfolio source and build a tested content-delivery interface rather than assuming direct filesystem writes."
+    },
+    {
+      "line": 249,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "COST-CONSCIOUS REFERENCE APPROACH",
+      "text": "\\- CRM: ingest forms and Sera enquiries into database with spam controls, validation, deduplication, audit trails, tasks and export. Preserve existing Leads Sheet until verified migration and reconciliation."
+    },
+    {
+      "line": 251,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "COST-CONSCIOUS REFERENCE APPROACH",
+      "text": "\\- Analytics: use free Google Search Console for organic-search visibility; optionally free GA4 or privacy-focused self-hosted measurement if permitted by hosting resources and privacy rules. Define events, attribution and consent; distinguish search impressions, sessions and leads. External services can have limits and policy requirements."
+    },
+    {
+      "line": 253,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "COST-CONSCIOUS REFERENCE APPROACH",
+      "text": "\\- Automation: prefer scheduled cron tasks, idempotent webhooks and bounded jobs with retry/error logs; do not require continuously running workers."
+    },
+    {
+      "line": 255,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "COST-CONSCIOUS REFERENCE APPROACH",
+      "text": "\\- Sera: implement secure chat UI, tool permissions, human approval for publish/send/delete/booking actions, action logs and deterministic workflows. Full natural-language AI depends on an external free tier or a separately available compute environment; Hostinger Business must not be assumed capable of hosting a full LLM. Free model tiers can change, impose rate limits or require paid usage later. Keep AI model provider replaceable and provide graceful fallback."
+    },
+    {
+      "line": 257,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "COST-CONSCIOUS REFERENCE APPROACH",
+      "text": "\\- Security: MFA for admin, least-privilege roles, session hardening, CSRF protection as applicable, strict validation, secrets outside public webroot, encrypted HTTPS, backup/restore tests, rate limiting, access logs and tenant isolation for future multi-site capability."
+    },
+    {
+      "line": 261,
+      "kind": "heading",
+      "text": "IMMEDIATE VERIFICATION CHECKLIST"
+    },
+    {
+      "line": 263,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "IMMEDIATE VERIFICATION CHECKLIST",
+      "text": "1\\. Inspect hPanel plan details and supported runtimes, databases, cron, SSH and limits; capture only non-sensitive screenshots/specs."
+    },
+    {
+      "line": 265,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "IMMEDIATE VERIFICATION CHECKLIST",
+      "text": "2\\. Audit current portfolio hosting/deployment path, original source parity, GitHub repository, Sera integration, Lead CRM sheet, booking Apps Script, email delivery, and connected services. No changes to live site or main branch during audit."
+    },
+    {
+      "line": 267,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "IMMEDIATE VERIFICATION CHECKLIST",
+      "text": "3\\. Create resource and cost budget, including storage, requests, email sending quotas, AI usage, backups and domain renewals; mark which are covered by existing subscription and which are uncertain."
+    },
+    {
+      "line": 269,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "IMMEDIATE VERIFICATION CHECKLIST",
+      "text": "4\\. Prototype secure admin login, one CMS edit/preview/publish flow, one lead intake, one analytics report, and one approval-gated Sera action in staging."
+    },
+    {
+      "line": 271,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "IMMEDIATE VERIFICATION CHECKLIST",
+      "text": "5\\. Load-test within hosting limits; test accessibility, security, backup recovery, failure handling, and rollback before choosing final architecture."
+    },
+    {
+      "line": 275,
+      "kind": "heading",
+      "text": "ACCEPTANCE GATES"
+    },
+    {
+      "line": 277,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "ACCEPTANCE GATES",
+      "text": "No new mandatory paid subscription; core CMS/CRM/analytics work without an AI model; all consequential Sera actions require explicit approval; no false booking confirmations; no silent data loss; premium mobile/desktop admin UX; performance and security tested on the actual plan. Where plan restrictions prevent requirements, document tradeoffs and ask for approval before any additional spend or architectural change."
+    },
+    {
+      "line": 279,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "ACCEPTANCE GATES",
+      "text": "Status: Requirements recorded only. Hosting compatibility, zero-extra-cost feasibility and implementation remain unverified. No live changes authorized."
+    },
+    {
+      "line": 285,
+      "kind": "heading",
+      "text": "10\\. PLANNING-ONLY DIRECTIVE AND CURRENT SEO PRIORITY — 20 OCTOBER 2026"
+    },
+    {
+      "line": 287,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "10\\. PLANNING-ONLY DIRECTIVE AND CURRENT SEO PRIORITY — 20 OCTOBER 2026",
+      "text": "USER DECISION: All Studio OS/CMS/CRM/Sera/hosting work remains in planning and documentation. Record requirements, research, decisions, architecture alternatives, design principles, risks, phased implementation, and test/acceptance criteria in THIS document. Do not code, deploy, migrate, purchase, change hosting, change DNS, update GitHub, modify the live portfolio, or connect paid AI services without a later explicit instruction. Existing live workflows remain untouched."
+    },
+    {
+      "line": 291,
+      "kind": "heading",
+      "text": "OWNER EXPERIENCE REQUIREMENTS (CONFIRMED)"
+    },
+    {
+      "line": 293,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "OWNER EXPERIENCE REQUIREMENTS (CONFIRMED)",
+      "text": "Single-owner-first interface. User can independently manage blogs, articles, projects/case studies, contact details, business email settings, leads, traffic, analytics, SEO and bookings. Premium polished UX is a first-class requirement for the admin backend, not an afterthought. Provide visual editor, autosave, preview, versioning, rollback, consistent navigation, accessible responsive layout, clear empty/loading/error states, minimal clicks, and simple language. Future multi-site support must not complicate initial single-site use."
+    },
+    {
+      "line": 297,
+      "kind": "heading",
+      "text": "SERA BACKEND AGENT REQUIREMENTS (CONFIRMED VISION, NOT IMPLEMENTED)"
+    },
+    {
+      "line": 299,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA BACKEND AGENT REQUIREMENTS (CONFIRMED VISION, NOT IMPLEMENTED)",
+      "text": "Sera accessible by text and ideally voice throughout the admin. Can answer questions grounded in actual CMS/CRM/analytics data, prepare content, propose updates, analyze leads, and carry out approved tasks through narrowly scoped tools. Read-only retrieval may run within permissions; publishing, email sends, deletion, booking modifications and settings changes require explicit per-action approval, auditable execution, error feedback and recovery. Do not claim AI inference is free until provider/hosting feasibility is established; provide useful non-AI workflows without an AI model."
+    },
+    {
+      "line": 303,
+      "kind": "heading",
+      "text": "ACTIVE WORKSTREAM NOW: SEO RESEARCH AND AUDIT"
+    },
+    {
+      "line": 305,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "ACTIVE WORKSTREAM NOW: SEO RESEARCH AND AUDIT",
+      "text": "Prioritize a thorough, evidence-based on-page, technical and off-page SEO assessment for hadi.intellignce.net, without modifying code or production. Build on Section 7 initial source findings. Record each issue with evidence, affected URL/file, impact, priority, recommended fix, verification method and status (verified vs suspected vs untested)."
+    },
+    {
+      "line": 307,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "ACTIVE WORKSTREAM NOW: SEO RESEARCH AND AUDIT",
+      "text": "On-page: keyword intent and positioning for Creative Director, Design Lead, Brand Identity Designer; titles/meta descriptions; per-route canonicals; headings; copy quality; image alt text; internal linking; case-study structured content; portfolio conversion CTAs; blog/editorial plan."
+    },
+    {
+      "line": 309,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "ACTIVE WORKSTREAM NOW: SEO RESEARCH AND AUDIT",
+      "text": "Technical: production domain canonical consistency; robots and XML sitemap; indexability/HTTP status and WAF behavior for crawlers; Search Console ownership and coverage; redirects; JSON-LD validity; mobile rendering; Core Web Vitals and performance; accessibility; Open Graph; pagination if needed; duplicate URLs; security headers and HTTPS. Do not treat lack of immediate indexing after launch as proof of a defect."
+    },
+    {
+      "line": 311,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "ACTIVE WORKSTREAM NOW: SEO RESEARCH AND AUDIT",
+      "text": "Off-page: brand entity consistency, legitimate portfolio/profile links (Behance, LinkedIn, Upwork), relevant editorial citations, industry directories, natural backlinks, digital PR and partnerships. Avoid paid/spam links, fabricated metrics or ranking guarantees. Establish baseline and measurable 30/60/90-day plan."
+    },
+    {
+      "line": 313,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "ACTIVE WORKSTREAM NOW: SEO RESEARCH AND AUDIT",
+      "text": "Measurement: Search Console for impressions/clicks/query data; site analytics for sessions and conversion events; lead CRM for qualified leads and booked calls. Different data sources are not interchangeable. Identify integrations requiring user authorization, and distinguish research from authenticated account data."
+    },
+    {
+      "line": 315,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "ACTIVE WORKSTREAM NOW: SEO RESEARCH AND AUDIT",
+      "text": "DELIVERABLE ORDER: (1) SEO evidence collection and issue register, (2) prioritized on-page/technical/off-page recommendations, (3) keyword and content strategy, (4) measurable implementation backlog, (5) later Studio OS PRD and detailed designs. Remain in planning mode until the user explicitly changes scope."
+    },
+    {
+      "line": 319,
+      "kind": "heading",
+      "text": "11\\. SEO AUDIT — EXPANDED READ-ONLY FINDINGS (20 OCTOBER 2026)"
+    },
+    {
+      "line": 321,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "11\\. SEO AUDIT — EXPANDED READ-ONLY FINDINGS (20 OCTOBER 2026)",
+      "text": "Scope: GitHub source Sheikh-Hadi-Hassan/hadi-portfolio, default branch. Live deployment parity unverified. No code or production changes."
+    },
+    {
+      "line": 325,
+      "kind": "heading",
+      "text": "CONFIRMED SOURCE ISSUES"
+    },
+    {
+      "line": 327,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE ISSUES",
+      "text": "P0: app/layout.tsx hardcodes legacy ChatGPT-hosted domain as siteUrl, affecting metadataBase, canonical, Open Graph, authors and JSON-LD entity identifiers. Recommended preferred domain: https\\://hadi.intellignce.net. Verify deployment parity before changing."
+    },
+    {
+      "line": 329,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE ISSUES",
+      "text": "P0: app/sitemap.ts hardcodes old origin for all route and project URLs. Generate only preferred absolute canonical URLs; validate public sitemap response."
+    },
+    {
+      "line": 331,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE ISSUES",
+      "text": "P0: app/robots.ts advertises sitemap at legacy domain. Point to canonical domain. Dynamic Next.js robots route is valid; lack of static robots.txt is not itself a defect."
+    },
+    {
+      "line": 333,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE ISSUES",
+      "text": "P1: Root layout sets homepage canonical; /work, /about and /contact have explicit route-level canonical and metadata. Audit all remaining routes and project detail pages for inherited homepage canonical or duplicates."
+    },
+    {
+      "line": 335,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE ISSUES",
+      "text": "P1: Homepage title highlights Creative Director and Founder, but broad metadata keywords emphasize product, UI/UX and development. Align primary positioning to Creative Director, Design Lead and Brand Identity Designer, with other skills as evidence."
+    },
+    {
+      "line": 337,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE ISSUES",
+      "text": "P1: /work provides five featured case studies and a broader project catalogue. Improve individual case-study search intent, evidence-based outcomes, descriptive captions and internal links. Catalogue images use Next Image with unoptimized; assess actual delivered sizes and Core Web Vitals before declaring a performance fault."
+    },
+    {
+      "line": 339,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE ISSUES",
+      "text": "P1: JSON-LD includes ProfilePage, Person, WebSite and ProfessionalService; replace legacy IDs and validate sameAs references and truthful details."
+    },
+    {
+      "line": 341,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "CONFIRMED SOURCE ISSUES",
+      "text": "Positive findings: route-specific title/description/canonical on /work, /about, /contact; semantic project headings, internal navigation and contact CTAs in source."
+    },
+    {
+      "line": 345,
+      "kind": "heading",
+      "text": "LIVE / ACCOUNT STATUS NOT VERIFIED"
+    },
+    {
+      "line": 347,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "LIVE / ACCOUNT STATUS NOT VERIFIED",
+      "text": "Actual live HTTP response, crawler access, redirects, canonical output, sitemap, robots, Search Console indexing, Google Analytics, CrUX/PageSpeed, backlinks and rankings have not been independently measured in this audit. Inconclusive public search results do not establish zero indexed pages. Earlier 403 observation needs reproducible controlled tests."
+    },
+    {
+      "line": 351,
+      "kind": "heading",
+      "text": "KEYWORD MAP — STRATEGIC HYPOTHESES, NOT VOLUME-VALIDATED"
+    },
+    {
+      "line": 353,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "KEYWORD MAP — STRATEGIC HYPOTHESES, NOT VOLUME-VALIDATED",
+      "text": "Homepage: Hadi Hassan Creative Director, brand identity designer, brand systems."
+    },
+    {
+      "line": 355,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "KEYWORD MAP — STRATEGIC HYPOTHESES, NOT VOLUME-VALIDATED",
+      "text": "Work: brand identity portfolio, creative direction case studies."
+    },
+    {
+      "line": 357,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "KEYWORD MAP — STRATEGIC HYPOTHESES, NOT VOLUME-VALIDATED",
+      "text": "About: creative director Pakistan, brand design leadership."
+    },
+    {
+      "line": 359,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "KEYWORD MAP — STRATEGIC HYPOTHESES, NOT VOLUME-VALIDATED",
+      "text": "Morganics case: naming, brand identity and packaging design case study."
+    },
+    {
+      "line": 361,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "KEYWORD MAP — STRATEGIC HYPOTHESES, NOT VOLUME-VALIDATED",
+      "text": "Election campaign case: campaign branding, creative direction and strategy."
+    },
+    {
+      "line": 363,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "KEYWORD MAP — STRATEGIC HYPOTHESES, NOT VOLUME-VALIDATED",
+      "text": "Contact: creative direction enquiries and brand identity consultation."
+    },
+    {
+      "line": 365,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "KEYWORD MAP — STRATEGIC HYPOTHESES, NOT VOLUME-VALIDATED",
+      "text": "Articles: branding beyond a logo; translating strategy into packaging; brand system consistency; campaign creative direction lessons; how to present evidence-backed design case studies. Prioritize original expertise over generic AI content."
+    },
+    {
+      "line": 369,
+      "kind": "heading",
+      "text": "OFF-PAGE SEO PLAN"
+    },
+    {
+      "line": 371,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "OFF-PAGE SEO PLAN",
+      "text": "Verify consistent name, positioning and preferred website link across LinkedIn, Behance, Upwork and INTELLIGNCE. Earn contextual links via legitimate case-study features, client credits with permission, design community contributions, interviews and collaborations. Do not purchase manipulative links or use spam outreach. No backlink counts have been verified."
+    },
+    {
+      "line": 375,
+      "kind": "heading",
+      "text": "PRIORITIZED 30/60/90-DAY PLAN — AFTER APPROVAL"
+    },
+    {
+      "line": 377,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PRIORITIZED 30/60/90-DAY PLAN — AFTER APPROVAL",
+      "text": "First 7 days: verify original/live code parity; repair domain signals, route canonicals, sitemap and robots; test redirects, indexability and Search Console ownership."
+    },
+    {
+      "line": 379,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PRIORITIZED 30/60/90-DAY PLAN — AFTER APPROVAL",
+      "text": "Days 8–30: full route audit, mobile accessibility, heading hierarchy, image optimization, Core Web Vitals, analytics conversion events, and three high-value case studies."
+    },
+    {
+      "line": 381,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PRIORITIZED 30/60/90-DAY PLAN — AFTER APPROVAL",
+      "text": "Days 31–60: publish original case studies and useful editorial articles; align public profiles; pursue genuine editorial mentions."
+    },
+    {
+      "line": 383,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PRIORITIZED 30/60/90-DAY PLAN — AFTER APPROVAL",
+      "text": "Days 61–90: use real Search Console and analytics data to improve titles, internal links, content and lead conversions."
+    },
+    {
+      "line": 385,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PRIORITIZED 30/60/90-DAY PLAN — AFTER APPROVAL",
+      "text": "Track indexed URLs, impressions, clicks, CTR, organic sessions, qualified leads and booked meetings with clear source definitions. No ranking or traffic guarantees."
+    },
+    {
+      "line": 389,
+      "kind": "heading",
+      "text": "NEXT RESEARCH / TESTS"
+    },
+    {
+      "line": 391,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "NEXT RESEARCH / TESTS",
+      "text": "Review all project routes, generated metadata and internal linking; perform actual live crawl and PageSpeed tests when accessible; validate schema; obtain authorized Search Console metrics; establish backlink baseline. Record URL, evidence, priority, recommendation, verification and status for each issue."
+    },
+    {
+      "line": 395,
+      "kind": "heading",
+      "text": "SOURCE EVIDENCE"
+    },
+    {
+      "line": 397,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "SOURCE EVIDENCE",
+      "text": "https\\://github.com/Sheikh-Hadi-Hassan/hadi-portfolio/blob/main/app/layout.tsx"
+    },
+    {
+      "line": 399,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "SOURCE EVIDENCE",
+      "text": "https\\://github.com/Sheikh-Hadi-Hassan/hadi-portfolio/blob/main/app/robots.ts"
+    },
+    {
+      "line": 401,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "SOURCE EVIDENCE",
+      "text": "https\\://github.com/Sheikh-Hadi-Hassan/hadi-portfolio/blob/main/app/sitemap.ts"
+    },
+    {
+      "line": 403,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "SOURCE EVIDENCE",
+      "text": "https\\://github.com/Sheikh-Hadi-Hassan/hadi-portfolio/blob/main/app/work/page.tsx"
+    },
+    {
+      "line": 405,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "SOURCE EVIDENCE",
+      "text": "https\\://github.com/Sheikh-Hadi-Hassan/hadi-portfolio/blob/main/app/about/page.tsx"
+    },
+    {
+      "line": 407,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "SOURCE EVIDENCE",
+      "text": "https\\://github.com/Sheikh-Hadi-Hassan/hadi-portfolio/blob/main/app/contact/page.tsx"
+    },
+    {
+      "line": 409,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "SOURCE EVIDENCE",
+      "text": "Google canonical guidance: https\\://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls"
+    },
+    {
+      "line": 411,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "SOURCE EVIDENCE",
+      "text": "Google sitemap guidance: https\\://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap"
+    },
+    {
+      "line": 417,
+      "kind": "heading",
+      "text": "12\\. COMPLETE WEBSITE EXPERIENCE AUDIT — PLANNING BRIEF (20 OCTOBER 2026)"
+    },
+    {
+      "line": 419,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "12\\. COMPLETE WEBSITE EXPERIENCE AUDIT — PLANNING BRIEF (20 OCTOBER 2026)",
+      "text": "Status: APPROVED FOR PLANNING AND DOCUMENTATION ONLY. No production edits, deployments, GitHub writes, DNS changes, purchases, or migrations. Audit must distinguish source-code findings, live observations, and untested assumptions."
+    },
+    {
+      "line": 423,
+      "kind": "heading",
+      "text": "OBJECTIVE"
+    },
+    {
+      "line": 425,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "OBJECTIVE",
+      "text": "Evaluate hadi.intellignce.net as a premium creative-director and brand-identity portfolio, prioritizing design craft, user comprehension, trust, conversion, accessibility, security and performance. Benchmark against strong contemporary portfolio and SaaS UX standards without implying an Awwwards award or perfect compliance."
+    },
+    {
+      "line": 429,
+      "kind": "heading",
+      "text": "WORKSTREAM A — VISUAL DESIGN / ART DIRECTION"
+    },
+    {
+      "line": 431,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "WORKSTREAM A — VISUAL DESIGN / ART DIRECTION",
+      "text": "Audit palette and tonal harmony, contrast, typography, font loading, hierarchy, spacing system, alignment, grid consistency, imagery and crops, image quality, icons, hover states, transitions, motion choreography, perceived polish, and responsive behavior at 320/360/375/390/430/768/1024/1280/1440+ CSS pixels. Include tablet landscape and reduced-motion settings. Inspect known risk areas: hero title vs portrait overlap, 381px heading collisions, 1000px breakpoint discontinuity, hero min-height on tablets, portrait crop, tiny phone labels, and nested vertical scrolling. Record screenshots and severity only after testing the current deployment."
+    },
+    {
+      "line": 435,
+      "kind": "heading",
+      "text": "WORKSTREAM B — CONTENT / USER JOURNEYS / CONVERSION"
+    },
+    {
+      "line": 437,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "WORKSTREAM B — CONTENT / USER JOURNEYS / CONVERSION",
+      "text": "Test first five seconds of homepage clarity: who Hadi is, target roles, expertise, proof and next action. Map journeys for recruiter, prospective brand client, founder, and mobile visitor. Review navigation, project discovery, case-study storytelling, evidence and attribution, CTA visibility, contact form, calendar booking, Sera AI escalation, email fallback, trust and privacy disclosures. Track start-to-submit, errors, abandonments and successful lead delivery. Do not fabricate conversion rates."
+    },
+    {
+      "line": 441,
+      "kind": "heading",
+      "text": "WORKSTREAM C — ACCESSIBILITY / INCLUSIVE UX"
+    },
+    {
+      "line": 443,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "WORKSTREAM C — ACCESSIBILITY / INCLUSIVE UX",
+      "text": "Audit against WCAG 2.2 AA target: semantic landmarks and heading order, alt text, contrast, keyboard navigation, visible focus, skip link, accessible forms and error announcements, touch target sizes, zoom/reflow, screen reader labels, reduced motion, media captions and autoplay controls. Include automated checks and manual keyboard/screen-reader testing. A pass cannot be claimed from automated tooling alone."
+    },
+    {
+      "line": 447,
+      "kind": "heading",
+      "text": "WORKSTREAM D — PERFORMANCE / TECHNICAL UX"
+    },
+    {
+      "line": 449,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "WORKSTREAM D — PERFORMANCE / TECHNICAL UX",
+      "text": "Measure mobile and desktop LCP, INP, CLS, TTFB, resource weight, JS execution, third-party scripts, image delivery and caching, font loading, animation frame rate, hydration errors, long tasks, network failures and responsive media. Use real CrUX data when available and lab measurements separately; record device/network and date. Proposed Core Web Vitals good thresholds: LCP <= 2.5 s, INP <= 200 ms, CLS <= 0.1 at 75th percentile. Treat Awwwards-level craft as design aspiration, not measurable certification."
+    },
+    {
+      "line": 453,
+      "kind": "heading",
+      "text": "WORKSTREAM E — SECURITY / PRIVACY / RELIABILITY"
+    },
+    {
+      "line": 455,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "WORKSTREAM E — SECURITY / PRIVACY / RELIABILITY",
+      "text": "Review form server-side validation, spam/bot defenses, CSRF protection where applicable, XSS/injection prevention, file-upload restrictions, CORS, rate limits, abuse protection, Sera prompt injection and tool permissions, secret exposure, authentication/session security for admin, least privilege, audit logs, PII handling, consent, data retention, HTTPS/security headers, dependency vulnerabilities, backups and restore drills. Verify booking transaction integrity: no confirmation without a persisted appointment and confirmed calendar-sync status; prevent double-bookings and duplicate messages. Test email delivery and CRM reconciliation. Never publish secrets or private customer data in audit artifacts."
+    },
+    {
+      "line": 459,
+      "kind": "heading",
+      "text": "WORKSTREAM F — QUALITY ASSURANCE / OPERATIONS"
+    },
+    {
+      "line": 461,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "WORKSTREAM F — QUALITY ASSURANCE / OPERATIONS",
+      "text": "Create browser-device matrix; functional tests for navigation, forms, CRM, emails, calendar, Sera, analytics and SEO; error, timeout and offline states; regression tests; synthetic monitoring and alerting; rollback and incident runbook. Verify exact original-source-to-live parity before any later release work."
+    },
+    {
+      "line": 465,
+      "kind": "heading",
+      "text": "AUDIT RECORD FORMAT"
+    },
+    {
+      "line": 467,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "AUDIT RECORD FORMAT",
+      "text": "Each issue: ID, page/component, environment and viewport, evidence or reproduction steps, severity (P0 blocker/P1 major/P2 moderate/P3 polish), user/business impact, proposed solution, estimated effort, acceptance criteria, owner, status, and verification result. Findings must explicitly be labeled CONFIRMED SOURCE, CONFIRMED LIVE, or NOT YET TESTED."
+    },
+    {
+      "line": 471,
+      "kind": "heading",
+      "text": "DELIVERABLES / PRIORITY"
+    },
+    {
+      "line": 473,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "DELIVERABLES / PRIORITY",
+      "text": "1\\. Baseline journey and visual/functional inventory."
+    },
+    {
+      "line": 475,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "DELIVERABLES / PRIORITY",
+      "text": "2\\. Security and data-integrity blocker register, particularly Sera, forms and booking."
+    },
+    {
+      "line": 477,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "DELIVERABLES / PRIORITY",
+      "text": "3\\. Responsive, accessibility and performance measurement report."
+    },
+    {
+      "line": 479,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "DELIVERABLES / PRIORITY",
+      "text": "4\\. Conversion and content clarity recommendations."
+    },
+    {
+      "line": 481,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "DELIVERABLES / PRIORITY",
+      "text": "5\\. Prioritized 30/60/90-day implementation backlog with tests and rollback gates."
+    },
+    {
+      "line": 483,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "DELIVERABLES / PRIORITY",
+      "text": "6\\. Studio OS design-system implications and reusable components."
+    },
+    {
+      "line": 487,
+      "kind": "heading",
+      "text": "INITIAL RISK REGISTER (FROM EARLIER DISCUSSIONS; REQUIRES LIVE RE-TEST)"
+    },
+    {
+      "line": 489,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "INITIAL RISK REGISTER (FROM EARLIER DISCUSSIONS; REQUIRES LIVE RE-TEST)",
+      "text": "\\- Booking email/Meet confirmation without corresponding Google Calendar event: prior observed incident, high-priority reliability investigation."
+    },
+    {
+      "line": 491,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "INITIAL RISK REGISTER (FROM EARLIER DISCUSSIONS; REQUIRES LIVE RE-TEST)",
+      "text": "\\- Legacy-domain SEO metadata: confirmed in inspected repository source; deployment parity not verified."
+    },
+    {
+      "line": 493,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "INITIAL RISK REGISTER (FROM EARLIER DISCUSSIONS; REQUIRES LIVE RE-TEST)",
+      "text": "\\- Nested scrolling and responsive hero typography/crop: previously reported; not re-tested during this planning step."
+    },
+    {
+      "line": 495,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "INITIAL RISK REGISTER (FROM EARLIER DISCUSSIONS; REQUIRES LIVE RE-TEST)",
+      "text": "\\- Sera AI and contact forms: require explicit threat-model and abuse testing; do not assume secure or insecure without evidence."
+    },
+    {
+      "line": 499,
+      "kind": "heading",
+      "text": "NO-CHANGE RULE"
+    },
+    {
+      "line": 501,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "NO-CHANGE RULE",
+      "text": "All items are recommendations and future tests. Do not alter the public site, GitHub main, hosting, CMS, Sera, CRM or booking integrations until the user explicitly authorizes implementation."
+    },
+    {
+      "line": 505,
+      "kind": "heading",
+      "text": "13\\. BUSINESS LISTINGS, DIGITAL PR AND AI DISCOVERABILITY (GEO/AEO) — RESEARCH PLAN, 20 OCT 2026"
+    },
+    {
+      "line": 507,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "13\\. BUSINESS LISTINGS, DIGITAL PR AND AI DISCOVERABILITY (GEO/AEO) — RESEARCH PLAN, 20 OCT 2026",
+      "text": "Status: planning only. Do not create listings, change robots, modify the website or purchase services without later approval. Goal: qualified international brand identity / creative direction leads, not vanity backlink counts. Separate personal identity Hadi Hassan (hadi.intellignce.net) from company INTELLIGNCE (intellignce.net)."
+    },
+    {
+      "line": 511,
+      "kind": "heading",
+      "text": "WHAT IS VERIFIED FROM PRIMARY SOURCES"
+    },
+    {
+      "line": 513,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "WHAT IS VERIFIED FROM PRIMARY SOURCES",
+      "text": "Google's 2026 AI optimization guidance states generative search uses retrieval-augmented generation and query fan-out, with core search ranking/retrieval signals. Foundational SEO, original useful content, crawlability, semantic text, site experience and credible information remain central. Google says no special AI schema or llms.txt is required to appear in AI Overviews/AI Mode; no guarantee of inclusion. Source: https\\://developers.google.com/search/docs/fundamentals/ai-optimization-guide"
+    },
+    {
+      "line": 515,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "WHAT IS VERIFIED FROM PRIMARY SOURCES",
+      "text": "OpenAI publisher guidance states public sites can appear in ChatGPT search; allow OAI-SearchBot for content to be eligible for summaries/snippets and inspect bot blocking/robots/CDN rules. This is eligibility, not guaranteed citations or rankings. Source: https\\://help.openai.com/en/articles/12627856-publishers-and-developers-faq"
+    },
+    {
+      "line": 517,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "WHAT IS VERIFIED FROM PRIMARY SOURCES",
+      "text": "OpenAI crawler guidance notes CDN/WAF rules can mistakenly return 403 to crawlers. Source: https\\://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers"
+    },
+    {
+      "line": 519,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "WHAT IS VERIFIED FROM PRIMARY SOURCES",
+      "text": "Google AI feature guidance: Googlebot crawl/index/snippet eligibility matters; no extra AI-specific technical requirements. Source: https\\://developers.google.com/search/docs/appearance/ai-features"
+    },
+    {
+      "line": 523,
+      "kind": "heading",
+      "text": "CRITICAL DISTINCTIONS"
+    },
+    {
+      "line": 525,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "CRITICAL DISTINCTIONS",
+      "text": "ChatGPT Search, Google Search AI Overviews/AI Mode and Claude's web-search answers are retrieval products; appearing in answers is not the same as training a model or being included in its internal knowledge. No universal submission portal exists for all AI assistants. Provider behavior, index partners, personalization and query wording vary. Claude-specific crawler/index mechanics, Gemini surfaces beyond Google Search, Perplexity and Microsoft Copilot need current first-party verification; do not extrapolate OpenAI's crawler settings to other providers. Claims that directory volume, llms.txt, keyword repetition or FAQ schema guarantee AI recommendations are unsupported."
+    },
+    {
+      "line": 529,
+      "kind": "heading",
+      "text": "DIRECTORY / LISTING STRATEGY"
+    },
+    {
+      "line": 531,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "DIRECTORY / LISTING STRATEGY",
+      "text": "Personal brand: verify and improve LinkedIn, Behance, Upwork and selectively Dribbble, relevant creative communities and case-study showcases. Do not misrepresent employment or project authorship."
+    },
+    {
+      "line": 533,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "DIRECTORY / LISTING STRATEGY",
+      "text": "Company: evaluate Google Business Profile only if actual eligibility and address/service-area criteria are met; then Clutch, GoodFirms, DesignRush and relevant credible B2B service directories. Check free listing availability, editorial standards, referral relevance and paid upsells before selection. Avoid duplicate, fabricated or mass-created listings."
+    },
+    {
+      "line": 535,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "DIRECTORY / LISTING STRATEGY",
+      "text": "Prepare two consistent identity sheets: official name, role/category, concise/extended description, canonical website, logo/portrait, city/service area, portfolio evidence, approved contact email, social links and verified client reviews. Keep personal vs corporate NAP/contact details separate."
+    },
+    {
+      "line": 537,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "DIRECTORY / LISTING STRATEGY",
+      "text": "Editorial/digital PR: publish genuine case studies with unique visuals and methodology; pitch relevant design publications and communities, collaborate with partners, seek consented client credits and interviews. Track earned links and referral lead quality."
+    },
+    {
+      "line": 541,
+      "kind": "heading",
+      "text": "AI ANSWER VISIBILITY PLAN"
+    },
+    {
+      "line": 543,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "AI ANSWER VISIBILITY PLAN",
+      "text": "1\\. Fix legacy-domain canonicals/sitemap/robots after deployment parity confirmation."
+    },
+    {
+      "line": 545,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "AI ANSWER VISIBILITY PLAN",
+      "text": "2\\. Test live accessibility for Googlebot, OAI-SearchBot and other verified search crawlers; investigate 403, firewall and JavaScript rendering without compromising security."
+    },
+    {
+      "line": 547,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "AI ANSWER VISIBILITY PLAN",
+      "text": "3\\. Build authoritative, easily extractable case-study pages: client/context, problem, actual role, constraints, strategy, process, visual proof, outcomes with evidence, date, author and contact CTA. Include descriptive HTML headings and alt text, natural-language explanations, and accurate Person/Organization/ProfilePage schema."
+    },
+    {
+      "line": 549,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "AI ANSWER VISIBILITY PLAN",
+      "text": "4\\. Align public facts across official site, LinkedIn, Behance, Upwork, agency site and legitimate third-party mentions. Distinguish owner portfolio from INTELLIGNCE agency."
+    },
+    {
+      "line": 551,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "AI ANSWER VISIBILITY PLAN",
+      "text": "5\\. Develop intent-based pages and original answers to questions such as 'brand identity designer for packaging', 'creative director for startup rebrand', and 'branding portfolio Pakistan'; no thin doorway pages or fake reviews."
+    },
+    {
+      "line": 553,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "AI ANSWER VISIBILITY PLAN",
+      "text": "6\\. Benchmark 20-30 buyer/recruiter prompts across ChatGPT Search, Google AI experiences, Claude web search and other available assistants, with date, region, prompt, citation URL, mention accuracy and repeat trials. Do not infer stable ranking from one answer."
+    },
+    {
+      "line": 555,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "AI ANSWER VISIBILITY PLAN",
+      "text": "7\\. Monitor Search Console, analytics referral sources, branded/nonbranded discovery, qualified leads, booked calls and citation share in a transparent test set. AI attribution is incomplete; label uncertainty. Review monthly and revise based on evidence."
+    },
+    {
+      "line": 559,
+      "kind": "heading",
+      "text": "EVALUATION RUBRIC FOR EACH LISTING"
+    },
+    {
+      "line": 561,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "EVALUATION RUBRIC FOR EACH LISTING",
+      "text": "Audience relevance; legitimacy/editorial standards; free vs paid; profile control; follow/nofollow not used as sole value metric; referral potential; link destination; review policy; time to maintain; risk of spam. Prioritize high-value profiles, not 'all directories'."
+    },
+    {
+      "line": 565,
+      "kind": "heading",
+      "text": "PHASED EXECUTION (FUTURE, REQUIRES APPROVAL)"
+    },
+    {
+      "line": 567,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PHASED EXECUTION (FUTURE, REQUIRES APPROVAL)",
+      "text": "0-30 days: technical discovery and entity consistency, baseline AI answer tests, top 5-8 relevant listings, strengthen three case studies."
+    },
+    {
+      "line": 569,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PHASED EXECUTION (FUTURE, REQUIRES APPROVAL)",
+      "text": "31-60 days: selective original editorial content, genuine third-party mentions, qualified directory expansion, AI prompt tests and source monitoring."
+    },
+    {
+      "line": 571,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PHASED EXECUTION (FUTURE, REQUIRES APPROVAL)",
+      "text": "61-90 days: refine based on actual citations, organic and referral leads, update profiles, stop channels with low lead quality."
+    },
+    {
+      "line": 573,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PHASED EXECUTION (FUTURE, REQUIRES APPROVAL)",
+      "text": "No claim of guaranteed recommendation by OpenAI, Gemini or Claude; algorithms are not publicly disclosed in sufficient detail to reverse-engineer deterministic inclusion."
+    },
+    {
+      "line": 577,
+      "kind": "heading",
+      "text": "PROVIDER CROSS-CHECK ADDENDUM — CLAUDE (OFFICIAL)"
+    },
+    {
+      "line": 579,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PROVIDER CROSS-CHECK ADDENDUM — CLAUDE (OFFICIAL)",
+      "text": "Anthropic confirms separate Claude-SearchBot (search quality/indexing), Claude-User (user-directed retrieval) and ClaudeBot (model-training collection). Allowing search/user bots may support discoverability, while training-crawler access is a separate owner decision; do not conflate them. Source: https\\://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    {
+      "line": 581,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PROVIDER CROSS-CHECK ADDENDUM — CLAUDE (OFFICIAL)",
+      "text": "Claude web search retrieves live web sources and provides citations, but inclusion is not guaranteed. Source: https\\://support.claude.com/en/articles/10684626-enable-and-use-web-search"
+    },
+    {
+      "line": 583,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "PROVIDER CROSS-CHECK ADDENDUM — CLAUDE (OFFICIAL)",
+      "text": "Verify each crawler against official documentation before editing robots.txt or WAF rules. No changes made."
+    },
+    {
+      "line": 589,
+      "kind": "heading",
+      "text": "14\\. DRAFT OUTREACH SEQUENCE — PLANNING ONLY (20 OCTOBER 2026)"
+    },
+    {
+      "line": 591,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "14\\. DRAFT OUTREACH SEQUENCE — PLANNING ONLY (20 OCTOBER 2026)",
+      "text": "Objective: build credible visibility and qualified traffic for Hadi Hassan's personal portfolio and, separately, INTELLIGNCE. No outreach, submissions or paid services authorized."
+    },
+    {
+      "line": 595,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "14\\. DRAFT OUTREACH SEQUENCE — PLANNING ONLY (20 OCTOBER 2026)",
+      "text": "Week 1 — Preparation: Audit existing LinkedIn, Behance, Upwork and company profiles. Create separate verified personal and business descriptions, official URLs, services, portfolio evidence, approved contact details and images. Record each platform's eligibility and free-plan conditions; avoid duplicate accounts."
+    },
+    {
+      "line": 599,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "14\\. DRAFT OUTREACH SEQUENCE — PLANNING ONLY (20 OCTOBER 2026)",
+      "text": "Weeks 2–3 — Relevant listings: Prioritize existing professional profiles, then evaluate Clutch, GoodFirms, DesignRush, Dribbble and Google Business Profile only where genuinely eligible. Select based on audience quality, editorial standards, cost and lead relevance. Avoid mass directory submissions and fabricated reviews."
+    },
+    {
+      "line": 603,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "14\\. DRAFT OUTREACH SEQUENCE — PLANNING ONLY (20 OCTOBER 2026)",
+      "text": "Weeks 3–6 — Digital PR: Identify a short list of relevant design publications, packaging and branding communities, creative podcasts and founder networks. Pitch original, documented case studies such as Morganics and the election campaign, with clear role attribution and permission for client materials. Personalize every approach; do not send bulk messages."
+    },
+    {
+      "line": 607,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "14\\. DRAFT OUTREACH SEQUENCE — PLANNING ONLY (20 OCTOBER 2026)",
+      "text": "Weeks 4–8 — AI discoverability: Test realistic buyer and recruiter questions across ChatGPT Search, Google AI experiences and Claude web search. Record prompt, date, region, answer, source citations, accuracy and repeatability. Improve public case studies, crawler accessibility and consistent factual profiles. No guaranteed AI placement."
+    },
+    {
+      "line": 611,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "14\\. DRAFT OUTREACH SEQUENCE — PLANNING ONLY (20 OCTOBER 2026)",
+      "text": "Weeks 8–12 — Review: Compare verified organic and referral traffic, relevant enquiries, qualified leads and booked calls. Continue useful channels and stop low-value ones. Track results monthly."
+    },
+    {
+      "line": 615,
+      "kind": "heading",
+      "text": "DRAFT EDITORIAL MESSAGE"
+    },
+    {
+      "line": 617,
+      "kind": "heading",
+      "text": "Subject: Case-study submission — brand identity and packaging"
+    },
+    {
+      "line": 619,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "Subject: Case-study submission — brand identity and packaging",
+      "text": "Hello [Editor], I'm Hadi Hassan, a creative director and brand identity designer based in Lahore. I have a documented case study on [project], covering [verified challenge], my role and the design process. I believe its practical lessons may interest your readers. Would you consider reviewing a short summary and approved visuals? Portfolio: https\\://hadi.intellignce.net. Thank you, Hadi."
+    },
+    {
+      "line": 623,
+      "kind": "heading",
+      "text": "DRAFT DIRECTORY ENQUIRY"
+    },
+    {
+      "line": 625,
+      "kind": "heading",
+      "text": "Subject: INTELLIGNCE agency listing enquiry"
+    },
+    {
+      "line": 627,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "Subject: INTELLIGNCE agency listing enquiry",
+      "text": "Hello [Team], we're reviewing relevant agency directories for INTELLIGNCE. Could you confirm whether you offer a free profile, what eligibility checks apply, and how project examples may be submitted? Website: https\\://intellignce.net. Thank you."
+    },
+    {
+      "line": 631,
+      "kind": "heading",
+      "text": "TRACKING TEMPLATE"
+    },
+    {
+      "line": 633,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "TRACKING TEMPLATE",
+      "text": "Platform | Personal or company | Profile URL | Audience relevance | Eligibility verified | Free or paid | Status | Contact/date | Follow-up | Referral visits | Qualified leads | Notes."
+    },
+    {
+      "line": 637,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "TRACKING TEMPLATE",
+      "text": "Quality rules: distinguish personal and company identities, verify every claim, respect confidentiality, avoid purchased links and fake reviews, and obtain explicit user approval before any publication or outreach."
+    },
+    {
+      "line": 641,
+      "kind": "heading",
+      "text": "15\\. FLOW LIGHT PRODUCT — BUSINESS ASSESSMENT & WHITE-LABEL PLATFORM STRATEGY"
+    },
+    {
+      "line": 643,
+      "kind": "scope_review_required",
+      "scope": "Flow Connect",
+      "heading": "15\\. FLOW LIGHT PRODUCT — BUSINESS ASSESSMENT & WHITE-LABEL PLATFORM STRATEGY",
+      "text": "20 October 2026 | Research and product planning only; no coding or deployment."
+    },
+    {
+      "line": 647,
+      "kind": "heading",
+      "text": "EXECUTIVE ASSESSMENT"
+    },
+    {
+      "line": 649,
+      "kind": "scope_review_required",
+      "scope": "Flow Connect",
+      "heading": "EXECUTIVE ASSESSMENT",
+      "text": "Proposed product: a lightweight, voice-first yet fully manual service-business operating system within the Flow family. It connects to an existing website rather than requiring migration, captures and qualifies enquiries, manages appointments and follow-ups, shows traffic-to-revenue attribution, and lets owners perform approved tasks through Sera. White-label edition for agencies. First design partner: Hadi's own portfolio; later narrow pilot with service businesses. Do not claim 'better than Shopify, WordPress, Framer and every CRM' without category-specific tests; these products solve different problems. The credible wedge is simpler end-to-end service lead operations across ANY website, not universal replacement of all website builders."
+    },
+    {
+      "line": 653,
+      "kind": "heading",
+      "text": "WORKING NAMING ARCHITECTURE"
+    },
+    {
+      "line": 655,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "WORKING NAMING ARCHITECTURE",
+      "text": "Parent: Flow by INTELLIGNCE."
+    },
+    {
+      "line": 657,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "WORKING NAMING ARCHITECTURE",
+      "text": "Candidate A: Flow Lite (simple but implies reduced capability)."
+    },
+    {
+      "line": 659,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "WORKING NAMING ARCHITECTURE",
+      "text": "Candidate B: Flow Connect (best functional fit for website-agnostic connection; may be crowded trademark)."
+    },
+    {
+      "line": 661,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "WORKING NAMING ARCHITECTURE",
+      "text": "Candidate C: Flow Desk (owner-friendly daily workspace)."
+    },
+    {
+      "line": 663,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "WORKING NAMING ARCHITECTURE",
+      "text": "Candidate D: Flow One (unified view; likely naming conflicts)."
+    },
+    {
+      "line": 665,
+      "kind": "scope_review_required",
+      "scope": "Flow Connect",
+      "heading": "WORKING NAMING ARCHITECTURE",
+      "text": "Recommendation for exploration: Flow Connect as integration layer/product, with 'Sera' as assistant and 'Flow Studio' as owner console. Names are NOT cleared for trademarks, domains or existing products. Check before branding."
+    },
+    {
+      "line": 669,
+      "kind": "heading",
+      "text": "COMPETITIVE LANDSCAPE — PRIMARY-SOURCE DESCRIPTIONS, NOT INDEPENDENT PERFORMANCE PROOF"
+    },
+    {
+      "line": 671,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "COMPETITIVE LANDSCAPE — PRIMARY-SOURCE DESCRIPTIONS, NOT INDEPENDENT PERFORMANCE PROOF",
+      "text": "HighLevel: agency SaaS mode and white-label resale; CRM, lead funnels, marketing automation, appointments, AI features. Its official help confirms branded reseller SaaS mode. Competes strongly on breadth; potential differentiation is clarity, portability, accessible voice/manual parity and transparent attribution. https\\://help.gohighlevel.com/support/solutions/articles/155000004185-guide-from-zero-to-saas-mode-sales-troubleshooting"
+    },
+    {
+      "line": 673,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "COMPETITIVE LANDSCAPE — PRIMARY-SOURCE DESCRIPTIONS, NOT INDEPENDENT PERFORMANCE PROOF",
+      "text": "Duda: white-label website platform, branded client dashboards, permissions, editing and REST Partner API. Official page lists white-label starting at $149/month, and API availability subject to plan/access. Differentiation: support EXISTING non-Duda sites with lightweight connector; avoid rebuilding website editor. https\\://www\\.duda.co/website-builder/white-label and https\\://developer.duda.co/reference/getting-started-with-the-duda-api"
+    },
+    {
+      "line": 675,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "COMPETITIVE LANDSCAPE — PRIMARY-SOURCE DESCRIPTIONS, NOT INDEPENDENT PERFORMANCE PROOF",
+      "text": "HubSpot: unified customer platform with Breeze AI, CRM-based assistance and marketing/sales/service tools. Assistant works with CRM records and tasks; not novel simply to add AI. Differentiation: one-owner workflows, transparent costs, service-business setup, website portability. https\\://www\\.hubspot.com/products/artificial-intelligence/breeze-ai-assistant"
+    },
+    {
+      "line": 677,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "COMPETITIVE LANDSCAPE — PRIMARY-SOURCE DESCRIPTIONS, NOT INDEPENDENT PERFORMANCE PROOF",
+      "text": "WordPress: highly flexible CMS/plugin ecosystem; not a fair feature-by-feature competitor unless website publishing is core."
+    },
+    {
+      "line": 679,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "COMPETITIVE LANDSCAPE — PRIMARY-SOURCE DESCRIPTIONS, NOT INDEPENDENT PERFORMANCE PROOF",
+      "text": "Framer: visual website design/publishing; compete on business operations and integrations, not necessarily design editor quality."
+    },
+    {
+      "line": 681,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "COMPETITIVE LANDSCAPE — PRIMARY-SOURCE DESCRIPTIONS, NOT INDEPENDENT PERFORMANCE PROOF",
+      "text": "Shopify: commerce-focused platform; not primary competitor for appointment-driven service firms. Do not promise superiority in ecommerce."
+    },
+    {
+      "line": 683,
+      "kind": "context",
+      "scope": "Flow Connect",
+      "heading": "COMPETITIVE LANDSCAPE — PRIMARY-SOURCE DESCRIPTIONS, NOT INDEPENDENT PERFORMANCE PROOF",
+      "text": "Other competitors for follow-up research: Wix business solutions, Squarespace Scheduling/Acuity, Zoho CRM/Bookings, Calendly, Pipedrive, HoneyBook, Dubsado, Tidio and Webflow integrations. Verify pricing and scope before quantitative matrix."
+    },
+    {
+      "line": 687,
+      "kind": "heading",
+      "text": "PROPOSED MARKET GAP (HYPOTHESIS TO VALIDATE)"
+    },
+    {
+      "line": 689,
+      "kind": "scope_review_required",
+      "scope": "Flow Connect",
+      "heading": "PROPOSED MARKET GAP (HYPOTHESIS TO VALIDATE)",
+      "text": "Small service owners often operate website + forms + inbox + calendar + spreadsheets + analytics + task management separately. They want a trusted, low-friction way to know 'who enquired, from where, what happened next, and what should I do now?' Existing platforms cover much of this, but complexity, fragmentation, cost and setup burden may leave an underserved segment. Conduct 15-20 discovery interviews across agencies, consultants, designers and appointment-led local services; measure willingness to pay and existing spend, not just feature enthusiasm."
+    },
+    {
+      "line": 693,
+      "kind": "heading",
+      "text": "MVP SCOPE — FIRST SELLABLE WEDGE"
+    },
+    {
+      "line": 695,
+      "kind": "context",
+      "scope": "Portfolio V0.1",
+      "heading": "MVP SCOPE — FIRST SELLABLE WEDGE",
+      "text": "1\\. Website connector: signed form/webhook ingest, embeddable widget/JS SDK, API keys with rotation, source/UTM capture and consent, WordPress/Framer/static/Next.js adapter recipes."
+    },
+    {
+      "line": 697,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "MVP SCOPE — FIRST SELLABLE WEDGE",
+      "text": "2\\. Unified inbox/CRM: lead timeline, dedupe, pipeline, tags, notes, follow-up tasks, lead qualification and export."
+    },
+    {
+      "line": 699,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "MVP SCOPE — FIRST SELLABLE WEDGE",
+      "text": "3\\. Appointments: booking page/widget, availability rules, timezone handling, confirmed calendar sync, reminders, double-booking prevention."
+    },
+    {
+      "line": 701,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "MVP SCOPE — FIRST SELLABLE WEDGE",
+      "text": "4\\. Simple analytics: traffic sources, landing pages, enquiry conversion, appointment and qualified-lead funnel, source attribution with caveats."
+    },
+    {
+      "line": 703,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "MVP SCOPE — FIRST SELLABLE WEDGE",
+      "text": "5\\. Sera: read and summarize real data; draft replies and content; propose changes; explicit owner approval for sends, publishes, deletions and calendar edits; complete action log."
+    },
+    {
+      "line": 705,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "MVP SCOPE — FIRST SELLABLE WEDGE",
+      "text": "6\\. Manual parity: every AI task can be completed with conventional buttons/forms; no AI requirement to operate business."
+    },
+    {
+      "line": 707,
+      "kind": "scope_review_required",
+      "scope": "Portfolio V0.1",
+      "heading": "MVP SCOPE — FIRST SELLABLE WEDGE",
+      "text": "7\\. Accessible mobile-first admin: voice as alternative, not exclusive interaction; keyboard, screen reader, captions/transcripts, visible confirmations and undo."
+    },
+    {
+      "line": 709,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "MVP SCOPE — FIRST SELLABLE WEDGE",
+      "text": "8\\. Agency white-label baseline: logo, palette, custom domain, branded email templates and isolated customer workspaces; agency resale/billing only after demand validation."
+    },
+    {
+      "line": 711,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "MVP SCOPE — FIRST SELLABLE WEDGE",
+      "text": "OUT OF MVP: full Shopify replacement, general-purpose website builder, autonomous unsupervised agents, complex enterprise ERP, unlimited free AI inference, native integrations with every app."
+    },
+    {
+      "line": 715,
+      "kind": "heading",
+      "text": "DIFFERENTIATING PRODUCT IDEAS TO TEST"
+    },
+    {
+      "line": 717,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DIFFERENTIATING PRODUCT IDEAS TO TEST",
+      "text": "\\- 'Explain my week' voice briefing with citations to actual lead/event records and a plain-text equivalent."
+    },
+    {
+      "line": 719,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DIFFERENTIATING PRODUCT IDEAS TO TEST",
+      "text": "\\- Lead Journey Receipt: each lead shows source, consent, interactions, appointment and outcome, with uncertainty labels."
+    },
+    {
+      "line": 721,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DIFFERENTIATING PRODUCT IDEAS TO TEST",
+      "text": "\\- Action Preview and Undo: Sera shows exact proposed changes, approval scope, effect and rollback."
+    },
+    {
+      "line": 723,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DIFFERENTIATING PRODUCT IDEAS TO TEST",
+      "text": "\\- Missing Lead Detector: compare form delivery, CRM ingestion, email and calendar acknowledgements; alert on broken pipelines."
+    },
+    {
+      "line": 725,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DIFFERENTIATING PRODUCT IDEAS TO TEST",
+      "text": "\\- Outcome-first setup: 'I want more qualified consultations' configures form, booking, pipeline and measurement from one guided flow."
+    },
+    {
+      "line": 727,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DIFFERENTIATING PRODUCT IDEAS TO TEST",
+      "text": "\\- Portable data and connectors: export contacts, content and event history; no forced site migration."
+    },
+    {
+      "line": 729,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "DIFFERENTIATING PRODUCT IDEAS TO TEST",
+      "text": "\\- Voice-accessible without speech dependency: text transcripts, manual editing, low-bandwidth mode, multilingual UX later."
+    },
+    {
+      "line": 733,
+      "kind": "heading",
+      "text": "INTEGRATION STRATEGY"
+    },
+    {
+      "line": 735,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "INTEGRATION STRATEGY",
+      "text": "Start with Google Calendar, Gmail/email transport, Google Search Console, GA4 where permitted, generic webhook, WordPress, Framer and Next.js connector recipes. Then Notion and ClickUp: OAuth where supported, narrowly scoped sync for contacts/tasks/projects, conflict handling, rate limits, retry/idempotency and audit logs. Offer Zapier/Make/n8n-style webhooks where users already have automation. MCP is a secure OPTIONAL agent tool interface; it is not the transport for all website/cloud integrations. Core integrations should use REST APIs, OAuth, signed webhooks and event contracts. Provide per-tenant scopes and approval policies; prohibit cross-tenant data access. Future MCP server can expose read_leads, summarize_traffic, draft_followup, propose_booking and approval-gated execute actions. Confirm exact APIs and platform rules before implementation."
+    },
+    {
+      "line": 739,
+      "kind": "heading",
+      "text": "ARCHITECTURE AND WHITE-LABEL REQUIREMENTS"
+    },
+    {
+      "line": 741,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "ARCHITECTURE AND WHITE-LABEL REQUIREMENTS",
+      "text": "Multi-tenant organization/site/account model; strict isolation, RBAC, domain and brand configuration, themes/tokens, localized timezone/currency, feature flags, API/webhook management, queue/outbox, audit logs, backup/restore, data portability, consent and retention controls. Single-owner UI hides agency complexity. Secure service-to-service auth, signed webhooks, encryption, idempotency and rate limiting. Accessibility target WCAG 2.2 AA with tested voice and manual workflows. Separate tenant domains and certificate provisioning. Distinguish control-plane (agency configuration) from data-plane (tenant leads/content/events)."
+    },
+    {
+      "line": 745,
+      "kind": "heading",
+      "text": "BUSINESS MODEL / UNIT ECONOMICS — HYPOTHESES"
+    },
+    {
+      "line": 747,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "BUSINESS MODEL / UNIT ECONOMICS — HYPOTHESES",
+      "text": "Personal-use and pilot may target zero NEW subscription cost using existing hosting and free tools, but a commercial multi-tenant SaaS cannot responsibly promise zero hosting, email, support, security or AI costs. Model infrastructure per tenant, AI inference per request, storage, messages, integration quotas, support hours and gross margin. Potential tiers: Starter (manual CRM, forms, booking), Growth (attribution, automations, limited AI), Agency (white-label, multiple sites, client workspaces). Do not set prices before interviews, competitor validation and cost model. Meter expensive AI/voice separately and offer opt-in BYO provider where appropriate."
+    },
+    {
+      "line": 751,
+      "kind": "heading",
+      "text": "GO-TO-MARKET AND VALIDATION"
+    },
+    {
+      "line": 753,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "GO-TO-MARKET AND VALIDATION",
+      "text": "Stage 0: use Hadi portfolio as internal design partner; fix booking reliability and tracking before external promise."
+    },
+    {
+      "line": 755,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "GO-TO-MARKET AND VALIDATION",
+      "text": "Stage 1: interview 15-20 service owners; select one niche (e.g., boutique creative agencies and independent consultants)."
+    },
+    {
+      "line": 757,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "GO-TO-MARKET AND VALIDATION",
+      "text": "Stage 2: prototype 3 journeys: connect existing site in <30 minutes (target), capture first lead, turn lead into confirmed appointment; Sera propose-and-approve follow-up."
+    },
+    {
+      "line": 759,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "GO-TO-MARKET AND VALIDATION",
+      "text": "Stage 3: invite 5-10 pilot businesses; measure activation, time to first lead, lead loss, appointment completion, weekly active owner usage, retention, support tickets and willingness to pay."
+    },
+    {
+      "line": 761,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "GO-TO-MARKET AND VALIDATION",
+      "text": "Stage 4: add white-label agency pilot only after standalone retention is credible; integrate ClickUp/Notion according to demonstrated demand."
+    },
+    {
+      "line": 763,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "GO-TO-MARKET AND VALIDATION",
+      "text": "Stage 5: expand vertical templates after proof of product-market fit. Use paid infrastructure only with explicit approval."
+    },
+    {
+      "line": 767,
+      "kind": "heading",
+      "text": "ACCEPTANCE GATES / RISKS"
+    },
+    {
+      "line": 769,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "ACCEPTANCE GATES / RISKS",
+      "text": "No data loss or false booking confirmations; no cross-tenant leaks; Sera action approvals; accessible manual alternative; reliable exports and rollback; accurate event attribution with consent; supported hosting and realistic margins. Primary risks: feature sprawl, API maintenance, low-cost AI inference, SaaS operational burden, consent compliance, voice recognition errors and competitor breadth. Competitive claims require side-by-side benchmark on a defined user task and cohort, not subjective 'better than everything'."
+    },
+    {
+      "line": 773,
+      "kind": "heading",
+      "text": "NEXT PLANNING DELIVERABLES"
+    },
+    {
+      "line": 775,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "NEXT PLANNING DELIVERABLES",
+      "text": "Detailed competitor feature/price matrix; 15-20 interview guide; narrow PRD and persona; journey maps; UX wireframes and design tokens; event and data schema; integration/MCP threat model; hosting/cost scenarios; pilot success thresholds; trademark/name availability check. Keep all work in planning mode until separately approved."
+    },
+    {
+      "line": 781,
+      "kind": "heading",
+      "text": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)"
+    },
+    {
+      "line": 783,
+      "kind": "context",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "Status: planning and private owner testing only; no production deployment or external customer access approved."
+    },
+    {
+      "line": 785,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "Product principle: one shared orchestration framework with strictly separated public and authenticated administration capabilities."
+    },
+    {
+      "line": 787,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "PUBLIC SERA (customer-facing): approved public knowledge only; answer service and portfolio questions, ask context-aware clarifying questions, qualify leads with consent, handle objections gently, recommend booking, hand off to human. Never disclose internal analytics, CRM records, prompts, credentials or administrative tools. Limit tool access server-side."
+    },
+    {
+      "line": 789,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "PRIVATE SERA (owner/operator): authenticated, scoped tools for analytics, CRM, CMS, appointments, email, workflows and reporting. Example: count leads with an actual filtered database query and disclose date range and source; analyze traffic using connected analytics and distinguish facts from hypotheses; draft SEO article and present preview; publish only after explicit approval. Actions use typed tool schemas, server-side authorization, validation, idempotency, logging and rollback where feasible. Avoid granting unrestricted code execution, database access or shell commands to the model."
+    },
+    {
+      "line": 791,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "APPROVAL MODEL: read-only authorized reports can execute without extra approval; drafting can run in a sandbox; sending email, publishing, deletion, price changes, bulk modifications, integrations and external actions require user confirmation with a clear diff or preview. Never accept a visitor's prompt as permission for privileged actions. Maintain per-site tenant boundaries, RBAC, rate limits and audit logs."
+    },
+    {
+      "line": 793,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "QUALITY OF CONVERSATION: preserve session context and business-specific knowledge with retrieval; ask one useful follow-up at a time, handle interruptions, objections, multilingual speech and cross-questioning; clarify unknowns instead of inventing figures or promises. Measure task completion, factual grounding, handoff rate, response time and satisfaction; build a repeatable evaluation set with adversarial prompt-injection tests."
+    },
+    {
+      "line": 795,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "MULTI-MODEL ROUTING: configurable model adapter registry, primary Gemini Flash and optional additional permitted free-tier providers; health checks, quota accounting, budget caps, per-request model selection, circuit breakers and graceful fallback. Do not promise unlimited free inference, evade provider limits or assume commercial use is permitted by a free tier. Keep provider keys server-side. Switching models must preserve relevant authorized context without leaking confidential data across providers. Verify provider terms, rate limits and privacy before activation."
+    },
+    {
+      "line": 797,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "VOICE: progressive enhancement with text-first parity, microphone consent, captions, push-to-talk, interruptions and accessible keyboard fallback. Browser speech APIs vary by browser, may rely on third-party processing and do not guarantee zero cost or privacy; test before choosing speech-to-text and text-to-speech infrastructure. Never claim voice can perform an action without a confirmed backend tool result."
+    },
+    {
+      "line": 799,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "HOSTING: Hostinger Business Web Hosting capability matrix remains unverified. Confirm supported runtimes, background jobs, database capacity, cron, resource limits and network access before committing to a deployment design. Favor a modular lightweight backend; avoid promising persistent local LLM inference on shared hosting."
+    },
+    {
+      "line": 801,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "OWNER-ONLY PILOT: (1) read-only lead count and traffic source reports; (2) CRM follow-up suggestions; (3) article draft and preview; (4) approval-gated publishing; (5) voice interface evaluation; (6) multi-provider failover under real quota limits. Define acceptance tests for authorization, data correctness, latency, accessibility, prompt injection, cross-tenant isolation, failure recovery and logging. No public launch until tests pass."
+    },
+    {
+      "line": 803,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "SERA AI — DUAL-MODE ARCHITECTURE AND RESEARCH PLAN (21 OCTOBER 2026)",
+      "text": "RESEARCH VALIDATION BACKLOG: verify current official Gemini API free-tier policies, alternative provider terms, OpenAI/Anthropic guidance on tool execution and prompt injection, OWASP LLM Top 10, WCAG 2.2, MCP authorization/security specifications and Hostinger plan capabilities. This section is a design proposal, not a claim that live APIs or hosting limits have been verified."
+    },
+    {
+      "line": 809,
+      "kind": "heading",
+      "text": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)"
+    },
+    {
+      "line": 811,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "DECISION: Build the first release as an integration layer for existing service websites, not a website builder. Hadi's portfolio is the private pilot. Preserve future white-label, multi-site and MCP extensibility through interfaces and data boundaries from day one; do not implement every enterprise feature now. Planning only."
+    },
+    {
+      "line": 813,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "PRODUCT OUTCOME: Visitor -> consented enquiry -> qualified lead -> reliable booking -> owner follow-up -> won/lost outcome. Core system works without AI. Primary initial persona: independent service professional / small creative agency; other industries remain future validation targets."
+    },
+    {
+      "line": 815,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "NON-NEGOTIABLE DESIGN RULES: modular monolith first; documented contracts; provider adapters for analytics, calendar, email, AI and CMS; tenant_id and site_id on owned records from the beginning; authorization on every read/write; stable IDs and timestamps; event/outbox mechanism for reliable integrations; audit events and idempotent retries; migrations with backward compatibility; configuration rather than per-customer code forks. Design for extraction later, but do not prematurely deploy microservices."
+    },
+    {
+      "line": 817,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "WHITE-LABEL EXTENSION SEAMS: organization -> workspace -> site hierarchy, configurable logo/name/colors/domain/email sender, design tokens, localization/time zone, templates, feature entitlements and permission policies. Build a single-owner UI first; store configurations so agency views can be added without data migration. Brand theming must not override accessibility or security controls."
+    },
+    {
+      "line": 819,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "INTEGRATION CONTRACT: signed, versioned webhooks and documented REST APIs for ordinary websites; lightweight JS snippet or hosted forms for leads; WordPress/Framer/custom-site adapters as demand validates. MCP is an optional tool interface for AI assistants, not a replacement for APIs, webhooks or OAuth. Use least-privilege scopes, token rotation, replay prevention, bounded retries, dead-letter handling and per-site rate limits. Never put credentials in client-side scripts."
+    },
+    {
+      "line": 821,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "FIRST RELEASE MODULES: dashboard with actionable next steps; contacts and deduplicated leads; pipeline stages and notes; secure lead forms with spam protection and consent; reliable booking with provider event confirmation, time-zone handling and conflict checks; basic source/UTM attribution and analytics integration; simple content editing for own site via adapter; public Sera and private read-only Sera reporting with citations to live records. AI writes/publishing follow after approval flows are tested. Do not invent traffic or lead figures when data sources are disconnected."
+    },
+    {
+      "line": 823,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "EXPLICIT NON-GOALS FOR MVP: drag-and-drop site builder, ecommerce, full marketing automation suite, autonomous price negotiation, marketplace of connectors, general-purpose workflow builder, unlimited AI, multi-region enterprise hosting and all-industry templates. Keep future extension points without shipping these features."
+    },
+    {
+      "line": 825,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "UX STANDARD: voice and keyboard/mouse parity; clear information hierarchy; fast search and global command palette; quick actions, undo and activity history; empty/loading/error states; onboarding with guided first lead and test booking; accessible forms and charts; mobile owner workflows. Evaluate against WCAG 2.2 AA, real task usability tests and measured Core Web Vitals rather than aesthetic claims alone."
+    },
+    {
+      "line": 827,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "SECURITY/RELIABILITY STANDARD: OWASP ASVS and API Security Top 10 as verification references, OWASP LLM risks for Sera; session hardening, CSRF where applicable, server validation, RBAC and tenant isolation tests, encrypted secrets, data retention/export/deletion, backups and restore drills, monitoring and incident runbooks. Verify privacy/consent obligations in actual target jurisdictions. Use privacy-preserving analytics and avoid sensitive data in model prompts or logs."
+    },
+    {
+      "line": 829,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "ENGINEERING QUALITY GATES: CI lint/type/unit/integration/e2e checks; contract tests for adapters; automated booking reconciliation; migrations with rollback plan; staging environment; observability for failed jobs and webhook deliveries; documented SLO targets established after baseline measurement. Test prompt injection, hallucinated action completion, provider outages and approval bypass. Do not claim '100% secure' or Awwwards-level performance without independent evidence."
+    },
+    {
+      "line": 831,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "MEASUREMENT: activation (site connected and first test lead captured), valid lead capture rate, lead-to-booked conversion, no-show and booking failure rate, response latency, Sera grounded-answer accuracy, action approval success, owner time saved, weekly active usage, retention, per-site operating cost. Establish baselines and targets during pilot rather than fabricate them."
+    },
+    {
+      "line": 833,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "PHASE GATES: 0) audit existing portfolio CRM, calendar, Sera and hosting; resolve broken booking before expanding. 1) private connect-first MVP and manual-first workflows. 2) private Sera reporting, drafts and approval-gated actions. 3) validate integrations and five external pilots only with approval. 4) configurable white-label pilot and broader connector SDK after retention proof. 5) consider website building only if demand and economics justify it."
+    },
+    {
+      "line": 835,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "PRODUCT BLUEPRINT REFINEMENT — CONNECT-FIRST, EXTENSIBLE-BY-DESIGN (21 OCT 2026)",
+      "text": "DOCUMENT GOVERNANCE: maintain a single PRD, architecture decision records (ADR), requirements traceability, risk register, acceptance criteria, and a decision log with 'confirmed / assumption / needs verification' labels. Existing planning sections are historical research; this decision supersedes any earlier recommendation to build a full website builder immediately. No code or deployment authorized."
+    },
+    {
+      "line": 841,
+      "kind": "heading",
+      "text": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)"
+    },
+    {
+      "line": 843,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "Decision: connect-first, manual-first, owner-only pilot; preserve future white-label and integration seams. All dates are estimates to set after discovery; versions represent acceptance gates, not promises. No implementation or live changes authorized."
+    },
+    {
+      "line": 845,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V0.0 — DISCOVERY / BASELINE (FIRST): inventory current portfolio source, lead capture, Sera, booking, calendar, CRM, analytics, SEO and Hostinger limits; verify live-versus-GitHub revision; write narrow PRD, user journeys, threat model, ADRs, event schema, acceptance tests, operating-cost assumptions and baseline measurements. Gate: evidence-backed inventory and signed-off scope. Preserve existing work."
+    },
+    {
+      "line": 847,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V0.1 — RELIABILITY & SECURITY FOUNDATION: fix and verify booking-to-calendar event creation before sending confirmed messages; protect forms and admin endpoints; server-side validation, spam prevention, secret management, logging, backup/restore, staging and CI tests; correct canonical/sitemap/robots after verifying deployment. Gate: end-to-end lead and booking tests pass, no false confirmations, owner approves deployment separately."
+    },
+    {
+      "line": 849,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V0.2 — CONNECT-FIRST CORE: site registration and configuration, tenant/site IDs and permission boundaries, forms/lead capture, contact deduplication, basic CRM pipeline, notes and follow-up tasks, booking statuses, consent/UTM attribution and analytics ingestion. Start with portfolio; manual flows work without AI. Gate: visitor-to-lead-to-booking-to-follow-up can be completed and audited."
+    },
+    {
+      "line": 851,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V0.3 — OWNER EXPERIENCE / CMS: premium accessible dashboard, mobile-responsive quick actions, search, filters, clear errors and undo where feasible; edit projects, articles, contact details and public service information through versioned content adapters; preview and rollback. Gate: owner completes key tasks without developer help; usability and accessibility tests pass."
+    },
+    {
+      "line": 853,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V0.4 — PRIVATE SERA READ/ASSIST: private read-only AI answers grounded in authorized CRM and analytics queries; lead prioritization, traffic summaries, content drafts, contextual cross-questioning, model routing with permitted quotas, conversation continuity, text/manual parity and initial voice trials. Public Sera stays restricted to approved business knowledge. Gate: grounded answer accuracy, authorization and failure-mode evaluations pass; no invented data."
+    },
+    {
+      "line": 855,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V0.5 — APPROVAL-GATED AUTOMATION: propose email follow-ups, article publication, record changes and workflow actions; show diff/preview, require owner approval, record audit trail, support idempotency and recovery; no unrestricted autonomous execution. Gate: action approval, rollback, retry and prompt-injection tests pass."
+    },
+    {
+      "line": 857,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V0.6 — INTEGRATION PLATFORM: versioned REST API, signed webhooks, retry/outbox, token scopes, site embed/connector patterns, first demand-driven integration (e.g. Notion OR ClickUp, not both by default), optional secure MCP server exposing scoped tools. Gate: contract, auth, replay and integration failure tests pass."
+    },
+    {
+      "line": 859,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V0.7 — PILOT & OPERATIONS: invite a small, consented external pilot only after owner approval; onboarding, documentation, support workflows, telemetry, privacy/retention, uptime/error monitoring, cost per active site and feedback loops. Gate: meaningful activation, retention, booking reliability, data protection and unit economics established."
+    },
+    {
+      "line": 861,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V1.0 — FIRST COMMERCIAL RELEASE (LAST OF INITIAL ROADMAP): stable connect-first service-business product, defined support and incident response, billing/entitlements only if commercialization approved, terms/privacy reviewed, backups and recovery tested, security/accessibility/performance acceptance gates passed. Do not launch solely because features are complete."
+    },
+    {
+      "line": 863,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V1.1+ — WHITE-LABEL / AGENCY: custom branding/domains, organization/site workspaces, roles, agency management, reusable templates and multi-site reporting; build on V0.2 tenancy/configuration foundations. Gate: no cross-tenant access and validated demand."
+    },
+    {
+      "line": 865,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "V1.2+ — ADVANCED AI & CONNECTORS: richer Sera agent workflows, voice enhancements, provider choices, integration marketplace and vertical-specific templates as usage and economics justify. Full website builder, ecommerce and broad industry coverage remain optional future products, not commitments."
+    },
+    {
+      "line": 867,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "DEPENDENCIES: V0.0 before architecture lock; V0.1 booking/security before public expansion; V0.2 trusted data before Sera reporting; V0.3 content preview before AI publishing; V0.4 evaluation before V0.5 AI writes; V0.6 API/MCP after stable domain contracts; V0.7 evidence before V1.0 commercial launch."
+    },
+    {
+      "line": 869,
+      "kind": "scope_review_required",
+      "scope": "Studio OS",
+      "heading": "VERSIONED DELIVERY ROADMAP — APPROVED PLANNING ORDER (21 OCTOBER 2026)",
+      "text": "RELEASE PRACTICE: each version has scope, explicit exclusions, owner acceptance criteria, test evidence, rollback plan, changelog and deployment approval. Maintain separate planning vs shipped status and do not call any milestone complete without verification. Parallel research on SEO/off-page visibility may continue, but submissions and live edits require separate authorization."
+    }
+  ]
+}

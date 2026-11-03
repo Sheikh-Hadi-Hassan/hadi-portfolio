@@ -33,8 +33,8 @@ def page(title,description,body,body_class='',path='/',image='/assets/hadi-speak
   graph.append({'@type':'ItemList','@id':BASE+'/#services','name':'Creative and digital services by Hadi Hassan','itemListElement':[{'@type':'ListItem','position':i+1,'item':{'@type':'Service','name':name,'serviceType':kind,'provider':{'@id':BASE+'/#hadi'},'url':BASE+'/#services'}} for i,(name,kind) in enumerate([('Branding Solutions','Logo design and brand identity'),('Design Solutions','Graphic design and UI/UX design'),('Social Media Creatives','Creative campaigns and social media design'),('E-commerce Solutions','E-commerce design and product photography'),('App Development','Web, SaaS and mobile application development'),('Conversion-Focused Landing Pages','Landing page design and development')])]})
  if path!='/':
   crumbs=[{'@type':'ListItem','position':1,'name':'Hadi Hassan','item':BASE+'/'}]
-  if path!='/archive/':crumbs.append({'@type':'ListItem','position':2,'name':'Portfolio','item':BASE+'/archive/'})
-  crumbs.append({'@type':'ListItem','position':len(crumbs)+1,'name':creative['title'] if creative else 'Portfolio','item':url})
+  if creative:crumbs.append({'@type':'ListItem','position':2,'name':'Portfolio','item':BASE+'/archive/'})
+  crumbs.append({'@type':'ListItem','position':len(crumbs)+1,'name':creative['title'] if creative else title,'item':url})
   graph.append({'@type':'BreadcrumbList','itemListElement':crumbs})
  if creative:graph.append({'@type':'CreativeWork','name':creative['title'],'description':description,'url':url,'image':BASE+image,'creator':{'@id':BASE+'/#hadi'},'keywords':[creative.get('category','')]+[x.strip() for x in creative.get('services','').split('/') if x.strip()]})
  structured=json.dumps({'@context':'https://schema.org','@graph':graph},ensure_ascii=False).replace('</',r'<\/')
@@ -137,9 +137,14 @@ for i,p in enumerate(projects):
  consultation_cta='<section class="case-enquiry" aria-label="Discuss a similar project"><span class="eyebrow">YOUR NEXT CHAPTER</span><h2>Have a project in mind?</h2><p>Share what you’re building. Let’s find a clear direction together.</p><a class="case-enquiry-primary" href="/?enquiry=1" data-lead-form>Talk through my project ↗</a><div class="case-related" aria-label="Related work"><span>Related work</span>'+related_links+'</div><a href="/archive/">Explore the full portfolio →</a></section>'
  page_template=page_template.replace('<section class="next-case">',consultation_cta+'<section class="next-case">')
  target=DIST/p['slug'];target.mkdir(exist_ok=True);(target/'index.html').write_text(page(p['seo_title'],p['seo_description'],render(page_template,values),'case-page',path='/'+p['slug']+'/',image=p['hero'],creative=p))
+# Standalone journey pages use the shared layout and their own canonical metadata.
+for slug in ['about','resume','contact','privacy','work']:
+ target=DIST/slug;target.mkdir(exist_ok=True)
+ titles={'about':'About Hadi Hassan','resume':'Resume | Hadi Hassan','contact':'Contact Hadi Hassan','privacy':'Privacy | Hadi Hassan','work':'Work | Hadi Hassan'}
+ target.joinpath('index.html').write_text(page(titles[slug],titles[slug]+' — Creative direction, brand identity and digital experiences.',read(Path('pages')/(slug+'.html')),'case-page',path='/'+slug+'/'))
 shutil.copyfile(SRC/'styles/hero.css',DIST/'hero.css');shutil.copyfile(SRC/'styles/clarity.css',DIST/'clarity.css');shutil.copyfile(SRC/'styles/studio.css',DIST/'studio.css');shutil.copyfile(SRC/'styles/home.css',DIST/'home.css');shutil.copyfile(SRC/'styles/site.css',DIST/'style.css');shutil.copyfile(SRC/'styles/case-study.css',DIST/'case-study.css');shutil.copyfile(SRC/'site.js',DIST/'script.js')
 shutil.copytree(SRC/'fonts',DIST/'assets/fonts',dirs_exist_ok=True)
-print(f'Built {len(projects)+2} pages with shared templates and Pixelarticons.')
+print(f'Built {len(projects)+7} pages with shared templates and Pixelarticons.')
 
 (DIST/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(url)+'</loc></url>' for url in urls)+'</urlset>')
 (DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+BASE+'/sitemap.xml\n')
