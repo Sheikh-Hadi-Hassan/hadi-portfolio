@@ -20,3 +20,7 @@ Start with owner-only workflows. Verify Hostinger PHP/database/cron/resource lim
 Portfolio utility routes and original resume download have been prepared locally. These are portfolio work, not CMS/CRM or commercial-platform completion. No roadmap implementation status changes. Full original-plan source coverage is preserved in `docs/original-plan-source-coverage.json`; atomic requirement deduplication remains open.
 
 Public Sera consent now defaults off in portfolio source. This is not completion of private Sera or future product privacy/permissions requirements. Roadmap scope remains future.
+
+## Atomic traceability update
+
+The source-referenced atomic catalogue is `docs/atomic-requirements.json`. 116 SO obligations are Future scope, excluded from the portfolio denominator. Public consent withdrawal is a portfolio fix, not private-agent or commercial-platform completion. No platform implementation status is promoted.
