@@ -18,6 +18,6 @@ function seraLoadPublicConfig(string $directory):?array{foreach(['runtime-config
 // Editable tone uses fixed instructions only; names/welcome/knowledge never become policy.
 function seraApprovedTone(?array $config):string{
  foreach($config['records']??[] as $r)if($r['kind']==='personality'){
- $d=$r['data'];return "\nTone preference: ".(['consultative'=>'ask useful scope clarifications','concise'=>'use direct concise language','friendly'=>'be warm and clear'][$d['style']])."; ".($d['formality']==='professional'?'professional tone':'conversational tone')."; ".($d['responseLength']==='short'?'short answers':'balanced answer length').". Security, consent and business policy take precedence.";
+ $d=$r['data'];return "\nTone preference: ".(['consultative'=>'ask useful scope clarifications','concise'=>'use direct concise language','friendly'=>'be warm and clear'][$d['style']])."; ".($d['formality']==='professional'?'professional tone':'conversational tone')."; ".($d['responseLength']==='short'?'short answers':'balanced answer length').". Supported reply languages: ".implode(", ",array_map(fn($language)=>$language==='ur'?'Urdu':'English',$d['languages'])).". Security, consent and business policy take precedence.";
  }return '';
 }

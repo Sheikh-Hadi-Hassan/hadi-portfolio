@@ -8,7 +8,7 @@ final class SeraProviderRouter {
   $context=json_encode($state,JSON_THROW_ON_ERROR);if(strlen($context)>12000)return ['ok'=>false,'code'=>'CONTEXT_LIMIT','fallback'=>'questionnaire'];
   $attempts=0;$errors=[];
   foreach($this->registry as $model){
-   if(($model['enabled']??false)!==true||($model['free_verified']??false)!==true||($model['unbilled_confirmed']??false)!==true||($model['paid']??true)!==false||!in_array('json',$model['capabilities']??[],true)||($model['remaining']??0)<1||($model['circuit_until']??0)>time())continue;
+   if(($model['enabled']??false)!==true||($model['free_verified']??false)!==true||($model['unbilled_confirmed']??false)!==true||($model['paid']??true)!==false||(!is_array($model['capabilities']??null)||!in_array('json',$model['capabilities'],true))||($model['remaining']??0)<1||($model['circuit_until']??0)>time())continue;
    $adapter=$this->adapters[$model['provider']??'']??null;if(!is_callable($adapter))continue;
    if($attempts >= min(3,max(0,$this->maxAttempts)))break;$attempts++;
    try{$reply=$adapter($model,json_decode($context,true),['max_output_tokens'=>400,'timeout_seconds'=>6]);

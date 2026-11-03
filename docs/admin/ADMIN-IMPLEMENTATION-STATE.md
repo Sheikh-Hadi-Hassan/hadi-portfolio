@@ -11,20 +11,29 @@
     "versioned browser/PHP schema gates and previous-config fallback",
     "approved FAQ answers without LLM, identity/welcome/voice preferences and bounded backend knowledge/tone",
     "temporary-directory staging with revision lease, write lock, symlink rejection, readback hash and rollback",
-    "existing-project metadata/contact/social/SEO drafts, approvals, escaped preview and staging; original source untouched"
+    "existing-project metadata/contact/social/SEO drafts, approvals, escaped preview and staging; original source untouched",
+    "disabled Gemini/Groq protocol adapters reused through existing router with fake transport",
+    "private-store-gated usage ledger: pre-call debit, fsync, bounded circuit and no refund of uncertain calls",
+    "voice disable enforced at start, recognition resume and read-aloud"
   ],
   "tests": [
-    "npm test (13 JS suites including isolated admin/CMS/public config)",
-    "PHP public config validation/fallback",
-    "isolated Chromium admin at 320/768/1280 and axe final state",
-    "isolated Chromium approved FAQ/identity/fallback plus consent regressions"
+    "npm test PASS: 14 JS suites after exact-source recovery",
+    "5 PHP suites PASS: config, router, retrieval, adapters and ledger",
+    "20-process quota contention PASS: exactly 3 accepted under quota 3",
+    "packaging, catalogue structure, CRM contract and affected syntax PASS",
+    "Earlier isolated browser evidence preserved; current rerun blocked after workspace reset"
   ],
   "blockers": [
     "Actual Google identity/ACL/deployment and Hostinger web PHP/private configuration unverified",
     "No protected key store or deployment authorization; provider activation/credential writes disabled",
     "No approved hero lock: production build and 198 production route cases blocked",
-    "CMS new-project/case content creation, uploads and actual design/build publication incomplete"
+    "CMS new-project/case content creation, uploads and actual design/build publication incomplete",
+    "Credential encryption/rotation, real gateway wiring and free/privacy entitlement remain unverified",
+    "Final isolated browser rerun: Chromium/axe absent after reset"
   ],
-  "next_task": "Review local artifacts and obtain runtime/identity/hero evidence before controlled non-production deployment acceptance. Never connect drafts or private records directly."
+  "next_task": "Obtain owner runtime/ACL/key-custody/hero evidence; restore browser runner and complete controlled non-production acceptance before activation or release.",
+  "published_slices": [
+    "06e89289e8ae6f2f793d2c7a1e69f8eab4725698: approved Sera artifact pipeline and isolated CMS staging"
+  ]
 }
 ```

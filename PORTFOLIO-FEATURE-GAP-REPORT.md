@@ -326,3 +326,11 @@ Sera follow-up: all eleven isolated intent journeys now pass. Relevant backend r
 ## Business control center development slice
 
 See docs/admin/ADMIN-IMPLEMENTATION-STATE.md. Bound-Sheet admin foundation and private versioned knowledge/FAQ/personality/voice, disabled provider drafts, CRM annotations, appointment requests and metadata reports have local tests. No standalone portal, encrypted key management, CMS publishing, live analytics/marketing or admin AI agent acceptance is claimed. No production installation. Portfolio catalogue unchanged at 22/243; admin expansion tracked separately. NO-GO; manifest STALE.
+
+## Business Control Center Phase 2: local evidence
+
+Approved-artifact/CMS slice published as 06e89289e8ae6f2f793d2c7a1e69f8eab4725698. Owner-only public export excludes drafts/private/admin records. Browser/PHP schema gates, approved FAQ/identity/voice, bounded knowledge/tone, previous-config fallback and temporary staging/rollback are fixture-tested. Existing-project metadata/contact/social/SEO approvals and escaped previews preserve routes/source/hero. Full case authoring, new projects, uploads and actual public-template/build publishing remain incomplete.
+
+Disabled Gemini/Groq protocol adapters reuse the router in mocks. Private ledger fixtures reserve quota before calls, preserve unknown outcomes and bound circuits; 20-process contention accepts exactly three under quota three. Credential writes/activation, encryption/rotation, live gateway wiring, account eligibility/privacy and actual hosting storage remain blocked. No live APIs, bookings, emails or deployment.
+
+Evidence: docs/admin/PHASE2-TEST-EVIDENCE.md. Current recovered snapshot passes 14 JS suites, five PHP suites, concurrency, packaging and catalogue checks. Earlier isolated browser reports are preserved; a final rerun is blocked by missing Chromium/axe after reset. Portfolio acceptance remains **22/243 = 9.05%**, with 188 partial, 2 missing, 31 blocked; 233 future excluded. No atomic statuses promoted. Production-build browser coverage **0/198**. Hero approval, runtime/private-config/Apps Script identity, cleanup and authorized booking acceptance remain mandatory. Manifest **STALE**; **NO-GO**.

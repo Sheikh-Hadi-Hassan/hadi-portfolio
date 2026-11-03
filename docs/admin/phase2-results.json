@@ -1,0 +1,31 @@
+{
+  "branch": "work/v01-booking-contract-20261103",
+  "published_pipeline_commit": "06e89289e8ae6f2f793d2c7a1e69f8eab4725698",
+  "release": "NO_GO",
+  "manifest": "STALE",
+  "current_tests": {
+    "javascript_suites": 14,
+    "javascript": "PASS",
+    "php_suites": 5,
+    "php": "PASS",
+    "ledger_concurrency": "PASS: 20 processes; quota 3; exactly 3 accepted",
+    "syntax_packaging_catalogue": "PASS",
+    "final_browser_rerun": "BLOCKED: Chromium/axe unavailable after reset"
+  },
+  "earlier_isolated_browser_evidence": "PASS retained, not a current rerun or production acceptance",
+  "portfolio": {
+    "verified": 22,
+    "partial": 188,
+    "missing": 2,
+    "blocked": 31,
+    "total": 243,
+    "future_excluded": 233
+  },
+  "production_browser": {
+    "completed": 0,
+    "total": 198
+  },
+  "credentials": "BLOCKED: no encryption/key-management activation",
+  "live_external_operations": 0,
+  "cms": "existing metadata staging fixture verified; full publishing incomplete"
+}

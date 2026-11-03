@@ -1,0 +1,9 @@
+<?php
+declare(strict_types=1);
+require __DIR__.'/../public/intellignce-support/provider-ledger.php';
+function ledgerCheck(bool $v):void{if(!$v)throw new RuntimeException('Ledger contract failed');}
+$dir=sys_get_temp_dir().'/sera-ledger-'.bin2hex(random_bytes(6));mkdir($dir,0700);$file=$dir.'/sera-usage-test.json';try{
+ try{(new SeraProviderLedger($file))->reserve('model','period',1,10);throw new RuntimeException('must block');}catch(RuntimeException $e){ledgerCheck($e->getMessage()==='PROVIDER_LEDGER_BLOCKED');}ledgerCheck(!file_exists($file));
+ $l=new SeraProviderLedger($file,true);ledgerCheck($l->reserve('model','period',3,10));unset($l);$l=new SeraProviderLedger($file,true);ledgerCheck($l->reserve('model','period',3,11));$l->outcome('model',false,11);ledgerCheck($l->reserve('model','period',3,12));$l->outcome('model',false,12);ledgerCheck(!$l->reserve('model','period',3,13));ledgerCheck(!$l->reserve('model','period',3,100));ledgerCheck($l->reserve('model','verified-reset-period',1,100));ledgerCheck(!$l->reserve('model','verified-reset-period',1,100));
+ $calls=0;$wrapped=seraBudgetedAdapters(['mock'=>function()use(&$calls){$calls++;throw new RuntimeException('synthetic timeout');}],$l,fn()=>100);$model=['id'=>'uncertain','quotaPeriod'=>'fixed-owner-configured','quotaLimit'=>1];foreach([1,2] as $attempt)try{$wrapped['mock']($model,[],[]);}catch(RuntimeException $e){}ledgerCheck($calls===1);ledgerCheck(!str_contains(file_get_contents($file),'timeout'));file_put_contents($file,'corrupt');try{$l->reserve('model','period',1,100);throw new RuntimeException('must block');}catch(RuntimeException $e){ledgerCheck($e->getMessage()==='PROVIDER_LEDGER_INVALID');}
+}finally{foreach(glob($dir.'/*') as $f)unlink($f);rmdir($dir);}echo "PASS: storage activation gate, durable pre-call debit, uncertain-call no-refund, circuit, explicit period reset and corrupt-ledger fail-closed. Local fixtures only.\n";
