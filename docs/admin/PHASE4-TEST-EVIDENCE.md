@@ -19,8 +19,10 @@ Parent b17c4d5b88b960bbd6d4ad80eee45e922179ebc4, development branch only. Scope:
 |`python3 tests/package-security.py`|PASS|Packaging rejects known private/env/key/credential fixture files; not proof of live web access restrictions|
 |`python3 tests/requirements-matrix.py`|PASS|476 IDs, 243 Portfolio /233 future,22 verified and denominator consistency; not semantic recertification|
 |`npm run build:acceptance`|BLOCKED, exit1|APPROVED_HERO_REQUIRED; no lock created and no production build executed|
-|`node tests/browser-v01.cjs`|BLOCKED, exit1|Hero guard stopped before browser initialization; docs/v01-all-route-browser-results.json records0 executed/0passed/0failed/198blocked|
+|`node tests/browser-v01.cjs`|BLOCKED, exit1|Hero guard stopped before browser initialization; docs/v01-production-build-browser-results.json records0 executed/0passed/0failed/198blocked|
 
 No test assertions failed in the targeted suites. The two nonzero gate commands are intentional BLOCKED results, never counted as passed builds/browser acceptance. No live AI inference, booking, email, hosted publication, new diagnostic or production writes occurred. No unrelated unchanged CMS/booking/consent suite was re-executed. Manual screen-reader/keyboard/visual production acceptance remains unperformed; future automated checks do not substitute for it.
 
 New harness behavior is implemented, syntax/plan/provenance-tested and **not yet executed on an approved export**: fresh context per case, bounded image/font loading, local assets/link/fragment checks, menu focus/Escape, history round trip, reduced motion, axe, screenshots and incremental results. PHP submissions/external origins are blocked. It does not validate external destinations, live forms/providers, normal-motion behavior, every Sera dialog state or manual WCAG; retained dedicated fixtures and later authorized acceptance cover those separately.
+
+Historical docs/v01-all-route-browser-results.json is preserved unchanged. The hardened production-build harness writes a separate v01-production-build-browser-results.json so blocked/current runs cannot replace the historical evidence artifact.

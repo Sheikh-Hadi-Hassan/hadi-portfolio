@@ -95,7 +95,7 @@
     "scripts/qa/review-hero-proposal.py",
     "tests/browser-plan.cjs",
     "tests/acceptance-build.py",
-    "docs/v01-all-route-browser-results.json",
+    "docs/v01-production-build-browser-results.json",
     "docs/admin/phase4-hero-comparison.json",
     "docs/admin/PHASE4-ACCEPTANCE.md",
     "docs/admin/CONTROLLED-INTEGRATION-ACCEPTANCE.md",

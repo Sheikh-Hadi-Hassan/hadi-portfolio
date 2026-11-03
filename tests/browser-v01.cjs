@@ -2,7 +2,7 @@ const fs=require('fs'),path=require('path'),http=require('http');
 const {spawnSync}=require('child_process');
 const {plan,verifyRoutes,report}=require('../scripts/qa/browser-plan.cjs');
 const cases=plan(JSON.parse(fs.readFileSync('src/data/projects.json','utf8'))),results=[];
-const evidence='docs/v01-all-route-browser-results.json';
+const evidence='docs/v01-production-build-browser-results.json';
 let blockedReason=null;
 const save=reason=>{blockedReason=reason;fs.writeFileSync(evidence,JSON.stringify(report(cases,results,reason),null,2)+'\n')};
 (async()=>{

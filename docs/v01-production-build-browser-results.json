@@ -1,0 +1,10 @@
+{
+  "scope": "approved_production_export_local_browser_no_external_operations",
+  "total": 198,
+  "executed": 0,
+  "passed": 0,
+  "failed": 0,
+  "blocked": 198,
+  "blockedReason": "APPROVED_HERO_REQUIRED",
+  "cases": []
+}
