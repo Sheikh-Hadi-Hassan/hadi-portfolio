@@ -1,17 +1,51 @@
 {
   "status": "PASS",
-  "scope": "Isolated widget fixture, no providers/bookings/email",
-  "checks": [
-    "select branding",
-    "required project answer",
-    "skip optional questions",
-    "invalid answer preserves draft",
-    "Back retains answer",
-    "reload resumes guided state",
-    "contact validation",
-    "deterministic brief",
-    "booking CTA",
-    "zero AI calls"
+  "scope": "Isolated widget; eleven intent selections, required answer, optional skip, Back, reload, brief and CTA; no AI/booking/email",
+  "cases": [
+    {
+      "service": "strategy",
+      "status": "PASS"
+    },
+    {
+      "service": "identity",
+      "status": "PASS"
+    },
+    {
+      "service": "personal-web",
+      "status": "PASS"
+    },
+    {
+      "service": "business-web",
+      "status": "PASS"
+    },
+    {
+      "service": "commerce",
+      "status": "PASS"
+    },
+    {
+      "service": "product",
+      "status": "PASS"
+    },
+    {
+      "service": "saas",
+      "status": "PASS"
+    },
+    {
+      "service": "social",
+      "status": "PASS"
+    },
+    {
+      "service": "video",
+      "status": "PASS"
+    },
+    {
+      "service": "direction",
+      "status": "PASS"
+    },
+    {
+      "service": "custom",
+      "status": "PASS"
+    }
   ],
   "production_acceptance_cases": 0
 }

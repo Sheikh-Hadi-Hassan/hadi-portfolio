@@ -6,4 +6,6 @@ Isolated Chromium: sera-guided-browser.cjs passes branding selection to brief wi
 
 Existing npm tests pass; generated widget syntax passes. Hero guard is untouched. Current production-build route acceptance remains 0/198. Voice-device, all guided branches in browser, full accessibility and live-provider tests remain unexecuted. Tests initially exposed fixture context/phone-value errors, corrected before final branch passes; no failing result is promoted.
 
-Eleven distinct intent IDs map to the six allowed backend service IDs; source test passes. The updated branding/rebranding selector browser journey passes. Full eleven-choice browser coverage remains pending.
+Eleven distinct intent IDs map to the six allowed backend service IDs; source test passes. The updated branding/rebranding selector browser journey passes. All eleven intent browser journeys now pass in the isolated fixture, including invalid input, Back, reload and summary.
+
+Final isolated run: all eleven intent journeys PASS. Backend retrieval PHP test PASS; npm test PASS (10 suites); packaging-security PASS. No live provider acceptance, token usage or commercial eligibility is inferred.

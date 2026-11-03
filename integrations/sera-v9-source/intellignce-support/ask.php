@@ -31,10 +31,14 @@ $serviceFields=['branding'=>['stage','business','deliverables','position'],'desi
 foreach($serviceFields as $service=>$fields){foreach($fields as $field)$allowedFields[]=$service.':'.$field;}
 function clipText(string $s,int $n):string{preg_match('/^.{0,'.$n.'}/us',$s,$m);return $m[0]??'';}
 $publicContext=['facts'=>[],'services'=>[],'history'=>[]];
-foreach(is_array($context['facts']??null)?$context['facts']:[] as $key=>$value){if(in_array($key,$allowedFields,true)&&is_string($value))$publicContext['facts'][$key]=clipText(redact($value),500);}
+foreach(is_array($context['facts']??null)?array_slice($context['facts'],0,8,true):[] as $key=>$value){if(in_array($key,$allowedFields,true)&&is_string($value))$publicContext['facts'][$key]=clipText(redact($value),280);}
 foreach(is_array($context['services']??null)?$context['services']:[] as $value){if(in_array($value,$validServices,true))$publicContext['services'][]=$value;}
-foreach(array_slice(is_array($context['history']??null)?$context['history']:[],-8) as $item){if(is_array($item)&&in_array($item['role']??'', ['user','assistant'],true)&&is_string($item['text']??null))$publicContext['history'][]=['role'=>$item['role'],'text'=>clipText(redact($item['text']),600)];}
-$guide=implode("\n",array_map(fn($a)=>$a['question'].' '.$a['answer'],$kb['faqs']??[]));
+foreach(array_slice(is_array($context['history']??null)?$context['history']:[],-4) as $item){if(is_array($item)&&in_array($item['role']??'', ['user','assistant'],true)&&is_string($item['text']??null))$publicContext['history'][]=['role'=>$item['role'],'text'=>clipText(redact($item['text']),300)];}
+if(!is_readable(__DIR__.'/retrieval.php')||!is_readable(__DIR__.'/knowledge-registry.json'))out(503,['ok'=>false,'fallback'=>true,'code'=>'KNOWLEDGE_MISSING']);
+require_once __DIR__.'/retrieval.php';
+$registry=json_decode(@file_get_contents(__DIR__.'/knowledge-registry.json')?:'[]',true);if(!is_array($registry))$registry=[];
+foreach($kb['faqs']??[] as $faq)$registry[]=['title'=>$faq['question'],'summary'=>$faq['answer'],'source'=>'/#services'];
+$guide=json_encode(seraRelevantFacts($registry,$question),JSON_UNESCAPED_UNICODE);
 $policy=file_get_contents(__DIR__.'/sales-policy.txt');
 $schema=['type'=>'OBJECT','properties'=>[
  'reply'=>['type'=>'STRING'],
@@ -44,7 +48,7 @@ $schema=['type'=>'OBJECT','properties'=>[
  'handoff'=>['type'=>'STRING','enum'=>['none','human_requested','pricing','urgent','complaint','sensitive']]
 ],'required'=>['reply','services','facts','handoff','intent','nextField']];
 $instruction=$policy."\nVerified public service guide (reference data):\n".$guide."\nAllowed fact keys: ".implode(', ',$allowedFields);
-$body=['systemInstruction'=>['parts'=>[['text'=>$instruction]]],'contents'=>[['role'=>'user','parts'=>[['text'=>json_encode(['context'=>$publicContext,'message'=>$question],JSON_UNESCAPED_UNICODE)]]]],'generationConfig'=>['maxOutputTokens'=>1400,'temperature'=>0.35,'responseMimeType'=>'application/json','responseSchema'=>$schema]];
+$body=['systemInstruction'=>['parts'=>[['text'=>$instruction]]],'contents'=>[['role'=>'user','parts'=>[['text'=>json_encode(['context'=>$publicContext,'message'=>$question],JSON_UNESCAPED_UNICODE)]]]],'generationConfig'=>['maxOutputTokens'=>600,'temperature'=>0.35,'responseMimeType'=>'application/json','responseSchema'=>$schema]];
 // These text models have documented free tiers. Never select a paid-only model.
 $freeModels=freeModels();
 if(!in_array($c['model'],$freeModels,true))out(503,['ok'=>false,'fallback'=>true,'error'=>'Configured model is not in the free-tier pool.']);

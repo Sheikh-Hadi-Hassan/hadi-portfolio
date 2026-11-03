@@ -32,3 +32,5 @@ Latest portfolio acceptance: 22/243 (9.05%). Future 233 remain excluded. Durable
 ## Sera guided-discovery milestone
 
 See docs/sera/SERA-IMPLEMENTATION-STATE.md and SERA-TEST-EVIDENCE.md. Deterministic guided UI and non-binding brief implemented; six service-tree units and one isolated browser journey pass. Router/knowledge/error foundations are explicitly distinguished from live integration. Original catalogue stays 22/243; no automatic count increase. Platform/support scope remains future. Hero approval/198-case export acceptance remain blocked. NO-GO; manifest STALE.
+
+Sera follow-up: all eleven isolated intent journeys now pass. Relevant backend retrieval is wired with bounded context. Multi-provider routing remains a mock policy foundation; no new provider enabled. Portfolio counts remain 22/243. No change to hero or release gates.

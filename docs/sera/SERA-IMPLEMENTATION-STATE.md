@@ -17,7 +17,10 @@
     "Source-referenced profile and 15 case-study registry; bounded retrieval utility",
     "Mock-only provider policy with free/unbilled/paid/capability/quota/circuit exclusions",
     "Voice transcription enters review field rather than advancing guided questions",
-    "Eleven visitor intent choices map to six canonical backend IDs; intent IDs included in lead handoff"
+    "Eleven visitor intent choices map to six canonical backend IDs; intent IDs included in lead handoff",
+    "All eleven intent browser journeys PASS in isolated fixture",
+    "Backend relevant retrieval wired to existing ask.php with explicit context/output bounds",
+    "Requested specialist intent labels preserved in brief; uncommitted selections do not overwrite submitted intent metadata"
   ],
   "tests": [
     "node tests/sera-discovery.mjs PASS",
@@ -27,7 +30,10 @@
     "CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-guided-browser.cjs PASS (isolated)",
     "CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs PASS (isolated)",
     "npm test PASS prior to final proposal-handoff addition; affected discovery/syntax PASS afterward",
-    "Latest branding/rebranding guided browser with invalid-answer, Back and reload checks PASS"
+    "Latest branding/rebranding guided browser with invalid-answer, Back and reload checks PASS",
+    "php8.3 tests/sera-retrieval.php PASS",
+    "npm test PASS (10 suites)",
+    "python3 tests/package-security.py PASS"
   ],
   "blockers": [
     "Approved hero lock and production identities unchanged",
@@ -35,8 +41,8 @@
     "No authorized live lead/booking/email acceptance",
     "No secure upload endpoint approved"
   ],
-  "next_executable_task": "Run eleven-intent browser matrix; finish typed input controls and error integration; then wire backend relevant retrieval and verified live adapter contracts. No remote adapter/model enabled by this milestone.",
-  "current_commit_at_phase_entry": "c31cf62290dd410c77dedc417085697e22eb7d43",
+  "next_executable_task": "Complete global error-path integration and input/voice controls; verify current provider eligibility and implement tested real backend adapters with durable quota/circuit/dedup contracts. Live calls require private account configuration and consent.",
+  "current_commit_at_phase_entry": "a584d007ba96e72bedaef9a08308e95ce1e19c50",
   "files_changed": [
     "engine/runtime/build/booking/voice-actions",
     "discovery.mjs; guided.js; errors.mjs; knowledge.mjs; knowledge-registry.json",

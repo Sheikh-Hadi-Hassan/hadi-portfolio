@@ -8,3 +8,8 @@ discovery=(r/'discovery.mjs').read_text().replace('export ','')+'\n'+(r/'knowled
 js=engine+discovery+'\nconst CHAT_CSS='+json.dumps((r/'chat.css').read_text())+';\nconst PUBLIC_FAQS='+json.dumps(json.loads((r/'intellignce-support/knowledge.json').read_text())['faqs'])+';\n'+s+"\n}\nconst start=()=>setTimeout(mount,1500);if(document.readyState==='complete')start();else window.addEventListener('load',start,{once:true});\n})();\n"
 for name in ['widget.js','widget-v9.js','widget-v8.js','widget-v7.js','widget-v6.js','widget-v5.js','widget-v4.1.js']:(r/'intellignce-support'/name).write_text(js)
 print(len(js),'bytes')
+
+from shutil import copyfile
+copyfile(r/'knowledge-registry.json',r.parents[1]/'public/intellignce-support/knowledge-registry.json')
+
+copyfile(r/'intellignce-support/retrieval.php',r.parents[1]/'public/intellignce-support/retrieval.php')
