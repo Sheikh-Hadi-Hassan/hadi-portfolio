@@ -1,3 +1,45 @@
+# Latest local acceptance — notification reliability and isolated browser checks
+
+Current branch continues 259a04319905a9a6deb0b6235a983c0cc7322f9f. Acceptance: **20/243 → 22/243 (9.05%)**. Counts: {'Partially implemented': 188, 'Implemented and verified': 22, 'Missing': 2, 'Blocked by external dependency': 31}; total 243. Future obligations remain 233. Original 476 catalogue/IDs preserved.
+
+## Implemented and tested
+
+- Persist/flush per-recipient send intent before MailApp. Suppress uncertain automatic replay for ordinary notices and owner review alerts. Corrupt delivery metadata fails closed. Uncertain jobs become manual reconciliation. Pre-send quota exhaustion remains retryable; already acknowledged recipients are skipped.
+- Isolated crash fixtures: failed intent write (no send), crash after intent/before transmission (quarantine), lost acknowledgement after send (no replay), partial quota retry (only unattempted recipient), completed delivery replay (skip), review alert acknowledgement loss (no replay).
+- Isolated real Chromium widget fixture: default off, explicit opt-in causes one mocked request, withdrawal rejects late response, reload resets consent. Initial fixture failures were corrected (UTF-8 response encoding and rendered launcher selector); final fixture passes with no page errors. These were fixture defects, not accepted production browser failures. No live provider, email or booking calls.
+- Lifecycle contract specification names both Missing IDs and keeps them in V0.1. No public lifecycle write endpoint or live provider mutation.
+
+## Current test evidence
+
+|Command|Result|Boundary|
+|---|---|---|
+|All non-browser JavaScript files under tests/ and tests/support/|23 PASS|docs/v01-current-regression-results.json; final alert scenario also passed separately|
+|`CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs`|PASS|Real browser, fake provider, isolated widget fixture; not 198-case export acceptance|
+|`python3 tests/source-seo.py`|PASS|22 source-template routes only|
+|`python3 tests/utility-routes.py`|PASS|Utility/CV hashes and preserved hero source|
+|`python3 tests/image-cache.py`|PASS|Isolated image corruption recovery|
+|`python3 tests/package-security.py`|PASS|Rejects private packaging inputs; final production package not created|
+|`npm audit --json`|Zero known vulnerabilities|Current dependency tree; no new project dependency|
+|`python3 tests/requirements-matrix.py`|PASS|Catalogue/count structure, not semantic certification|
+|Proposed hero hash comparison|PASS|Matches preserved inputs; inactive; no active design/hero-lock.json|
+|`npm run build`, export/type/production package acceptance|BLOCKED|Approved hero lock unavailable; no bypass and no repeated recovery search|
+|Production-build browser matrix|BLOCKED: 0/198|22 routes × nine widths preserved|
+|Manual screen-reader/visual accessibility|NOT PERFORMED|No WCAG conformance claim|
+
+## Remaining defects and owner gates
+
+P0: approved hero integrity artifact; authenticated production PHP/cURL/config/Apps Script identity and cleanup; authorized correlated E2E acceptance. Notification replay is now conservatively contained locally, but delivery remains ambiguous and may be omitted pending manual review. Calendar invite delivery and actual storage durability/worker concurrency remain unverified. Exactly-once delivery is not claimed.
+
+P1: PV-474D07E1 rescheduled lifecycle and PV-15E525B9 authorized cancellation remain Missing. Required actor/token/policy decisions and verified provider contracts are documented in docs/BOOKING-LIFECYCLE-CONTRACT.md. Remaining matrix rows retain unmet criteria; no implementation-only pass. Operational retention/deletion facts need owner confirmation. All-route visual, focus, form, accessibility and performance acceptance remain pending approved build.
+
+Owner actions: provide authentic hero lock or explicitly approve the exact proposed hashes for local QA; provide sanitized hosting/deployment/cleanup evidence; confirm retention/deletion procedures and lifecycle authority/policies; authorize controlled live acceptance only after prerequisites pass. Deployment remains separately gated.
+
+**NO-GO. Manifest STALE.** Production, main and recovery unchanged. No live bookings, emails or deployment.
+
+
+---
+Previous evidence retained below; latest counts/policy above supersede earlier summaries.
+
 ## Evidence acceptance update after ce1b299
 
 Verified before: 5/243 (2.06%). Verified after: 20/243 (8.23%). Denominator remains exactly 243 portfolio / 476 total; 233 future unchanged. Counts: {"Partially implemented": 190, "Implemented and verified": 20, "Missing": 2, "Blocked by external dependency": 31}.

@@ -1,11 +1,11 @@
 {
-  "baseline": "ce1b299a35b1fab36ac1523b2df04c015b24ce17",
-  "before": 5,
-  "after": 20,
+  "baseline": "259a04319905a9a6deb0b6235a983c0cc7322f9f",
+  "before": 20,
+  "after": 22,
   "denominator": 243,
   "status_counts": {
-    "Partially implemented": 190,
-    "Implemented and verified": 20,
+    "Partially implemented": 188,
+    "Implemented and verified": 22,
     "Missing": 2,
     "Blocked by external dependency": 31
   },
@@ -13,2432 +13,2189 @@
     {
       "id": "PV-75BF2DB6",
       "obligation": "Persist appointment before confirmation",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate persist appointment before confirmation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-DAAE5D43",
       "obligation": "Stable booking reference",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Generated reference equals saved row and response; deterministic event ID for UUID",
       "evidence": "tests/booking-recovery.mjs; tests/booking-validation.mjs \u2014 PASS locally; Generated reference equals saved row and response; deterministic event ID for UUID",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-AEDBB192",
       "obligation": "UTC timestamp storage",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate uTC timestamp storage with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-BF7A1435",
       "obligation": "Original visitor timezone storage",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Saved mock row retains supplied visitor timezone",
       "evidence": "tests/booking-recovery.mjs \u2014 PASS locally; Saved mock row retains supplied visitor timezone",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-D6B53C76",
       "obligation": "Contact data persistence",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Saved mock row preserves supplied name/email; actual Google durability separately gated",
       "evidence": "tests/booking-recovery.mjs \u2014 PASS locally; Saved mock row preserves supplied name/email; actual Google durability separately gated",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7E49D64F",
       "obligation": "Booking state persistence",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Saved mock row contains Booked only for a ready fixture",
       "evidence": "tests/booking-recovery.mjs \u2014 PASS locally; Saved mock row contains Booked only for a ready fixture",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E578557A",
       "obligation": "External Calendar event identity storage",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Saved mock row event ID equals provider fixture and response ID",
       "evidence": "tests/booking-recovery.mjs \u2014 PASS locally; Saved mock row event ID equals provider fixture and response ID",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E6948560",
       "obligation": "Same-key idempotency",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Demonstrate same-key idempotency with reproducible evidence; source presence alone is insufficient.",
       "evidence": "tests/booking-recovery.mjs: sequential same-key submits yield one row/event",
       "remaining": "Concurrent cross-provider acceptance remains separate",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-03C060D9",
       "obligation": "Reject same key with changed payload",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Demonstrate reject same key with changed payload with reproducible evidence; source presence alone is insufficient.",
       "evidence": "tests/booking-recovery.mjs: REFERENCE_MISMATCH",
       "remaining": "Live deployment identity separately gated",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-1B5A3DBB",
       "obligation": "Prevent concurrent slot conflicts",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate prevent concurrent slot conflicts with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-967E44A3",
       "obligation": "Recheck live server availability",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate recheck live server availability with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-ED56B733",
       "obligation": "Pending bookings remain unconfirmed",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Demonstrate pending bookings remain unconfirmed with reproducible evidence; source presence alone is insufficient.",
       "evidence": "tests/booking-status.mjs; tests/booking-client-contract.cjs; tests/booking-recovery.mjs (local mocks)",
       "remaining": "Retain live identity/E2E gate separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-DD383D84",
       "obligation": "Differentiate failed synchronization from confirmation",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate differentiate failed synchronization from confirmation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A0C307B7",
       "obligation": "Recognize cancelled Calendar event",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Cancelled event produces CANCELLED, not a booked confirmation",
       "evidence": "tests/booking-status.mjs \u2014 PASS locally; Cancelled event produces CANCELLED, not a booked confirmation",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-474D07E1",
       "obligation": "Rescheduled booking lifecycle",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Missing",
       "criterion": "Demonstrate rescheduled booking lifecycle with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No reschedule action in inspected public gateway",
       "remaining": "Design verified authenticated contract; do not add unauthorized provider writes",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E38A6D22",
       "obligation": "Calendar creation before confirmation",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate calendar creation before confirmation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-28C0C260",
       "obligation": "Meet conference creation per booking",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate meet conference creation per booking with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-185FB3F9",
       "obligation": "Meet readiness before confirmation",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Demonstrate meet readiness before confirmation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "tests/booking-status.mjs; tests/booking-client-contract.cjs",
       "remaining": "Deployed source identity separately gated",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-EFD23D8E",
       "obligation": "Correct owner Calendar identity",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate correct owner Calendar identity with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-BEBD34F2",
       "obligation": "Correct event date and duration",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate correct event date and duration with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A9CAD3C5",
       "obligation": "Correct customer notification",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate correct customer notification with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E711FBC4",
       "obligation": "Correct owner notification",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate correct owner notification with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-4871E14E",
       "obligation": "Notification delivery evidence",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate notification delivery evidence with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-3C734D08",
       "obligation": "Transient provider retry",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Transient read failure retries once; permanent permission failure does not retry; exhaustion propagates",
       "evidence": "tests/booking-validation.mjs \u2014 PASS locally; Transient read failure retries once; permanent permission failure does not retry; exhaustion propagates",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-1374AE96",
       "obligation": "Exponential retry backoff",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate exponential retry backoff with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-F6C349D2",
       "obligation": "Retry exhaustion/manual review",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate retry exhaustion/manual review with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0950128D",
       "obligation": "Partial-success reconciliation",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate partial-success reconciliation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-571941B8",
       "obligation": "No duplicate Calendar event on retry",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Implemented and verified",
       "criterion": "Demonstrate no duplicate Calendar event on retry with reproducible evidence; source presence alone is insufficient.",
       "evidence": "tests/booking-recovery.mjs: lost-response retry reconciles deterministic ID",
       "remaining": "Live and concurrent conditions separately gated",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-D5C70224",
       "obligation": "No unintended duplicate confirmation",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate no unintended duplicate confirmation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-347FFE76",
       "obligation": "Owner alert on failed synchronization",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate owner alert on failed synchronization with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-36D0078C",
       "obligation": "Safe visitor fallback on provider failure",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate safe visitor fallback on provider failure with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-F237980E",
       "obligation": "Correlated audit history",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate correlated audit history with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-FACBB24B",
       "obligation": "Expired credential handling",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate expired credential handling with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-87D3AB81",
       "obligation": "Provider downtime handling",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate provider downtime handling with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-C4600050",
       "obligation": "Timezone/DST edge cases",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Partially implemented",
       "criterion": "Demonstrate timezone/DST edge cases with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-15E525B9",
       "obligation": "Cancellation authorization and lifecycle",
-      "implementation": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
       "status": "Missing",
       "criterion": "Demonstrate cancellation authorization and lifecycle with reproducible evidence; source presence alone is insufficient.",
       "evidence": "Cancelled-provider events recognized; no authenticated modification contract",
       "remaining": "Design verified authenticated contract; preserve owner contact fallback",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-DB149B1B",
       "obligation": "Exact web-handler PHP version",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate exact web-handler PHP version with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-44EB5721",
       "obligation": "Exact PHP libcurl version",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate exact PHP libcurl version with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-AF592A9B",
       "obligation": "Required PHP extensions",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate required PHP extensions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-38116580",
       "obligation": "Relevant PHP restrictions",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate relevant PHP restrictions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-39DD0A03",
       "obligation": "Effective runtime private-config path",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate effective runtime private-config path with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-AA142A93",
       "obligation": "Effective production deployment fingerprint",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate effective production deployment fingerprint with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-36FEDD57",
       "obligation": "Active deployed Apps Script version",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate active deployed Apps Script version with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-41027089",
       "obligation": "Deployed source revision",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate deployed source revision with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-CFC92D62",
       "obligation": "Executing Google identity",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate executing Google identity with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-8D7F2E86",
       "obligation": "Deployment access permissions",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate deployment access permissions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9CACF774",
       "obligation": "Target Calendar permissions",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate target Calendar permissions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-B74DBA0F",
       "obligation": "Script timezone",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate script timezone with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-576DBE85",
       "obligation": "Calendar timezone",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate calendar timezone with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0C1AABAF",
       "obligation": "Required Meet permissions",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate required Meet permissions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0339CA33",
       "obligation": "Required email permissions",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate required email permissions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-AAEB7337",
       "obligation": "Production source/artifact parity",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate production source/artifact parity with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-532534DD",
       "obligation": "Controlled browser-to-lead-to-Calendar-to-Meet-to-email acceptance",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate controlled browser-to-lead-to-Calendar-to-Meet-to-email acceptance with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-CE1AE462",
       "obligation": "Production diagnostic cleanup",
-      "implementation": "reviewed verification kit; live PHP gateway; Apps Script deployment",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate production diagnostic cleanup with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No authenticated acceptance evidence",
       "remaining": "Owner authenticated evidence; explicit approval for live test",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-5D068CC8",
       "obligation": "Single production origin configuration",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate single production origin configuration with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-54155775",
       "obligation": "Production metadataBase identity",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate production metadataBase identity with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E86B21BC",
       "obligation": "Per-page self-referencing canonical",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Implemented and verified",
       "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "evidence": "tests/source-seo.py \u2014 PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-CCB8EF1B",
       "obligation": "Production author URL",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate production author URL with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E45F67D6",
       "obligation": "Production Open Graph URL",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Implemented and verified",
       "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "evidence": "tests/source-seo.py \u2014 PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7A5FBA05",
       "obligation": "Production structured-data identifiers",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Implemented and verified",
       "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "evidence": "tests/source-seo.py \u2014 PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-B71EA82F",
       "obligation": "Production sitemap absolute URLs",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Implemented and verified",
       "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "evidence": "tests/source-seo.py \u2014 PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-8C87E9A9",
       "obligation": "Production robots sitemap directive",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Implemented and verified",
       "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "evidence": "tests/source-seo.py \u2014 PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-6915DA21",
       "obligation": "No unintended noindex/disallow",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate no unintended noindex/disallow with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-202DCC2C",
       "obligation": "Private pages excluded from discovery",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate private pages excluded from discovery with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-AA356F55",
       "obligation": "Unique page titles",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Implemented and verified",
       "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "evidence": "tests/source-seo.py \u2014 PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A209CD11",
       "obligation": "Unique page descriptions",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Implemented and verified",
       "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "evidence": "tests/source-seo.py \u2014 PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-88063F7F",
       "obligation": "Primary role positioning",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate primary role positioning with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0C7809D7",
       "obligation": "One meaningful page H1",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate one meaningful page H1 with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0210CDD0",
       "obligation": "Semantic heading hierarchy",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate semantic heading hierarchy with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E3D8111B",
       "obligation": "Distinct project narratives",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate distinct project narratives with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-6EC2857D",
       "obligation": "Project role attribution",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate project role attribution with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A6483E1B",
       "obligation": "Evidence-backed project outcomes",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate evidence-backed project outcomes with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-6912DD76",
       "obligation": "Descriptive image captions",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate descriptive image captions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-212AC571",
       "obligation": "Meaningful image alt text",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate meaningful image alt text with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-26A783C8",
       "obligation": "Contextual internal linking",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate contextual internal linking with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-5477DEAB",
       "obligation": "Portfolio conversion CTAs",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate portfolio conversion CTAs with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-D38CCD01",
       "obligation": "Truthful Person schema",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate truthful Person schema with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-56EE7989",
       "obligation": "Truthful WebSite schema",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate truthful WebSite schema with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-57E5D313",
       "obligation": "Truthful ProfilePage schema",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate truthful ProfilePage schema with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-C322C7C3",
       "obligation": "Consistent sameAs identities",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate consistent sameAs identities with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-68F1AF3A",
       "obligation": "Valid project structured data",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate valid project structured data with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-413007A7",
       "obligation": "Breadcrumb hierarchy",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate breadcrumb hierarchy with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-EFA29034",
       "obligation": "Open Graph image dimensions",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate open Graph image dimensions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-CF87E9DC",
       "obligation": "Open Graph image availability",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate open Graph image availability with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-689C3518",
       "obligation": "Twitter card metadata",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate twitter card metadata with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0283AAD0",
       "obligation": "LinkedIn preview rendering",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate linkedIn preview rendering with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-F80B06E8",
       "obligation": "Alternate-host HTTPS redirects",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate alternate-host HTTPS redirects with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-743EB048",
       "obligation": "Legacy route compatibility",
-      "implementation": "scripts/build.py; src/app; public/robots.txt; public/sitemap.xml",
       "status": "Partially implemented",
       "criterion": "Demonstrate legacy route compatibility with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-D45D63F4",
       "obligation": "Search Console ownership verification",
-      "implementation": "Google Search Console; crawler/CDN logs; CrUX",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate search Console ownership verification with reproducible evidence; source presence alone is insufficient.",
       "evidence": "External account/field data not supplied",
       "remaining": "Owner account evidence or measured field data",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0577166D",
       "obligation": "Search Console sitemap receipt",
-      "implementation": "Google Search Console; crawler/CDN logs; CrUX",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate search Console sitemap receipt with reproducible evidence; source presence alone is insufficient.",
       "evidence": "External account/field data not supplied",
       "remaining": "Owner account evidence or measured field data",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-F0E07394",
       "obligation": "Homepage URL Inspection",
-      "implementation": "Google Search Console; crawler/CDN logs; CrUX",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate homepage URL Inspection with reproducible evidence; source presence alone is insufficient.",
       "evidence": "External account/field data not supplied",
       "remaining": "Owner account evidence or measured field data",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E5928DB0",
       "obligation": "Representative project URL Inspection",
-      "implementation": "Google Search Console; crawler/CDN logs; CrUX",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate representative project URL Inspection with reproducible evidence; source presence alone is insufficient.",
       "evidence": "External account/field data not supplied",
       "remaining": "Owner account evidence or measured field data",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-45E6D4DA",
       "obligation": "Crawler/WAF retrieval without broad bypass",
-      "implementation": "Google Search Console; crawler/CDN logs; CrUX",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate crawler/WAF retrieval without broad bypass with reproducible evidence; source presence alone is insufficient.",
       "evidence": "External account/field data not supplied",
       "remaining": "Owner account evidence or measured field data",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E9BE8205",
       "obligation": "Index coverage baseline",
-      "implementation": "Google Search Console; crawler/CDN logs; CrUX",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate index coverage baseline with reproducible evidence; source presence alone is insufficient.",
       "evidence": "External account/field data not supplied",
       "remaining": "Owner account evidence or measured field data",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-EF281E62",
       "obligation": "Field LCP p75 measurement",
-      "implementation": "Google Search Console; crawler/CDN logs; CrUX",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate field LCP p75 measurement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "External account/field data not supplied",
       "remaining": "Owner account evidence or measured field data",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-292030E9",
       "obligation": "Field INP p75 measurement",
-      "implementation": "Google Search Console; crawler/CDN logs; CrUX",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate field INP p75 measurement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "External account/field data not supplied",
       "remaining": "Owner account evidence or measured field data",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-4AA84630",
       "obligation": "Field CLS p75 measurement",
-      "implementation": "Google Search Console; crawler/CDN logs; CrUX",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate field CLS p75 measurement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "External account/field data not supplied",
       "remaining": "Owner account evidence or measured field data",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-40D705E8",
       "obligation": "Palette/tonal harmony",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate palette/tonal harmony with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-AD785376",
       "obligation": "Typography hierarchy",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate typography hierarchy with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-F9CC3109",
       "obligation": "Spacing consistency",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate spacing consistency with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-F6F84CE5",
       "obligation": "Grid alignment",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate grid alignment with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9BA8E63E",
       "obligation": "Font loading behavior",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate font loading behavior with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-B67CC115",
       "obligation": "Portrait crop",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate portrait crop with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-FEBA9DB1",
       "obligation": "Hero title/portrait overlap",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate hero title/portrait overlap with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-C9FC0477",
       "obligation": "381px heading collision avoidance",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate 381px heading collision avoidance with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-EC83AEA1",
       "obligation": "1000px breakpoint continuity",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate 1000px breakpoint continuity with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-56D6E58D",
       "obligation": "Tablet hero minimum height",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate tablet hero minimum height with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-631826AC",
       "obligation": "Image quality/crispness",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate image quality/crispness with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-6ACEAFA9",
       "obligation": "Image aspect-ratio preservation",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate image aspect-ratio preservation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A7137C4F",
       "obligation": "Icon clarity",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate icon clarity with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-FC9AD5AE",
       "obligation": "Hover states",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate hover states with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E502B03A",
       "obligation": "Focus states",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate focus states with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A6A455B9",
       "obligation": "Motion choreography",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate motion choreography with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-78955378",
       "obligation": "Parallax behavior",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate parallax behavior with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-4E87FE76",
       "obligation": "Animation pause controls",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate animation pause controls with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7680818B",
       "obligation": "Loading states",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate loading states with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-08F59EF7",
       "obligation": "No horizontal overflow at 320px",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no horizontal overflow at 320px with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-DDDB22C6",
       "obligation": "No horizontal overflow at 360px",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no horizontal overflow at 360px with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9671468C",
       "obligation": "No horizontal overflow at 375px",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no horizontal overflow at 375px with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-2501275F",
       "obligation": "No horizontal overflow at 390px",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no horizontal overflow at 390px with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-100BB1BC",
       "obligation": "No horizontal overflow at 430px",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no horizontal overflow at 430px with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-DEE08585",
       "obligation": "No horizontal overflow at 768px",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no horizontal overflow at 768px with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-FD7E570D",
       "obligation": "No horizontal overflow at 1024px",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no horizontal overflow at 1024px with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-29A2A423",
       "obligation": "No horizontal overflow at 1280px",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no horizontal overflow at 1280px with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-4A6AF2D9",
       "obligation": "No horizontal overflow at 1440px",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no horizontal overflow at 1440px with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-3539CEED",
       "obligation": "Tablet landscape layout",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate tablet landscape layout with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7CE024EC",
       "obligation": "No unintended nested vertical scrolling",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no unintended nested vertical scrolling with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-15A74870",
       "obligation": "Recruiter journey",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate recruiter journey with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-BB9621DE",
       "obligation": "Brand-client journey",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate brand-client journey with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-FE09988B",
       "obligation": "Founder journey",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate founder journey with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-C3B90DC1",
       "obligation": "Mobile visitor journey",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate mobile visitor journey with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-EA3193A5",
       "obligation": "Five-second identity/expertise/next-action clarity",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate five-second identity/expertise/next-action clarity with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E3D3821C",
       "obligation": "Project discovery",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate project discovery with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-C8C2BED3",
       "obligation": "Archive navigation",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate archive navigation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-AB24E6A5",
       "obligation": "Case-study storytelling",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate case-study storytelling with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-8CF23667",
       "obligation": "Contact CTA visibility",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate contact CTA visibility with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-77288C3A",
       "obligation": "Email fallback",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate email fallback with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-89159E8A",
       "obligation": "WhatsApp actions",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate whatsApp actions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-2E981ABA",
       "obligation": "Mobile navigation",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate mobile navigation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-C03FFAB5",
       "obligation": "Browser history navigation",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate browser history navigation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9033162B",
       "obligation": "Footer layout",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate footer layout with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-90401826",
       "obligation": "Dock controls fit viewport",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate dock controls fit viewport with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-5A828C5C",
       "obligation": "Modal/drawer behavior",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate modal/drawer behavior with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-292D6DD9",
       "obligation": "Touch targets",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate touch targets with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-8E4B97CA",
       "obligation": "Zoom and reflow",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate zoom and reflow with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-D3E62F32",
       "obligation": "Layout-shift measurement",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate layout-shift measurement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A708BD47",
       "obligation": "Network failure states",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate network failure states with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7DA3DF71",
       "obligation": "Offline states",
-      "implementation": "src/styles; src/app; src/components; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate offline states with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-C5CD5DC5",
       "obligation": "Semantic landmarks",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate semantic landmarks with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-D49343A5",
       "obligation": "Keyboard navigation",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate keyboard navigation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-BC971234",
       "obligation": "Visible focus indicators",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate visible focus indicators with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-41B00E34",
       "obligation": "Skip link",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate skip link with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-2A697525",
       "obligation": "Accessible form labels",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate accessible form labels with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A3E6F9D2",
       "obligation": "Form error announcements",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate form error announcements with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-ACC0BA7B",
       "obligation": "Screen-reader labels",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate screen-reader labels with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-32081F44",
       "obligation": "Modal focus containment",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate modal focus containment with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-3948298C",
       "obligation": "Modal focus restoration",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate modal focus restoration with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-289600CC",
       "obligation": "Accessible ARIA semantics",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate accessible ARIA semantics with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-93804239",
       "obligation": "WCAG2.2AA color contrast",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate wCAG2.2AA color contrast with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7C3E614B",
       "obligation": "Reduced-motion behavior",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate reduced-motion behavior with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-838897AD",
       "obligation": "Media captions or equivalent",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate media captions or equivalent with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-B57B52EB",
       "obligation": "Autoplay controls",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate autoplay controls with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-6571BC64",
       "obligation": "Manual screen-reader evaluation",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate manual screen-reader evaluation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-CA76547D",
       "obligation": "Manual keyboard evaluation",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate manual keyboard evaluation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-3D900DCB",
       "obligation": "Automated accessibility evaluation",
-      "implementation": "src/components; src/app; widget runtime; tests/browser-v01.cjs",
       "status": "Partially implemented",
       "criterion": "Demonstrate automated accessibility evaluation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-58FD60D5",
       "obligation": "Server-side request validation",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate server-side request validation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-B9C4ABDE",
       "obligation": "Client-side input validation",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate client-side input validation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-31FCC688",
       "obligation": "Malicious payload rejection",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate malicious payload rejection with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9A0CD6B8",
       "obligation": "Spam/honeypot controls",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate spam/honeypot controls with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-FC696D8A",
       "obligation": "Rate limiting",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate rate limiting with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9154A039",
       "obligation": "CSRF/origin enforcement where applicable",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate cSRF/origin enforcement where applicable with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-648F58E8",
       "obligation": "XSS/injection prevention",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate xSS/injection prevention with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0971968C",
       "obligation": "Spreadsheet formula injection prevention",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Implemented and verified",
       "criterion": "Escape standard =,+,-,@,tab,CR formula-leading prefixes before Sheet storage; preserve plain-text roundtrip",
       "evidence": "tests/booking-validation.mjs \u2014 PASS locally; Escape standard =,+,-,@,tab,CR formula-leading prefixes before Sheet storage; preserve plain-text roundtrip",
       "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-36BC8E0E",
       "obligation": "File-upload restrictions where applicable",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate file-upload restrictions where applicable with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-570B5FB2",
       "obligation": "CORS restrictions",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate cORS restrictions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-1C593012",
       "obligation": "API abuse limits",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate aPI abuse limits with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-2AF7EDAB",
       "obligation": "Server-only provider credentials",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate server-only provider credentials with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-D3D3411F",
       "obligation": "Secret-free logs",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate secret-free logs with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9DB9D538",
       "obligation": "No private file exposure",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate no private file exposure with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-CFA02423",
       "obligation": "HTTPS transport enforcement",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate hTTPS transport enforcement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-8D383AFC",
       "obligation": "Security response headers",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate security response headers with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-446B7D03",
       "obligation": "Admin authentication/session restrictions",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate admin authentication/session restrictions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-32C5F29C",
       "obligation": "Least privilege for provider access",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate least privilege for provider access with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7843FDA3",
       "obligation": "PII minimization",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate pII minimization with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-402F66D7",
       "obligation": "Privacy notice consistency",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate privacy notice consistency with reproducible evidence; source presence alone is insufficient.",
       "evidence": "Footer/Privacy/Sera name Gemini; operational retention incomplete",
       "remaining": "Reconcile consent and retention after owner facts",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-4CC31E06",
       "obligation": "Consent before AI transmission",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
-      "status": "Partially implemented",
-      "criterion": "Demonstrate consent before AI transmission with reproducible evidence; source presence alone is insufficient.",
-      "evidence": "tests/sera-consent.cjs: default/handlers/static gate; browser network unverified",
-      "remaining": "Execute browser/network opt-in and withdrawal acceptance",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "status": "Implemented and verified",
+      "criterion": "Isolated real widget defaults off, sends only after explicit enable, rejects late response after withdrawal, and resets consent after reload; unit test confirms AbortSignal cancellation.",
+      "evidence": "tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs \u2014 PASS; docs/sera-isolated-browser-results.json",
+      "remaining": "Retain local component pass; production export/route accessibility and provider data handling are separate gates",
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-CE7018E3",
       "obligation": "Consent withdrawal",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
-      "status": "Partially implemented",
-      "criterion": "Demonstrate consent withdrawal with reproducible evidence; source presence alone is insufficient.",
-      "evidence": "tests/sera-consent.cjs toggles future request gate; in-flight request behavior under review",
-      "remaining": "Verify cancellation of in-flight requests",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "status": "Implemented and verified",
+      "criterion": "Isolated real widget defaults off, sends only after explicit enable, rejects late response after withdrawal, and resets consent after reload; unit test confirms AbortSignal cancellation.",
+      "evidence": "tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs \u2014 PASS; docs/sera-isolated-browser-results.json",
+      "remaining": "Retain local component pass; production export/route accessibility and provider data handling are separate gates",
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-D93D37AB",
       "obligation": "Local draft retention enforcement",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Partially implemented",
       "criterion": "Demonstrate local draft retention enforcement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-EA64DE25",
       "obligation": "Operational retention policy",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate operational retention policy with reproducible evidence; source presence alone is insufficient.",
       "evidence": "Owner operational policy not supplied",
       "remaining": "Owner confirms Sheet/Google/log retention and responsibilities",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-BEEFFC7C",
       "obligation": "Data deletion/export procedure",
-      "implementation": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate data deletion/export procedure with reproducible evidence; source presence alone is insufficient.",
       "evidence": "Operational procedure not supplied",
       "remaining": "Owner confirms authorized process",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-BDD88073",
       "obligation": "Approved public portfolio knowledge",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate approved public portfolio knowledge with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-2A648415",
       "obligation": "Accurate service answers",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate accurate service answers with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-4FDB14AA",
       "obligation": "Context-aware clarification",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate context-aware clarification with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-09BC816B",
       "obligation": "One useful follow-up at a time",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate one useful follow-up at a time with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0FAEA31A",
       "obligation": "Lead qualification with consent",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate lead qualification with consent with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E91CDE71",
       "obligation": "Gentle objection handling",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate gentle objection handling with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-254C57D0",
       "obligation": "Booking guidance",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate booking guidance with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9CD31361",
       "obligation": "Human handoff",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate human handoff with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7A253BBC",
       "obligation": "No internal CRM disclosure",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate no internal CRM disclosure with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-FDE6207E",
       "obligation": "No internal analytics disclosure",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate no internal analytics disclosure with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A5B31EB2",
       "obligation": "No prompt/credential disclosure",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate no prompt/credential disclosure with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-172E0D98",
       "obligation": "No public admin tools",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate no public admin tools with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-B488C566",
       "obligation": "Server-side tool restrictions",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate server-side tool restrictions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-85528FBE",
       "obligation": "Prompt-injection resistance",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate prompt-injection resistance with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-89E35632",
       "obligation": "Factual grounding evaluation",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate factual grounding evaluation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-B6743A45",
       "obligation": "Unknown-answer honesty",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate unknown-answer honesty with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-91C03266",
       "obligation": "Conversation continuity",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate conversation continuity with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-50190B31",
       "obligation": "Response latency measurement",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate response latency measurement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9BF6B0A1",
       "obligation": "Provider quota limits",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate provider quota limits with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7D0BE3B1",
       "obligation": "Graceful provider fallback",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate graceful provider fallback with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-F03DF3F6",
       "obligation": "Provider privacy disclosure",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate provider privacy disclosure with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0F7A7D89",
       "obligation": "Microphone consent",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate microphone consent with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-1D77A3AE",
       "obligation": "Voice transcripts/captions",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate voice transcripts/captions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-1D7B6112",
       "obligation": "Push-to-talk control",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate push-to-talk control with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-0FB6745F",
       "obligation": "Voice interruption handling",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate voice interruption handling with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-73DC6449",
       "obligation": "Keyboard/text parity",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate keyboard/text parity with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-727B2646",
       "obligation": "Browser speech compatibility",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate browser speech compatibility with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7970C740",
       "obligation": "No claimed action without confirmed tool result",
-      "implementation": "integrations/sera-v9-source; public/intellignce-support",
       "status": "Partially implemented",
       "criterion": "Demonstrate no claimed action without confirmed tool result with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-6C965F53",
       "obligation": "Measured lab mobile performance",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate measured lab mobile performance with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-CCC46F0C",
       "obligation": "Measured lab desktop performance",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate measured lab desktop performance with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9000EFDC",
       "obligation": "TTFB measurement",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate tTFB measurement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-B12BBDA6",
       "obligation": "Resource weight measurement",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate resource weight measurement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7FB58B22",
       "obligation": "JavaScript execution/long tasks",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate javaScript execution/long tasks with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-08E5EC7E",
       "obligation": "Third-party request inventory",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate third-party request inventory with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E6F4C698",
       "obligation": "Image optimization",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate image optimization with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E60522DC",
       "obligation": "Responsive media delivery",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate responsive media delivery with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-B1503EF2",
       "obligation": "Cache behavior",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate cache behavior with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-5B0BD731",
       "obligation": "Animation frame-rate measurement",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate animation frame-rate measurement with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-3F497E97",
       "obligation": "Hydration error checks",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate hydration error checks with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-67891A25",
       "obligation": "Console-error checks",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate console-error checks with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-E66451B9",
       "obligation": "Browser/device matrix",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate browser/device matrix with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-A1157DED",
       "obligation": "Functional regression suite",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate functional regression suite with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-02748EA7",
       "obligation": "Staging isolation",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate staging isolation with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-4F6FF0C1",
       "obligation": "CI quality checks",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate cI quality checks with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-7F8280B1",
       "obligation": "Synthetic monitoring",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate synthetic monitoring with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-F99CA3E8",
       "obligation": "Failure alerting",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate failure alerting with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-4083FBFB",
       "obligation": "Backup restore drill",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate backup restore drill with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-3EA50ACE",
       "obligation": "Deployment instructions",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate deployment instructions with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-9B74198C",
       "obligation": "Rollback procedure",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate rollback procedure with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-DC6F133E",
       "obligation": "Incident runbook",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate incident runbook with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-913EF220",
       "obligation": "Validated release manifest",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate validated release manifest with reproducible evidence; source presence alone is insufficient.",
       "evidence": "Manifest STALE; validated current artifact unavailable",
       "remaining": "Hero approval, accepted build and authenticated comparison",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-27545F5D",
       "obligation": "Source-to-production difference register",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Blocked by external dependency",
       "criterion": "Demonstrate source-to-production difference register with reproducible evidence; source presence alone is insufficient.",
       "evidence": "Manifest STALE; validated current artifact unavailable",
       "remaining": "Hero approval, accepted build and authenticated comparison",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     },
     {
       "id": "PV-BE6BAB72",
       "obligation": "Dated test environment evidence",
-      "implementation": "scripts; .github/workflows; tests; release documents",
       "status": "Partially implemented",
       "criterion": "Demonstrate dated test environment evidence with reproducible evidence; source presence alone is insufficient.",
       "evidence": "No complete acceptance evidence",
       "remaining": "Complete focused acceptance checks and retain evidence",
-      "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+      "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
     }
   ]
 }

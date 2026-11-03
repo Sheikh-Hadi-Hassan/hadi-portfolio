@@ -2,12 +2,12 @@
   "source": "Pasted markdown(20261102-060832).md; 869 lines",
   "method": "Deduplicated feature/acceptance obligations from original §§3–15 and later public-Sera/blueprint/version sections. Historical observations and superseded planning-only execution restrictions are context, not product requirements. Independent backend/platform and external growth work are future scope. A verified criterion is bounded to its cited local evidence; live gates are separate.",
   "portfolio_total": 243,
-  "portfolio_verified": 20,
-  "verified_percentage": 8.23,
+  "portfolio_verified": 22,
+  "verified_percentage": 9.05,
   "all_scope_total": 476,
   "counts": {
-    "Partially implemented": 190,
-    "Implemented and verified": 20,
+    "Partially implemented": 188,
+    "Implemented and verified": 22,
     "Missing": 2,
     "Blocked by external dependency": 31
   },
@@ -27,7 +27,7 @@
         "criterion": "Demonstrate persist appointment before confirmation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -45,7 +45,7 @@
         "criterion": "Generated reference equals saved row and response; deterministic event ID for UUID",
         "evidence": "tests/booking-recovery.mjs; tests/booking-validation.mjs — PASS locally; Generated reference equals saved row and response; deterministic event ID for UUID",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -63,7 +63,7 @@
         "criterion": "Demonstrate uTC timestamp storage with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -81,7 +81,7 @@
         "criterion": "Saved mock row retains supplied visitor timezone",
         "evidence": "tests/booking-recovery.mjs — PASS locally; Saved mock row retains supplied visitor timezone",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -99,7 +99,7 @@
         "criterion": "Saved mock row preserves supplied name/email; actual Google durability separately gated",
         "evidence": "tests/booking-recovery.mjs — PASS locally; Saved mock row preserves supplied name/email; actual Google durability separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -117,7 +117,7 @@
         "criterion": "Saved mock row contains Booked only for a ready fixture",
         "evidence": "tests/booking-recovery.mjs — PASS locally; Saved mock row contains Booked only for a ready fixture",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -135,7 +135,7 @@
         "criterion": "Saved mock row event ID equals provider fixture and response ID",
         "evidence": "tests/booking-recovery.mjs — PASS locally; Saved mock row event ID equals provider fixture and response ID",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -153,7 +153,7 @@
         "criterion": "Demonstrate same-key idempotency with reproducible evidence; source presence alone is insufficient.",
         "evidence": "tests/booking-recovery.mjs: sequential same-key submits yield one row/event",
         "remaining": "Concurrent cross-provider acceptance remains separate",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -171,7 +171,7 @@
         "criterion": "Demonstrate reject same key with changed payload with reproducible evidence; source presence alone is insufficient.",
         "evidence": "tests/booking-recovery.mjs: REFERENCE_MISMATCH",
         "remaining": "Live deployment identity separately gated",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -189,7 +189,7 @@
         "criterion": "Demonstrate prevent concurrent slot conflicts with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -207,7 +207,7 @@
         "criterion": "Demonstrate recheck live server availability with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -225,7 +225,7 @@
         "criterion": "Demonstrate pending bookings remain unconfirmed with reproducible evidence; source presence alone is insufficient.",
         "evidence": "tests/booking-status.mjs; tests/booking-client-contract.cjs; tests/booking-recovery.mjs (local mocks)",
         "remaining": "Retain live identity/E2E gate separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -243,7 +243,7 @@
         "criterion": "Demonstrate differentiate failed synchronization from confirmation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -261,7 +261,7 @@
         "criterion": "Cancelled event produces CANCELLED, not a booked confirmation",
         "evidence": "tests/booking-status.mjs — PASS locally; Cancelled event produces CANCELLED, not a booked confirmation",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -279,7 +279,7 @@
         "criterion": "Demonstrate rescheduled booking lifecycle with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No reschedule action in inspected public gateway",
         "remaining": "Design verified authenticated contract; do not add unauthorized provider writes",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -297,7 +297,7 @@
         "criterion": "Demonstrate calendar creation before confirmation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -315,7 +315,7 @@
         "criterion": "Demonstrate meet conference creation per booking with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -333,7 +333,7 @@
         "criterion": "Demonstrate meet readiness before confirmation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "tests/booking-status.mjs; tests/booking-client-contract.cjs",
         "remaining": "Deployed source identity separately gated",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -351,7 +351,7 @@
         "criterion": "Demonstrate correct owner Calendar identity with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -369,7 +369,7 @@
         "criterion": "Demonstrate correct event date and duration with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -387,7 +387,7 @@
         "criterion": "Demonstrate correct customer notification with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -405,7 +405,7 @@
         "criterion": "Demonstrate correct owner notification with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -423,7 +423,7 @@
         "criterion": "Demonstrate notification delivery evidence with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -441,7 +441,7 @@
         "criterion": "Transient read failure retries once; permanent permission failure does not retry; exhaustion propagates",
         "evidence": "tests/booking-validation.mjs — PASS locally; Transient read failure retries once; permanent permission failure does not retry; exhaustion propagates",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -459,7 +459,7 @@
         "criterion": "Demonstrate exponential retry backoff with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -477,7 +477,7 @@
         "criterion": "Demonstrate retry exhaustion/manual review with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -495,7 +495,7 @@
         "criterion": "Demonstrate partial-success reconciliation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -513,7 +513,7 @@
         "criterion": "Demonstrate no duplicate Calendar event on retry with reproducible evidence; source presence alone is insufficient.",
         "evidence": "tests/booking-recovery.mjs: lost-response retry reconciles deterministic ID",
         "remaining": "Live and concurrent conditions separately gated",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -531,7 +531,7 @@
         "criterion": "Demonstrate no unintended duplicate confirmation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -549,7 +549,7 @@
         "criterion": "Demonstrate owner alert on failed synchronization with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -567,7 +567,7 @@
         "criterion": "Demonstrate safe visitor fallback on provider failure with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -585,7 +585,7 @@
         "criterion": "Demonstrate correlated audit history with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -603,7 +603,7 @@
         "criterion": "Demonstrate expired credential handling with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -621,7 +621,7 @@
         "criterion": "Demonstrate provider downtime handling with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -639,7 +639,7 @@
         "criterion": "Demonstrate timezone/DST edge cases with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -657,7 +657,7 @@
         "criterion": "Demonstrate cancellation authorization and lifecycle with reproducible evidence; source presence alone is insufficient.",
         "evidence": "Cancelled-provider events recognized; no authenticated modification contract",
         "remaining": "Design verified authenticated contract; preserve owner contact fallback",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -675,7 +675,7 @@
         "criterion": "Demonstrate exact web-handler PHP version with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -693,7 +693,7 @@
         "criterion": "Demonstrate exact PHP libcurl version with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -711,7 +711,7 @@
         "criterion": "Demonstrate required PHP extensions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -729,7 +729,7 @@
         "criterion": "Demonstrate relevant PHP restrictions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -747,7 +747,7 @@
         "criterion": "Demonstrate effective runtime private-config path with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -765,7 +765,7 @@
         "criterion": "Demonstrate effective production deployment fingerprint with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -783,7 +783,7 @@
         "criterion": "Demonstrate active deployed Apps Script version with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -801,7 +801,7 @@
         "criterion": "Demonstrate deployed source revision with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -819,7 +819,7 @@
         "criterion": "Demonstrate executing Google identity with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -837,7 +837,7 @@
         "criterion": "Demonstrate deployment access permissions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -855,7 +855,7 @@
         "criterion": "Demonstrate target Calendar permissions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -873,7 +873,7 @@
         "criterion": "Demonstrate script timezone with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -891,7 +891,7 @@
         "criterion": "Demonstrate calendar timezone with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -909,7 +909,7 @@
         "criterion": "Demonstrate required Meet permissions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -927,7 +927,7 @@
         "criterion": "Demonstrate required email permissions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -945,7 +945,7 @@
         "criterion": "Demonstrate production source/artifact parity with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -963,7 +963,7 @@
         "criterion": "Demonstrate controlled browser-to-lead-to-Calendar-to-Meet-to-email acceptance with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -981,7 +981,7 @@
         "criterion": "Demonstrate production diagnostic cleanup with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -999,7 +999,7 @@
         "criterion": "Demonstrate single production origin configuration with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1017,7 +1017,7 @@
         "criterion": "Demonstrate production metadataBase identity with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1035,7 +1035,7 @@
         "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1053,7 +1053,7 @@
         "criterion": "Demonstrate production author URL with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1071,7 +1071,7 @@
         "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1089,7 +1089,7 @@
         "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1107,7 +1107,7 @@
         "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1125,7 +1125,7 @@
         "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1143,7 +1143,7 @@
         "criterion": "Demonstrate no unintended noindex/disallow with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1161,7 +1161,7 @@
         "criterion": "Demonstrate private pages excluded from discovery with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1179,7 +1179,7 @@
         "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1197,7 +1197,7 @@
         "criterion": "Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1215,7 +1215,7 @@
         "criterion": "Demonstrate primary role positioning with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1233,7 +1233,7 @@
         "criterion": "Demonstrate one meaningful page H1 with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1251,7 +1251,7 @@
         "criterion": "Demonstrate semantic heading hierarchy with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1269,7 +1269,7 @@
         "criterion": "Demonstrate distinct project narratives with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1287,7 +1287,7 @@
         "criterion": "Demonstrate project role attribution with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1305,7 +1305,7 @@
         "criterion": "Demonstrate evidence-backed project outcomes with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1323,7 +1323,7 @@
         "criterion": "Demonstrate descriptive image captions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1341,7 +1341,7 @@
         "criterion": "Demonstrate meaningful image alt text with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1359,7 +1359,7 @@
         "criterion": "Demonstrate contextual internal linking with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1377,7 +1377,7 @@
         "criterion": "Demonstrate portfolio conversion CTAs with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1395,7 +1395,7 @@
         "criterion": "Demonstrate truthful Person schema with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1413,7 +1413,7 @@
         "criterion": "Demonstrate truthful WebSite schema with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1431,7 +1431,7 @@
         "criterion": "Demonstrate truthful ProfilePage schema with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1449,7 +1449,7 @@
         "criterion": "Demonstrate consistent sameAs identities with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1467,7 +1467,7 @@
         "criterion": "Demonstrate valid project structured data with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1485,7 +1485,7 @@
         "criterion": "Demonstrate breadcrumb hierarchy with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1503,7 +1503,7 @@
         "criterion": "Demonstrate open Graph image dimensions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1521,7 +1521,7 @@
         "criterion": "Demonstrate open Graph image availability with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1539,7 +1539,7 @@
         "criterion": "Demonstrate twitter card metadata with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1557,7 +1557,7 @@
         "criterion": "Demonstrate linkedIn preview rendering with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1575,7 +1575,7 @@
         "criterion": "Demonstrate alternate-host HTTPS redirects with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1593,7 +1593,7 @@
         "criterion": "Demonstrate legacy route compatibility with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1611,7 +1611,7 @@
         "criterion": "Demonstrate search Console ownership verification with reproducible evidence; source presence alone is insufficient.",
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1629,7 +1629,7 @@
         "criterion": "Demonstrate search Console sitemap receipt with reproducible evidence; source presence alone is insufficient.",
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1647,7 +1647,7 @@
         "criterion": "Demonstrate homepage URL Inspection with reproducible evidence; source presence alone is insufficient.",
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1665,7 +1665,7 @@
         "criterion": "Demonstrate representative project URL Inspection with reproducible evidence; source presence alone is insufficient.",
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1683,7 +1683,7 @@
         "criterion": "Demonstrate crawler/WAF retrieval without broad bypass with reproducible evidence; source presence alone is insufficient.",
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1701,7 +1701,7 @@
         "criterion": "Demonstrate index coverage baseline with reproducible evidence; source presence alone is insufficient.",
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1719,7 +1719,7 @@
         "criterion": "Demonstrate field LCP p75 measurement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1737,7 +1737,7 @@
         "criterion": "Demonstrate field INP p75 measurement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1755,7 +1755,7 @@
         "criterion": "Demonstrate field CLS p75 measurement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1773,7 +1773,7 @@
         "criterion": "Demonstrate palette/tonal harmony with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1791,7 +1791,7 @@
         "criterion": "Demonstrate typography hierarchy with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1809,7 +1809,7 @@
         "criterion": "Demonstrate spacing consistency with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1827,7 +1827,7 @@
         "criterion": "Demonstrate grid alignment with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1845,7 +1845,7 @@
         "criterion": "Demonstrate font loading behavior with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1863,7 +1863,7 @@
         "criterion": "Demonstrate portrait crop with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1881,7 +1881,7 @@
         "criterion": "Demonstrate hero title/portrait overlap with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1899,7 +1899,7 @@
         "criterion": "Demonstrate 381px heading collision avoidance with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1917,7 +1917,7 @@
         "criterion": "Demonstrate 1000px breakpoint continuity with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1935,7 +1935,7 @@
         "criterion": "Demonstrate tablet hero minimum height with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1953,7 +1953,7 @@
         "criterion": "Demonstrate image quality/crispness with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1971,7 +1971,7 @@
         "criterion": "Demonstrate image aspect-ratio preservation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -1989,7 +1989,7 @@
         "criterion": "Demonstrate icon clarity with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2007,7 +2007,7 @@
         "criterion": "Demonstrate hover states with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2025,7 +2025,7 @@
         "criterion": "Demonstrate focus states with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2043,7 +2043,7 @@
         "criterion": "Demonstrate motion choreography with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2061,7 +2061,7 @@
         "criterion": "Demonstrate parallax behavior with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2079,7 +2079,7 @@
         "criterion": "Demonstrate animation pause controls with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2097,7 +2097,7 @@
         "criterion": "Demonstrate loading states with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2115,7 +2115,7 @@
         "criterion": "Demonstrate no horizontal overflow at 320px with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2133,7 +2133,7 @@
         "criterion": "Demonstrate no horizontal overflow at 360px with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2151,7 +2151,7 @@
         "criterion": "Demonstrate no horizontal overflow at 375px with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2169,7 +2169,7 @@
         "criterion": "Demonstrate no horizontal overflow at 390px with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2187,7 +2187,7 @@
         "criterion": "Demonstrate no horizontal overflow at 430px with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2205,7 +2205,7 @@
         "criterion": "Demonstrate no horizontal overflow at 768px with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2223,7 +2223,7 @@
         "criterion": "Demonstrate no horizontal overflow at 1024px with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2241,7 +2241,7 @@
         "criterion": "Demonstrate no horizontal overflow at 1280px with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2259,7 +2259,7 @@
         "criterion": "Demonstrate no horizontal overflow at 1440px with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2277,7 +2277,7 @@
         "criterion": "Demonstrate tablet landscape layout with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2295,7 +2295,7 @@
         "criterion": "Demonstrate no unintended nested vertical scrolling with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2313,7 +2313,7 @@
         "criterion": "Demonstrate recruiter journey with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2331,7 +2331,7 @@
         "criterion": "Demonstrate brand-client journey with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2349,7 +2349,7 @@
         "criterion": "Demonstrate founder journey with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2367,7 +2367,7 @@
         "criterion": "Demonstrate mobile visitor journey with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2385,7 +2385,7 @@
         "criterion": "Demonstrate five-second identity/expertise/next-action clarity with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2403,7 +2403,7 @@
         "criterion": "Demonstrate project discovery with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2421,7 +2421,7 @@
         "criterion": "Demonstrate archive navigation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2439,7 +2439,7 @@
         "criterion": "Demonstrate case-study storytelling with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2457,7 +2457,7 @@
         "criterion": "Demonstrate contact CTA visibility with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2475,7 +2475,7 @@
         "criterion": "Demonstrate email fallback with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2493,7 +2493,7 @@
         "criterion": "Demonstrate whatsApp actions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2511,7 +2511,7 @@
         "criterion": "Demonstrate mobile navigation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2529,7 +2529,7 @@
         "criterion": "Demonstrate browser history navigation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2547,7 +2547,7 @@
         "criterion": "Demonstrate footer layout with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2565,7 +2565,7 @@
         "criterion": "Demonstrate dock controls fit viewport with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2583,7 +2583,7 @@
         "criterion": "Demonstrate modal/drawer behavior with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2601,7 +2601,7 @@
         "criterion": "Demonstrate touch targets with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2619,7 +2619,7 @@
         "criterion": "Demonstrate zoom and reflow with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2637,7 +2637,7 @@
         "criterion": "Demonstrate layout-shift measurement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2655,7 +2655,7 @@
         "criterion": "Demonstrate network failure states with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2673,7 +2673,7 @@
         "criterion": "Demonstrate offline states with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2691,7 +2691,7 @@
         "criterion": "Demonstrate semantic landmarks with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2709,7 +2709,7 @@
         "criterion": "Demonstrate keyboard navigation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2727,7 +2727,7 @@
         "criterion": "Demonstrate visible focus indicators with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2745,7 +2745,7 @@
         "criterion": "Demonstrate skip link with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2763,7 +2763,7 @@
         "criterion": "Demonstrate accessible form labels with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2781,7 +2781,7 @@
         "criterion": "Demonstrate form error announcements with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2799,7 +2799,7 @@
         "criterion": "Demonstrate screen-reader labels with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2817,7 +2817,7 @@
         "criterion": "Demonstrate modal focus containment with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2835,7 +2835,7 @@
         "criterion": "Demonstrate modal focus restoration with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2853,7 +2853,7 @@
         "criterion": "Demonstrate accessible ARIA semantics with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2871,7 +2871,7 @@
         "criterion": "Demonstrate wCAG2.2AA color contrast with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2889,7 +2889,7 @@
         "criterion": "Demonstrate reduced-motion behavior with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2907,7 +2907,7 @@
         "criterion": "Demonstrate media captions or equivalent with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2925,7 +2925,7 @@
         "criterion": "Demonstrate autoplay controls with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2943,7 +2943,7 @@
         "criterion": "Demonstrate manual screen-reader evaluation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2961,7 +2961,7 @@
         "criterion": "Demonstrate manual keyboard evaluation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2979,7 +2979,7 @@
         "criterion": "Demonstrate automated accessibility evaluation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -2997,7 +2997,7 @@
         "criterion": "Demonstrate server-side request validation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3015,7 +3015,7 @@
         "criterion": "Demonstrate client-side input validation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3033,7 +3033,7 @@
         "criterion": "Demonstrate malicious payload rejection with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3051,7 +3051,7 @@
         "criterion": "Demonstrate spam/honeypot controls with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3069,7 +3069,7 @@
         "criterion": "Demonstrate rate limiting with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3087,7 +3087,7 @@
         "criterion": "Demonstrate cSRF/origin enforcement where applicable with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3105,7 +3105,7 @@
         "criterion": "Demonstrate xSS/injection prevention with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3123,7 +3123,7 @@
         "criterion": "Escape standard =,+,-,@,tab,CR formula-leading prefixes before Sheet storage; preserve plain-text roundtrip",
         "evidence": "tests/booking-validation.mjs — PASS locally; Escape standard =,+,-,@,tab,CR formula-leading prefixes before Sheet storage; preserve plain-text roundtrip",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3141,7 +3141,7 @@
         "criterion": "Demonstrate file-upload restrictions where applicable with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3159,7 +3159,7 @@
         "criterion": "Demonstrate cORS restrictions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3177,7 +3177,7 @@
         "criterion": "Demonstrate aPI abuse limits with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3195,7 +3195,7 @@
         "criterion": "Demonstrate server-only provider credentials with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3213,7 +3213,7 @@
         "criterion": "Demonstrate secret-free logs with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3231,7 +3231,7 @@
         "criterion": "Demonstrate no private file exposure with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3249,7 +3249,7 @@
         "criterion": "Demonstrate hTTPS transport enforcement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3267,7 +3267,7 @@
         "criterion": "Demonstrate security response headers with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3285,7 +3285,7 @@
         "criterion": "Demonstrate admin authentication/session restrictions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3303,7 +3303,7 @@
         "criterion": "Demonstrate least privilege for provider access with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3321,7 +3321,7 @@
         "criterion": "Demonstrate pII minimization with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3339,7 +3339,7 @@
         "criterion": "Demonstrate privacy notice consistency with reproducible evidence; source presence alone is insufficient.",
         "evidence": "Footer/Privacy/Sera name Gemini; operational retention incomplete",
         "remaining": "Reconcile consent and retention after owner facts",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3348,16 +3348,16 @@
       "requirement": "Consent before AI transmission",
       "reference": "§§5,12 workstream E; V0.1",
       "component": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
-      "status": "Partially implemented",
+      "status": "Implemented and verified",
       "priority": "P1",
-      "evidence": "tests/sera-consent.cjs: default/handlers/static gate; browser network unverified",
-      "action": "Execute browser/network opt-in and withdrawal acceptance",
-      "acceptance": "Demonstrate consent before AI transmission with reproducible evidence; source presence alone is insufficient.",
+      "evidence": "tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json",
+      "action": "Retain local component pass; production export/route accessibility and provider data handling are separate gates",
+      "acceptance": "Isolated real widget defaults off, sends only after explicit enable, rejects late response after withdrawal, and resets consent after reload; unit test confirms AbortSignal cancellation.",
       "review": {
-        "criterion": "Demonstrate consent before AI transmission with reproducible evidence; source presence alone is insufficient.",
-        "evidence": "tests/sera-consent.cjs: default/handlers/static gate; browser network unverified",
-        "remaining": "Execute browser/network opt-in and withdrawal acceptance",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "criterion": "Isolated real widget defaults off, sends only after explicit enable, rejects late response after withdrawal, and resets consent after reload; unit test confirms AbortSignal cancellation.",
+        "evidence": "tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json",
+        "remaining": "Retain local component pass; production export/route accessibility and provider data handling are separate gates",
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3366,16 +3366,16 @@
       "requirement": "Consent withdrawal",
       "reference": "§§5,12 workstream E; V0.1",
       "component": "public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs",
-      "status": "Partially implemented",
+      "status": "Implemented and verified",
       "priority": "P1",
-      "evidence": "tests/sera-consent.cjs toggles future request gate; in-flight request behavior under review",
-      "action": "Verify cancellation of in-flight requests",
-      "acceptance": "Demonstrate consent withdrawal with reproducible evidence; source presence alone is insufficient.",
+      "evidence": "tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json",
+      "action": "Retain local component pass; production export/route accessibility and provider data handling are separate gates",
+      "acceptance": "Isolated real widget defaults off, sends only after explicit enable, rejects late response after withdrawal, and resets consent after reload; unit test confirms AbortSignal cancellation.",
       "review": {
-        "criterion": "Demonstrate consent withdrawal with reproducible evidence; source presence alone is insufficient.",
-        "evidence": "tests/sera-consent.cjs toggles future request gate; in-flight request behavior under review",
-        "remaining": "Verify cancellation of in-flight requests",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "criterion": "Isolated real widget defaults off, sends only after explicit enable, rejects late response after withdrawal, and resets consent after reload; unit test confirms AbortSignal cancellation.",
+        "evidence": "tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json",
+        "remaining": "Retain local component pass; production export/route accessibility and provider data handling are separate gates",
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3393,7 +3393,7 @@
         "criterion": "Demonstrate local draft retention enforcement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3411,7 +3411,7 @@
         "criterion": "Demonstrate operational retention policy with reproducible evidence; source presence alone is insufficient.",
         "evidence": "Owner operational policy not supplied",
         "remaining": "Owner confirms Sheet/Google/log retention and responsibilities",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3429,7 +3429,7 @@
         "criterion": "Demonstrate data deletion/export procedure with reproducible evidence; source presence alone is insufficient.",
         "evidence": "Operational procedure not supplied",
         "remaining": "Owner confirms authorized process",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3447,7 +3447,7 @@
         "criterion": "Demonstrate approved public portfolio knowledge with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3465,7 +3465,7 @@
         "criterion": "Demonstrate accurate service answers with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3483,7 +3483,7 @@
         "criterion": "Demonstrate context-aware clarification with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3501,7 +3501,7 @@
         "criterion": "Demonstrate one useful follow-up at a time with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3519,7 +3519,7 @@
         "criterion": "Demonstrate lead qualification with consent with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3537,7 +3537,7 @@
         "criterion": "Demonstrate gentle objection handling with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3555,7 +3555,7 @@
         "criterion": "Demonstrate booking guidance with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3573,7 +3573,7 @@
         "criterion": "Demonstrate human handoff with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3591,7 +3591,7 @@
         "criterion": "Demonstrate no internal CRM disclosure with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3609,7 +3609,7 @@
         "criterion": "Demonstrate no internal analytics disclosure with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3627,7 +3627,7 @@
         "criterion": "Demonstrate no prompt/credential disclosure with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3645,7 +3645,7 @@
         "criterion": "Demonstrate no public admin tools with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3663,7 +3663,7 @@
         "criterion": "Demonstrate server-side tool restrictions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3681,7 +3681,7 @@
         "criterion": "Demonstrate prompt-injection resistance with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3699,7 +3699,7 @@
         "criterion": "Demonstrate factual grounding evaluation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3717,7 +3717,7 @@
         "criterion": "Demonstrate unknown-answer honesty with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3735,7 +3735,7 @@
         "criterion": "Demonstrate conversation continuity with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3753,7 +3753,7 @@
         "criterion": "Demonstrate response latency measurement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3771,7 +3771,7 @@
         "criterion": "Demonstrate provider quota limits with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3789,7 +3789,7 @@
         "criterion": "Demonstrate graceful provider fallback with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3807,7 +3807,7 @@
         "criterion": "Demonstrate provider privacy disclosure with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3825,7 +3825,7 @@
         "criterion": "Demonstrate microphone consent with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3843,7 +3843,7 @@
         "criterion": "Demonstrate voice transcripts/captions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3861,7 +3861,7 @@
         "criterion": "Demonstrate push-to-talk control with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3879,7 +3879,7 @@
         "criterion": "Demonstrate voice interruption handling with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3897,7 +3897,7 @@
         "criterion": "Demonstrate keyboard/text parity with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3915,7 +3915,7 @@
         "criterion": "Demonstrate browser speech compatibility with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3933,7 +3933,7 @@
         "criterion": "Demonstrate no claimed action without confirmed tool result with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3951,7 +3951,7 @@
         "criterion": "Demonstrate measured lab mobile performance with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3969,7 +3969,7 @@
         "criterion": "Demonstrate measured lab desktop performance with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -3987,7 +3987,7 @@
         "criterion": "Demonstrate tTFB measurement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4005,7 +4005,7 @@
         "criterion": "Demonstrate resource weight measurement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4023,7 +4023,7 @@
         "criterion": "Demonstrate javaScript execution/long tasks with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4041,7 +4041,7 @@
         "criterion": "Demonstrate third-party request inventory with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4059,7 +4059,7 @@
         "criterion": "Demonstrate image optimization with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4077,7 +4077,7 @@
         "criterion": "Demonstrate responsive media delivery with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4095,7 +4095,7 @@
         "criterion": "Demonstrate cache behavior with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4113,7 +4113,7 @@
         "criterion": "Demonstrate animation frame-rate measurement with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4131,7 +4131,7 @@
         "criterion": "Demonstrate hydration error checks with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4149,7 +4149,7 @@
         "criterion": "Demonstrate console-error checks with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4167,7 +4167,7 @@
         "criterion": "Demonstrate browser/device matrix with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4185,7 +4185,7 @@
         "criterion": "Demonstrate functional regression suite with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4203,7 +4203,7 @@
         "criterion": "Demonstrate staging isolation with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4221,7 +4221,7 @@
         "criterion": "Demonstrate cI quality checks with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4239,7 +4239,7 @@
         "criterion": "Demonstrate synthetic monitoring with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4257,7 +4257,7 @@
         "criterion": "Demonstrate failure alerting with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4275,7 +4275,7 @@
         "criterion": "Demonstrate backup restore drill with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4293,7 +4293,7 @@
         "criterion": "Demonstrate deployment instructions with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4311,7 +4311,7 @@
         "criterion": "Demonstrate rollback procedure with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4329,7 +4329,7 @@
         "criterion": "Demonstrate incident runbook with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4347,7 +4347,7 @@
         "criterion": "Demonstrate validated release manifest with reproducible evidence; source presence alone is insufficient.",
         "evidence": "Manifest STALE; validated current artifact unavailable",
         "remaining": "Hero approval, accepted build and authenticated comparison",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4365,7 +4365,7 @@
         "criterion": "Demonstrate source-to-production difference register with reproducible evidence; source presence alone is insufficient.",
         "evidence": "Manifest STALE; validated current artifact unavailable",
         "remaining": "Hero approval, accepted build and authenticated comparison",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {
@@ -4383,7 +4383,7 @@
         "criterion": "Demonstrate dated test environment evidence with reproducible evidence; source presence alone is insufficient.",
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Local contracts/source-template tests only. No implied deployed, concurrent, visual or manual accessibility acceptance."
+        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
       }
     },
     {

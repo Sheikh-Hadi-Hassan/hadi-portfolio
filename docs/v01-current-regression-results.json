@@ -1,0 +1,120 @@
+{
+  "source_baseline": "259a04319905a9a6deb0b6235a983c0cc7322f9f",
+  "results": [
+    {
+      "command": "node tests/booking-client-contract.cjs",
+      "exit": 0,
+      "output": "Client rejects incomplete confirmations, retains pending drafts, accepts full event/Meet contract, and does not promote legacy responses.\n"
+    },
+    {
+      "command": "node tests/booking-recovery.mjs",
+      "exit": 0,
+      "output": "PASS: isolated duplicate/mismatched keys, lost Calendar response reconciliation, pending Meet, timeout, Calendar denial, busy slot and uncertain partial notification replay suppression. No external calls. Provider delivery ambiguity requires manual reconciliation.\nSaved lead retains stable reference, supplied contact and visitor zone, state and matching external event ID. Mock persistence only.\n"
+    },
+    {
+      "command": "node tests/booking-status.mjs",
+      "exit": 0,
+      "output": "Booking status contract: event reservation, Meet pending/ready/failed, cancellation and not-found recovery states pass.\nPending/failed Meet, invalid event identity/time and tentative events never confirm; integration copies match.\nPersisted lead/event/time correlation required: orphan event and mismatched record stay pending.\n"
+    },
+    {
+      "command": "node tests/booking-validation.mjs",
+      "exit": 0,
+      "output": "PASS: stable event reference, malformed IDs/payloads, honeypot, spreadsheet formula escaping, bounded transient retry/no permission retry, fail-closed availability and escaped notification markup. Local contracts only.\n"
+    },
+    {
+      "command": "node tests/consultation.mjs",
+      "exit": 0,
+      "output": "Consultation: all six service branches, shared-question deduplication, changed-answer cleanup, contact validation, full transcript, consent, pending retry persistence, unfinished drafts, expiry and AI failure fallback passed.\nReview edits skip completed questions; changing contact preference requests newly required phone.\nSeparate entry paths: meeting bypasses the detailed questionnaire and collects essential booking details.\n"
+    },
+    {
+      "command": "node tests/design-scene.cjs",
+      "exit": 0,
+      "output": "Actual design scene initializes six nested cubes, 90 radial ticks and 12 dots; animation, resize and cleanup pass. GPU rendering is not exercised.\n"
+    },
+    {
+      "command": "node tests/folder-geometry.mjs",
+      "exit": 0,
+      "output": "Six phone/tablet/desktop folder layouts: bounded cards, no overlap, count endpoints and reverse reset passed.\n"
+    },
+    {
+      "command": "node tests/footer-controls.cjs",
+      "exit": 0,
+      "output": "Unified consultation CTA, privacy dialog, copy-email success and event cleanup passed.\n"
+    },
+    {
+      "command": "node tests/gateway-logging.mjs",
+      "exit": 0,
+      "output": "Gateway observability: outcome logs are mirrored, hashed-reference only, and exclude PII/secrets.\n"
+    },
+    {
+      "command": "node tests/hero-dither.cjs",
+      "exit": 0,
+      "output": "Backdrop-only glow, sparse pixels, no image inversion, touch opt-out and cleanup passed.\n"
+    },
+    {
+      "command": "node tests/intro-loader.cjs",
+      "exit": 0,
+      "output": "Preloader waits for assets/minimum hold, handles failed assets, times out safely and releases interaction.\n"
+    },
+    {
+      "command": "node tests/lead-api.mjs",
+      "exit": 0,
+      "output": "Lead transport: confirmed success, HTML 404, server rejection, invalid response, pending 202, network failure and timeout pass.\nDelivery recovery: missing endpoint is not-sent; readiness uses GET only; ambiguous or pending writes preserve the existing reference.\n"
+    },
+    {
+      "command": "node tests/leads-desk.mjs",
+      "exit": 0,
+      "output": "Lead CRM contract: contact details, email/call/WhatsApp, source, meeting and brief actions are present.\n"
+    },
+    {
+      "command": "node tests/leads.mjs",
+      "exit": 0,
+      "output": "Lead tests passed: conditional services, v8 input validation, 18 daily slots, 12\u20139 PM Pakistan hours, busy overlap, fail-closed Calendar, cache/property dependencies and spreadsheet injection.\n"
+    },
+    {
+      "command": "node tests/motion-clips.cjs",
+      "exit": 0,
+      "output": "Motion clip checks passed: visible playback, deferred loading, pause/play, tab visibility, reduced motion and cleanup.\n"
+    },
+    {
+      "command": "node tests/notification-crash.mjs",
+      "exit": 0,
+      "output": "PASS: intent write failure sends nothing; lost post-send acknowledgement blocks replay; pre-send quota failure remains retryable; completed deliveries are skipped. Isolated fake mail/store only.\nPASS: crash after intent but before transmission is quarantined; safe partial quota retry sends only the unattempted recipient.\nPASS: manual-review alerts also quarantine uncertain delivery without automatic duplicate alerts.\nPASS: outbox quarantines lost-ack and corrupt-metadata jobs for manual reconciliation without another send.\n"
+    },
+    {
+      "command": "node tests/process-camera.mjs",
+      "exit": 0,
+      "output": "Three.js r185: perspective/orthographic projections preserve proportions across seven viewport ratios.\n"
+    },
+    {
+      "command": "node tests/process-motion.cjs",
+      "exit": 0,
+      "output": "Desktop/mobile process progress, active cards, SVG motion, reverse reset and cleanup passed.\n"
+    },
+    {
+      "command": "node tests/reel-motion.cjs",
+      "exit": 0,
+      "output": "Desktop/mobile expansion endpoints, statement reveal/reverse timing at 0%, 31%, 100%, sound toggle, pause and cleanup passed.\n"
+    },
+    {
+      "command": "node tests/sera-consent.cjs",
+      "exit": 0,
+      "output": "PASS: AI defaults off, explicit enable/disable actions differ, privacy viewing does not consent, focus returns. Static request gate checked; browser/provider behavior remains unverified.\nPASS: withdrawal aborts active request, late-result guard present, consent is not restored from draft storage.\n"
+    },
+    {
+      "command": "node tests/services.cjs",
+      "exit": 0,
+      "output": "Service hover, pointer bounds, keyboard focus, mobile tap, exclusive expansion and cleanup passed.\n"
+    },
+    {
+      "command": "node tests/social-carousel.cjs",
+      "exit": 0,
+      "output": "Social carousel checks passed: autoplay, loop, controls, hover/focus/touch pauses, reduced motion and cleanup.\n"
+    },
+    {
+      "command": "node tests/support/engine.mjs",
+      "exit": 0,
+      "output": "Support engine: 8 checks passed\n"
+    }
+  ]
+}

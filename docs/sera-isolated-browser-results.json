@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "Isolated public widget; fake provider; no booking/email; not production-build acceptance",
+  "checks": [
+    "default-off produces no POST",
+    "explicit enable produces one mocked POST",
+    "withdrawal rejects late provider reply",
+    "reload does not restore AI consent"
+  ],
+  "production_route_cases": 0
+}
