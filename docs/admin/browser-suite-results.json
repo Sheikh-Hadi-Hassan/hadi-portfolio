@@ -1,0 +1,43 @@
+{
+  "scope": "isolated source/contract fixtures; no production acceptance",
+  "playwright": "1.64.1",
+  "axe": "4.14.0",
+  "results": [
+    {
+      "file": "admin-control-browser.cjs",
+      "status": "PASS",
+      "elapsed_ms": 1318
+    },
+    {
+      "file": "admin-workflows-browser.cjs",
+      "status": "PASS",
+      "elapsed_ms": 5147
+    },
+    {
+      "file": "admin-cms-browser.cjs",
+      "status": "PASS",
+      "elapsed_ms": 2160
+    },
+    {
+      "file": "sera-config-browser.cjs",
+      "status": "PASS",
+      "elapsed_ms": 6214
+    },
+    {
+      "file": "sera-runtime-browser.cjs",
+      "status": "PASS",
+      "elapsed_ms": 5162
+    },
+    {
+      "file": "sera-browser.cjs",
+      "status": "PASS",
+      "elapsed_ms": 5515
+    },
+    {
+      "file": "sera-guided-browser.cjs",
+      "status": "PASS",
+      "elapsed_ms": 63369
+    }
+  ],
+  "production_cases": 0
+}

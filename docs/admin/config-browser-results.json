@@ -6,6 +6,7 @@
     "alternative question matched",
     "approved response rendered without AI",
     "approved identity/welcome applied",
+    "approved voice disable blocks explicit start",
     "corrupt current uses previous",
     "both invalid use built-in"
   ],

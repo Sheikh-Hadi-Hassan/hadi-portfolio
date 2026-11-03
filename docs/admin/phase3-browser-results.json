@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "Actual Apps Script source with mocked Google identity/storage; actual public widget in separate context. Not live login or production.",
+  "checks": [
+    "case source import and safe draft preview",
+    "commas preserved in structured arrays",
+    "approval dialog keyboard cancel/confirm",
+    "route-change rejection preserves editor",
+    "lost acknowledgement replays once",
+    "later draft preserves approved snapshot",
+    "FAQ approval to actual public widget response without AI/admin bridge",
+    "viewer/anonymous deny",
+    "provider activation rejection and editable recovery",
+    "safe local media package download and SVG rejection",
+    "responsive overflow and axe at three widths"
+  ],
+  "widths": [
+    375,
+    768,
+    1440
+  ],
+  "axe_violations": 0,
+  "production_cases": 0
+}

@@ -1,0 +1,6 @@
+// Isolated fixtures only. This never invokes a production build or external services.
+const fs=require('fs'),{spawnSync}=require('child_process');
+if(!process.env.CHROMIUM_PATH||!fs.existsSync(process.env.CHROMIUM_PATH)){console.error('BROWSER_RUNNER_UNAVAILABLE');process.exit(1)}
+const files=['admin-control-browser.cjs','admin-workflows-browser.cjs','admin-cms-browser.cjs','sera-config-browser.cjs','sera-runtime-browser.cjs','sera-browser.cjs','sera-guided-browser.cjs'],results=[];
+for(const file of files){const start=Date.now(),r=spawnSync(process.execPath,['tests/'+file],{env:process.env,encoding:'utf8',timeout:180000,maxBuffer:1024*1024});const passed=r.status===0&&!r.error;results.push({file,status:passed?'PASS':'FAIL',elapsed_ms:Date.now()-start});console.log((passed?'PASS ':'FAIL ')+file);if(!passed)console.error((r.stderr||r.stdout||String(r.error)).slice(-2500))}
+fs.writeFileSync('docs/admin/browser-suite-results.json',JSON.stringify({scope:'isolated source/contract fixtures; no production acceptance',playwright:require('playwright/package.json').version,axe:JSON.parse(fs.readFileSync(require('path').join(require('path').dirname(require.resolve('@axe-core/playwright')),'../package.json'))).version,results,production_cases:0},null,2)+'\n');if(results.some(r=>r.status!=='PASS'))process.exitCode=1;

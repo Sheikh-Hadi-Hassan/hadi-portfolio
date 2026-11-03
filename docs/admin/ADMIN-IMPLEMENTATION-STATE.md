@@ -2,42 +2,57 @@
 
 ```json
 {
-  "baseline_head": "8dd78f79bb493b89aa8824378042044b7fdc1fe0",
+  "baseline_head": "1f62f3d096ea2a96710c9e4b937ff0e9f6e17752",
   "branch": "work/v01-booking-contract-20261103",
-  "status": "LOCAL_PHASE2_STAGING_NO_GO",
-  "decision": "Owner-reviewed public artifacts; no public connection to private Sheet",
+  "phase": 3,
+  "status": "LOCAL_INTEGRATION_VERIFIED_NO_GO",
+  "published_slice": "d3924cc347376d7adca12726486e388967762b7a",
+  "architecture": "Existing Sheet-bound admin + approved public artifacts + private PHP libraries; no database/worker or live auth bridge assumed",
   "completed_local": [
-    "owner-only approved-public export excludes drafts/private/admin records",
-    "versioned browser/PHP schema gates and previous-config fallback",
-    "approved FAQ answers without LLM, identity/welcome/voice preferences and bounded backend knowledge/tone",
-    "temporary-directory staging with revision lease, write lock, symlink rejection, readback hash and rollback",
-    "existing-project metadata/contact/social/SEO drafts, approvals, escaped preview and staging; original source untouched",
-    "disabled Gemini/Groq protocol adapters reused through existing router with fake transport",
-    "private-store-gated usage ledger: pre-call debit, fsync, bounded circuit and no refund of uncertain calls",
-    "voice disable enforced at start, recognition resume and read-aloud"
+    "gated AEAD credential vault: independent key-provider interface, server permissions, masked reads, provider-key rotation/revocation, audit/revision/idempotency",
+    "full standard case documents/import/drafts/safe preview/approval; immutable routes and structured arrays",
+    "bounded decoded/re-encoded metadata-free media import with content-addressed filenames; no binary Sheets storage",
+    "temporary isolated CMS releases, existing template/CSS preview, manifest/readback, atomic active/previous pointer and rollback",
+    "approved public skills, per-service conditional trees and context/output/provider-order policy",
+    "tree release pinned across reload/config updates; required answers enter deterministic brief/lead contract; corrupt state retains answers",
+    "vault/adapters/router/ledger private composition plus redacted context and default-disabled fixed-host HTTPS transport",
+    "mutation token read-refresh no longer invalidates another tab; known validation errors unfreeze editor",
+    "source-backed fake-Google/public-widget browser workflow, role forgery rejection and no inherited public admin bridge"
   ],
-  "tests": [
-    "npm test PASS: 14 JS suites after exact-source recovery",
-    "5 PHP suites PASS: config, router, retrieval, adapters and ledger",
-    "20-process quota contention PASS: exactly 3 accepted under quota 3",
-    "packaging, catalogue structure, CRM contract and affected syntax PASS",
-    "Earlier isolated browser evidence preserved; current rerun blocked after workspace reset"
-  ],
+  "tests": {
+    "javascript_suites": 16,
+    "javascript": "PASS",
+    "php_suites": 8,
+    "php": "PASS",
+    "quota_contention": "PASS: 20 processes, exactly 3 reservations under quota 3",
+    "browser_suites": 7,
+    "browser": "PASS isolated fixtures",
+    "runner": "Playwright 1.64.1 / axe wrapper 4.14.0 / Chromium 153.0.8010.0",
+    "viewports": "admin 320/768/1280 plus workflows/CMS 375/768/1440",
+    "axe": "zero findings in tested admin/CMS states",
+    "other": "PHP/widget syntax, package-security, catalogue consistency PASS"
+  },
   "blockers": [
-    "Actual Google identity/ACL/deployment and Hostinger web PHP/private configuration unverified",
-    "No protected key store or deployment authorization; provider activation/credential writes disabled",
-    "No approved hero lock: production build and 198 production route cases blocked",
-    "CMS new-project/case content creation, uploads and actual design/build publication incomplete",
-    "Credential encryption/rotation, real gateway wiring and free/privacy entitlement remain unverified",
-    "Final isolated browser rerun: Chromium/axe absent after reset"
+    "Hostinger hosting MCP/CLI not available; actual web PHP/cURL/sodium/private key custody and backend identity unverified",
+    "Google deployment/source/execution identity/Calendar/Sheet ACLs and cleanup evidence unavailable",
+    "Actual credential writes, encrypted-store deployment, Google-to-PHP authorization and live network transport remain disconnected",
+    "Free-tier model/account/privacy/quota evidence and explicit live connectivity approval absent",
+    "Hero lock not approved: production build and 198 production route cases blocked",
+    "Hosted CMS upload/publication and actual candidate deployment require verified runtime/auth and explicit approval"
   ],
-  "next_task": "Obtain owner runtime/ACL/key-custody/hero evidence; restore browser runner and complete controlled non-production acceptance before activation or release.",
-  "published_slices": [
-    "06e89289e8ae6f2f793d2c7a1e69f8eab4725698: approved Sera artifact pipeline and isolated CMS staging"
-  ]
+  "source_managed_scope": [
+    "Existing specialized chapter/video/social authoring remains source-managed; source data is preserved by standard case edits"
+  ],
+  "next_task": "Reconcile OWNER-ACCEPTANCE.md evidence; obtain hero/key/auth decisions, then prepare explicitly authorized isolated deployment/acceptance. No live activation now.",
+  "portfolio_counts": {
+    "verified": 22,
+    "partial": 188,
+    "missing": 2,
+    "blocked": 31,
+    "total": 243,
+    "future_excluded": 233
+  },
+  "manifest": "STALE",
+  "release": "NO-GO"
 }
 ```
-
-## Phase 3 in progress
-
-Base HEAD: 1f62f3d096ea2a96710c9e4b937ff0e9f6e17752. Encrypted vault library is offline-tested with synthetic keys; actual workspace credential writes remain disabled. Full case schema, admin import/preview, sanitized media import and isolated release/pointer publication/rollback are implemented with focused tests. Browser restored from a test-only npm Chromium distribution plus axe; current admin fixture passes at 320/768/1280. Next: complete Sera policy/tree controls, expand browser/error tests and owner package. Production build remains hero-blocked; manifest STALE, NO-GO.

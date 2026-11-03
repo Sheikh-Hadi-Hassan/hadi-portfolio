@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "Real widget with mock owner-approved config; no live providers",
+  "checks": [
+    "published tree controls questions",
+    "conditional branch",
+    "required answer retained",
+    "reload/update pins prior tree version",
+    "edit changes branch without discarded answer",
+    "no AI POST or uncaught error"
+  ],
+  "production_cases": 0
+}

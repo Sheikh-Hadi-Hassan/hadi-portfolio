@@ -12,9 +12,10 @@ try:
     image.load()
     if '--inspect' in sys.argv:
         print(json.dumps({'width':image.width,'height':image.height}));sys.exit(0)
-    image=ImageOps.exif_transpose(image).convert('RGBA' if 'A' in image.getbands() else 'RGB')
+    lossless=image.format=='PNG'
+    image=ImageOps.exif_transpose(image).convert('RGBA' if 'A' in image.getbands() or 'transparency' in image.info else 'RGB')
     clean=Image.new(image.mode,image.size);clean.paste(image)
-    out=io.BytesIO();clean.save(out,format='WEBP',quality=90,method=4)
+    out=io.BytesIO();clean.save(out,format='WEBP',quality=90,lossless=lossless,method=4)
     sys.stdout.buffer.write((json.dumps({'width':clean.width,'height':clean.height})+'\n').encode());sys.stdout.buffer.write(out.getvalue())
 except Exception:
     print('CMS_MEDIA_REJECTED',file=sys.stderr);sys.exit(1)

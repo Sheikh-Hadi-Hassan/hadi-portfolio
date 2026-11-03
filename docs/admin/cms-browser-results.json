@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "Existing case template/CSS with sanitized synthetic media, isolated pointer publication; not production build",
+  "widths": [
+    375,
+    768,
+    1440
+  ],
+  "checks": [
+    "new case rendering",
+    "no horizontal overflow",
+    "decoded image aspect ratio",
+    "automated axe",
+    "updated release visible",
+    "rollback restores content"
+  ],
+  "axe_violations": 0,
+  "production_cases": 0
+}

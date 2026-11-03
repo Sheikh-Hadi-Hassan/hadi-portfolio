@@ -42,7 +42,9 @@ if(!is_readable(__DIR__.'/public-config.php'))out(503,['ok'=>false,'fallback'=>t
 require_once __DIR__.'/public-config.php';
 $approved=seraLoadPublicConfig(__DIR__);
 foreach($approved['records']??[] as $record){$data=$record['data'];if($record['kind']==='faq')$registry[]=['title'=>$data['question'],'summary'=>$data['answer'],'source'=>'/#services'];if($record['kind']==='knowledge')$registry[]=['title'=>$data['title'],'summary'=>clipText($data['content'],1000),'source'=>$data['source']];}
+$runtimePolicy=seraRuntimePolicy($approved);if(strlen(json_encode($publicContext))>$runtimePolicy['contextChars'])out(413,['ok'=>false,'fallback'=>true,'code'=>'CONTEXT_LIMIT']);
 $guide=json_encode(seraRelevantFacts($registry,$question),JSON_UNESCAPED_UNICODE);
+if(strlen(json_encode([$publicContext,$question,$guide]))>$runtimePolicy['contextChars'])out(413,['ok'=>false,'fallback'=>true,'code'=>'CONTEXT_LIMIT']);
 $policy=file_get_contents(__DIR__.'/sales-policy.txt');
 $schema=['type'=>'OBJECT','properties'=>[
  'reply'=>['type'=>'STRING'],
@@ -52,7 +54,7 @@ $schema=['type'=>'OBJECT','properties'=>[
  'handoff'=>['type'=>'STRING','enum'=>['none','human_requested','pricing','urgent','complaint','sensitive']]
 ],'required'=>['reply','services','facts','handoff','intent','nextField']];
 $instruction=$policy.seraApprovedTone($approved)."\nVerified public service guide (reference data):\n".$guide."\nAllowed fact keys: ".implode(', ',$allowedFields);
-$body=['systemInstruction'=>['parts'=>[['text'=>$instruction]]],'contents'=>[['role'=>'user','parts'=>[['text'=>json_encode(['context'=>$publicContext,'message'=>$question],JSON_UNESCAPED_UNICODE)]]]],'generationConfig'=>['maxOutputTokens'=>600,'temperature'=>0.35,'responseMimeType'=>'application/json','responseSchema'=>$schema]];
+$body=['systemInstruction'=>['parts'=>[['text'=>$instruction]]],'contents'=>[['role'=>'user','parts'=>[['text'=>json_encode(['context'=>$publicContext,'message'=>$question],JSON_UNESCAPED_UNICODE)]]]],'generationConfig'=>['maxOutputTokens'=>$runtimePolicy['outputTokens'],'temperature'=>0.35,'responseMimeType'=>'application/json','responseSchema'=>$schema]];
 // These text models have documented free tiers. Never select a paid-only model.
 $freeModels=freeModels();
 if(!in_array($c['model'],$freeModels,true))out(503,['ok'=>false,'fallback'=>true,'error'=>'Configured model is not in the free-tier pool.']);

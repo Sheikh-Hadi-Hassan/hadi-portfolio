@@ -26,3 +26,7 @@ Workspace 'published' means an owner-approved version inside the private store. 
 Tests validate local contracts, not Google execution/quotas or Hostinger behavior. No production package, live Google mutation or deployment was executed. Original Portfolio acceptance remains 22/243; admin extension is tracked separately.
 
 Phase 2: see PHASE2-ARCHITECTURE.md, PHASE2-STAGING.md, PROVIDER-ACTIVATION-GATES.md and PHASE2-TEST-EVIDENCE.md. No actual deployment or live provider test.
+
+## Phase 3 superseding local module status
+
+Private encrypted-vault/provider composition, standard full case/media import and isolated immutable-release publishing are now tested foundations; actual key custody/auth bridge and production upload/publishing remain blocked. Public approved trees/skills/budgets and pinned-state behavior are connected to source runtime, with provider order tested through the private mock composition. Browser tooling restored and seven suites pass. See PHASE3-WORKFLOWS.md and PHASE3-TEST-EVIDENCE.md. Existing table rows above retain earlier checkpoint history; they are not claims that these new foundations remain absent.
