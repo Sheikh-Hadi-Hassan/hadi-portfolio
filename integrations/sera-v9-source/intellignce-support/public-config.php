@@ -1,0 +1,23 @@
+<?php
+declare(strict_types=1);
+function seraPublicConfigValidInternal(mixed $v):bool{
+ if(!is_array($v)||array_diff(array_keys($v),['schemaVersion','releaseId','createdAt','records'])||($v['schemaVersion']??null)!==1||!is_string($v['releaseId']??null)||!preg_match('/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i',$v['releaseId'])||!is_string($v['createdAt']??null)||strtotime($v['createdAt'])===false||!is_array($v['records']??null)||count($v['records'])>100||strlen(json_encode($v))>131072)return false;
+ $fields=['knowledge'=>['title','category','parent','content','source','visibility'],'faq'=>['question','answer','category','service','priority','alternatives'],'personality'=>['name','welcome','style','formality','responseLength','languages'],'voice'=>['enabled','voiceId','language','rate','pitch','confirmTranscript']];$ids=[];$single=[];
+ foreach($v['records'] as $r){if(!is_array($r)||array_diff(array_keys($r),['id','kind','version','data'])||!is_string($r['id']??null)||!preg_match('/^[a-z][a-z0-9_-]{2,63}$/',$r['id'])||isset($ids[$r['id']])||!is_int($r['version']??null)||$r['version']<1||!isset($fields[$r['kind']??''])||!is_array($r['data']??null)||array_diff(array_keys($r['data']),$fields[$r['kind']]))return false;$ids[$r['id']]=$r;$d=$r['data'];$kind=$r['kind'];foreach($d as $key=>$value)if(is_string($value)&&strlen($value)>12000)return false;
+ if($kind==='knowledge'){foreach(['title'=>250,'category'=>250,'content'=>12000,'source'=>250,'parent'=>64] as $k=>$max)if(!is_string($d[$k]??'')||strlen($d[$k]??'')>$max)return false;if(($d['visibility']??'')!=='public'||!is_string($d['parent']??'')||!preg_match('~^(https://[^\s/@]+(?:/[^\s]*)?|/(?!/)[^\s]*)$~',$d['source']))return false;}
+ if($kind==='faq'){if(!is_string($d['category']??'')||strlen($d['category']??'')>100)return false;if(!is_string($d['question']??null)||strlen($d['question'])>250||!is_string($d['answer']??null)||strlen($d['answer'])>2000||!is_array($d['alternatives']??null)||count($d['alternatives'])>10||!is_int($d['priority']??null)||$d['priority']<0||$d['priority']>100||!in_array($d['service']??'', ['','branding','design','social','commerce','app','landing'],true))return false;foreach($d['alternatives'] as $a)if(!is_string($a)||strlen($a)>250)return false;}
+ if(in_array($kind,['voice','personality'],true)){if(isset($single[$kind]))return false;$single[$kind]=true;}
+ if($kind==='personality'){if(!is_string($d['name']??null)||strlen($d['name'])>80||!is_string($d['welcome']??null)||strlen($d['welcome'])>500||!in_array($d['style']??'', ['consultative','concise','friendly'],true)||!in_array($d['formality']??'', ['professional','conversational'],true)||!in_array($d['responseLength']??'', ['short','balanced'],true)||!is_array($d['languages']??null)||!$d['languages']||array_filter($d['languages'],fn($x)=>!is_string($x)||!in_array($x,['en','ur'],true)))return false;}
+ if($kind==='voice'){if(!is_bool($d['enabled']??null)||!is_bool($d['confirmTranscript']??null)||!is_string($d['voiceId']??null)||strlen($d['voiceId'])>200||!in_array($d['language']??'', ['en','ur'],true)||!(is_int($d['rate']??null)||is_float($d['rate']??null))||!(is_int($d['pitch']??null)||is_float($d['pitch']??null))||$d['rate']<0.5||$d['rate']>2||$d['pitch']<0||$d['pitch']>2)return false;}}
+ foreach($ids as $id=>$r)if($r['kind']==='knowledge'){$parent=$r['data']['parent']??'';$seen=[$id=>true];while($parent){if(isset($seen[$parent])||!isset($ids[$parent])||$ids[$parent]['kind']!=='knowledge')return false;$seen[$parent]=true;$parent=$ids[$parent]['data']['parent']??'';}}
+ return true;
+}
+function seraPublicConfigValid(mixed $v):bool{try{return seraPublicConfigValidInternal($v);}catch(Throwable $e){return false;}}
+function seraLoadPublicConfig(string $directory):?array{foreach(['runtime-config.json','runtime-config.previous.json'] as $name){$file=$directory.'/'.$name;if(!is_file($file)||filesize($file)>131072)continue;$v=json_decode(@file_get_contents($file)?:'',true);if(seraPublicConfigValid($v))return $v;}return null;}
+
+// Editable tone uses fixed instructions only; names/welcome/knowledge never become policy.
+function seraApprovedTone(?array $config):string{
+ foreach($config['records']??[] as $r)if($r['kind']==='personality'){
+ $d=$r['data'];return "\nTone preference: ".(['consultative'=>'ask useful scope clarifications','concise'=>'use direct concise language','friendly'=>'be warm and clear'][$d['style']])."; ".($d['formality']==='professional'?'professional tone':'conversational tone')."; ".($d['responseLength']==='short'?'short answers':'balanced answer length').". Security, consent and business policy take precedence.";
+ }return '';
+}

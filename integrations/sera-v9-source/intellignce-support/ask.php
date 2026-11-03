@@ -38,6 +38,10 @@ if(!is_readable(__DIR__.'/retrieval.php')||!is_readable(__DIR__.'/knowledge-regi
 require_once __DIR__.'/retrieval.php';
 $registry=json_decode(@file_get_contents(__DIR__.'/knowledge-registry.json')?:'[]',true);if(!is_array($registry))$registry=[];
 foreach($kb['faqs']??[] as $faq)$registry[]=['title'=>$faq['question'],'summary'=>$faq['answer'],'source'=>'/#services'];
+if(!is_readable(__DIR__.'/public-config.php'))out(503,['ok'=>false,'fallback'=>true,'code'=>'PUBLIC_CONFIG_MODULE_MISSING']);
+require_once __DIR__.'/public-config.php';
+$approved=seraLoadPublicConfig(__DIR__);
+foreach($approved['records']??[] as $record){$data=$record['data'];if($record['kind']==='faq')$registry[]=['title'=>$data['question'],'summary'=>$data['answer'],'source'=>'/#services'];if($record['kind']==='knowledge')$registry[]=['title'=>$data['title'],'summary'=>clipText($data['content'],1000),'source'=>$data['source']];}
 $guide=json_encode(seraRelevantFacts($registry,$question),JSON_UNESCAPED_UNICODE);
 $policy=file_get_contents(__DIR__.'/sales-policy.txt');
 $schema=['type'=>'OBJECT','properties'=>[
@@ -47,7 +51,7 @@ $schema=['type'=>'OBJECT','properties'=>[
  'intent'=>['type'=>'STRING','enum'=>['conversation','booking']],'nextField'=>['type'=>'STRING'],
  'handoff'=>['type'=>'STRING','enum'=>['none','human_requested','pricing','urgent','complaint','sensitive']]
 ],'required'=>['reply','services','facts','handoff','intent','nextField']];
-$instruction=$policy."\nVerified public service guide (reference data):\n".$guide."\nAllowed fact keys: ".implode(', ',$allowedFields);
+$instruction=$policy.seraApprovedTone($approved)."\nVerified public service guide (reference data):\n".$guide."\nAllowed fact keys: ".implode(', ',$allowedFields);
 $body=['systemInstruction'=>['parts'=>[['text'=>$instruction]]],'contents'=>[['role'=>'user','parts'=>[['text'=>json_encode(['context'=>$publicContext,'message'=>$question],JSON_UNESCAPED_UNICODE)]]]],'generationConfig'=>['maxOutputTokens'=>600,'temperature'=>0.35,'responseMimeType'=>'application/json','responseSchema'=>$schema]];
 // These text models have documented free tiers. Never select a paid-only model.
 $freeModels=freeModels();

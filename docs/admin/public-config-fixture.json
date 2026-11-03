@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "e84ea9cb-edfe-4245-8ce6-ef7e4413c7e3",
+  "createdAt": "2026-11-03T16:16:14.772Z",
+  "records": [
+    {
+      "id": "profile-root",
+      "kind": "knowledge",
+      "version": 2,
+      "data": {
+        "title": "Profile",
+        "category": "Profile",
+        "parent": "",
+        "content": "Approved source content",
+        "source": "/",
+        "visibility": "public"
+      }
+    },
+    {
+      "id": "studio-faq",
+      "kind": "faq",
+      "version": 2,
+      "data": {
+        "question": "What is the studio process?",
+        "answer": "Approved discovery, design and review.",
+        "category": "General",
+        "service": "",
+        "priority": 80,
+        "alternatives": [
+          "Explain your process"
+        ]
+      }
+    },
+    {
+      "id": "identity-main",
+      "kind": "personality",
+      "version": 2,
+      "data": {
+        "name": "Sera Studio",
+        "welcome": "Approved studio welcome",
+        "style": "concise",
+        "formality": "professional",
+        "responseLength": "short",
+        "languages": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "voice-main",
+      "kind": "voice",
+      "version": 2,
+      "data": {
+        "enabled": false,
+        "voiceId": "",
+        "language": "en",
+        "rate": 1,
+        "pitch": 1,
+        "confirmTranscript": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "Approved public snapshot into isolated widget; no real provider or deployment",
+  "checks": [
+    "approved FAQ loaded",
+    "alternative question matched",
+    "approved response rendered without AI",
+    "approved identity/welcome applied",
+    "corrupt current uses previous",
+    "both invalid use built-in"
+  ],
+  "production_acceptance_cases": 0
+}

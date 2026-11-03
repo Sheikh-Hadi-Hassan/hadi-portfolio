@@ -2,47 +2,29 @@
 
 ```json
 {
-  "baseline_head": "7a51e8b2a634b6c145c6da37981edb17334fbdb5",
+  "baseline_head": "8dd78f79bb493b89aa8824378042044b7fdc1fe0",
   "branch": "work/v01-booking-contract-20261103",
-  "status": "LOCAL_VERTICAL_SLICE_NO_GO",
-  "architecture": "Extend existing Google Sheet-bound Apps Script workspace; no new hosting/database assumed",
+  "status": "LOCAL_PHASE2_STAGING_NO_GO",
+  "decision": "Owner-reviewed public artifacts; no public connection to private Sheet",
   "completed_local": [
-    "deny-by-default active-Google-identity roles",
-    "user-scoped expiring mutation token",
-    "versioned knowledge/FAQ/personality/voice records",
-    "owner-only approve/archive with explicit UI confirmation",
-    "approved snapshot survives later drafts",
-    "CRM annotations linked to actual lead lookup",
-    "appointment request records without Calendar writes",
-    "disabled provider metadata drafts with key/activation rejection",
-    "real workspace metadata report export",
-    "responsive sidebar/search/editor and retained uncertain-save operation"
-  ],
-  "files": [
-    "integrations/leads-portal/ControlCenter.gs",
-    "integrations/leads-portal/ControlCenter.html",
-    "integrations/leads-portal/LeadsDesk.gs",
-    "tests/admin-control-center.mjs",
-    "tests/admin-control-browser.cjs"
+    "owner-only approved-public export excludes drafts/private/admin records",
+    "versioned browser/PHP schema gates and previous-config fallback",
+    "approved FAQ answers without LLM, identity/welcome/voice preferences and bounded backend knowledge/tone",
+    "temporary-directory staging with revision lease, write lock, symlink rejection, readback hash and rollback",
+    "existing-project metadata/contact/social/SEO drafts, approvals, escaped preview and staging; original source untouched"
   ],
   "tests": [
-    "node tests/admin-control-center.mjs PASS (mock Google storage/identity)",
-    "CHROMIUM_PATH=/tmp/v01-chromium node tests/admin-control-browser.cjs PASS (mock RPC)",
-    "node tests/leads-desk.mjs PASS",
-    "npm test PASS before final approved-snapshot refinement; affected backend/browser rerun PASS",
-    "python3 tests/package-security.py PASS",
-    "Final npm test and admin isolated browser PASS after approved-snapshot and unsaved-editor guards"
+    "npm test (13 JS suites including isolated admin/CMS/public config)",
+    "PHP public config validation/fallback",
+    "isolated Chromium admin at 320/768/1280 and axe final state",
+    "isolated Chromium approved FAQ/identity/fallback plus consent regressions"
   ],
-  "storage": "New private ControlCenterRecords tab, append-only revisions/audit, created only by authorized save; original Leads untouched; 2000-revision capacity guard",
   "blockers": [
-    "No actual Google identity/deployment acceptance",
-    "Underlying Sheet/script editor ACLs bypass app roles; trusted owner/team container only",
-    "Hostinger runtime/database/session capability remains unverified",
-    "No encrypted secret store/master-key management verified",
-    "No public CMS/Sera settings publication bridge",
-    "No provider credentials/OAuth/analytics/email integration enabled"
+    "Actual Google identity/ACL/deployment and Hostinger web PHP/private configuration unverified",
+    "No protected key store or deployment authorization; provider activation/credential writes disabled",
+    "No approved hero lock: production build and 198 production route cases blocked",
+    "CMS new-project/case content creation, uploads and actual design/build publication incomplete"
   ],
-  "next_task": "Validate owner-only Google identity/ACL setup, then choose verified standalone runtime and encrypted secret store before provider activation/public publishing. Expand browser error/role/FAQ/voice/CRM coverage and add audited publishing adapters; never expose workspace drafts directly.",
-  "code_commit": "d1d488002e812f760e0f4bc586fe2d6f578acaa3"
+  "next_task": "Review local artifacts and obtain runtime/identity/hero evidence before controlled non-production deployment acceptance. Never connect drafts or private records directly."
 }
 ```

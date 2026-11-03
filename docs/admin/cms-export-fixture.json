@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "2229a6d7-0089-4ab0-8000-294c213642cb",
+  "createdAt": "2026-11-03T16:16:14.775Z",
+  "records": [
+    {
+      "id": "contact-profile",
+      "kind": "site",
+      "version": 2,
+      "data": {
+        "email": "owner@example.invalid",
+        "phone": "+923001234567",
+        "linkedin": "https://www.linkedin.com/in/test",
+        "behance": "https://www.behance.net/test",
+        "instagram": "https://www.instagram.com/test",
+        "facebook": "https://www.facebook.com/test"
+      }
+    },
+    {
+      "id": "project-approved",
+      "kind": "project",
+      "version": 2,
+      "data": {
+        "slug": "mackenzie-cramblit",
+        "title": "Mackenzie Cramblit",
+        "deck": "A personal brand for a career coach who needs to feel experienced, direct and approachable.",
+        "category": "Personal brand identity",
+        "intro": "Mackenzie Cramblit works with management consultants who are deciding what comes next in their careers. The brand needed to feel credible without becoming corporate, and personal without becoming casual. The identity was shaped around that tension, using positioning, typography, colour and social applications to give her a clear, consistent presence.",
+        "seo_title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "seo_description": "Personal brand strategy and visual identity for career coach Mackenzie Cramblit, combining brand positioning, typography, colour, tone and social design.",
+        "hero": "/assets/mackenzie-13.webp"
+      }
+    }
+  ]
+}
