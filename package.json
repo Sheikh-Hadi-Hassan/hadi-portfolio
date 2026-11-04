@@ -13,7 +13,8 @@
     "test:cms-cli": "python3 tests/admin-cms-cli.py",
     "build:acceptance": "python3 scripts/qa/acceptance-build.py",
     "test:browser-plan": "node tests/browser-plan.cjs && python3 tests/acceptance-build.py",
-    "test:browser-v01": "node tests/browser-v01.cjs"
+    "test:browser-v01": "node tests/browser-v01.cjs",
+    "test:booking-release": "node tests/booking-status.mjs && node tests/booking-client-contract.cjs && node tests/booking-recovery.mjs && node tests/booking-validation.mjs && node tests/notification-crash.mjs && node tests/lead-api.mjs && node tests/booking-release-integration.mjs && python3 tests/booking-release-package.py"
   },
   "dependencies": {
     "gsap": "3.15.0",

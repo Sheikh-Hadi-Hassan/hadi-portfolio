@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "1d4ea2a51a01502feab50bb2ea5a358173aa6f67",
+  "scope": "apps_script_booking_only",
+  "releaseDecision": "NO-GO",
+  "deploymentAuthorized": false,
+  "productionConfigurationChanges": false,
+  "files": {
+    "apps-script/Code.gs": {
+      "source": "integrations/calendar-v8/Code.gs",
+      "sha256": "b69db08a3819c38a2f240585cf0a7222bf7b9b246c874bb1045726284e621382",
+      "deploy": true
+    },
+    "review/appsscript.expected.json": {
+      "source": "integrations/calendar-v8/appsscript.json",
+      "sha256": "4351152638ec13623fd7d37d6ae209b07fceb6898268816d61d1f6d5105f9ea4",
+      "deploy": false
+    }
+  },
+  "mirrors": [
+    "integrations/leads/Code.gs"
+  ],
+  "requiredGates": [
+    "deployed_source_identity_and_diff",
+    "gateway_runtime_effective_config_and_parity",
+    "unchanged_live_client_compatibility",
+    "sheet_18_column_schema_and_old_record_compatibility",
+    "google_calendar_mail_permissions_and_quotas",
+    "trigger_backlog_and_notification_reconciliation",
+    "isolated_hosted_booking_acceptance",
+    "explicit_deployment_approval"
+  ],
+  "excluded": [
+    "frontend",
+    "hero",
+    "Sera",
+    "contact_form_code",
+    "CRM",
+    "admin",
+    "CMS",
+    "provider_vault",
+    "PHP_files",
+    "private_configuration",
+    "Sheet_records"
+  ],
+  "notes": [
+    "Expected manifest is for permission comparison only; do not replace live scopes/services automatically.",
+    "No setup or activateSetup function is executed. Source contains existing resource settings; never execute it in staging until isolated Calendar/Sheet/recipients have been reviewed.",
+    "Global release manifest remains STALE. No production-build acceptance is claimed."
+  ]
+}

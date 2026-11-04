@@ -2,9 +2,9 @@
 
 ```json
 {
-  "baseline_head": "ebebab75cabc65b27c2c2232464bc7071b760c5b",
+  "baseline_head": "1d4ea2a51a01502feab50bb2ea5a358173aa6f67",
   "branch": "work/v01-booking-contract-20261103",
-  "phase": 4,
+  "phase": 5,
   "status": "LOCAL_SECURITY_HARDENING_VERIFIED_EXTERNAL_GATES_BLOCKED",
   "architecture": "Existing Sheet-bound admin + approved public artifacts + private PHP libraries; no database/worker or live auth bridge assumed",
   "completed_local": [
@@ -55,7 +55,7 @@
   "source_managed_scope": [
     "Video/social authoring remains source-managed; article/chapter content and existing layout variants are editable; chapter anchor removal requires a separate migration policy"
   ],
-  "next_task": "Owner supplies read-only hosting/deployed-Google/ACL/cleanup evidence and exact hero decision. Codex then validates evidence and runs only explicitly approved local hero activation/build/QA; require patched PHP8.4 compatibility before any separately approved hosting switch. Provider writes/live tests remain disabled.",
+  "next_task": "Obtain booking-specific deployed source/version, gateway/client parity, web-runtime/effective-config, Google permission/schema/backlog and rollback evidence; authorize isolated hosted staging. Full admin completion and frontend hero approval are not gates for the fixed Apps Script-only artifact. No deployment or live QA yet.",
   "portfolio_counts": {
     "verified": 22,
     "partial": 188,
@@ -127,6 +127,23 @@
     "docs/sera/SERA-IMPLEMENTATION-STATE.md",
     "PORTFOLIO-RELEASE-READINESS.md",
     "PORTFOLIO-FEATURE-GAP-REPORT.md"
-  ]
+  ],
+  "phase5": {
+    "scope": "Independent Apps Script-only booking assessment; unfinished admin/CMS/provider features excluded",
+    "candidate_source_commit": "1d4ea2a51a01502feab50bb2ea5a358173aa6f67",
+    "deploy_files": [
+      "integrations/calendar-v8/Code.gs"
+    ],
+    "archive_sha256": "8d9ede9b82a6202c6f4bab022710eb16e3d6f70a6003294bfd0bcb387f5602dc",
+    "tests": "npm run test:booking-release PASS: seven JS + one Python; VM/protocol mocks only",
+    "staging": "offline candidate prepared; hosted staging BLOCKED, no resource/recipient authorization",
+    "decision": "NO-GO",
+    "evidence": [
+      "docs/booking-release/CANDIDATE.json",
+      "docs/booking-release/STAGING-ARTIFACT.json",
+      "docs/booking-release/RELEASE-READINESS.md",
+      "docs/booking-release/TEST-EVIDENCE.md"
+    ]
+  }
 }
 ```

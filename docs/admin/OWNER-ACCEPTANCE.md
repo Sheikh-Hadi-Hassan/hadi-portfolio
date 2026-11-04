@@ -42,3 +42,7 @@ Use PHASE4-ACCEPTANCE.md for the exact three-hash local hero approval wording an
 ## 2026-11-04 read-only reconciliation
 
 See PHASE4-GATE-RECONCILIATION.md for implementation/local/fixture/production separation, exact read-only hPanel/Google checks and six P0 gates with owner/action/pass criteria. Prefer existing request evidence; no diagnostic installation is authorized. PHP8.4 is the target: verify a patched actual web handler and candidate compatibility before any separately authorized switch/deployment. Existing PHP8.3 CLI tests cannot establish this. Mutable staging hardlinks/permissions are locally fixed, not hosted acceptance.
+
+## Phase5 independent booking release
+
+Use docs/booking-release/RELEASE-READINESS.md for the smallest Apps Script-only candidate and booking-specific gates. Unfinished admin/provider vault/CMS are excluded; no frontend or hero files/build are included. Supply the actual deployed numbered source/project file inventory, unchanged gateway/client parity, runtime/config identity, Sheet18-column/old-record and JOB_/trigger compatibility, Google Calendar/mail permissions, fresh backup/rollback and isolated test resources/recipient authorization. Do not run legacy setup/activateSetup or change keys/config. Production deployment and the one QA booking need explicit approval after gates pass. Current decision NO-GO; full-site hero/build gates remain separately blocked.
