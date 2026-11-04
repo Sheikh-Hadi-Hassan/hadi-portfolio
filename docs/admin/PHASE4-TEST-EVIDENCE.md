@@ -26,3 +26,23 @@ No test assertions failed in the targeted suites. The two nonzero gate commands 
 New harness behavior is implemented, syntax/plan/provenance-tested and **not yet executed on an approved export**: fresh context per case, bounded image/font loading, local assets/link/fragment checks, menu focus/Escape, history round trip, reduced motion, axe, screenshots and incremental results. PHP submissions/external origins are blocked. It does not validate external destinations, live forms/providers, normal-motion behavior, every Sera dialog state or manual WCAG; retained dedicated fixtures and later authorized acceptance cover those separately.
 
 Historical docs/v01-all-route-browser-results.json is preserved unchanged. The hardened production-build harness writes a separate v01-production-build-browser-results.json so blocked/current runs cannot replace the historical evidence artifact.
+
+## 2026-11-04 continuation from ebebab75
+
+New defect reproduced before the fix: `node tests/admin-staging-security.mjs` failed because cms-current.json.tmp accepted a hardlink. The test uses an independent temporary sentinel, never a production/source file. Fixed all fixed-name mutable CMS/Sera/pointer paths, retained symlink rejection, restricted staging root/lock to0700, and replaced mutable writes through exclusive0600 temporary files flushed before rename. Failed writes preserve active data and remove temporary files/locks. This remains owner-operated isolated staging; it is not a cross-tenant or hostile same-UID security boundary or proof of hosting/power-loss durability.
+
+Executed after the patch was restored following a workspace reload:
+
+|Command|Result|
+|---|---|
+|node tests/admin-staging-security.mjs|PASS: all11mutable-path hardlinks, directory target, sentinel preservation, permission bits, injected failed rename, temp/lock cleanup and rollback|
+|node tests/admin-public-config.mjs|PASS: affected Sera config staging, allowlist/rejection, conflict, last-good fallback and rollback|
+|node tests/admin-cms.mjs|PASS: affected metadata staging/preview/conflict/rollback|
+|node tests/admin-cms-rich.mjs|PASS: rich content and strict immutable release verification|
+|node tests/admin-cms-content.mjs|PASS: media/full case/publish/readback/interruption/rollback|
+|python3 tests/admin-cms-cli.py|PASS: stage/publish/update/rollback CLI and cleanup|
+|CHROMIUM_PATH=/workspace/scratch/f1b54e9ce3cf/browser-cache/manual/chromium NODE_PATH=/workspace/scratch/f1b54e9ce3cf/test-deps/node_modules:$CODEX_PRIMARY_RUNTIME_NODE_MODULES LD_LIBRARY_PATH=/workspace/scratch/f1b54e9ce3cf/browser-cache/manual/al2023/lib:/workspace/scratch/f1b54e9ce3cf/browser-cache/manual node tests/admin-cms-browser.cjs|PASS; cms-browser-results.json: isolated original-template CMS at375/768/1440, automated axe, edit/promotion and rollback; production cases0|
+
+Unchanged PHP/booking/notification/consent/security suites retain prior results; no need to rerun them for a filesystem-only patch. No live provider call, email, booking, diagnostic or deployment was executed. Actual Google login, live host access and patched PHP8.4 tests remain blocked. Production-build matrix remains0/198; prior blocked reports are preserved.
+
+`npm run test:browser-v01` executed after the staging changes and returned exit1/BLOCKED at the unchanged hero guard, before Chromium initialization. Latest report remains0executed/198blocked; no fixture case is counted toward198. No PHP8.4 binary was found locally; no compatibility claim or hosting version switch was made.

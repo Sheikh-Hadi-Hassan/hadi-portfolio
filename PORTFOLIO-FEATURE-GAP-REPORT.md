@@ -350,3 +350,9 @@ Continuation from 7882f82: article/chapter authoring and existing-case reimport 
 ## Phase 4 targeted readiness checkpoint — 2026-11-03
 
 Continues b17c4d5b88b960bbd6d4ad80eee45e922179ebc4. Added safe router/vault validation, namespaced Groq compatibility, disabled documented provider candidates and stale-export/interrupted-browser evidence controls. See docs/admin/PHASE4-TEST-EVIDENCE.md and PHASE4-ACCEPTANCE.md for commands and trust boundaries. No original-plan obligations were promoted from mock/source evidence: **22/243 = 9.05%**, 188 partial, 2 missing, 31 externally blocked; 233 future excluded. Exact proposed hero hashes match current inputs; owner approval absent. Production browser acceptance **0/198**. Hostinger/backend identity, Apps Script/ACLs/Calendar/mail, cleanup, key custody/auth bridge, account/privacy/live provider acceptance and hosted CMS remain blocked. Manifest **STALE**; release **NO-GO**. No production/main/recovery changes or live external operations.
+
+## Phase4 continuation — 2026-11-04
+
+Mutable artifact hardlink protection was incomplete despite immutable release checks. Fixed CMS/Sera/pointer staging validation and atomic0600 writes under0700 staging; added sentinel-preservation, failed-save cleanup and rollback regressions. Five affected JS suites, CMS CLI and CMS browser fixture at375/768/1440 pass (axe0 in tested states). Production-build test remains hero-blocked0/198. Updated Sera state now reflects existing approved configuration/adapters instead of stale mock-only implementation claims. See docs/admin/PHASE4-GATE-RECONCILIATION.md and PHASE4-TEST-EVIDENCE.md.
+
+All six owner-controlled P0 gates remain blocked; actual hosting/Google integration and patched PHP8.4 target acceptance are unverified. Portfolio counts stay22/243=9.05%,188partial,2missing,31blocked;233future excluded. Manifest STALE; NO-GO. No production/main/recovery mutation or live provider/booking/mail operation.

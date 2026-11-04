@@ -2,7 +2,7 @@
 
 ```json
 {
-  "baseline_head": "b17c4d5b88b960bbd6d4ad80eee45e922179ebc4",
+  "baseline_head": "ebebab75cabc65b27c2c2232464bc7071b760c5b",
   "branch": "work/v01-booking-contract-20261103",
   "phase": 4,
   "status": "LOCAL_SECURITY_HARDENING_VERIFIED_EXTERNAL_GATES_BLOCKED",
@@ -25,7 +25,8 @@
     "vault provider/audit/replay metadata validation and isolated encrypted-backup restoration, original store unchanged",
     "exact 22x9 browser plan and source/export build receipt, incremental per-case evidence, image/internal link/history checks; approved hero gate unchanged",
     "dated official Gemini/Groq references and two disabled review candidates; no account eligibility assumed",
-    "read-only hero comparison matches three proposed hashes; no approval or activation"
+    "read-only hero comparison matches three proposed hashes; no approval or activation",
+    "mutable CMS/Sera staging and pointer hardlink/non-file rejection, 0700 root/lock and exclusive 0600 atomic flushed writes; failed save preserves active data and cleans temp/lock"
   ],
   "tests": {
     "javascript_suites": 17,
@@ -39,7 +40,8 @@
     "viewports": "admin 320/768/1280 plus workflows/CMS 375/768/1440",
     "axe": "zero findings in tested admin/CMS states",
     "other": "PHP/widget syntax, package-security, catalogue consistency PASS",
-    "phase4": "PHASE4-TEST-EVIDENCE.md: focused PHP/mock + plan/provenance + packaging/catalogue; production cases 0/198"
+    "phase4": "PHASE4-TEST-EVIDENCE.md: focused PHP/mock + plan/provenance + packaging/catalogue; production cases 0/198",
+    "phase4_continuation": "2026-11-04: five affected JS suites + CMS CLI PASS, CMS browser fixture at375/768/1440 PASS/axe0; production build acceptance BLOCKED0/198. New regression initially failed before fix."
   },
   "blockers": [
     "Hostinger hosting MCP/CLI not available; actual web PHP/cURL/sodium/private key custody and backend identity unverified",
@@ -47,12 +49,13 @@
     "Actual credential writes, encrypted-store deployment, Google-to-PHP authorization and live network transport remain disconnected",
     "Free-tier model/account/privacy/quota evidence and explicit live connectivity approval absent",
     "Hero lock not approved: production build and 198 production route cases blocked",
-    "Hosted CMS upload/publication and actual candidate deployment require verified runtime/auth and explicit approval"
+    "Hosted CMS upload/publication and actual candidate deployment require verified runtime/auth and explicit approval",
+    "Patched PHP8.4 target runtime acceptance missing; no switch or deployment authorized"
   ],
   "source_managed_scope": [
     "Video/social authoring remains source-managed; article/chapter content and existing layout variants are editable; chapter anchor removal requires a separate migration policy"
   ],
-  "next_task": "Owner returns sanitized external gate evidence and exact-hash hero decision; then only approved local lock activation/build/QA. Credential writes and live tests still separately authorized.",
+  "next_task": "Owner supplies read-only hosting/deployed-Google/ACL/cleanup evidence and exact hero decision. Codex then validates evidence and runs only explicitly approved local hero activation/build/QA; require patched PHP8.4 compatibility before any separately approved hosting switch. Provider writes/live tests remain disabled.",
   "portfolio_counts": {
     "verified": 22,
     "partial": 188,
@@ -75,7 +78,8 @@
     "PROVIDER-READINESS.md",
     "provider-candidates.json",
     "CONTROLLED-INTEGRATION-ACCEPTANCE.md",
-    "phase4-hero-comparison.json"
+    "phase4-hero-comparison.json",
+    "PHASE4-GATE-RECONCILIATION.md"
   ],
   "latest_security_commit": "015f8f335f3f830e3efabc00d2768f0f09a5c5c6",
   "files_changed_phase4": [
@@ -107,6 +111,22 @@
     "PORTFOLIO-RELEASE-READINESS.md",
     "STUDIO-OS-ROADMAP.md",
     "FLOW-CONNECT-ROADMAP.md"
+  ],
+  "target_runtime": "PHP8.4 patched: local and actual web-handler compatibility acceptance BLOCKED; historical PHP8.3 CLI results retained",
+  "continuation_files": [
+    "scripts/admin/staging-lock.mjs",
+    "scripts/admin/stage-cms.mjs",
+    "scripts/admin/stage-sera-config.mjs",
+    "scripts/admin/cms-release.mjs",
+    "tests/admin-staging-security.mjs",
+    "package.json",
+    "docs/admin/PHASE4-GATE-RECONCILIATION.md",
+    "docs/admin/PHASE4-TEST-EVIDENCE.md",
+    "docs/admin/ADMIN-IMPLEMENTATION-STATE.md",
+    "docs/admin/OWNER-ACCEPTANCE.md",
+    "docs/sera/SERA-IMPLEMENTATION-STATE.md",
+    "PORTFOLIO-RELEASE-READINESS.md",
+    "PORTFOLIO-FEATURE-GAP-REPORT.md"
   ]
 }
 ```

@@ -38,3 +38,7 @@ References: https://developers.google.com/apps-script/concepts/deployments ; htt
 ## Phase 4 handoff
 
 Use PHASE4-ACCEPTANCE.md for the exact three-hash local hero approval wording and custody/hosted-CMS sequence; PROVIDER-READINESS.md for current official terms and disabled candidates; CONTROLLED-INTEGRATION-ACCEPTANCE.md for isolated test resources, evidence and cleanup. These documents do not authorize installation, credential writes, activation, publication or live calls. First return existing reviewed-kit evidence.json/cleanup.json plus request-level loader and deployed-version evidence. No new production evidence has been accepted.
+
+## 2026-11-04 read-only reconciliation
+
+See PHASE4-GATE-RECONCILIATION.md for implementation/local/fixture/production separation, exact read-only hPanel/Google checks and six P0 gates with owner/action/pass criteria. Prefer existing request evidence; no diagnostic installation is authorized. PHP8.4 is the target: verify a patched actual web handler and candidate compatibility before any separately authorized switch/deployment. Existing PHP8.3 CLI tests cannot establish this. Mutable staging hardlinks/permissions are locally fixed, not hosted acceptance.

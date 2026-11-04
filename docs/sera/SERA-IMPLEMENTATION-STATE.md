@@ -2,14 +2,17 @@
 
 ```json
 {
-  "baseline_commit": "2d1f235817061c6f812bf1e79d7a4060a8550b57",
+  "baseline_commit": "ebebab75cabc65b27c2c2232464bc7071b760c5b",
   "branch": "work/v01-booking-contract-20261103",
-  "status": "IN_PROGRESS_NO_GO",
+  "status": "LOCAL_RUNTIME_CONTRACTS_VERIFIED_LIVE_INTEGRATION_BLOCKED",
   "decisions": [
     "Reuse six canonical backend service IDs; do not invent provider or service IDs",
     "Deterministic guided workflow owns progression; AI optional",
     "Consent remains page-session-only; reload clears enquiry consent too",
-    "New router policy is backend-only, mock-tested and not connected to live adapters"
+    "Gemini/Groq protocol adapters and private composition exist; fixture-tested only, no activated public provider endpoint",
+    "Approved knowledge/FAQ/personality/voice/skills/trees/policy artifacts are allowlisted; draft/private records excluded; active tree snapshot pinned",
+    "Consent remains required for provider calls; deterministic discovery/brief/direct booking remain model-independent",
+    "PHP8.4 is the target; existing local PHP8.3 evidence does not pass target/web-handler compatibility"
   ],
   "completed": [
     "Guided service selection, choices, multiselect, optional skip, Back, edits, reload, review, deterministic proposal and existing booking/enquiry CTAs",
@@ -20,9 +23,30 @@
     "Eleven visitor intent choices map to six canonical backend IDs; intent IDs included in lead handoff",
     "All eleven intent browser journeys PASS in isolated fixture",
     "Backend relevant retrieval wired to existing ask.php with explicit context/output bounds",
-    "Requested specialist intent labels preserved in brief; uncommitted selections do not overwrite submitted intent metadata"
+    "Requested specialist intent labels preserved in brief; uncommitted selections do not overwrite submitted intent metadata",
+    "Phase3/4 approved runtime pipeline, quota/circuit/private-vault composition, redacted context and namespaced Groq IDs; no real credentials enabled",
+    "2026-11-04: Sera/CMS mutable artifact staging rejects hardlinks/non-files, writes0600 inside0700 staging and retains last active data on failed replacement"
   ],
-  "tests": [
+  "blockers": [
+    "Approved hero lock and production identities unchanged",
+    "No new remote provider adapter enabled; free eligibility and account billing state unverified",
+    "No authorized live lead/booking/email acceptance",
+    "No secure upload endpoint approved",
+    "Actual web PHP8.4/cURL/TLS/sodium/config/permissions and deployed Google identities/ACLs unverified",
+    "Host provider credential writes/activation, Google-to-PHP bridge and hosted CMS disconnected; patched8.4 compatibility blocked"
+  ],
+  "next_executable_task": "Reconcile owner evidence via docs/admin/PHASE4-GATE-RECONCILIATION.md; owner hero decision then authorized build/browser QA. Live provider activation requires independent custody/auth/account/privacy/quota and explicit connectivity approval.",
+  "current_commit_at_phase_entry": "a584d007ba96e72bedaef9a08308e95ce1e19c50",
+  "files_changed": [
+    "engine/runtime/build/booking/voice-actions",
+    "discovery.mjs; guided.js; errors.mjs; knowledge.mjs; knowledge-registry.json",
+    "public provider-router.php (policy core only)",
+    "seven generated widget aliases",
+    "five new tests and package scripts",
+    "eight Sera documents and five release documents"
+  ],
+  "historical_baseline_commit": "2d1f235817061c6f812bf1e79d7a4060a8550b57",
+  "historical_tests": [
     "node tests/sera-discovery.mjs PASS",
     "node tests/sera-errors.mjs PASS",
     "node tests/sera-knowledge.mjs PASS",
@@ -35,21 +59,16 @@
     "npm test PASS (10 suites)",
     "python3 tests/package-security.py PASS"
   ],
-  "blockers": [
-    "Approved hero lock and production identities unchanged",
-    "No new remote provider adapter enabled; free eligibility and account billing state unverified",
-    "No authorized live lead/booking/email acceptance",
-    "No secure upload endpoint approved"
+  "current_evidence": [
+    "docs/admin/PHASE3-TEST-EVIDENCE.md",
+    "docs/admin/PHASE4-TEST-EVIDENCE.md",
+    "docs/admin/PHASE4-GATE-RECONCILIATION.md"
   ],
-  "next_executable_task": "Complete global error-path integration and input/voice controls; verify current provider eligibility and implement tested real backend adapters with durable quota/circuit/dedup contracts. Live calls require private account configuration and consent.",
-  "current_commit_at_phase_entry": "a584d007ba96e72bedaef9a08308e95ce1e19c50",
-  "files_changed": [
-    "engine/runtime/build/booking/voice-actions",
-    "discovery.mjs; guided.js; errors.mjs; knowledge.mjs; knowledge-registry.json",
-    "public provider-router.php (policy core only)",
-    "seven generated widget aliases",
-    "five new tests and package scripts",
-    "eight Sera documents and five release documents"
+  "tests_executed_this_checkpoint": [
+    "node tests/admin-public-config.mjs PASS",
+    "node tests/admin-staging-security.mjs PASS after reproducing pre-fix defect",
+    "affected CMS JS/CLI and three-width browser fixture PASS",
+    "npm run test:browser-v01 BLOCKED by unchanged hero guard;0/198"
   ]
 }
 ```
