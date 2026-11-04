@@ -85,3 +85,9 @@ Before deployment, record the previous immutable Script version and verify it ca
 ## Decision rules
 
 GO requires all mandatory gates and isolated real integration/rollback evidence, then explicit production approval. CONDITIONAL GO may describe a completed technical release with narrowly named operational conditions, but it must not conceal unverified backend identity or unsafe data/notification behavior. **Current decision is NO-GO** because these mandatory identities, data/queue compatibility and connected staging evidence are absent. The remaining blockers are booking-specific, not unfinished Business Control Center features.
+
+## Phase6 evidence reconciliation — 2026-11-04
+
+All three named historical Library reports were read and reused. They explicitly leave web runtime/effective config/active Apps Script identity blocked. New read-only metadata/header checks establish access to the candidate Sheet and Calendar through connected accounts only;17/18Sheet labels match, A1 differs, active Script mappings/ACLs/trigger state remain unverified. No customer rows or events were read, no mocks/recovery comparisons repeated, no approved staging resources supplied.
+
+The historical Gate6 contract adds an unresolved **P0 source acceptance gap**: this frozen candidate can report booked from an insert response without unconditional authoritative GET and complete deterministic ID/private-reference/start/end/time validation. Existing status correlation/outbox reads do not fully close it. Do not interpret old mock passes or newly supplied identity evidence as satisfying that criterion. Candidate/package hashes remain unchanged; no silent source replacement or package rebuild. See PHASE6-RECONCILIATION.md and PHASE6-EVIDENCE.json. Deployment, connected staging and rollback acceptance remain NO-GO/BLOCKED.

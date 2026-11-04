@@ -2,9 +2,9 @@
 
 ```json
 {
-  "baseline_head": "1d4ea2a51a01502feab50bb2ea5a358173aa6f67",
+  "baseline_head": "c097a6124bbde0604eedadacf3d5772e73792d9a",
   "branch": "work/v01-booking-contract-20261103",
-  "phase": 5,
+  "phase": 6,
   "status": "LOCAL_SECURITY_HARDENING_VERIFIED_EXTERNAL_GATES_BLOCKED",
   "architecture": "Existing Sheet-bound admin + approved public artifacts + private PHP libraries; no database/worker or live auth bridge assumed",
   "completed_local": [
@@ -55,7 +55,7 @@
   "source_managed_scope": [
     "Video/social authoring remains source-managed; article/chapter content and existing layout variants are editable; chapter anchor removal requires a separate migration policy"
   ],
-  "next_task": "Obtain booking-specific deployed source/version, gateway/client parity, web-runtime/effective-config, Google permission/schema/backlog and rollback evidence; authorize isolated hosted staging. Full admin completion and frontend hero approval are not gates for the fixed Apps Script-only artifact. No deployment or live QA yet.",
+  "next_task": "Owner supplies active numbered deployment/source/trigger and effective PHP destination evidence; Codex matches identity/minimal diff and prepares authoritative Calendar confirmation correction with new focused tests before authorized isolated staging. Do not repeat recovery or old mock checks.",
   "portfolio_counts": {
     "verified": 22,
     "partial": 188,
@@ -143,6 +143,21 @@
       "docs/booking-release/STAGING-ARTIFACT.json",
       "docs/booking-release/RELEASE-READINESS.md",
       "docs/booking-release/TEST-EVIDENCE.md"
+    ]
+  },
+  "phase6": {
+    "status": "HISTORICAL_REPORTS_REUSED_CURRENT_IDENTITY_BLOCKED",
+    "library_reports_read": 3,
+    "current_reads": [
+      "candidate Sheet metadata and headers only:17/18 labels match; column1 semantics unresolved",
+      "candidate Calendar access_role owner for connected account only; not Script identity"
+    ],
+    "new_candidate_gap": "Historical Gate6 authoritative Calendar GET/complete identity/time contract not fully satisfied by pinned candidate",
+    "new_tests_executed": 0,
+    "staging": "BLOCKED: no approved isolated resources/recipients; existing offline package retained",
+    "evidence": [
+      "docs/booking-release/PHASE6-RECONCILIATION.md",
+      "docs/booking-release/PHASE6-EVIDENCE.json"
     ]
   }
 }

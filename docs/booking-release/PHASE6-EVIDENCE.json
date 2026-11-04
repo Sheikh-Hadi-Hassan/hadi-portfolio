@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-11-04",
+  "timezone": "Asia/Karachi",
+  "inspectedHead": "c097a6124bbde0604eedadacf3d5772e73792d9a",
+  "candidateSourceCommit": "1d4ea2a51a01502feab50bb2ea5a358173aa6f67",
+  "candidateSha256": "b69db08a3819c38a2f240585cf0a7222bf7b9b246c874bb1045726284e621382",
+  "libraryReports": [
+    {
+      "name": "Hadi-V01-Live-Baseline-Verification.md",
+      "library_file_id": "libfile_6e0b4433a1108191bc5d0c6c524d1c37",
+      "created_at": "2026-11-03T02:19:46.813441Z",
+      "modified_at": "2026-11-03T02:19:46.813441Z",
+      "total_lines": 71,
+      "complete": true
+    },
+    {
+      "name": "Hadi-V01-Backend-Acceptance-Report.md",
+      "library_file_id": "libfile_23816c2f1bc48191816948c3d82fd3a9",
+      "created_at": "2026-11-03T02:26:31.019120Z",
+      "modified_at": "2026-11-03T02:26:31.019120Z",
+      "total_lines": 57,
+      "complete": true
+    },
+    {
+      "name": "Pasted markdown(20261021-160534).md",
+      "library_file_id": "libfile_ca75b81810f48191be4e0c03538abb47",
+      "created_at": "2026-10-21T16:05:33.814741Z",
+      "modified_at": "2026-10-21T16:05:33.814741Z",
+      "total_lines": 114,
+      "complete": true
+    }
+  ],
+  "historicalOnly": {
+    "publicSamplesMatched": 25,
+    "recoveryInventory": 1768,
+    "runtimeIdentity": "BLOCKED",
+    "effectiveConfiguration": "BLOCKED",
+    "activeAppsScriptIdentity": "BLOCKED",
+    "recordedV7CodeSha256": "b5c4baf9ac8ec4ed34fa86f4a8d4c33b21f616c43bf3c3c9299e19b6f877f96d",
+    "v104CandidateCodeSha256": "32a80a8b781992a306435e65597b0993bbe936d5aae3bef879b6fe56e42dad6c",
+    "backupDeploymentIdSha256": "ae1894148d85925c98172870857ba07c40ba74263cf4f45c85d8fa6acb9f7e87"
+  },
+  "currentReads": {
+    "sheet": {
+      "status": "PARTIAL",
+      "candidateMappingOnly": true,
+      "range": "Leads!A1:R1",
+      "headers": [
+        "Leads spreadsheet",
+        "Received UTC",
+        "Status",
+        "Name",
+        "Email",
+        "Phone",
+        "Business / website",
+        "Services",
+        "Brief JSON",
+        "Notes",
+        "Visitor timezone",
+        "Call start UTC",
+        "Calendar event ID",
+        "Source",
+        "Notification status",
+        "Request fingerprint",
+        "Meet URL",
+        "Delivery metadata"
+      ],
+      "returnedPermissionEntries": [
+        {
+          "type": "user",
+          "role": "owner"
+        }
+      ],
+      "completeAclVerified": false,
+      "effectiveScriptSheetMappingVerified": false,
+      "customerRowsRead": 0,
+      "matchingHeaderLabels": 17,
+      "headerMismatches": [
+        {
+          "column": 1,
+          "expected": "Reference",
+          "observed": "Leads spreadsheet"
+        }
+      ],
+      "headerRoleCompatibility": "BLOCKED: column1 semantics and effective Script mapping not verified; mismatch alone does not prove booking failure",
+      "resourceFingerprint": "cbcd865fd162cb83d311c2afd2bd2d8c26b433abdb91c004fc6eb2b09bf992dd"
+    },
+    "calendar": {
+      "status": "PARTIAL",
+      "candidateMappingOnly": true,
+      "connectedAccountAccessRole": "owner",
+      "scriptExecutingPrincipalVerified": false,
+      "timezoneObserved": false,
+      "eventsRead": 0
+    },
+    "hostingerRuntime": "BLOCKED_NO_HOSTING_CAPABILITY",
+    "appsScriptDeployment": "BLOCKED_NO_DEPLOYMENT_API",
+    "triggers": "BLOCKED_NO_TRIGGER_API"
+  },
+  "candidateRequirement": {
+    "status": "NOT_SATISFIED",
+    "requirement": "Authoritative Calendar GET before confirmation, with deterministic ID/private reference/start/end/time/request validation",
+    "sourceLocations": [
+      "Code.gs:28",
+      "Code.gs:30",
+      "Code.gs:36-38"
+    ],
+    "finding": "Normal successful insert can be passed directly to bookingResult_; successful-insert GET is not unconditional. status_ reads Calendar but does not validate all historical identity/reference/end/timezone criteria.",
+    "liveIncidentRootCauseClaimed": false
+  },
+  "staging": {
+    "approvedResourcesProvided": false,
+    "connectedStaging": "BLOCKED",
+    "offlinePhase5Preparation": "REUSED_NO_REBUILD"
+  },
+  "execution": {
+    "backupComparisonsRepeated": false,
+    "historyInvestigationRepeated": false,
+    "mockTestsRepeated": false,
+    "productionWrites": 0,
+    "bookings": 0,
+    "emails": 0,
+    "diagnosticsInstalled": 0
+  },
+  "release": "NO-GO",
+  "manifest": "STALE"
+}
