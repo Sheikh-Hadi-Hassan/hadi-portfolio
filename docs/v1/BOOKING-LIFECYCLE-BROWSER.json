@@ -9,6 +9,7 @@
     "read-only reconciliation",
     "same original lead/event",
     "reload journal history",
+    "write-disabled owner reconciliation with preview still disabled",
     "keyboard order",
     "zero uncaught errors",
     "zero axe findings in tested states"

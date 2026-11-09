@@ -25,3 +25,5 @@ https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app (fix
 https://developers.google.com/apps-script/reference/base/session (active identity limitations).
 
 Both PV-474D07E1 and PV-15E525B9 now have working owner-only local implementations/tests. They remain Partially implemented until full required integration/operational acceptance; no verified credit is added. Full V1 remains NO-GO, manifest STALE, production-build browser0/198.
+
+Shutdown recovery: setting the operation write flag false prevents new preview/apply actions while preserving owner-token-authorized external readback and local repair/history. Reconciliation must never require re-enabling Calendar writes. Late recovery is checked against the original operation proof, not the booking window for a new appointment. Upstream401/403 is normalized without token/provider error disclosure. These added fault tests and disabled-write browser recovery pass locally.

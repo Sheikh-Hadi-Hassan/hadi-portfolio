@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "branch": "work/v01-booking-contract-20261103",
   "entryCommit": "5cf52793b5468c005a890fde7b6981eab6bcf4cd",
-  "lastPublishedCodeCommit": "1d64096f969d5c1870b33e6f6b6c4683c3eea70b",
+  "lastPublishedCodeCommit": "8cfae577bea33c77a6ae7d13b281a33f8bcbb411",
   "boundary": "Tested local bytes, including working pagination change; Git publishing commit pins full tree. Hashes are integrity, not approval or deployment evidence.",
   "sha256": {
     "integrations/admin-runtime/ProviderRuntime.php": "35a39efa5238dbada67d68804ae854f83e06ad58f612e21520aabf08a760b045",
@@ -47,10 +47,10 @@
     "tests/sera-runtime-approval.php": "39f2902857232a6a0171eecee64acff2a601c73a5bd543266323d4e346295ceb",
     "tests/v1-evidence.py": "302aad5c54238da43bb6eb71f62e30c54439dfafde3cae6016eb62eaa8dfe1f1",
     "tests/crm-history-search.mjs": "39c726dcf04efab6d7aabb7f88b4a43ba153ad40261f74343899a6faca0e618f",
-    "integrations/leads-portal/BookingOperations.gs": "06de659e73674df38f348d04ae4f52e44ed2c3b1a62457cd109bec1827284952",
-    "integrations/leads-portal/BookingOperations.html": "8e42769f8b4a94085a8e077431af05ee4bd57f151f4923a38d683c12ce6a5619",
-    "tests/booking-lifecycle.mjs": "76781509e14f92a8de443fe8eed8fc0997a2a1a9f25740d85b67d377371d59fe",
-    "tests/helpers/booking-lifecycle-harness.mjs": "31c2dadde6a5d6b95f23414e174af122ca29ea20323b572a80fdd79ad65c192a",
-    "tests/booking-lifecycle-browser.cjs": "802b704c3a2f468043b78f1ee87b4e61f3a511f6bd41f2a2a2dbcdf5e1205404"
+    "integrations/leads-portal/BookingOperations.gs": "235e5ac7d29e1a044b786d2ff3e8ad0e818459b2cb94ebed76cc04d28a45a356",
+    "integrations/leads-portal/BookingOperations.html": "ffb01f360c0ba0fa1b01c61891de297a0bab1aa3530e3b0f77dbfe6744d0a471",
+    "tests/booking-lifecycle.mjs": "4ac480b6b9c7ed7ab376b6af356c2d48fbe1ca9d362854aded6000542ffbc3f7",
+    "tests/helpers/booking-lifecycle-harness.mjs": "d68ef89a8435c9f995bd4111abcd584732aa3ba58f407f42dffac6ecb1c53bd8",
+    "tests/booking-lifecycle-browser.cjs": "d796a2acacd6538e435b371fef4e91c894c13f4233a39059bb085f3344de6669"
   }
 }
