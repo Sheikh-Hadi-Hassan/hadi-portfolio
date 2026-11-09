@@ -2,8 +2,11 @@ const fs=require('fs'),path=require('path'),http=require('http');
 const {spawnSync}=require('child_process');
 const {waitForApplication,brokenImages,optionalConfigConsole,historyRoundTrip}=require('./browser-assertions.cjs');
 const {plan,verifyRoutes,report}=require('../scripts/qa/browser-plan.cjs');
-const cases=plan(JSON.parse(fs.readFileSync('src/data/projects.json','utf8'))),results=[];
-const evidence='docs/v01-production-build-browser-results.json';
+const allCases=plan(JSON.parse(fs.readFileSync('src/data/projects.json','utf8'))),results=[];
+const shard=process.env.V01_SHARD?process.env.V01_SHARD.split('/').map(Number):null;
+if(shard&&(shard.length!==2||!shard.every(Number.isInteger)||shard[1]<1||shard[1]>4||shard[0]<0||shard[0]>=shard[1]))throw Error('ACCEPTANCE_SHARD_INVALID');
+const cases=shard?allCases.filter((_,i)=>i%shard[1]===shard[0]):allCases;
+const evidence=shard?`docs/qa/browser-rerun-shard-${shard[0]}.json`:'docs/v01-production-build-browser-results.json';
 const allowUnconfigured=process.env.SERA_CONFIG_EXPECTATION==='builtin';
 let blockedReason=null;
 const save=reason=>{blockedReason=reason;fs.writeFileSync(evidence,JSON.stringify(report(cases,results,reason),null,2)+'\n')};
@@ -12,7 +15,7 @@ const save=reason=>{blockedReason=reason;fs.writeFileSync(evidence,JSON.stringif
  if(integrity.status!==0){save('APPROVED_HERO_REQUIRED');throw Error('BLOCKED: approved hero integrity verification required');}
  const receipt=spawnSync('python3',['scripts/qa/acceptance-build.py','--verify'],{encoding:'utf8'});
  if(receipt.status!==0){save('CURRENT_APPROVED_BUILD_RECEIPT_REQUIRED');throw Error('BLOCKED: run python3 scripts/qa/acceptance-build.py after approval');}
- const root=path.resolve('out');verifyRoutes(root,cases);
+ const root=path.resolve('out');verifyRoutes(root,allCases);
  const {chromium}=require('playwright'),AxeBuilder=require('@axe-core/playwright').default;
  const server=http.createServer((req,res)=>{
   let pathname;try{pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname)}catch{res.writeHead(400).end();return}
