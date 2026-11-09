@@ -51,3 +51,7 @@ Use docs/booking-release/RELEASE-READINESS.md for the smallest Apps Script-only 
 ## V1 current evidence reconciliation
 
 New booking source32a6e44 and private/provider/CRM source94c53a89 must be distinguished from historical report revisions. Existing25-file comparison and healthREADY do not prove this candidate is deployed. Current local27/243 does not change any external gate. OpenRouter is now an additional disabled adapter, requiring exact :free catalogue entry, zero price caps, account privacy/ZDR/SafetyRetention decision, quotas and explicit bounded connectivity approval. No API keys in chat. Current full artifact is unavailable until exact hero approval/build and unresolved implementation gates pass. Return only existing sanitized evidence files and the exact-hash hero decision when ready; diagnostics/deployment/live tests remain separately authorized.
+
+## Owner lifecycle topology gate
+
+New owner cancellation/rescheduling is disabled and requires the actual booking writer and bound Leads in one ScriptLock domain with matching policy and exact18-column headers. It intentionally rejects the existing split-project assumption. Prepare only a separately approved isolated co-located test project for acceptance; do not merge admin code into the active booking deployment. Review Calendar/Sheets, active-user and UrlFetch scopes before any install/activation. See docs/v1/BOOKING-LIFECYCLE-ACCEPTANCE.md. Existing public API key never authorizes lifecycle writes. No approval is implied by local test success.

@@ -9,3 +9,5 @@ If booking outcomes become uncertain, stop new writes using an approved operatio
 CMS: existing staged pointer rollback validates expected active release and exact prior manifest/media tree. Preserve releases; unknown outcomes require readback. Live hosted publication/rollback has not executed.
 
 Provider: disable routing first; questionnaire remains usable. Preserve quota ledger, encrypted records and audit evidence; never reset quotas through key/account rotation. Revoke exposed provider keys in their consoles separately. Master-key migration is not implemented or approved; do not replace the key callback. Hero proposal remains inactive, so there is no hero activation to roll back.
+
+Lifecycle rollback: disable the owner operation flag, preserve the BookingOperations journal and all original lead/event IDs. Revert code only after reconciling pending actions; never delete journal rows or automatically reverse/resend Calendar updates. Code rollback does not undo cancellation/rescheduling or retract notification emails. Actual hosted rollback remains unverified.

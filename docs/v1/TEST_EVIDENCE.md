@@ -1,3 +1,7 @@
+## Current lifecycle regression
+
+23 JavaScript suites PASS (npm test). New lifecycle VM/fault suite and actual browser/backend fixture PASS;320/768/1440,zero tested-state axe findings,one original event,no real emails/provider calls. The14 PHP suites are retained prior evidence, not rerun because no PHP changed. Header mismatch, shared-writer/Sheet/policy mismatch, unverified Meet, no-op,412 and post-write conflicts fail closed. Existing full-build/198 tests remain blocked by missing approved hero-lock. Counts27 verified,185 partial,0 missing,31 blocked.
+
 # V1 test evidence
 
 Source checkpoint94c53a89c995926bd4055a59b94b64e98a90eb33. Exact commands/output: REGRESSION-EVIDENCE.json. No live APIs, customer appointments, emails or inference.

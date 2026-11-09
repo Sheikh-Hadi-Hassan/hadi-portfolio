@@ -7,9 +7,9 @@
   "all_scope_total": 476,
   "counts": {
     "Implemented and verified": 27,
-    "Partially implemented": 183,
-    "Missing": 2,
-    "Blocked by external dependency": 31
+    "Partially implemented": 185,
+    "Blocked by external dependency": 31,
+    "Missing": 0
   },
   "requirements": [
     {
@@ -297,20 +297,20 @@
       "scope": "PV",
       "requirement": "Rescheduled booking lifecycle",
       "reference": "§§3–6; V0.1",
-      "component": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
-      "status": "Missing",
+      "component": "integrations/leads-portal/BookingOperations.gs; integrations/leads-portal/BookingOperations.html; integrations/calendar-v8/Code.gs",
+      "status": "Partially implemented",
       "priority": "P0",
-      "evidence": "No reschedule action in inspected public gateway",
-      "action": "Design verified authenticated contract; do not add unauthorized provider writes",
+      "evidence": "tests/booking-lifecycle.mjs and tests/booking-lifecycle-browser.cjs PASS: actual owner guards/journal/UI/public status with fake Google providers; docs/v1/BOOKING-LIFECYCLE-BROWSER.json",
+      "action": "Accept actual co-located ScriptLock/Sheet/source identity, scopes/ACLs, isolated Calendar/Meet/notification acceptance and explicit activation. Public customer self-service is not exposed.",
       "acceptance": "Demonstrate rescheduled booking lifecycle with reproducible evidence; source presence alone is insufficient.",
       "review": {
         "criterion": "Demonstrate rescheduled booking lifecycle with reproducible evidence; source presence alone is insufficient.",
-        "evidence": "No reschedule action in inspected public gateway",
-        "remaining": "Design verified authenticated contract; do not add unauthorized provider writes",
-        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
+        "evidence": "tests/booking-lifecycle.mjs and tests/booking-lifecycle-browser.cjs PASS: actual owner guards/journal/UI/public status with fake Google providers; docs/v1/BOOKING-LIFECYCLE-BROWSER.json",
+        "remaining": "Accept actual co-located ScriptLock/Sheet/source identity, scopes/ACLs, isolated Calendar/Meet/notification acceptance and explicit activation. Public customer self-service is not exposed.",
+        "boundary": "Owner-only local integrated fixtures, not deployed Google authentication, Calendar/mail or production acceptance."
       },
       "production_acceptance": "UNVERIFIED",
-      "evidence_level": "EVIDENCE_GAP"
+      "evidence_level": "PARTIAL_LOCAL_WORKFLOW_VERIFIED"
     },
     {
       "id": "PV-E38A6D22",
@@ -717,20 +717,20 @@
       "scope": "PV",
       "requirement": "Cancellation authorization and lifecycle",
       "reference": "§§3–6; V0.1",
-      "component": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
-      "status": "Missing",
+      "component": "integrations/leads-portal/BookingOperations.gs; integrations/leads-portal/BookingOperations.html; integrations/calendar-v8/Code.gs",
+      "status": "Partially implemented",
       "priority": "P0",
-      "evidence": "Cancelled-provider events recognized; no authenticated modification contract",
-      "action": "Design verified authenticated contract; preserve owner contact fallback",
+      "evidence": "tests/booking-lifecycle.mjs and tests/booking-lifecycle-browser.cjs PASS: actual owner guards/journal/UI/public status with fake Google providers; docs/v1/BOOKING-LIFECYCLE-BROWSER.json",
+      "action": "Accept actual co-located ScriptLock/Sheet/source identity, scopes/ACLs, isolated Calendar/Meet/notification acceptance and explicit activation. Public customer self-service is not exposed.",
       "acceptance": "Demonstrate cancellation authorization and lifecycle with reproducible evidence; source presence alone is insufficient.",
       "review": {
         "criterion": "Demonstrate cancellation authorization and lifecycle with reproducible evidence; source presence alone is insufficient.",
-        "evidence": "Cancelled-provider events recognized; no authenticated modification contract",
-        "remaining": "Design verified authenticated contract; preserve owner contact fallback",
-        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
+        "evidence": "tests/booking-lifecycle.mjs and tests/booking-lifecycle-browser.cjs PASS: actual owner guards/journal/UI/public status with fake Google providers; docs/v1/BOOKING-LIFECYCLE-BROWSER.json",
+        "remaining": "Accept actual co-located ScriptLock/Sheet/source identity, scopes/ACLs, isolated Calendar/Meet/notification acceptance and explicit activation. Public customer self-service is not exposed.",
+        "boundary": "Owner-only local integrated fixtures, not deployed Google authentication, Calendar/mail or production acceptance."
       },
       "production_acceptance": "UNVERIFIED",
-      "evidence_level": "EVIDENCE_GAP"
+      "evidence_level": "PARTIAL_LOCAL_WORKFLOW_VERIFIED"
     },
     {
       "id": "PV-DB149B1B",
@@ -7670,8 +7670,8 @@
     }
   ],
   "reconciliation": {
-    "source_checkpoint": "94c53a89c995926bd4055a59b94b64e98a90eb33",
-    "scope": "All243 IDs classified. Five new bounded booking contracts verified; other prior statuses preserved. This is not full semantic acceptance of188 prior partial items.",
+    "source_checkpoint": "1d64096f969d5c1870b33e6f6b6c4683c3eea70b",
+    "scope": "All243 IDs preserved. Two former Missing lifecycle obligations now have owner-only integrated local workflows; partial pending required integration acceptance.27 locally verified unchanged.",
     "production_verified": 0,
     "implementation_completion_percentage": null,
     "implementation_percentage_reason": "Partial records have unresolved atomic acceptance and implementation gaps. Do not assign arbitrary partial credit or call local acceptance overall implementation completion."

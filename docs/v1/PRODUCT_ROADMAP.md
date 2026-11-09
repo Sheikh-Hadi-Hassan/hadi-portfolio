@@ -1,3 +1,7 @@
+## Latest owner lifecycle progress
+
+Owner cancellation/rescheduling now has a working local UI/backend with conditional updates and reconciliation, not just request records. The two IDs remain partial pending operational acceptance. Shared-project writer/Sheet/policy/header identity is mandatory; do not merge live projects automatically. Current build/198 cases need exact hero approval. Remaining185 per-criterion reviews and broader CRM/support/analytics implementation gaps are not declared complete.
+
 # Remaining V1 work
 
 P0: authenticated cancellation/rescheduling lifecycle (PV-474D07E1/PV-15E525B9), hero approval/build/198-route acceptance, current Hostinger/config/Apps Script identity, Sheet/ACL/trigger/permission compatibility, cleanup, independent credential custody/auth bridge, isolated booking/Meet/delivered-email and rollback acceptance.

@@ -1,3 +1,7 @@
+## Current lifecycle checkpoint
+
+185 partial,0 missing,27 verified/243=11.11%,31 blocked. Owner-only lifecycle works in integrated local fixtures; external gates remain blocked. No full V1 artifact. NO-GO, STALE. Prior audit details below retained.
+
 # V1 release audit
 
 27/243 = 11.11% bounded local acceptance (previous22/243=9.05%);183 partial,2 missing,31 externally blocked. Production-build acceptance0/198. Manifest STALE; release NO-GO.

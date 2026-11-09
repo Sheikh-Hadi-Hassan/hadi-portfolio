@@ -1,3 +1,7 @@
+## Current lifecycle implementation checkpoint
+
+27/243 locally verified (11.11%),185 partial,0 missing,31 externally blocked. Two former Missing IDs now have working owner-only cancellation/rescheduling fixtures, but remain partial until actual deployment/permissions/notification acceptance. Same ScriptLock/Sheet/policy is enforced; a split admin/booking project cannot activate. Tests: booking-lifecycle.mjs and booking-lifecycle-browser.cjs. No public cancellation endpoint, deployment, email or paid provider was activated. Full build/198 production cases remain hero-blocked; manifest STALE, NO-GO. Details: docs/v1/BOOKING-LIFECYCLE-ACCEPTANCE.md. Older counts below are historical.
+
 # V1 current checkpoint
 
 27/243 = 11.11% bounded local acceptance (previous22/243=9.05%);183 partial,2 missing,31 externally blocked. Production-build acceptance0/198. Manifest STALE; release NO-GO.
