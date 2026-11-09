@@ -1,0 +1,8 @@
+<?php
+declare(strict_types=1);
+require __DIR__.'/../public/intellignce-support/request-budget.php';
+function budgetCheck(bool $ok):void{if(!$ok)throw new RuntimeException('Request budget contract failed');}
+$dir=sys_get_temp_dir().'/sera-budget-'.bin2hex(random_bytes(8));mkdir($dir,0700);$c=['request_hmac_key'=>str_repeat('x',32),'daily_limit'=>2];$_SERVER['REMOTE_ADDR']='192.0.2.1';
+try{budgetCheck(!claimBudget([],$dir));budgetCheck(!file_exists($dir.'/daily.json'));file_put_contents($dir.'/daily.json',json_encode(['day'=>gmdate('Y-m-d'),'total'=>0,'ips'=>[]]));chmod($dir.'/daily.json',0644);budgetCheck(claimBudget($c,$dir));budgetCheck(claimBudget($c,$dir));budgetCheck(!claimBudget($c,$dir));$bytes=file_get_contents($dir.'/daily.json');budgetCheck(!str_contains($bytes,'192.0.2.1')&&!str_contains($bytes,str_repeat('x',32)));budgetCheck((fileperms($dir.'/daily.json')&0077)===0);file_put_contents($dir.'/daily.json','"corrupt"');budgetCheck(!claimBudget($c,$dir));budgetCheck(file_get_contents($dir.'/daily.json')==='"corrupt"');unlink($dir.'/daily.json');file_put_contents($dir.'/victim','preserve');chmod($dir.'/victim',0600);link($dir.'/victim',$dir.'/daily.json');budgetCheck(!claimBudget($c,$dir));budgetCheck(file_get_contents($dir.'/victim')==='preserve');unlink($dir.'/daily.json');symlink($dir.'/victim',$dir.'/daily.json');budgetCheck(!claimBudget($c,$dir));budgetCheck(file_get_contents($dir.'/victim')==='preserve');}
+finally{foreach(glob($dir.'/*') as $f)unlink($f);rmdir($dir);}
+echo "PASS: bounded request budget persists before upstream, private HMAC-only counters, limits, missing secret/corruption/link rejection and no victim mutation. Local CLI only.\n";

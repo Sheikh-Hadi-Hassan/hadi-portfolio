@@ -9,19 +9,13 @@ if(($_SERVER['REQUEST_METHOD']??'')!=='POST')out(405,['ok'=>false,'code'=>'METHO
 if(($_SERVER['HTTP_ORIGIN']??'')!=='https://hadi.intellignce.net')out(403,['ok'=>false,'code'=>'ORIGIN']);
 if((int)($_SERVER['CONTENT_LENGTH']??0)>50000)out(413,['ok'=>false,'code'=>'BODY_TOO_LARGE']);
 if($configuration!=='READY')out(503,['ok'=>false,'fallback'=>true,'code'=>$configuration]);
-$p=$GLOBALS['sera_input']??json_decode(file_get_contents('php://input'),true);$question=$p['question']??'';
+if(isset($GLOBALS['sera_input']))$p=$GLOBALS['sera_input'];else{$raw=file_get_contents('php://input',false,null,0,50001);if(!is_string($raw)||strlen($raw)>50000)out(413,['ok'=>false,'code'=>'BODY_TOO_LARGE']);$p=json_decode($raw,true);}if(!is_array($p)||array_is_list($p))out(400,['ok'=>false,'code'=>'REQUEST_INVALID']);$question=$p['question']??'';
 if(($p['consent']??false)!==true||!is_string($question)||strlen(trim($question))<1||strlen($question)>6000)out(400,['ok'=>false]);
 // Do not send recognisable emails, phone numbers or URLs to the provider.
 $question=preg_replace('/[\w.+-]+@[\w.-]+\.[a-z]{2,}|(?:\+?\d[\s().-]*){7,}|https?:\/\/\S+/i','[private detail removed]',$question);
-$dir=sys_get_temp_dir().'/intellignce-support';if(!is_dir($dir)&&!mkdir($dir,0700,true)&&!is_dir($dir))out(503,['ok'=>false]);
-// Every upstream attempt, including a backup, consumes the SAME application budget.
-function claimBudget(array $c,string $dir):bool{
- $f=fopen($dir.'/daily.json','c+');if(!$f||!flock($f,LOCK_EX))return false;
- $usage=json_decode(stream_get_contents($f),true)?:[];$today=gmdate('Y-m-d');if(($usage['day']??'')!==$today)$usage=['day'=>$today,'total'=>0,'ips'=>[]];
- $ip=hash_hmac('sha256',$_SERVER['REMOTE_ADDR']??'unknown',$c['gemini_key']);$limit=max(1,min(100,(int)($c['daily_limit']??30)));
- if(($usage['total']??0)>=$limit||($usage['ips'][$ip]??0)>=min(20,$limit)){flock($f,LOCK_UN);fclose($f);return false;}
- $usage['total']++;$usage['ips'][$ip]=($usage['ips'][$ip]??0)+1;rewind($f);ftruncate($f,0);fwrite($f,json_encode($usage));flock($f,LOCK_UN);fclose($f);return true;
-}
+$dir=sys_get_temp_dir().'/intellignce-support';if(is_link($dir)||(!is_dir($dir)&&!mkdir($dir,0700,true)&&!is_dir($dir)))out(503,['ok'=>false]);
+// Legacy attempts share the application budget. Routed requests also use the private per-attempt quota ledger.
+require_once __DIR__.'/request-budget.php';
 $kb=json_decode(file_get_contents(__DIR__.'/knowledge.json'),true);
 $context=$p['context']??[];if(!is_array($context))$context=[];
 function redact(string $v):string{return preg_replace('/[\w.+-]+@[\w.-]+\.[a-z]{2,}|(?:\+?\d[\s().-]*){7,}|https?:\/\/\S+/i','[private detail removed]',$v);}
@@ -45,6 +39,7 @@ foreach($approved['records']??[] as $record){$data=$record['data'];if($record['k
 $runtimePolicy=seraRuntimePolicy($approved);if(strlen(json_encode($publicContext))>$runtimePolicy['contextChars'])out(413,['ok'=>false,'fallback'=>true,'code'=>'CONTEXT_LIMIT']);
 $guide=json_encode(seraRelevantFacts($registry,$question),JSON_UNESCAPED_UNICODE);
 if(strlen(json_encode([$publicContext,$question,$guide]))>$runtimePolicy['contextChars'])out(413,['ok'=>false,'fallback'=>true,'code'=>'CONTEXT_LIMIT']);
+if(seraRouterConfigured($c)){if(!claimBudget($c,$dir))out(429,['ok'=>false,'fallback'=>true,'code'=>'LOCAL_DAILY_LIMIT']);$reply=seraRoutedResponse($c['provider_runtime'],['question'=>$question,'answers'=>$publicContext['facts'],'facts'=>seraRelevantFacts($registry,$question)],$p['consent'],$allowedFields);out($reply['ok']?200:503,$reply);}
 $policy=file_get_contents(__DIR__.'/sales-policy.txt');
 $schema=['type'=>'OBJECT','properties'=>[
  'reply'=>['type'=>'STRING'],

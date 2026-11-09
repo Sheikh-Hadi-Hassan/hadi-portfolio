@@ -22,3 +22,13 @@ The Phase5 frozen package remains historical. Its old checksum must not be used 
 Still blocked: approved hero-lock and production build/198route browser acceptance; actual patched PHP8.4/web configuration identity; deployed Apps Script/ACL/trigger/schema mapping; verified key custody and live-provider account/privacy authorization; connected staging and live Calendar/Meet/mail/rollback acceptance. Source-level fix is not live production acceptance. No approved hero hash activated; no production/main/recovery mutation. Release NOT_READY/NO-GO; global manifest STALE.
 
 Follow-up: status now repairs a missing persisted event ID after successful authoritative readback, without reinsertion, and flushes durable event/state updates before confirmation. Added failing initial/final lead-persistence tests. A failed save cannot return confirmed success; later status reconciles the original event. All affected booking suites pass locally.
+
+## Stage2: free-only provider routing and public bridge
+
+Parent checkpoint:32a6e44adb71e5750a799e708717ca3c5268ec81. Added disabled-by-default OpenRouter protocol support: pinned :free IDs only, fixed endpoint, zero price limits, denied provider data collection, ZDR request, no upstream fallback and exact numeric zero returned cost. Account privacy settings and actual catalogue eligibility remain unverified. No candidate is enabled and no live quota consumed.
+
+Public ask now accepts only an actual trusted server-configured private-runtime object; invalid configured routing fails closed rather than entering legacy fallback. Relevant redacted structured context, consent and field allowlist remain enforced. Three bounded provider attempts preserve questionnaire state. Daily application/IP counters use a separate private HMAC key, locking, durable counters and link checks; legacy counter permissions tighten without resetting counts.
+
+PASS: npm test (20 JavaScript suites); PHP8.3.6 CLI tests sera-openrouter, sera-router-bridge, sera-request-budget, sera-provider-adapters, admin-provider-runtime, admin-public-config, sera-provider-transport; ask syntax. Component browser sera-runtime-browser.cjs passed with Chromium153/Playwright1.64.1/axe4.14.0. This is isolated fixture coverage, not production-build acceptance; 0/198 remains unchanged.
+
+Independent key custody, actual web cURL/PHP identity, live provider eligibility/privacy and activation authorization remain BLOCKED. Next: pin new booking component manifest, complete CRM local workflows and reconcile243 rows; do not reuse historical package checksums.

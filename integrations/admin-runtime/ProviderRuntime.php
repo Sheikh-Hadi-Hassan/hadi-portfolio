@@ -14,6 +14,6 @@ final class SeraPrivateProviderRuntime {
   if(!$consent)return ['ok'=>false,'code'=>'AI_CONSENT_REQUIRED','fallback'=>'questionnaire'];
   if(!$this->activationApproved||!$this->custodyVerified)return ['ok'=>false,'code'=>'PROVIDER_ACTIVATION_DISABLED','fallback'=>'questionnaire'];
   if($this->approved!==null&&!seraPublicConfigValid($this->approved))return ['ok'=>false,'code'=>'PUBLIC_CONFIG_INVALID','fallback'=>'questionnaire'];
-  try{$adapters=seraProviderAdapters($this->transport,fn($provider)=>$this->vault->resolve($provider),true);$adapters=seraBudgetedAdapters($adapters,$this->ledger,fn()=>time());$router=new SeraProviderRouter($this->registry,$adapters,2,seraRuntimePolicy($this->approved));return $router->respond(seraProviderSafeState($state),true);}catch(Throwable $e){return ['ok'=>false,'code'=>'PROVIDER_RUNTIME_UNAVAILABLE','fallback'=>'questionnaire'];}
+  try{$adapters=seraProviderAdapters($this->transport,fn($provider)=>$this->vault->resolve($provider),true);$adapters=seraBudgetedAdapters($adapters,$this->ledger,fn()=>time());$router=new SeraProviderRouter($this->registry,$adapters,3,seraRuntimePolicy($this->approved));return $router->respond(seraProviderSafeState($state),true);}catch(Throwable $e){return ['ok'=>false,'code'=>'PROVIDER_RUNTIME_UNAVAILABLE','fallback'=>'questionnaire'];}
  }
 }

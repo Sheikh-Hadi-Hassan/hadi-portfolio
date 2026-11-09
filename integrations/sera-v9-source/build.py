@@ -15,3 +15,5 @@ copyfile(r/'knowledge-registry.json',r.parents[1]/'public/intellignce-support/kn
 copyfile(r/'intellignce-support/retrieval.php',r.parents[1]/'public/intellignce-support/retrieval.php')
 
 copyfile(r/'intellignce-support/public-config.php',r.parents[1]/'public/intellignce-support/public-config.php')
+
+for name in ['router-bridge.php','request-budget.php','ai-config.php','ask.php']:copyfile(r/'intellignce-support'/name,r.parents[1]/'public/intellignce-support'/name)
