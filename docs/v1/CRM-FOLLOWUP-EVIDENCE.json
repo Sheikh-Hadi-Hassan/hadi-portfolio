@@ -1,0 +1,29 @@
+{
+  "sourceBase": "d9b859b4d70caa3bc7cefbd071d308a0748d7b4c",
+  "checks": [
+    {
+      "command": "node tests/crm-workspace.mjs",
+      "result": "PASS",
+      "scope": "Actual server validators with fake Sheet; impossible dates/non-string payloads rejected; valid leap days and overdue dates accepted"
+    },
+    {
+      "command": "node tests/crm-history-search.mjs",
+      "result": "PASS",
+      "scope": "Actual client filter helper, due/overdue/undated/invalid classifications; private shown-result export uses same filter"
+    },
+    {
+      "command": "node tests/admin-control-center.mjs",
+      "result": "PASS",
+      "scope": "Existing admin role/token/version/approval/failed-save contracts, fake Google"
+    },
+    {
+      "command": "node tests/crm-browser.cjs",
+      "result": "PASS",
+      "scope": "Actual CRM UI, fake RPC; new no-date filter plus existing edit/recovery/export;320/768/1440,axe0 tested states"
+    }
+  ],
+  "dateMeaning": "Date-only follow-ups displayed/filtered using browser local day, explicitly labelled. No cron/reminder dispatch or timezone conversion of stored dates.",
+  "productionAcceptance": false,
+  "customerIsolationClaimed": false,
+  "migrationPerformed": false
+}
