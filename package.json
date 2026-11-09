@@ -5,7 +5,7 @@
   "scripts": {
     "build": "python3 scripts/verify-hero-lock.py && python3 scripts/build.py && python3 scripts/optimize-images.py && python3 scripts/prepare-next.py && next build --webpack && python3 scripts/prune-export.py && python3 tests/export-hydration.py",
     "verify": "python3 scripts/verify-hero-lock.py",
-    "test": "node tests/reel-motion.cjs && node tests/booking-status.mjs && node tests/booking-client-contract.cjs && node tests/booking-recovery.mjs && node tests/sera-consent.cjs && node tests/booking-validation.mjs && node tests/notification-crash.mjs && node tests/sera-discovery.mjs && node tests/sera-errors.mjs && node tests/sera-knowledge.mjs && node tests/admin-control-center.mjs && node tests/admin-public-config.mjs && node tests/admin-cms.mjs && node tests/sera-config-voice.mjs && node tests/admin-cms-content.mjs && node tests/sera-runtime-controls.mjs && node tests/admin-cms-rich.mjs && node tests/admin-staging-security.mjs && node tests/booking-authority.mjs && node tests/sera-openrouter-policy.mjs && node tests/crm-workspace.mjs && node tests/crm-history-search.mjs",
+    "test": "node tests/reel-motion.cjs && node tests/booking-status.mjs && node tests/booking-client-contract.cjs && node tests/booking-recovery.mjs && node tests/sera-consent.cjs && node tests/booking-validation.mjs && node tests/notification-crash.mjs && node tests/sera-discovery.mjs && node tests/sera-errors.mjs && node tests/sera-knowledge.mjs && node tests/admin-control-center.mjs && node tests/admin-public-config.mjs && node tests/admin-cms.mjs && node tests/sera-config-voice.mjs && node tests/admin-cms-content.mjs && node tests/sera-runtime-controls.mjs && node tests/admin-cms-rich.mjs && node tests/admin-staging-security.mjs && node tests/booking-authority.mjs && node tests/sera-openrouter-policy.mjs && node tests/crm-workspace.mjs && node tests/crm-history-search.mjs && node tests/booking-lifecycle.mjs",
     "test:sera-browser": "node tests/sera-browser.cjs",
     "test:sera-guided-browser": "node tests/sera-guided-browser.cjs",
     "test:admin-browser": "node tests/admin-control-browser.cjs",
@@ -16,7 +16,8 @@
     "test:browser-v01": "node tests/browser-v01.cjs",
     "test:booking-release": "node tests/booking-authority.mjs && node tests/booking-status.mjs && node tests/booking-client-contract.cjs && node tests/booking-recovery.mjs && node tests/booking-validation.mjs && node tests/notification-crash.mjs && node tests/lead-api.mjs && node tests/booking-release-integration.mjs && python3 tests/booking-release-package.py",
     "test:crm-browser": "node tests/crm-browser.cjs",
-    "test:evidence": "python3 tests/requirements-matrix.py && python3 tests/v1-evidence.py"
+    "test:evidence": "python3 tests/requirements-matrix.py && python3 tests/v1-evidence.py",
+    "test:booking-lifecycle-browser": "node tests/booking-lifecycle-browser.cjs"
   },
   "dependencies": {
     "gsap": "3.15.0",

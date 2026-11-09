@@ -1,5 +1,5 @@
 // Add to the Apps Script project BOUND to your Leads Google Sheet. No API keys needed.
-function onOpen(){SpreadsheetApp.getUi().createMenu('Flow Leads').addItem('Business control center','openControlCenter').addItem('Open lead workspace','openLeadsDesk').addToUi()}
+function onOpen(){SpreadsheetApp.getUi().createMenu('Flow Leads').addItem('Business control center','openControlCenter').addItem('Open lead workspace','openLeadsDesk').addItem('Owner booking operations','openBookingOperations').addToUi()}
 function openLeadsDesk(){ccActor_();SpreadsheetApp.getUi().showModelessDialog(HtmlService.createHtmlOutputFromFile('LeadsDesk').setWidth(1100).setHeight(760),'Flow · Leads')}
 function deskSheet_(){ccActor_();const sh=SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Leads');if(!sh)throw Error('Leads tab not found.');return sh}
 function deskPlain_(v){return String(v==null?'':v).replace(/^'(?=[=+@\-\t\r])/,'')}

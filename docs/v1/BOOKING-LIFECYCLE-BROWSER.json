@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "scope": "Actual owner UI -> local RPC -> actual Apps Script owner guards/journal -> fake OAuth/Calendar -> in-memory original Leads; not live Google authentication",
+  "checks": [
+    "default disabled",
+    "preview no write",
+    "explicit confirmation",
+    "lost PATCH acknowledgement",
+    "read-only reconciliation",
+    "same original lead/event",
+    "reload journal history",
+    "keyboard order",
+    "zero uncaught errors",
+    "zero axe findings in tested states"
+  ],
+  "widths": [
+    {
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440
+    }
+  ],
+  "calendarPatchAttempts": 1,
+  "calendarInserts": 1,
+  "mailSends": 0,
+  "productionCases": 0
+}
