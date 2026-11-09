@@ -1,3 +1,9 @@
+# Current local browser gate, 10 November 2026
+
+Guarded build and post-QA receipt PASS; 198/198 planned local browser cases PASS, 198 axe scans with zero violations. See docs/qa/FULL-BROWSER-ACCEPTANCE-20261110.md. This supersedes older local hero/build/browser blockers below, while production/backend/integration/rollback acceptance remains unverified. Manifest STALE; release NO-GO. The atomic-obligation totals are not recalculated from browser cases.
+
+## Historical checkpoints retained below
+
 ## Current lifecycle implementation checkpoint
 
 27/243 locally verified (11.11%),185 partial,0 missing,31 externally blocked. Two former Missing IDs now have working owner-only cancellation/rescheduling fixtures, but remain partial until actual deployment/permissions/notification acceptance. Same ScriptLock/Sheet/policy is enforced; a split admin/booking project cannot activate. Tests: booking-lifecycle.mjs and booking-lifecycle-browser.cjs. No public cancellation endpoint, deployment, email or paid provider was activated. Full build/198 production cases remain hero-blocked; manifest STALE, NO-GO. Details: docs/v1/BOOKING-LIFECYCLE-ACCEPTANCE.md. Older counts below are historical.

@@ -48,7 +48,6 @@
     "Google deployment/source/execution identity/Calendar/Sheet ACLs and cleanup evidence unavailable",
     "Actual credential writes, encrypted-store deployment, Google-to-PHP authorization and live network transport remain disconnected",
     "Free-tier model/account/privacy/quota evidence and explicit live connectivity approval absent",
-    "Hero lock not approved: production build and 198 production route cases blocked",
     "Hosted CMS upload/publication and actual candidate deployment require verified runtime/auth and explicit approval",
     "Patched PHP8.4 target runtime acceptance missing; no switch or deployment authorized"
   ],
@@ -181,7 +180,21 @@
     "Owner-only cancellation/rescheduling local vertical slice with shared writer lock enforcement, ETag and durable read-only reconciliation; production disabled"
   ],
   "v1_tests": "docs/v1/REGRESSION-EVIDENCE.json; docs/v1/CRM-BROWSER-EVIDENCE.json",
-  "next_executable_task": "Owner hero decision gates full build/198 browser; continue remaining per-criterion reviews without activating integrations."
+  "next_executable_task": "Authenticated backend identity and separately authorized integration/rollback acceptance; other V1 feature obligations remain separate.",
+  "current_local_browser_qa": {
+    "source_commit": "916f34aaa3c1d9f39e2ab8fa9eacfd23333664f4",
+    "report": "docs/qa/FULL-BROWSER-ACCEPTANCE-20261110.md",
+    "scope": "actual_guarded_local_export_no_asset_overrides",
+    "executed": 198,
+    "passed": 198,
+    "failed": 0,
+    "axe_scans": 198,
+    "axe_violations": 0,
+    "receipt_after": "PASS",
+    "production_acceptance": false,
+    "manifest": "STALE",
+    "release": "NO-GO"
+  }
 }
 ```
 

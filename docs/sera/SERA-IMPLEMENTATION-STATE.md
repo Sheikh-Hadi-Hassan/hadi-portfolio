@@ -35,7 +35,7 @@
     "Actual web PHP8.4/cURL/TLS/sodium/config/permissions and deployed Google identities/ACLs unverified",
     "Host provider credential writes/activation, Google-to-PHP bridge and hosted CMS disconnected; patched8.4 compatibility blocked"
   ],
-  "next_executable_task": "Owner hero decision gates full build/198 browser; continue remaining per-criterion reviews without activating integrations.",
+  "next_executable_task": "Authenticated backend identity and separately authorized integration/rollback acceptance; other V1 feature obligations remain separate.",
   "current_commit_at_phase_entry": "a584d007ba96e72bedaef9a08308e95ce1e19c50",
   "files_changed": [
     "engine/runtime/build/booking/voice-actions",
@@ -90,7 +90,21 @@
     "Resumable bounded cross-history CRM search and shown-result formula-safe export, timeout/fault and responsive/axe tests",
     "Owner-only cancellation/rescheduling local vertical slice with shared writer lock enforcement, ETag and durable read-only reconciliation; production disabled"
   ],
-  "v1_tests": "docs/v1/REGRESSION-EVIDENCE.json; docs/v1/CRM-BROWSER-EVIDENCE.json"
+  "v1_tests": "docs/v1/REGRESSION-EVIDENCE.json; docs/v1/CRM-BROWSER-EVIDENCE.json",
+  "current_local_browser_qa": {
+    "source_commit": "916f34aaa3c1d9f39e2ab8fa9eacfd23333664f4",
+    "report": "docs/qa/FULL-BROWSER-ACCEPTANCE-20261110.md",
+    "scope": "actual_guarded_local_export_no_asset_overrides",
+    "executed": 198,
+    "passed": 198,
+    "failed": 0,
+    "axe_scans": 198,
+    "axe_violations": 0,
+    "receipt_after": "PASS",
+    "production_acceptance": false,
+    "manifest": "STALE",
+    "release": "NO-GO"
+  }
 }
 ```
 

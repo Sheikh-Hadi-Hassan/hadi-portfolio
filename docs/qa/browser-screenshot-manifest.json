@@ -1,512 +1,1208 @@
 [
   {
-    "path": "docs/browser-evidence/about-1024.png",
-    "bytes": 462220,
-    "sha256": "7e02f68fa4f48e20c0a422bc605987c9667a02647fa9c6099460ca7ebb3091e3"
-  },
-  {
-    "path": "docs/browser-evidence/about-1280.png",
-    "bytes": 542878,
-    "sha256": "5e251c6e6fb264611c54722e196d2b0c00fcf7180e5a1b7aea616ca57dd2ea47"
-  },
-  {
-    "path": "docs/browser-evidence/about-360.png",
-    "bytes": 274548,
-    "sha256": "2eb46950ac6b7c52c3e0fd83787332f3e7e6fa2835a92143cce9e9a96392c6a7"
-  },
-  {
-    "path": "docs/browser-evidence/about-375.png",
-    "bytes": 229120,
-    "sha256": "e65f6a83a73ea87955f40ad44ed75e2df54f70b9d8333011bf0fdd52c4a97d36"
-  },
-  {
-    "path": "docs/browser-evidence/about-390.png",
-    "bytes": 301031,
-    "sha256": "dd0dc3776f2dcc16729b2c954dc64b2d80e5435338e3a2b9a9a671301ed0537a"
-  },
-  {
-    "path": "docs/browser-evidence/about-430.png",
-    "bytes": 330248,
-    "sha256": "47155b2e6d23ae73c0b1c3c0f40d46bf0dfb3b33a8e22d044263017880f3765a"
-  },
-  {
-    "path": "docs/browser-evidence/about-768.png",
-    "bytes": 424147,
-    "sha256": "32bff1e16a397d1469e59df3eac760eaf6debd695fa893aad8a8ab80d87d147a"
-  },
-  {
-    "path": "docs/browser-evidence/accessorize-by-hl-1024.png",
-    "bytes": 1294218,
-    "sha256": "6601497b6630ef836efa303641891c397be03fd5d8e0eae30427e8dcc49fa90f"
-  },
-  {
-    "path": "docs/browser-evidence/accessorize-by-hl-1280.png",
-    "bytes": 927781,
-    "sha256": "db2d053ef363a76ecea97f560b141dc42ca5011d206a0dcf147485154a985c71"
-  },
-  {
-    "path": "docs/browser-evidence/accessorize-by-hl-320.png",
-    "bytes": 431598,
-    "sha256": "399374f716fe86088203266b9770ee82e3e47e4a905fe734a245e3b7eeebff90"
-  },
-  {
-    "path": "docs/browser-evidence/accessorize-by-hl-375.png",
-    "bytes": 509447,
-    "sha256": "2a2a1250c0e0375ca65a06aa8b5debe3f1a28c1e89a20921c2ba807a26303b7b"
-  },
-  {
-    "path": "docs/browser-evidence/accessorize-by-hl-430.png",
-    "bytes": 599349,
-    "sha256": "a8d95d6a8ce0ecf27bab20e0c2a4c40215567eff2dfa5026bdacbb3c571493de"
-  },
-  {
-    "path": "docs/browser-evidence/ai-animation-1024.png",
-    "bytes": 2049532,
-    "sha256": "c2837d29cb974f5feb9e311980d5c9b78472607cee1a5b363d4852d0cf97e4fd"
-  },
-  {
-    "path": "docs/browser-evidence/ai-animation-320.png",
-    "bytes": 798656,
-    "sha256": "69c69c6034d9bcbf3ca3ab0f240841df8018ffa5a634cc6c9a09c3e4977c9206"
-  },
-  {
-    "path": "docs/browser-evidence/ai-animation-375.png",
-    "bytes": 948724,
-    "sha256": "5eb36f5af5ba1e2ed808c620d01f4d947b549412dab3ed4eeb2fd7d2059d8213"
-  },
-  {
-    "path": "docs/browser-evidence/ai-animation-430.png",
-    "bytes": 1365331,
-    "sha256": "bf7db9502db4a7064394893817b7b77eb40cb164ffa7e9caabc4703f545dd913"
-  },
-  {
-    "path": "docs/browser-evidence/ai-animation-768.png",
-    "bytes": 1672637,
-    "sha256": "6753b0b1fa1f676d04aabee408e11769b6f01c2faf6e11266d58886d4f927512"
-  },
-  {
-    "path": "docs/browser-evidence/al-faraj-media-1024.png",
-    "bytes": 1416471,
-    "sha256": "eff581115ad45d15f0e665cbe5954584a23d4b28f9a884a3fe855bbf363f0762"
-  },
-  {
-    "path": "docs/browser-evidence/al-faraj-media-1280.png",
-    "bytes": 563803,
-    "sha256": "3c13f0ad8f653d0bbe7b7447620d7130c87c55519975140d61154df8256713a2"
-  },
-  {
-    "path": "docs/browser-evidence/al-faraj-media-1440.png",
-    "bytes": 705883,
-    "sha256": "8c3804c5dc5817c042f62c909f7169728e3ff9592dccabc900c1ec3ad41ab8c5"
-  },
-  {
-    "path": "docs/browser-evidence/al-faraj-media-375.png",
-    "bytes": 848428,
-    "sha256": "61151338442d0b1be620c7653de2203a1997d0ad3ada3aa2eba70dac80912b76"
-  },
-  {
-    "path": "docs/browser-evidence/al-faraj-media-390.png",
-    "bytes": 898115,
-    "sha256": "9810a7c8e42a7cded01e6c696ad5deb34ea81bde3029b3843105b92980dd503d"
-  },
-  {
-    "path": "docs/browser-evidence/al-faraj-media-430.png",
-    "bytes": 864316,
-    "sha256": "7673eecfd22ccf1b1e510995a07199c817f793278f89f862b274b308d63a8f9f"
-  },
-  {
-    "path": "docs/browser-evidence/archive-360.png",
-    "bytes": 1204225,
-    "sha256": "1b7f0a127559e539e182375de476dbb26c0675cff99e4cea09e65246f8c8a3da"
-  },
-  {
-    "path": "docs/browser-evidence/archive-430.png",
-    "bytes": 1473645,
-    "sha256": "f6792cc0b24b6aff0e059c9d4f8efed3a5c285fcbf26b65a1d1ee42dc65fc450"
-  },
-  {
-    "path": "docs/browser-evidence/archive-768.png",
-    "bytes": 1725569,
-    "sha256": "4966b62c8050ba671e787a7ab45b50836b42ec34ed5abe42c7dc8f9c3a63321a"
-  },
-  {
-    "path": "docs/browser-evidence/bits-hr-link-1280.png",
-    "bytes": 606716,
-    "sha256": "007aa4948372b812b70a880ebf3ccb16843914928d26422cc201e1fc00febf57"
-  },
-  {
-    "path": "docs/browser-evidence/bits-hr-link-360.png",
-    "bytes": 750186,
-    "sha256": "8973d4fa5bd681690f25ae932f9768b4b7967040dac94d83722e7ae25695b6dd"
-  },
-  {
-    "path": "docs/browser-evidence/bits-hr-link-768.png",
-    "bytes": 1208940,
-    "sha256": "6612d4ab6def37db563dfe8b8c9207c216cd024d7b23d28c1bde3054381eaeda"
-  },
-  {
-    "path": "docs/browser-evidence/bw-sports-1280.png",
-    "bytes": 1196269,
-    "sha256": "8c4a448ed334559127607342559793fbc6e51d843c7aa199945bdfe705052047"
-  },
-  {
-    "path": "docs/browser-evidence/bw-sports-1440.png",
-    "bytes": 1711206,
-    "sha256": "61b7d1f05a5edf598e99b010914984acba83a30a73841b79c98ecc47819e2933"
-  },
-  {
-    "path": "docs/browser-evidence/bw-sports-320.png",
-    "bytes": 811611,
-    "sha256": "e1a525ed438f4c85a4db347da2c438ab9cdd6de4f355863bd55a8160cd4c0f6c"
-  },
-  {
-    "path": "docs/browser-evidence/bw-sports-375.png",
-    "bytes": 1003765,
-    "sha256": "469d14ebdd99fcb20429edfd79158c45e3ff33f5fb7efc983cdd4d9200a8e26f"
-  },
-  {
-    "path": "docs/browser-evidence/bw-sports-768.png",
-    "bytes": 2420710,
-    "sha256": "a345266ac8fd487f8df5cacfd3135157c7c66a6df841eb694e68b9b3194ecb5c"
-  },
-  {
-    "path": "docs/browser-evidence/community-campaign-1280.png",
-    "bytes": 1171586,
-    "sha256": "de746307b90cc5f3f69bbacc16f5c93f2ef82b51f81613ee630b46081f6ef1fe"
-  },
-  {
-    "path": "docs/browser-evidence/community-campaign-1440.png",
-    "bytes": 1298164,
-    "sha256": "9f7caa1de2c621d807e804f091351056b6dc9650e9fbe2737471afbb1db20d2e"
-  },
-  {
-    "path": "docs/browser-evidence/community-campaign-360.png",
-    "bytes": 1276371,
-    "sha256": "0d9ddb68b46f017d38e784ec55c0e8fb1281495e758f9a789f0e68a203c1f696"
-  },
-  {
-    "path": "docs/browser-evidence/community-campaign-390.png",
-    "bytes": 1383467,
-    "sha256": "04d37a5a97a39f5a1a8d4b79d6001810c1f3059bcc29f4edec2de4c2c38513c4"
-  },
-  {
-    "path": "docs/browser-evidence/community-campaign-768.png",
-    "bytes": 1592458,
-    "sha256": "19726d92b5ca6f0ea42550e76105caf1043bc51eb9c7167029f73592e4299396"
-  },
-  {
-    "path": "docs/browser-evidence/contact-1024.png",
-    "bytes": 317855,
-    "sha256": "5edf22b2b69b3e1565033004a36e2df05f76c8e7a714d6bc7b278cf1c4fce818"
-  },
-  {
-    "path": "docs/browser-evidence/contact-1280.png",
-    "bytes": 222038,
-    "sha256": "d9c0a160e0dfef4eb4cd69955d310bdea2c3810b17e42dc4b550ab175a5d131f"
-  },
-  {
-    "path": "docs/browser-evidence/contact-320.png",
-    "bytes": 136869,
-    "sha256": "68f02c442b5fc090a58befb6f7883015cc089a4c20d82f763bfb2efa9d35a195"
-  },
-  {
-    "path": "docs/browser-evidence/contact-768.png",
-    "bytes": 281311,
-    "sha256": "be37179ed6a4831edcfa1bdaa420a410641f72c3d78fbc23be158e54df6a6afe"
-  },
-  {
-    "path": "docs/browser-evidence/edlytics-1280.png",
-    "bytes": 1102593,
-    "sha256": "0984d04b7a1a6a29b5e80baa6f3bf015ea9f4ef679e13b88df72227efb1abd31"
-  },
-  {
-    "path": "docs/browser-evidence/edlytics-1440.png",
-    "bytes": 1300918,
-    "sha256": "e44dd3c875269632c5aff1d871d17a9386aeb2e0c7d41645ffe61b64d7640d4e"
-  },
-  {
-    "path": "docs/browser-evidence/edlytics-320.png",
-    "bytes": 542346,
-    "sha256": "bb88559466f932d07ce0cc07c8136aada7a4e795198921ddb5f116913795f30d"
-  },
-  {
-    "path": "docs/browser-evidence/edlytics-360.png",
-    "bytes": 636371,
-    "sha256": "94f23c152445d51daead680afe8289605e2416bed47be7ddfa07082d7dd3f5d7"
-  },
-  {
-    "path": "docs/browser-evidence/edlytics-768.png",
-    "bytes": 843340,
-    "sha256": "2bbeeda43744aea868b1c6aa3df128e91d9874d38edf6cfd7ade1e1dec1fe7ce"
-  },
-  {
-    "path": "docs/browser-evidence/fakhr-e-qoum-1440.png",
-    "bytes": 1291903,
-    "sha256": "0caa507ab4126cf2a21ae0ee1b216724bb4f49269073c1cc3373f6bff1da1dda"
-  },
-  {
-    "path": "docs/browser-evidence/fakhr-e-qoum-375.png",
-    "bytes": 527810,
-    "sha256": "8d42f252c7666ffa62abc08a18fa5e407ca7e6297edd7c33e2987216f3fa380d"
-  },
-  {
-    "path": "docs/browser-evidence/fakhr-e-qoum-390.png",
-    "bytes": 671887,
-    "sha256": "9309b302fdda3e0b5ccfde12fd8c83e129e524417427723a67a4d56fd4292488"
-  },
-  {
-    "path": "docs/browser-evidence/fakhr-e-qoum-430.png",
-    "bytes": 733284,
-    "sha256": "15fa812b9c1bf2b7e54a5b5b9c6ba8086fb76a89583c774d539178a7648c1094"
-  },
-  {
-    "path": "docs/browser-evidence/fakhr-e-qoum-768.png",
-    "bytes": 787082,
-    "sha256": "1618a3465153b4a6c234a8ec9e5a240aa06ccd5609270aeace0d620d10913fda"
-  },
-  {
-    "path": "docs/browser-evidence/home-1280.png",
-    "bytes": 2436597,
-    "sha256": "1db751c461599d832256be95f56996fc87c923ab632a20957b613ac1065f62db"
-  },
-  {
-    "path": "docs/browser-evidence/home-1440.png",
-    "bytes": 2665266,
-    "sha256": "65cd6610e35e5009549d5ebf8e3665d1c223e85813f2f73c8e5a59d444eafb06"
-  },
-  {
-    "path": "docs/browser-evidence/home-375.png",
-    "bytes": 1030969,
-    "sha256": "98a8c8038f14f9419405dd3cde8e57e8ca43a5ce732a55a83b9eb8e7ce82e86f"
+    "path": "docs/browser-evidence/home-320.png",
+    "bytes": 958310,
+    "sha256": "cdf414c482dfd81781b8256cfb0d76a11f06a66737052912215e13936c2cceb5",
+    "scope": "matrix"
   },
   {
     "path": "docs/browser-evidence/home-390.png",
-    "bytes": 1047188,
-    "sha256": "a349e591135144a71bb51dab21bfaa64c2d3fb83409e9e52e1d6e6865d242d48"
+    "bytes": 1054477,
+    "sha256": "9910615d8f7fb0f31f349ddd42bab54fc3603c02fc52998c6a5c06e9518bebfa",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/home-430.png",
-    "bytes": 1118508,
-    "sha256": "4bc13673f26042f0f691b7268878c7a805c7fbd78aa3709cf8157d22b2702a2e"
+    "path": "docs/browser-evidence/home-1024.png",
+    "bytes": 2079874,
+    "sha256": "952f50112107fd7645686378f53437c8442540d39ca0318300697307f3385c5e",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/home-768.png",
-    "bytes": 1736930,
-    "sha256": "7638cd39138d04a181a6038c8068c8cc9e816f4b58ae4d15d35e2c98ac8aa4b7"
+    "path": "docs/browser-evidence/archive-320.png",
+    "bytes": 1068345,
+    "sha256": "6646bdc874706b69d046214f26a44d85642cd7cb8ccd1d78ff339812279d473a",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/intellignce-1280.png",
-    "bytes": 1016977,
-    "sha256": "7349a08a7bdc77fa464613f9b94d20727451f9438b6e0adfb7256ed6846be13a"
+    "path": "docs/browser-evidence/archive-390.png",
+    "bytes": 1432174,
+    "sha256": "a7c8a8d67977279063e072b910eeb818689d93db3be9559d2c9581e611737c66",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/intellignce-1440.png",
-    "bytes": 1819318,
-    "sha256": "227c763f1cd4a54ac5de60e4df3177fa50edf9bc0bf3bdf4ea5d98e6368a9c87"
+    "path": "docs/browser-evidence/archive-1024.png",
+    "bytes": 2577467,
+    "sha256": "684065cebc191e959acd4a6b354db37f7bbdb3dc5cd06251e4100e8db13b1433",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/intellignce-360.png",
-    "bytes": 748359,
-    "sha256": "aadd1a7baefca587a7c79a6f3c54d94a981907b83a02629fe406dde67fcf32e3"
+    "path": "docs/browser-evidence/mackenzie-cramblit-320.png",
+    "bytes": 574514,
+    "sha256": "83167e2de8ffe9cc8215d1ad3b206bea54ce29020abf2dea550cf2855ccce215",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/intellignce-430.png",
-    "bytes": 877288,
-    "sha256": "29a37aa5f2f964156d0c667b0b9746cca6bf1c29dd89d6d73654cdb5fdfdb84d"
+    "path": "docs/browser-evidence/mackenzie-cramblit-390.png",
+    "bytes": 731451,
+    "sha256": "64baa3688821d9258d3c90acc8a16d8c17902cf813429c233c2ee31ea726384d",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/jules-capital-partners-1024.png",
-    "bytes": 1268820,
-    "sha256": "cde2c5040fe5ebf1ac33cc8ebb310ca4bcc52fc164862db959dd54fc06872634"
+    "path": "docs/browser-evidence/mackenzie-cramblit-1024.png",
+    "bytes": 1567846,
+    "sha256": "c9529cdc5be38134c8c1fc41382c79f172b956a83e5150a4b97b76e10be07aa3",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/jules-capital-partners-1440.png",
-    "bytes": 1451390,
-    "sha256": "72bfe3d00f8519fe594535951a58416b6b80ea3be7861ed0e12cd96e06ee39d4"
-  },
-  {
-    "path": "docs/browser-evidence/jules-capital-partners-375.png",
-    "bytes": 634493,
-    "sha256": "0156ae6934bbf0a7056a137d3f851b03963ea774f7229ad4b8f00e2148cbd9f6"
-  },
-  {
-    "path": "docs/browser-evidence/jules-capital-partners-768.png",
-    "bytes": 943892,
-    "sha256": "c05d36c98c1ba2fced243e70bda1c077c8889bb9a6ab72399109e461ee6ddabc"
-  },
-  {
-    "path": "docs/browser-evidence/linkedin-personal-brand-320.png",
-    "bytes": 649308,
-    "sha256": "6084836b9183373d2963dd0d9956d2535658ffbafc73d945f657b0c2cdc12bcc"
-  },
-  {
-    "path": "docs/browser-evidence/linkedin-personal-brand-360.png",
-    "bytes": 569969,
-    "sha256": "262cf494579fd3df30cd7fb599682442ac1a60a9836b813121e8f6b7b744a550"
-  },
-  {
-    "path": "docs/browser-evidence/linkedin-personal-brand-375.png",
-    "bytes": 785116,
-    "sha256": "df114682b879b622880f8a4e8a847ef129e1e05723646371da761c093cb3ced9"
-  },
-  {
-    "path": "docs/browser-evidence/linkedin-personal-brand-390.png",
-    "bytes": 831478,
-    "sha256": "929c04d3531ab179e32bc7d6f543689c962ee9f7324765463f5547b9339bc7a3"
-  },
-  {
-    "path": "docs/browser-evidence/linkedin-personal-brand-430.png",
-    "bytes": 930067,
-    "sha256": "c1f5bff3c20573f2e5722aa5e9df54cfea111874c617ed8e17e994d39549cd85"
-  },
-  {
-    "path": "docs/browser-evidence/mackenzie-cramblit-1280.png",
-    "bytes": 1726068,
-    "sha256": "5fd3495b4d137d917f5b94cff01bf23819c110c6d88f0ff1ded121a6116c3a62"
-  },
-  {
-    "path": "docs/browser-evidence/mackenzie-cramblit-375.png",
-    "bytes": 684871,
-    "sha256": "69f868dcbc48f50c6b2b9277bedd9d160d45505d5a7e97a97911b48dadad9d78"
-  },
-  {
-    "path": "docs/browser-evidence/mackenzie-cramblit-430.png",
-    "bytes": 819915,
-    "sha256": "ba84155a0d3485281a2e1bfb059049be0697b82a13ab6a1699359f04bcf8e324"
-  },
-  {
-    "path": "docs/browser-evidence/mackenzie-cramblit-768.png",
-    "bytes": 1264970,
-    "sha256": "e9467de98e8f187be593aeb6abd133764549ec0a4cb2f5dd7f434482b07f44fc"
-  },
-  {
-    "path": "docs/browser-evidence/morganics-1024.png",
-    "bytes": 2923547,
-    "sha256": "c844a76c69419eac74d53fb38a20cb75c904ccbcc41cb9a56acf9cd92d9f5327"
+    "path": "docs/browser-evidence/morganics-320.png",
+    "bytes": 967861,
+    "sha256": "4accb52e9b75215064e7db0aec9fb81acea927bb417bd1913898c2fed238be2d",
+    "scope": "matrix"
   },
   {
     "path": "docs/browser-evidence/morganics-390.png",
-    "bytes": 1263857,
-    "sha256": "26d5354fbca4c71f77523adcfbf54e244f72cad078966a2814f964c8d2fac627"
+    "bytes": 1267913,
+    "sha256": "98ca0eeec1ef0c36dc7b0c5ab223900a6377823aefdcca0ab00f117e901286b5",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/nicemd-ai-1280.png",
-    "bytes": 891119,
-    "sha256": "e236f50fe44db5f09ce3c6283dc743bab1b1fb8a1391376029f3f73a535afb37"
+    "path": "docs/browser-evidence/morganics-1024.png",
+    "bytes": 2919068,
+    "sha256": "4d94cf500e2b88e54d07cb7b6f7b63cf02653af2d45e21c7baed29e5dea162d3",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/nicemd-ai-360.png",
-    "bytes": 528077,
-    "sha256": "cc335f2ea5599234984094424c42aa492f09f50d5c85acac0f6ae6b5b70ae355"
+    "path": "docs/browser-evidence/linkedin-personal-brand-320.png",
+    "bytes": 653712,
+    "sha256": "bb1658ff1dc59e363ee855a1a06dadc311747969987ba00915405e9014b98ca6",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/linkedin-personal-brand-390.png",
+    "bytes": 836002,
+    "sha256": "d3920a9ab0e730c1bfd7721808e83f994a3aca6883ca8043c58c2e05c31f3823",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/linkedin-personal-brand-1024.png",
+    "bytes": 1243074,
+    "sha256": "08c1cb581ab0fd543013b91783f9423d4fd9fbf8ed5e7ec5935ff3c81accba24",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/accessorize-by-hl-320.png",
+    "bytes": 448427,
+    "sha256": "8da97d7188d9f5a8292194f55f08a3beafb89793d8a0238defa52cd7a0ef565d",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/accessorize-by-hl-390.png",
+    "bytes": 541959,
+    "sha256": "8abf4cca8ef2d15f6a3ea5296db1b21211d139c25a5c2674df47cb56e5ab2465",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/accessorize-by-hl-1024.png",
+    "bytes": 1320763,
+    "sha256": "591e04b207459512066bf401938b325f93f36dae146d1cc9d7e80faf4b18ba96",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/jules-capital-partners-320.png",
+    "bytes": 562309,
+    "sha256": "fde97ab1484b0fe33cdbf6562d2ea0e182f2816d2c813d117621bdb2a65d9078",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/jules-capital-partners-390.png",
+    "bytes": 682314,
+    "sha256": "95ff47ef63f34160630808c5bef6bbff8a14620829808bd95193db1cf717493b",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/jules-capital-partners-1024.png",
+    "bytes": 1273080,
+    "sha256": "3998d3635c73f6ebb809ae2f0eda3948e1d32eeabd9c25d3affef31d26d6521a",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/intellignce-320.png",
+    "bytes": 604581,
+    "sha256": "9bee094c61ebf90dc7ae50fd901411c7879d98eaf48be7406e3285a8c521bf05",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/intellignce-390.png",
+    "bytes": 676106,
+    "sha256": "afa228f7f57219f009171d40a466766a02da73741187b90331f5ebc6762e7ef9",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/intellignce-1024.png",
+    "bytes": 1284106,
+    "sha256": "c72b3cc7d8ac9a21efd6dfa56167c72055162c03abaea78c0c4bd6eae276e3f6",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/fakhr-e-qoum-320.png",
+    "bytes": 330406,
+    "sha256": "a9108d8863d1940b7acb17673cdb8912a24d21305f15c48f5bcf4a34b017750b",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/fakhr-e-qoum-390.png",
+    "bytes": 676507,
+    "sha256": "15eca1c90b948d37112938467ebe7ad3879bef5b8b5e4ec22816f4e8f1c154fd",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/fakhr-e-qoum-1024.png",
+    "bytes": 1001220,
+    "sha256": "1376689bc469896313171fc25cd621f293754c5f4f68a1283006b5b3e92a1cea",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/edlytics-320.png",
+    "bytes": 546359,
+    "sha256": "659074a82c73b00950bd1711bc8f293d2b547e485bf21c7087de4ba9a2ab986b",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/edlytics-390.png",
+    "bytes": 712122,
+    "sha256": "b47d5d107e587eae37b4047ded8360728625a41be3f1495496a36a915706d463",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/edlytics-1024.png",
+    "bytes": 1144873,
+    "sha256": "077be95b0a2621f5bf47120a6dca55ec58555e95b083f25eb287fd802a94a0f0",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/community-campaign-320.png",
+    "bytes": 1117766,
+    "sha256": "cb5161a9c54cfe8047f6568df070eebde51bc62d8a7c8ac32b1ddf9f173f3af9",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/community-campaign-390.png",
+    "bytes": 1388944,
+    "sha256": "3ab7cb383d8aa20e4c51aac0ea2ce44a416898a45f921b87ff2495530eed3c4a",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/community-campaign-1024.png",
+    "bytes": 2068295,
+    "sha256": "1c46a4854c0d324b6e0dd0846b51456683c0e8261121ab599926a21bd2096a18",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bits-hr-link-320.png",
+    "bytes": 639542,
+    "sha256": "41caec04f6c9079e160b721d09d3f142d02735c87bbf71c867c9c306ab9ce7c4",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bits-hr-link-390.png",
+    "bytes": 835909,
+    "sha256": "caf7941e06ad2fd163fc7bd44b1586e0c8d3b5d6bab000c340d26596b8f7d750",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bits-hr-link-1024.png",
+    "bytes": 1770008,
+    "sha256": "6ca2b449373b80334593f3f41a0412c7e19c5fa073c5ec193cfe21eebe788c95",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/al-faraj-media-320.png",
+    "bytes": 601454,
+    "sha256": "df66f969f11d5a82005e0d8a8030fda109afe1edbc3f653ca2472dbb1383cbaf",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/al-faraj-media-390.png",
+    "bytes": 903962,
+    "sha256": "352874cdcf076409278335b836791a540e9357e19e89c9b0bc960a17fffc2fe8",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/al-faraj-media-1024.png",
+    "bytes": 1423542,
+    "sha256": "bb5a633369a4a2f0ad156bfbca6efe48d1b921e8566f0d09791894d881043623",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bw-sports-320.png",
+    "bytes": 814692,
+    "sha256": "15de77e0d2fb41da3c9df02cab3776a8a67c18a6c9fbb502ba13dd3654a74769",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bw-sports-390.png",
+    "bytes": 1061093,
+    "sha256": "b2114031f8ff9c526322dcc045960ff5b1b67e9807f205e8cde99d6940f2cd7e",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bw-sports-1024.png",
+    "bytes": 3108007,
+    "sha256": "8d63e3c2e537b029f583e32145c878eecadc4eafa48aac2af5ff2bb243e7e006",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/uiux-web-saas-320.png",
+    "bytes": 521764,
+    "sha256": "6c479a351d9f59ab3859a81c3401e5d6e4edd5c4b1710db47c7686a2703340a4",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/uiux-web-saas-390.png",
+    "bytes": 634988,
+    "sha256": "425c036753e1f76e04f87987d82d8df68bfb6eac4f89b038f3936c045ea1d57c",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/uiux-web-saas-1024.png",
+    "bytes": 1448551,
+    "sha256": "515893afaf3f4feaf932c97720cee8d8c639c5f275a999ba60e549effb967eb1",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/nicemd-ai-320.png",
+    "bytes": 481925,
+    "sha256": "5a5da8e9f8592a42fdcb3ff41cde5b53bbf3c60db4266a3a3ac0a64002298666",
+    "scope": "matrix"
   },
   {
     "path": "docs/browser-evidence/nicemd-ai-390.png",
-    "bytes": 575299,
-    "sha256": "7993e8ba7ecf33aa45809547589df132278632f620df8cbbe4a8b48d1bb8e553"
+    "bytes": 580879,
+    "sha256": "3fcca3654a0eb02f972a10e53e77852a9ccd2f1334b3a4e3e2e4068ad0644c53",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/nicemd-ai-768.png",
-    "bytes": 693202,
-    "sha256": "de8f1d7b1dc9e1992ff8961276ef78ed0da1493b37fe12eaecd7dcdc95d079ed"
+    "path": "docs/browser-evidence/nicemd-ai-1024.png",
+    "bytes": 937291,
+    "sha256": "611784ef5722270ab404026b2b9c74c04d6edcf5e5437209cb2a25d1c74a0bdf",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/privacy-1440.png",
-    "bytes": 495238,
-    "sha256": "6f7173a6ed9d9d4b210d60aebacbbe59a8c9de0e3bafd2938b89fe6d41e9f8d6"
+    "path": "docs/browser-evidence/ai-animation-320.png",
+    "bytes": 947899,
+    "sha256": "3d11722c4ae47d64fa2243710d60147d5c3d845bdd1a68aa5fc68516154b82d7",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/ai-animation-390.png",
+    "bytes": 1206644,
+    "sha256": "8c873e23469376e47408b77a3dab8c943782ed830fd02d073d1781da293e8b6d",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/ai-animation-1024.png",
+    "bytes": 2055036,
+    "sha256": "9226006a431cbc324e281220670244c746c9dac6633ec5a979d8843ee3fbd3fd",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/about-320.png",
+    "bytes": 272350,
+    "sha256": "c24da84f4462bf3abe8a53f41e8f2c654525fd020146943c8aab8d8b84c31fc2",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/about-390.png",
+    "bytes": 305620,
+    "sha256": "272761ae9cd373e851eb02d90b664d7945b841c8424920e364a65f3992616d4d",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/about-1024.png",
+    "bytes": 466640,
+    "sha256": "7d754c4f842b69608b42e18bc0dd5e515df777e40e0a8bca659d062e10d48119",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/resume-320.png",
+    "bytes": 137097,
+    "sha256": "7d35706fec4ac89476901ebca41db25e1f9446b5753a4afa355231e8c2036f72",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/resume-390.png",
+    "bytes": 161356,
+    "sha256": "7da4dddf2247df7515e355f24027fb1e91dc1fd414ea695375f16a8a4244e5b6",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/resume-1024.png",
+    "bytes": 317375,
+    "sha256": "e319e85c26e1497d35c61bb09b8f920540426f8b11f9e214b9eb7781c7eef3eb",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/contact-320.png",
+    "bytes": 140040,
+    "sha256": "0aa1733f6e7aacf481569d85098d1aba7d5be1b7d6afb09ec7d9bee08431f9ff",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/contact-390.png",
+    "bytes": 166086,
+    "sha256": "265cc8c96d12e6c8bf94273a6c0123d0a334636209556c24f2523ec1091e7737",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/contact-1024.png",
+    "bytes": 321984,
+    "sha256": "514a533bce9547a173c8239511c5f26841077e15e83c2ea819e0aa7e9d937183",
+    "scope": "matrix"
   },
   {
     "path": "docs/browser-evidence/privacy-320.png",
     "bytes": 171116,
-    "sha256": "3da3c5dab7033dd7f5c1e514d80c806dc64583f8d5d5f3cb105578be608c4a3e"
+    "sha256": "3da3c5dab7033dd7f5c1e514d80c806dc64583f8d5d5f3cb105578be608c4a3e",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/privacy-375.png",
-    "bytes": 128333,
-    "sha256": "85b7faa2b69ac65591d0251af22122cf3dcba4d9550c30be2a5c95b11fe7bbd4"
+    "path": "docs/browser-evidence/privacy-390.png",
+    "bytes": 201420,
+    "sha256": "75a79591b3f8719709959371fcf365be4a584ba3f0c68ad7e69cbfd177f0f9ec",
+    "scope": "matrix"
   },
   {
-    "path": "docs/browser-evidence/privacy-430.png",
-    "bytes": 144224,
-    "sha256": "715fe9661e29f6ebbcef8ea5f00defe26e398db6ab17d75a79455ce778d6ae0b"
-  },
-  {
-    "path": "docs/browser-evidence/resume-1440.png",
-    "bytes": 233091,
-    "sha256": "29c0756e65a3191824da9f45730e9eb535cd0acb8a6c5ac907ce335248241361"
-  },
-  {
-    "path": "docs/browser-evidence/resume-430.png",
-    "bytes": 82761,
-    "sha256": "200cada11147e584a4ab4a96aa0f6cfd0521653dc4bb020043b0dfb03d8add20"
-  },
-  {
-    "path": "docs/browser-evidence/resume-768.png",
-    "bytes": 119001,
-    "sha256": "2a56ff8016907952e80718e5f97b698a87fe06c6ae6c0ffb9a80ef1cfbf91978"
-  },
-  {
-    "path": "docs/browser-evidence/uiux-web-saas-1280.png",
-    "bytes": 1324919,
-    "sha256": "c416800d70258c9820baa5fa36dd1891a691f3f0a5675405faf9bfe49ca34ab8"
-  },
-  {
-    "path": "docs/browser-evidence/uiux-web-saas-1440.png",
-    "bytes": 1181752,
-    "sha256": "68e43e1c8e9bc94e961d6adcd3fbe3465a7b72d7b139f4b266b4da50c67c8894"
-  },
-  {
-    "path": "docs/browser-evidence/uiux-web-saas-360.png",
-    "bytes": 584132,
-    "sha256": "25cf51ec02332edf1b6ec6e2eaa2a11d68f1c23b912a15627efcb238231710c6"
-  },
-  {
-    "path": "docs/browser-evidence/uiux-web-saas-375.png",
-    "bytes": 598457,
-    "sha256": "c1be12b3ec256ebf5b4719d2a3756cc3b284ec3f44f90c1f4addf577195d622a"
-  },
-  {
-    "path": "docs/browser-evidence/uiux-web-saas-390.png",
-    "bytes": 629738,
-    "sha256": "75cfe89ebfc55e16e7e79deeca33f02d16038bdb08e01257bdee629d908d4cc5"
-  },
-  {
-    "path": "docs/browser-evidence/uiux-web-saas-768.png",
-    "bytes": 1094666,
-    "sha256": "27493e79f1e73ac94b146657dda12b40155950345f3e6298eb51532c3234a7f4"
-  },
-  {
-    "path": "docs/browser-evidence/work-1024.png",
-    "bytes": 181780,
-    "sha256": "e87a58d081dad1e6de0c9a932d04d8f1cf48208396ac5960e0cb281c856995fe"
-  },
-  {
-    "path": "docs/browser-evidence/work-1280.png",
-    "bytes": 420210,
-    "sha256": "7b65cbb2195b023281f99b3a6b1ea3f8fc23310e7c7f678a631c944b44797fe7"
+    "path": "docs/browser-evidence/privacy-1024.png",
+    "bytes": 356796,
+    "sha256": "7baf39687cb6bebb7168927020421e9a0c8fddc7f1de2cd4593bacfcf8537aff",
+    "scope": "matrix"
   },
   {
     "path": "docs/browser-evidence/work-320.png",
-    "bytes": 139262,
-    "sha256": "54363013c6c1d64e49ac9905f3238770b41d89bd9049b631dcdc352217fe1370"
-  },
-  {
-    "path": "docs/browser-evidence/work-375.png",
-    "bytes": 157124,
-    "sha256": "52df33d849e087e574987e625b51f014af1468f84947896a1ca98213f6802d3c"
+    "bytes": 141741,
+    "sha256": "cd35dea685dd99c7ba64de59e2f48deb818ad883bd5d7301bd913c5fb35cc7d7",
+    "scope": "matrix"
   },
   {
     "path": "docs/browser-evidence/work-390.png",
-    "bytes": 96026,
-    "sha256": "c6979aa7383814dd114cac1758ba7bc4794dd0ae9fb0019c0f1a94282820a29b"
+    "bytes": 174543,
+    "sha256": "6f32662b905c543ea3c649f767e7be1fd521410a21d585455343910c51bf5f8f",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/work-1024.png",
+    "bytes": 339474,
+    "sha256": "5ca823b590dd5651a54c7099154cab0cbd26dbb1e7508bb9615d9a199d76e8d5",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/home-360.png",
+    "bytes": 1016530,
+    "sha256": "9a10f778befc33dd0a86cf2b1697faf3b4812998e6a2eafbe08831a732333566",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/home-430.png",
+    "bytes": 1126424,
+    "sha256": "92fbc5ef5e4be13548b7aeef7ddef39a17cba3f69352c7303082e062822676dc",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/home-1280.png",
+    "bytes": 2438645,
+    "sha256": "f38ffb188020e422b94ea71ce85d408a09e6151d8d5687f22a797a33e45bd3e8",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/archive-360.png",
+    "bytes": 1207535,
+    "sha256": "1594504e1c59a59f30dd76dfa6d5abf4133fd860dc94fcd491c4ad72cee3d955",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/archive-430.png",
+    "bytes": 1395190,
+    "sha256": "93b7f1022f588070659883a4c5c78c402b88aa032b97e07c2efa5482255ca84a",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/archive-1280.png",
+    "bytes": 1233131,
+    "sha256": "eefe6004fdb9d8334f9135bb7c6514dce100cebace00b58f5720e88c3dfbfea9",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/mackenzie-cramblit-360.png",
+    "bytes": 660012,
+    "sha256": "2d8f0cca37cbe27f81967eeca31735e7385e6635bf4b9ccf5945fd5d47b66f09",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/mackenzie-cramblit-430.png",
+    "bytes": 825406,
+    "sha256": "0562ccecb0a5379e2fa9ee17df1da8640a36ad397e3fff13c17fc202693f2659",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/mackenzie-cramblit-1280.png",
+    "bytes": 1250124,
+    "sha256": "1f2590fbe4fb63388064307734cb3e78e9f812fb05c142f17b1eafabf778b6b2",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/morganics-360.png",
+    "bytes": 1123727,
+    "sha256": "8de9cacc3c793a1b7517b3619fe6295daa47de063eb5c9a1d488105b7d791812",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/morganics-430.png",
+    "bytes": 1449835,
+    "sha256": "dd113080b4aa19df8f2cb80816f05f2b9e4dee4dfbae76631952c8c7e515ee3c",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/morganics-1280.png",
+    "bytes": 2195142,
+    "sha256": "347e3a6e0f61d963a1f48bb1c3619c31ccf1707e0f4f3108bab36418de7d679c",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/linkedin-personal-brand-360.png",
+    "bytes": 573687,
+    "sha256": "e50ed8e95a14446903ceb065a646915afb95ad89e37da92188e349f3df54dc54",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/linkedin-personal-brand-430.png",
+    "bytes": 934182,
+    "sha256": "63c577812772b86e2be1f171dd45232a0af8159f0cd74b5c5698b5d9ef56b186",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/linkedin-personal-brand-1280.png",
+    "bytes": 1023073,
+    "sha256": "e52b3eb36f5dd0732c4a7f6dc3d58a9b10b261ac8a29884ee4ef29d0b1ab89e7",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/accessorize-by-hl-360.png",
+    "bytes": 494233,
+    "sha256": "7a6f4781262a305fc746127fb0f39bb3cf7936ff2923e8f6b1d4a7c353d5a58d",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/accessorize-by-hl-430.png",
+    "bytes": 605439,
+    "sha256": "2f4c75427a6e2a9940589bb8f6e4af20cf4102bff05a9efc5f6cb65142180b9d",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/accessorize-by-hl-1280.png",
+    "bytes": 1027637,
+    "sha256": "8d22324fff8a8dba4f3e5ff044b4f7432f2da18c2cf855a63ff64a7f54b34735",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/jules-capital-partners-360.png",
+    "bytes": 653091,
+    "sha256": "93837666241718658a27937cc4c2fbb50b62d36daa730032c53b35810cfdc48f",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/jules-capital-partners-430.png",
+    "bytes": 772385,
+    "sha256": "8f7e267aadc3ee624927b910f4e5e43123aee38d5c4a33a25a83aa2e3037c494",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/jules-capital-partners-1280.png",
+    "bytes": 1253096,
+    "sha256": "0628cb5a5bccf22919ba0c8c8a3975e5894fa39a3da7dd824b74cfbee6a8daff",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/intellignce-360.png",
+    "bytes": 753142,
+    "sha256": "45717ed93d08a22175dccbc1119d01b6f272d1f3124bcaa988c875985a6b160b",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/intellignce-430.png",
+    "bytes": 928216,
+    "sha256": "24151875770a67fc64fd297305ea7ebae7bbee5d935c27c27fe39cb444cc2132",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/intellignce-1280.png",
+    "bytes": 1021928,
+    "sha256": "afe2470f773db09d004934469a9dd0b67c60f684c4b7ad13a19288d99d431db7",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/fakhr-e-qoum-360.png",
+    "bytes": 560050,
+    "sha256": "f4d2023a228d35f21a16e39ab544272d76292861140bec29cb0acf1b405c9e7a",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/fakhr-e-qoum-430.png",
+    "bytes": 738443,
+    "sha256": "c2787ea60e1691e38aad65809d07aaf70e0c701fe26a678c1942098a3e03feca",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/fakhr-e-qoum-1280.png",
+    "bytes": 1122845,
+    "sha256": "8f5e32c5153064ea88f0421a91a6b842db419a55a6e949f93fd1cf85237b0dea",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/edlytics-360.png",
+    "bytes": 641778,
+    "sha256": "eb8719176fbc2e8485bef399a1f1be8e0833565b60e40289347e37067aaa94cd",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/edlytics-430.png",
+    "bytes": 808042,
+    "sha256": "7db79b7bd097261e5309abafa3932ce3f1d2430b2f09c297f794913cc3f9875e",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/edlytics-1280.png",
+    "bytes": 1287890,
+    "sha256": "5a473b1072a91be6306c922b40c4096741994c002a8b3731ddcc32a33ef89f68",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/community-campaign-360.png",
+    "bytes": 1281376,
+    "sha256": "1e5d6cc22b0809075ecf03060aabfbb2f98150c1ff165645440e00d82fcedec7",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/community-campaign-430.png",
+    "bytes": 1532584,
+    "sha256": "95bf9fffc68d21b7c4067c9b99fbb187596395cdb62028619cc4d0f41eb6eda5",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/community-campaign-1280.png",
+    "bytes": 1175753,
+    "sha256": "d05186b456d38a61c1bd54680e4b1b8ceca6e14403bc665aeb9624ad3dc6b41a",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bits-hr-link-360.png",
+    "bytes": 755227,
+    "sha256": "7c9a52acb9e4577046d8d49ca9824aa8aa842a3704ec7e7387cf1344edbf3129",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bits-hr-link-430.png",
+    "bytes": 931666,
+    "sha256": "27780ddd6db8b762864f6eb9f4309f77229fcfaca502650bc2e75d3b90ef3b10",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bits-hr-link-1280.png",
+    "bytes": 613412,
+    "sha256": "e259f4c78d7d41bb54b55dc814dfe246971eb9abda83e68c4a9af11191b1882d",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/al-faraj-media-360.png",
+    "bytes": 816239,
+    "sha256": "181a1f9a0ec88cb2db087bd3b794c5d7a7eec503f4750d7cb2542caa0f083b02",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/al-faraj-media-430.png",
+    "bytes": 869717,
+    "sha256": "9070cf33a4a476f72be43b55816924e7a8dc3657ca557adc2816edf60ad985ef",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/al-faraj-media-1280.png",
+    "bytes": 1403406,
+    "sha256": "f3c761f4a564bca2c8188c01c0fb0d65fa866b702f513de29edee1c280d289bf",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bw-sports-360.png",
+    "bytes": 966831,
+    "sha256": "3328b23416004a6ccf4e366b342234f0333949f382a4ec357288436874ecee3d",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bw-sports-430.png",
+    "bytes": 1192063,
+    "sha256": "40d1ffb1998246b54ae7ab3cf45a7bcca46e9bd47c7c0fa92e0238f83014966f",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bw-sports-1280.png",
+    "bytes": 1524759,
+    "sha256": "b73e5fb9a2a2a95a3942560498d46190553c1de4d2d6838ff7a8f63532c7b67f",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/uiux-web-saas-360.png",
+    "bytes": 589087,
+    "sha256": "7ac4e1d057b5cbe1ce9e7f5bea4c130adac49a2efb3dd809ed75e325bc70218b",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/uiux-web-saas-430.png",
+    "bytes": 772872,
+    "sha256": "8ae28e09aa61341d2947ca58572d0ac014a3ac09e0685bdda1fa6652c5a97c0a",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/uiux-web-saas-1280.png",
+    "bytes": 1171626,
+    "sha256": "540e9996e6fd24281806e0c13728d85139644b74c3da1f5cc4e24f4576f03cc8",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/nicemd-ai-360.png",
+    "bytes": 548386,
+    "sha256": "61de49d59d79307d1128d98e98b5e841a87ad8b043d84f71f1e7d327e0e95d09",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/nicemd-ai-430.png",
+    "bytes": 675800,
+    "sha256": "733ce1625e7feadff59f37594a4c5cc3a630a4a5706427428e055dc1a429c728",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/nicemd-ai-1280.png",
+    "bytes": 894882,
+    "sha256": "2ca18160bdd810cd09797350d2b3a2e8191895d60138e102f3ab4a5894221b2a",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/ai-animation-360.png",
+    "bytes": 1096235,
+    "sha256": "62abb10ef3d978325f3e01822a545c834bf9d649e8ececf791ef99ceb4cdac15",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/ai-animation-430.png",
+    "bytes": 1370623,
+    "sha256": "e740cabcbea9964e594825f1aa0e15007570f803ae8f74ae2349f9b0077217a8",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/ai-animation-1280.png",
+    "bytes": 1911338,
+    "sha256": "472ac67e404d56e87bbaf35a31de245be5bfb5f297a31ec5939cebe32e145a3f",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/about-360.png",
+    "bytes": 280769,
+    "sha256": "73bdd2b7839eb689dacafadf539431e04b963363fc9c3895ce00b56e3f9ed4fd",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/about-430.png",
+    "bytes": 335996,
+    "sha256": "c27e9ac69550ad82ebc4e8bf9619aa25e17bd7336fde78cfb21ac7f9a4a659f5",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/about-1280.png",
+    "bytes": 549694,
+    "sha256": "d1635d9fe3def323487915d21cc347e2cd5f303a950cf1abc03c5c8621ea7d00",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/resume-360.png",
+    "bytes": 147585,
+    "sha256": "7305e55e8954463d00025d26d4e286cd8b19a1f369c345f432d92c4e08e6aecf",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/resume-430.png",
+    "bytes": 173400,
+    "sha256": "6226552c2fd7b2b3482b67912d222ee63b5da7ae3671f8637755379f10b48377",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/resume-1280.png",
+    "bytes": 410260,
+    "sha256": "e21aae6a2f61a7121a1a4fb343a1018ff69cbeaadbd8cfdfc90183f4c81ea571",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/contact-360.png",
+    "bytes": 153500,
+    "sha256": "4ac14a02d18376db551704ebe0cc9696adb2e249077121ca423cdf8557b27008",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/contact-430.png",
+    "bytes": 180693,
+    "sha256": "c49a41dd3f90c8b2e4272fcbb01c5f9366dd74d8b6d904a2a9767424eb31c118",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/contact-1280.png",
+    "bytes": 403262,
+    "sha256": "b3e95a00a36a867312655f41969232262b1b791573d16bb2a7ea71c7abc5b79e",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/privacy-360.png",
+    "bytes": 189152,
+    "sha256": "8c6735545d2e5635fcc068c02976d540df33a773a7a18f4ab2578723666a4422",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/privacy-430.png",
+    "bytes": 216563,
+    "sha256": "8b9519a17475c5b93e956cd4126e88d55a79120296f908f321d0a8bbf7b9f3fc",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/privacy-1280.png",
+    "bytes": 440240,
+    "sha256": "14ed1e96f7f86b7b8de167afce4b73afdf56d6c4868bd94e37ee72687de97ee4",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/work-360.png",
+    "bytes": 161564,
+    "sha256": "9b071f3e0a8d575c099105d381d9fafe28cc249843db749eb8066b5d0b69d254",
+    "scope": "matrix"
   },
   {
     "path": "docs/browser-evidence/work-430.png",
-    "bytes": 184272,
-    "sha256": "e36d52475f55f045a538739480e14fcec20655d07ef35701103b185ec4da8962"
+    "bytes": 188111,
+    "sha256": "1c825362844923a223fb7c112ba3e841aa9628bc7f1a32d672817eef5331fbde",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/work-1280.png",
+    "bytes": 424246,
+    "sha256": "3bc6a63bcd5f62af60791c5341d64769a6e2a95aa34b5772ae0b156a02303ebb",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/home-375.png",
+    "bytes": 1021807,
+    "sha256": "a6079a5c2d61172e3af7b1215dc4b20570af074c0d55992aa72127b8ed1f874c",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/home-768.png",
+    "bytes": 1737057,
+    "sha256": "2a14b9c6ae3861c7233482cca30e498a3900895898cf1c80520f5438c56d0383",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/home-1440.png",
+    "bytes": 2667370,
+    "sha256": "c46078a6174a1be721667594308ce28a97203657b45eeb49742ea146c5265213",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/archive-375.png",
+    "bytes": 1275855,
+    "sha256": "22a58821c2d48d63849a0189bec3463ca1dabd7dd0d22455b2cb1bceb95fbb35",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/archive-768.png",
+    "bytes": 1730324,
+    "sha256": "0ea33c5ca5e5f9fea94c42b2ac43f7a4cc03ad38b0e57aec592dc81e74bba8d0",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/archive-1440.png",
+    "bytes": 1366402,
+    "sha256": "08de9353e423bd1b0b968ebbea8edc763d0ab8ff3aa00e2747cc4e02c24b720b",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/mackenzie-cramblit-375.png",
+    "bytes": 688991,
+    "sha256": "c889f512f0e8181fa75d808c985609ea70d6316cc74446b050b8d4b656c3ede2",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/mackenzie-cramblit-768.png",
+    "bytes": 1269124,
+    "sha256": "fff0c97201a2d960486fead511f3950ee4477856a78c8982d0df3aa452c6c1a4",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/mackenzie-cramblit-1440.png",
+    "bytes": 1556590,
+    "sha256": "7297bcafdbe56bf35521b91e5b9bcd216ee0e0b5cfd3588a39d59df0cdb92b15",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/morganics-375.png",
+    "bytes": 1182801,
+    "sha256": "194d9411cab937b59e6a29a2d180fd43a1b9144587b32181d63850897cb2afdf",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/morganics-768.png",
+    "bytes": 2160242,
+    "sha256": "9c83e8ac39658fdc3b3e17706911f557ce24af2afcee77d4e332d29b168c7529",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/morganics-1440.png",
+    "bytes": 1795690,
+    "sha256": "e1f625af31490af906405f0d293ca691731e87c5abe59357cb0233c7afdff852",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/linkedin-personal-brand-375.png",
+    "bytes": 789688,
+    "sha256": "0e60454f15448343f668398edbef94ae9f4721150e8d3736a3d9f51dc3a6e3c0",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/linkedin-personal-brand-768.png",
+    "bytes": 1177450,
+    "sha256": "acd958105901fab89cb182dcbc905735f57b18603239199a4dc31d42c3143e3d",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/linkedin-personal-brand-1440.png",
+    "bytes": 1731729,
+    "sha256": "7cbcc001fb78487ce03009b57fd6cf81391d5e23816f1a2e5ac1291eaa3a047a",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/accessorize-by-hl-375.png",
+    "bytes": 528597,
+    "sha256": "dcfd823045fa29616888f01a99a9578b65b5025120f037b96c4f5944d43cabe3",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/accessorize-by-hl-768.png",
+    "bytes": 960349,
+    "sha256": "2008dea1d74538f8fdaf38fb520c64c1360dda8a31846e653e96b2aec3134053",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/accessorize-by-hl-1440.png",
+    "bytes": 1198390,
+    "sha256": "5a7aa5fac28ed45e2d903eb82073367785c66efedb1b672c936598411e487f97",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/jules-capital-partners-375.png",
+    "bytes": 641378,
+    "sha256": "21b49f04c9751ee17fc06db4f7d73f428b1066800e7662d3e569e2586ec56327",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/jules-capital-partners-768.png",
+    "bytes": 947753,
+    "sha256": "6e4b48a3b9bd1655e321592a209a5a2157bae88eb616c58c85a8826be3d0da96",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/jules-capital-partners-1440.png",
+    "bytes": 1007203,
+    "sha256": "cce0ec5ce25af0e02c2ae3400d9c781971771df77f0d93714f4e33ed05e9a348",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/intellignce-375.png",
+    "bytes": 734589,
+    "sha256": "d3f1551e9c6f52477e09c0f9f33f4bf37539d24951cf393da03258e78d37fe84",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/intellignce-768.png",
+    "bytes": 1101252,
+    "sha256": "e2e6c07f261676cb765d72dfe1f384b5784b7060997b0a9cd458e0584d647d61",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/intellignce-1440.png",
+    "bytes": 1161463,
+    "sha256": "3978fce23e7295fb9abfa49e59623a63ae99719850e1be95526b6bee5484d8fd",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/fakhr-e-qoum-375.png",
+    "bytes": 568446,
+    "sha256": "163f094503a5267d727dd6bd79170e4d4e99acdf72ea6482bbdeaf4914422879",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/fakhr-e-qoum-768.png",
+    "bytes": 792164,
+    "sha256": "1a36ea4e26fb015573675addab02ebeb1eaf9c8be3385695420c85ad2b5fa828",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/fakhr-e-qoum-1440.png",
+    "bytes": 1051512,
+    "sha256": "7ac97690f42ee18c9f82decf91bf7ee8780be03fca8500f400d475a800a6c857",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/edlytics-375.png",
+    "bytes": 667386,
+    "sha256": "e5a698edf4892794c98eae468ecd8bce6c1a46347cfa58ef1ba69841a8c7e394",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/edlytics-768.png",
+    "bytes": 850318,
+    "sha256": "7bff20d2b88b8f39a06bf1e18ce70ee02df2ef2694010fa8e7840c5e63533090",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/edlytics-1440.png",
+    "bytes": 2052830,
+    "sha256": "c21ec0c373e0df215b9d2ee637abadade49d05b9a1f21eaf4b4862411fa9dd08",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/community-campaign-375.png",
+    "bytes": 1329460,
+    "sha256": "16376e58b50aedac9274e69d133bad95c966afd003f04af4de702ccbb5f2a271",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/community-campaign-768.png",
+    "bytes": 1597454,
+    "sha256": "000e07d7e14164d600474a4144147d6eaa5287147fd8f5319e1cbf8397a2a40e",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/community-campaign-1440.png",
+    "bytes": 1301998,
+    "sha256": "54736c6f65ef86dcc8111de79259b7e68129f4a12887d918357b3c559adb176b",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bits-hr-link-375.png",
+    "bytes": 785527,
+    "sha256": "dfc9227027e8fb57aac8ce42eb1f76e8bb78414f165212c6f83644a8f4ec2e6b",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bits-hr-link-768.png",
+    "bytes": 1254998,
+    "sha256": "e89c46af06d9a88c8fb936ea1999cf179dc7d2e3d3171eef88674de2dd9910e7",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bits-hr-link-1440.png",
+    "bytes": 1282257,
+    "sha256": "a7cb1c04715a66068bf8c02310003e665ed143d8421124d06bc0661b05e1d14e",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/al-faraj-media-375.png",
+    "bytes": 853827,
+    "sha256": "e6d8cef1b7898783549c52b242b969e84b097a2e5a87a7f5b3755c6888d89ced",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/al-faraj-media-768.png",
+    "bytes": 1037321,
+    "sha256": "1dc2e575f6cab39685c030dbc1c5b3544a0e4bd23e451af45ffbc36e5f019cd2",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/al-faraj-media-1440.png",
+    "bytes": 2097711,
+    "sha256": "f046b8d27268262c12ef121af1e8c0e58b8921cf40a4035b1303e379b4f2473b",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bw-sports-375.png",
+    "bytes": 1010590,
+    "sha256": "bc5cdeace105218dddc842b768c2a7c5530a2176084d3254554554a5fe13f929",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bw-sports-768.png",
+    "bytes": 2428521,
+    "sha256": "7c19be20126ebd3307258d0921b4a48753bfb96806d955948f0f5a66e8fc84f8",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/bw-sports-1440.png",
+    "bytes": 1394498,
+    "sha256": "a21b3559efc41ed44a321ce87b183eae13efee0b7528407b3f8097605d63d065",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/uiux-web-saas-375.png",
+    "bytes": 603248,
+    "sha256": "c879279aea5a3715cc440ac48ea523d51f5329d3af2d8127c7956509ed36efac",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/uiux-web-saas-768.png",
+    "bytes": 1101108,
+    "sha256": "4869c9d37b0132e242914b58855abb811fca6ca1d129cedb673a28545eb68f68",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/uiux-web-saas-1440.png",
+    "bytes": 1718436,
+    "sha256": "7bdc505bfd7f6e0274057540a6b2bab90617cfb3240ef4340b0a9ca3ea5b27f0",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/nicemd-ai-375.png",
+    "bytes": 565193,
+    "sha256": "a03a362dbfad9bfbb23782d3fbe3954d9dd4a076ce4d93102658d6c88f9ef0fd",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/nicemd-ai-768.png",
+    "bytes": 748748,
+    "sha256": "85d7fef5faae9eb1bf18499d0291ca71295aabdc87b7be78ae8792efcc9670e0",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/nicemd-ai-1440.png",
+    "bytes": 964839,
+    "sha256": "d70b1fa7903670a5b1391369155c1dd38f8a8fbe77cc8124e305b889f700a0e7",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/ai-animation-375.png",
+    "bytes": 1142516,
+    "sha256": "50a2aaa0fe6f9c05162eafdd9442b7420f208783cf99b931213add9c33c96a02",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/ai-animation-768.png",
+    "bytes": 1484489,
+    "sha256": "48fdb287b81e8d8918f59fc8e948123a4b18191a60b72ccb24b7725150c88c70",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/ai-animation-1440.png",
+    "bytes": 2182309,
+    "sha256": "283af68138d69e7e6ffdcfc468c5ff0ff65836dad185fdf91d090dbaadedcc01",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/about-375.png",
+    "bytes": 281870,
+    "sha256": "6aafa28be7952c4dd6fdeadf99bdecdb90050d9f1ac95053993c118de22b47d4",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/about-768.png",
+    "bytes": 428817,
+    "sha256": "84f31cab8c743da3f18bbcce4c2bee662e41f4af6b718ca52837c8f09c0b5374",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/about-1440.png",
+    "bytes": 615485,
+    "sha256": "2db9071d1b2d40468c80fa2fee0416b7a5fd9dfcc7e8bf067df81abe3e8e1475",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/resume-375.png",
+    "bytes": 149384,
+    "sha256": "b04adbb88120992a075c0eb901820ecfcc682a1a08f9c8d52bc3d669929b0c55",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/resume-768.png",
+    "bytes": 279207,
+    "sha256": "30d8e9ac1a9b8c24b8465b20ed110620a59ee4fb1f4c4ff546822ee5ffa59e82",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/resume-1440.png",
+    "bytes": 456531,
+    "sha256": "46016bc7c361e07f8c22ad9c69667bd887ea82008e046e50a6757740f26127d8",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/contact-375.png",
+    "bytes": 154072,
+    "sha256": "a3a295cea3503658e05c9f44b99bb62e76a009b9f68b292927fe0808f744373c",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/contact-768.png",
+    "bytes": 286114,
+    "sha256": "228e74328243783f310cb1bc4c5a66fad8958f98d5b998f26cb1679a4ee74d98",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/contact-1440.png",
+    "bytes": 460048,
+    "sha256": "c71bdd3506fe39d551e7ca5636c99cb2a15798725b239785f617398c3576c0bb",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/privacy-375.png",
+    "bytes": 191288,
+    "sha256": "c2c84d9218cec01ab2893363ec60c2da3863acb59938dbf2eca9feaab7716cd9",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/privacy-768.png",
+    "bytes": 315298,
+    "sha256": "a9a7dabb738daf944991464907bb351d0514ad98ad1f2d03f70f5f66e423ac90",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/privacy-1440.png",
+    "bytes": 499298,
+    "sha256": "88d55fefd4b5bafbb9d5dfc58561bd6666ed10ca757a6600777d266c70e63284",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/work-375.png",
+    "bytes": 161476,
+    "sha256": "d055d8f9c08f2b5ebb9e032a894d4dc696aec8b92f92218ea45ac45230b5673a",
+    "scope": "matrix"
   },
   {
     "path": "docs/browser-evidence/work-768.png",
-    "bytes": 154328,
-    "sha256": "be4bacccff04b9694aa374c8aa407805e31613eb14f6f847a7f6b9765e66191e"
+    "bytes": 291228,
+    "sha256": "a6568c074d3485424e30010dfb12a282f9d982e71cddba59743e8fd38f8a8a93",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/browser-evidence/work-1440.png",
+    "bytes": 499318,
+    "sha256": "923801c613ac0c95d0f643c0e849751b8490b48fe792c6114e7c20d2128ea84e",
+    "scope": "matrix"
+  },
+  {
+    "path": "docs/qa/smoke-screenshots/mackenzie-cramblit.png",
+    "bytes": 258263,
+    "sha256": "7bb73554fc85f7e45352e8017c47f914e2ae790c0070f7f241b62f87bbd3b4f5",
+    "scope": "rebuilt_smoke"
+  },
+  {
+    "path": "docs/qa/smoke-screenshots/morganics.png",
+    "bytes": 529378,
+    "sha256": "213afd89faa87ea6bde9f8d328a8773653f0e5600cd53fdecf50dfe856bf956f",
+    "scope": "rebuilt_smoke"
+  },
+  {
+    "path": "docs/qa/smoke-screenshots/sera.png",
+    "bytes": 75194,
+    "sha256": "f1df7db0f888dcd87e7054eed4cf7ab272153a3f0672d7e36f6705088f2702b3",
+    "scope": "rebuilt_smoke"
   }
 ]

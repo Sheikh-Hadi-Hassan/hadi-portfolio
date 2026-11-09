@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-10",
+  "source_commit": "916f34aaa3c1d9f39e2ab8fa9eacfd23333664f4",
+  "qa_parent_commit": "b0bcb5267542e4dec57deed4b36a847c7770dab8",
+  "scope": "actual_guarded_local_export_no_asset_overrides",
+  "historical_baseline": {
+    "passed": 29,
+    "failed": 169
+  },
+  "current": {
+    "total": 198,
+    "executed": 198,
+    "passed": 198,
+    "failed": 0,
+    "blocked": 0
+  },
+  "axe_scans": 198,
+  "axe_violations": 0,
+  "unexpected_errors": 0,
+  "expected_optional_config_404_events": 739,
+  "horizontal_overflow_cases": 0,
+  "broken_media_cases": 0,
+  "case_screenshots": 198,
+  "smoke_screenshots": 3,
+  "max_history_round_trip_ms": 6742,
+  "guard": "PASS",
+  "build": "PASS",
+  "receipt_after_qa": "PASS",
+  "mode": "explicit SERA_CONFIG_EXPECTATION=builtin; both optional files absent",
+  "manifest": "STALE",
+  "release": "NO-GO"
+}
