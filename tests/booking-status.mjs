@@ -8,7 +8,7 @@ const cache=new Map();
 let currentEvent=null,savedRow=null;
 const sheet={
   getLastRow:()=>savedRow?2:1,
-  getRange:()=>({getValues:()=>[savedRow]}),
+  getRange:(_,column)=>({getValues:()=>[savedRow],setValue:value=>{savedRow[column-1]=value}}),
   getSheetName:()=> 'Leads',
 };
 const ctx={
@@ -23,7 +23,7 @@ const ctx={
     get:key=>cache.get(key)||null,
     put:(key,value)=>cache.set(key,String(value)),
   })},
-  SpreadsheetApp:{openById:()=>({getSheetByName:()=>sheet})},
+  SpreadsheetApp:{flush(){},openById:()=>({getSheetByName:()=>sheet})},
   Calendar:{
     Events:{
       get:()=>{if(currentEvent===null)throw new Error('404 not found');return currentEvent;},

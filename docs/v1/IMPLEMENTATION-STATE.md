@@ -20,3 +20,5 @@ The Phase5 frozen package remains historical. Its old checksum must not be used 
 4. Continue CRM/CMS/public-page and release automation gaps that do not need external approval.
 
 Still blocked: approved hero-lock and production build/198route browser acceptance; actual patched PHP8.4/web configuration identity; deployed Apps Script/ACL/trigger/schema mapping; verified key custody and live-provider account/privacy authorization; connected staging and live Calendar/Meet/mail/rollback acceptance. Source-level fix is not live production acceptance. No approved hero hash activated; no production/main/recovery mutation. Release NOT_READY/NO-GO; global manifest STALE.
+
+Follow-up: status now repairs a missing persisted event ID after successful authoritative readback, without reinsertion, and flushes durable event/state updates before confirmation. Added failing initial/final lead-persistence tests. A failed save cannot return confirmed success; later status reconciles the original event. All affected booking suites pass locally.
