@@ -1,6 +1,8 @@
 # Hero baseline: owner review
 
-Status: REFINEMENT AWAITING OWNER VISUAL APPROVAL. No active lock restored. Guard unchanged.
+Status: OWNER AUTHORIZED LOCAL BUILD/QA BASELINE on 9 November 2026 at a5683a3. Exact approved lock installed; guard unchanged. Production deployment remains unauthorized. Current build/QA evidence: docs/qa/LOCAL-BUILD-QA-20261109.md.
+
+The pending-approval discussion and old hash proposal below are historical; do not use them as the current baseline.
 
 The owner explicitly authorized hero CSS refinement on 9 November 2026. The refined source is the development commit containing `docs/HERO-REFINEMENT-EVIDENCE.json`. The previous hash proposal and activation wording below are historical and STALE after that authorized CSS edit. Do not install them. No replacement hashes are proposed at this stage. Review the new 320px, 768px and 1440px screenshots first; a separate exact-hash review is required afterward.
 

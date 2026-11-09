@@ -1,10 +1,4947 @@
 {
   "scope": "approved_production_export_local_browser_no_external_operations",
   "total": 198,
-  "executed": 0,
-  "passed": 0,
-  "failed": 0,
-  "blocked": 198,
-  "blockedReason": "APPROVED_HERO_REQUIRED",
-  "cases": []
+  "executed": 198,
+  "passed": 29,
+  "failed": 169,
+  "blocked": 0,
+  "blockedReason": null,
+  "cases": [
+    {
+      "route": "/",
+      "width": 320,
+      "id": "/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/",
+      "width": 360,
+      "id": "/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "id": "/@375",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/home-375.png"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "id": "/@390",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/home-390.png"
+    },
+    {
+      "route": "/",
+      "width": 430,
+      "id": "/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/home-430.png"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "id": "/@768",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/home-768.png"
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "id": "/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/",
+      "width": 1280,
+      "id": "/@1280",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/home-1280.png"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "id": "/@1440",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/home-1440.png"
+    },
+    {
+      "route": "/archive/",
+      "width": 320,
+      "id": "/archive/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/archive/",
+      "width": 360,
+      "id": "/archive/@360",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/archive-360.png"
+    },
+    {
+      "route": "/archive/",
+      "width": 375,
+      "id": "/archive/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/archive/",
+      "width": 390,
+      "id": "/archive/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/archive/",
+      "width": 430,
+      "id": "/archive/@430",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/archive-430.png"
+    },
+    {
+      "route": "/archive/",
+      "width": 768,
+      "id": "/archive/@768",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/archive-768.png"
+    },
+    {
+      "route": "/archive/",
+      "width": 1024,
+      "id": "/archive/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/archive/",
+      "width": 1280,
+      "id": "/archive/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/archive/",
+      "width": 1440,
+      "id": "/archive/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 320,
+      "id": "/mackenzie-cramblit/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 360,
+      "id": "/mackenzie-cramblit/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 375,
+      "id": "/mackenzie-cramblit/@375",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/mackenzie-cramblit-375.png"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 390,
+      "id": "/mackenzie-cramblit/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 430,
+      "id": "/mackenzie-cramblit/@430",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/mackenzie-cramblit-430.png"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 768,
+      "id": "/mackenzie-cramblit/@768",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/mackenzie-cramblit-768.png"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 1024,
+      "id": "/mackenzie-cramblit/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 1280,
+      "id": "/mackenzie-cramblit/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/mackenzie-cramblit-1280.png"
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "width": 1440,
+      "id": "/mackenzie-cramblit/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/morganics/",
+      "width": 320,
+      "id": "/morganics/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/morganics/",
+      "width": 360,
+      "id": "/morganics/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/morganics/",
+      "width": 375,
+      "id": "/morganics/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/morganics/",
+      "width": 390,
+      "id": "/morganics/@390",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/morganics-390.png"
+    },
+    {
+      "route": "/morganics/",
+      "width": 430,
+      "id": "/morganics/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/morganics/",
+      "width": 768,
+      "id": "/morganics/@768",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/morganics/",
+      "width": 1024,
+      "id": "/morganics/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/morganics-1024.png"
+    },
+    {
+      "route": "/morganics/",
+      "width": 1280,
+      "id": "/morganics/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/morganics/",
+      "width": 1440,
+      "id": "/morganics/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 320,
+      "id": "/linkedin-personal-brand/@320",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/linkedin-personal-brand-320.png"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 360,
+      "id": "/linkedin-personal-brand/@360",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/linkedin-personal-brand-360.png"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 375,
+      "id": "/linkedin-personal-brand/@375",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/linkedin-personal-brand-375.png"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 390,
+      "id": "/linkedin-personal-brand/@390",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/linkedin-personal-brand-390.png"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 430,
+      "id": "/linkedin-personal-brand/@430",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/linkedin-personal-brand-430.png"
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 768,
+      "id": "/linkedin-personal-brand/@768",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 1024,
+      "id": "/linkedin-personal-brand/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 1280,
+      "id": "/linkedin-personal-brand/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/linkedin-personal-brand/",
+      "width": 1440,
+      "id": "/linkedin-personal-brand/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 320,
+      "id": "/accessorize-by-hl/@320",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Jewellery Brand Identity | Accessorize by HL | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/accessorize-by-hl-320.png"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 360,
+      "id": "/accessorize-by-hl/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Jewellery Brand Identity | Accessorize by HL | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 375,
+      "id": "/accessorize-by-hl/@375",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Jewellery Brand Identity | Accessorize by HL | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/accessorize-by-hl-375.png"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 390,
+      "id": "/accessorize-by-hl/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Jewellery Brand Identity | Accessorize by HL | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 430,
+      "id": "/accessorize-by-hl/@430",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Jewellery Brand Identity | Accessorize by HL | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/accessorize-by-hl-430.png"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 768,
+      "id": "/accessorize-by-hl/@768",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Jewellery Brand Identity | Accessorize by HL | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 1024,
+      "id": "/accessorize-by-hl/@1024",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Jewellery Brand Identity | Accessorize by HL | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/accessorize-by-hl-1024.png"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 1280,
+      "id": "/accessorize-by-hl/@1280",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Jewellery Brand Identity | Accessorize by HL | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/accessorize-by-hl-1280.png"
+    },
+    {
+      "route": "/accessorize-by-hl/",
+      "width": 1440,
+      "id": "/accessorize-by-hl/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Jewellery Brand Identity | Accessorize by HL | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 320,
+      "id": "/jules-capital-partners/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Financial Services Brand Identity | Jules Capital | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 360,
+      "id": "/jules-capital-partners/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Financial Services Brand Identity | Jules Capital | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 375,
+      "id": "/jules-capital-partners/@375",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Financial Services Brand Identity | Jules Capital | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/jules-capital-partners-375.png"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 390,
+      "id": "/jules-capital-partners/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Financial Services Brand Identity | Jules Capital | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 430,
+      "id": "/jules-capital-partners/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Financial Services Brand Identity | Jules Capital | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 768,
+      "id": "/jules-capital-partners/@768",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Financial Services Brand Identity | Jules Capital | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/jules-capital-partners-768.png"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 1024,
+      "id": "/jules-capital-partners/@1024",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Financial Services Brand Identity | Jules Capital | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/jules-capital-partners-1024.png"
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 1280,
+      "id": "/jules-capital-partners/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Financial Services Brand Identity | Jules Capital | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/jules-capital-partners/",
+      "width": 1440,
+      "id": "/jules-capital-partners/@1440",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Financial Services Brand Identity | Jules Capital | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/jules-capital-partners-1440.png"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 320,
+      "id": "/intellignce/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "INTELLIGNCE Brand Identity & Creative Direction | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/intellignce/",
+      "width": 360,
+      "id": "/intellignce/@360",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "INTELLIGNCE Brand Identity & Creative Direction | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/intellignce-360.png"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 375,
+      "id": "/intellignce/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "INTELLIGNCE Brand Identity & Creative Direction | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/intellignce/",
+      "width": 390,
+      "id": "/intellignce/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "INTELLIGNCE Brand Identity & Creative Direction | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/intellignce/",
+      "width": 430,
+      "id": "/intellignce/@430",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "INTELLIGNCE Brand Identity & Creative Direction | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/intellignce-430.png"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 768,
+      "id": "/intellignce/@768",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "INTELLIGNCE Brand Identity & Creative Direction | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/intellignce/",
+      "width": 1024,
+      "id": "/intellignce/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "INTELLIGNCE Brand Identity & Creative Direction | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/intellignce/",
+      "width": 1280,
+      "id": "/intellignce/@1280",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "INTELLIGNCE Brand Identity & Creative Direction | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/intellignce-1280.png"
+    },
+    {
+      "route": "/intellignce/",
+      "width": 1440,
+      "id": "/intellignce/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "INTELLIGNCE Brand Identity & Creative Direction | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/intellignce-1440.png"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 320,
+      "id": "/fakhr-e-qoum/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Documentary Creative Direction | Fakhr-e-Qoum | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 360,
+      "id": "/fakhr-e-qoum/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Documentary Creative Direction | Fakhr-e-Qoum | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 375,
+      "id": "/fakhr-e-qoum/@375",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Documentary Creative Direction | Fakhr-e-Qoum | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/fakhr-e-qoum-375.png"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 390,
+      "id": "/fakhr-e-qoum/@390",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Documentary Creative Direction | Fakhr-e-Qoum | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/fakhr-e-qoum-390.png"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 430,
+      "id": "/fakhr-e-qoum/@430",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Documentary Creative Direction | Fakhr-e-Qoum | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/fakhr-e-qoum-430.png"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 768,
+      "id": "/fakhr-e-qoum/@768",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Documentary Creative Direction | Fakhr-e-Qoum | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/fakhr-e-qoum-768.png"
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 1024,
+      "id": "/fakhr-e-qoum/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Documentary Creative Direction | Fakhr-e-Qoum | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 1280,
+      "id": "/fakhr-e-qoum/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Documentary Creative Direction | Fakhr-e-Qoum | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/fakhr-e-qoum/",
+      "width": 1440,
+      "id": "/fakhr-e-qoum/@1440",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Documentary Creative Direction | Fakhr-e-Qoum | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/fakhr-e-qoum-1440.png"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 320,
+      "id": "/edlytics/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/edlytics-320.png"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 360,
+      "id": "/edlytics/@360",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/edlytics-360.png"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 375,
+      "id": "/edlytics/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/edlytics/",
+      "width": 390,
+      "id": "/edlytics/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/edlytics/",
+      "width": 430,
+      "id": "/edlytics/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/edlytics/",
+      "width": 768,
+      "id": "/edlytics/@768",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/edlytics-768.png"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 1024,
+      "id": "/edlytics/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/edlytics/",
+      "width": 1280,
+      "id": "/edlytics/@1280",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/edlytics-1280.png"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 1440,
+      "id": "/edlytics/@1440",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/edlytics-1440.png"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 320,
+      "id": "/community-campaign/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 360,
+      "id": "/community-campaign/@360",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/community-campaign-360.png"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 375,
+      "id": "/community-campaign/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 390,
+      "id": "/community-campaign/@390",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/community-campaign-390.png"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 430,
+      "id": "/community-campaign/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 768,
+      "id": "/community-campaign/@768",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/community-campaign-768.png"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 1024,
+      "id": "/community-campaign/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 1280,
+      "id": "/community-campaign/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/community-campaign-1280.png"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 1440,
+      "id": "/community-campaign/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/community-campaign-1440.png"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 320,
+      "id": "/bits-hr-link/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 360,
+      "id": "/bits-hr-link/@360",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/bits-hr-link-360.png"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 375,
+      "id": "/bits-hr-link/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 390,
+      "id": "/bits-hr-link/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 430,
+      "id": "/bits-hr-link/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 768,
+      "id": "/bits-hr-link/@768",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/bits-hr-link-768.png"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 1024,
+      "id": "/bits-hr-link/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 1280,
+      "id": "/bits-hr-link/@1280",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/bits-hr-link-1280.png"
+    },
+    {
+      "route": "/bits-hr-link/",
+      "width": 1440,
+      "id": "/bits-hr-link/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 320,
+      "id": "/al-faraj-media/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 360,
+      "id": "/al-faraj-media/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 375,
+      "id": "/al-faraj-media/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/al-faraj-media-375.png"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 390,
+      "id": "/al-faraj-media/@390",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/al-faraj-media-390.png"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 430,
+      "id": "/al-faraj-media/@430",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/al-faraj-media-430.png"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 768,
+      "id": "/al-faraj-media/@768",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 1024,
+      "id": "/al-faraj-media/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/al-faraj-media-1024.png"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 1280,
+      "id": "/al-faraj-media/@1280",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/al-faraj-media-1280.png"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 1440,
+      "id": "/al-faraj-media/@1440",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/al-faraj-media-1440.png"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 320,
+      "id": "/bw-sports/@320",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/bw-sports-320.png"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 360,
+      "id": "/bw-sports/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 375,
+      "id": "/bw-sports/@375",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/bw-sports-375.png"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 390,
+      "id": "/bw-sports/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 430,
+      "id": "/bw-sports/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 768,
+      "id": "/bw-sports/@768",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/bw-sports-768.png"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 1024,
+      "id": "/bw-sports/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 1280,
+      "id": "/bw-sports/@1280",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/bw-sports-1280.png"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 1440,
+      "id": "/bw-sports/@1440",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/bw-sports-1440.png"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 320,
+      "id": "/uiux-web-saas/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 360,
+      "id": "/uiux-web-saas/@360",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/uiux-web-saas-360.png"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 375,
+      "id": "/uiux-web-saas/@375",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/uiux-web-saas-375.png"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 390,
+      "id": "/uiux-web-saas/@390",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/uiux-web-saas-390.png"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 430,
+      "id": "/uiux-web-saas/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 768,
+      "id": "/uiux-web-saas/@768",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/uiux-web-saas-768.png"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 1024,
+      "id": "/uiux-web-saas/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 1280,
+      "id": "/uiux-web-saas/@1280",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/uiux-web-saas-1280.png"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 1440,
+      "id": "/uiux-web-saas/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/uiux-web-saas-1440.png"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 320,
+      "id": "/nicemd-ai/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 360,
+      "id": "/nicemd-ai/@360",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/nicemd-ai-360.png"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 375,
+      "id": "/nicemd-ai/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 390,
+      "id": "/nicemd-ai/@390",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/nicemd-ai-390.png"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 430,
+      "id": "/nicemd-ai/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 768,
+      "id": "/nicemd-ai/@768",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/nicemd-ai-768.png"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 1024,
+      "id": "/nicemd-ai/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 1280,
+      "id": "/nicemd-ai/@1280",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/nicemd-ai-1280.png"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 1440,
+      "id": "/nicemd-ai/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 320,
+      "id": "/ai-animation/@320",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/ai-animation-320.png"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 360,
+      "id": "/ai-animation/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 375,
+      "id": "/ai-animation/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/ai-animation-375.png"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 390,
+      "id": "/ai-animation/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 430,
+      "id": "/ai-animation/@430",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/ai-animation-430.png"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 768,
+      "id": "/ai-animation/@768",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/ai-animation-768.png"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 1024,
+      "id": "/ai-animation/@1024",
+      "status": "FAIL",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/ai-animation-1024.png"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 1280,
+      "id": "/ai-animation/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 1440,
+      "id": "/ai-animation/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": [
+          null
+        ]
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/about/",
+      "width": 320,
+      "id": "/about/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "About Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/about/",
+      "width": 360,
+      "id": "/about/@360",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "About Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/about-360.png"
+    },
+    {
+      "route": "/about/",
+      "width": 375,
+      "id": "/about/@375",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "About Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/about-375.png"
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "id": "/about/@390",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "About Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/about-390.png"
+    },
+    {
+      "route": "/about/",
+      "width": 430,
+      "id": "/about/@430",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "About Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/about-430.png"
+    },
+    {
+      "route": "/about/",
+      "width": 768,
+      "id": "/about/@768",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "About Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/about-768.png"
+    },
+    {
+      "route": "/about/",
+      "width": 1024,
+      "id": "/about/@1024",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "About Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/about-1024.png"
+    },
+    {
+      "route": "/about/",
+      "width": 1280,
+      "id": "/about/@1280",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "About Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/about-1280.png"
+    },
+    {
+      "route": "/about/",
+      "width": 1440,
+      "id": "/about/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "About Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/resume/",
+      "width": 320,
+      "id": "/resume/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Resume | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/resume/",
+      "width": 360,
+      "id": "/resume/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Resume | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/resume/",
+      "width": 375,
+      "id": "/resume/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Resume | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/resume/",
+      "width": 390,
+      "id": "/resume/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Resume | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/resume/",
+      "width": 430,
+      "id": "/resume/@430",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Resume | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/resume-430.png"
+    },
+    {
+      "route": "/resume/",
+      "width": 768,
+      "id": "/resume/@768",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Resume | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/resume-768.png"
+    },
+    {
+      "route": "/resume/",
+      "width": 1024,
+      "id": "/resume/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Resume | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/resume/",
+      "width": 1280,
+      "id": "/resume/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Resume | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/resume/",
+      "width": 1440,
+      "id": "/resume/@1440",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Resume | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/resume-1440.png"
+    },
+    {
+      "route": "/contact/",
+      "width": 320,
+      "id": "/contact/@320",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Contact Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/contact-320.png"
+    },
+    {
+      "route": "/contact/",
+      "width": 360,
+      "id": "/contact/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Contact Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/contact/",
+      "width": 375,
+      "id": "/contact/@375",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Contact Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/contact/",
+      "width": 390,
+      "id": "/contact/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Contact Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/contact/",
+      "width": 430,
+      "id": "/contact/@430",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Contact Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/contact/",
+      "width": 768,
+      "id": "/contact/@768",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Contact Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/contact-768.png"
+    },
+    {
+      "route": "/contact/",
+      "width": 1024,
+      "id": "/contact/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Contact Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/contact-1024.png"
+    },
+    {
+      "route": "/contact/",
+      "width": 1280,
+      "id": "/contact/@1280",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Contact Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/contact-1280.png"
+    },
+    {
+      "route": "/contact/",
+      "width": 1440,
+      "id": "/contact/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Contact Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/privacy/",
+      "width": 320,
+      "id": "/privacy/@320",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Privacy | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/privacy-320.png"
+    },
+    {
+      "route": "/privacy/",
+      "width": 360,
+      "id": "/privacy/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Privacy | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/privacy/",
+      "width": 375,
+      "id": "/privacy/@375",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Privacy | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/privacy-375.png"
+    },
+    {
+      "route": "/privacy/",
+      "width": 390,
+      "id": "/privacy/@390",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Privacy | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/privacy/",
+      "width": 430,
+      "id": "/privacy/@430",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Privacy | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/privacy-430.png"
+    },
+    {
+      "route": "/privacy/",
+      "width": 768,
+      "id": "/privacy/@768",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Privacy | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/privacy/",
+      "width": 1024,
+      "id": "/privacy/@1024",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Privacy | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/privacy/",
+      "width": 1280,
+      "id": "/privacy/@1280",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Privacy | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/privacy/",
+      "width": 1440,
+      "id": "/privacy/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Privacy | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/privacy-1440.png"
+    },
+    {
+      "route": "/work/",
+      "width": 320,
+      "id": "/work/@320",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Work | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/work-320.png"
+    },
+    {
+      "route": "/work/",
+      "width": 360,
+      "id": "/work/@360",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Work | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    },
+    {
+      "route": "/work/",
+      "width": 375,
+      "id": "/work/@375",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Work | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/work-375.png"
+    },
+    {
+      "route": "/work/",
+      "width": 390,
+      "id": "/work/@390",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Work | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/work-390.png"
+    },
+    {
+      "route": "/work/",
+      "width": 430,
+      "id": "/work/@430",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Work | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/work-430.png"
+    },
+    {
+      "route": "/work/",
+      "width": 768,
+      "id": "/work/@768",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Work | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/work-768.png"
+    },
+    {
+      "route": "/work/",
+      "width": 1024,
+      "id": "/work/@1024",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Work | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/work-1024.png"
+    },
+    {
+      "route": "/work/",
+      "width": 1280,
+      "id": "/work/@1280",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Work | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "violations": [],
+      "screenshot": "docs/browser-evidence/work-1280.png"
+    },
+    {
+      "route": "/work/",
+      "width": 1440,
+      "id": "/work/@1440",
+      "status": "FAIL",
+      "errors": [
+        {
+          "code": "CASE_FAILED",
+          "message": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+        }
+      ],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Work | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": false
+    }
+  ]
 }

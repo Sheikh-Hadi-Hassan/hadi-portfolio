@@ -1,0 +1,43 @@
+{
+  "scope": "real_guarded_export_local_assembled_browser_probe",
+  "origin": "http://127.0.0.1:39223",
+  "initial": {
+    "loaderReleased": true,
+    "contentInteractive": true,
+    "nextScripts": 6,
+    "reelInitialized": true,
+    "seraMounted": true
+  },
+  "sera": {
+    "dialogOpen": true,
+    "text": "Sera\nFLOW BY INTELLIGNCE\nBook a call\nYour brief\n\nReady when you are\n\nType\nTalk\nA LITTLE CLARITY. A GREAT NEXT STEP.\nWhat’s on your mind?\n\nI’m Sera. Let’s shape your idea, or find a time with Hadi.\n\nDiscuss a project\nAsk about Hadi\nBook a 1:1 call\nAbout this assistant.\n\nProject messages and recent context are processed by Google Gemini. Free-tier data may be used to improve its products. Avoid confidential details.\n\nAI permission lasts for this page session only. Use Continue without AI to withdraw it. Withdrawal stops pending browser requests but cannot undo data already transmitted. Drafts stay in this browser for up to seven days. Sending an enquiry shares your reviewed brief, conversation and contact details with Hadi’s enquiry service.\n\nVoice recognition may use your browser provider’s speech service. Contact links open external services under their own privacy policies.\n\nPortfolio artwork is shown to present the work. Contact Hadi before reusing project artwork or brand assets.\n\nEnable optional AI\nContinue without AI\nMessage\nCreative project assistant\nPrivacy\nConnect to Hadi",
+    "consentControls": [
+      "Enable optional AI",
+      "Continue without AI",
+      "Try AI again"
+    ]
+  },
+  "about": {
+    "status": true,
+    "title": "About Hadi Hassan"
+  },
+  "historyRestored": true,
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "httpErrors": [
+    {
+      "status": 404,
+      "path": "/intellignce-support/runtime-config.json"
+    },
+    {
+      "status": 404,
+      "path": "/intellignce-support/runtime-config.previous.json"
+    }
+  ],
+  "phpNotExecuted": [],
+  "blockedExternal": [],
+  "productionAcceptance": false
+}
