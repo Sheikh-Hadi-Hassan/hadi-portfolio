@@ -1,0 +1,284 @@
+[
+  {
+    "route": "/",
+    "failure": null,
+    "settled": {
+      "url": "http://127.0.0.1:45359/",
+      "title": "Hadi Hassan | Creative Director & Brand Identity Designer"
+    },
+    "about": "About Hadi Hassan",
+    "back": "http://127.0.0.1:45359/",
+    "forward": "http://127.0.0.1:45359/about/",
+    "events": [
+      {
+        "phase": "start",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230402341
+      },
+      {
+        "phase": "start",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230402803
+      },
+      {
+        "phase": "goto-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230403888
+      },
+      {
+        "phase": "back-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230404001
+      },
+      {
+        "phase": "back-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230404160
+      },
+      {
+        "phase": "goto-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230404271
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230404377
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230404500
+      },
+      {
+        "phase": "goto-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230404586
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230404645
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230404770
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230405356
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230405467
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/about/",
+        "time": 1794230406561
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/about/",
+        "time": 1794230406650
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230407584
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230407722
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/about/",
+        "time": 1794230408665
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/about/",
+        "time": 1794230408794
+      }
+    ]
+  },
+  {
+    "route": "/work/",
+    "failure": "page.evaluate: Execution context was destroyed, most likely because of a navigation",
+    "settled": {
+      "url": "http://127.0.0.1:45359/work/",
+      "title": "Work | Hadi Hassan"
+    },
+    "about": "About Hadi Hassan",
+    "back": "http://127.0.0.1:45359/work/",
+    "forward": "http://127.0.0.1:45359/about/",
+    "events": [
+      {
+        "phase": "start",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230409816
+      },
+      {
+        "phase": "start",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230410163
+      },
+      {
+        "phase": "goto-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230411207
+      },
+      {
+        "phase": "back-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230411445
+      },
+      {
+        "phase": "goto-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230411529
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/",
+        "time": 1794230411802
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230411920
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230412048
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230412469
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230412577
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/about/",
+        "time": 1794230413650
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/about/",
+        "time": 1794230413726
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230414662
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/work/",
+        "time": 1794230414873
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/about/",
+        "time": 1794230415819
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:45359/about/",
+        "time": 1794230415919
+      }
+    ]
+  },
+  {
+    "route": "/mackenzie-cramblit/",
+    "lightbox": {
+      "src": null,
+      "visible": false,
+      "dialogOpen": false
+    },
+    "opened": [
+      {
+        "src": "/assets/mackenzie-13.webp",
+        "alt": "Mackenzie Cramblit — Brand guidelines overview and identity applications",
+        "visible": true,
+        "width": 1920
+      },
+      {
+        "src": "/assets/mackenzie-14.webp",
+        "alt": "Mackenzie Cramblit — Contents of the personal brand guidelines",
+        "visible": true,
+        "width": 1920
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "route": "/morganics/",
+    "lightbox": {
+      "src": null,
+      "visible": false,
+      "dialogOpen": false
+    },
+    "opened": [
+      {
+        "src": "/assets/morganics-155.webp",
+        "alt": "Morganics — Brand guidelines introduction",
+        "visible": true,
+        "width": 1500
+      },
+      {
+        "src": "/assets/morganics-156.webp",
+        "alt": "Morganics — Brand positioning, mission and vision",
+        "visible": true,
+        "width": 1500
+      }
+    ],
+    "status": "PASS"
+  }
+]

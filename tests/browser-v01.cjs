@@ -1,8 +1,10 @@
 const fs=require('fs'),path=require('path'),http=require('http');
 const {spawnSync}=require('child_process');
+const {waitForApplication,brokenImages,optionalConfigConsole,historyRoundTrip}=require('./browser-assertions.cjs');
 const {plan,verifyRoutes,report}=require('../scripts/qa/browser-plan.cjs');
 const cases=plan(JSON.parse(fs.readFileSync('src/data/projects.json','utf8'))),results=[];
 const evidence='docs/v01-production-build-browser-results.json';
+const allowUnconfigured=process.env.SERA_CONFIG_EXPECTATION==='builtin';
 let blockedReason=null;
 const save=reason=>{blockedReason=reason;fs.writeFileSync(evidence,JSON.stringify(report(cases,results,reason),null,2)+'\n')};
 (async()=>{
@@ -30,13 +32,15 @@ const save=reason=>{blockedReason=reason;fs.writeFileSync(evidence,JSON.stringif
     context=await browser.newContext({reducedMotion:'reduce',viewport:{width:item.width,height:900}});
     await context.route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());
     const page=await context.newPage();page.setDefaultTimeout(10000);
-    page.on('pageerror',e=>result.errors.push({code:'PAGE_ERROR',message:String(e).slice(0,500)}));page.on('console',m=>{if(m.type()==='error')result.errors.push({code:'CONSOLE_ERROR',message:m.text().slice(0,500)})});
+    page.on('pageerror',e=>result.errors.push({code:'PAGE_ERROR',message:String(e).slice(0,500)}));page.on('console',m=>{if(m.type()==='error')result.errors.push({code:'CONSOLE_ERROR',message:m.text().slice(0,500),source:m.location().url})});
     const response=await page.goto(base+item.route,{waitUntil:'domcontentloaded',timeout:30000});
     if(response?.status()!==200)throw Error('ROUTE_HTTP_ERROR');
+    await waitForApplication(page,base+item.route);
     await page.evaluate(()=>Promise.race([document.fonts.ready,new Promise((_,reject)=>setTimeout(()=>reject(Error('FONT_LOAD_TIMEOUT')),10000))]));await page.waitForTimeout(500);
     // Force lazy images through view without interacting with submission controls.
     await page.locator('img').evaluateAll(images=>Promise.race([Promise.all(images.map(async image=>{image.loading='eager';try{await image.decode()}catch{}})),new Promise((_,reject)=>setTimeout(()=>reject(Error('IMAGE_LOAD_TIMEOUT')),10000))]));
-    result.metrics=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,h1:document.querySelectorAll('h1').length,title:document.title,dockFits:[...document.querySelectorAll('.app-dock a,.app-dock button')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth}),brokenImages:[...document.images].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.getAttribute('src'))}));
+    result.metrics=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,h1:document.querySelectorAll('h1').length,title:document.title,dockFits:[...document.querySelectorAll('.app-dock a,.app-dock button')].every(e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth}),brokenImages:[]}));
+    result.metrics.brokenImages=await page.evaluate(brokenImages);
     for(const href of await page.locator('a[href]').evaluateAll(a=>a.map(e=>e.getAttribute('href')))){
      if(!href||/^(mailto:|tel:|https?:\/\/|\/\/)/i.test(href)&&new URL(href,base).origin!==base)continue;
      if(/^(javascript:|data:)/i.test(href)){result.errors.push({code:'UNSAFE_LINK'});continue;}
@@ -49,10 +53,15 @@ const save=reason=>{blockedReason=reason;fs.writeFileSync(evidence,JSON.stringif
     }
     await page.locator('.dock-command').click();result.menuOpened=await page.locator('#site-menu').evaluate(e=>e.open);await page.keyboard.press('Tab');result.focusInside=await page.evaluate(()=>document.querySelector('#site-menu').contains(document.activeElement));await page.keyboard.press('Escape');result.menuClosed=await page.locator('#site-menu').evaluate(e=>!e.open);result.focusRestored=await page.locator('.dock-command').evaluate(e=>document.activeElement===e);
     // An actual internal navigation and history round trip, with no form submission.
-    await page.goto(base+(item.route==='/'?'/work/':'/'),{waitUntil:'domcontentloaded'});await page.goBack({waitUntil:'domcontentloaded'});result.historyRestored=new URL(page.url()).pathname===item.route;
+    Object.assign(result,await historyRoundTrip(page,base,item.route));
+    await page.waitForFunction(()=>document.querySelector('#intellignce-support')?.dataset.configStatus);
+    result.configuration=await page.locator('#intellignce-support').evaluate(e=>JSON.parse(e.dataset.configDiagnostic));
+    if((result.configuration.status==='builtin'&&!allowUnconfigured)||['error','retained'].includes(result.configuration.status)||result.configuration.attempts.some(a=>a.code!=='PUBLIC_CONFIG_NOT_FOUND'))result.errors.push({code:'PUBLIC_CONFIG_LOAD_FAILED'});
+    result.expectedOptionalResponses=result.errors.filter(e=>optionalConfigConsole(e,result.configuration,{allowUnconfigured}));
+    result.errors=result.errors.filter(e=>!optionalConfigConsole(e,result.configuration,{allowUnconfigured}));
     const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();result.violations=axe.violations.map(v=>({id:v.id,impact:v.impact,targets:v.nodes.map(n=>n.target)}));
     const screenshot=`docs/browser-evidence/${item.route==='/'?'home':item.route.replaceAll('/','')}-${item.width}.png`;fs.mkdirSync(path.dirname(screenshot),{recursive:true});await page.screenshot({path:screenshot,fullPage:true});result.screenshot=screenshot;
-    const m=result.metrics;if(m.scrollWidth<=item.width&&m.h1===1&&m.title&&m.dockFits&&!m.brokenImages.length&&!result.errors.length&&!result.violations.length&&result.menuOpened&&result.focusInside&&result.menuClosed&&result.focusRestored&&result.historyRestored)result.status='PASS';
+    const m=result.metrics;if(m.scrollWidth<=item.width&&m.h1===1&&m.title&&m.dockFits&&!m.brokenImages.length&&!result.errors.length&&!result.violations.length&&result.menuOpened&&result.focusInside&&result.menuClosed&&result.focusRestored&&result.historyRestored&&result.forwardRestored)result.status='PASS';
    }catch(e){result.errors.push({code:'CASE_FAILED',message:String(e).slice(0,500)});}finally{await context?.close();results.push(result);save(null);}
   }
   const summary=report(cases,results);console.log(JSON.stringify({executed:summary.executed,passed:summary.passed,failed:summary.failed,blocked:summary.blocked}));if(summary.failed)process.exitCode=1;

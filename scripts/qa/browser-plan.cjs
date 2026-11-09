@@ -8,7 +8,7 @@ function plan(projects){
 }
 function verifyRoutes(root,cases){
  const visit=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()&&!e.name.startsWith('_')?visit(path.join(d,e.name)):e.isFile()&&e.name==='index.html'?[path.join(d,e.name)]:[]);
- const actual=visit(root).map(f=>'/'+path.relative(root,path.dirname(f)).split(path.sep).filter(Boolean).join('/')+'/').map(r=>r==='//'?'/':r).sort();
+ const actual=visit(root).map(f=>'/'+path.relative(root,path.dirname(f)).split(path.sep).filter(Boolean).join('/')+'/').map(r=>r==='//'?'/':r).filter(r=>r!=='/404/').sort();
  const expected=[...new Set(cases.map(c=>c.route))].sort();
  if(JSON.stringify(actual)!==JSON.stringify(expected))throw Error('ACCEPTANCE_EXPORT_ROUTE_MISMATCH');
 }

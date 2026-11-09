@@ -1,0 +1,338 @@
+[
+  {
+    "route": "/",
+    "failure": null,
+    "settled": {
+      "url": "http://127.0.0.1:40129/",
+      "title": "Hadi Hassan | Creative Director & Brand Identity Designer"
+    },
+    "about": "About Hadi Hassan",
+    "back": "http://127.0.0.1:40129/",
+    "forward": "http://127.0.0.1:40129/about/",
+    "events": [
+      {
+        "phase": "start",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230592884
+      },
+      {
+        "phase": "start",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230593264
+      },
+      {
+        "phase": "goto-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230595422
+      },
+      {
+        "phase": "goto-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230595557
+      },
+      {
+        "phase": "back-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230596505
+      },
+      {
+        "phase": "back-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230596617
+      },
+      {
+        "phase": "goto-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230597576
+      },
+      {
+        "phase": "goto-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230597665
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230598594
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230598750
+      },
+      {
+        "phase": "goto-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230599722
+      },
+      {
+        "phase": "goto-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230599794
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230600726
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230600844
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230602295
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230602505
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/about/",
+        "time": 1794230603590
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/about/",
+        "time": 1794230603666
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230604602
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230604739
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/about/",
+        "time": 1794230605656
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/about/",
+        "time": 1794230605731
+      }
+    ]
+  },
+  {
+    "route": "/work/",
+    "failure": null,
+    "settled": {
+      "url": "http://127.0.0.1:40129/work/",
+      "title": "Work | Hadi Hassan"
+    },
+    "about": "About Hadi Hassan",
+    "back": "http://127.0.0.1:40129/work/",
+    "forward": "http://127.0.0.1:40129/about/",
+    "events": [
+      {
+        "phase": "start",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230606769
+      },
+      {
+        "phase": "start",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230607035
+      },
+      {
+        "phase": "goto-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230609017
+      },
+      {
+        "phase": "goto-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230609234
+      },
+      {
+        "phase": "back-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230610226
+      },
+      {
+        "phase": "back-0",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230610306
+      },
+      {
+        "phase": "goto-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230611254
+      },
+      {
+        "phase": "goto-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230611353
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230612299
+      },
+      {
+        "phase": "back-1",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230612371
+      },
+      {
+        "phase": "goto-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230613290
+      },
+      {
+        "phase": "goto-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/",
+        "time": 1794230613435
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230614356
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230614440
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230615876
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230615972
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/about/",
+        "time": 1794230617003
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/about/",
+        "time": 1794230617113
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230618060
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/work/",
+        "time": 1794230618130
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/about/",
+        "time": 1794230619102
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:40129/about/",
+        "time": 1794230619276
+      }
+    ]
+  },
+  {
+    "route": "/mackenzie-cramblit/",
+    "lightbox": {
+      "src": null,
+      "visible": false,
+      "dialogOpen": false
+    },
+    "opened": [
+      {
+        "src": "/assets/mackenzie-13.webp",
+        "alt": "Mackenzie Cramblit — Brand guidelines overview and identity applications",
+        "visible": true,
+        "width": 1920
+      },
+      {
+        "src": "/assets/mackenzie-14.webp",
+        "alt": "Mackenzie Cramblit — Contents of the personal brand guidelines",
+        "visible": true,
+        "width": 1920
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "route": "/morganics/",
+    "lightbox": {
+      "src": null,
+      "visible": false,
+      "dialogOpen": false
+    },
+    "opened": [
+      {
+        "src": "/assets/morganics-155.webp",
+        "alt": "Morganics — Brand guidelines introduction",
+        "visible": true,
+        "width": 1500
+      },
+      {
+        "src": "/assets/morganics-156.webp",
+        "alt": "Morganics — Brand positioning, mission and vision",
+        "visible": true,
+        "width": 1500
+      }
+    ],
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,11 @@
+const assert=require('node:assert/strict');const {optionalConfigConsole}=require('./browser-assertions.cjs');
+const error={code:'CONSOLE_ERROR',message:'Failed to load resource: the server responded with a status of 404 (Not Found)',source:'http://localhost/intellignce-support/runtime-config.json'};
+const diagnostic={status:'builtin',attempts:[{file:'runtime-config.json',code:'PUBLIC_CONFIG_NOT_FOUND',httpStatus:404}]};
+assert.equal(optionalConfigConsole(error,diagnostic),false,'Unconfigured mode requires explicit local expectation');
+assert.equal(optionalConfigConsole(error,diagnostic,{allowUnconfigured:true}),true);
+assert.equal(optionalConfigConsole({...error,source:'http://localhost/assets/missing.png'},diagnostic,{allowUnconfigured:true}),false);
+assert.equal(optionalConfigConsole({...error,message:'Failed to load resource: 500'},diagnostic,{allowUnconfigured:true}),false);
+assert.equal(optionalConfigConsole(error,{...diagnostic,status:'error'},{allowUnconfigured:true}),false);
+assert.equal(optionalConfigConsole(error,{...diagnostic,attempts:[{file:'runtime-config.json',code:'PUBLIC_CONFIG_INVALID'}]},{allowUnconfigured:true}),false);
+assert.equal(optionalConfigConsole({...error,source:undefined},diagnostic,{allowUnconfigured:true}),false);
+console.log('PASS: narrowly classified, explicitly expected optional absence; other assets, HTTP failures, invalid config and unknown console sources still fail.');
