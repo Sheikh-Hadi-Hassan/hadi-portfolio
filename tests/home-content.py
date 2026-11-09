@@ -12,6 +12,7 @@ class Sections(HTMLParser):
 p=Sections(s);assert p.sections[:3]==['portfolio-hero','bf-reel','services'];assert p.sections.index('services')<p.sections.index('work');assert p.sections[p.sections.index('work')+1]=='products';assert len(p.ids)==len(set(p.ids));assert 'How I work.' in s and 'How we work.' not in s
 products=json.loads((r/'src/data/digital-products.json').read_text());assert len(products['products'])==4
 for item in products['products']:assert item['url'] in p.links and item['title'] in s and item['stage'] in s
+tms=next(item for item in products['products'] if item['id']=='tms');assert tms['url']=='https://tms-theta-eight.vercel.app/dashboard';assert tms['stage']=='MVP stage. Dashboard preview.';assert 'Owner-provided' in tms['source'];assert 'https://tms-theta-eight.vercel.app/login' not in s
 assert products['linkVerification'].startswith('BLOCKED');assert 'production ready' not in s.lower()
 proposal=json.loads((r/'docs/hero-baseline-PROPOSED-NOT-APPROVED.json').read_text())['proposal'];hero=s[s.index('<section class="portfolio-hero"'):s.index('<div class="bayfi-body"')];assert hashlib.sha256(hero.encode()).hexdigest()==proposal['hero_html']
 for key,path in [('hero_css','src/styles/hero.css'),('shared_css','src/styles/site.css')]:assert hashlib.sha256((r/path).read_bytes()).hexdigest()==proposal[key]

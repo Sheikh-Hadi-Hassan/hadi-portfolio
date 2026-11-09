@@ -2,7 +2,7 @@
 
 Branch: work/v01-booking-contract-20261103. Starting HEAD: c8f17da45a93ec8355d1a6e43721da61140f46db. Current HEAD is the commit containing this file.
 
-Published: approved personal working-board process; What I Do third; CV-backed product previews after Selected Work; expanded About/founder narrative; reel dwell and mobile/reduced-motion improvements; five-card mobile fit. Protected hero inputs unchanged. CRM follow-up dates now reject impossible dates; shown-results/local-date due, overdue, undated and correction filters also scope shown exports.
+Published: approved personal working-board process; What I Do third; CV-backed product previews after Selected Work (TMS dashboard URL corrected from owner screenshot/link, Nov 9; live access unverified); expanded About/founder narrative; reel dwell and mobile/reduced-motion improvements; five-card mobile fit. Protected hero inputs unchanged. CRM follow-up dates now reject impossible dates; shown-results/local-date due, overdue, undated and correction filters also scope shown exports.
 
 Current slice: private tenant business/services/offers schema, backend-derived membership and permission context, tenant-namespaced repository contract, revision/idempotency protection and confirmed readback. Storage/writes default disabled. No endpoint, production identity/storage adapter, public embed, customer migration or public publishing. Sheet roles are not tenant isolation. Independent authentication/storage acceptance is required before integration.
 

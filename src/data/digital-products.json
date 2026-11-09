@@ -22,8 +22,9 @@
       "id": "tms",
       "title": "TMS",
       "description": "A travel management system.",
-      "stage": "MVP stage. Login screen.",
-      "url": "https://tms-theta-eight.vercel.app/login"
+      "stage": "MVP stage. Dashboard preview.",
+      "url": "https://tms-theta-eight.vercel.app/dashboard",
+      "source": "Owner-provided dashboard URL and screenshot, 2026-11-09; live availability unverified."
     },
     {
       "id": "flow",
