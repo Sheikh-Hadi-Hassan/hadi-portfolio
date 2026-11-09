@@ -1,3 +1,13 @@
+# V1 current checkpoint
+
+27/243 = 11.11% bounded local acceptance (previous22/243=9.05%);183 partial,2 missing,31 externally blocked. Production-build acceptance0/198. Manifest STALE; release NO-GO.
+
+Working code: authoritative booking proof/recovery, server-only Gemini/Groq/OpenRouter routing, current approved tone/budgets, quota filesystem hardening and CRM follow-up/edit/export. See docs/v1/IMPLEMENTATION-LEDGER.md, TEST_EVIDENCE.md and RELEASE_AUDIT.md. Full V1 is incomplete. Two Missing lifecycle IDs are retained. No global manifest regenerated or production acceptance granted.
+
+Current full build/SEO-output/browser tests remain blocked; historical passes below are dated evidence, not current deployment proof.
+
+## Historical checkpoints (retained)
+
 # Latest local acceptance — notification reliability and isolated browser checks
 
 Current branch continues 259a04319905a9a6deb0b6235a983c0cc7322f9f. Acceptance: **20/243 → 22/243 (9.05%)**. Counts: {'Partially implemented': 188, 'Implemented and verified': 22, 'Missing': 2, 'Blocked by external dependency': 31}; total 243. Future obligations remain 233. Original 476 catalogue/IDs preserved.
@@ -145,3 +155,4 @@ All six owner-controlled P0 gates remain blocked; actual hosting/Google integrat
 Smallest candidate: integrations/calendar-v8/Code.gs from1d4ea2a51a01502feab50bb2ea5a358173aa6f67 only, with a fixed-hash offline package. Review manifest is not a deploy file. No PHP/frontend/Sera/CMS/admin/config/record change is proposed. Seven focused JS suites and one packaging Python suite pass, including source-client→Apps Script→lead/Calendar/Meet/owner-intent mock integration and existing recovery/contact regressions. This is not actual PHP/Google/browser or mail-delivery acceptance. See docs/booking-release/RELEASE-READINESS.md and TEST-EVIDENCE.md.
 
 Booking deployment remains NO-GO pending actual runtime/config/deployed-version and live gateway/client parity, Sheet/backlog/permission compatibility, fresh backup/rollback, authorized isolated staging and explicit deployment/QA approval. Unfinished Business Control Center and hero approval are not prerequisites for this fixed backend-only artifact; full portfolio build remains blocked0/198. Portfolio counts unchanged22/243=9.05%,188partial,2missing,31blocked;233future excluded. Global manifest STALE.
+

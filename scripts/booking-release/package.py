@@ -4,7 +4,7 @@ import hashlib,json,os,sys,zipfile
 ROOT=Path(__file__).resolve().parents[2]
 SPEC=ROOT/'docs/v1/BOOKING-CANDIDATE.json'
 SOURCES={'apps-script/Code.gs':'integrations/calendar-v8/Code.gs','review/appsscript.expected.json':'integrations/calendar-v8/appsscript.json'}
-NOTICE='NOT AUTHORIZED FOR DEPLOYMENT. Apps Script-only candidate. Read docs/booking-release/RELEASE-READINESS.md. Do not run setup/activateSetup, change private configuration, grant scopes, or execute bookings from this package. review/appsscript.expected.json is comparison-only. Existing source resource settings are NOT isolated staging resources.\n'
+NOTICE='NOT AUTHORIZED FOR DEPLOYMENT. Apps Script-only candidate. Read docs/v1/HOSTINGER_DEPLOYMENT.md and docs/v1/RELEASE_AUDIT.md. Do not run setup/activateSetup, change private configuration, grant scopes, or execute bookings from this package. review/appsscript.expected.json is comparison-only. Existing source resource settings are NOT isolated staging resources.\n'
 def digest(b): return hashlib.sha256(b).hexdigest()
 def inputs(root,spec):
     if spec.get('schemaVersion')!=1 or spec.get('scope')!='apps_script_booking_only' or spec.get('releaseDecision')!='NO-GO' or spec.get('deploymentAuthorized') is not False or spec.get('productionConfigurationChanges') is not False: raise ValueError('BOOKING_SCOPE_INVALID')

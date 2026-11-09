@@ -1,3 +1,9 @@
+# V1 reconciliation note
+
+27/243 = 11.11% bounded local acceptance (previous22/243=9.05%);183 partial,2 missing,31 externally blocked. Production-build acceptance0/198. Manifest STALE; release NO-GO.
+
+Owner-only CRM/approved-content/Sera configuration and private provider libraries now have bounded local workflows. These do not supply tenant isolation, hosted customer support or a commercial Flow Connect launch. Original233 future obligations remain separately classified. Current V1 remaining work: docs/v1/PRODUCT_ROADMAP.md; original roadmap below is historical scope, not a claim that later owner-admin code is absent.
+
 # Flow Connect roadmap
 
 FUTURE_SCOPE: original plan §15, dual-mode blueprint and V0.7–V1.2 roadmap. No commercial platform launch is part of Portfolio V0.1.

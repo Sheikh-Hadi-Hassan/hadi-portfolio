@@ -1,0 +1,18 @@
+{
+  "status": "PREPARED_NOT_DEPLOYABLE",
+  "sourceCommit": "32a6e44adb71e5750a799e708717ca3c5268ec81",
+  "scope": "apps_script_booking_only",
+  "sha256": "7a221322ec70d57e6370497ef9cf4551980c329dac395b7e9287a04871459831",
+  "deploymentAuthorized": false,
+  "files": [
+    "READ-ME-FIRST.txt",
+    "apps-script/Code.gs",
+    "release.json",
+    "review/appsscript.expected.json"
+  ],
+  "deployFiles": [
+    "apps-script/Code.gs"
+  ],
+  "artifactName": "Hadi-Booking-V1-Candidate-32a6e44-r2.zip",
+  "previousLocalArtifact": "Hadi-Booking-V1-Candidate-32a6e44.zip retained; r2 updates notice to current V1 handoff, Code.gs unchanged"
+}

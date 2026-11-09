@@ -2,12 +2,12 @@
   "source": "Pasted markdown(20261102-060832).md; 869 lines",
   "method": "Deduplicated feature/acceptance obligations from original §§3–15 and later public-Sera/blueprint/version sections. Historical observations and superseded planning-only execution restrictions are context, not product requirements. Independent backend/platform and external growth work are future scope. A verified criterion is bounded to its cited local evidence; live gates are separate.",
   "portfolio_total": 243,
-  "portfolio_verified": 22,
-  "verified_percentage": 9.05,
+  "portfolio_verified": 27,
+  "verified_percentage": 11.11,
   "all_scope_total": 476,
   "counts": {
-    "Partially implemented": 188,
-    "Implemented and verified": 22,
+    "Implemented and verified": 27,
+    "Partially implemented": 183,
     "Missing": 2,
     "Blocked by external dependency": 31
   },
@@ -18,17 +18,19 @@
       "requirement": "Persist appointment before confirmation",
       "reference": "§§3–6; V0.1",
       "component": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
-      "status": "Partially implemented",
+      "status": "Implemented and verified",
       "priority": "P0",
-      "evidence": "No complete acceptance evidence",
-      "action": "Complete focused acceptance checks and retain evidence",
-      "acceptance": "Demonstrate persist appointment before confirmation with reproducible evidence; source presence alone is insufficient.",
+      "evidence": "tests/booking-authority.mjs; tests/booking-recovery.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+      "action": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+      "acceptance": "A failed initial lead save performs no Calendar write; a failed final persistence flush cannot return confirmed; later status repairs the same event identity.",
       "review": {
-        "criterion": "Demonstrate persist appointment before confirmation with reproducible evidence; source presence alone is insufficient.",
-        "evidence": "No complete acceptance evidence",
-        "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+        "criterion": "A failed initial lead save performs no Calendar write; a failed final persistence flush cannot return confirmed; later status repairs the same event identity.",
+        "evidence": "tests/booking-authority.mjs; tests/booking-recovery.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+        "remaining": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+        "boundary": "Isolated in-memory provider/persistence faults. Not production or exactly-once delivery proof."
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-DAAE5D43",
@@ -46,7 +48,9 @@
         "evidence": "tests/booking-recovery.mjs; tests/booking-validation.mjs — PASS locally; Generated reference equals saved row and response; deterministic event ID for UUID",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-AEDBB192",
@@ -64,7 +68,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-BF7A1435",
@@ -82,7 +88,9 @@
         "evidence": "tests/booking-recovery.mjs — PASS locally; Saved mock row retains supplied visitor timezone",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-D6B53C76",
@@ -100,7 +108,9 @@
         "evidence": "tests/booking-recovery.mjs — PASS locally; Saved mock row preserves supplied name/email; actual Google durability separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-7E49D64F",
@@ -118,7 +128,9 @@
         "evidence": "tests/booking-recovery.mjs — PASS locally; Saved mock row contains Booked only for a ready fixture",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-E578557A",
@@ -136,7 +148,9 @@
         "evidence": "tests/booking-recovery.mjs — PASS locally; Saved mock row event ID equals provider fixture and response ID",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-E6948560",
@@ -154,7 +168,9 @@
         "evidence": "tests/booking-recovery.mjs: sequential same-key submits yield one row/event",
         "remaining": "Concurrent cross-provider acceptance remains separate",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-03C060D9",
@@ -172,7 +188,9 @@
         "evidence": "tests/booking-recovery.mjs: REFERENCE_MISMATCH",
         "remaining": "Live deployment identity separately gated",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-1B5A3DBB",
@@ -190,7 +208,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-967E44A3",
@@ -208,7 +228,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-ED56B733",
@@ -226,7 +248,9 @@
         "evidence": "tests/booking-status.mjs; tests/booking-client-contract.cjs; tests/booking-recovery.mjs (local mocks)",
         "remaining": "Retain live identity/E2E gate separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-DD383D84",
@@ -244,7 +268,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-A0C307B7",
@@ -262,7 +288,9 @@
         "evidence": "tests/booking-status.mjs — PASS locally; Cancelled event produces CANCELLED, not a booked confirmation",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-474D07E1",
@@ -280,7 +308,9 @@
         "evidence": "No reschedule action in inspected public gateway",
         "remaining": "Design verified authenticated contract; do not add unauthorized provider writes",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E38A6D22",
@@ -288,17 +318,19 @@
       "requirement": "Calendar creation before confirmation",
       "reference": "§§3–6; V0.1",
       "component": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
-      "status": "Partially implemented",
+      "status": "Implemented and verified",
       "priority": "P0",
-      "evidence": "No complete acceptance evidence",
-      "action": "Complete focused acceptance checks and retain evidence",
-      "acceptance": "Demonstrate calendar creation before confirmation with reproducible evidence; source presence alone is insufficient.",
+      "evidence": "tests/booking-authority.mjs; tests/booking-status.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+      "action": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+      "acceptance": "Confirmation and invitation require authoritative Calendar GET matching derived ID, private reference and persisted lead; missing/timed-out/wrong identity stays pending with no confirmation.",
       "review": {
-        "criterion": "Demonstrate calendar creation before confirmation with reproducible evidence; source presence alone is insufficient.",
-        "evidence": "No complete acceptance evidence",
-        "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+        "criterion": "Confirmation and invitation require authoritative Calendar GET matching derived ID, private reference and persisted lead; missing/timed-out/wrong identity stays pending with no confirmation.",
+        "evidence": "tests/booking-authority.mjs; tests/booking-status.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+        "remaining": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+        "boundary": "Isolated in-memory provider/persistence faults. Not production or exactly-once delivery proof."
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-28C0C260",
@@ -316,7 +348,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-185FB3F9",
@@ -334,7 +368,9 @@
         "evidence": "tests/booking-status.mjs; tests/booking-client-contract.cjs",
         "remaining": "Deployed source identity separately gated",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-EFD23D8E",
@@ -352,7 +388,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-BEBD34F2",
@@ -360,17 +398,19 @@
       "requirement": "Correct event date and duration",
       "reference": "§§3–6; V0.1",
       "component": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
-      "status": "Partially implemented",
+      "status": "Implemented and verified",
       "priority": "P0",
-      "evidence": "No complete acceptance evidence",
-      "action": "Complete focused acceptance checks and retain evidence",
-      "acceptance": "Demonstrate correct event date and duration with reproducible evidence; source presence alone is insufficient.",
+      "evidence": "tests/booking-authority.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+      "action": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+      "acceptance": "GET start must equal requested UTC instant with explicit offset, configured zone and exact expected end/duration; wrong start/end/zone never confirms.",
       "review": {
-        "criterion": "Demonstrate correct event date and duration with reproducible evidence; source presence alone is insufficient.",
-        "evidence": "No complete acceptance evidence",
-        "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+        "criterion": "GET start must equal requested UTC instant with explicit offset, configured zone and exact expected end/duration; wrong start/end/zone never confirms.",
+        "evidence": "tests/booking-authority.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+        "remaining": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+        "boundary": "Isolated in-memory provider/persistence faults. Not production or exactly-once delivery proof."
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-A9CAD3C5",
@@ -388,7 +428,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E711FBC4",
@@ -406,7 +448,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-4871E14E",
@@ -424,7 +468,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-3C734D08",
@@ -442,7 +488,9 @@
         "evidence": "tests/booking-validation.mjs — PASS locally; Transient read failure retries once; permanent permission failure does not retry; exhaustion propagates",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-1374AE96",
@@ -460,7 +508,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-F6C349D2",
@@ -478,7 +528,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-0950128D",
@@ -486,17 +538,19 @@
       "requirement": "Partial-success reconciliation",
       "reference": "§§3–6; V0.1",
       "component": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
-      "status": "Partially implemented",
+      "status": "Implemented and verified",
       "priority": "P0",
-      "evidence": "No complete acceptance evidence",
-      "action": "Complete focused acceptance checks and retain evidence",
-      "acceptance": "Demonstrate partial-success reconciliation with reproducible evidence; source presence alone is insufficient.",
+      "evidence": "tests/booking-authority.mjs; tests/booking-recovery.mjs; tests/notification-crash.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+      "action": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+      "acceptance": "Lost insert/readback and invitation acknowledgement reconcile original identity without reinsertion or blind resend; unresolved delivery intent remains quarantined.",
       "review": {
-        "criterion": "Demonstrate partial-success reconciliation with reproducible evidence; source presence alone is insufficient.",
-        "evidence": "No complete acceptance evidence",
-        "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+        "criterion": "Lost insert/readback and invitation acknowledgement reconcile original identity without reinsertion or blind resend; unresolved delivery intent remains quarantined.",
+        "evidence": "tests/booking-authority.mjs; tests/booking-recovery.mjs; tests/notification-crash.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+        "remaining": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+        "boundary": "Isolated in-memory provider/persistence faults. Not production or exactly-once delivery proof."
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-571941B8",
@@ -514,7 +568,9 @@
         "evidence": "tests/booking-recovery.mjs: lost-response retry reconciles deterministic ID",
         "remaining": "Live and concurrent conditions separately gated",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-D5C70224",
@@ -522,17 +578,19 @@
       "requirement": "No unintended duplicate confirmation",
       "reference": "§§3–6; V0.1",
       "component": "integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt",
-      "status": "Partially implemented",
+      "status": "Implemented and verified",
       "priority": "P0",
-      "evidence": "No complete acceptance evidence",
-      "action": "Complete focused acceptance checks and retain evidence",
-      "acceptance": "Demonstrate no unintended duplicate confirmation with reproducible evidence; source presence alone is insufficient.",
+      "evidence": "tests/booking-authority.mjs; tests/notification-crash.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+      "action": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+      "acceptance": "Persist/flush invitation or mail intent before attempt; failed intent sends nothing; unknown result is quarantined; accepted markers reconcile without another PATCH/send. Delivery itself is not asserted.",
       "review": {
-        "criterion": "Demonstrate no unintended duplicate confirmation with reproducible evidence; source presence alone is insufficient.",
-        "evidence": "No complete acceptance evidence",
-        "remaining": "Complete focused acceptance checks and retain evidence",
-        "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+        "criterion": "Persist/flush invitation or mail intent before attempt; failed intent sends nothing; unknown result is quarantined; accepted markers reconcile without another PATCH/send. Delivery itself is not asserted.",
+        "evidence": "tests/booking-authority.mjs; tests/notification-crash.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json",
+        "remaining": "Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance",
+        "boundary": "Isolated in-memory provider/persistence faults. Not production or exactly-once delivery proof."
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-347FFE76",
@@ -550,7 +608,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-36D0078C",
@@ -568,7 +628,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-F237980E",
@@ -586,7 +648,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-FACBB24B",
@@ -604,7 +668,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-87D3AB81",
@@ -622,7 +688,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-C4600050",
@@ -640,7 +708,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-15E525B9",
@@ -658,7 +728,9 @@
         "evidence": "Cancelled-provider events recognized; no authenticated modification contract",
         "remaining": "Design verified authenticated contract; preserve owner contact fallback",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-DB149B1B",
@@ -676,7 +748,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-44EB5721",
@@ -694,7 +768,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-AF592A9B",
@@ -712,7 +788,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-38116580",
@@ -730,7 +808,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-39DD0A03",
@@ -748,7 +828,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-AA142A93",
@@ -766,7 +848,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-36FEDD57",
@@ -784,7 +868,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-41027089",
@@ -802,7 +888,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-CFC92D62",
@@ -820,7 +908,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-8D7F2E86",
@@ -838,7 +928,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-9CACF774",
@@ -856,7 +948,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-B74DBA0F",
@@ -874,7 +968,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-576DBE85",
@@ -892,7 +988,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-0C1AABAF",
@@ -910,7 +1008,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-0339CA33",
@@ -928,7 +1028,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-AAEB7337",
@@ -946,7 +1048,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-532534DD",
@@ -964,7 +1068,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-CE1AE462",
@@ -982,7 +1088,9 @@
         "evidence": "No authenticated acceptance evidence",
         "remaining": "Owner authenticated evidence; explicit approval for live test",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-5D068CC8",
@@ -1000,7 +1108,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-54155775",
@@ -1018,7 +1128,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E86B21BC",
@@ -1036,7 +1148,9 @@
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-CCB8EF1B",
@@ -1054,7 +1168,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E45F67D6",
@@ -1072,7 +1188,9 @@
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-7A5FBA05",
@@ -1090,7 +1208,9 @@
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-B71EA82F",
@@ -1108,7 +1228,9 @@
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-8C87E9A9",
@@ -1126,7 +1248,9 @@
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-6915DA21",
@@ -1144,7 +1268,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-202DCC2C",
@@ -1162,7 +1288,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-AA356F55",
@@ -1180,7 +1308,9 @@
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-A209CD11",
@@ -1198,7 +1328,9 @@
         "evidence": "tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-88063F7F",
@@ -1216,7 +1348,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-0C7809D7",
@@ -1234,7 +1368,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-0210CDD0",
@@ -1252,7 +1388,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E3D8111B",
@@ -1270,7 +1408,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-6EC2857D",
@@ -1288,7 +1428,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-A6483E1B",
@@ -1306,7 +1448,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-6912DD76",
@@ -1324,7 +1468,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-212AC571",
@@ -1342,7 +1488,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-26A783C8",
@@ -1360,7 +1508,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-5477DEAB",
@@ -1378,7 +1528,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-D38CCD01",
@@ -1396,7 +1548,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-56EE7989",
@@ -1414,7 +1568,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-57E5D313",
@@ -1432,7 +1588,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-C322C7C3",
@@ -1450,7 +1608,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-68F1AF3A",
@@ -1468,7 +1628,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-413007A7",
@@ -1486,7 +1648,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-EFA29034",
@@ -1504,7 +1668,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-CF87E9DC",
@@ -1522,7 +1688,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-689C3518",
@@ -1540,7 +1708,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-0283AAD0",
@@ -1558,7 +1728,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-F80B06E8",
@@ -1576,7 +1748,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-743EB048",
@@ -1594,7 +1768,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-D45D63F4",
@@ -1612,7 +1788,9 @@
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-0577166D",
@@ -1630,7 +1808,9 @@
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-F0E07394",
@@ -1648,7 +1828,9 @@
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-E5928DB0",
@@ -1666,7 +1848,9 @@
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-45E6D4DA",
@@ -1684,7 +1868,9 @@
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-E9BE8205",
@@ -1702,7 +1888,9 @@
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-EF281E62",
@@ -1720,7 +1908,9 @@
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-292030E9",
@@ -1738,7 +1928,9 @@
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-4AA84630",
@@ -1756,7 +1948,9 @@
         "evidence": "External account/field data not supplied",
         "remaining": "Owner account evidence or measured field data",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-40D705E8",
@@ -1774,7 +1968,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-AD785376",
@@ -1792,7 +1988,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-F9CC3109",
@@ -1810,7 +2008,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-F6F84CE5",
@@ -1828,7 +2028,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9BA8E63E",
@@ -1846,7 +2048,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-B67CC115",
@@ -1864,7 +2068,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-FEBA9DB1",
@@ -1882,7 +2088,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-C9FC0477",
@@ -1900,7 +2108,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-EC83AEA1",
@@ -1918,7 +2128,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-56D6E58D",
@@ -1936,7 +2148,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-631826AC",
@@ -1954,7 +2168,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-6ACEAFA9",
@@ -1972,7 +2188,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-A7137C4F",
@@ -1990,7 +2208,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-FC9AD5AE",
@@ -2008,7 +2228,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E502B03A",
@@ -2026,7 +2248,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-A6A455B9",
@@ -2044,7 +2268,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-78955378",
@@ -2062,7 +2288,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-4E87FE76",
@@ -2080,7 +2308,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7680818B",
@@ -2098,7 +2328,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-08F59EF7",
@@ -2116,7 +2348,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-DDDB22C6",
@@ -2134,7 +2368,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9671468C",
@@ -2152,7 +2388,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-2501275F",
@@ -2170,7 +2408,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-100BB1BC",
@@ -2188,7 +2428,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-DEE08585",
@@ -2206,7 +2448,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-FD7E570D",
@@ -2224,7 +2468,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-29A2A423",
@@ -2242,7 +2488,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-4A6AF2D9",
@@ -2260,7 +2508,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-3539CEED",
@@ -2278,7 +2528,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7CE024EC",
@@ -2296,7 +2548,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-15A74870",
@@ -2314,7 +2568,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-BB9621DE",
@@ -2332,7 +2588,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-FE09988B",
@@ -2350,7 +2608,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-C3B90DC1",
@@ -2368,7 +2628,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-EA3193A5",
@@ -2386,7 +2648,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E3D3821C",
@@ -2404,7 +2668,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-C8C2BED3",
@@ -2422,7 +2688,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-AB24E6A5",
@@ -2440,7 +2708,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-8CF23667",
@@ -2458,7 +2728,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-77288C3A",
@@ -2476,7 +2748,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-89159E8A",
@@ -2494,7 +2768,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-2E981ABA",
@@ -2512,7 +2788,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-C03FFAB5",
@@ -2530,7 +2808,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9033162B",
@@ -2548,7 +2828,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-90401826",
@@ -2566,7 +2848,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-5A828C5C",
@@ -2584,7 +2868,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-292D6DD9",
@@ -2602,7 +2888,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-8E4B97CA",
@@ -2620,7 +2908,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-D3E62F32",
@@ -2638,7 +2928,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-A708BD47",
@@ -2656,7 +2948,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7DA3DF71",
@@ -2674,7 +2968,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-C5CD5DC5",
@@ -2692,7 +2988,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-D49343A5",
@@ -2710,7 +3008,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-BC971234",
@@ -2728,7 +3028,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-41B00E34",
@@ -2746,7 +3048,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-2A697525",
@@ -2764,7 +3068,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-A3E6F9D2",
@@ -2782,7 +3088,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-ACC0BA7B",
@@ -2800,7 +3108,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-32081F44",
@@ -2818,7 +3128,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-3948298C",
@@ -2836,7 +3148,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-289600CC",
@@ -2854,7 +3168,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-93804239",
@@ -2872,7 +3188,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7C3E614B",
@@ -2890,7 +3208,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-838897AD",
@@ -2908,7 +3228,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-B57B52EB",
@@ -2926,7 +3248,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-6571BC64",
@@ -2944,7 +3268,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-CA76547D",
@@ -2962,7 +3288,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-3D900DCB",
@@ -2980,7 +3308,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-58FD60D5",
@@ -2998,7 +3328,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-B9C4ABDE",
@@ -3016,7 +3348,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-31FCC688",
@@ -3034,7 +3368,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9A0CD6B8",
@@ -3052,7 +3388,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-FC696D8A",
@@ -3070,7 +3408,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9154A039",
@@ -3088,7 +3428,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-648F58E8",
@@ -3106,7 +3448,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-0971968C",
@@ -3124,7 +3468,9 @@
         "evidence": "tests/booking-validation.mjs — PASS locally; Escape standard =,+,-,@,tab,CR formula-leading prefixes before Sheet storage; preserve plain-text roundtrip",
         "remaining": "Retain bounded local pass; verify actual production integration/export separately",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-36BC8E0E",
@@ -3142,7 +3488,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-570B5FB2",
@@ -3160,7 +3508,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-1C593012",
@@ -3178,7 +3528,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-2AF7EDAB",
@@ -3196,7 +3548,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-D3D3411F",
@@ -3214,7 +3568,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9DB9D538",
@@ -3232,7 +3588,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-CFA02423",
@@ -3250,7 +3608,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-8D383AFC",
@@ -3268,7 +3628,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-446B7D03",
@@ -3286,7 +3648,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-32C5F29C",
@@ -3304,7 +3668,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7843FDA3",
@@ -3322,7 +3688,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-402F66D7",
@@ -3340,7 +3708,9 @@
         "evidence": "Footer/Privacy/Sera name Gemini; operational retention incomplete",
         "remaining": "Reconcile consent and retention after owner facts",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-4CC31E06",
@@ -3358,7 +3728,9 @@
         "evidence": "tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json",
         "remaining": "Retain local component pass; production export/route accessibility and provider data handling are separate gates",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-CE7018E3",
@@ -3376,7 +3748,9 @@
         "evidence": "tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json",
         "remaining": "Retain local component pass; production export/route accessibility and provider data handling are separate gates",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "LOCAL_CONTRACT_VERIFIED"
     },
     {
       "id": "PV-D93D37AB",
@@ -3394,7 +3768,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-EA64DE25",
@@ -3412,7 +3788,9 @@
         "evidence": "Owner operational policy not supplied",
         "remaining": "Owner confirms Sheet/Google/log retention and responsibilities",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-BEEFFC7C",
@@ -3430,7 +3808,9 @@
         "evidence": "Operational procedure not supplied",
         "remaining": "Owner confirms authorized process",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-BDD88073",
@@ -3448,7 +3828,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-2A648415",
@@ -3466,7 +3848,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-4FDB14AA",
@@ -3484,7 +3868,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-09BC816B",
@@ -3502,7 +3888,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-0FAEA31A",
@@ -3520,7 +3908,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E91CDE71",
@@ -3538,7 +3928,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-254C57D0",
@@ -3556,7 +3948,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9CD31361",
@@ -3574,7 +3968,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7A253BBC",
@@ -3592,7 +3988,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-FDE6207E",
@@ -3610,7 +4008,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-A5B31EB2",
@@ -3628,7 +4028,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-172E0D98",
@@ -3646,7 +4048,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-B488C566",
@@ -3664,7 +4068,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-85528FBE",
@@ -3682,7 +4088,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-89E35632",
@@ -3700,7 +4108,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-B6743A45",
@@ -3718,7 +4128,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-91C03266",
@@ -3736,7 +4148,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-50190B31",
@@ -3754,7 +4168,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9BF6B0A1",
@@ -3772,7 +4188,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7D0BE3B1",
@@ -3790,7 +4208,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-F03DF3F6",
@@ -3808,7 +4228,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-0F7A7D89",
@@ -3826,7 +4248,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-1D77A3AE",
@@ -3844,7 +4268,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-1D7B6112",
@@ -3862,7 +4288,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-0FB6745F",
@@ -3880,7 +4308,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-73DC6449",
@@ -3898,7 +4328,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-727B2646",
@@ -3916,7 +4348,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7970C740",
@@ -3934,7 +4368,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-6C965F53",
@@ -3952,7 +4388,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-CCC46F0C",
@@ -3970,7 +4408,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9000EFDC",
@@ -3988,7 +4428,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-B12BBDA6",
@@ -4006,7 +4448,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7FB58B22",
@@ -4024,7 +4468,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-08E5EC7E",
@@ -4042,7 +4488,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E6F4C698",
@@ -4060,7 +4508,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E60522DC",
@@ -4078,7 +4528,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-B1503EF2",
@@ -4096,7 +4548,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-5B0BD731",
@@ -4114,7 +4568,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-3F497E97",
@@ -4132,7 +4588,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-67891A25",
@@ -4150,7 +4608,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-E66451B9",
@@ -4168,7 +4628,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-A1157DED",
@@ -4186,7 +4648,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-02748EA7",
@@ -4204,7 +4668,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-4F6FF0C1",
@@ -4222,7 +4688,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-7F8280B1",
@@ -4240,7 +4708,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-F99CA3E8",
@@ -4258,7 +4728,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-4083FBFB",
@@ -4276,7 +4748,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-3EA50ACE",
@@ -4294,7 +4768,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-9B74198C",
@@ -4312,7 +4788,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-DC6F133E",
@@ -4330,7 +4808,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "PV-913EF220",
@@ -4348,7 +4828,9 @@
         "evidence": "Manifest STALE; validated current artifact unavailable",
         "remaining": "Hero approval, accepted build and authenticated comparison",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-27545F5D",
@@ -4366,7 +4848,9 @@
         "evidence": "Manifest STALE; validated current artifact unavailable",
         "remaining": "Hero approval, accepted build and authenticated comparison",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EXTERNAL_EVIDENCE_REQUIRED"
     },
     {
       "id": "PV-BE6BAB72",
@@ -4384,7 +4868,9 @@
         "evidence": "No complete acceptance evidence",
         "remaining": "Complete focused acceptance checks and retain evidence",
         "boundary": "Bounded local contracts/source-template or isolated component checks only; no implicit live acceptance."
-      }
+      },
+      "production_acceptance": "UNVERIFIED",
+      "evidence_level": "EVIDENCE_GAP"
     },
     {
       "id": "SO-1F65A837",
@@ -7182,5 +7668,12 @@
       "action": "Separate owner approval/account access for publication or outreach",
       "acceptance": "Demonstrate outreach tracking with reproducible evidence; source presence alone is insufficient."
     }
-  ]
+  ],
+  "reconciliation": {
+    "source_checkpoint": "94c53a89c995926bd4055a59b94b64e98a90eb33",
+    "scope": "All243 IDs classified. Five new bounded booking contracts verified; other prior statuses preserved. This is not full semantic acceptance of188 prior partial items.",
+    "production_verified": 0,
+    "implementation_completion_percentage": null,
+    "implementation_percentage_reason": "Partial records have unresolved atomic acceptance and implementation gaps. Do not assign arbitrary partial credit or call local acceptance overall implementation completion."
+  }
 }

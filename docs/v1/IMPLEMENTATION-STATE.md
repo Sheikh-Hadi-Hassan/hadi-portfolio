@@ -48,3 +48,19 @@ Next: reconcile all243 traceability rows and implementation ledger, add isolated
 Provider ledger now requires private directory/regular0600 single-link file, rejects symlink ancestors/hardlinks, verifies opened inode identity and validates every stored quota/circuit counter before mutation. Corrupt metadata is not reset. New-file creation uses restrictive umask. PASS: sera-ledger-security.php, sera-provider-ledger.php, 20-process quota test (exactly3 reservations). Initial permission-change test exposed stale PHP stat cache; cache invalidation fixed and rerun passed.
 
 Current public approved artifact is passed into trusted routing per request, so stale private-runtime snapshots do not freeze approved budgets/tone. Only fixed enum-derived tone enters provider system instructions; names/welcome remain data. PASS: sera-runtime-approval.php; affected adapter/runtime/bridge tests. No provider calls, credential activation or filesystem production changes.
+
+## Stage5: requirements and release reconciliation
+
+27/243 = 11.11% bounded local acceptance (previous22/243=9.05%);183 partial,2 missing,31 externally blocked. Production-build acceptance0/198. Manifest STALE; release NO-GO.
+
+All243 statuses/source/evidence/action entries retained with separate UNVERIFIED production acceptance; five new bounded booking criteria promoted. Exact evidence JSON includes failed prerequisite runs and final reruns, not fabricated passes. Current source-seo/utility tests lack dist and remain blocked by approved build. New booking-only ZIP verified; no full V1 artifact produced. See IMPLEMENTATION-LEDGER.md for unfinished functionality and PRODUCT_ROADMAP.md for next local task.
+
+## Stage6: bounded full-history CRM paging
+
+Server snapshot/cursor pagination reads at most200 Leads rows per request, validates all cursor fields and never accepts a Sheet/file identifier. Older/Newer controls preserve snapshot row boundary across new appends; search/filter/duplicate hints are explicitly page-scoped. Dirty editing requires a navigation decision. Unit test visits500 records exactly once, excludes a later appended row until refresh, rejects invalid cursors and handles empty sheets. Updated CRM component browser checks older/newer navigation plus existing retry/filter/export/accessibility states PASS. Full-history search/export remains the next independent enhancement; no unbounded Sheet scans added.
+
+No Hostinger tools or authenticated server configuration are available in this execution session; only read-only availability checked, no sign-in attempt/config modification. Existing reviewed evidence/owner procedure remains the path to runtime proof.
+
+## Publishing checkpoint
+
+Final rerun npm test21 suites and npm run test:evidence PASS. Current source byte hashes are in SOURCE-EVIDENCE.json. Provider account review candidates remain disabled, current official references recorded without inference calls. New r2 booking-only artifact changes notice to current V1 handoff; code source remains32a6e44. Full V1 artifact is not available. Next independent work is bounded cross-history CRM search/export and remaining183 requirement criteria; missing authenticated lifecycle operations remain P0. Do not describe this checkpoint as V1 complete or all local work finished.

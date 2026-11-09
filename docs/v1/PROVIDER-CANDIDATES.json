@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "scope": "REVIEW_ONLY_NOT_RUNTIME_REGISTRY",
+  "credentialWrites": false,
+  "liveTestsAuthorized": false,
+  "paidInferenceBudgetUSD": 0,
+  "candidates": [
+    {
+      "id": "review-gemini",
+      "provider": "gemini",
+      "modelId": "gemini-3.5-flash-lite",
+      "enabled": false,
+      "free_verified": false,
+      "unbilled_confirmed": false,
+      "privacy_approved": false,
+      "paid": false,
+      "remaining": 0,
+      "quotaPeriod": null,
+      "quotaLimit": null,
+      "evaluation": "NOT_RUN",
+      "source": "https://ai.google.dev/gemini-api/docs/pricing",
+      "reviewedAt": "2026-11-09",
+      "accountEligibility": "UNVERIFIED"
+    },
+    {
+      "id": "review-groq",
+      "provider": "groq",
+      "modelId": "openai/gpt-oss-20b",
+      "enabled": false,
+      "free_verified": false,
+      "unbilled_confirmed": false,
+      "privacy_approved": false,
+      "paid": false,
+      "remaining": 0,
+      "quotaPeriod": null,
+      "quotaLimit": null,
+      "evaluation": "NOT_RUN",
+      "source": "https://console.groq.com/docs/rate-limits",
+      "reviewedAt": "2026-11-09",
+      "accountEligibility": "UNVERIFIED"
+    },
+    {
+      "id": "review-openrouter",
+      "provider": "openrouter",
+      "modelId": null,
+      "enabled": false,
+      "free_verified": false,
+      "unbilled_confirmed": false,
+      "privacy_approved": false,
+      "paid": false,
+      "remaining": 0,
+      "quotaPeriod": null,
+      "quotaLimit": null,
+      "evaluation": "NOT_RUN",
+      "source": "https://openrouter.ai/docs/guides/routing/model-variants/free",
+      "reviewedAt": "2026-11-09",
+      "accountEligibility": "UNVERIFIED"
+    }
+  ]
+}

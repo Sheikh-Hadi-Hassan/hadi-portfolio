@@ -46,3 +46,8 @@ See PHASE4-GATE-RECONCILIATION.md for implementation/local/fixture/production se
 ## Phase5 independent booking release
 
 Use docs/booking-release/RELEASE-READINESS.md for the smallest Apps Script-only candidate and booking-specific gates. Unfinished admin/provider vault/CMS are excluded; no frontend or hero files/build are included. Supply the actual deployed numbered source/project file inventory, unchanged gateway/client parity, runtime/config identity, Sheet18-column/old-record and JOB_/trigger compatibility, Google Calendar/mail permissions, fresh backup/rollback and isolated test resources/recipient authorization. Do not run legacy setup/activateSetup or change keys/config. Production deployment and the one QA booking need explicit approval after gates pass. Current decision NO-GO; full-site hero/build gates remain separately blocked.
+
+
+## V1 current evidence reconciliation
+
+New booking source32a6e44 and private/provider/CRM source94c53a89 must be distinguished from historical report revisions. Existing25-file comparison and healthREADY do not prove this candidate is deployed. Current local27/243 does not change any external gate. OpenRouter is now an additional disabled adapter, requiring exact :free catalogue entry, zero price caps, account privacy/ZDR/SafetyRetention decision, quotas and explicit bounded connectivity approval. No API keys in chat. Current full artifact is unavailable until exact hero approval/build and unresolved implementation gates pass. Return only existing sanitized evidence files and the exact-hash hero decision when ready; diagnostics/deployment/live tests remain separately authorized.

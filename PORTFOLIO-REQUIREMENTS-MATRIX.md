@@ -1,520 +1,489 @@
 # Portfolio requirements matrix
 
-Original-plan catalogue preserved: 476 stable obligations = 243 portfolio + 233 future. No scope or IDs changed. Previous local acceptance: 20/243 (8.23%). Current: **22/243 = 22 ÷ 243 × 100 = 9.05%**. This is local acceptance coverage, not production readiness or implementation percentage.
+27/243 = 27 ÷ 243 × 100 = 11.11% locally verified, previously22/243 (9.05%). 183 partial,2 missing,31 externally blocked; total243. Original catalogue476 =243 portfolio +233 historical future obligations. No IDs removed/reclassified to hide scope. Production acceptance remains unverified; production-build browser0/198. Local contract verification is not overall V1 implementation completion.
 
-Counts: {'Partially implemented': 188, 'Implemented and verified': 22, 'Missing': 2, 'Blocked by external dependency': 31}. Sum = 243. Future = 233, excluded. Source/counting policy is preserved in docs/atomic-requirements.json and original-plan-source-coverage.json.
+Current evidence: docs/v1/REGRESSION-EVIDENCE.json. All243 rows retain source, acceptance, status, evidence and remaining action in docs/atomic-requirements.json. Implementation-only presence never becomes a pass. The183 partial rows are unresolved, not completed. Owner-admin V1 expansion is tracked separately in docs/v1/IMPLEMENTATION-LEDGER.md; historical future scope is not silently counted as done.
 
-New passes are isolated widget opt-in/withdrawal checks, not route acceptance. Browser production-build coverage stays 0/198. Unknown delivery remains unknown; durable notification intents suppress automatic replay and require manual reconciliation. Neither mail delivery nor lifecycle completion is promoted.
+|ID|Requirement|Original reference|Implementation source|Status|Test evidence|Remaining action|Priority|Production acceptance|
+|---|---|---|---|---|---|---|---|---|
+|PV-75BF2DB6|Persist appointment before confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-authority.mjs; tests/booking-recovery.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json|Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance|P0|UNVERIFIED|
+|PV-DAAE5D43|Stable booking reference|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs; tests/booking-validation.mjs — PASS locally; Generated reference equals saved row and response; deterministic event ID for UUID|Retain bounded local pass; verify actual production integration/export separately|P0|UNVERIFIED|
+|PV-AEDBB192|UTC timestamp storage|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-BF7A1435|Original visitor timezone storage|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs — PASS locally; Saved mock row retains supplied visitor timezone|Retain bounded local pass; verify actual production integration/export separately|P0|UNVERIFIED|
+|PV-D6B53C76|Contact data persistence|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs — PASS locally; Saved mock row preserves supplied name/email; actual Google durability separately gated|Retain bounded local pass; verify actual production integration/export separately|P0|UNVERIFIED|
+|PV-7E49D64F|Booking state persistence|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs — PASS locally; Saved mock row contains Booked only for a ready fixture|Retain bounded local pass; verify actual production integration/export separately|P0|UNVERIFIED|
+|PV-E578557A|External Calendar event identity storage|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs — PASS locally; Saved mock row event ID equals provider fixture and response ID|Retain bounded local pass; verify actual production integration/export separately|P0|UNVERIFIED|
+|PV-E6948560|Same-key idempotency|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs: sequential same-key submits yield one row/event|Concurrent cross-provider acceptance remains separate|P0|UNVERIFIED|
+|PV-03C060D9|Reject same key with changed payload|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs: REFERENCE_MISMATCH|Live deployment identity separately gated|P0|UNVERIFIED|
+|PV-1B5A3DBB|Prevent concurrent slot conflicts|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-967E44A3|Recheck live server availability|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-ED56B733|Pending bookings remain unconfirmed|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-status.mjs; tests/booking-client-contract.cjs; tests/booking-recovery.mjs (local mocks)|Retain live identity/E2E gate separately|P0|UNVERIFIED|
+|PV-DD383D84|Differentiate failed synchronization from confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-A0C307B7|Recognize cancelled Calendar event|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-status.mjs — PASS locally; Cancelled event produces CANCELLED, not a booked confirmation|Retain bounded local pass; verify actual production integration/export separately|P0|UNVERIFIED|
+|PV-474D07E1|Rescheduled booking lifecycle|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Missing|No reschedule action in inspected public gateway|Design verified authenticated contract; do not add unauthorized provider writes|P0|UNVERIFIED|
+|PV-E38A6D22|Calendar creation before confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-authority.mjs; tests/booking-status.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json|Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance|P0|UNVERIFIED|
+|PV-28C0C260|Meet conference creation per booking|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-185FB3F9|Meet readiness before confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-status.mjs; tests/booking-client-contract.cjs|Deployed source identity separately gated|P0|UNVERIFIED|
+|PV-EFD23D8E|Correct owner Calendar identity|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-BEBD34F2|Correct event date and duration|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-authority.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json|Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance|P0|UNVERIFIED|
+|PV-A9CAD3C5|Correct customer notification|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-E711FBC4|Correct owner notification|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-4871E14E|Notification delivery evidence|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-3C734D08|Transient provider retry|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-validation.mjs — PASS locally; Transient read failure retries once; permanent permission failure does not retry; exhaustion propagates|Retain bounded local pass; verify actual production integration/export separately|P0|UNVERIFIED|
+|PV-1374AE96|Exponential retry backoff|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-F6C349D2|Retry exhaustion/manual review|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-0950128D|Partial-success reconciliation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-authority.mjs; tests/booking-recovery.mjs; tests/notification-crash.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json|Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance|P0|UNVERIFIED|
+|PV-571941B8|No duplicate Calendar event on retry|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs: lost-response retry reconciles deterministic ID|Live and concurrent conditions separately gated|P0|UNVERIFIED|
+|PV-D5C70224|No unintended duplicate confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-authority.mjs; tests/notification-crash.mjs — PASS with fake Google APIs at source32a6e44; docs/v1/REGRESSION-EVIDENCE.json|Retain bounded local contract pass; actual web/Google persistence, Calendar and delivered email require authorized integration acceptance|P0|UNVERIFIED|
+|PV-347FFE76|Owner alert on failed synchronization|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-36D0078C|Safe visitor fallback on provider failure|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-F237980E|Correlated audit history|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-FACBB24B|Expired credential handling|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-87D3AB81|Provider downtime handling|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-C4600050|Timezone/DST edge cases|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|UNVERIFIED|
+|PV-15E525B9|Cancellation authorization and lifecycle|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Missing|Cancelled-provider events recognized; no authenticated modification contract|Design verified authenticated contract; preserve owner contact fallback|P0|UNVERIFIED|
+|PV-DB149B1B|Exact web-handler PHP version|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-44EB5721|Exact PHP libcurl version|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-AF592A9B|Required PHP extensions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-38116580|Relevant PHP restrictions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-39DD0A03|Effective runtime private-config path|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-AA142A93|Effective production deployment fingerprint|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-36FEDD57|Active deployed Apps Script version|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-41027089|Deployed source revision|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-CFC92D62|Executing Google identity|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-8D7F2E86|Deployment access permissions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-9CACF774|Target Calendar permissions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-B74DBA0F|Script timezone|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-576DBE85|Calendar timezone|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-0C1AABAF|Required Meet permissions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-0339CA33|Required email permissions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-AAEB7337|Production source/artifact parity|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-532534DD|Controlled browser-to-lead-to-Calendar-to-Meet-to-email acceptance|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-CE1AE462|Production diagnostic cleanup|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|UNVERIFIED|
+|PV-5D068CC8|Single production origin configuration|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-54155775|Production metadataBase identity|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-E86B21BC|Per-page self-referencing canonical|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|UNVERIFIED|
+|PV-CCB8EF1B|Production author URL|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-E45F67D6|Production Open Graph URL|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|UNVERIFIED|
+|PV-7A5FBA05|Production structured-data identifiers|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|UNVERIFIED|
+|PV-B71EA82F|Production sitemap absolute URLs|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|UNVERIFIED|
+|PV-8C87E9A9|Production robots sitemap directive|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|UNVERIFIED|
+|PV-6915DA21|No unintended noindex/disallow|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-202DCC2C|Private pages excluded from discovery|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-AA356F55|Unique page titles|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|UNVERIFIED|
+|PV-A209CD11|Unique page descriptions|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|UNVERIFIED|
+|PV-88063F7F|Primary role positioning|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-0C7809D7|One meaningful page H1|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-0210CDD0|Semantic heading hierarchy|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-E3D8111B|Distinct project narratives|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-6EC2857D|Project role attribution|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-A6483E1B|Evidence-backed project outcomes|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-6912DD76|Descriptive image captions|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-212AC571|Meaningful image alt text|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-26A783C8|Contextual internal linking|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-5477DEAB|Portfolio conversion CTAs|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-D38CCD01|Truthful Person schema|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-56EE7989|Truthful WebSite schema|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-57E5D313|Truthful ProfilePage schema|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-C322C7C3|Consistent sameAs identities|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-68F1AF3A|Valid project structured data|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-413007A7|Breadcrumb hierarchy|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-EFA29034|Open Graph image dimensions|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-CF87E9DC|Open Graph image availability|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-689C3518|Twitter card metadata|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-0283AAD0|LinkedIn preview rendering|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-F80B06E8|Alternate-host HTTPS redirects|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-743EB048|Legacy route compatibility|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-D45D63F4|Search Console ownership verification|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|UNVERIFIED|
+|PV-0577166D|Search Console sitemap receipt|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|UNVERIFIED|
+|PV-F0E07394|Homepage URL Inspection|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|UNVERIFIED|
+|PV-E5928DB0|Representative project URL Inspection|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|UNVERIFIED|
+|PV-45E6D4DA|Crawler/WAF retrieval without broad bypass|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|UNVERIFIED|
+|PV-E9BE8205|Index coverage baseline|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|UNVERIFIED|
+|PV-EF281E62|Field LCP p75 measurement|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|UNVERIFIED|
+|PV-292030E9|Field INP p75 measurement|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|UNVERIFIED|
+|PV-4AA84630|Field CLS p75 measurement|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|UNVERIFIED|
+|PV-40D705E8|Palette/tonal harmony|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-AD785376|Typography hierarchy|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-F9CC3109|Spacing consistency|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-F6F84CE5|Grid alignment|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9BA8E63E|Font loading behavior|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-B67CC115|Portrait crop|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-FEBA9DB1|Hero title/portrait overlap|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-C9FC0477|381px heading collision avoidance|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-EC83AEA1|1000px breakpoint continuity|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-56D6E58D|Tablet hero minimum height|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-631826AC|Image quality/crispness|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-6ACEAFA9|Image aspect-ratio preservation|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-A7137C4F|Icon clarity|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-FC9AD5AE|Hover states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-E502B03A|Focus states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-A6A455B9|Motion choreography|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-78955378|Parallax behavior|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-4E87FE76|Animation pause controls|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7680818B|Loading states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-08F59EF7|No horizontal overflow at 320px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-DDDB22C6|No horizontal overflow at 360px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9671468C|No horizontal overflow at 375px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-2501275F|No horizontal overflow at 390px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-100BB1BC|No horizontal overflow at 430px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-DEE08585|No horizontal overflow at 768px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-FD7E570D|No horizontal overflow at 1024px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-29A2A423|No horizontal overflow at 1280px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-4A6AF2D9|No horizontal overflow at 1440px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-3539CEED|Tablet landscape layout|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7CE024EC|No unintended nested vertical scrolling|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-15A74870|Recruiter journey|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-BB9621DE|Brand-client journey|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-FE09988B|Founder journey|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-C3B90DC1|Mobile visitor journey|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-EA3193A5|Five-second identity/expertise/next-action clarity|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-E3D3821C|Project discovery|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-C8C2BED3|Archive navigation|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-AB24E6A5|Case-study storytelling|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-8CF23667|Contact CTA visibility|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-77288C3A|Email fallback|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-89159E8A|WhatsApp actions|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-2E981ABA|Mobile navigation|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-C03FFAB5|Browser history navigation|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9033162B|Footer layout|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-90401826|Dock controls fit viewport|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-5A828C5C|Modal/drawer behavior|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-292D6DD9|Touch targets|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-8E4B97CA|Zoom and reflow|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-D3E62F32|Layout-shift measurement|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-A708BD47|Network failure states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7DA3DF71|Offline states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-C5CD5DC5|Semantic landmarks|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-D49343A5|Keyboard navigation|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-BC971234|Visible focus indicators|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-41B00E34|Skip link|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-2A697525|Accessible form labels|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-A3E6F9D2|Form error announcements|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-ACC0BA7B|Screen-reader labels|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-32081F44|Modal focus containment|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-3948298C|Modal focus restoration|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-289600CC|Accessible ARIA semantics|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-93804239|WCAG2.2AA color contrast|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7C3E614B|Reduced-motion behavior|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-838897AD|Media captions or equivalent|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-B57B52EB|Autoplay controls|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-6571BC64|Manual screen-reader evaluation|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-CA76547D|Manual keyboard evaluation|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-3D900DCB|Automated accessibility evaluation|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-58FD60D5|Server-side request validation|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-B9C4ABDE|Client-side input validation|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-31FCC688|Malicious payload rejection|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9A0CD6B8|Spam/honeypot controls|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-FC696D8A|Rate limiting|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9154A039|CSRF/origin enforcement where applicable|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-648F58E8|XSS/injection prevention|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-0971968C|Spreadsheet formula injection prevention|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Implemented and verified|tests/booking-validation.mjs — PASS locally; Escape standard =,+,-,@,tab,CR formula-leading prefixes before Sheet storage; preserve plain-text roundtrip|Retain bounded local pass; verify actual production integration/export separately|P1|UNVERIFIED|
+|PV-36BC8E0E|File-upload restrictions where applicable|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-570B5FB2|CORS restrictions|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-1C593012|API abuse limits|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-2AF7EDAB|Server-only provider credentials|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-D3D3411F|Secret-free logs|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9DB9D538|No private file exposure|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-CFA02423|HTTPS transport enforcement|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-8D383AFC|Security response headers|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-446B7D03|Admin authentication/session restrictions|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-32C5F29C|Least privilege for provider access|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7843FDA3|PII minimization|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-402F66D7|Privacy notice consistency|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|Footer/Privacy/Sera name Gemini; operational retention incomplete|Reconcile consent and retention after owner facts|P1|UNVERIFIED|
+|PV-4CC31E06|Consent before AI transmission|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Implemented and verified|tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json|Retain local component pass; production export/route accessibility and provider data handling are separate gates|P1|UNVERIFIED|
+|PV-CE7018E3|Consent withdrawal|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Implemented and verified|tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json|Retain local component pass; production export/route accessibility and provider data handling are separate gates|P1|UNVERIFIED|
+|PV-D93D37AB|Local draft retention enforcement|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-EA64DE25|Operational retention policy|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Blocked by external dependency|Owner operational policy not supplied|Owner confirms Sheet/Google/log retention and responsibilities|P1|UNVERIFIED|
+|PV-BEEFFC7C|Data deletion/export procedure|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Blocked by external dependency|Operational procedure not supplied|Owner confirms authorized process|P1|UNVERIFIED|
+|PV-BDD88073|Approved public portfolio knowledge|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-2A648415|Accurate service answers|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-4FDB14AA|Context-aware clarification|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-09BC816B|One useful follow-up at a time|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-0FAEA31A|Lead qualification with consent|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-E91CDE71|Gentle objection handling|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-254C57D0|Booking guidance|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9CD31361|Human handoff|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7A253BBC|No internal CRM disclosure|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-FDE6207E|No internal analytics disclosure|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-A5B31EB2|No prompt/credential disclosure|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-172E0D98|No public admin tools|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-B488C566|Server-side tool restrictions|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-85528FBE|Prompt-injection resistance|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-89E35632|Factual grounding evaluation|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-B6743A45|Unknown-answer honesty|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-91C03266|Conversation continuity|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-50190B31|Response latency measurement|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9BF6B0A1|Provider quota limits|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7D0BE3B1|Graceful provider fallback|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-F03DF3F6|Provider privacy disclosure|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-0F7A7D89|Microphone consent|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-1D77A3AE|Voice transcripts/captions|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-1D7B6112|Push-to-talk control|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-0FB6745F|Voice interruption handling|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-73DC6449|Keyboard/text parity|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-727B2646|Browser speech compatibility|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7970C740|No claimed action without confirmed tool result|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-6C965F53|Measured lab mobile performance|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-CCC46F0C|Measured lab desktop performance|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9000EFDC|TTFB measurement|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-B12BBDA6|Resource weight measurement|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7FB58B22|JavaScript execution/long tasks|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-08E5EC7E|Third-party request inventory|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-E6F4C698|Image optimization|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-E60522DC|Responsive media delivery|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-B1503EF2|Cache behavior|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-5B0BD731|Animation frame-rate measurement|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-3F497E97|Hydration error checks|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-67891A25|Console-error checks|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-E66451B9|Browser/device matrix|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-A1157DED|Functional regression suite|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-02748EA7|Staging isolation|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-4F6FF0C1|CI quality checks|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-7F8280B1|Synthetic monitoring|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-F99CA3E8|Failure alerting|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-4083FBFB|Backup restore drill|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-3EA50ACE|Deployment instructions|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-9B74198C|Rollback procedure|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-DC6F133E|Incident runbook|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
+|PV-913EF220|Validated release manifest|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Blocked by external dependency|Manifest STALE; validated current artifact unavailable|Hero approval, accepted build and authenticated comparison|P0|UNVERIFIED|
+|PV-27545F5D|Source-to-production difference register|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Blocked by external dependency|Manifest STALE; validated current artifact unavailable|Hero approval, accepted build and authenticated comparison|P0|UNVERIFIED|
+|PV-BE6BAB72|Dated test environment evidence|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|UNVERIFIED|
 
-|ID|Requirement|Original reference|Source/component|Status|Evidence|Remaining action|Priority|
-|---|---|---|---|---|---|---|---|
-|PV-75BF2DB6|Persist appointment before confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-DAAE5D43|Stable booking reference|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs; tests/booking-validation.mjs — PASS locally; Generated reference equals saved row and response; deterministic event ID for UUID|Retain bounded local pass; verify actual production integration/export separately|P0|
-|PV-AEDBB192|UTC timestamp storage|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-BF7A1435|Original visitor timezone storage|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs — PASS locally; Saved mock row retains supplied visitor timezone|Retain bounded local pass; verify actual production integration/export separately|P0|
-|PV-D6B53C76|Contact data persistence|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs — PASS locally; Saved mock row preserves supplied name/email; actual Google durability separately gated|Retain bounded local pass; verify actual production integration/export separately|P0|
-|PV-7E49D64F|Booking state persistence|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs — PASS locally; Saved mock row contains Booked only for a ready fixture|Retain bounded local pass; verify actual production integration/export separately|P0|
-|PV-E578557A|External Calendar event identity storage|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs — PASS locally; Saved mock row event ID equals provider fixture and response ID|Retain bounded local pass; verify actual production integration/export separately|P0|
-|PV-E6948560|Same-key idempotency|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs: sequential same-key submits yield one row/event|Concurrent cross-provider acceptance remains separate|P0|
-|PV-03C060D9|Reject same key with changed payload|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs: REFERENCE_MISMATCH|Live deployment identity separately gated|P0|
-|PV-1B5A3DBB|Prevent concurrent slot conflicts|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-967E44A3|Recheck live server availability|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-ED56B733|Pending bookings remain unconfirmed|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-status.mjs; tests/booking-client-contract.cjs; tests/booking-recovery.mjs (local mocks)|Retain live identity/E2E gate separately|P0|
-|PV-DD383D84|Differentiate failed synchronization from confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-A0C307B7|Recognize cancelled Calendar event|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-status.mjs — PASS locally; Cancelled event produces CANCELLED, not a booked confirmation|Retain bounded local pass; verify actual production integration/export separately|P0|
-|PV-474D07E1|Rescheduled booking lifecycle|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Missing|No reschedule action in inspected public gateway|Design verified authenticated contract; do not add unauthorized provider writes|P0|
-|PV-E38A6D22|Calendar creation before confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-28C0C260|Meet conference creation per booking|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-185FB3F9|Meet readiness before confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-status.mjs; tests/booking-client-contract.cjs|Deployed source identity separately gated|P0|
-|PV-EFD23D8E|Correct owner Calendar identity|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-BEBD34F2|Correct event date and duration|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-A9CAD3C5|Correct customer notification|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-E711FBC4|Correct owner notification|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-4871E14E|Notification delivery evidence|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-3C734D08|Transient provider retry|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-validation.mjs — PASS locally; Transient read failure retries once; permanent permission failure does not retry; exhaustion propagates|Retain bounded local pass; verify actual production integration/export separately|P0|
-|PV-1374AE96|Exponential retry backoff|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-F6C349D2|Retry exhaustion/manual review|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-0950128D|Partial-success reconciliation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-571941B8|No duplicate Calendar event on retry|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Implemented and verified|tests/booking-recovery.mjs: lost-response retry reconciles deterministic ID|Live and concurrent conditions separately gated|P0|
-|PV-D5C70224|No unintended duplicate confirmation|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-347FFE76|Owner alert on failed synchronization|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-36D0078C|Safe visitor fallback on provider failure|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-F237980E|Correlated audit history|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-FACBB24B|Expired credential handling|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-87D3AB81|Provider downtime handling|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-C4600050|Timezone/DST edge cases|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P0|
-|PV-15E525B9|Cancellation authorization and lifecycle|§§3–6; V0.1|integrations/calendar-v8/Code.gs; public/api/leads.php; api-runtime.txt|Missing|Cancelled-provider events recognized; no authenticated modification contract|Design verified authenticated contract; preserve owner contact fallback|P0|
-|PV-DB149B1B|Exact web-handler PHP version|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-44EB5721|Exact PHP libcurl version|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-AF592A9B|Required PHP extensions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-38116580|Relevant PHP restrictions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-39DD0A03|Effective runtime private-config path|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-AA142A93|Effective production deployment fingerprint|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-36FEDD57|Active deployed Apps Script version|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-41027089|Deployed source revision|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-CFC92D62|Executing Google identity|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-8D7F2E86|Deployment access permissions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-9CACF774|Target Calendar permissions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-B74DBA0F|Script timezone|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-576DBE85|Calendar timezone|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-0C1AABAF|Required Meet permissions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-0339CA33|Required email permissions|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-AAEB7337|Production source/artifact parity|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-532534DD|Controlled browser-to-lead-to-Calendar-to-Meet-to-email acceptance|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-CE1AE462|Production diagnostic cleanup|§§3,5,9; V0.1|reviewed verification kit; live PHP gateway; Apps Script deployment|Blocked by external dependency|No authenticated acceptance evidence|Owner authenticated evidence; explicit approval for live test|P0|
-|PV-5D068CC8|Single production origin configuration|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-54155775|Production metadataBase identity|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-E86B21BC|Per-page self-referencing canonical|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|
-|PV-CCB8EF1B|Production author URL|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-E45F67D6|Production Open Graph URL|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|
-|PV-7A5FBA05|Production structured-data identifiers|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|
-|PV-B71EA82F|Production sitemap absolute URLs|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|
-|PV-8C87E9A9|Production robots sitemap directive|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|
-|PV-6915DA21|No unintended noindex/disallow|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-202DCC2C|Private pages excluded from discovery|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-AA356F55|Unique page titles|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|
-|PV-A209CD11|Unique page descriptions|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Implemented and verified|tests/source-seo.py — PASS locally; Generated source-template metadata passes for 22 pages; approved Next export and live deployment remain separately gated|Retain bounded local pass; verify actual production integration/export separately|P1|
-|PV-88063F7F|Primary role positioning|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-0C7809D7|One meaningful page H1|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-0210CDD0|Semantic heading hierarchy|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-E3D8111B|Distinct project narratives|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-6EC2857D|Project role attribution|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-A6483E1B|Evidence-backed project outcomes|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-6912DD76|Descriptive image captions|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-212AC571|Meaningful image alt text|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-26A783C8|Contextual internal linking|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-5477DEAB|Portfolio conversion CTAs|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-D38CCD01|Truthful Person schema|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-56EE7989|Truthful WebSite schema|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-57E5D313|Truthful ProfilePage schema|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-C322C7C3|Consistent sameAs identities|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-68F1AF3A|Valid project structured data|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-413007A7|Breadcrumb hierarchy|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-EFA29034|Open Graph image dimensions|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-CF87E9DC|Open Graph image availability|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-689C3518|Twitter card metadata|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-0283AAD0|LinkedIn preview rendering|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-F80B06E8|Alternate-host HTTPS redirects|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-743EB048|Legacy route compatibility|§§7,11–13; V0.1|scripts/build.py; src/app; public/robots.txt; public/sitemap.xml|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-D45D63F4|Search Console ownership verification|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|
-|PV-0577166D|Search Console sitemap receipt|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|
-|PV-F0E07394|Homepage URL Inspection|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|
-|PV-E5928DB0|Representative project URL Inspection|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|
-|PV-45E6D4DA|Crawler/WAF retrieval without broad bypass|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|
-|PV-E9BE8205|Index coverage baseline|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|
-|PV-EF281E62|Field LCP p75 measurement|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|
-|PV-292030E9|Field INP p75 measurement|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|
-|PV-4AA84630|Field CLS p75 measurement|§§7,11–13|Google Search Console; crawler/CDN logs; CrUX|Blocked by external dependency|External account/field data not supplied|Owner account evidence or measured field data|P1|
-|PV-40D705E8|Palette/tonal harmony|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-AD785376|Typography hierarchy|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-F9CC3109|Spacing consistency|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-F6F84CE5|Grid alignment|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9BA8E63E|Font loading behavior|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-B67CC115|Portrait crop|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-FEBA9DB1|Hero title/portrait overlap|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-C9FC0477|381px heading collision avoidance|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-EC83AEA1|1000px breakpoint continuity|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-56D6E58D|Tablet hero minimum height|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-631826AC|Image quality/crispness|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-6ACEAFA9|Image aspect-ratio preservation|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-A7137C4F|Icon clarity|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-FC9AD5AE|Hover states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-E502B03A|Focus states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-A6A455B9|Motion choreography|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-78955378|Parallax behavior|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-4E87FE76|Animation pause controls|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7680818B|Loading states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-08F59EF7|No horizontal overflow at 320px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-DDDB22C6|No horizontal overflow at 360px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9671468C|No horizontal overflow at 375px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-2501275F|No horizontal overflow at 390px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-100BB1BC|No horizontal overflow at 430px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-DEE08585|No horizontal overflow at 768px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-FD7E570D|No horizontal overflow at 1024px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-29A2A423|No horizontal overflow at 1280px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-4A6AF2D9|No horizontal overflow at 1440px|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-3539CEED|Tablet landscape layout|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7CE024EC|No unintended nested vertical scrolling|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-15A74870|Recruiter journey|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-BB9621DE|Brand-client journey|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-FE09988B|Founder journey|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-C3B90DC1|Mobile visitor journey|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-EA3193A5|Five-second identity/expertise/next-action clarity|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-E3D3821C|Project discovery|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-C8C2BED3|Archive navigation|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-AB24E6A5|Case-study storytelling|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-8CF23667|Contact CTA visibility|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-77288C3A|Email fallback|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-89159E8A|WhatsApp actions|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-2E981ABA|Mobile navigation|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-C03FFAB5|Browser history navigation|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9033162B|Footer layout|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-90401826|Dock controls fit viewport|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-5A828C5C|Modal/drawer behavior|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-292D6DD9|Touch targets|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-8E4B97CA|Zoom and reflow|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-D3E62F32|Layout-shift measurement|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-A708BD47|Network failure states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7DA3DF71|Offline states|§12 workstreams A–D|src/styles; src/app; src/components; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-C5CD5DC5|Semantic landmarks|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-D49343A5|Keyboard navigation|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-BC971234|Visible focus indicators|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-41B00E34|Skip link|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-2A697525|Accessible form labels|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-A3E6F9D2|Form error announcements|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-ACC0BA7B|Screen-reader labels|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-32081F44|Modal focus containment|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-3948298C|Modal focus restoration|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-289600CC|Accessible ARIA semantics|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-93804239|WCAG2.2AA color contrast|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7C3E614B|Reduced-motion behavior|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-838897AD|Media captions or equivalent|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-B57B52EB|Autoplay controls|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-6571BC64|Manual screen-reader evaluation|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-CA76547D|Manual keyboard evaluation|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-3D900DCB|Automated accessibility evaluation|§12 workstream C|src/components; src/app; widget runtime; tests/browser-v01.cjs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-58FD60D5|Server-side request validation|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-B9C4ABDE|Client-side input validation|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-31FCC688|Malicious payload rejection|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9A0CD6B8|Spam/honeypot controls|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-FC696D8A|Rate limiting|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9154A039|CSRF/origin enforcement where applicable|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-648F58E8|XSS/injection prevention|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-0971968C|Spreadsheet formula injection prevention|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Implemented and verified|tests/booking-validation.mjs — PASS locally; Escape standard =,+,-,@,tab,CR formula-leading prefixes before Sheet storage; preserve plain-text roundtrip|Retain bounded local pass; verify actual production integration/export separately|P1|
-|PV-36BC8E0E|File-upload restrictions where applicable|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-570B5FB2|CORS restrictions|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-1C593012|API abuse limits|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-2AF7EDAB|Server-only provider credentials|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-D3D3411F|Secret-free logs|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9DB9D538|No private file exposure|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-CFA02423|HTTPS transport enforcement|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-8D383AFC|Security response headers|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-446B7D03|Admin authentication/session restrictions|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-32C5F29C|Least privilege for provider access|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7843FDA3|PII minimization|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-402F66D7|Privacy notice consistency|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|Footer/Privacy/Sera name Gemini; operational retention incomplete|Reconcile consent and retention after owner facts|P1|
-|PV-4CC31E06|Consent before AI transmission|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Implemented and verified|tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json|Retain local component pass; production export/route accessibility and provider data handling are separate gates|P1|
-|PV-CE7018E3|Consent withdrawal|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Implemented and verified|tests/sera-consent.cjs and CHROMIUM_PATH=/tmp/v01-chromium node tests/sera-browser.cjs — PASS; docs/sera-isolated-browser-results.json|Retain local component pass; production export/route accessibility and provider data handling are separate gates|P1|
-|PV-D93D37AB|Local draft retention enforcement|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-EA64DE25|Operational retention policy|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Blocked by external dependency|Owner operational policy not supplied|Owner confirms Sheet/Google/log retention and responsibilities|P1|
-|PV-BEEFFC7C|Data deletion/export procedure|§§5,12 workstream E; V0.1|public/api/leads.php; public/intellignce-support/ask.php; integrations/calendar-v8/Code.gs|Blocked by external dependency|Operational procedure not supplied|Owner confirms authorized process|P1|
-|PV-BDD88073|Approved public portfolio knowledge|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-2A648415|Accurate service answers|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-4FDB14AA|Context-aware clarification|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-09BC816B|One useful follow-up at a time|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-0FAEA31A|Lead qualification with consent|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-E91CDE71|Gentle objection handling|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-254C57D0|Booking guidance|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9CD31361|Human handoff|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7A253BBC|No internal CRM disclosure|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-FDE6207E|No internal analytics disclosure|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-A5B31EB2|No prompt/credential disclosure|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-172E0D98|No public admin tools|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-B488C566|Server-side tool restrictions|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-85528FBE|Prompt-injection resistance|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-89E35632|Factual grounding evaluation|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-B6743A45|Unknown-answer honesty|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-91C03266|Conversation continuity|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-50190B31|Response latency measurement|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9BF6B0A1|Provider quota limits|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7D0BE3B1|Graceful provider fallback|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-F03DF3F6|Provider privacy disclosure|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-0F7A7D89|Microphone consent|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-1D77A3AE|Voice transcripts/captions|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-1D7B6112|Push-to-talk control|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-0FB6745F|Voice interruption handling|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-73DC6449|Keyboard/text parity|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-727B2646|Browser speech compatibility|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7970C740|No claimed action without confirmed tool result|Public Sera dual-mode section; §§5,12|integrations/sera-v9-source; public/intellignce-support|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-6C965F53|Measured lab mobile performance|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-CCC46F0C|Measured lab desktop performance|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9000EFDC|TTFB measurement|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-B12BBDA6|Resource weight measurement|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7FB58B22|JavaScript execution/long tasks|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-08E5EC7E|Third-party request inventory|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-E6F4C698|Image optimization|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-E60522DC|Responsive media delivery|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-B1503EF2|Cache behavior|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-5B0BD731|Animation frame-rate measurement|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-3F497E97|Hydration error checks|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-67891A25|Console-error checks|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-E66451B9|Browser/device matrix|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-A1157DED|Functional regression suite|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-02748EA7|Staging isolation|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-4F6FF0C1|CI quality checks|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-7F8280B1|Synthetic monitoring|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-F99CA3E8|Failure alerting|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-4083FBFB|Backup restore drill|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-3EA50ACE|Deployment instructions|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-9B74198C|Rollback procedure|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-DC6F133E|Incident runbook|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|PV-913EF220|Validated release manifest|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Blocked by external dependency|Manifest STALE; validated current artifact unavailable|Hero approval, accepted build and authenticated comparison|P0|
-|PV-27545F5D|Source-to-production difference register|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Blocked by external dependency|Manifest STALE; validated current artifact unavailable|Hero approval, accepted build and authenticated comparison|P0|
-|PV-BE6BAB72|Dated test environment evidence|§12 workstreams D,F; V0.1 release practice|scripts; .github/workflows; tests; release documents|Partially implemented|No complete acceptance evidence|Complete focused acceptance checks and retain evidence|P1|
-|SO-1F65A837|Independent booking database|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-20E810DB|Private CRM Calendar view|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-493ED7CA|Owner-only initial interface|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-80F1DD3B|Tenant/site identifiers|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-24872F39|Secure owner authentication|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-EBCB0F2F|Privileged MFA|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-F2D6C84C|Role/permission model|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-AB278EBD|Session/CSRF hardening|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-62E71BBE|Deduplicated lead records|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-FE048078|Lead provenance|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-20B6A136|Consent records|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-C5977E2F|UTM history|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-C63AF3CE|Lead pipeline|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-02821621|Owner assignment|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-27584843|Lead notes|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-87860E66|Lead tags|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-98A9E39D|Follow-up tasks|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-6B4F2F7F|Email activity timeline|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-E231C4D0|Disclosed Sera conversation timeline|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-8F879C3B|Lead export|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-0121FC62|Lead deletion|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-3E7E1E1D|Safe Sheet migration/reconciliation|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-F9E356EB|KPI sessions|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-C1E46FF1|KPI engagement|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-7F694AA3|Acquisition channels|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-60FF23EC|Conversion KPIs|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-E2071DCD|Qualified-lead KPIs|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-7C1B2886|Booked-call KPIs|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-A7CC0D05|Pipeline value|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-FC99C0F9|Trend comparison|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-D81AC9DB|Data freshness labels|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-624AE4B4|Action queue|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-97923915|CMS page models|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-2F5E7752|CMS case-study models|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-E1502EE1|Blog/article editing|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-9A5E2AC6|Rich-text editing|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-CCC35AF8|Structured content fields|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-9023AFE1|Media library|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-207599EA|Image optimization workflow|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-5EAB565E|Autosave|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-7D6D91C2|Draft/review/publish states|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-9CE2CC59|Scheduled publishing|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-460091C8|Staging preview|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-4FD56C18|Content revisions|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-29B58E00|Content rollback|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-E44C7FBC|Metadata editing|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-6E455C71|Redirect management|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-96740F98|Contact details editing|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-10148CF1|Business email settings|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-73AFD425|Privacy-conscious events|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-65F51202|Bot filtering|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-22FAAE00|Analytics retention|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-42A5597F|Consent-aware attribution|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-39BBB148|No retroactive identity linking without basis|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-F1925D5C|Geographic aggregates|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-19C35C18|Device aggregates|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-04EDE78B|Conversion funnels|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-9B277E0A|Search Console query/click/impression metrics|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-A9F99DFF|Average-position limitations|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-58C7C6BE|Indexing/coverage metrics|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-F50B5566|Sitemap technical audits|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-A08B3C27|PageSpeed/CrUX adapters|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-2DC43D8B|Off-page provenance reports|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-7D0ADF14|Sampled/delayed/unavailable data labels|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-BE42AD11|Approved notifications|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-1878F837|Automation approval gates|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-808BFA03|Prompt/version controls|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-AECCC977|Cost/usage limits|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-DBEE1D65|Audit trail|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-C8DE7CB5|Failure alerts|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-B07A9FEB|Per-site credentials|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-A75AA948|Credential rotation|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-E35587AA|Signed webhooks|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-27AB806E|Replay prevention|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-2EBA822E|Webhook retry|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-1E247022|Event schema versions|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-24320D89|SDK/embed contracts|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-91DF467A|OAuth integration|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-BC96D9A4|Optional governed MCP|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-51F6AFE4|Organization/site data ownership|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-BD2ABE1E|Entity retention/lifecycle/unique constraints|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-FC18D2DC|Backup/restore policy|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-6BE24806|Incident response|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-44F0A8B3|Accessible owner dashboard|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-A66B137C|Search/filter controls|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-15317000|Empty/loading/error states|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-074DF44C|Accurate timezone/currency labels|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-FFED4342|Design tokens|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-A9CF2981|Single-owner complexity hiding|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-F0343D96|Hosting/runtime capability matrix|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-8E8DB432|Database/cron/SSH/resource limits|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-695744AD|Operating cost budget|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-43456177|No mandatory new subscription|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-9E23DF3E|Manual non-AI operation|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-CE560E8D|Private read-only Sera|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-CF23D3F1|Typed scoped tools|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-E97C2EF5|Private query provenance/date ranges|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-E161667D|AI draft preview|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-1468CF1B|Approval-gated publishing|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-EACC1C3C|Action diff/rollback|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-DABD5E2D|Model registry|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-8F35C2B8|Provider health checks|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-140970A6|Quota/budget accounting|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-E8005E7D|Circuit breakers|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-91B64891|Authorized context isolation|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-CC671F42|Owner-only voice pilot|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-263482DC|Architecture decision records|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-D292A625|Threat model|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-D0A01397|Data/event contracts|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-04A59EFC|Narrow PRD|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-6D32D93D|User journeys and wireframes|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-AAC67352|Permissions matrix|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-817B97F6|Measurement taxonomy|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-71B58958|SLOs after baseline|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-9BD6BB18|Contract/migration tests|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|SO-F29371FF|Versioned acceptance gates|§§4,8–10; V0.2–V0.6|STUDIO-OS-ROADMAP.md; integrations/leads-portal|Future scope|Planning only|Implement in the separate versioned roadmap|P2|
-|FC-EDD28BF9|Trademark/name clearance|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-4A5052A9|Competitor feature/price research|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-90F693D1|15–20 discovery interviews|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-A42D3819|Willingness-to-pay validation|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-B402CF06|Niche/persona selection|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-B705AF0F|Website-agnostic connector|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-28AA61B5|Signed form ingestion|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-5D120398|Embeddable widget/SDK|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-66AD013F|API key rotation|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-2049EBE2|Source/UTM capture|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-154D21DA|Consent mapping|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-B7B359FE|WordPress recipe|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-0B5A3D31|Framer recipe|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-D1EE5D08|Static-site recipe|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-F450E6EB|Next.js recipe|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-82D95D53|Unified inbox|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-A6873FE6|Lead journey receipt|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-954AC6F1|Contact deduplication|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-FD676D9C|Pipeline stages|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-98A9E39D|Follow-up tasks|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-9A1F7B55|Lead qualification|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-92453920|Portable export|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-09514732|Booking page/widget|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-6B177535|Availability rules|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-209BE356|Timezone handling|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-8B5EF0B2|Confirmed external synchronization|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-A53EBED8|Reminders|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-69791203|Conflict prevention|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-5553E5F3|Traffic-source analytics|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-E932BFDA|Landing-page analytics|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-399FF730|Qualified-lead funnel|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-16753732|Attribution caveats|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-759DA876|Real-data Sera summaries|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-6735B4F1|Draft replies/content|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-09D5BD3F|Approved external writes|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-82E1B0BB|Complete action log|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-5EC7B208|Manual parity|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-D4E49E72|Accessible mobile admin|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-16465496|Voice alternative|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-50C621E5|Transcript review|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-67FF6B21|Visible confirmations|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-A94ADF84|Undo where feasible|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-F7317661|White-label logo/palette|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-58A5FA7C|Custom domain provisioning|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-C9CD61F7|Branded email identity|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-764A2DFF|Isolated customer workspaces|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-D5023043|Agency entitlements/billing after validation|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-AD049EE0|Explain-my-week citations|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-A90C8D45|Action preview/undo|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-26798A65|Missing-lead reconciliation detector|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-98F83977|Outcome-first onboarding|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-55271E8F|Data portability|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-8F8D3714|Low-bandwidth mode|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-D131D658|Multilingual research|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-ADDF1011|Google Calendar adapter|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-3F3C8190|Email adapter|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-0CB93E24|Search Console adapter|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-29B29AE3|Permitted GA4 adapter|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-0A0E35CD|Generic webhook adapter|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-B8406C43|Demand-driven Notion or ClickUp|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-98C2F1D4|OAuth scoping|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-09C371D3|Sync conflict handling|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-53435E0F|API rate limits/retries|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-0BB4B42E|Integration audit history|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-564E70A0|Optional MCP read tools|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-A059AD2D|Optional MCP approval-gated writes|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-845EE3EC|No cross-tenant access|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-DBC2DAB8|Control/data-plane separation|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-925B8608|Domain certificate lifecycle|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-D651892C|Feature flags|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-5EB488F7|Localized timezone/currency|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-E0030E89|Consent/retention controls|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-6CC03B07|Secure service auth|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-97E1091F|Unit economics per tenant|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-7ADAE492|AI/voice metering|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-C0887006|Optional BYO provider|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-D110D651|Pilot site connection target|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-7CCD9391|First lead activation|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-3341293F|Confirmed appointment journey|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-585E0688|5–10 consented pilot businesses|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-657F7BA5|Retention measurement|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-17EF37B7|Support workload measurement|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-7089F0CB|Cost per active site|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-A82C5313|White-label pilot after retention|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-002A26EE|Commercial support/incident response|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-74EFD80F|Commercial terms/privacy review|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|FC-6BFF531A|Vertical expansion after evidence|§15; connect-first blueprint; V0.7–V1.2|FLOW-CONNECT-ROADMAP.md|Future scope|Planning only|Validate demand and separately authorize product development|P2|
-|GEO-D0593B6E|Personal/company identity separation|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-1DF383B8|Verified identity sheets|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-92C5BA82|Consistent LinkedIn facts|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-56FEDA75|Consistent Behance facts|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-AF7E1DA3|Consistent Upwork facts|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-448D36CD|Company profile consistency|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-2D52DF41|Directory eligibility|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-86779D60|Free/paid conditions|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-516B6DF7|Editorial legitimacy|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-CE5DAA1F|Avoid duplicate/fabricated profiles|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-D27E9C86|Review permissions|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-4ABFC2A2|Client-credit permissions|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-977E8A16|Original case-study publishing plan|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-A4166B4F|Three high-value case studies|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-B05696C5|Original editorial articles|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-805669E6|Contextual earned links|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-B7506138|Digital PR shortlist|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-5BBCC0F6|Personalized outreach approval|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-4D55710A|No bulk spam outreach|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-C4343CA1|20–30 prompt citation benchmark|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-75FC4E8D|Date/region/prompt recording|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-62BB4FF1|Repeatability trials|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-E6D8EF58|Search/training crawler distinction|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-443E4A2F|Provider-specific crawler verification|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-4384E79F|No AI/ranking guarantees|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-3920B636|Monthly citation/referral review|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-AA7B359B|Qualified-lead measurement|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-BD66FDAA|Source-specific KPI definitions|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-C009CA50|30/60/90-day measurement plan|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
-|GEO-93736516|Outreach tracking|§§11,13–14|docs/SEO_GEO_EXECUTION_PLAN_2026-11-02.md|Future scope|Strategy documents; no external execution|Separate owner approval/account access for publication or outreach|P2|
+## Historical future obligations (233, excluded from243)
 
-## Sera guided-discovery milestone
-
-See docs/sera/SERA-IMPLEMENTATION-STATE.md and SERA-TEST-EVIDENCE.md. Deterministic guided UI and non-binding brief implemented; six service-tree units and one isolated browser journey pass. Router/knowledge/error foundations are explicitly distinguished from live integration. Original catalogue stays 22/243; no automatic count increase. Platform/support scope remains future. Hero approval/198-case export acceptance remain blocked. NO-GO; manifest STALE.
-
-Sera follow-up: all eleven isolated intent journeys now pass. Relevant backend retrieval is wired with bounded context. Multi-provider routing remains a mock policy foundation; no new provider enabled. Portfolio counts remain 22/243. No change to hero or release gates.
-
-## Business control center development slice
-
-See docs/admin/ADMIN-IMPLEMENTATION-STATE.md. Bound-Sheet admin foundation and private versioned knowledge/FAQ/personality/voice, disabled provider drafts, CRM annotations, appointment requests and metadata reports have local tests. No standalone portal, encrypted key management, CMS publishing, live analytics/marketing or admin AI agent acceptance is claimed. No production installation. Portfolio catalogue unchanged at 22/243; admin expansion tracked separately. NO-GO; manifest STALE.
-
-## Business Control Center Phase 2: local evidence
-
-Approved-artifact/CMS slice published as 06e89289e8ae6f2f793d2c7a1e69f8eab4725698. Owner-only public export excludes drafts/private/admin records. Browser/PHP schema gates, approved FAQ/identity/voice, bounded knowledge/tone, previous-config fallback and temporary staging/rollback are fixture-tested. Existing-project metadata/contact/social/SEO approvals and escaped previews preserve routes/source/hero. Full case authoring, new projects, uploads and actual public-template/build publishing remain incomplete.
-
-Disabled Gemini/Groq protocol adapters reuse the router in mocks. Private ledger fixtures reserve quota before calls, preserve unknown outcomes and bound circuits; 20-process contention accepts exactly three under quota three. Credential writes/activation, encryption/rotation, live gateway wiring, account eligibility/privacy and actual hosting storage remain blocked. No live APIs, bookings, emails or deployment.
-
-Evidence: docs/admin/PHASE2-TEST-EVIDENCE.md. Current recovered snapshot passes 14 JS suites, five PHP suites, concurrency, packaging and catalogue checks. Earlier isolated browser reports are preserved; a final rerun is blocked by missing Chromium/axe after reset. Portfolio acceptance remains **22/243 = 9.05%**, with 188 partial, 2 missing, 31 blocked; 233 future excluded. No atomic statuses promoted. Production-build browser coverage **0/198**. Hero approval, runtime/private-config/Apps Script identity, cleanup and authorized booking acceptance remain mandatory. Manifest **STALE**; **NO-GO**.
-
-## Business Control Center Phase 3: current checkpoint
-
-Standard case creation/editing, structured source import, safe previews, owner approval, sanitized media import and isolated versioned publication/readback/rollback are locally verified. Existing URLs, source, specialized chapter/video/social data and hero inputs are preserved; specialized rich authoring remains source-managed. Actual hosted upload/deployment remains disconnected.
-
-A default-disabled private AEAD vault and provider composition are fixture-tested for masking, audit, key rotation/revocation, authorization, conflict/replay, failover and durable quotas. Actual independent key custody, backend identity and encrypted-store deployment are unverified; workspace credential writes/provider activation remain rejected. Approved public skills, pinned conditional question trees, context/output budgets and provider ordering are tested; public policy cannot grant admin tools, consent or paid inference.
-
-Evidence: docs/admin/PHASE3-TEST-EVIDENCE.md. 16 JS suites, eight PHP suites, 20-process quota contention and seven isolated browser suites pass. Browser/axe tooling is restored. Source-backed fake-Google workflows and original-template CMS previews pass representative mobile/tablet/desktop checks with zero automated axe findings in tested states. No real Google login, live provider, manual WCAG or production-build acceptance is claimed.
-
-Original Portfolio acceptance stays **22/243 = 9.05%**: 188 partial, 2 missing, 31 blocked; 233 future excluded. No atomic obligations were promoted solely for admin fixtures. Production-build routes remain **0/198**. Required owner inputs are in docs/admin/OWNER-ACCEPTANCE.md. Approved hero, live runtime/config/deployment identities, key custody/auth, cleanup and explicitly authorized booking acceptance remain gates. Manifest **STALE**; **NO-GO**.
-
-Continuation from 7882f82: article/chapter authoring and existing-case reimport are now locally tested; the native confirmation collision is fixed. Exact release manifests reject unapproved files/links before rollback. Full JS regression: 17 suites PASS; affected admin/CMS browser fixtures PASS. Video/social authoring remains source-managed. Owner gates and counts remain unchanged: 22/243 (9.05%), 188 partial, 2 missing, 31 blocked; production-build 0/198. Manifest STALE; NO-GO. See docs/admin/PHASE3-TEST-EVIDENCE.md.
-
-## Phase 4 targeted readiness checkpoint — 2026-11-03
-
-Continues b17c4d5b88b960bbd6d4ad80eee45e922179ebc4. Added safe router/vault validation, namespaced Groq compatibility, disabled documented provider candidates and stale-export/interrupted-browser evidence controls. See docs/admin/PHASE4-TEST-EVIDENCE.md and PHASE4-ACCEPTANCE.md for commands and trust boundaries. No original-plan obligations were promoted from mock/source evidence: **22/243 = 9.05%**, 188 partial, 2 missing, 31 externally blocked; 233 future excluded. Exact proposed hero hashes match current inputs; owner approval absent. Production browser acceptance **0/198**. Hostinger/backend identity, Apps Script/ACLs/Calendar/mail, cleanup, key custody/auth bridge, account/privacy/live provider acceptance and hosted CMS remain blocked. Manifest **STALE**; release **NO-GO**. No production/main/recovery changes or live external operations.
+|ID|Requirement|Source reference|Status|
+|---|---|---|---|
+|SO-1F65A837|Independent booking database|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-20E810DB|Private CRM Calendar view|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-493ED7CA|Owner-only initial interface|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-80F1DD3B|Tenant/site identifiers|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-24872F39|Secure owner authentication|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-EBCB0F2F|Privileged MFA|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-F2D6C84C|Role/permission model|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-AB278EBD|Session/CSRF hardening|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-62E71BBE|Deduplicated lead records|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-FE048078|Lead provenance|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-20B6A136|Consent records|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-C5977E2F|UTM history|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-C63AF3CE|Lead pipeline|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-02821621|Owner assignment|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-27584843|Lead notes|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-87860E66|Lead tags|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-98A9E39D|Follow-up tasks|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-6B4F2F7F|Email activity timeline|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-E231C4D0|Disclosed Sera conversation timeline|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-8F879C3B|Lead export|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-0121FC62|Lead deletion|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-3E7E1E1D|Safe Sheet migration/reconciliation|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-F9E356EB|KPI sessions|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-C1E46FF1|KPI engagement|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-7F694AA3|Acquisition channels|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-60FF23EC|Conversion KPIs|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-E2071DCD|Qualified-lead KPIs|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-7C1B2886|Booked-call KPIs|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-A7CC0D05|Pipeline value|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-FC99C0F9|Trend comparison|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-D81AC9DB|Data freshness labels|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-624AE4B4|Action queue|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-97923915|CMS page models|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-2F5E7752|CMS case-study models|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-E1502EE1|Blog/article editing|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-9A5E2AC6|Rich-text editing|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-CCC35AF8|Structured content fields|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-9023AFE1|Media library|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-207599EA|Image optimization workflow|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-5EAB565E|Autosave|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-7D6D91C2|Draft/review/publish states|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-9CE2CC59|Scheduled publishing|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-460091C8|Staging preview|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-4FD56C18|Content revisions|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-29B58E00|Content rollback|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-E44C7FBC|Metadata editing|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-6E455C71|Redirect management|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-96740F98|Contact details editing|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-10148CF1|Business email settings|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-73AFD425|Privacy-conscious events|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-65F51202|Bot filtering|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-22FAAE00|Analytics retention|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-42A5597F|Consent-aware attribution|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-39BBB148|No retroactive identity linking without basis|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-F1925D5C|Geographic aggregates|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-19C35C18|Device aggregates|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-04EDE78B|Conversion funnels|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-9B277E0A|Search Console query/click/impression metrics|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-A9F99DFF|Average-position limitations|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-58C7C6BE|Indexing/coverage metrics|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-F50B5566|Sitemap technical audits|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-A08B3C27|PageSpeed/CrUX adapters|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-2DC43D8B|Off-page provenance reports|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-7D0ADF14|Sampled/delayed/unavailable data labels|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-BE42AD11|Approved notifications|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-1878F837|Automation approval gates|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-808BFA03|Prompt/version controls|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-AECCC977|Cost/usage limits|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-DBEE1D65|Audit trail|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-C8DE7CB5|Failure alerts|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-B07A9FEB|Per-site credentials|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-A75AA948|Credential rotation|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-E35587AA|Signed webhooks|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-27AB806E|Replay prevention|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-2EBA822E|Webhook retry|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-1E247022|Event schema versions|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-24320D89|SDK/embed contracts|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-91DF467A|OAuth integration|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-BC96D9A4|Optional governed MCP|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-51F6AFE4|Organization/site data ownership|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-BD2ABE1E|Entity retention/lifecycle/unique constraints|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-FC18D2DC|Backup/restore policy|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-6BE24806|Incident response|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-44F0A8B3|Accessible owner dashboard|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-A66B137C|Search/filter controls|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-15317000|Empty/loading/error states|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-074DF44C|Accurate timezone/currency labels|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-FFED4342|Design tokens|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-A9CF2981|Single-owner complexity hiding|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-F0343D96|Hosting/runtime capability matrix|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-8E8DB432|Database/cron/SSH/resource limits|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-695744AD|Operating cost budget|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-43456177|No mandatory new subscription|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-9E23DF3E|Manual non-AI operation|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-CE560E8D|Private read-only Sera|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-CF23D3F1|Typed scoped tools|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-E97C2EF5|Private query provenance/date ranges|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-E161667D|AI draft preview|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-1468CF1B|Approval-gated publishing|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-EACC1C3C|Action diff/rollback|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-DABD5E2D|Model registry|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-8F35C2B8|Provider health checks|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-140970A6|Quota/budget accounting|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-E8005E7D|Circuit breakers|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-91B64891|Authorized context isolation|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-CC671F42|Owner-only voice pilot|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-263482DC|Architecture decision records|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-D292A625|Threat model|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-D0A01397|Data/event contracts|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-04A59EFC|Narrow PRD|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-6D32D93D|User journeys and wireframes|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-AAC67352|Permissions matrix|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-817B97F6|Measurement taxonomy|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-71B58958|SLOs after baseline|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-9BD6BB18|Contract/migration tests|§§4,8–10; V0.2–V0.6|Future scope|
+|SO-F29371FF|Versioned acceptance gates|§§4,8–10; V0.2–V0.6|Future scope|
+|FC-EDD28BF9|Trademark/name clearance|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-4A5052A9|Competitor feature/price research|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-90F693D1|15–20 discovery interviews|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-A42D3819|Willingness-to-pay validation|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-B402CF06|Niche/persona selection|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-B705AF0F|Website-agnostic connector|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-28AA61B5|Signed form ingestion|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-5D120398|Embeddable widget/SDK|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-66AD013F|API key rotation|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-2049EBE2|Source/UTM capture|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-154D21DA|Consent mapping|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-B7B359FE|WordPress recipe|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-0B5A3D31|Framer recipe|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-D1EE5D08|Static-site recipe|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-F450E6EB|Next.js recipe|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-82D95D53|Unified inbox|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-A6873FE6|Lead journey receipt|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-954AC6F1|Contact deduplication|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-FD676D9C|Pipeline stages|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-98A9E39D|Follow-up tasks|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-9A1F7B55|Lead qualification|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-92453920|Portable export|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-09514732|Booking page/widget|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-6B177535|Availability rules|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-209BE356|Timezone handling|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-8B5EF0B2|Confirmed external synchronization|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-A53EBED8|Reminders|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-69791203|Conflict prevention|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-5553E5F3|Traffic-source analytics|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-E932BFDA|Landing-page analytics|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-399FF730|Qualified-lead funnel|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-16753732|Attribution caveats|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-759DA876|Real-data Sera summaries|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-6735B4F1|Draft replies/content|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-09D5BD3F|Approved external writes|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-82E1B0BB|Complete action log|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-5EC7B208|Manual parity|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-D4E49E72|Accessible mobile admin|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-16465496|Voice alternative|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-50C621E5|Transcript review|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-67FF6B21|Visible confirmations|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-A94ADF84|Undo where feasible|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-F7317661|White-label logo/palette|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-58A5FA7C|Custom domain provisioning|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-C9CD61F7|Branded email identity|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-764A2DFF|Isolated customer workspaces|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-D5023043|Agency entitlements/billing after validation|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-AD049EE0|Explain-my-week citations|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-A90C8D45|Action preview/undo|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-26798A65|Missing-lead reconciliation detector|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-98F83977|Outcome-first onboarding|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-55271E8F|Data portability|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-8F8D3714|Low-bandwidth mode|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-D131D658|Multilingual research|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-ADDF1011|Google Calendar adapter|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-3F3C8190|Email adapter|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-0CB93E24|Search Console adapter|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-29B29AE3|Permitted GA4 adapter|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-0A0E35CD|Generic webhook adapter|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-B8406C43|Demand-driven Notion or ClickUp|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-98C2F1D4|OAuth scoping|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-09C371D3|Sync conflict handling|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-53435E0F|API rate limits/retries|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-0BB4B42E|Integration audit history|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-564E70A0|Optional MCP read tools|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-A059AD2D|Optional MCP approval-gated writes|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-845EE3EC|No cross-tenant access|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-DBC2DAB8|Control/data-plane separation|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-925B8608|Domain certificate lifecycle|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-D651892C|Feature flags|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-5EB488F7|Localized timezone/currency|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-E0030E89|Consent/retention controls|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-6CC03B07|Secure service auth|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-97E1091F|Unit economics per tenant|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-7ADAE492|AI/voice metering|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-C0887006|Optional BYO provider|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-D110D651|Pilot site connection target|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-7CCD9391|First lead activation|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-3341293F|Confirmed appointment journey|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-585E0688|5–10 consented pilot businesses|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-657F7BA5|Retention measurement|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-17EF37B7|Support workload measurement|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-7089F0CB|Cost per active site|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-A82C5313|White-label pilot after retention|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-002A26EE|Commercial support/incident response|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-74EFD80F|Commercial terms/privacy review|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|FC-6BFF531A|Vertical expansion after evidence|§15; connect-first blueprint; V0.7–V1.2|Future scope|
+|GEO-D0593B6E|Personal/company identity separation|§§11,13–14|Future scope|
+|GEO-1DF383B8|Verified identity sheets|§§11,13–14|Future scope|
+|GEO-92C5BA82|Consistent LinkedIn facts|§§11,13–14|Future scope|
+|GEO-56FEDA75|Consistent Behance facts|§§11,13–14|Future scope|
+|GEO-AF7E1DA3|Consistent Upwork facts|§§11,13–14|Future scope|
+|GEO-448D36CD|Company profile consistency|§§11,13–14|Future scope|
+|GEO-2D52DF41|Directory eligibility|§§11,13–14|Future scope|
+|GEO-86779D60|Free/paid conditions|§§11,13–14|Future scope|
+|GEO-516B6DF7|Editorial legitimacy|§§11,13–14|Future scope|
+|GEO-CE5DAA1F|Avoid duplicate/fabricated profiles|§§11,13–14|Future scope|
+|GEO-D27E9C86|Review permissions|§§11,13–14|Future scope|
+|GEO-4ABFC2A2|Client-credit permissions|§§11,13–14|Future scope|
+|GEO-977E8A16|Original case-study publishing plan|§§11,13–14|Future scope|
+|GEO-A4166B4F|Three high-value case studies|§§11,13–14|Future scope|
+|GEO-B05696C5|Original editorial articles|§§11,13–14|Future scope|
+|GEO-805669E6|Contextual earned links|§§11,13–14|Future scope|
+|GEO-B7506138|Digital PR shortlist|§§11,13–14|Future scope|
+|GEO-5BBCC0F6|Personalized outreach approval|§§11,13–14|Future scope|
+|GEO-4D55710A|No bulk spam outreach|§§11,13–14|Future scope|
+|GEO-C4343CA1|20–30 prompt citation benchmark|§§11,13–14|Future scope|
+|GEO-75FC4E8D|Date/region/prompt recording|§§11,13–14|Future scope|
+|GEO-62BB4FF1|Repeatability trials|§§11,13–14|Future scope|
+|GEO-E6D8EF58|Search/training crawler distinction|§§11,13–14|Future scope|
+|GEO-443E4A2F|Provider-specific crawler verification|§§11,13–14|Future scope|
+|GEO-4384E79F|No AI/ranking guarantees|§§11,13–14|Future scope|
+|GEO-3920B636|Monthly citation/referral review|§§11,13–14|Future scope|
+|GEO-AA7B359B|Qualified-lead measurement|§§11,13–14|Future scope|
+|GEO-BD66FDAA|Source-specific KPI definitions|§§11,13–14|Future scope|
+|GEO-C009CA50|30/60/90-day measurement plan|§§11,13–14|Future scope|
+|GEO-93736516|Outreach tracking|§§11,13–14|Future scope|

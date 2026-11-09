@@ -5,7 +5,7 @@
   "baseline_head": "c097a6124bbde0604eedadacf3d5772e73792d9a",
   "branch": "work/v01-booking-contract-20261103",
   "phase": 6,
-  "status": "LOCAL_SECURITY_HARDENING_VERIFIED_EXTERNAL_GATES_BLOCKED",
+  "status": "V1_LOCAL_SLICES_VERIFIED_FULL_IMPLEMENTATION_INCOMPLETE",
   "architecture": "Existing Sheet-bound admin + approved public artifacts + private PHP libraries; no database/worker or live auth bridge assumed",
   "completed_local": [
     "gated AEAD credential vault: independent key-provider interface, server permissions, masked reads, provider-key rotation/revocation, audit/revision/idempotency",
@@ -159,6 +159,27 @@
       "docs/booking-release/PHASE6-RECONCILIATION.md",
       "docs/booking-release/PHASE6-EVIDENCE.json"
     ]
-  }
+  },
+  "v1_source_checkpoint": "94c53a89c995926bd4055a59b94b64e98a90eb33",
+  "v1_acceptance": {
+    "verified": 27,
+    "total": 243,
+    "percentage": 11.11,
+    "partial": 183,
+    "missing": 2,
+    "blocked": 31,
+    "production_browser": "0/198",
+    "manifest": "STALE",
+    "release": "NO-GO"
+  },
+  "v1_completed": [
+    "Authoritative Calendar readback before confirmation/invitations; durable reconciliation",
+    "Private current-approved config bridge; Gemini/Groq/OpenRouter free-only adapters, no activation",
+    "HMAC application budget and secure durable quota ledger",
+    "CRM annotation integration with replay-safe edit, duplicate hints, bounded safe export and component browser tests"
+  ],
+  "v1_tests": "docs/v1/REGRESSION-EVIDENCE.json; docs/v1/CRM-BROWSER-EVIDENCE.json",
+  "next_executable_task": "CRM cross-history search/export with bounded cursors; remaining183 criterion review. Full-history snapshot paging now verified. Do not bypass hero or activate providers."
 }
 ```
+

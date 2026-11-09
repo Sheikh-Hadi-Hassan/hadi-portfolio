@@ -4,7 +4,7 @@
 {
   "baseline_commit": "ebebab75cabc65b27c2c2232464bc7071b760c5b",
   "branch": "work/v01-booking-contract-20261103",
-  "status": "LOCAL_RUNTIME_CONTRACTS_VERIFIED_LIVE_INTEGRATION_BLOCKED",
+  "status": "V1_LOCAL_SLICES_VERIFIED_FULL_IMPLEMENTATION_INCOMPLETE",
   "decisions": [
     "Reuse six canonical backend service IDs; do not invent provider or service IDs",
     "Deterministic guided workflow owns progression; AI optional",
@@ -35,7 +35,7 @@
     "Actual web PHP8.4/cURL/TLS/sodium/config/permissions and deployed Google identities/ACLs unverified",
     "Host provider credential writes/activation, Google-to-PHP bridge and hosted CMS disconnected; patched8.4 compatibility blocked"
   ],
-  "next_executable_task": "Reconcile owner evidence via docs/admin/PHASE4-GATE-RECONCILIATION.md; owner hero decision then authorized build/browser QA. Live provider activation requires independent custody/auth/account/privacy/quota and explicit connectivity approval.",
+  "next_executable_task": "CRM cross-history search/export with bounded cursors; remaining183 criterion review. Full-history snapshot paging now verified. Do not bypass hero or activate providers.",
   "current_commit_at_phase_entry": "a584d007ba96e72bedaef9a08308e95ce1e19c50",
   "files_changed": [
     "engine/runtime/build/booking/voice-actions",
@@ -69,6 +69,26 @@
     "node tests/admin-staging-security.mjs PASS after reproducing pre-fix defect",
     "affected CMS JS/CLI and three-width browser fixture PASS",
     "npm run test:browser-v01 BLOCKED by unchanged hero guard;0/198"
-  ]
+  ],
+  "v1_source_checkpoint": "94c53a89c995926bd4055a59b94b64e98a90eb33",
+  "v1_acceptance": {
+    "verified": 27,
+    "total": 243,
+    "percentage": 11.11,
+    "partial": 183,
+    "missing": 2,
+    "blocked": 31,
+    "production_browser": "0/198",
+    "manifest": "STALE",
+    "release": "NO-GO"
+  },
+  "v1_completed": [
+    "Authoritative Calendar readback before confirmation/invitations; durable reconciliation",
+    "Private current-approved config bridge; Gemini/Groq/OpenRouter free-only adapters, no activation",
+    "HMAC application budget and secure durable quota ledger",
+    "CRM annotation integration with replay-safe edit, duplicate hints, bounded safe export and component browser tests"
+  ],
+  "v1_tests": "docs/v1/REGRESSION-EVIDENCE.json; docs/v1/CRM-BROWSER-EVIDENCE.json"
 }
 ```
+

@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "sourceCheckpoint": "94c53a89c995926bd4055a59b94b64e98a90eb33",
+  "boundary": "Local PHP8.3.6 CLI, mocks and source checks only; no hosted/provider acceptance",
+  "results": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 4.002,
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> hadi-portfolio@1.0.0 test\n> node tests/reel-motion.cjs && node tests/booking-status.mjs && node tests/booking-client-contract.cjs && node tests/booking-recovery.mjs && node tests/sera-consent.cjs && node tests/booking-validation.mjs && node tests/notification-crash.mjs && node tests/sera-discovery.mjs && node tests/sera-errors.mjs && node tests/sera-knowledge.mjs && node tests/admin-control-center.mjs && node tests/admin-public-config.mjs && node tests/admin-cms.mjs && node tests/sera-config-voice.mjs && node tests/admin-cms-content.mjs && node tests/sera-runtime-controls.mjs && node tests/admin-cms-rich.mjs && node tests/admin-staging-security.mjs && node tests/booking-authority.mjs && node tests/sera-openrouter-policy.mjs && node tests/crm-workspace.mjs\n\nDesktop/mobile expansion endpoints, statement reveal/reverse timing at 0%, 31%, 100%, sound toggle, pause and cleanup passed.\nBooking status contract: event reservation, Meet pending/ready/failed, cancellation and not-found recovery states pass.\nPending/failed Meet, invalid event identity/time and tentative events never confirm; integration copies match.\nPersisted lead/event/time correlation required: orphan event and mismatched record stay pending.\nClient rejects incomplete confirmations, retains pending drafts, accepts full event/Meet contract, and does not promote legacy responses.\nPASS: isolated duplicate/mismatched keys, lost Calendar response reconciliation, pending Meet, timeout, Calendar denial, busy slot and uncertain partial notification replay suppression. No external calls. Provider delivery ambiguity requires manual reconciliation.\nSaved lead retains stable reference, supplied contact and visitor zone, state and matching external event ID. Mock persistence only.\nPASS: AI defaults off, explicit enable/disable actions differ, privacy viewing does not consent, focus returns. Static request gate checked; browser/provider behavior remains unverified.\nPASS: withdrawal aborts active request, late-result guard present, consent is not restored from draft storage.\nPASS: stable event reference, malformed IDs/payloads, honeypot, spreadsheet formula escaping, bounded transient retry/no permission retry, fail-closed availability and escaped notification markup. Local contracts only.\nPASS: intent write failure sends nothing; lost post-send acknowledgement blocks replay; pre-send quota failure remains retryable; completed deliveries are skipped. Isolated fake mail/store only.\nPASS: crash after intent but before transmission is quarantined; safe partial quota retry sends only the unattempted recipient.\nPASS: manual-review alerts also quarantine uncertain delivery without automatic duplicate alerts.\nPASS: outbox quarantines lost-ack and corrupt-metadata jobs for manual reconciliation without another send.\nPASS: six canonical service trees terminate without repeated questions; deterministic non-binding brief, reload/session identity, page-only consent, duplicate schema and invalid answer faults.\nPASS: typed recovery policies retain drafts, bound safe retries, forbid uncertain-write retries and replace raw diagnostics. Policy core only.\nPASS: source-referenced profile and 15 projects, bounded relevant retrieval, no-match abstention; no prices or new outcomes generated.\nPASS: Google-identity deny-by-default roles, CSRF, draft/owner approval, immutable revisions/audit, operation replay/mismatch, optimistic conflict, hierarchy cycles, credential-field rejection and lock release. Mock Apps Script only.\nPASS: CRM annotation and cancellation-request revisions link to verified lead lookup; unknown lead rejected; no Calendar or mail APIs available in test.\nPASS: provider metadata drafts persist; activation and credential fields are rejected server-side.\nPASS: authorized report counts actual latest revisions; no invented analytics and no record contents/credentials exported.\nPASS: read projection excludes credential and unknown fields even from manually altered workspace records.\nPASS: later draft preserves approved snapshot; editor cannot archive approved knowledge.\nPASS: explicit approval required and accepted-mutation rate guard rejects excess writes without changing stored rows.\nPASS: owner-only export contains approved public snapshot, excludes drafts/private knowledge, provider/CRM/appointment data and actor identity.\nPASS: actual mock admin draft -> owner approval -> public export -> runtime schema validation; browser fixture derives from this export.\nPASS: CMS draft excluded until explicit owner approval; owner export excludes Sera/private records; editor export denied.\nPASS: approved personality/voice export and duplicate-active-singleton rejection.\nPASS: real mock project draft -> explicit approval -> sanitized CMS export fixture.\nPASS: full case draft/approval/public CMS export, route immutability and exclusion from Sera config.\nPASS: approved trees/skills/policy export, drafts excluded and public admin-tool escalation rejected.\nPASS: failed append writes nothing; lost flush acknowledgement replays the persisted operation once; lock released on both failures.\nPASS: rich content schema enforced server-side; drafts/private actor metadata excluded; approved article/chapter fields retained in CMS export only.\nPASS: public allowlist, corrupt/secret/private-kind rejection, optimistic publication, verified staging readback, rollback and approved FAQ response. No production path written.\nPASS: isolated existing-project metadata edit, escaped preview/canonical, route/image preservation, invalid media/protected-kind/new-project rejection, verified staging, conflict and rollback. Public source/hero untouched.\nPASS: actual mocked admin-approved CMS export compiles with real source assets and preserved routes.\nPASS: approved voice disable blocks start, resumed recognition and read-aloud. Isolated VM.\nPASS: sanitized media import/dedup/rejection, new full case, real-template escaped preview, isolated publish/readback, edit, interrupted publication, version conflict and rollback; source/hero untouched.\nPASS: shared runtime schema, prohibited admin skills/cycles/duplicates, conditional required answers, lead/brief handoff, pinned version through update/reload, consent reset and corrupt-tree answer preservation.\nPASS: bounded rich article/chapter schema, original editorial rendering/escaping, anchor and source-media preservation, explicit image replacement, and rejection of unapproved release files/directories/symlinks before rollback.\nPASS: mutable CMS/Sera/pointer hardlink and directory rejection, preserved victim, failed-write recovery, lock/temp cleanup, 0700/0600 modes and rollback. Isolated staging only.\nPASS: authoritative GET before confirmation; missing/timeout/wrong ID/reference/start/end/timezone remain pending and send nothing; verified invitations persist intent, reconcile lost acknowledgement and never blindly resend. Fake providers only.\nPASS: lost post-invitation GET is reconciled without another PATCH; mismatched Meet request, contradictory failure/link and malformed conference entries never confirm.\nPASS: readback recovery persists missing event identity without reinsertion; failed lead persistence prevents Calendar writes/invitations/mail.\nPASS: final persistence flush failure cannot return confirmation; status reconciles without another event.\nPASS: three-provider approved order plus backwards-compatible two-provider policy, duplicate/unknown/overlong rejection and Apps Script/JS contract parity. No activation.\nPASS: authenticated CRM join, stage/notes/tags/follow-up persistence, revisions, cross-reference protection, role isolation, replay after lost flush, duplicate hints, bounded formula-safe CSV, script syntax. Fake Sheets only.\n"
+    },
+    {
+      "command": "npm run test:booking-release",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.974,
+      "output": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> hadi-portfolio@1.0.0 test:booking-release\n> node tests/booking-authority.mjs && node tests/booking-status.mjs && node tests/booking-client-contract.cjs && node tests/booking-recovery.mjs && node tests/booking-validation.mjs && node tests/notification-crash.mjs && node tests/lead-api.mjs && node tests/booking-release-integration.mjs && python3 tests/booking-release-package.py\n\nPASS: authoritative GET before confirmation; missing/timeout/wrong ID/reference/start/end/timezone remain pending and send nothing; verified invitations persist intent, reconcile lost acknowledgement and never blindly resend. Fake providers only.\nPASS: lost post-invitation GET is reconciled without another PATCH; mismatched Meet request, contradictory failure/link and malformed conference entries never confirm.\nPASS: readback recovery persists missing event identity without reinsertion; failed lead persistence prevents Calendar writes/invitations/mail.\nPASS: final persistence flush failure cannot return confirmation; status reconciles without another event.\nBooking status contract: event reservation, Meet pending/ready/failed, cancellation and not-found recovery states pass.\nPending/failed Meet, invalid event identity/time and tentative events never confirm; integration copies match.\nPersisted lead/event/time correlation required: orphan event and mismatched record stay pending.\nClient rejects incomplete confirmations, retains pending drafts, accepts full event/Meet contract, and does not promote legacy responses.\nPASS: isolated duplicate/mismatched keys, lost Calendar response reconciliation, pending Meet, timeout, Calendar denial, busy slot and uncertain partial notification replay suppression. No external calls. Provider delivery ambiguity requires manual reconciliation.\nSaved lead retains stable reference, supplied contact and visitor zone, state and matching external event ID. Mock persistence only.\nPASS: stable event reference, malformed IDs/payloads, honeypot, spreadsheet formula escaping, bounded transient retry/no permission retry, fail-closed availability and escaped notification markup. Local contracts only.\nPASS: intent write failure sends nothing; lost post-send acknowledgement blocks replay; pre-send quota failure remains retryable; completed deliveries are skipped. Isolated fake mail/store only.\nPASS: crash after intent but before transmission is quarantined; safe partial quota retry sends only the unattempted recipient.\nPASS: manual-review alerts also quarantine uncertain delivery without automatic duplicate alerts.\nPASS: outbox quarantines lost-ack and corrupt-metadata jobs for manual reconciliation without another send.\nLead transport: confirmed success, HTML 404, server rejection, invalid response, pending 202, network failure and timeout pass.\nDelivery recovery: missing endpoint is not-sent; readiness uses GET only; ambiguous or pending writes preserve the existing reference.\nPASS: frontend request/acceptance -> Apps Script doPost -> in-memory lead -> mock Calendar/Meet -> owner-mail intents; duplicates, mismatched retries, lost response, pending/timeout/conflict/denial/auth/validation preserve safety. Customer invitation requested, not delivered. PHP HTTP handler and real browser/providers NOT executed.\nPASS: deterministic fixed-scope candidate, exact source/mirror hashes, no overwrite, permission0600, no activation/config writes, extra/traversal/tampered ZIP rejection. No deployment.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/admin-credential-vault.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.012,
+      "output": "PASS: vault defaults disabled; authorization, outside-public private storage, AEAD encryption, masked reads, rotation/revocation, audit, idempotent lost-ack replay, conflict and tamper/wrong-key rejection. Synthetic fixtures only.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/admin-provider-runtime.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.015,
+      "output": "PASS: encrypted vault -> approved provider order -> adapters -> durable quota/circuit -> response; interrupted-provider failover, consent/default activation, bounded exhaustion, unchanged answers and diagnostic authorization. Zero live calls.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/admin-public-config.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.011,
+      "output": "PASS: backend public config validation and corrupt-current/valid-previous fallback; both invalid use built-in fallback.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/provider-candidates.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.01,
+      "output": "PASS: two documentation candidates remain disabled, no account quotas guessed, budget zero, zero credential resolution or provider calls.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-ledger-security.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.012,
+      "output": "PASS: quota ledger rejects symlinks/hardlinks, permissive storage, corrupt counters/unknown metadata without modifying targets; private creation and quota preserved. Local filesystem only.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-openrouter.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.014,
+      "output": "PASS: OpenRouter fixed endpoint, explicit :free only, request price caps0, no provider/paid fallback/tools, privacy flags, zero-cost acknowledgement, three-provider bounded failover and state preservation. No live calls.\nPASS: PHP public-runtime schema accepts three eligible provider names, rejects unknown routing names, and grants no activation or billing permission.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-provider-adapters.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.013,
+      "output": "PASS: two protocol adapters, mock 429 failover, context continuity, consent/no-paid/privacy gates, key-custody activation block, bounded requests and redacted errors. Zero network calls.\nPASS: reflected provider credentials are rejected before a response can leave the backend.\nPASS: Groq namespaced model body IDs, rejected traversal/URL IDs, invalid UTF-8 and stable rate-limit diagnostics. No network.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-provider-ledger.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.026,
+      "output": "PASS: storage activation gate, durable pre-call debit, uncertain-call no-refund, circuit, explicit period reset and corrupt-ledger fail-closed. Local fixtures only.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-provider-transport.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.016,
+      "output": "PASS: HTTPS transport defaults inactive; provider context redacts contact/URL data, excludes credentials and preserves original state. Actual cURL/TLS networking unverified.\nPASS: Urdu context clipping remains valid UTF-8; original questionnaire text is unchanged.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-request-budget.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.021,
+      "output": "PASS: bounded request budget persists before upstream, private HMAC-only counters, limits, missing secret/corruption/link rejection and no victim mutation. Local CLI only.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-retrieval.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.016,
+      "output": "PASS: backend source-referenced retrieval selects relevant facts, caps three results/context size and abstains on unknown query.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-router-bridge.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.017,
+      "output": "PASS: trusted private runtime -> public response bridge, consent/default activation, encrypted mock key, free OpenRouter transport, privacy redaction and allowed fact filtering. Curl readiness overridden only in pure schema test; no web-handler/live test claimed.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-router.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.012,
+      "output": "PASS: backend policy mock failover, immutable context, consent, zero-paid/free eligibility gates, quota/circuit exclusions, bounded invalid-response retry and all-unavailable fallback. No remote adapters enabled.\nPASS: approved provider order and bounded context/output policy; over-budget context makes no provider call.\nPASS: invalid UTF-8/non-finite/cyclic state, malformed policies/registry and nested response schemas fail closed without lost answers or calls.\n"
+    },
+    {
+      "command": "/workspace/scratch/f1b54e9ce3cf/php-local/usr/bin/php8.3 tests/sera-runtime-approval.php",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.016,
+      "output": "PASS: current approved artifact overrides stale private-runtime snapshot; fixed tone enums and context/output budgets reach adapters; editable name/welcome never become security policy; malformed artifact and excess context make no calls. Mock provider only.\n"
+    },
+    {
+      "command": "python3 tests/sera-provider-ledger-concurrency.py",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.115,
+      "output": "PASS: 20 independent PHP processes accept exactly 3 reservations; empty-corrupt ledger fails closed.\n"
+    },
+    {
+      "command": "python3 tests/source-seo.py",
+      "exitCode": 1,
+      "status": "FAIL",
+      "seconds": 0.04,
+      "output": "Traceback (most recent call last):\n  File \"/workspace/scratch/f1b54e9ce3cf/continued-phase2/tests/source-seo.py\", line 20, in <module>\n    pages=list((r/'dist').rglob('index.html'));assert len(pages)==22\n                                                      ^^^^^^^^^^^^^^\nAssertionError\n",
+      "assessment": "BLOCKED_BY_UNBUILT_TEMPLATE_OUTPUT",
+      "reason": "dist pages absent in partial snapshot; approved hero remains unavailable. Initial execution failed prerequisites; no assertion weakened or guard bypassed. Prior passes remain historical."
+    },
+    {
+      "command": "python3 tests/utility-routes.py",
+      "exitCode": 1,
+      "status": "FAIL",
+      "seconds": 0.049,
+      "output": "Traceback (most recent call last):\n  File \"/workspace/scratch/f1b54e9ce3cf/continued-phase2/tests/utility-routes.py\", line 15, in <module>\n    p=Page((r/'dist'/slug/'index.html').read_text());assert p.h1==1,(slug,p.h1)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1027, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/f1b54e9ce3cf/continued-phase2/dist/about/index.html'\n",
+      "assessment": "BLOCKED_BY_UNBUILT_TEMPLATE_OUTPUT",
+      "reason": "dist pages absent in partial snapshot; approved hero remains unavailable. Initial execution failed prerequisites; no assertion weakened or guard bypassed. Prior passes remain historical."
+    },
+    {
+      "command": "python3 tests/image-cache.py",
+      "exitCode": 1,
+      "status": "FAIL",
+      "seconds": 0.074,
+      "output": "Traceback (most recent call last):\n  File \"/workspace/scratch/f1b54e9ce3cf/continued-phase2/tests/image-cache.py\", line 5, in <module>\n    source=ast.parse(Path('scripts/optimize-images.py').read_text())\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1027, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'scripts/optimize-images.py'\n",
+      "rerun": {
+        "status": "PASS",
+        "reason": "Restored exact remote scripts/optimize-images.py; real variants_for corruption tests pass. No source change."
+      }
+    },
+    {
+      "command": "python3 tests/package-security.py",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.045,
+      "output": "Hostinger packaging security: private config, env and credential files are rejected.\n"
+    },
+    {
+      "command": "python3 tests/requirements-matrix.py",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.04,
+      "output": "PASS: 476 unique IDs/obligations; 243 portfolio, 233 future; 22/243=9.05% locally verified. Structural/count validation, not independent semantic certification.\n"
+    },
+    {
+      "command": "node tests/browser-plan.cjs",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.084,
+      "output": "PASS: 22-route \u00d7 9-width plan, exact export inventory, duplicate evidence rejection and interrupted-run accounting. Zero browser acceptance cases executed.\n"
+    },
+    {
+      "command": "python3 tests/acceptance-build.py",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.063,
+      "output": "PASS: missing receipt, stale source, modified export and newly added source rejected. Synthetic provenance tests only; no build or hero activation.\n"
+    },
+    {
+      "command": "python3 scripts/qa/review-hero-proposal.py",
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.032,
+      "output": "{\n  \"schemaVersion\": 1,\n  \"status\": \"PROPOSAL_MATCH_NOT_APPROVAL\",\n  \"hashes\": {\n    \"hero_html\": \"bafe2419c5332ebc59e93519ed7c94c125a684f9c05d2dee3e55b41f06de608e\",\n    \"hero_css\": \"fc5224e4a0ab4bc2957f8be69ac8f84e6b48b125b771e7123e84c552e77b035f\",\n    \"shared_css\": \"7255e1f9fe90310502abca9c422d82cc135bf0dcba5aa574650513fd807a8b33\"\n  },\n  \"proposal_active\": false,\n  \"approval_observed\": false,\n  \"lock_present\": false\n}\n"
+    }
+  ],
+  "followups": [
+    {
+      "command": "python3 tests/requirements-matrix.py",
+      "status": "PASS",
+      "detail": "27/243 after evidence reconciliation"
+    },
+    {
+      "command": "npm audit --json",
+      "status": "PASS",
+      "vulnerabilities": {
+        "total": 0,
+        "critical": 0,
+        "high": 0,
+        "moderate": 0,
+        "low": 0,
+        "info": 0
+      },
+      "detail": "Initial ENOLOCK from partial snapshot; restored exact remote package-lock.json and reran. No dependency update."
+    },
+    {
+      "command": "node tests/crm-browser.cjs",
+      "status": "PASS",
+      "boundary": "Mock RPC component; three widths and zero tested-state axe findings"
+    },
+    {
+      "command": "node tests/sera-runtime-browser.cjs",
+      "status": "PASS",
+      "boundary": "Actual widget with isolated approved config; no live providers, zero production cases"
+    },
+    {
+      "command": "node tests/crm-workspace.mjs",
+      "status": "PASS",
+      "detail": "After paging change:500 records/no duplicates, append snapshot, empty sheet, invalid cursor, prior CRM safety retained"
+    },
+    {
+      "command": "python3 tests/v1-evidence.py",
+      "status": "PASS",
+      "detail": "All243 rows/counts, unchanged476 IDs, separate production status, preserved Missing lifecycle IDs, state and candidate security gates"
+    },
+    {
+      "command": "npm test",
+      "status": "PASS",
+      "detail": "Final rerun21 suites after pagination/empty-Sheet changes; preserved full JS output in npmTestFinalOutput",
+      "npmTestFinalOutput": "\n> hadi-portfolio@1.0.0 test\n> node tests/reel-motion.cjs && node tests/booking-status.mjs && node tests/booking-client-contract.cjs && node tests/booking-recovery.mjs && node tests/sera-consent.cjs && node tests/booking-validation.mjs && node tests/notification-crash.mjs && node tests/sera-discovery.mjs && node tests/sera-errors.mjs && node tests/sera-knowledge.mjs && node tests/admin-control-center.mjs && node tests/admin-public-config.mjs && node tests/admin-cms.mjs && node tests/sera-config-voice.mjs && node tests/admin-cms-content.mjs && node tests/sera-runtime-controls.mjs && node tests/admin-cms-rich.mjs && node tests/admin-staging-security.mjs && node tests/booking-authority.mjs && node tests/sera-openrouter-policy.mjs && node tests/crm-workspace.mjs\n\nDesktop/mobile expansion endpoints, statement reveal/reverse timing at 0%, 31%, 100%, sound toggle, pause and cleanup passed.\nBooking status contract: event reservation, Meet pending/ready/failed, cancellation and not-found recovery states pass.\nPending/failed Meet, invalid event identity/time and tentative events never confirm; integration copies match.\nPersisted lead/event/time correlation required: orphan event and mismatched record stay pending.\nClient rejects incomplete confirmations, retains pending drafts, accepts full event/Meet contract, and does not promote legacy responses.\nPASS: isolated duplicate/mismatched keys, lost Calendar response reconciliation, pending Meet, timeout, Calendar denial, busy slot and uncertain partial notification replay suppression. No external calls. Provider delivery ambiguity requires manual reconciliation.\nSaved lead retains stable reference, supplied contact and visitor zone, state and matching external event ID. Mock persistence only.\nPASS: AI defaults off, explicit enable/disable actions differ, privacy viewing does not consent, focus returns. Static request gate checked; browser/provider behavior remains unverified.\nPASS: withdrawal aborts active request, late-result guard present, consent is not restored from draft storage.\nPASS: stable event reference, malformed IDs/payloads, honeypot, spreadsheet formula escaping, bounded transient retry/no permission retry, fail-closed availability and escaped notification markup. Local contracts only.\nPASS: intent write failure sends nothing; lost post-send acknowledgement blocks replay; pre-send quota failure remains retryable; completed deliveries are skipped. Isolated fake mail/store only.\nPASS: crash after intent but before transmission is quarantined; safe partial quota retry sends only the unattempted recipient.\nPASS: manual-review alerts also quarantine uncertain delivery without automatic duplicate alerts.\nPASS: outbox quarantines lost-ack and corrupt-metadata jobs for manual reconciliation without another send.\nPASS: six canonical service trees terminate without repeated questions; deterministic non-binding brief, reload/session identity, page-only consent, duplicate schema and invalid answer faults.\nPASS: typed recovery policies retain drafts, bound safe retries, forbid uncertain-write retries and replace raw diagnostics. Policy core only.\nPASS: source-referenced profile and 15 projects, bounded relevant retrieval, no-match abstention; no prices or new outcomes generated.\nPASS: Google-identity deny-by-default roles, CSRF, draft/owner approval, immutable revisions/audit, operation replay/mismatch, optimistic conflict, hierarchy cycles, credential-field rejection and lock release. Mock Apps Script only.\nPASS: CRM annotation and cancellation-request revisions link to verified lead lookup; unknown lead rejected; no Calendar or mail APIs available in test.\nPASS: provider metadata drafts persist; activation and credential fields are rejected server-side.\nPASS: authorized report counts actual latest revisions; no invented analytics and no record contents/credentials exported.\nPASS: read projection excludes credential and unknown fields even from manually altered workspace records.\nPASS: later draft preserves approved snapshot; editor cannot archive approved knowledge.\nPASS: explicit approval required and accepted-mutation rate guard rejects excess writes without changing stored rows.\nPASS: owner-only export contains approved public snapshot, excludes drafts/private knowledge, provider/CRM/appointment data and actor identity.\nPASS: actual mock admin draft -> owner approval -> public export -> runtime schema validation; browser fixture derives from this export.\nPASS: CMS draft excluded until explicit owner approval; owner export excludes Sera/private records; editor export denied.\nPASS: approved personality/voice export and duplicate-active-singleton rejection.\nPASS: real mock project draft -> explicit approval -> sanitized CMS export fixture.\nPASS: full case draft/approval/public CMS export, route immutability and exclusion from Sera config.\nPASS: approved trees/skills/policy export, drafts excluded and public admin-tool escalation rejected.\nPASS: failed append writes nothing; lost flush acknowledgement replays the persisted operation once; lock released on both failures.\nPASS: rich content schema enforced server-side; drafts/private actor metadata excluded; approved article/chapter fields retained in CMS export only.\nPASS: public allowlist, corrupt/secret/private-kind rejection, optimistic publication, verified staging readback, rollback and approved FAQ response. No production path written.\nPASS: isolated existing-project metadata edit, escaped preview/canonical, route/image preservation, invalid media/protected-kind/new-project rejection, verified staging, conflict and rollback. Public source/hero untouched.\nPASS: actual mocked admin-approved CMS export compiles with real source assets and preserved routes.\nPASS: approved voice disable blocks start, resumed recognition and read-aloud. Isolated VM.\nPASS: sanitized media import/dedup/rejection, new full case, real-template escaped preview, isolated publish/readback, edit, interrupted publication, version conflict and rollback; source/hero untouched.\nPASS: shared runtime schema, prohibited admin skills/cycles/duplicates, conditional required answers, lead/brief handoff, pinned version through update/reload, consent reset and corrupt-tree answer preservation.\nPASS: bounded rich article/chapter schema, original editorial rendering/escaping, anchor and source-media preservation, explicit image replacement, and rejection of unapproved release files/directories/symlinks before rollback.\nPASS: mutable CMS/Sera/pointer hardlink and directory rejection, preserved victim, failed-write recovery, lock/temp cleanup, 0700/0600 modes and rollback. Isolated staging only.\nPASS: authoritative GET before confirmation; missing/timeout/wrong ID/reference/start/end/timezone remain pending and send nothing; verified invitations persist intent, reconcile lost acknowledgement and never blindly resend. Fake providers only.\nPASS: lost post-invitation GET is reconciled without another PATCH; mismatched Meet request, contradictory failure/link and malformed conference entries never confirm.\nPASS: readback recovery persists missing event identity without reinsertion; failed lead persistence prevents Calendar writes/invitations/mail.\nPASS: final persistence flush failure cannot return confirmation; status reconciles without another event.\nPASS: three-provider approved order plus backwards-compatible two-provider policy, duplicate/unknown/overlong rejection and Apps Script/JS contract parity. No activation.\nPASS: authenticated CRM join, stage/notes/tags/follow-up persistence, revisions, cross-reference protection, role isolation, replay after lost flush, duplicate hints, bounded formula-safe CSV, snapshot pagination across500 records with no duplicates or appended-row drift, script syntax. Fake Sheets only.\n"
+    },
+    {
+      "command": "python3 tests/booking-release-package.py",
+      "status": "PASS",
+      "detail": "After README handoff updated to current V1 docs; immutable r2 artifact, same pinned Code.gs"
+    }
+  ],
+  "productionBuild": {
+    "status": "BLOCKED",
+    "reason": "Exact-hash hero approval unavailable; lock absent; unchanged guard retained",
+    "browserCompleted": 0,
+    "browserTotal": 198
+  },
+  "sourceCheckpointMeaning": "Base commit before current pagination/evidence changes. Working source hashes in SOURCE-EVIDENCE.json identify the tested bytes; the publishing Git commit pins the complete tree."
+}
