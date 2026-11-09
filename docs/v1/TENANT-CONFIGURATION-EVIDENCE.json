@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "scope": "private backend contract; mock identity and in-memory atomic repository only",
+  "runtime": "PHP 8.3.6 CLI; not Hostinger web-handler verification",
+  "tests": [
+    {
+      "command": "php tests/sera-tenant-configuration.php",
+      "actualExecutable": "LD_LIBRARY_PATH=../php-local/usr/lib/x86_64-linux-gnu ../php-local/usr/bin/php8.3 tests/sera-tenant-configuration.php",
+      "result": "PASS",
+      "coverage": [
+        "unauthenticated/foreign/duplicate membership denial",
+        "read-only role isolation",
+        "default-disabled storage and writes",
+        "tenant partition mismatch denial",
+        "strict schema and privilege/credential rejection",
+        "optimistic revision and idempotency",
+        "failed save and lost acknowledgement",
+        "uncommitted success acknowledgement rejected by authoritative readback",
+        "readback outage preserves operation for reconciliation",
+        "invalid UTF-8 rejection"
+      ]
+    },
+    {
+      "command": "php -l integrations/sera-platform/TenantConfiguration.php; php -l tests/sera-tenant-configuration.php",
+      "result": "PASS"
+    },
+    {
+      "command": "npm test",
+      "result": "PASS",
+      "suites": 23,
+      "boundary": "JavaScript source/fixture contracts; no live provider/Calendar/mail calls"
+    },
+    {
+      "command": "python3 tests/home-content.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python3 scripts/qa/review-hero-proposal.py",
+      "result": "PROPOSAL_MATCH_NOT_APPROVAL"
+    }
+  ],
+  "files": {
+    "integrations/sera-platform/TenantConfiguration.php": "37e68fe8f84a983b12996ee1e66d581ff05a697863d7d3f2a3f62dadbb2bdde2",
+    "integrations/sera-platform/README.md": "f288aff2edb8d808e0a8318a783b111dd66cd4400a7c94cfe4f6fb1119a28619",
+    "tests/sera-tenant-configuration.php": "f608c2c8417c19c7f24aec8e93801ce0c3f232924ee7e7fd0310bd9dca445054"
+  },
+  "limitations": [
+    "No hosted identity/storage adapter or isolation acceptance",
+    "No public endpoint, customer onboarding or embed activation",
+    "No public Sera configuration changes",
+    "Schema versions other than 1 rejected; migration/archive integration not implemented",
+    "No full production build; hero approval absent",
+    "Production-build browser coverage remains 0/198"
+  ],
+  "release": "NO-GO",
+  "manifest": "STALE",
+  "portfolioAcceptance": {
+    "verified": 27,
+    "total": 243,
+    "partial": 185,
+    "externallyBlocked": 31
+  }
+}

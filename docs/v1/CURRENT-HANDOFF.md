@@ -1,16 +1,13 @@
 # Current implementation handoff
 
-HEAD: branch commit containing this file; starting HEAD c8f17da45a93ec8355d1a6e43721da61140f46db.
-Branch: work/v01-booking-contract-20261103.
+Branch: work/v01-booking-contract-20261103. Starting HEAD: c8f17da45a93ec8355d1a6e43721da61140f46db. Current HEAD is the commit containing this file.
 
-Completed: What I Do moved to third homepage section; four CV-backed product previews directly after Selected Work; expanded About/founder narrative; owner-approved Discover/Define/Create/Deliver working-board section with native disclosure and no process WebGL/scroll dependency; reel opening/full-frame dwell, visible mobile preview and dynamic reduced-motion pause; five-card mobile fit and short-screen static fallback. Protected hero inputs unchanged.
+Published: approved personal working-board process; What I Do third; CV-backed product previews after Selected Work; expanded About/founder narrative; reel dwell and mobile/reduced-motion improvements; five-card mobile fit. Protected hero inputs unchanged. CRM follow-up dates now reject impossible dates; shown-results/local-date due, overdue, undated and correction filters also scope shown exports.
 
-Tests: npm test23 JS suites PASS; home-content/reel/folder contracts PASS;36 isolated component browser cases at nine widths and two motion settings PASS,axe0 in tested sections/About. Original-template CSS and Nebulica font; GSAP progress mocked. Not full-build or198-route acceptance. About button contrast fixed. Manual working-board screenshot inspected.
+Current slice: private tenant business/services/offers schema, backend-derived membership and permission context, tenant-namespaced repository contract, revision/idempotency protection and confirmed readback. Storage/writes default disabled. No endpoint, production identity/storage adapter, public embed, customer migration or public publishing. Sheet roles are not tenant isolation. Independent authentication/storage acceptance is required before integration.
 
-Working copy: partial source snapshot without Git metadata. Intended source changes are committed through the development ref; matching remote inputs restored for QA are excluded from publication.
+Evidence: 23 JS suites passed again after CRM follow-up changes; targeted CRM server/history/admin and three-width Chromium/axe passed. Homepage/About: 36 isolated component cases across nine widths and two motion modes, axe 0 in tested sections. GSAP progress mocked; not hydrated/full-build acceptance. PHP tenant fixture covers foreign membership/partition denial, read-only roles, strict schema, revisions, duplicates, failed/lost acknowledgements and confirmed readback. Final regression results recorded in TENANT-CONFIGURATION-EVIDENCE.json.
 
-Blockers: exact-hash hero approval/build/198 cases; demo availability verification (CV URLs sourced, retrieval/browser timed out); actual backend/deployment/permissions/custody and authorized live acceptance. No production, credentials or provider activation changed. NO-GO; manifest STALE. Portfolio acceptance remains27/243,185 partial,31 externally blocked.
+Unchanged gates: hero exact-hash approval/build; production browser 0/198; demo live availability; actual backend/deployment/ACL/cleanup/custody and authorized integration/rollback acceptance. Portfolio acceptance 27/243 (11.11%); 185 partial, 31 externally blocked. Manifest STALE; NO-GO. No production/main/recovery, live notifications/bookings/provider activation changes.
 
-Completed next batch: strict Gregorian follow-up dates, local-date due/overdue/undated/invalid filters on shown leads and filtered exports. Targeted CRM/server/history tests and three-width browser/axe PASS. No automatic reminders or record migration.
-
-Next task: reusable customer configuration under explicit server authorization. Do not treat owner Sheet roles as tenant isolation or begin a CMS rewrite.
+Next: integrate tenant configuration only after selecting and verifying a trusted identity and atomic private storage adapter. Continue existing minimal CMS workflow; do not rewrite it or activate a public embed from fixture claims.
