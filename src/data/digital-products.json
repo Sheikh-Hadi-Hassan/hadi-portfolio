@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "source": "Owner CV,2026-11-09,selected projects",
+  "sourceLibraryId": "libfile_7c9b283edae08191bf8bc65be67da1b3",
+  "linkVerification": "BLOCKED: web retrieval unavailable and connected browser navigation timed out; no live availability claim",
+  "products": [
+    {
+      "id": "apptech",
+      "title": "AppTech",
+      "description": "Employee operations and building management.",
+      "stage": "Functional prototype, awaiting client approval.",
+      "url": "https://app-tech-six.vercel.app/app"
+    },
+    {
+      "id": "crent",
+      "title": "Crent",
+      "description": "A car rental booking platform.",
+      "stage": "MVP stage.",
+      "url": "https://crent.vercel.app/"
+    },
+    {
+      "id": "tms",
+      "title": "TMS",
+      "description": "A travel management system.",
+      "stage": "MVP stage. Login screen.",
+      "url": "https://tms-theta-eight.vercel.app/login"
+    },
+    {
+      "id": "flow",
+      "title": "Flow by INTELLIGNCE",
+      "description": "An AI-native business operating system.",
+      "stage": "Concept and architecture.",
+      "url": "https://flow.intellignce.net/"
+    }
+  ]
+}

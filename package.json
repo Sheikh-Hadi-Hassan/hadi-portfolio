@@ -17,7 +17,9 @@
     "test:booking-release": "node tests/booking-authority.mjs && node tests/booking-status.mjs && node tests/booking-client-contract.cjs && node tests/booking-recovery.mjs && node tests/booking-validation.mjs && node tests/notification-crash.mjs && node tests/lead-api.mjs && node tests/booking-release-integration.mjs && python3 tests/booking-release-package.py",
     "test:crm-browser": "node tests/crm-browser.cjs",
     "test:evidence": "python3 tests/requirements-matrix.py && python3 tests/v1-evidence.py",
-    "test:booking-lifecycle-browser": "node tests/booking-lifecycle-browser.cjs"
+    "test:booking-lifecycle-browser": "node tests/booking-lifecycle-browser.cjs",
+    "test:home-content": "python3 tests/home-content.py && node tests/reel-motion.cjs && node tests/folder-geometry.mjs",
+    "test:home-sections-browser": "node tests/home-sections-browser.cjs"
   },
   "dependencies": {
     "gsap": "3.15.0",

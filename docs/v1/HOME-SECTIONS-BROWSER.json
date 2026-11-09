@@ -1,0 +1,313 @@
+{
+  "status": "PASS",
+  "scope": "Actual HTML/CSS/Nebulica font and folder effect/geometry, mocked GSAP progress; not full Next build, natural scroll timing, full image/media or198-case acceptance",
+  "cases": [
+    {
+      "route": "isolated-home-sections",
+      "width": 320,
+      "height": 568,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 320,
+      "height": 568,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 320,
+      "height": 568,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 320,
+      "height": 568,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 360,
+      "height": 640,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 360,
+      "height": 640,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 360,
+      "height": 640,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 360,
+      "height": 640,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 375,
+      "height": 667,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": true
+    },
+    {
+      "route": "isolated-about",
+      "width": 375,
+      "height": 667,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 375,
+      "height": 667,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 375,
+      "height": 667,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 390,
+      "height": 844,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": true
+    },
+    {
+      "route": "isolated-about",
+      "width": 390,
+      "height": 844,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 390,
+      "height": 844,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 390,
+      "height": 844,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 430,
+      "height": 932,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": true
+    },
+    {
+      "route": "isolated-about",
+      "width": 430,
+      "height": 932,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 430,
+      "height": 932,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 430,
+      "height": 932,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 768,
+      "height": 1024,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": true
+    },
+    {
+      "route": "isolated-about",
+      "width": 768,
+      "height": 1024,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 768,
+      "height": 1024,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 768,
+      "height": 1024,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 1024,
+      "height": 768,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": true
+    },
+    {
+      "route": "isolated-about",
+      "width": 1024,
+      "height": 768,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 1024,
+      "height": 768,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 1024,
+      "height": 768,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 1280,
+      "height": 800,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": true
+    },
+    {
+      "route": "isolated-about",
+      "width": 1280,
+      "height": 800,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 1280,
+      "height": 800,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 1280,
+      "height": 800,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 1440,
+      "height": 900,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": true
+    },
+    {
+      "route": "isolated-about",
+      "width": 1440,
+      "height": 900,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "axe": 0
+    },
+    {
+      "route": "isolated-home-sections",
+      "width": 1440,
+      "height": 900,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0,
+      "folderAnimated": false
+    },
+    {
+      "route": "isolated-about",
+      "width": 1440,
+      "height": 900,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "axe": 0
+    }
+  ],
+  "productionCases": 0
+}

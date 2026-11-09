@@ -1,0 +1,37 @@
+{
+  "sourceBase": "c8f17da45a93ec8355d1a6e43721da61140f46db",
+  "approvedProcessSource": "Owner attachment Pasted text(20261109-070421).txt,section2",
+  "cvSource": "Resume CV - Hadi Hassan Creative & Product Design Leader2026(20261109-000338).pdf",
+  "tests": [
+    {
+      "command": "npm test",
+      "status": "PASS",
+      "suites": 23
+    },
+    {
+      "command": "npm run test:home-content",
+      "status": "PASS"
+    },
+    {
+      "command": "node tests/home-sections-browser.cjs",
+      "status": "PASS",
+      "cases": 36,
+      "boundary": "Isolated HTML/CSS/folder effect, mocked GSAP; no production cases"
+    },
+    {
+      "command": "python3 scripts/qa/review-hero-proposal.py",
+      "status": "PROPOSAL_MATCH_NOT_APPROVAL"
+    }
+  ],
+  "initialFailures": [
+    "Browser fixture variable shadowed Node process; corrected.",
+    "About white-on-purple primary links had4.17 contrast; scoped color correction passed axe."
+  ],
+  "demoAvailability": "BLOCKED: four CV-backed URLs; web retrieval unavailable and connected browser request timed out. No login or product actions attempted.",
+  "fontAndMedia": "Original Nebulica font restored from same branch; no full video/project image acceptance",
+  "productionBuildCases": 0,
+  "productionBuildTotal": 198,
+  "heroActivationAuthorized": false,
+  "release": "NO-GO",
+  "manifest": "STALE"
+}
