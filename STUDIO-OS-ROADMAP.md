@@ -68,3 +68,5 @@ Continuation from 7882f82: article/chapter authoring and existing-case reimport 
 ## Phase 4 boundary — 2026-11-03
 
 No analytics, marketing, administrative-AI or commercial expansion was started. Targeted security/provider/harness work is recorded in docs/admin/PHASE4-ACCEPTANCE.md; future-scope obligations remain excluded. Portfolio acceptance stays 22/243 (9.05%), production browser 0/198, manifest STALE, NO-GO.
+
+CRM continuation: bounded history search/visible-result export are owner-workspace local workflows, not tenant/commercial launch evidence. Final22 JS suites PASS;27/243 unchanged.

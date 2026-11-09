@@ -22,7 +22,7 @@ function saveLeadsDeskAnnotation(command,token){
 }
 function exportLeadsDeskCSV(){
  const fields=['reference','received','status','name','email','phone','company','services','source','stage','followUp','tags'];
- const cell=v=>'"'+String(Array.isArray(v)?v.join('; '):v==null?'':v).replace(/^[\s]*[=+@\-\t\r]/,"'$&").replace(/"/g,'""')+'"';
+ const cell=v=>'"'+String(Array.isArray(v)?v.join('; '):v==null?'':v).replace(/^[\s]*[=+@\-\t\r\n]/,"'$&").replace(/"/g,'""')+'"';
  const rows=getLeadsDeskData();return {filename:'portfolio-leads.csv',scope:'latest_200',count:rows.length,csv:[fields.map(cell).join(','),...rows.map(r=>fields.map(k=>cell(r[k])).join(','))].join('\r\n')};
 }
 function getLeadsDeskBrief(reference){if(!/^HADI-[a-f0-9-]{36}$/i.test(reference||''))throw Error('Invalid reference.');const sh=deskSheet_(),found=sh.getRange('A:A').createTextFinder(reference).matchEntireCell(true).findNext();if(!found)throw Error('Lead not found.');const raw=deskPlain_(sh.getRange(found.getRow(),9).getValue());let data;try{data=JSON.parse(raw)}catch(e){return 'No structured brief is available.'}return JSON.stringify(data._consultation?.brief||data,null,2).slice(0,40000)}

@@ -64,3 +64,9 @@ No Hostinger tools or authenticated server configuration are available in this e
 ## Publishing checkpoint
 
 Final rerun npm test21 suites and npm run test:evidence PASS. Current source byte hashes are in SOURCE-EVIDENCE.json. Provider account review candidates remain disabled, current official references recorded without inference calls. New r2 booking-only artifact changes notice to current V1 handoff; code source remains32a6e44. Full V1 artifact is not available. Next independent work is bounded cross-history CRM search/export and remaining183 requirement criteria; missing authenticated lifecycle operations remain P0. Do not describe this checkpoint as V1 complete or all local work finished.
+
+## Stage7: bounded cross-history CRM search/export
+
+Implemented in existing LeadsDesk: explicit batches of at most5 page reads/1000 records,8s per-read timeout, stable snapshot/cursor, preserved matches on error and retry from last confirmed page. At most500 matches; cap is explicitly incomplete and asks to refine search. Export shown filters rows already authorized/loaded, excludes private notes and formula-neutralizes cells; latest200 server export remains distinct. Mobile header wraps action controls.
+
+PASS: crm-history-search.mjs (faults, cursors, caps, deduplication, CSV); crm-workspace.mjs (server source, including newline formula protection); updated real Chromium CRM fixture (interrupted search/retry, two exports, keyboard,320/768/1440,axe0 tested states). npm test22 suites PASS. Requirements remain27/243, not inflated for owner-admin features. Source byte hashes refreshed before publishing. Next: P0/P1 review of183 unresolved original criteria and safe lifecycle authorization/reconciliation contracts; keep missing lifecycle IDs and external acceptance blocked.

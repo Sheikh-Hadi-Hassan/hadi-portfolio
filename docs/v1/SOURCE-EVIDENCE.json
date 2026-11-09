@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "branch": "work/v01-booking-contract-20261103",
   "entryCommit": "5cf52793b5468c005a890fde7b6981eab6bcf4cd",
-  "lastPublishedCodeCommit": "94c53a89c995926bd4055a59b94b64e98a90eb33",
+  "lastPublishedCodeCommit": "1f4683aef4c79c49f1ddd95771f8ace5879416fa",
   "boundary": "Tested local bytes, including working pagination change; Git publishing commit pins full tree. Hashes are integrity, not approval or deployment evidence.",
   "sha256": {
     "integrations/admin-runtime/ProviderRuntime.php": "35a39efa5238dbada67d68804ae854f83e06ad58f612e21520aabf08a760b045",
     "integrations/calendar-v8/Code.gs": "d7fc91bb520649b47556e885f687104d338a243b08a5689f99114fd28b5ccf86",
-    "integrations/leads-portal/LeadsDesk.gs": "ab76342cb9297435e97c13119a45c37483c4d41a904f47b3864d61d277c03d00",
-    "integrations/leads-portal/LeadsDesk.html": "fc1c2a8cdee33d679f11ca22c07f9583c2ad70ebe593d519b055b7a36bf789f3",
+    "integrations/leads-portal/LeadsDesk.gs": "1850ce470a0032de51c4675df234306424de04933419c7f247d8af948bef2657",
+    "integrations/leads-portal/LeadsDesk.html": "dbb732247a1e968f5b9f23d5002febbb8aa730bf999f23f8a0a797b1d79ae4f8",
     "integrations/leads-portal/RuntimeContract.gs": "c6c6b22d457ad966cf26f2d27b8ba00fb3ffbb067b7d99ecb8c9fe81431713e2",
     "integrations/leads/Code.gs": "d7fc91bb520649b47556e885f687104d338a243b08a5689f99114fd28b5ccf86",
     "integrations/sera-v9-source/build.py": "a1e55d55159e087c53ae48025529f15f0b7938eb54ca9cffb497d6cc9afb92dc",
@@ -20,7 +20,7 @@
     "integrations/sera-v9-source/intellignce-support/widget.js": "bcf4e2967e34771dc9e3137835ddb7eba48e438b61b52546a4aafd8b4221a039",
     "integrations/sera-v9-source/runtime-contract.mjs": "474819348938642296405418bb18e1fcdb072349a4bb3c3cff5089e1e3486a44",
     "package-lock.json": "1d62f1347b5f8411b3ab68d8d933c59f1d1e9ef6d31a0619956a2343597f7926",
-    "package.json": "576640b3cb89d9215918c7a9f4f75f3c6ea6ebdb12e1e5d3ce31679889f699c0",
+    "package.json": "3e51d6cdc86693c7143ac548cd4c6c4247d62af4b9f91486d501b873f2e7c0cb",
     "public/intellignce-support/ai-config.php": "38eeebcd15921a77b9bd60fb6982c6e020f439b07a1d08c4fa44c58fe2043b73",
     "public/intellignce-support/ask.php": "94d951eccfff1e05726e72b2b8f9b652fbcb7bcd7ce83523415bcc91e0543d7c",
     "public/intellignce-support/provider-adapters.php": "1cbef65ac4aba525e329b841fd6b28f30f00b984e2cf07a58967c46786b8c200",
@@ -36,8 +36,8 @@
     "tests/booking-release-integration.mjs": "a28af4ed5b15f8ed24b98c29fc711dc2e8a54a34cfc2ec597806caad93a63de5",
     "tests/booking-release-package.py": "4df9591dd451b735953ebec57c6ebdfc84abd0156354ddbf2cc695429424cfb6",
     "tests/booking-status.mjs": "e6cfbea922200f46d5a1a1d357aff0506f1714f88871f51904986dffad9f54df",
-    "tests/crm-browser.cjs": "0f5de14ebf27349bf95d197e606f9825452b49993ab79a97f521b5302909e55f",
-    "tests/crm-workspace.mjs": "a77837b653170e52722cde6012c44e2a443a43541d8450c8a257b5e772f96e5a",
+    "tests/crm-browser.cjs": "0a8abe01cd6855a1a0c8998508949238b80dfccc52faf4ee6e5d1ba3edb2843e",
+    "tests/crm-workspace.mjs": "a7dd3326b7f9635de91aa1bfe2e9ab97cf8ae1abdba9a8392e7392f1234fc529",
     "tests/helpers/booking-harness.mjs": "03d1a5ab344e2285e8f9ab70b4f02b32a146c551e012cb68f6fca4625dc2795b",
     "tests/sera-ledger-security.php": "e9bb725791bbd636d379c897753ac666890826d2c5f9382f94099538941c670c",
     "tests/sera-openrouter-policy.mjs": "4df85f0385ed26e0a46ac8028b53e26caaf4f973a091435be2ddacac06cae901",
@@ -45,6 +45,7 @@
     "tests/sera-request-budget.php": "96411f9c686a25d49bda200c6dcf791fbf6b38a6b4217380138bd5839acfe328",
     "tests/sera-router-bridge.php": "1caeb9ecad14d7f5186fb7f49f8c79aa21dc25f87366466683ce0a024f229205",
     "tests/sera-runtime-approval.php": "39f2902857232a6a0171eecee64acff2a601c73a5bd543266323d4e346295ceb",
-    "tests/v1-evidence.py": "039b4ff292612491bc36a880003a1bb21e190b9278ec56ecaefce94d252d21c7"
+    "tests/v1-evidence.py": "039b4ff292612491bc36a880003a1bb21e190b9278ec56ecaefce94d252d21c7",
+    "tests/crm-history-search.mjs": "39c726dcf04efab6d7aabb7f88b4a43ba153ad40261f74343899a6faca0e618f"
   }
 }

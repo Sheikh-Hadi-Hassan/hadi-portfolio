@@ -2,7 +2,7 @@
 
 Source checkpoint94c53a89c995926bd4055a59b94b64e98a90eb33. Exact commands/output: REGRESSION-EVIDENCE.json. No live APIs, customer appointments, emails or inference.
 
-- npm test:21 JavaScript suites PASS.
+- npm test:22 JavaScript suites PASS.
 - npm run test:booking-release:eight JavaScript suites plus deterministic ZIP validation PASS. Source-client/mock Apps Script integration is not a real PHP HTTP-handler test.
 - All14 tests/*.php suites PASS with local PHP8.3.6 CLI and sodium. PHP8.4 target, web SAPI/cURL/TLS and Hostinger acceptance remain unverified.
 - PHP_BINARY=<local PHP8.3> python3 tests/sera-provider-ledger-concurrency.py:20 processes, exactly3 reservations PASS.
@@ -14,3 +14,5 @@ Source checkpoint94c53a89c995926bd4055a59b94b64e98a90eb33. Exact commands/output
 - Production build/type/export package and198 browser cases BLOCKED by missing approved hero-lock. Prepared tests are not executed cases.
 
 Initial missing lead-api.mjs/optimizer/lockfile were restored byte-for-byte from the current branch, not rewritten. Failures and reruns remain in JSON. No production evidence promoted from mocks.
+
+CRM continuation: tests/crm-history-search.mjs PASS actual HTML scanner with fake data,5-page/1000-record batches, preserved results/cursor after interrupted reads, explicit500-result cap, stage matching, invalid cursor rejection and formula-safe shown-result CSV. Updated browser fixture PASS includes search interruption/resumption and latest200/shown-result downloads. No all-history archival export claim.

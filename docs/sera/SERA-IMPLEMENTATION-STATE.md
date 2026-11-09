@@ -35,7 +35,7 @@
     "Actual web PHP8.4/cURL/TLS/sodium/config/permissions and deployed Google identities/ACLs unverified",
     "Host provider credential writes/activation, Google-to-PHP bridge and hosted CMS disconnected; patched8.4 compatibility blocked"
   ],
-  "next_executable_task": "CRM cross-history search/export with bounded cursors; remaining183 criterion review. Full-history snapshot paging now verified. Do not bypass hero or activate providers.",
+  "next_executable_task": "Review remaining183 Portfolio criteria by P0/P1; implement safe lifecycle authorization/reconciliation contracts without exposing live mutation endpoints. Hosting/build/live gates remain blocked.",
   "current_commit_at_phase_entry": "a584d007ba96e72bedaef9a08308e95ce1e19c50",
   "files_changed": [
     "engine/runtime/build/booking/voice-actions",
@@ -70,7 +70,7 @@
     "affected CMS JS/CLI and three-width browser fixture PASS",
     "npm run test:browser-v01 BLOCKED by unchanged hero guard;0/198"
   ],
-  "v1_source_checkpoint": "94c53a89c995926bd4055a59b94b64e98a90eb33",
+  "v1_source_checkpoint": "1f4683aef4c79c49f1ddd95771f8ace5879416fa",
   "v1_acceptance": {
     "verified": 27,
     "total": 243,
@@ -86,7 +86,8 @@
     "Authoritative Calendar readback before confirmation/invitations; durable reconciliation",
     "Private current-approved config bridge; Gemini/Groq/OpenRouter free-only adapters, no activation",
     "HMAC application budget and secure durable quota ledger",
-    "CRM annotation integration with replay-safe edit, duplicate hints, bounded safe export and component browser tests"
+    "CRM annotation integration with replay-safe edit, duplicate hints, bounded safe export and component browser tests",
+    "Resumable bounded cross-history CRM search and shown-result formula-safe export, timeout/fault and responsive/axe tests"
   ],
   "v1_tests": "docs/v1/REGRESSION-EVIDENCE.json; docs/v1/CRM-BROWSER-EVIDENCE.json"
 }

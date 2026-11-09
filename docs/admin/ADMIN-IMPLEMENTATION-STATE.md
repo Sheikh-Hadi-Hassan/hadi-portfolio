@@ -160,7 +160,7 @@
       "docs/booking-release/PHASE6-EVIDENCE.json"
     ]
   },
-  "v1_source_checkpoint": "94c53a89c995926bd4055a59b94b64e98a90eb33",
+  "v1_source_checkpoint": "1f4683aef4c79c49f1ddd95771f8ace5879416fa",
   "v1_acceptance": {
     "verified": 27,
     "total": 243,
@@ -176,10 +176,11 @@
     "Authoritative Calendar readback before confirmation/invitations; durable reconciliation",
     "Private current-approved config bridge; Gemini/Groq/OpenRouter free-only adapters, no activation",
     "HMAC application budget and secure durable quota ledger",
-    "CRM annotation integration with replay-safe edit, duplicate hints, bounded safe export and component browser tests"
+    "CRM annotation integration with replay-safe edit, duplicate hints, bounded safe export and component browser tests",
+    "Resumable bounded cross-history CRM search and shown-result formula-safe export, timeout/fault and responsive/axe tests"
   ],
   "v1_tests": "docs/v1/REGRESSION-EVIDENCE.json; docs/v1/CRM-BROWSER-EVIDENCE.json",
-  "next_executable_task": "CRM cross-history search/export with bounded cursors; remaining183 criterion review. Full-history snapshot paging now verified. Do not bypass hero or activate providers."
+  "next_executable_task": "Review remaining183 Portfolio criteria by P0/P1; implement safe lifecycle authorization/reconciliation contracts without exposing live mutation endpoints. Hosting/build/live gates remain blocked."
 }
 ```
 

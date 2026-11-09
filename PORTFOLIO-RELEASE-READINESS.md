@@ -6,6 +6,8 @@ Working code: authoritative booking proof/recovery, server-only Gemini/Groq/Open
 
 Current full build/SEO-output/browser tests remain blocked; historical passes below are dated evidence, not current deployment proof.
 
+CRM continuation: full-history snapshot paging, bounded resumable search and visible-result safe export now pass unit and three-width component browser tests. Search/export limits are explicit; no unrestricted archive or customer tenancy claim. Final JS suites22 PASS; local acceptance count remains27/243.
+
 ## Historical checkpoints (retained)
 
 # Latest local acceptance — notification reliability and isolated browser checks
