@@ -42,3 +42,9 @@ PASS: node tests/crm-workspace.mjs (fake Sheets); node tests/crm-browser.cjs (fa
 New docs/v1/BOOKING-CANDIDATE.json pins booking source32a6e44. Historical candidate unchanged. npm run test:booking-release PASS: eight JavaScript suites and deterministic artifact/tamper tests. Initial run lacked src/app/lead-api.mjs in partial local snapshot; restored exact remote file, rerun passed without changing that source.
 
 Next: reconcile all243 traceability rows and implementation ledger, add isolated lifecycle safety where contracts permit; full V1 is not complete. Deployment and live acceptance remain blocked.
+
+## Stage4: quota-store and approved-runtime integration hardening
+
+Provider ledger now requires private directory/regular0600 single-link file, rejects symlink ancestors/hardlinks, verifies opened inode identity and validates every stored quota/circuit counter before mutation. Corrupt metadata is not reset. New-file creation uses restrictive umask. PASS: sera-ledger-security.php, sera-provider-ledger.php, 20-process quota test (exactly3 reservations). Initial permission-change test exposed stale PHP stat cache; cache invalidation fixed and rerun passed.
+
+Current public approved artifact is passed into trusted routing per request, so stale private-runtime snapshots do not freeze approved budgets/tone. Only fixed enum-derived tone enters provider system instructions; names/welcome remain data. PASS: sera-runtime-approval.php; affected adapter/runtime/bridge tests. No provider calls, credential activation or filesystem production changes.

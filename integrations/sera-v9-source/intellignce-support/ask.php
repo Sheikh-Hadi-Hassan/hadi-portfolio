@@ -39,7 +39,7 @@ foreach($approved['records']??[] as $record){$data=$record['data'];if($record['k
 $runtimePolicy=seraRuntimePolicy($approved);if(strlen(json_encode($publicContext))>$runtimePolicy['contextChars'])out(413,['ok'=>false,'fallback'=>true,'code'=>'CONTEXT_LIMIT']);
 $guide=json_encode(seraRelevantFacts($registry,$question),JSON_UNESCAPED_UNICODE);
 if(strlen(json_encode([$publicContext,$question,$guide]))>$runtimePolicy['contextChars'])out(413,['ok'=>false,'fallback'=>true,'code'=>'CONTEXT_LIMIT']);
-if(seraRouterConfigured($c)){if(!claimBudget($c,$dir))out(429,['ok'=>false,'fallback'=>true,'code'=>'LOCAL_DAILY_LIMIT']);$reply=seraRoutedResponse($c['provider_runtime'],['question'=>$question,'answers'=>$publicContext['facts'],'facts'=>seraRelevantFacts($registry,$question)],$p['consent'],$allowedFields);out($reply['ok']?200:503,$reply);}
+if(seraRouterConfigured($c)){if(!claimBudget($c,$dir))out(429,['ok'=>false,'fallback'=>true,'code'=>'LOCAL_DAILY_LIMIT']);$reply=seraRoutedResponse($c['provider_runtime'],['question'=>$question,'answers'=>$publicContext['facts'],'facts'=>seraRelevantFacts($registry,$question)],$p['consent'],$allowedFields,$approved);out($reply['ok']?200:503,$reply);}
 $policy=file_get_contents(__DIR__.'/sales-policy.txt');
 $schema=['type'=>'OBJECT','properties'=>[
  'reply'=>['type'=>'STRING'],
