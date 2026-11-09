@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json,os,sys,zipfile
 ROOT=Path(__file__).resolve().parents[2]
-SPEC=ROOT/'docs/booking-release/CANDIDATE.json'
+SPEC=ROOT/'docs/v1/BOOKING-CANDIDATE.json'
 SOURCES={'apps-script/Code.gs':'integrations/calendar-v8/Code.gs','review/appsscript.expected.json':'integrations/calendar-v8/appsscript.json'}
 NOTICE='NOT AUTHORIZED FOR DEPLOYMENT. Apps Script-only candidate. Read docs/booking-release/RELEASE-READINESS.md. Do not run setup/activateSetup, change private configuration, grant scopes, or execute bookings from this package. review/appsscript.expected.json is comparison-only. Existing source resource settings are NOT isolated staging resources.\n'
 def digest(b): return hashlib.sha256(b).hexdigest()
@@ -55,3 +55,4 @@ if __name__=='__main__':
         print(json.dumps(package(ROOT,Path(sys.argv[1]),json.loads(SPEC.read_text())),indent=2))
     except (ValueError,OSError,zipfile.BadZipFile):
         print('BOOKING_PACKAGE_FAILED: check fixed source hashes, candidate scope and unused absolute output path',file=sys.stderr);sys.exit(1)
+

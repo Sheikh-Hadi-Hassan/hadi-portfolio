@@ -32,3 +32,13 @@ Public ask now accepts only an actual trusted server-configured private-runtime 
 PASS: npm test (20 JavaScript suites); PHP8.3.6 CLI tests sera-openrouter, sera-router-bridge, sera-request-budget, sera-provider-adapters, admin-provider-runtime, admin-public-config, sera-provider-transport; ask syntax. Component browser sera-runtime-browser.cjs passed with Chromium153/Playwright1.64.1/axe4.14.0. This is isolated fixture coverage, not production-build acceptance; 0/198 remains unchanged.
 
 Independent key custody, actual web cURL/PHP identity, live provider eligibility/privacy and activation authorization remain BLOCKED. Next: pin new booking component manifest, complete CRM local workflows and reconcile243 rows; do not reuse historical package checksums.
+
+## Stage3: operational CRM and current component packaging
+
+LeadsDesk joins latest non-archived CRM records to the bounded recent200 leads. Added stage/date/notes/tags editing through existing server role/token/revision/audit contracts, duplicate-email hints without merging, stage/search/sort controls and formula-neutralized private CSV export. Unknown save acknowledgement retains entries and freezes payload editing; retry reuses the same operation ID. Cross-reference reassignment is rejected. This is owner-workspace authorization, not customer tenancy.
+
+PASS: node tests/crm-workspace.mjs (fake Sheets); node tests/crm-browser.cjs (fake RPC, real Chromium, mobile320/tablet768/desktop1440, keyboard tab order, zero tested-state axe findings). Fixed select accessible name after first browser run; corrected browser fixture context for axe. No live Google authentication or production acceptance claimed.
+
+New docs/v1/BOOKING-CANDIDATE.json pins booking source32a6e44. Historical candidate unchanged. npm run test:booking-release PASS: eight JavaScript suites and deterministic artifact/tamper tests. Initial run lacked src/app/lead-api.mjs in partial local snapshot; restored exact remote file, rerun passed without changing that source.
+
+Next: reconcile all243 traceability rows and implementation ledger, add isolated lifecycle safety where contracts permit; full V1 is not complete. Deployment and live acceptance remain blocked.

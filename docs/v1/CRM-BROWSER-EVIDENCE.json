@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "LeadsDesk component with fake Google RPC; backend separately tested in crm-workspace.mjs",
+  "checks": [
+    "edit stage/notes/date",
+    "lost acknowledgement preserves entries",
+    "same operation ID on retry",
+    "stage/search filters",
+    "CSV download",
+    "keyboard tab order",
+    "three responsive widths",
+    "zero axe findings in tested states",
+    "zero uncaught errors"
+  ],
+  "widths": [
+    {
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "width": 1440,
+      "scroll": 1440
+    }
+  ],
+  "productionCases": 0
+}
