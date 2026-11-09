@@ -1,0 +1,765 @@
+{
+  "scope": "Real isolated Chromium/GSAP source rendering, correct portfolio-root wrapper; no guarded Next build, live providers or production acceptance",
+  "status": "PASS",
+  "cases": [
+    {
+      "width": 320,
+      "height": 800,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "geometry": {
+        "pageWidth": 320,
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 800,
+          "right": 320,
+          "bottom": 800
+        },
+        "scene": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 800,
+          "right": 320,
+          "bottom": 800
+        },
+        "portrait": {
+          "x": 18,
+          "y": 414.515625,
+          "width": 284,
+          "height": 385.484375,
+          "right": 302,
+          "bottom": 800
+        },
+        "headline": {
+          "x": 18,
+          "y": 100.875,
+          "width": 284,
+          "height": 87.0625,
+          "right": 302,
+          "bottom": 187.9375
+        },
+        "actions": {
+          "x": 18,
+          "y": 300.328125,
+          "width": 284,
+          "height": 103,
+          "right": 302,
+          "bottom": 403.328125
+        },
+        "copy": [
+          {
+            "x": 18,
+            "y": 18,
+            "width": 136,
+            "height": 71.6875,
+            "right": 154,
+            "bottom": 89.6875
+          },
+          {
+            "x": 18,
+            "y": 100.875,
+            "width": 284,
+            "height": 87.0625,
+            "right": 302,
+            "bottom": 187.9375
+          },
+          {
+            "x": 18,
+            "y": 300.328125,
+            "width": 284,
+            "height": 103,
+            "right": 302,
+            "bottom": 403.328125
+          },
+          {
+            "x": 18,
+            "y": 199.125,
+            "width": 284,
+            "height": 90.015625,
+            "right": 302,
+            "bottom": 289.140625
+          },
+          {
+            "x": 166,
+            "y": 18,
+            "width": 136,
+            "height": 71.6875,
+            "right": 302,
+            "bottom": 89.6875
+          }
+        ],
+        "dock": {
+          "x": 18.5,
+          "y": 726,
+          "width": 283,
+          "height": 62,
+          "right": 301.5,
+          "bottom": 788
+        }
+      },
+      "axe": 0,
+      "states": [
+        {
+          "name": "entry",
+          "width": 128,
+          "height": 72,
+          "scroll": 480,
+          "stage": 320
+        },
+        {
+          "name": "opening",
+          "width": 128,
+          "height": 72,
+          "scroll": 800,
+          "stage": 320
+        },
+        {
+          "name": "hold",
+          "width": 128,
+          "height": 72,
+          "scroll": 1040,
+          "stage": 320
+        },
+        {
+          "name": "mid",
+          "width": 219.34375,
+          "height": 418.390625,
+          "scroll": 1400,
+          "stage": 320
+        },
+        {
+          "name": "expanded",
+          "width": 320,
+          "height": 800,
+          "scroll": 1784,
+          "stage": 320
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "geometry": {
+        "pageWidth": 320,
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 800,
+          "right": 320,
+          "bottom": 800
+        },
+        "scene": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 800,
+          "right": 320,
+          "bottom": 800
+        },
+        "portrait": {
+          "x": 18,
+          "y": 414.515625,
+          "width": 284,
+          "height": 385.484375,
+          "right": 302,
+          "bottom": 800
+        },
+        "headline": {
+          "x": 18,
+          "y": 100.875,
+          "width": 284,
+          "height": 87.0625,
+          "right": 302,
+          "bottom": 187.9375
+        },
+        "actions": {
+          "x": 18,
+          "y": 300.328125,
+          "width": 284,
+          "height": 103,
+          "right": 302,
+          "bottom": 403.328125
+        },
+        "copy": [
+          {
+            "x": 18,
+            "y": 18,
+            "width": 136,
+            "height": 71.6875,
+            "right": 154,
+            "bottom": 89.6875
+          },
+          {
+            "x": 18,
+            "y": 100.875,
+            "width": 284,
+            "height": 87.0625,
+            "right": 302,
+            "bottom": 187.9375
+          },
+          {
+            "x": 18,
+            "y": 300.328125,
+            "width": 284,
+            "height": 103,
+            "right": 302,
+            "bottom": 403.328125
+          },
+          {
+            "x": 18,
+            "y": 199.125,
+            "width": 284,
+            "height": 90.015625,
+            "right": 302,
+            "bottom": 289.140625
+          },
+          {
+            "x": 166,
+            "y": 18,
+            "width": 136,
+            "height": 71.6875,
+            "right": 302,
+            "bottom": 89.6875
+          }
+        ],
+        "dock": {
+          "x": 18.5,
+          "y": 726,
+          "width": 283,
+          "height": 62,
+          "right": 301.5,
+          "bottom": 788
+        }
+      },
+      "axe": 0,
+      "states": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "geometry": {
+        "pageWidth": 768,
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 1024
+        },
+        "scene": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 1024
+        },
+        "portrait": {
+          "x": 30.71875,
+          "y": 199.09375,
+          "width": 357,
+          "height": 824.90625,
+          "right": 387.71875,
+          "bottom": 1024
+        },
+        "headline": {
+          "x": 30.71875,
+          "y": 121.578125,
+          "width": 706.5625,
+          "height": 52.515625,
+          "right": 737.28125,
+          "bottom": 174.09375
+        },
+        "actions": {
+          "x": 412.71875,
+          "y": 815,
+          "width": 324.5625,
+          "height": 209,
+          "right": 737.28125,
+          "bottom": 1024
+        },
+        "copy": [
+          {
+            "x": 30.71875,
+            "y": 36,
+            "width": 357,
+            "height": 60.578125,
+            "right": 387.71875,
+            "bottom": 96.578125
+          },
+          {
+            "x": 30.71875,
+            "y": 121.578125,
+            "width": 706.5625,
+            "height": 52.515625,
+            "right": 737.28125,
+            "bottom": 174.09375
+          },
+          {
+            "x": 412.71875,
+            "y": 815,
+            "width": 324.5625,
+            "height": 209,
+            "right": 737.28125,
+            "bottom": 1024
+          },
+          {
+            "x": 412.71875,
+            "y": 414.234375,
+            "width": 324.5625,
+            "height": 160.625,
+            "right": 737.28125,
+            "bottom": 574.859375
+          },
+          {
+            "x": 412.71875,
+            "y": 36,
+            "width": 324.5625,
+            "height": 60.578125,
+            "right": 737.28125,
+            "bottom": 96.578125
+          }
+        ],
+        "dock": {
+          "x": 157.5,
+          "y": 938,
+          "width": 453,
+          "height": 66,
+          "right": 610.5,
+          "bottom": 1004
+        }
+      },
+      "axe": 0,
+      "states": [
+        {
+          "name": "entry",
+          "width": 307.1875,
+          "height": 172.796875,
+          "scroll": 614,
+          "stage": 768
+        },
+        {
+          "name": "opening",
+          "width": 307.1875,
+          "height": 172.796875,
+          "scroll": 1024,
+          "stage": 768
+        },
+        {
+          "name": "hold",
+          "width": 307.1875,
+          "height": 172.796875,
+          "scroll": 1331,
+          "stage": 768
+        },
+        {
+          "name": "mid",
+          "width": 526.453125,
+          "height": 577.8125,
+          "scroll": 1792,
+          "stage": 768
+        },
+        {
+          "name": "expanded",
+          "width": 768,
+          "height": 1024,
+          "scroll": 2284,
+          "stage": 768
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "geometry": {
+        "pageWidth": 768,
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 1024
+        },
+        "scene": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 1024
+        },
+        "portrait": {
+          "x": 30.71875,
+          "y": 199.09375,
+          "width": 357,
+          "height": 824.90625,
+          "right": 387.71875,
+          "bottom": 1024
+        },
+        "headline": {
+          "x": 30.71875,
+          "y": 121.578125,
+          "width": 706.5625,
+          "height": 52.515625,
+          "right": 737.28125,
+          "bottom": 174.09375
+        },
+        "actions": {
+          "x": 412.71875,
+          "y": 815,
+          "width": 324.5625,
+          "height": 209,
+          "right": 737.28125,
+          "bottom": 1024
+        },
+        "copy": [
+          {
+            "x": 30.71875,
+            "y": 36,
+            "width": 357,
+            "height": 60.578125,
+            "right": 387.71875,
+            "bottom": 96.578125
+          },
+          {
+            "x": 30.71875,
+            "y": 121.578125,
+            "width": 706.5625,
+            "height": 52.515625,
+            "right": 737.28125,
+            "bottom": 174.09375
+          },
+          {
+            "x": 412.71875,
+            "y": 815,
+            "width": 324.5625,
+            "height": 209,
+            "right": 737.28125,
+            "bottom": 1024
+          },
+          {
+            "x": 412.71875,
+            "y": 414.234375,
+            "width": 324.5625,
+            "height": 160.625,
+            "right": 737.28125,
+            "bottom": 574.859375
+          },
+          {
+            "x": 412.71875,
+            "y": 36,
+            "width": 324.5625,
+            "height": 60.578125,
+            "right": 737.28125,
+            "bottom": 96.578125
+          }
+        ],
+        "dock": {
+          "x": 157.5,
+          "y": 938,
+          "width": 453,
+          "height": 66,
+          "right": 610.5,
+          "bottom": 1004
+        }
+      },
+      "axe": 0,
+      "states": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "reducedMotion": "no-preference",
+      "status": "PASS",
+      "geometry": {
+        "pageWidth": 1440,
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "right": 1440,
+          "bottom": 900
+        },
+        "scene": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "right": 1440,
+          "bottom": 900
+        },
+        "portrait": {
+          "x": 288,
+          "y": 72,
+          "width": 864,
+          "height": 828,
+          "right": 1152,
+          "bottom": 900
+        },
+        "headline": {
+          "x": 72,
+          "y": 351.5703125,
+          "width": 417.59375,
+          "height": 144.4375,
+          "right": 489.59375,
+          "bottom": 496.0078125
+        },
+        "actions": {
+          "x": 72,
+          "y": 526.0078125,
+          "width": 417.59375,
+          "height": 111,
+          "right": 489.59375,
+          "bottom": 637.0078125
+        },
+        "copy": [
+          {
+            "x": 72,
+            "y": 262.9921875,
+            "width": 417.59375,
+            "height": 60.578125,
+            "right": 489.59375,
+            "bottom": 323.5703125
+          },
+          {
+            "x": 72,
+            "y": 351.5703125,
+            "width": 417.59375,
+            "height": 144.4375,
+            "right": 489.59375,
+            "bottom": 496.0078125
+          },
+          {
+            "x": 72,
+            "y": 526.0078125,
+            "width": 417.59375,
+            "height": 111,
+            "right": 489.59375,
+            "bottom": 637.0078125
+          },
+          {
+            "x": 1072.40625,
+            "y": 306,
+            "width": 310,
+            "height": 185.375,
+            "right": 1382.40625,
+            "bottom": 491.375
+          },
+          {
+            "x": 1261.40625,
+            "y": 72,
+            "width": 121,
+            "height": 37.375,
+            "right": 1382.40625,
+            "bottom": 109.375
+          }
+        ],
+        "dock": {
+          "x": 493.5,
+          "y": 814,
+          "width": 453,
+          "height": 66,
+          "right": 946.5,
+          "bottom": 880
+        }
+      },
+      "axe": 0,
+      "states": [
+        {
+          "name": "entry",
+          "width": 259.1875,
+          "height": 145.796875,
+          "scroll": 540,
+          "stage": 1440
+        },
+        {
+          "name": "opening",
+          "width": 259.1875,
+          "height": 145.796875,
+          "scroll": 900,
+          "stage": 1440
+        },
+        {
+          "name": "hold",
+          "width": 259.1875,
+          "height": 145.796875,
+          "scroll": 1350,
+          "stage": 1440
+        },
+        {
+          "name": "mid",
+          "width": 821.03125,
+          "height": 504.65625,
+          "scroll": 2025,
+          "stage": 1440
+        },
+        {
+          "name": "expanded",
+          "width": 1440,
+          "height": 900,
+          "scroll": 2745,
+          "stage": 1440
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "reducedMotion": "reduce",
+      "status": "PASS",
+      "geometry": {
+        "pageWidth": 1440,
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "right": 1440,
+          "bottom": 900
+        },
+        "scene": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900,
+          "right": 1440,
+          "bottom": 900
+        },
+        "portrait": {
+          "x": 288,
+          "y": 72,
+          "width": 864,
+          "height": 828,
+          "right": 1152,
+          "bottom": 900
+        },
+        "headline": {
+          "x": 72,
+          "y": 351.5703125,
+          "width": 417.59375,
+          "height": 144.4375,
+          "right": 489.59375,
+          "bottom": 496.0078125
+        },
+        "actions": {
+          "x": 72,
+          "y": 526.0078125,
+          "width": 417.59375,
+          "height": 111,
+          "right": 489.59375,
+          "bottom": 637.0078125
+        },
+        "copy": [
+          {
+            "x": 72,
+            "y": 262.9921875,
+            "width": 417.59375,
+            "height": 60.578125,
+            "right": 489.59375,
+            "bottom": 323.5703125
+          },
+          {
+            "x": 72,
+            "y": 351.5703125,
+            "width": 417.59375,
+            "height": 144.4375,
+            "right": 489.59375,
+            "bottom": 496.0078125
+          },
+          {
+            "x": 72,
+            "y": 526.0078125,
+            "width": 417.59375,
+            "height": 111,
+            "right": 489.59375,
+            "bottom": 637.0078125
+          },
+          {
+            "x": 1072.40625,
+            "y": 306,
+            "width": 310,
+            "height": 185.375,
+            "right": 1382.40625,
+            "bottom": 491.375
+          },
+          {
+            "x": 1261.40625,
+            "y": 72,
+            "width": 121,
+            "height": 37.375,
+            "right": 1382.40625,
+            "bottom": 109.375
+          }
+        ],
+        "dock": {
+          "x": 493.5,
+          "y": 814,
+          "width": 453,
+          "height": 66,
+          "right": 946.5,
+          "bottom": 880
+        }
+      },
+      "axe": 0,
+      "states": []
+    }
+  ],
+  "startingCommit": "e70f2f8c70fb4de3fea08c0b92bee0288f43ca16",
+  "requestedReferenceCommit": "429d5d8eae2b202403c3dba92a95fa2f28231d16",
+  "scopeChanged": [
+    "src/styles/hero.css"
+  ],
+  "unchanged": [
+    "hero markup and copy",
+    "src/styles/site.css",
+    "src/app/reel-motion.jsx",
+    "portrait/backdrop media",
+    "other homepage sections and all backend integrations"
+  ],
+  "commands": [
+    {
+      "command": "node tests/hero-responsive.cjs",
+      "environment": "CHROMIUM_PATH, NODE_PATH, LD_LIBRARY_PATH, HERO_REVIEW_ASSETS, HERO_REVIEW_GSAP_DIR, HERO_REVIEW_OUTPUT supplied for the partial snapshot",
+      "result": "PASS, 6 real Chromium/GSAP viewport-motion cases"
+    },
+    {
+      "command": "node tests/reel-motion.cjs",
+      "result": "PASS"
+    },
+    {
+      "command": "node tests/hero-dither.cjs",
+      "result": "PASS after restoring its unchanged missing math dependency from HEAD"
+    },
+    {
+      "command": "node --check tests/hero-responsive.cjs",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify",
+      "result": "BLOCKED as expected: approved design/hero-lock.json absent; no lock installed"
+    }
+  ],
+  "visualReview": "Initial hero screenshots at all three widths and desktop reel opening inspected; tablet supporting copy moved above portrait hand. Owner visual approval remains pending.",
+  "limitations": [
+    "Post-loader, isolated source preview with real fonts/media/GSAP, not a full Next build or hydration acceptance",
+    "Production comparator reuses the earlier 9 November deployed snapshot; no new production investigation",
+    "Browser automation measures viewport/layout and selected accessibility rules, not full manual WCAG acceptance",
+    "Legacy proposal hashes remain historical/stale; no replacement hashes proposed"
+  ],
+  "release": "NO-GO",
+  "manifest": "STALE",
+  "productionBuildBrowserCases": 0
+}

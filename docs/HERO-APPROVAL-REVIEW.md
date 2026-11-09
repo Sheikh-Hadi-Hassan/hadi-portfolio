@@ -1,6 +1,12 @@
 # Hero baseline: owner review
 
-Status: PROPOSED, NOT APPROVED. No active lock restored. Guard unchanged.
+Status: REFINEMENT AWAITING OWNER VISUAL APPROVAL. No active lock restored. Guard unchanged.
+
+The owner explicitly authorized hero CSS refinement on 9 November 2026. The refined source is the development commit containing `docs/HERO-REFINEMENT-EVIDENCE.json`. The previous hash proposal and activation wording below are historical and STALE after that authorized CSS edit. Do not install them. No replacement hashes are proposed at this stage. Review the new 320px, 768px and 1440px screenshots first; a separate exact-hash review is required afterward.
+
+The hero markup/copy, shared CSS, portrait inputs and showreel implementation remain unchanged. Only `src/styles/hero.css` changes visual behavior: full-width viewport-scale composition, responsive portrait/grid sizing, compact mobile spacing, darker backdrop and a home-only small-screen dock fit. Verification is recorded in `docs/HERO-REFINEMENT-EVIDENCE.json`.
+
+## Historical proposal, not an activation instruction
 
 |Guard input|SHA-256|
 |---|---|
