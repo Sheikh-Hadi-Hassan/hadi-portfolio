@@ -12,7 +12,8 @@ for project in projects:
         src=img.get('src','')
         if not src.startswith('/assets/'): issues.append(f'{slug}: image {i} has invalid src {src!r}'); continue
         if src in seen and i>0: issues.append(f'{slug}: duplicate image src {src}')
-        seen.add(src)
+        # A cover may appear once in its gallery; duplicates within the gallery still fail.
+        if i>0: seen.add(src)
         target=ROOT/'public'/src.lstrip('/')
         if not target.is_file(): issues.append(f'{slug}: missing asset {src}')
         if not isinstance(img.get('width'),int) or img.get('width',0)<=0: issues.append(f'{slug}: invalid width for {src}')

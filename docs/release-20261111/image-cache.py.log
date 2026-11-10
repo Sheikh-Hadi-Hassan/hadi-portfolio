@@ -1,0 +1,1 @@
+Empty and corrupt cached variants regenerate as valid WebP; no temporary file remains.

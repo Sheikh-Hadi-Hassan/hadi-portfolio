@@ -1,0 +1,105 @@
+{
+  "scope": "actual_guarded_export_no_asset_overrides",
+  "origin": "http://127.0.0.1:54062",
+  "browser": "156.0.8078.4",
+  "results": [
+    {
+      "route": "/",
+      "status": "PASS",
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "seraOpened": true,
+      "reactReelInitialized": true,
+      "history": {
+        "historyRestored": true,
+        "forwardRestored": true,
+        "historyRoundTripMs": 12311
+      },
+      "pageErrors": []
+    },
+    {
+      "route": "/work/",
+      "status": "PASS",
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "seraOpened": false,
+      "reactReelInitialized": false,
+      "history": {
+        "historyRestored": true,
+        "forwardRestored": true,
+        "historyRoundTripMs": 4740
+      },
+      "pageErrors": []
+    },
+    {
+      "route": "/mackenzie-cramblit/",
+      "status": "PASS",
+      "opened": [
+        {
+          "src": "/assets/mackenzie-13.webp",
+          "alt": "Mackenzie Cramblit — Brand guidelines overview and identity applications",
+          "width": 1920,
+          "visible": true
+        },
+        {
+          "src": "/assets/mackenzie-14.webp",
+          "alt": "Mackenzie Cramblit — Contents of the personal brand guidelines",
+          "width": 1920,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "route": "/morganics/",
+      "status": "PASS",
+      "opened": [
+        {
+          "src": "/assets/morganics-155.webp",
+          "alt": "Morganics — Brand guidelines introduction",
+          "width": 1500,
+          "visible": true
+        },
+        {
+          "src": "/assets/morganics-156.webp",
+          "alt": "Morganics — Brand positioning, mission and vision",
+          "width": 1500,
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "blocked": [],
+  "productionAcceptance": false
+}

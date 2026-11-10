@@ -1,0 +1,4 @@
+# Recovery evidence retains exact patch context and captured build-console formatting.
+docs/**/*.patch -whitespace
+docs/**/*.diff -whitespace
+docs/**/*.log -whitespace

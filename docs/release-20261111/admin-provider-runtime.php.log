@@ -1,0 +1,1 @@
+PASS: encrypted vault -> approved provider order -> adapters -> durable quota/circuit -> response; interrupted-provider failover, consent/default activation, bounded exhaustion, unchanged answers and diagnostic authorization. Zero live calls.

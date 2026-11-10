@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "5820e6a8-aa26-4f9b-a7d8-31cbd392ebe2",
+  "createdAt": "2026-11-10T19:23:06.439Z",
+  "records": [
+    {
+      "id": "contact-profile",
+      "kind": "site",
+      "version": 2,
+      "data": {
+        "email": "owner@example.invalid",
+        "phone": "+923001234567",
+        "linkedin": "https://www.linkedin.com/in/test",
+        "behance": "https://www.behance.net/test",
+        "instagram": "https://www.instagram.com/test",
+        "facebook": "https://www.facebook.com/test"
+      }
+    },
+    {
+      "id": "project-approved",
+      "kind": "project",
+      "version": 2,
+      "data": {
+        "slug": "mackenzie-cramblit",
+        "title": "Mackenzie Cramblit",
+        "deck": "A personal brand for a career coach who needs to feel experienced, direct and approachable.",
+        "category": "Personal brand identity",
+        "intro": "Mackenzie Cramblit works with management consultants who are deciding what comes next in their careers. The brand needed to feel credible without becoming corporate, and personal without becoming casual. The identity was shaped around that tension, using positioning, typography, colour and social applications to give her a clear, consistent presence.",
+        "seo_title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "seo_description": "Personal brand strategy and visual identity for career coach Mackenzie Cramblit, combining brand positioning, typography, colour, tone and social design.",
+        "hero": "/assets/mackenzie-13.webp"
+      }
+    },
+    {
+      "id": "full-case-draft",
+      "kind": "caseStudy",
+      "version": 2,
+      "data": {
+        "slug": "fixture-full-case",
+        "title": "Mackenzie Cramblit",
+        "deck": "A personal brand for a career coach who needs to feel experienced, direct and approachable.",
+        "category": "Personal brand identity",
+        "accent": "#38A5A8",
+        "client": "Mackenzie Cramblit",
+        "services": "Personal brand strategy / Visual identity / Brand guidelines / Social media design",
+        "intro": "Mackenzie Cramblit works with management consultants who are deciding what comes next in their careers. The brand needed to feel credible without becoming corporate, and personal without becoming casual. The identity was shaped around that tension, using positioning, typography, colour and social applications to give her a clear, consistent presence.",
+        "decision": "The direction starts with the audience: ambitious professionals who value sound reasoning but also need reassurance. Structured layouts and a deep blue foundation bring authority; teal, warmer accents and expressive typography introduce a more approachable voice. The aim is a presence that feels credible without becoming corporate or distant.",
+        "system": "The guidelines connect audience insight with everyday design decisions. Poppins provides a clear typographic foundation, with Playfair Display adding contrast for selected statements and editorial moments. Defined colour roles, image treatments, illustration guidance and icon rules keep the visual language coherent. Voice principles connect clarity and confidence with transformation, achievement and well-being.",
+        "design_copy": "The following 17 guideline slides move from positioning and audience to typography, colour, tone and application. Social templates and profile treatments show how the direction can carry across a personal brand’s daily communication. Open a slide to inspect the original detail.",
+        "goals": [
+          "Clarify how authority and approachability should show up in the brand",
+          "Turn audience insight into practical visual and verbal principles",
+          "Give LinkedIn and brand communications a repeatable design system"
+        ],
+        "deliverables": [
+          "Personal brand positioning and audience guidance",
+          "Colour palette and usage hierarchy",
+          "Poppins and Playfair Display typography guidance",
+          "Voice and tone principles",
+          "Profile and social content applications",
+          "Imagery, illustration and icon guidance"
+        ],
+        "sections": [
+          "Positioning and audience",
+          "A visual and verbal system",
+          "From guidelines to everyday communication"
+        ],
+        "link": "",
+        "hero": "/assets/mackenzie-13.webp",
+        "hero_width": 1920,
+        "hero_height": 1080,
+        "images": [
+          {
+            "src": "/assets/mackenzie-13.webp",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Mackenzie Cramblit — Brand guidelines overview and identity applications"
+          }
+        ],
+        "seo_title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "seo_description": "Personal brand strategy and visual identity for career coach Mackenzie Cramblit, combining brand positioning, typography, colour, tone and social design."
+      }
+    },
+    {
+      "id": "rich-case-authoring",
+      "kind": "caseStudy",
+      "version": 2,
+      "data": {
+        "slug": "fixture-rich-authoring",
+        "title": "Mackenzie Cramblit",
+        "deck": "A personal brand for a career coach who needs to feel experienced, direct and approachable.",
+        "category": "Personal brand identity",
+        "accent": "#38A5A8",
+        "client": "Mackenzie Cramblit",
+        "services": "Personal brand strategy / Visual identity / Brand guidelines / Social media design",
+        "intro": "Mackenzie Cramblit works with management consultants who are deciding what comes next in their careers. The brand needed to feel credible without becoming corporate, and personal without becoming casual. The identity was shaped around that tension, using positioning, typography, colour and social applications to give her a clear, consistent presence.",
+        "decision": "The direction starts with the audience: ambitious professionals who value sound reasoning but also need reassurance. Structured layouts and a deep blue foundation bring authority; teal, warmer accents and expressive typography introduce a more approachable voice. The aim is a presence that feels credible without becoming corporate or distant.",
+        "system": "The guidelines connect audience insight with everyday design decisions. Poppins provides a clear typographic foundation, with Playfair Display adding contrast for selected statements and editorial moments. Defined colour roles, image treatments, illustration guidance and icon rules keep the visual language coherent. Voice principles connect clarity and confidence with transformation, achievement and well-being.",
+        "design_copy": "The following 17 guideline slides move from positioning and audience to typography, colour, tone and application. Social templates and profile treatments show how the direction can carry across a personal brand’s daily communication. Open a slide to inspect the original detail.",
+        "goals": [
+          "Clarify how authority and approachability should show up in the brand",
+          "Turn audience insight into practical visual and verbal principles",
+          "Give LinkedIn and brand communications a repeatable design system"
+        ],
+        "deliverables": [
+          "Personal brand positioning and audience guidance",
+          "Colour palette and usage hierarchy",
+          "Poppins and Playfair Display typography guidance",
+          "Voice and tone principles",
+          "Profile and social content applications",
+          "Imagery, illustration and icon guidance"
+        ],
+        "sections": [
+          "Positioning and audience",
+          "A visual and verbal system",
+          "From guidelines to everyday communication"
+        ],
+        "link": "",
+        "hero": "/assets/mackenzie-13.webp",
+        "hero_width": 1920,
+        "hero_height": 1080,
+        "images": [
+          {
+            "src": "/assets/mackenzie-13.webp",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Mackenzie Cramblit — Brand guidelines overview and identity applications"
+          }
+        ],
+        "seo_title": "Personal Brand Identity for a Career Coach | Hadi Hassan",
+        "seo_description": "Personal brand strategy and visual identity for career coach Mackenzie Cramblit, combining brand positioning, typography, colour, tone and social design.",
+        "article_sections": [
+          {
+            "title": "Research, with punctuation",
+            "paragraphs": [
+              "An approved article paragraph."
+            ]
+          }
+        ],
+        "gallery_chapters": [
+          {
+            "id": "identity-section",
+            "label": "01 / Identity",
+            "title": "A chapter title",
+            "copy": "Chapter copy.",
+            "layout": "guidelines",
+            "images": [
+              "/assets/mackenzie-13.webp"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

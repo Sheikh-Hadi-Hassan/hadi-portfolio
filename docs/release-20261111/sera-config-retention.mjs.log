@@ -1,0 +1,1 @@
+PASS: last-known-good approved config and valid answers preserved after bounded failed reload; visible diagnostic retained.

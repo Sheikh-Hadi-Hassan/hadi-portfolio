@@ -1,0 +1,3 @@
+PASS: backend policy mock failover, immutable context, consent, zero-paid/free eligibility gates, quota/circuit exclusions, bounded invalid-response retry and all-unavailable fallback. No remote adapters enabled.
+PASS: approved provider order and bounded context/output policy; over-budget context makes no provider call.
+PASS: invalid UTF-8/non-finite/cyclic state, malformed policies/registry and nested response schemas fail closed without lost answers or calls.

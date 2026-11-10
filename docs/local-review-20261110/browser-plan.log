@@ -1,0 +1,6 @@
+
+> hadi-portfolio@1.0.0 test:browser-plan
+> node tests/browser-plan.cjs && python3 tests/acceptance-build.py
+
+PASS: 22-route × 9-width plan, exact export inventory, duplicate evidence rejection and interrupted-run accounting. Zero browser acceptance cases executed.
+PASS: missing receipt, stale source, modified export and newly added source rejected. Synthetic provenance tests only; no build or hero activation.

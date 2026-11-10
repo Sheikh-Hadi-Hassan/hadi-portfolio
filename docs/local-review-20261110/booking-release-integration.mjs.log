@@ -1,0 +1,1 @@
+PASS: frontend request/acceptance -> Apps Script doPost -> in-memory lead -> mock Calendar/Meet -> owner-mail intents; duplicates, mismatched retries, lost response, pending/timeout/conflict/denial/auth/validation preserve safety. Customer invitation requested, not delivered. PHP HTTP handler and real browser/providers NOT executed.

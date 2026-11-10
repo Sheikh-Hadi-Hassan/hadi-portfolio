@@ -2,3 +2,8 @@
 node_modules/
 .next/
 out/
+dist/
+generated/
+artifacts/
+public/assets/responsive/
+__pycache__/

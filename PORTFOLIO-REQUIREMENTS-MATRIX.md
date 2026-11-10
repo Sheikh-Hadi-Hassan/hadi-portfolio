@@ -1,3 +1,5 @@
+> 11 November local development consolidation: see [release reconciliation](docs/RELEASE-CONSOLIDATION-20261111.md) for current content/navigation recovery and the 198/198 local export browser result. This does not change the obligation counts or establish live production acceptance below.
+
 # Portfolio requirements matrix
 
 27/243 = 27 ÷ 243 × 100 = 11.11% locally verified, previously22/243 (9.05%). 185 partial,0 missing,31 externally blocked; total243. Original catalogue476 =243 portfolio +233 historical future obligations. No IDs removed/reclassified to hide scope. Production acceptance remains unverified; production-build browser0/198. Local contract verification is not overall V1 implementation completion.

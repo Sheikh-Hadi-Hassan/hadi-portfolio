@@ -26,12 +26,12 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:44563/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:50184/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:44563/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:50184/intellignce-support/runtime-config.previous.json"
         }
       ],
       "warnings": [],
@@ -44,7 +44,7 @@
       "diagnostic": {
         "ok": true,
         "status": "approved",
-        "releaseId": "3cb96748-3af3-44d4-a6be-3e14b0613b9c",
+        "releaseId": "b1c51ab3-ab56-4b49-aa5a-80f13cea6ace",
         "attempts": []
       },
       "consoleErrors": [],
@@ -58,7 +58,7 @@
       "diagnostic": {
         "ok": true,
         "status": "fallback",
-        "releaseId": "3cb96748-3af3-44d4-a6be-3e14b0613b9c",
+        "releaseId": "b1c51ab3-ab56-4b49-aa5a-80f13cea6ace",
         "attempts": [
           {
             "file": "runtime-config.json",
@@ -124,12 +124,12 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
-          "source": "http://127.0.0.1:44563/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:50184/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
-          "source": "http://127.0.0.1:44563/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:50184/intellignce-support/runtime-config.previous.json"
         }
       ],
       "warnings": [
@@ -161,12 +161,12 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: net::ERR_FAILED",
-          "source": "http://127.0.0.1:44563/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:50184/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: net::ERR_FAILED",
-          "source": "http://127.0.0.1:44563/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:50184/intellignce-support/runtime-config.previous.json"
         }
       ],
       "warnings": [

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "b1c51ab3-ab56-4b49-aa5a-80f13cea6ace",
+  "createdAt": "2026-11-10T19:23:06.436Z",
+  "records": [
+    {
+      "id": "profile-root",
+      "kind": "knowledge",
+      "version": 2,
+      "data": {
+        "title": "Profile",
+        "category": "Profile",
+        "parent": "",
+        "content": "Approved source content",
+        "source": "/",
+        "visibility": "public"
+      }
+    },
+    {
+      "id": "studio-faq",
+      "kind": "faq",
+      "version": 2,
+      "data": {
+        "question": "What is the studio process?",
+        "answer": "Approved discovery, design and review.",
+        "category": "General",
+        "service": "",
+        "priority": 80,
+        "alternatives": [
+          "Explain your process"
+        ]
+      }
+    },
+    {
+      "id": "identity-main",
+      "kind": "personality",
+      "version": 2,
+      "data": {
+        "name": "Sera Studio",
+        "welcome": "Approved studio welcome",
+        "style": "concise",
+        "formality": "professional",
+        "responseLength": "short",
+        "languages": [
+          "en"
+        ]
+      }
+    },
+    {
+      "id": "voice-main",
+      "kind": "voice",
+      "version": 2,
+      "data": {
+        "enabled": false,
+        "voiceId": "",
+        "language": "en",
+        "rate": 1,
+        "pitch": 1,
+        "confirmTranscript": true
+      }
+    },
+    {
+      "id": "published-brand-tree",
+      "kind": "questionTree",
+      "version": 2,
+      "data": {
+        "serviceId": "branding",
+        "questions": [
+          {
+            "id": "mode",
+            "label": "Approved brand stage?",
+            "help": "Select the closest fit.",
+            "required": true,
+            "answerType": "single_select",
+            "options": [
+              "New",
+              "Refresh"
+            ],
+            "condition": null
+          },
+          {
+            "id": "detail",
+            "label": "What should change?",
+            "help": "Describe the goal.",
+            "required": true,
+            "answerType": "text",
+            "options": [],
+            "condition": {
+              "questionId": "mode",
+              "value": "New"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "public-skills",
+      "kind": "skills",
+      "version": 2,
+      "data": {
+        "enabled": [
+          "portfolio_search",
+          "service_discovery",
+          "project_brief",
+          "booking_handoff"
+        ]
+      }
+    },
+    {
+      "id": "runtime-policy",
+      "kind": "runtimePolicy",
+      "version": 2,
+      "data": {
+        "contextChars": 6000,
+        "outputTokens": 200,
+        "providerPriorities": [
+          "groq",
+          "gemini"
+        ]
+      }
+    }
+  ]
+}

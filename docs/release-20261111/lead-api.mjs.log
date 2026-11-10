@@ -1,0 +1,2 @@
+Lead transport: confirmed success, HTML 404, server rejection, invalid response, pending 202, network failure and timeout pass.
+Delivery recovery: missing endpoint is not-sent; readiness uses GET only; ambiguous or pending writes preserve the existing reference.

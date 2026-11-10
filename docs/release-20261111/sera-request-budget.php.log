@@ -1,0 +1,1 @@
+PASS: bounded request budget persists before upstream, private HMAC-only counters, limits, missing secret/corruption/link rejection and no victim mutation. Local CLI only.

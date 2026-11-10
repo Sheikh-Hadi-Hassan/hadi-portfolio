@@ -1,0 +1,1 @@
+Actual design scene initializes six nested cubes, 90 radial ticks and 12 dots; animation, resize and cleanup pass. GPU rendering is not exercised.

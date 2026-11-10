@@ -1,0 +1,1 @@
+PASS: 20 independent PHP processes accept exactly 3 reservations; empty-corrupt ledger fails closed.

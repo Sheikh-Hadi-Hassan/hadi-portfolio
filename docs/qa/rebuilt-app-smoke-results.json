@@ -1,6 +1,6 @@
 {
   "scope": "actual_guarded_export_no_asset_overrides",
-  "origin": "http://127.0.0.1:32865",
+  "origin": "http://127.0.0.1:50441",
   "browser": "156.0.8078.4",
   "results": [
     {
@@ -29,7 +29,7 @@
       "history": {
         "historyRestored": true,
         "forwardRestored": true,
-        "historyRoundTripMs": 11797
+        "historyRoundTripMs": 10592
       },
       "pageErrors": []
     },
@@ -59,7 +59,7 @@
       "history": {
         "historyRestored": true,
         "forwardRestored": true,
-        "historyRoundTripMs": 5387
+        "historyRoundTripMs": 4028
       },
       "pageErrors": []
     },

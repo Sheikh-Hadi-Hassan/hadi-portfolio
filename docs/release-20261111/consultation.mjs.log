@@ -1,0 +1,3 @@
+Consultation: all six service branches, shared-question deduplication, changed-answer cleanup, contact validation, full transcript, consent, pending retry persistence, unfinished drafts, expiry and AI failure fallback passed.
+Review edits skip completed questions; changing contact preference requests newly required phone.
+Separate entry paths: meeting bypasses the detailed questionnaire and collects essential booking details.

@@ -1,0 +1,1 @@
+PASS: backend public config validation and corrupt-current/valid-previous fallback; both invalid use built-in fallback.

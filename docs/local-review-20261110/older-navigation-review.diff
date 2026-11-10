@@ -1,0 +1,171 @@
+diff --git a/app/archive/page.tsx b/app/archive/page.tsx
+new file mode 100644
+index 0000000..635e331
+--- /dev/null
++++ b/app/archive/page.tsx
+@@ -0,0 +1,42 @@
++import type { Metadata } from "next";
++import Link from "next/link";
++import { portfolioGroups, projects } from "@/lib/content";
++
++export const metadata: Metadata = {
++  title: "Archive | Hadi Hassan's Creative & Digital Work",
++  description: "Browse documented brand, campaign, UI/UX, software, and digital projects by Hadi Hassan, with direct links to available case studies and source evidence.",
++  alternates: { canonical: "/archive" },
++};
++
++export default function ArchivePage() {
++  const count = projects.length + portfolioGroups.reduce((total, group) => total + group.projects.length, 0);
++  return (
++    <div className="paper" style={{ maxWidth: 1200, margin: "auto", padding: "clamp(2rem, 7vw, 7rem)" }}>
++      <p className="eyebrow">Project directory / Archive</p>
++      <h1>Work, beyond the highlights.</h1>
++      <p>{count} documented entries across selected case studies and grouped project records. The archive distinguishes full stories from external references.</p>
++      <p><Link href="/work">Explore the visual work collection →</Link></p>
++      <section aria-labelledby="case-studies">
++        <h2 id="case-studies">Detailed case studies</h2>
++        <ul>{projects.map(project => <li key={project.slug}><Link href={`/work/${project.slug}`}>{project.title}</Link> · {project.category}</li>)}</ul>
++      </section>
++      {portfolioGroups.map(group => (
++        <section key={group.id} aria-labelledby={group.id}>
++          <h2 id={group.id}>{group.title}</h2>
++          <p>{group.body}</p>
++          <ul>{group.projects.map(project => (
++            <li key={project.title}>
++              <strong>{project.title}</strong> · {project.type}
++              {project.links.length > 0 && <> · {project.links.map((link, index) => (
++                <span key={link.href}>{index > 0 ? " / " : ""}{link.href.startsWith("/") ?
++                  <Link href={link.href}>{link.label}</Link> :
++                  <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>}</span>
++              ))}</>}
++            </li>
++          ))}</ul>
++        </section>
++      ))}
++      <p><Link href="/resume">View resume →</Link> · <Link href="/contact">Discuss a project →</Link></p>
++    </div>
++  );
++}
+diff --git a/app/layout.tsx b/app/layout.tsx
+index b4d3f5c..3f76775 100644
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -16,7 +16,7 @@ const nebulica = localFont({
+   display: "swap",
+ });
+ 
+-const siteUrl = "https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site";
++const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://hadi.intellignce.net").replace(/\/$/, "");
+ 
+ export const metadata: Metadata = {
+   metadataBase: new URL(siteUrl),
+@@ -27,7 +27,7 @@ export const metadata: Metadata = {
+   creator: "Hadi Hassan",
+   publisher: "Intellignce",
+   category: "Design and Technology",
+-  alternates: { canonical: siteUrl },
++  alternates: { canonical: "/" },
+   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
+   openGraph: { title: "Hadi Hassan — Ideas into Brands, Products & Systems", description: "Creative direction across brand identity, digital products, commerce, software, and AI business systems.", type: "profile", url: siteUrl, siteName: "Hadi Hassan", locale: "en_PK", firstName: "Hadi", lastName: "Hassan", images: [{ url: "/images/hadi-halftone-hero.webp", width: 2048, height: 1190, alt: "Hadi Hassan, Creative Director and Founder of Intellignce" }] },
+   twitter: { card: "summary_large_image", title: "Hadi Hassan — Creative Director & Founder", description: "Ideas into brands, products, and intelligent business systems.", images: ["/images/hadi-halftone-hero.webp"] },
+@@ -57,7 +57,7 @@ const structuredData = {
+       url: siteUrl,
+       image: `${siteUrl}/images/hadi-hero-clear.webp`,
+       jobTitle: ["Creative Director", "Product Designer", "Founder of Intellignce"],
+-      email: "mailto:sheikh.hadi.hassan@gmail.com",
++      email: "mailto:hadi@intellignce.net",
+       homeLocation: { "@type": "Country", name: "Pakistan" },
+       worksFor: { "@type": "Organization", name: "Intellignce", url: "https://intellignce.net/" },
+       sameAs: ["https://www.linkedin.com/in/hadi-hasssan/", "https://www.behance.net/hadihasssan", "https://intellignce.net/"],
+@@ -78,7 +78,7 @@ const structuredData = {
+       url: `${siteUrl}/#services`,
+       areaServed: "Worldwide",
+       founder: { "@id": personId },
+-      email: "sheikh.hadi.hassan@gmail.com",
++      email: "hadi@intellignce.net",
+       hasOfferCatalog: {
+         "@type": "OfferCatalog",
+         name: "Creative and technology services",
+diff --git a/app/work/[slug]/page.tsx b/app/work/[slug]/page.tsx
+index 60fb919..2a36854 100644
+--- a/app/work/[slug]/page.tsx
++++ b/app/work/[slug]/page.tsx
+@@ -1,3 +1,4 @@
++const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://hadi.intellignce.net").replace(/\/$/, "");
+ import type { Metadata } from "next";
+ import { notFound } from "next/navigation";
+ import { CaseGallery, EvidenceFlag, TextLink } from "@/components/story-ui";
+@@ -8,8 +9,8 @@ export function generateStaticParams() { return projects.map(({ slug }) => ({ sl
+ export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+   const project = getProject((await params).slug);
+   if (!project) return {};
+-  const url = `https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site/work/${project.slug}`;
+-  const image = `https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site${project.cover.src}`;
++  const url = `${SITE_URL}/work/${project.slug}`;
++  const image = `${SITE_URL}${project.cover.src}`;
+   return {
+     title: `${project.title} Case Study`,
+     description: project.summary,
+@@ -24,16 +25,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug:
+   if (!project) notFound();
+   const currentIndex = projects.findIndex((item) => item.slug === project.slug);
+   const next = projects[(currentIndex + 1) % projects.length];
+-  const projectUrl = `https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site/work/${project.slug}`;
++  const projectUrl = `${SITE_URL}/work/${project.slug}`;
+   const projectSchema = {
+     "@context": "https://schema.org",
+     "@type": "CreativeWork",
+     name: project.title,
+     url: projectUrl,
+     description: project.summary,
+-    image: `https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site${project.cover.src}`,
++    image: `${SITE_URL}${project.cover.src}`,
+     genre: project.category,
+-    creator: { "@type": "Person", "@id": "https://hadi-hassan-portfolio.lbertoomenick4981.chatgpt.site/#hadi-hassan", name: "Hadi Hassan" },
++    creator: { "@type": "Person", "@id": `${SITE_URL}/#hadi-hassan`, name: "Hadi Hassan" },
+     sameAs: [project.sourceUrl, project.secondaryUrl].filter(Boolean),
+   };
+ 
+diff --git a/components/contact-brief.tsx b/components/contact-brief.tsx
+index bbd3b07..b52e807 100644
+--- a/components/contact-brief.tsx
++++ b/components/contact-brief.tsx
+@@ -35,7 +35,7 @@ export function ContactBrief() {
+ 
+       form.reset();
+       setState("success");
+-      setStatus("Your brief has been delivered. Hadi will review the context and reply by email.");
++      setStatus("The form provider accepted your inquiry. Inbox delivery has not been independently verified. For urgent requests, please email directly.");
+       window.dispatchEvent(new Event("hadi:sound-success"));
+     } catch {
+       setState("error");
+@@ -47,7 +47,7 @@ export function ContactBrief() {
+     return (
+       <div className="form-success" role="status">
+         <CheckCircle2 aria-hidden="true" />
+-        <p className="eyebrow">Project brief received</p>
++        <p className="eyebrow">Inquiry accepted by form provider</p>
+         <h2>Good context creates a better beginning.</h2>
+         <p>{status}</p>
+         <button type="button" className="button-primary" onClick={() => { setState("idle"); setStatus(""); }}>Send another inquiry</button>
+@@ -80,7 +80,7 @@ export function ContactBrief() {
+       <button className="button-primary" type="submit" disabled={state === "sending"}>{state === "sending" ? "Sending brief…" : "Submit project brief"} <ArrowRight aria-hidden="true" /></button>
+       <p className={`form-status ${state === "error" ? "is-error" : ""}`} aria-live="polite">{status}</p>
+       {state === "error" ? <a className="form-fallback" href={`mailto:${profile.email}`}>Email {profile.email} directly</a> : null}
+-      <p className="form-provider-note">Secure email delivery is handled by FormSubmit. The first live submission may require a one-time inbox confirmation before subsequent briefs are forwarded.</p>
++      <p className="form-provider-note">Email delivery is handled by the external FormSubmit provider. The first live submission may require a one-time inbox confirmation before subsequent briefs are forwarded.</p>
+     </form>
+   );
+ }
+diff --git a/next.config.ts b/next.config.ts
+index f47a650..9cc2299 100644
+--- a/next.config.ts
++++ b/next.config.ts
+@@ -1,6 +1,7 @@
+ import type { NextConfig } from "next";
+ 
+ const nextConfig: NextConfig = {
++  ...(process.env.HOSTINGER_STATIC_EXPORT === "1" ? { output: "export" as const, trailingSlash: true } : {}),
+   images: {
+     // Sites serves the optimized local assets directly; disabling the runtime
+     // optimizer avoids a Worker fetch dependency and keeps previews resilient.

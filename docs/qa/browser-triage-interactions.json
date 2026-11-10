@@ -3,144 +3,209 @@
     "route": "/",
     "failure": null,
     "settled": {
-      "url": "http://127.0.0.1:40129/",
+      "url": "http://127.0.0.1:51563/",
       "title": "Hadi Hassan | Creative Director & Brand Identity Designer"
     },
-    "about": "About Hadi Hassan",
-    "back": "http://127.0.0.1:40129/",
-    "forward": "http://127.0.0.1:40129/about/",
+    "about": "About Hadi Hassan | Creative Director & Designer",
+    "back": "http://127.0.0.1:51563/",
+    "forward": "http://127.0.0.1:51563/about/",
+    "canonical": {
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 3935
+    },
     "events": [
       {
         "phase": "start",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230592884
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342800294
       },
       {
         "phase": "start",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230593264
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342800508
       },
       {
         "phase": "goto-0",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230595422
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342802549
       },
       {
         "phase": "goto-0",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230595557
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342802578
       },
       {
         "phase": "back-0",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230596505
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342803500
       },
       {
         "phase": "back-0",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230596617
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342803537
       },
       {
         "phase": "goto-1",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230597576
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342804479
       },
       {
         "phase": "goto-1",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230597665
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342804515
       },
       {
         "phase": "back-1",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230598594
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342805447
       },
       {
         "phase": "back-1",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230598750
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342805506
       },
       {
         "phase": "goto-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230599722
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342806442
       },
       {
         "phase": "goto-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230599794
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342806476
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230600726
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342807412
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230600844
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342807471
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230602295
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342808923
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230602505
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342808982
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/about/",
-        "time": 1794230603590
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342809999
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/about/",
-        "time": 1794230603666
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342810023
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230604602
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342810967
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230604739
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342811025
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/about/",
-        "time": 1794230605656
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342811941
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/about/",
-        "time": 1794230605731
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342811975
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342812902
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342812947
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342813934
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342813957
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342814883
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342814946
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342815864
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342815904
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342816822
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342816865
       }
     ]
   },
@@ -148,144 +213,209 @@
     "route": "/work/",
     "failure": null,
     "settled": {
-      "url": "http://127.0.0.1:40129/work/",
-      "title": "Work | Hadi Hassan"
+      "url": "http://127.0.0.1:51563/work/",
+      "title": "Selected Creative Work & Design | Hadi Hassan"
     },
-    "about": "About Hadi Hassan",
-    "back": "http://127.0.0.1:40129/work/",
-    "forward": "http://127.0.0.1:40129/about/",
+    "about": "About Hadi Hassan | Creative Director & Designer",
+    "back": "http://127.0.0.1:51563/work/",
+    "forward": "http://127.0.0.1:51563/about/",
+    "canonical": {
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 3946
+    },
     "events": [
       {
         "phase": "start",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230606769
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342817987
       },
       {
         "phase": "start",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230607035
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342818066
       },
       {
         "phase": "goto-0",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230609017
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342820099
       },
       {
         "phase": "goto-0",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230609234
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342820162
       },
       {
         "phase": "back-0",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230610226
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342821092
       },
       {
         "phase": "back-0",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230610306
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342821136
       },
       {
         "phase": "goto-1",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230611254
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342822056
       },
       {
         "phase": "goto-1",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230611353
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342822100
       },
       {
         "phase": "back-1",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230612299
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342823035
       },
       {
         "phase": "back-1",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230612371
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342823072
       },
       {
         "phase": "goto-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230613290
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342824007
       },
       {
         "phase": "goto-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/",
-        "time": 1794230613435
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342824077
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230614356
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342825000
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230614440
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342825044
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230615876
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342826489
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230615972
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342826525
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/about/",
-        "time": 1794230617003
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342827547
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/about/",
-        "time": 1794230617113
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342827581
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230618060
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342828513
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/work/",
-        "time": 1794230618130
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342828549
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/about/",
-        "time": 1794230619102
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342829481
       },
       {
         "phase": "back-2",
         "event": "navigation",
-        "url": "http://127.0.0.1:40129/about/",
-        "time": 1794230619276
+        "url": "http://127.0.0.1:51563/about/",
+        "time": 1794342829516
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342830443
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342830478
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342831445
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342831497
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342832419
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342832454
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342833393
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/",
+        "time": 1794342833450
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342834387
+      },
+      {
+        "phase": "back-2",
+        "event": "navigation",
+        "url": "http://127.0.0.1:51563/work/",
+        "time": 1794342834429
       }
     ]
   },

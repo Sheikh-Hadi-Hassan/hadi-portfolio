@@ -1,0 +1,1 @@
+PASS: quota ledger rejects symlinks/hardlinks, permissive storage, corrupt counters/unknown metadata without modifying targets; private creation and quota preserved. Local filesystem only.

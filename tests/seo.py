@@ -49,7 +49,8 @@ for slug,page in pages.items():
   if href.startswith('/') and not href.startswith('//'):
    clean=href.split('#',1)[0].split('?',1)[0]
    if not clean:continue
-   target=root/'out'/('index.html' if clean=='/' else clean.strip('/')+'/index.html')
+   target=root/'out'/clean.lstrip('/')
+   if target.is_dir():target=target/'index.html'
    assert target.exists(),(slug,'broken internal link',href)
  image=urlsplit(page['image']).path;assert (root/'public'/image.lstrip('/')).exists(),(slug,'social image missing')
 ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}

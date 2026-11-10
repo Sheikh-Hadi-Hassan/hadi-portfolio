@@ -1,0 +1,62 @@
+[
+  {
+    "test": "hero-responsive.cjs",
+    "status": "PASS",
+    "seconds": 113.88
+  },
+  {
+    "test": "sera-browser.cjs",
+    "status": "PASS",
+    "seconds": 7.72
+  },
+  {
+    "test": "sera-guided-browser.cjs",
+    "status": "PASS",
+    "seconds": 60.09
+  },
+  {
+    "test": "admin-control-browser.cjs",
+    "status": "PASS",
+    "seconds": 3.31
+  },
+  {
+    "test": "sera-config-browser.cjs",
+    "status": "PASS",
+    "seconds": 6.87
+  },
+  {
+    "test": "admin-cms-browser.cjs",
+    "status": "PASS",
+    "seconds": 6.71
+  },
+  {
+    "test": "admin-workflows-browser.cjs",
+    "status": "PASS",
+    "seconds": 10.36
+  },
+  {
+    "test": "sera-runtime-browser.cjs",
+    "status": "PASS",
+    "seconds": 8.28
+  },
+  {
+    "test": "sera-config-failures.cjs",
+    "status": "PASS",
+    "seconds": 22.47
+  },
+  {
+    "test": "crm-browser.cjs",
+    "status": "PASS",
+    "seconds": 2.87
+  },
+  {
+    "test": "booking-lifecycle-browser.cjs",
+    "status": "PASS",
+    "seconds": 2.06
+  },
+  {
+    "test": "home-sections-browser.cjs",
+    "status": "PASS",
+    "seconds": 16.36
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "test": "tests/booking-release-integration.mjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.26
+  },
+  {
+    "test": "tests/consultation.mjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.19
+  },
+  {
+    "test": "tests/design-scene.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.08
+  },
+  {
+    "test": "tests/folder-geometry.mjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.08
+  },
+  {
+    "test": "tests/footer-controls.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.07
+  },
+  {
+    "test": "tests/gateway-logging.mjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.09
+  },
+  {
+    "test": "tests/hero-dither.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.07
+  },
+  {
+    "test": "tests/intro-loader.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.05
+  },
+  {
+    "test": "tests/lead-api.mjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.14
+  },
+  {
+    "test": "tests/leads-desk.mjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.09
+  },
+  {
+    "test": "tests/leads.mjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.27
+  },
+  {
+    "test": "tests/motion-clips.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.05
+  },
+  {
+    "test": "tests/process-camera.mjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.21
+  },
+  {
+    "test": "tests/process-motion.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.16
+  },
+  {
+    "test": "tests/sera-config-retention.mjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.07
+  },
+  {
+    "test": "tests/services.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.13
+  },
+  {
+    "test": "tests/social-carousel.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.05
+  },
+  {
+    "test": "tests/admin-cms-cli.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 1.89
+  },
+  {
+    "test": "tests/acceptance-build.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.14
+  },
+  {
+    "test": "tests/requirements-matrix.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.14
+  },
+  {
+    "test": "tests/v1-evidence.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.14
+  },
+  {
+    "test": "tests/package-security.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.2
+  },
+  {
+    "test": "tests/booking-release-package.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.14
+  },
+  {
+    "test": "tests/image-cache.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.59
+  },
+  {
+    "test": "tests/browser-plan.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.14
+  },
+  {
+    "test": "tests/browser-assertions-unit.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.04
+  },
+  {
+    "test": "tests/home-content.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.14
+  },
+  {
+    "test": "tests/project-images.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.05
+  },
+  {
+    "test": "tests/source-assets.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.13
+  },
+  {
+    "test": "tests/source-seo.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.27
+  },
+  {
+    "test": "tests/utility-routes.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.82
+  },
+  {
+    "test": "tests/seo.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.63
+  },
+  {
+    "test": "tests/production.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.41
+  },
+  {
+    "test": "tests/images.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 5.41
+  },
+  {
+    "test": "tests/export-hydration.py",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 0.31
+  }
+]

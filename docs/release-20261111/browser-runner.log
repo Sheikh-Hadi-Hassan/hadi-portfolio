@@ -1,0 +1,14 @@
+tests/hero-responsive.cjs 0
+tests/sera-browser.cjs 0
+tests/sera-guided-browser.cjs 0
+tests/admin-control-browser.cjs 0
+tests/sera-config-browser.cjs 0
+tests/admin-cms-browser.cjs 0
+tests/admin-workflows-browser.cjs 0
+tests/sera-runtime-browser.cjs 0
+tests/sera-config-failures.cjs 0
+tests/crm-browser.cjs 0
+tests/booking-lifecycle-browser.cjs 0
+tests/home-sections-browser.cjs 0
+tests/rebuilt-app-smoke.cjs 0
+docs/content-recovery-20261110/check-archive.cjs 0

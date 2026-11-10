@@ -1,0 +1,2 @@
+PASS: HTTPS transport defaults inactive; provider context redacts contact/URL data, excludes credentials and preserves original state. Actual cURL/TLS networking unverified.
+PASS: Urdu context clipping remains valid UTF-8; original questionnaire text is unchanged.

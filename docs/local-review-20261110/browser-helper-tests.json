@@ -1,0 +1,6 @@
+[
+  {
+    "test": "browser-assertions-unit.cjs",
+    "status": "PASS"
+  }
+]

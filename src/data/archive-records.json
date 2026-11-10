@@ -1,0 +1,547 @@
+[
+  {
+    "title": "Social Media Portfolio",
+    "type": "Campaigns · Content systems",
+    "image": "/assets/archive-recovered/social-systems.webp",
+    "evidence": "Published case",
+    "links": [
+      {
+        "label": "Behance case",
+        "href": "https://www.behance.net/gallery/201857871/Social-Media-Portfolio"
+      }
+    ],
+    "category": "campaign",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/portfolio-assets/social-systems.webp",
+    "width": 1400,
+    "height": 933,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "1db7e9b0809d77363bd96c56f24e2e024b6e6feb257c751bee23e0fa49fb3ab7"
+  },
+  {
+    "title": "ClearMetRx",
+    "type": "Telehealth finance · Responsive web",
+    "image": "/assets/archive-recovered/clearmetrx.webp",
+    "evidence": "Supplied profile",
+    "links": [],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/products/clearmetrx.webp",
+    "width": 900,
+    "height": 825,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "40ee4f8f66af2cd8d51047e000e9d10f9753657d11d4945a275755b9026c8ba1"
+  },
+  {
+    "title": "Care by CallingDr",
+    "type": "Healthcare platform · Product experience",
+    "image": "/assets/archive-recovered/care-callingdr.webp",
+    "evidence": "Supplied profile",
+    "links": [],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/products/care-callingdr.webp",
+    "width": 900,
+    "height": 825,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "8e83616a8365f303c57875b7003033d0749d1de4ddcc53e61ee2a81b5d56bdea"
+  },
+  {
+    "title": "Virtual Pharmacy",
+    "type": "Medicine cabinet · SaaS product",
+    "image": "/assets/archive-recovered/virtual-pharmacy.webp",
+    "evidence": "Supplied profile",
+    "links": [],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/products/virtual-pharmacy.webp",
+    "width": 900,
+    "height": 578,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "b544f9a70d269ab11b82f54b874f665b6983021961e8c54beb3267c37c145838"
+  },
+  {
+    "title": "Dejong Rental Management",
+    "type": "Construction rental · Web application",
+    "image": "/assets/archive-recovered/dejong.webp",
+    "evidence": "Supplied profile",
+    "links": [],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/products/dejong.webp",
+    "width": 900,
+    "height": 815,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "7fb597116216d6eb4275b632c989c3679e62b463964eae7e7c82ee6137b8cfb3"
+  },
+  {
+    "title": "Grassroots Ventures",
+    "type": "Application experience",
+    "image": "/assets/archive-recovered/profile-19.webp",
+    "evidence": "Supplied profile",
+    "links": [],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/identity/profile-19.webp",
+    "width": 900,
+    "height": 506,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "0efc8c10e3d4ece1e47fe465fcb108ce11ea12161376db849d01bf27ecb5cbc8"
+  },
+  {
+    "title": "Longwood Reef & Coral",
+    "type": "Commerce · Application experience",
+    "image": "/assets/archive-recovered/profile-21.webp",
+    "evidence": "Supplied profile",
+    "links": [],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/identity/profile-21.webp",
+    "width": 900,
+    "height": 506,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "a1880a233a932df4acdf0f0089faa514c592695ddada15b24fcc9a93cbecc1e6"
+  },
+  {
+    "title": "MORENT",
+    "type": "Car rental · Product concept",
+    "image": "/assets/archive-recovered/profile-23.webp",
+    "evidence": "Product preview",
+    "links": [
+      {
+        "label": "Live beta",
+        "href": "https://crent.vercel.app/"
+      },
+      {
+        "label": "Figma",
+        "href": "https://www.figma.com/design/fE4LNoAzRplX4fUGST52GT/MORENT---Car-Rent--Community-?node-id=0-1&t=osn3q2v05ALw7mPA-1"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/faizahmad0022/AdminCrentProject"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/identity/profile-23.webp",
+    "width": 900,
+    "height": 506,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "d96c0a8a505659f5fb10235b4fe4fbb93bc56887838b96c76fade1bff10f0027"
+  },
+  {
+    "title": "Travel Management",
+    "type": "Operations · Product beta",
+    "image": "/assets/archive-recovered/profile-24.webp",
+    "evidence": "Product preview",
+    "links": [
+      {
+        "label": "Open beta",
+        "href": "https://tms-theta-eight.vercel.app/login"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/identity/profile-24.webp",
+    "width": 900,
+    "height": 506,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "94bd8a024f87534850b00b3bd97914f02ca3b25809f8472a271a897d220e8c04"
+  },
+  {
+    "title": "App Tech",
+    "type": "Application platform · Product beta",
+    "image": "/assets/archive-recovered/profile-25.webp",
+    "evidence": "Product preview",
+    "links": [
+      {
+        "label": "Open beta",
+        "href": "https://app-tech-six.vercel.app/login"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/identity/profile-25.webp",
+    "width": 900,
+    "height": 506,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "672b93fe9cec976a2700a2f5be2cf57c4e984f214e1c8fc2b6fcd6427b397d4d"
+  },
+  {
+    "title": "Lahore Culture",
+    "type": "Culture · Brand identity",
+    "image": "/assets/archive-recovered/lahore-culture.webp",
+    "evidence": "Published case",
+    "links": [
+      {
+        "label": "Behance case",
+        "href": "https://www.behance.net/gallery/198652045/Lahore-Culture-Branding"
+      }
+    ],
+    "category": "identity",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/portfolio-assets/lahore-culture.webp",
+    "width": 1400,
+    "height": 998,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "ee2a0e735d20508cea48ac835e215504e1a18268caab79b590dfe62caa1fcf26"
+  },
+  {
+    "title": "Kruzz",
+    "type": "Identity · Brand system",
+    "image": "/assets/archive-recovered/profile-27.webp",
+    "evidence": "Published case",
+    "links": [
+      {
+        "label": "Behance case",
+        "href": "https://www.behance.net/gallery/198561017/Kruzz-Branding"
+      }
+    ],
+    "category": "identity",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/identity/profile-27.webp",
+    "width": 900,
+    "height": 506,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "4a75046c76951efa18fac3010e671a5fed101179eca63081f631dac1312757f3"
+  },
+  {
+    "title": "Food Delivery Platform",
+    "type": "Logo · Product identity",
+    "image": "/assets/archive-recovered/profile-32.webp",
+    "evidence": "Published case",
+    "links": [
+      {
+        "label": "Behance case",
+        "href": "https://www.behance.net/gallery/157703383/Logo-Design-For-A-Food-Delivery-Platform"
+      }
+    ],
+    "category": "identity",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/identity/profile-32.webp",
+    "width": 900,
+    "height": 506,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "8eeb5905ccba3f00388dd3786ef769dde9ccef53c9f3221fa0257da7513fc480"
+  },
+  {
+    "title": "Predestination",
+    "type": "Identity exploration",
+    "image": "/assets/archive-recovered/predestination-sketch.webp",
+    "evidence": "Supplied profile",
+    "links": [],
+    "category": "identity",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/portfolio-assets/predestination-sketch.webp",
+    "width": 1400,
+    "height": 934,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "ddc77e85704a0ecfb2b6b135ff08dc264493d3811e21e4daa7a8dfe9ec059161"
+  },
+  {
+    "title": "Salezpeak",
+    "type": "Business website",
+    "image": "/assets/archive-recovered/salezpeak.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://www.salezpeak.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/salezpeak.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "582f6c02932224b4efd1d7814bf5951db654a5cfcfbea739b650e3380bf14db2"
+  },
+  {
+    "title": "The Creative OAK",
+    "type": "Creative studio website",
+    "image": "/assets/archive-recovered/creative-oak.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://thecreativeoak.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/creative-oak.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "a7a46f01c7a824f5f6501e51b9797cba955ed5b8c7f183a30e4a59f31c301aeb"
+  },
+  {
+    "title": "Zainjee",
+    "type": "Fashion · E-commerce",
+    "image": "/assets/archive-recovered/zainjee.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://zainjee.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/zainjee.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "bc482e602b0676e7e54cb57cd7cc3a396276ffcab8936dccb4708d9cc2976ba3"
+  },
+  {
+    "title": "Jawa Fragrance",
+    "type": "Fragrance · Commerce",
+    "image": "/assets/archive-recovered/jawa-fragrance.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://jawafragrance.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/jawa-fragrance.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "bf8939996969418ac14a2f85b56d78a47922761f348a8b01759863eff5b6dbc8"
+  },
+  {
+    "title": "Sukena",
+    "type": "Retail · E-commerce",
+    "image": "/assets/archive-recovered/sukena.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://sukena.pk"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/sukena.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "166cfe244efdfa7417326c75e01f45afcd5f202cffe9291d56b5b25a40921af4"
+  },
+  {
+    "title": "S. Printing Solutions",
+    "type": "Printing · Business website",
+    "image": "/assets/archive-recovered/s-printing.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://sdotprintingsolutions.net"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/s-printing.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "f0b46c5d49c1381a18e33b6f64f1b7bc1ba910c97f9908b2a99287420ffeef37"
+  },
+  {
+    "title": "Liberty Land",
+    "type": "Property · Business website",
+    "image": "/assets/archive-recovered/liberty-land.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://libertyland.pk"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/liberty-land.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "1007eeb14824176c7578aa26d7ba6a15aff150b24dd8edd4e89091a1fb37eb11"
+  },
+  {
+    "title": "Glacier Engineer",
+    "type": "Engineering · Business website",
+    "image": "/assets/archive-recovered/glacier-engineer.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://glacierengenier.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/glacier-engineer.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "346d27665be4321eeb857ce70a327d8b46e923e59f019581250a062a09d87a89"
+  },
+  {
+    "title": "OmniHTS",
+    "type": "Technology · Corporate website",
+    "image": "/assets/archive-recovered/omnihts.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://omnihts.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/omnihts.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "bb05678d473755ea952a829a41ae0d67bde1d0e51482221d4e716c95887cb954"
+  },
+  {
+    "title": "AgilityBO",
+    "type": "Business operations · Website",
+    "image": "/assets/archive-recovered/agilitybo.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://agilitybo.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/agilitybo.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "6a879977c0499d232050d3d25337b39296a9c8e49c2aed987d39f0070bc60cc2"
+  },
+  {
+    "title": "Tecnomics",
+    "type": "Enterprise technology · Website",
+    "image": "/assets/archive-recovered/tecnomics.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://tecnomics.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/tecnomics.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "85109b3b39f5ed45df94732ae78fab0b627b9d2b9fe7df7ba6bcae628e6d7a41"
+  },
+  {
+    "title": "SureTouch Global",
+    "type": "Technology · Corporate website",
+    "image": "/assets/archive-recovered/suretouch.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://suretouchglobal.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/suretouch.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "d4a678c670082cb497b65c39e04cb02ca116555fcf50dc1938f850fc2e25ceef"
+  },
+  {
+    "title": "SportsPlus",
+    "type": "Sports · Commerce",
+    "image": "/assets/archive-recovered/sportsplus.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://www.sportsplus.pk"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/sportsplus.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "908fccf9c2ceeef3f942f57609dab0ef4306cfd519b07ba8f618cb4ec428227e"
+  },
+  {
+    "title": "Spyda Footwear",
+    "type": "Footwear · E-commerce",
+    "image": "/assets/archive-recovered/spyda.webp",
+    "evidence": "Website reference",
+    "links": [
+      {
+        "label": "Visit website",
+        "href": "https://spydafootwear.com"
+      }
+    ],
+    "category": "digital",
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "sourceImage": "public/images/projects/catalog/websites/spyda.webp",
+    "width": 900,
+    "height": 195,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "294e2e2ae22302e770bee3ae9e4d654ec9f84e67833905df20f31bea0d6143c1"
+  },
+  {
+    "title": "OmniHelp",
+    "type": "Complex Care · Digital Experience",
+    "image": "/assets/archive-recovered/01-portfolio-reference-hq.webp",
+    "evidence": "Supplied profile",
+    "category": "digital",
+    "links": [
+      {
+        "label": "Project website",
+        "href": "https://omnihelp.com/"
+      }
+    ],
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "note": "This page describes the version Hadi contributed to. The current public OmniHelp service may differ from this case-study state.",
+    "sourceImage": "public/images/projects/omnihelp/01-portfolio-reference-hq.webp",
+    "width": 1813,
+    "height": 1215,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "2637cc26341e800450967367213a8124afcdec7de0395244ce6f66bb7cd8c313"
+  },
+  {
+    "title": "Consumer Connect",
+    "type": "Research · Narrative · Digital Experience",
+    "image": "/assets/archive-recovered/01-story-world.webp",
+    "evidence": "Published case",
+    "category": "digital",
+    "links": [
+      {
+        "label": "Published case",
+        "href": "https://www.behance.net/gallery/201414847/The-Consumer-Connect-Journey"
+      }
+    ],
+    "sourceBranch": "review/navigation-resume-archive-20261102",
+    "note": "The website contribution is documented in Hadi’s supplied 2025 portfolio. The motion and storyboard case was published on Behance on June 20, 2024. Exact collaboration boundaries and performance outcomes still require confirmation.",
+    "sourceImage": "public/images/projects/consumer-connect/01-story-world.webp",
+    "width": 1400,
+    "height": 1050,
+    "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+    "sha256": "83925d4b3d0704fe15aee6411b82e56c4b3f316ffbc41ba6a1e0343315d482e6"
+  }
+]

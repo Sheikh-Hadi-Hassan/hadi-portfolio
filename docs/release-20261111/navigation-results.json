@@ -1,0 +1,54 @@
+[
+  {
+    "width": 320,
+    "height": 568,
+    "status": "PASS",
+    "menuGeometry": {
+      "height": 568,
+      "scroll": 568,
+      "reflow": false
+    },
+    "axeViolations": 0,
+    "sera": "deterministic consent flow",
+    "booking": "interface opened; network blocked, no submission"
+  },
+  {
+    "width": 390,
+    "height": 667,
+    "status": "PASS",
+    "menuGeometry": {
+      "height": 667,
+      "scroll": 667,
+      "reflow": false
+    },
+    "axeViolations": 0,
+    "sera": "deterministic consent flow",
+    "booking": "interface opened; network blocked, no submission"
+  },
+  {
+    "width": 768,
+    "height": 900,
+    "status": "PASS",
+    "menuGeometry": {
+      "height": 900,
+      "scroll": 900,
+      "reflow": false
+    },
+    "axeViolations": 0,
+    "sera": "deterministic consent flow",
+    "booking": "interface opened; network blocked, no submission"
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "status": "PASS",
+    "menuGeometry": {
+      "height": 900,
+      "scroll": 900,
+      "reflow": false
+    },
+    "axeViolations": 0,
+    "sera": "deterministic consent flow",
+    "booking": "interface opened; network blocked, no submission"
+  }
+]

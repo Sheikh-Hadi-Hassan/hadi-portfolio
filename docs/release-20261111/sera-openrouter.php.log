@@ -1,0 +1,2 @@
+PASS: OpenRouter fixed endpoint, explicit :free only, request price caps0, no provider/paid fallback/tools, privacy flags, zero-cost acknowledgement, three-provider bounded failover and state preservation. No live calls.
+PASS: PHP public-runtime schema accepts three eligible provider names, rejects unknown routing names, and grants no activation or billing permission.

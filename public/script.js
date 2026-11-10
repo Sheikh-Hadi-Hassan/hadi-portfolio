@@ -46,14 +46,6 @@ if(dialog){document.querySelectorAll('[data-full]').forEach(btn=>btn.addEventLis
  media.addEventListener('change',()=>{if(!media.matches){cancelAnimationFrame(frame);frame=0;layers.forEach(l=>l.removeAttribute('style'));current=[0,0,0,0,0,0]}else schedule()});
  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule();else{cancelAnimationFrame(frame);frame=0}}).observe(scene);schedule();
 })();
-(() => {
- const menu=document.querySelector('#site-menu'),toggle=document.querySelector('.menu-toggle');if(!menu||!toggle)return;
- toggle.addEventListener('click',()=>{menu.showModal();toggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'});
- menu.querySelector('.menu-close').addEventListener('click',()=>menu.close());
- menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.close()));
- menu.addEventListener('close',()=>{toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';toggle.focus()});
-})();
-
 // Project previews stay separate from navigation: each has an explicit case-study link.
 (()=>{const root=document.querySelector('[data-project-explorer]');if(!root)return;
  const scenes=[...root.querySelectorAll('[data-project-scene]')],thumbs=[...root.querySelectorAll('[data-project-select]')],dock=root.querySelector('[data-project-dock]'),handle=root.querySelector('[data-project-drag]');let current=0,request=0;
@@ -68,4 +60,32 @@ if(dialog){document.querySelectorAll('[data-full]').forEach(btn=>btn.addEventLis
  handle.addEventListener('pointermove',e=>{if(!drag)return;const r=root.getBoundingClientRect();position(e.clientX-r.left-drag.x,e.clientY-r.top-drag.y)});handle.addEventListener('pointerup',()=>drag=null);handle.addEventListener('pointercancel',()=>drag=null);
  handle.addEventListener('keydown',e=>{const delta={ArrowLeft:[-20,0],ArrowRight:[20,0],ArrowUp:[0,-20],ArrowDown:[0,20]}[e.key];if(!delta)return;e.preventDefault();const d=dock.getBoundingClientRect(),r=root.getBoundingClientRect();position(d.left-r.left+delta[0],d.top-r.top+delta[1])});
  addEventListener('resize',()=>{dock.style.left='';dock.style.top='';dock.style.transform=''});
+})();
+
+// Single-frame editorial menu: native dialog, direct links, hover previews.
+(()=>{const menu=document.querySelector('#site-menu'),toggle=document.querySelector('.menu-toggle');if(!menu||!toggle)return;
+let returnTo=null,priorOverflow='',previewRequest=0;const close=()=>menu.close();
+let fitFrame=0;function fitMenu(){menu.classList.remove('is-reflow');const content=menu.querySelector('.command-content'),hero=menu.querySelector('.menu-editorial-hero');if(content&&hero&&(content.scrollHeight>content.clientHeight+2||hero.scrollHeight>hero.clientHeight+2))menu.classList.add('is-reflow');}function scheduleFit(){cancelAnimationFrame(fitFrame);fitFrame=requestAnimationFrame(fitMenu);}window.addEventListener('resize',()=>{if(menu.open)scheduleFit()});document.fonts?.ready?.then(()=>{if(menu.open)scheduleFit()});
+function openMenu(){if(menu.open)return;returnTo=document.activeElement;priorOverflow=document.body.style.overflow;menu.showModal();toggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';menu.querySelector('.menu-major')?.focus({preventScroll:true});scheduleFit();}
+toggle.addEventListener('click',openMenu);menu.querySelector('.menu-close').addEventListener('click',close);
+menu.addEventListener('close',()=>{toggle.setAttribute('aria-expanded','false');document.body.style.overflow=priorOverflow;returnTo?.focus({preventScroll:true})});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));menu.querySelectorAll('[data-consultation-entry]').forEach(b=>b.addEventListener('click',()=>{close();window.dispatchEvent(new CustomEvent('intellignce:open-consultation',{detail:{booking:b.dataset.consultationEntry==='meeting'}}))}));
+document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'&&!document.querySelector('#intellignce-support')?.shadowRoot?.querySelector('.panel:not([hidden])')){e.preventDefault();openMenu()}});
+const preview=menu.querySelector('.menu-preview'),image=menu.querySelector('[data-menu-preview-image]');
+function update(item){if(!image||!item.dataset.menuPreview)return;const id=++previewRequest,img=new Image();preview.classList.add('is-changing');img.onload=()=>{if(id!==previewRequest)return;image.removeAttribute('srcset');image.removeAttribute('sizes');image.src=img.src;menu.querySelector('[data-menu-preview-title]').textContent=item.dataset.menuTitle;menu.querySelector('[data-menu-preview-category]').textContent=item.dataset.menuCategory;preview.classList.remove('is-changing')};img.onerror=()=>{if(id===previewRequest)preview.classList.remove('is-changing')};img.src=item.dataset.menuPreview;}
+menu.querySelectorAll('[data-menu-preview]').forEach(a=>{a.addEventListener('pointerenter',()=>update(a));a.addEventListener('focus',()=>update(a))});
+})();
+// Preserve a native pointer fallback; the supporting ring never intercepts a click.
+(()=>{const media=matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');let cursor=null,frame=0,lastX=0,lastY=0;
+ function move(e){if(!media.matches||e.pointerType==='touch')return;if(!cursor){cursor=document.createElement('div');cursor.className='hadi-cursor';cursor.setAttribute('aria-hidden','true');cursor.append(document.createElement('span'));document.body.append(cursor)}lastX=e.clientX;lastY=e.clientY;cursor.classList.add('is-visible');const target=e.target.closest?.('a,button,[data-full]');cursor.classList.toggle('is-active',!!target);cursor.querySelector('span').textContent=target?.hasAttribute('data-full')?'View':'';cursor.classList.toggle('has-label',!!target?.hasAttribute('data-full'));if(!frame)frame=requestAnimationFrame(()=>{cursor.style.transform=`translate3d(${lastX}px,${lastY}px,0)`;frame=0})}
+ document.addEventListener('pointermove',move,{passive:true});document.documentElement.addEventListener('pointerleave',()=>cursor?.classList.remove('is-visible'));addEventListener('blur',()=>cursor?.classList.remove('is-visible'));media.addEventListener('change',()=>{cursor?.classList.remove('is-visible');cancelAnimationFrame(frame);frame=0});
+})();
+
+// Shared dock adapts to the current lazy-loaded assistant without changing its booking contracts.
+(()=>{const launch=document.querySelector('[data-sera-launch]');if(!launch)return;let queued=null,fallback=null,ready=false;
+function request(detail={}){window.dispatchEvent(new CustomEvent('intellignce:open-consultation',{detail}))}
+launch.setAttribute('aria-expanded','false');launch.addEventListener('click',()=>request());
+window.addEventListener('intellignce:open-consultation',event=>{if(ready)return;queued=event.detail||{};if(!fallback){fallback=document.createElement('dialog');fallback.className='consultation-start';fallback.setAttribute('aria-labelledby','consultation-loading-title');fallback.innerHTML='<button type="button" aria-label="Close">×</button><h2 id="consultation-loading-title">Opening Sera…</h2><p>You can also continue directly with Hadi.</p><a href="mailto:hadi@intellignce.net">Email Hadi</a><a href="https://wa.me/923084542868" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>';document.body.append(fallback);fallback.querySelector('button').onclick=()=>fallback.close();fallback.addEventListener('close',()=>{if(!ready)queued=null})}if(!fallback.open)fallback.showModal()});
+function connect(){const host=document.querySelector('#intellignce-support'),panel=host?.shadowRoot?.querySelector('.panel'),bubble=host?.shadowRoot?.querySelector('.launcher');if(!panel||!bubble)return false;ready=true;bubble.style.display='none';const sync=()=>launch.setAttribute('aria-expanded',String(!panel.hidden));new MutationObserver(sync).observe(panel,{attributes:true,attributeFilter:['hidden']});sync();if(queued){const detail=queued;queued=null;fallback?.close();launch.focus({preventScroll:true});request(detail)}return true}
+const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});observer.observe(document.body,{childList:true,subtree:true});connect();
 })();

@@ -1,0 +1,22 @@
+
+> hadi-portfolio@1.0.0 dev
+> python3 scripts/verify-hero-lock.py && python3 scripts/build.py && python3 scripts/optimize-images.py && python3 scripts/prepare-next.py && next dev --hostname 127.0.0.1 --webpack --port 3001
+
+Approved hero HTML and CSS are unchanged.
+Built 22 pages with shared templates and Pixelarticons.
+Responsive images: 396 originals; 52.6 MB saved at the largest generated display size. Image metadata and sitemap added. Originals preserved.
+Prepared 22 Next.js routes.
+▲ Next.js 16.4.4 (webpack)
+- Local:         http://127.0.0.1:3001
+- Network:       http://127.0.0.1:3001
+✓ Ready in 348ms
+✓ Running next.config.mjs took 15ms
+- Experiments (use with caution):
+  · cpus: 1
+
+ GET /archive/ 200 in 781ms (next.js: 183ms, generate-params: 477ms, application-code: 121ms)
+ GET /intellignce-support/runtime-config.json 404 in 528ms (next.js: 415ms, application-code: 112ms)
+ GET /intellignce-support/runtime-config.previous.json 404 in 29ms (next.js: 3ms, application-code: 26ms)
+ GET /archive/ 200 in 75ms (next.js: 12ms, generate-params: 3ms, application-code: 60ms)
+ GET /archive/ 200 in 62ms (next.js: 5ms, generate-params: 1.9ms, application-code: 55ms)
+[?25h

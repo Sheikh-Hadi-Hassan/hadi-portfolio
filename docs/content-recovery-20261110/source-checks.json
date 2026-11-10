@@ -1,0 +1,15 @@
+[
+  {
+    "test": "source-assets.py",
+    "status": "PASS"
+  },
+  {
+    "test": "source-seo.py",
+    "status": "PASS"
+  },
+  {
+    "test": "utility-routes.py",
+    "status": "PASS",
+    "note": "Link checker now parses and validates fragment targets; original parser treated the new valid deep link as a directory."
+  }
+]

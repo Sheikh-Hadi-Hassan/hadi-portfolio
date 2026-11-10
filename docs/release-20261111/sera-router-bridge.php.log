@@ -1,0 +1,1 @@
+PASS: trusted private runtime -> public response bridge, consent/default activation, encrypted mock key, free OpenRouter transport, privacy redaction and allowed fact filtering. Curl readiness overridden only in pure schema test; no web-handler/live test claimed.

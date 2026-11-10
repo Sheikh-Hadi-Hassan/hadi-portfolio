@@ -1,0 +1,1 @@
+PASS: narrowly classified, explicitly expected optional absence; other assets, HTTP failures, invalid config and unknown console sources still fail.

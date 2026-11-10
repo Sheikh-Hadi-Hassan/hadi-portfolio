@@ -1,0 +1,3 @@
+PASS: backend-created tenant scope, missing/foreign membership denial, viewer isolation, default-disabled storage/writes, tenant-keyed config, wrong-partition rejection, schema/credential/tool rejection, revision/idempotency and failed/lost-ack recovery. Mock authentication/atomic repository only; no production isolation claim.
+PASS: save success requires tenant-matched repository readback; an uncommitted acknowledgement is never success.
+PASS: failed readback preserves committed operation for reconciliation; duplicate membership, privilege injection and invalid UTF-8 fail closed.

@@ -1,0 +1,86 @@
+[
+  {
+    "test": "tests/hero-responsive.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 106.6
+  },
+  {
+    "test": "tests/sera-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 6.07
+  },
+  {
+    "test": "tests/sera-guided-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 65.53
+  },
+  {
+    "test": "tests/admin-control-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 1.97
+  },
+  {
+    "test": "tests/sera-config-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 6.43
+  },
+  {
+    "test": "tests/admin-cms-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 3.77
+  },
+  {
+    "test": "tests/admin-workflows-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 6.45
+  },
+  {
+    "test": "tests/sera-runtime-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 5.25
+  },
+  {
+    "test": "tests/sera-config-failures.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 21.67
+  },
+  {
+    "test": "tests/crm-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 2.72
+  },
+  {
+    "test": "tests/booking-lifecycle-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 2.16
+  },
+  {
+    "test": "tests/home-sections-browser.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 16.69
+  },
+  {
+    "test": "tests/rebuilt-app-smoke.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 26.1
+  },
+  {
+    "test": "docs/content-recovery-20261110/check-archive.cjs",
+    "exit": 0,
+    "status": "PASS",
+    "seconds": 9.11
+  }
+]

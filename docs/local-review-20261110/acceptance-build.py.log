@@ -1,0 +1,1 @@
+PASS: missing receipt, stale source, modified export and newly added source rejected. Synthetic provenance tests only; no build or hero activation.

@@ -1,0 +1,207 @@
+{
+  "scope": "isolated_widget_mock_configuration_fault_injection",
+  "cases": [
+    {
+      "mode": "absent",
+      "status": "PASS",
+      "diagnostic": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "consoleErrors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:54278/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:54278/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "warnings": [],
+      "pageErrors": [],
+      "questionnaireStillInteractive": true
+    },
+    {
+      "mode": "approved",
+      "status": "PASS",
+      "diagnostic": {
+        "ok": true,
+        "status": "approved",
+        "releaseId": "f45685e4-5636-40a0-bb9e-42739cea917e",
+        "attempts": []
+      },
+      "consoleErrors": [],
+      "warnings": [],
+      "pageErrors": [],
+      "questionnaireStillInteractive": true
+    },
+    {
+      "mode": "fallback",
+      "status": "PASS",
+      "diagnostic": {
+        "ok": true,
+        "status": "fallback",
+        "releaseId": "f45685e4-5636-40a0-bb9e-42739cea917e",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_INVALID"
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "warnings": [
+        "SERA_PUBLIC_CONFIG PUBLIC_CONFIG_INVALID"
+      ],
+      "pageErrors": [],
+      "questionnaireStillInteractive": true
+    },
+    {
+      "mode": "invalid",
+      "status": "PASS",
+      "diagnostic": {
+        "ok": false,
+        "status": "error",
+        "code": "PUBLIC_CONFIG_UNAVAILABLE",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_INVALID"
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_INVALID"
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "warnings": [
+        "SERA_PUBLIC_CONFIG PUBLIC_CONFIG_INVALID,PUBLIC_CONFIG_INVALID"
+      ],
+      "pageErrors": [],
+      "questionnaireStillInteractive": true
+    },
+    {
+      "mode": "http",
+      "status": "PASS",
+      "diagnostic": {
+        "ok": false,
+        "status": "error",
+        "code": "PUBLIC_CONFIG_UNAVAILABLE",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_HTTP_FAILED",
+            "httpStatus": 500
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_HTTP_FAILED",
+            "httpStatus": 500
+          }
+        ]
+      },
+      "consoleErrors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+          "source": "http://127.0.0.1:54278/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+          "source": "http://127.0.0.1:54278/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "warnings": [
+        "SERA_PUBLIC_CONFIG PUBLIC_CONFIG_HTTP_FAILED,PUBLIC_CONFIG_HTTP_FAILED"
+      ],
+      "pageErrors": [],
+      "questionnaireStillInteractive": true
+    },
+    {
+      "mode": "network",
+      "status": "PASS",
+      "diagnostic": {
+        "ok": false,
+        "status": "error",
+        "code": "PUBLIC_CONFIG_UNAVAILABLE",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NETWORK_FAILED"
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NETWORK_FAILED"
+          }
+        ]
+      },
+      "consoleErrors": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: net::ERR_FAILED",
+          "source": "http://127.0.0.1:54278/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: net::ERR_FAILED",
+          "source": "http://127.0.0.1:54278/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "warnings": [
+        "SERA_PUBLIC_CONFIG PUBLIC_CONFIG_NETWORK_FAILED,PUBLIC_CONFIG_NETWORK_FAILED"
+      ],
+      "pageErrors": [],
+      "questionnaireStillInteractive": true
+    },
+    {
+      "mode": "timeout",
+      "status": "PASS",
+      "diagnostic": {
+        "ok": false,
+        "status": "error",
+        "code": "PUBLIC_CONFIG_UNAVAILABLE",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_TIMEOUT"
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_TIMEOUT"
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "warnings": [
+        "SERA_PUBLIC_CONFIG PUBLIC_CONFIG_TIMEOUT,PUBLIC_CONFIG_TIMEOUT"
+      ],
+      "pageErrors": [],
+      "questionnaireStillInteractive": true
+    }
+  ],
+  "posts": 0,
+  "productionAcceptanceCases": 0
+}

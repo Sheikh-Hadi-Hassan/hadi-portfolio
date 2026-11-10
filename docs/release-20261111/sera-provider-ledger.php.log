@@ -1,0 +1,1 @@
+PASS: storage activation gate, durable pre-call debit, uncertain-call no-refund, circuit, explicit period reset and corrupt-ledger fail-closed. Local fixtures only.

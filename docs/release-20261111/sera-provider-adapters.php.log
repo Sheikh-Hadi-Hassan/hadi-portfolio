@@ -1,0 +1,3 @@
+PASS: two protocol adapters, mock 429 failover, context continuity, consent/no-paid/privacy gates, key-custody activation block, bounded requests and redacted errors. Zero network calls.
+PASS: reflected provider credentials are rejected before a response can leave the backend.
+PASS: Groq namespaced model body IDs, rejected traversal/URL IDs, invalid UTF-8 and stable rate-limit diagnostics. No network.

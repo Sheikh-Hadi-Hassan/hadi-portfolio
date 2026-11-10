@@ -1,0 +1,1 @@
+PASS: deterministic fixed-scope candidate, exact source/mirror hashes, no overwrite, permission0600, no activation/config writes, extra/traversal/tampered ZIP rejection. No deployment.

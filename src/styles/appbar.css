@@ -1,0 +1,25 @@
+/* Shared portfolio navigation: spacious desktop, labelled touch tabs on phones. */
+body .app-dock{box-sizing:border-box;gap:5px;padding:7px;border:1px solid #c4a5d126;border-radius:21px;background:#211a2df5;box-shadow:0 8px 32px #0005;bottom:calc(14px + env(safe-area-inset-bottom,0px));max-width:calc(100% - 24px)}
+body .app-dock .dock-contact-enquiry{display:none!important}
+body .app-dock a,body .app-dock button{touch-action:manipulation;min-height:48px;flex-shrink:0}
+body .app-dock .dock-home-label{display:none}
+body .app-dock :focus-visible{outline:2px solid #eed9fa;outline-offset:2px}
+@media(max-width:1024px){body .app-dock .dock-contact-email,body .app-dock .dock-contact-whatsapp{display:none!important}body .app-dock .dock-shortcut{padding-inline:15px;font-size:13px}body .app-dock .dock-sera{padding-inline:10px}}
+@media(max-width:600px){
+ body .app-dock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:calc(100% - 24px);max-width:420px;height:auto;min-height:72px;padding:5px;gap:4px;border-radius:22px}
+ body .app-dock .dock-divider,body .app-dock .dock-shortcut[href="/#services"]{display:none!important}
+ body .app-dock .dock-home,body .app-dock .dock-shortcut[href="/#work"],body .app-dock .dock-sera,body .app-dock .dock-command{display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:100%;min-width:0;min-height:60px;height:auto;padding:7px 3px;border:0;border-radius:16px;font-family:inherit;font-size:11px;font-weight:500;line-height:1.2;white-space:nowrap;transform:none!important}
+ body .app-dock .dock-shortcut[href="/#work"]{font-family:inherit;font-size:11px;font-weight:500;line-height:1.2}
+ body .app-dock .dock-home-label,body .app-dock .dock-sera-label{display:block!important;font-family:inherit;font-size:11px;line-height:1.2}
+ body .app-dock .dock-home img{width:26px;height:26px;object-fit:contain}
+ body .app-dock .dock-sera-face{width:36px!important;height:26px!important;background:transparent!important}
+ body .app-dock .dock-sera-face svg{width:40px;height:25px}
+ body .app-dock .dock-command{background:#e6d3ef;color:#211729;box-shadow:none}
+ body .app-dock .dock-menu-icon{order:-1;width:24px;height:24px;flex:0 0 24px}
+ body .app-dock .dock-shortcut[href="/#work"]::before{content:"";display:block;width:24px;height:24px;background:linear-gradient(currentColor,currentColor) 2px 2px/8px 8px no-repeat,linear-gradient(currentColor,currentColor) 14px 2px/8px 8px no-repeat,linear-gradient(currentColor,currentColor) 2px 14px/8px 8px no-repeat,linear-gradient(currentColor,currentColor) 14px 14px/8px 8px no-repeat;opacity:.9}
+ body .editorial-menu .command-contact a{display:flex!important;min-height:48px}
+ body .editorial-menu .command-contact{grid-template-columns:1fr 1fr}
+ body{padding-bottom:calc(106px + env(safe-area-inset-bottom,0px))}
+}
+@media(max-height:540px){body .app-dock{bottom:calc(7px + env(safe-area-inset-bottom,0px))}}
+@media(prefers-reduced-motion:reduce){body .app-dock *,body .app-dock *::before{animation:none!important;transition:none!important}}

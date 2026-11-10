@@ -1,0 +1,1 @@
+PASS: backend source-referenced retrieval selects relevant facts, caps three results/context size and abstains on unknown query.

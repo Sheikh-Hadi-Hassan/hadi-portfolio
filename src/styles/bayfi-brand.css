@@ -149,6 +149,12 @@
 .archive-number{font-size:12px;color:#77737f;padding-top:5px;font-variant-numeric:tabular-nums}
 .archive-tile:hover .archive-open,.archive-tile:focus-visible .archive-open{background:#c3b8ff;transform:translate(2px,-2px)}
 .archive-tile:focus-visible{outline:2px solid #c3b8ff;outline-offset:7px;border-radius:16px}
+.archive-reference{scroll-margin-top:28px}
+.archive-reference .archive-reference-label{color:#c3b8ff;font-size:12px}
+.archive-reference-note{color:#aaa9b0;font-size:14px;line-height:1.65;margin-top:12px}
+.archive-reference-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:12px}
+.archive-reference-links a{display:inline-flex;align-items:center;min-height:44px;color:#ded2f4;font-size:14px;text-underline-offset:5px}
+.archive-reference-links a:focus-visible{outline:2px solid #c3b8ff;outline-offset:4px}
 @media(max-width:900px){.archive-heading{grid-template-columns:1fr;gap:24px}.archive-heading>p{justify-self:start;max-width:48ch}.archive-toolbar{align-items:start;flex-direction:column;gap:16px}.archive-grid{gap:32px 18px}}
 @media(max-width:600px){.archive-heading{margin-top:40px;margin-bottom:32px}.archive-heading h1{font-size:clamp(50px,13vw,76px)}.archive-grid{grid-template-columns:minmax(0,1fr);gap:32px}.archive .filters{gap:7px}.archive .filters button{font-size:12px;padding:10px 13px}.archive-toolbar{margin-bottom:24px}.archive-caption h2{font-size:25px}.archive-media{border-radius:12px}}
 
@@ -283,3 +289,6 @@ body{background:var(--theme-bg);color:var(--theme-text)}
 .bf-reel .bf-reel-cursor{background:#593bbd}
 .bf-work .bf-project-count,.archive .archive-caption .archive-number{color:#bcb5c6}
 .utility-page .button:not(.secondary){background:#593bbd;color:#fff}
+
+/* Owner supplied UI project showcases. */
+.product-card .product-showcase{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;border-radius:14px;margin-bottom:24px}.product-card{overflow:hidden}

@@ -1,0 +1,1 @@
+PASS: CRM edit/retry, preserved entries/idempotency key, search/filter/export, keyboard focus, 320/768/1440 overflow and zero axe violations. Isolated component only.

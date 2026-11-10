@@ -1,0 +1,115 @@
+{
+  "repository": "Sheikh-Hadi-Hassan/hadi-portfolio",
+  "head": "79ec06a872e061be4d32278a67f729600118cb95",
+  "branches": [
+    {
+      "branch": "origin/audit/gate6-production-20261021",
+      "sha": "016196b3289b621759848a19f6d32c672eba2e69",
+      "date": "2026-10-21 20:45:15 +0500",
+      "aheadBehind": "120\t2"
+    },
+    {
+      "branch": "origin/docs/v00-blocker-resolution-20261021",
+      "sha": "a9d9e370553daa1db1700a3950dd683cf0e31a2a",
+      "date": "2026-10-21 21:46:03 +0500",
+      "aheadBehind": "120\t5"
+    },
+    {
+      "branch": "origin/docs/v00-source-parity-evidence-20261021",
+      "sha": "a7bae09798fec0c06c9bbdefc0a828fe1d3b3c62",
+      "date": "2026-10-21 21:21:18 +0500",
+      "aheadBehind": "120\t4"
+    },
+    {
+      "branch": "origin/feat/social-preview-image-20261021",
+      "sha": "e87540a329a2218404994a6d2fc53174d2f7ff78",
+      "date": "2026-10-21 17:30:54 +0500",
+      "aheadBehind": "120\t4"
+    },
+    {
+      "branch": "origin/fix/seo-canonical-domain-2026-10-26",
+      "sha": "0e008f71def8bfe837fb84fc0a442fcdda0ea46d",
+      "date": "2026-10-26 20:29:17 +0500",
+      "aheadBehind": "120\t7"
+    },
+    {
+      "branch": "origin/handoff/captured-production-adoption-20261021",
+      "sha": "8f1573697861a9e1696f04db6881160fcab403d0",
+      "date": "2026-10-21 21:58:08 +0500",
+      "aheadBehind": "120\t6"
+    },
+    {
+      "branch": "origin/integration/v00-authoritative-baseline-20261102",
+      "sha": "d5df14bda1ffa8c21ecad0bfda989bbc8fcd9977",
+      "date": "2026-11-02 10:03:51 +0500",
+      "aheadBehind": "48\t0"
+    },
+    {
+      "branch": "origin/main",
+      "sha": "84f80d83dcd05c742f2697782e2b22d2c08711f3",
+      "date": "2026-09-24 20:22:30 +0500",
+      "aheadBehind": "120\t0"
+    },
+    {
+      "branch": "origin/recovery/portfolio-v81-sera-v9",
+      "sha": "7043d2842e3f8a8e53fb46501cddf6bef1f09704",
+      "date": "2026-10-18 18:08:59 +0500",
+      "aheadBehind": "118\t0"
+    },
+    {
+      "branch": "origin/recovery/verified-production-20261021",
+      "sha": "c4097990bccabea53af798eaf80012c239d6a418",
+      "date": "2026-10-21 16:45:08 +0500",
+      "aheadBehind": "120\t1"
+    },
+    {
+      "branch": "origin/release/next",
+      "sha": "79ec06a872e061be4d32278a67f729600118cb95",
+      "date": "2026-11-10 03:03:42 +0500",
+      "aheadBehind": "0\t0"
+    },
+    {
+      "branch": "origin/remediation/gate6-source-booking-20261021",
+      "sha": "9168c0b656b57fb5af448a16d4e943dae36bd12d",
+      "date": "2026-10-21 20:59:19 +0500",
+      "aheadBehind": "120\t3"
+    },
+    {
+      "branch": "origin/review/navigation-resume-archive-20261102",
+      "sha": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
+      "date": "2026-11-02 11:04:43 +0500",
+      "aheadBehind": "120\t9"
+    },
+    {
+      "branch": "origin/seo-aeo-canonical-audit-2026-10-20",
+      "sha": "c84d9584bfabe12fbcba114c359f0ebe8ea0b731",
+      "date": "2026-10-20 22:24:24 +0500",
+      "aheadBehind": "120\t3"
+    },
+    {
+      "branch": "origin/work/portfolio-v01-requirements-20261103",
+      "sha": "22c9579dfc6ddea2aec37b652c01710fc0aa0c62",
+      "date": "2026-11-03 08:11:42 +0500",
+      "aheadBehind": "43\t0"
+    },
+    {
+      "branch": "origin/work/v01-booking-contract-20261103",
+      "sha": "79ec06a872e061be4d32278a67f729600118cb95",
+      "date": "2026-11-10 03:03:42 +0500",
+      "aheadBehind": "0\t0"
+    }
+  ],
+  "primaryCaseStudies": 15,
+  "recoveredRecords": 30,
+  "archiveTotal": 45,
+  "socialMediaSource": "https://www.behance.net/gallery/201857871/Social-Media-Portfolio",
+  "seoCommitsIncluded": {
+    "4e969b4": true,
+    "27742af": true,
+    "69443b4": true,
+    "7f34db2": true,
+    "ac172ab": true
+  },
+  "protectedSourceUnchanged": true,
+  "recoveredImagesVerifiedAgainstSource": true
+}

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/sheikhhadihassan/Documents/Hadi-ntellignce/hadi-portfolio/tests/seo.py", line 32, in <module>
+    assert 35<=len(doc.title)<=65,(slug,'title length',len(doc.title),doc.title)
+AssertionError: ('contact', 'title length', 19, 'Contact Hadi Hassan')

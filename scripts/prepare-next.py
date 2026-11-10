@@ -12,7 +12,7 @@ for p in (r/'dist').rglob('index.html'):
  t=p.read_text();h=Head();h.feed(t);name='home' if p.parent==r/'dist' else p.parent.name
  pages[name]={'body':re.search(r'<body[^>]*>(.*?)</body>',t,re.S).group(1),'title':html.unescape(re.search(r'<title>(.*?)</title>',t).group(1)),'description':h.meta['description'],'canonical':h.canonical,'image':h.meta['og:image'],'imageWidth':int(h.meta['og:image:width']),'imageHeight':int(h.meta['og:image:height']),'schema':re.search(r'<script type="application/ld\+json">(.*?)</script>',t,re.S).group(1)}
 (r/'generated').mkdir(exist_ok=True);(r/'generated/pages.json').write_text(json.dumps(pages,ensure_ascii=False))
-for f in ['style.css','hero.css','script.js','sitemap.xml','image-sitemap.xml','robots.txt']:shutil.copyfile(r/'dist'/f,r/'public'/f)
+for f in ['style.css','hero.css','script.js','sitemap.xml','image-sitemap.xml','robots.txt','llms.txt']:shutil.copyfile(r/'dist'/f,r/'public'/f)
 for f in ['bayfi-port.css','bayfi-brand.css']:shutil.copyfile(r/'src/styles'/f,r/'public'/f)
 shutil.copytree(r/'dist/assets/fonts',r/'public/assets/fonts',dirs_exist_ok=True)
 print('Prepared',len(pages),'Next.js routes.')

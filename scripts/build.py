@@ -25,7 +25,7 @@ profile_values['footer_socials']=''.join(f'<a href="{esc(item["url"])}" class="v
 head=read(Path('components/head.html'));navigation=render(read(Path('components/navigation.html')),profile_values);footer=render(read(Path('components/footer.html')),profile_values)
 BASE=os.environ.get('SITE_URL','https://hadi.intellignce.net').rstrip('/')
 urls=[]
-def page(title,description,body,body_class='',path='/',image='/assets/hadi-speaking-original.png',creative=None):
+def page(title,description,body,body_class='',path='/',image='/assets/hadi-hassan-social-preview-20261021.png',creative=None):
  url=BASE+path;urls.append(url)
  person={'@type':'Person','@id':BASE+'/#hadi','name':'Hadi Hassan','alternateName':['Sheikh Hadi Hassan','Hadi Hasssan'],'jobTitle':'Creative Director, Design Lead and Brand Identity Designer','url':BASE+'/','email':profile['email'],'telephone':profile['phone'],'address':{'@type':'PostalAddress','addressLocality':'Lahore','addressCountry':'PK'},'sameAs':[item['url'] for item in profile['socials']],'knowsAbout':['Brand identity','Logo design','Creative direction','Campaign design','Packaging','Visual storytelling','Art direction','Graphic design','Website design','Digital product design'],'image':BASE+'/assets/hadi-speaking-original.png','worksFor':{'@type':'Organization','name':'INTELLIGNCE','url':profile['company']}}
  graph=[person,{'@type':'WebSite','@id':BASE+'/#website','name':'Hadi Hassan — Creative Direction & Brand Identity','url':BASE+'/'},{'@type':'WebPage','@id':url+'#webpage','name':title,'description':description,'url':url,'isPartOf':{'@id':BASE+'/#website'},'about':{'@id':BASE+'/#hadi'}}]
@@ -47,6 +47,13 @@ def listing(items):return '<ul>'+''.join('<li>'+esc(item)+'</li>' for item in it
 selected=json.loads(read(Path('data/selected-work.json')))
 cover_map={item['slug']:item['cover'] for item in selected if item.get('slug')}
 archive_cards=[]
+archive_records=json.loads(read(Path('data/archive-records.json')))
+reference_cards=[]
+for record in archive_records:
+ links=''.join(f'<a href="{esc(link["href"])}" target="_blank" rel="noopener noreferrer">{esc(link["label"])} ↗</a>' for link in record['links'])
+ label={'Published case':'Published on Behance','Supplied profile':'From the supplied portfolio','Product preview':'Product preview','Website reference':'Project website'}.get(record['evidence'],record['evidence'])
+ record_id='social-media-portfolio' if record['title']=='Social Media Portfolio' else 'archive-record-'+re.sub(r'[^a-z0-9]+','-',record['title'].lower()).strip('-')
+ reference_cards.append(f'<article class="archive-tile archive-reference" id="{record_id}" data-category="{esc(record["category"])}"><div class="archive-media"><img src="{esc(record["image"])}" width="{record["width"]}" height="{record["height"]}" loading="lazy" decoding="async" alt="{esc(record["title"])} — portfolio reference"></div><div class="archive-caption"><div><h2>{esc(record["title"])}</h2><p>{esc(record["type"])}</p><p class="archive-reference-label">{esc(label)}</p></div></div>'+ (f'<p class="archive-reference-note">{esc(record["note"])}</p>' if record.get('note') else '')+f'<div class="archive-reference-links">{links}</div></article>')
 for position,project in enumerate(projects):
  category=project.get('archive_filter') or ('digital' if project['slug']=='uiux-web-saas' else 'photography' if project['slug']=='bw-sports' else 'film' if project['slug']=='fakhr-e-qoum' else 'campaign' if project['slug'] in ['linkedin-personal-brand','community-campaign'] else 'identity')
  cover=cover_map.get(project['slug'],project['hero'])
@@ -58,8 +65,8 @@ for j,project in enumerate(projects):
  short=project['title'].split(' — ')[0].split(' | ')[0]
  explorer_slides.append(f'<article class="project-scene{ " is-active" if active else ""}" data-project-scene="{j}" aria-hidden="{str(not active).lower()}"'+('' if active else ' inert')+f'><img class="project-scene-image" src="{esc(cover)}" width="{w}" height="{h}" alt="{esc(project["title"])} — {esc(project["category"])}" '+('fetchpriority="high" loading="eager"' if active else 'loading="lazy"')+f' decoding="async"><div class="project-scene-copy"><span>{esc(project["category"])}</span><h2>{esc(short)}</h2></div><a class="project-scene-link" href="/{esc(project["slug"])}/">Explore case study {icon("external-link")}</a></article>')
  explorer_thumbs.append(f'<button type="button" class="project-thumb{ " is-active" if active else ""}" data-project-select="{j}" aria-label="Preview {esc(project["title"])}" aria-pressed="{str(active).lower()}"><img src="{esc(cover)}" width="{w}" height="{h}" alt="" loading="lazy" decoding="async"><span>{esc(short)}</span></button>')
-explorer='<section class="project-explorer" aria-label="Interactive project preview" data-project-explorer><div class="project-explorer-top"><a class="back" href="/">← Back to home</a><a href="#project-index">All '+str(len(projects))+' projects ↓</a></div><div class="project-scenes">'+''.join(explorer_slides)+'</div><div class="project-dock" data-project-dock><button class="project-drag" type="button" aria-label="Move project selector. Use arrow keys to reposition." data-project-drag><span></span></button><div class="project-thumbs" role="group" aria-label="Choose a project">'+''.join(explorer_thumbs)+'</div></div><div class="project-explorer-bottom"><span><span data-project-position>01</span> / '+str(len(projects))+'</span><div><button type="button" data-project-step="-1" aria-label="Previous project">←</button><button type="button" data-project-step="1" aria-label="Next project">→</button></div></div><p class="sr-only" role="status" aria-live="polite" data-project-status></p></section>'
-archive_body=render(read(Path('pages/archive.html')),{'archive_count':len(projects),'archive_cards':''.join(archive_cards),'project_explorer':explorer})
+explorer='<section class="project-explorer" aria-label="Interactive project preview" data-project-explorer><div class="project-explorer-top"><a class="back" href="/">← Back to home</a><a href="#project-index">All '+str(len(projects)+len(archive_records))+' projects &amp; references ↓</a></div><div class="project-scenes">'+''.join(explorer_slides)+'</div><div class="project-dock" data-project-dock><button class="project-drag" type="button" aria-label="Move project selector. Use arrow keys to reposition." data-project-drag><span></span></button><div class="project-thumbs" role="group" aria-label="Choose a project">'+''.join(explorer_thumbs)+'</div></div><div class="project-explorer-bottom"><span><span data-project-position>01</span> / '+str(len(projects))+'</span><div><button type="button" data-project-step="-1" aria-label="Previous project">←</button><button type="button" data-project-step="1" aria-label="Next project">→</button></div></div><p class="sr-only" role="status" aria-live="polite" data-project-status></p></section>'
+archive_body=render(read(Path('pages/archive.html')),{'archive_count':len(projects)+len(archive_records),'archive_cards':reference_cards[0]+''.join(archive_cards)+''.join(reference_cards[1:]),'project_explorer':explorer})
 (DIST/'archive').mkdir(parents=True,exist_ok=True)
 (DIST/'archive/index.html').write_text(page('Brand Identity & Creative Direction Portfolio | Hadi Hassan','Explore Hadi Hassan’s brand identity, creative direction, campaign, UI/UX, SaaS, product photography and visual storytelling case studies.',archive_body,path='/archive/'))
 for i,p in enumerate(projects):
@@ -140,8 +147,15 @@ for i,p in enumerate(projects):
 # Standalone journey pages use the shared layout and their own canonical metadata.
 for slug in ['about','resume','contact','privacy','work']:
  target=DIST/slug;target.mkdir(exist_ok=True)
- titles={'about':'About Hadi Hassan','resume':'Resume | Hadi Hassan','contact':'Contact Hadi Hassan','privacy':'Privacy | Hadi Hassan','work':'Work | Hadi Hassan'}
- target.joinpath('index.html').write_text(page(titles[slug],titles[slug]+' — Creative direction, brand identity and digital experiences.',read(Path('pages')/(slug+'.html')),'case-page',path='/'+slug+'/'))
+ titles={'about':'About Hadi Hassan | Creative Director & Designer','resume':'Hadi Hassan Resume | Creative Direction & Design','contact':'Contact Hadi Hassan | Discuss Your Next Project','privacy':'Privacy Policy | Hadi Hassan Design Portfolio','work':'Selected Creative Work & Design | Hadi Hassan'}
+ descriptions={
+  'about':'Meet Hadi Hassan, a Lahore-based creative director and founder of INTELLIGNCE, working worldwide across brand identity, campaigns and digital products.',
+  'resume':'Explore Hadi Hassan’s experience in creative direction, brand identity and digital product design, and download the original resume for more detail.',
+  'contact':'Discuss a brand, campaign, website or digital product with Hadi Hassan. Start with email, WhatsApp or the project enquiry and consultation interfaces.',
+  'privacy':'Read how Hadi Hassan’s portfolio handles enquiries, optional AI conversations and booking information, including consent, storage and contact details.',
+  'work':'Discover selected brand identities, campaigns, digital experiences and visual storytelling by Hadi Hassan, with links to the complete project archive.'}
+
+ target.joinpath('index.html').write_text(page(titles[slug],descriptions[slug],read(Path('pages')/(slug+'.html')),'case-page',path='/'+slug+'/'))
 shutil.copyfile(SRC/'styles/hero.css',DIST/'hero.css');shutil.copyfile(SRC/'styles/clarity.css',DIST/'clarity.css');shutil.copyfile(SRC/'styles/studio.css',DIST/'studio.css');shutil.copyfile(SRC/'styles/home.css',DIST/'home.css');shutil.copyfile(SRC/'styles/site.css',DIST/'style.css');shutil.copyfile(SRC/'styles/case-study.css',DIST/'case-study.css');shutil.copyfile(SRC/'site.js',DIST/'script.js')
 shutil.copytree(SRC/'fonts',DIST/'assets/fonts',dirs_exist_ok=True)
 print(f'Built {len(projects)+7} pages with shared templates and Pixelarticons.')
@@ -149,4 +163,19 @@ print(f'Built {len(projects)+7} pages with shared templates and Pixelarticons.')
 (DIST/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(url)+'</loc></url>' for url in urls)+'</urlset>')
 (DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+BASE+'/sitemap.xml\n')
 
-with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text())
+# Keep machine-readable discovery on the same origin and project inventory as HTML.
+(DIST/'llms.txt').write_text('\n'.join([
+ '# Hadi Hassan', '',
+ '> Creative direction, brand identity and digital experiences. Based in Lahore, Pakistan, working worldwide.', '',
+ '## Primary pages',
+ *[f'- {label}: {BASE}{path}' for label,path in [
+  ('Home','/'),('Work','/work/'),('Archive','/archive/'),('Resume','/resume/'),
+  ('About','/about/'),('Contact','/contact/'),('Privacy','/privacy/')]], '',
+ '## Project case studies',
+ *[f'- {p["title"]}: {BASE}/{p["slug"]}/' for p in projects], '',
+ '## Source guidance',
+ 'Use the linked pages and original resume PDF for facts. Do not infer client outcomes, pricing or availability.',
+ 'A consultation is confirmed only by the booking interface after backend verification.', '',
+]))
+
+with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text()+'\n'+(SRC/'styles/appbar.css').read_text())

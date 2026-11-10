@@ -1,0 +1,152 @@
+[
+  {
+    "test": "tests/booking-release-integration.mjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.1
+  },
+  {
+    "test": "tests/consultation.mjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.07
+  },
+  {
+    "test": "tests/design-scene.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.06
+  },
+  {
+    "test": "tests/folder-geometry.mjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/footer-controls.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/gateway-logging.mjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/hero-dither.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/hero-responsive.cjs",
+    "status": "FAIL",
+    "exit": 1,
+    "seconds": 0.29
+  },
+  {
+    "test": "tests/intro-loader.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/lead-api.mjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.05
+  },
+  {
+    "test": "tests/leads-desk.mjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/leads.mjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.07
+  },
+  {
+    "test": "tests/motion-clips.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/process-camera.mjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.05
+  },
+  {
+    "test": "tests/process-motion.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/sera-config-retention.mjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/services.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/social-carousel.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/admin-cms-cli.py",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 1.06
+  },
+  {
+    "test": "tests/acceptance-build.py",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.06
+  },
+  {
+    "test": "tests/requirements-matrix.py",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.03
+  },
+  {
+    "test": "tests/v1-evidence.py",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.05
+  },
+  {
+    "test": "tests/package-security.py",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.05
+  },
+  {
+    "test": "tests/booking-release-package.py",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.06
+  },
+  {
+    "test": "tests/image-cache.py",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.37
+  }
+]
