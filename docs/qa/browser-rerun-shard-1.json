@@ -16,7 +16,7 @@
       "metrics": {
         "scrollWidth": 360,
         "h1": 1,
-        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "title": "Hadi Hassan | Creative & Product Design Leader",
         "dockFits": true,
         "brokenImages": []
       },
@@ -26,7 +26,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4272,
+      "historyRoundTripMs": 5202,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -49,21 +49,16 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/home-360.png"
+      "screenshot": "artifacts/seo-browser-20261111/home-360.png"
     },
     {
       "route": "/",
@@ -74,7 +69,7 @@
       "metrics": {
         "scrollWidth": 768,
         "h1": 1,
-        "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+        "title": "Hadi Hassan | Creative & Product Design Leader",
         "dockFits": true,
         "brokenImages": []
       },
@@ -84,7 +79,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4149,
+      "historyRoundTripMs": 5542,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -107,26 +102,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/home-768.png"
+      "screenshot": "artifacts/seo-browser-20261111/home-768.png"
     },
     {
       "route": "/archive/",
@@ -137,7 +132,7 @@
       "metrics": {
         "scrollWidth": 320,
         "h1": 1,
-        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "title": "Brand, UI/UX & Creative Direction Portfolio | Hadi Hassan",
         "dockFits": true,
         "brokenImages": []
       },
@@ -147,7 +142,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4021,
+      "historyRoundTripMs": 5201,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -170,26 +165,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/archive-320.png"
+      "screenshot": "artifacts/seo-browser-20261111/archive-320.png"
     },
     {
       "route": "/archive/",
@@ -200,7 +195,7 @@
       "metrics": {
         "scrollWidth": 430,
         "h1": 1,
-        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "title": "Brand, UI/UX & Creative Direction Portfolio | Hadi Hassan",
         "dockFits": true,
         "brokenImages": []
       },
@@ -210,7 +205,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4235,
+      "historyRoundTripMs": 5820,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -233,26 +228,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/archive-430.png"
+      "screenshot": "artifacts/seo-browser-20261111/archive-430.png"
     },
     {
       "route": "/archive/",
@@ -263,7 +258,7 @@
       "metrics": {
         "scrollWidth": 1440,
         "h1": 1,
-        "title": "Brand Identity & Creative Direction Portfolio | Hadi Hassan",
+        "title": "Brand, UI/UX & Creative Direction Portfolio | Hadi Hassan",
         "dockFits": true,
         "brokenImages": []
       },
@@ -273,7 +268,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4204,
+      "historyRoundTripMs": 5483,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -296,26 +291,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/archive-1440.png"
+      "screenshot": "artifacts/seo-browser-20261111/archive-1440.png"
     },
     {
       "route": "/mackenzie-cramblit/",
@@ -336,7 +331,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4020,
+      "historyRoundTripMs": 4125,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -359,26 +354,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/mackenzie-cramblit-390.png"
+      "screenshot": "artifacts/seo-browser-20261111/mackenzie-cramblit-390.png"
     },
     {
       "route": "/mackenzie-cramblit/",
@@ -399,7 +394,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 3964,
+      "historyRoundTripMs": 4355,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -422,26 +417,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/mackenzie-cramblit-1280.png"
+      "screenshot": "artifacts/seo-browser-20261111/mackenzie-cramblit-1280.png"
     },
     {
       "route": "/morganics/",
@@ -462,7 +457,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4034,
+      "historyRoundTripMs": 4570,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -485,26 +480,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/morganics-375.png"
+      "screenshot": "artifacts/seo-browser-20261111/morganics-375.png"
     },
     {
       "route": "/morganics/",
@@ -525,7 +520,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4157,
+      "historyRoundTripMs": 4997,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -548,26 +543,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/morganics-1024.png"
+      "screenshot": "artifacts/seo-browser-20261111/morganics-1024.png"
     },
     {
       "route": "/linkedin-personal-brand/",
@@ -588,7 +583,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4037,
+      "historyRoundTripMs": 3939,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -611,26 +606,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/linkedin-personal-brand-360.png"
+      "screenshot": "artifacts/seo-browser-20261111/linkedin-personal-brand-360.png"
     },
     {
       "route": "/linkedin-personal-brand/",
@@ -651,7 +646,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 3896,
+      "historyRoundTripMs": 4506,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -674,26 +669,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/linkedin-personal-brand-768.png"
+      "screenshot": "artifacts/seo-browser-20261111/linkedin-personal-brand-768.png"
     },
     {
       "route": "/accessorize-by-hl/",
@@ -714,7 +709,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 3874,
+      "historyRoundTripMs": 4085,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -737,26 +732,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/accessorize-by-hl-320.png"
+      "screenshot": "artifacts/seo-browser-20261111/accessorize-by-hl-320.png"
     },
     {
       "route": "/accessorize-by-hl/",
@@ -777,7 +772,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4238,
+      "historyRoundTripMs": 4069,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -800,26 +795,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/accessorize-by-hl-430.png"
+      "screenshot": "artifacts/seo-browser-20261111/accessorize-by-hl-430.png"
     },
     {
       "route": "/accessorize-by-hl/",
@@ -840,7 +835,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4334,
+      "historyRoundTripMs": 4404,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -863,26 +858,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/accessorize-by-hl-1440.png"
+      "screenshot": "artifacts/seo-browser-20261111/accessorize-by-hl-1440.png"
     },
     {
       "route": "/jules-capital-partners/",
@@ -903,7 +898,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 3932,
+      "historyRoundTripMs": 3898,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -926,26 +921,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/jules-capital-partners-390.png"
+      "screenshot": "artifacts/seo-browser-20261111/jules-capital-partners-390.png"
     },
     {
       "route": "/jules-capital-partners/",
@@ -966,7 +961,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4117,
+      "historyRoundTripMs": 4946,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -989,26 +984,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/jules-capital-partners-1280.png"
+      "screenshot": "artifacts/seo-browser-20261111/jules-capital-partners-1280.png"
     },
     {
       "route": "/intellignce/",
@@ -1029,7 +1024,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 3973,
+      "historyRoundTripMs": 4227,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -1052,26 +1047,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/intellignce-375.png"
+      "screenshot": "artifacts/seo-browser-20261111/intellignce-375.png"
     },
     {
       "route": "/intellignce/",
@@ -1092,7 +1087,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4212,
+      "historyRoundTripMs": 4159,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -1115,26 +1110,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/intellignce-1024.png"
+      "screenshot": "artifacts/seo-browser-20261111/intellignce-1024.png"
     },
     {
       "route": "/fakhr-e-qoum/",
@@ -1155,7 +1150,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 3943,
+      "historyRoundTripMs": 4045,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -1178,26 +1173,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/fakhr-e-qoum-360.png"
+      "screenshot": "artifacts/seo-browser-20261111/fakhr-e-qoum-360.png"
     },
     {
       "route": "/fakhr-e-qoum/",
@@ -1218,7 +1213,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 3971,
+      "historyRoundTripMs": 4178,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -1241,16 +1236,21 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/fakhr-e-qoum-768.png"
+      "screenshot": "artifacts/seo-browser-20261111/fakhr-e-qoum-768.png"
     },
     {
       "route": "/edlytics/",
@@ -1262,195 +1262,6 @@
         "scrollWidth": 320,
         "h1": 1,
         "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3968,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/edlytics-320.png"
-    },
-    {
-      "route": "/edlytics/",
-      "width": 430,
-      "id": "/edlytics/@430",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 430,
-        "h1": 1,
-        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3955,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/edlytics-430.png"
-    },
-    {
-      "route": "/edlytics/",
-      "width": 1440,
-      "id": "/edlytics/@1440",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 1440,
-        "h1": 1,
-        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4233,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/edlytics-1440.png"
-    },
-    {
-      "route": "/community-campaign/",
-      "width": 390,
-      "id": "/community-campaign/@390",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 390,
-        "h1": 1,
-        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
         "dockFits": true,
         "brokenImages": []
       },
@@ -1483,26 +1294,215 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/community-campaign-390.png"
+      "screenshot": "artifacts/seo-browser-20261111/edlytics-320.png"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 430,
+      "id": "/edlytics/@430",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4476,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/edlytics-430.png"
+    },
+    {
+      "route": "/edlytics/",
+      "width": 1440,
+      "id": "/edlytics/@1440",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "EdTech Logo & Brand Identity | Edlytics | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4254,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/edlytics-1440.png"
+    },
+    {
+      "route": "/community-campaign/",
+      "width": 390,
+      "id": "/community-campaign/@390",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Campaign Creative Direction | Taraqqi Ka Tasalsul | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 3980,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/community-campaign-390.png"
     },
     {
       "route": "/community-campaign/",
@@ -1523,7 +1523,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4141,
+      "historyRoundTripMs": 4104,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -1546,26 +1546,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/community-campaign-1280.png"
+      "screenshot": "artifacts/seo-browser-20261111/community-campaign-1280.png"
     },
     {
       "route": "/bits-hr-link/",
@@ -1586,7 +1586,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4042,
+      "historyRoundTripMs": 4029,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -1609,26 +1609,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/bits-hr-link-375.png"
+      "screenshot": "artifacts/seo-browser-20261111/bits-hr-link-375.png"
     },
     {
       "route": "/bits-hr-link/",
@@ -1640,6 +1640,379 @@
         "scrollWidth": 1024,
         "h1": 1,
         "title": "HR Technology Brand Identity | Bits HR Link | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4056,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/bits-hr-link-1024.png"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 360,
+      "id": "/al-faraj-media/@360",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 3884,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/al-faraj-media-360.png"
+    },
+    {
+      "route": "/al-faraj-media/",
+      "width": 768,
+      "id": "/al-faraj-media/@768",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4222,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/al-faraj-media-768.png"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 320,
+      "id": "/bw-sports/@320",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 3924,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/bw-sports-320.png"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 430,
+      "id": "/bw-sports/@430",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 3900,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/bw-sports-430.png"
+    },
+    {
+      "route": "/bw-sports/",
+      "width": 1440,
+      "id": "/bw-sports/@1440",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4403,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/bw-sports-1440.png"
+    },
+    {
+      "route": "/uiux-web-saas/",
+      "width": 390,
+      "id": "/uiux-web-saas/@390",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "SaaS UI/UX & Healthcare Product Design | Hadi Hassan",
         "dockFits": true,
         "brokenImages": []
       },
@@ -1672,404 +2045,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/bits-hr-link-1024.png"
-    },
-    {
-      "route": "/al-faraj-media/",
-      "width": 360,
-      "id": "/al-faraj-media/@360",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 360,
-        "h1": 1,
-        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4018,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/al-faraj-media-360.png"
-    },
-    {
-      "route": "/al-faraj-media/",
-      "width": 768,
-      "id": "/al-faraj-media/@768",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 768,
-        "h1": 1,
-        "title": "Media Brand Identity & Logo Design | Al Faraj | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3961,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/al-faraj-media-768.png"
-    },
-    {
-      "route": "/bw-sports/",
-      "width": 320,
-      "id": "/bw-sports/@320",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 320,
-        "h1": 1,
-        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4120,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/bw-sports-320.png"
-    },
-    {
-      "route": "/bw-sports/",
-      "width": 430,
-      "id": "/bw-sports/@430",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 430,
-        "h1": 1,
-        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3961,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/bw-sports-430.png"
-    },
-    {
-      "route": "/bw-sports/",
-      "width": 1440,
-      "id": "/bw-sports/@1440",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 1440,
-        "h1": 1,
-        "title": "Boxing Gear Product Photography | BW Strike | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4072,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/bw-sports-1440.png"
-    },
-    {
-      "route": "/uiux-web-saas/",
-      "width": 390,
-      "id": "/uiux-web-saas/@390",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 390,
-        "h1": 1,
-        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3913,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/uiux-web-saas-390.png"
+      "screenshot": "artifacts/seo-browser-20261111/uiux-web-saas-390.png"
     },
     {
       "route": "/uiux-web-saas/",
@@ -2080,7 +2075,7 @@
       "metrics": {
         "scrollWidth": 1280,
         "h1": 1,
-        "title": "UI/UX, Website & SaaS Product Design Portfolio | Hadi Hassan",
+        "title": "SaaS UI/UX & Healthcare Product Design | Hadi Hassan",
         "dockFits": true,
         "brokenImages": []
       },
@@ -2090,7 +2085,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 3916,
+      "historyRoundTripMs": 3928,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -2113,26 +2108,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/uiux-web-saas-1280.png"
+      "screenshot": "artifacts/seo-browser-20261111/uiux-web-saas-1280.png"
     },
     {
       "route": "/nicemd-ai/",
@@ -2144,699 +2139,6 @@
         "scrollWidth": 375,
         "h1": 1,
         "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4027,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/nicemd-ai-375.png"
-    },
-    {
-      "route": "/nicemd-ai/",
-      "width": 1024,
-      "id": "/nicemd-ai/@1024",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 1024,
-        "h1": 1,
-        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4013,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/nicemd-ai-1024.png"
-    },
-    {
-      "route": "/ai-animation/",
-      "width": 360,
-      "id": "/ai-animation/@360",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 360,
-        "h1": 1,
-        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3989,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/ai-animation-360.png"
-    },
-    {
-      "route": "/ai-animation/",
-      "width": 768,
-      "id": "/ai-animation/@768",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 768,
-        "h1": 1,
-        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3970,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/ai-animation-768.png"
-    },
-    {
-      "route": "/about/",
-      "width": 320,
-      "id": "/about/@320",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 320,
-        "h1": 1,
-        "title": "About Hadi Hassan | Creative Director & Designer",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3964,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/about-320.png"
-    },
-    {
-      "route": "/about/",
-      "width": 430,
-      "id": "/about/@430",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 430,
-        "h1": 1,
-        "title": "About Hadi Hassan | Creative Director & Designer",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3957,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/about-430.png"
-    },
-    {
-      "route": "/about/",
-      "width": 1440,
-      "id": "/about/@1440",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 1440,
-        "h1": 1,
-        "title": "About Hadi Hassan | Creative Director & Designer",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4008,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/about-1440.png"
-    },
-    {
-      "route": "/resume/",
-      "width": 390,
-      "id": "/resume/@390",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 390,
-        "h1": 1,
-        "title": "Hadi Hassan Resume | Creative Direction & Design",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 3957,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/resume-390.png"
-    },
-    {
-      "route": "/resume/",
-      "width": 1280,
-      "id": "/resume/@1280",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 1280,
-        "h1": 1,
-        "title": "Hadi Hassan Resume | Creative Direction & Design",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4010,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/resume-1280.png"
-    },
-    {
-      "route": "/contact/",
-      "width": 375,
-      "id": "/contact/@375",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 375,
-        "h1": 1,
-        "title": "Contact Hadi Hassan | Discuss Your Next Project",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4005,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/contact-375.png"
-    },
-    {
-      "route": "/contact/",
-      "width": 1024,
-      "id": "/contact/@1024",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 1024,
-        "h1": 1,
-        "title": "Contact Hadi Hassan | Discuss Your Next Project",
-        "dockFits": true,
-        "brokenImages": []
-      },
-      "menuOpened": true,
-      "focusInside": true,
-      "menuClosed": true,
-      "focusRestored": true,
-      "historyRestored": true,
-      "forwardRestored": true,
-      "historyRoundTripMs": 4010,
-      "configuration": {
-        "ok": false,
-        "status": "builtin",
-        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
-        "fallback": "built_in",
-        "attempts": [
-          {
-            "file": "runtime-config.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          },
-          {
-            "file": "runtime-config.previous.json",
-            "code": "PUBLIC_CONFIG_NOT_FOUND",
-            "httpStatus": 404
-          }
-        ]
-      },
-      "expectedOptionalResponses": [
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
-        },
-        {
-          "code": "CONSOLE_ERROR",
-          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
-        }
-      ],
-      "violations": [],
-      "screenshot": "docs/browser-evidence/contact-1024.png"
-    },
-    {
-      "route": "/privacy/",
-      "width": 360,
-      "id": "/privacy/@360",
-      "status": "PASS",
-      "errors": [],
-      "metrics": {
-        "scrollWidth": 360,
-        "h1": 1,
-        "title": "Privacy Policy | Hadi Hassan Design Portfolio",
         "dockFits": true,
         "brokenImages": []
       },
@@ -2869,26 +2171,719 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/privacy-360.png"
+      "screenshot": "artifacts/seo-browser-20261111/nicemd-ai-375.png"
+    },
+    {
+      "route": "/nicemd-ai/",
+      "width": 1024,
+      "id": "/nicemd-ai/@1024",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Healthcare AI Brand Identity | NiceMD.ai | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 3940,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/nicemd-ai-1024.png"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 360,
+      "id": "/ai-animation/@360",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 3971,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/ai-animation-360.png"
+    },
+    {
+      "route": "/ai-animation/",
+      "width": 768,
+      "id": "/ai-animation/@768",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 768,
+        "h1": 1,
+        "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4154,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/ai-animation-768.png"
+    },
+    {
+      "route": "/about/",
+      "width": 320,
+      "id": "/about/@320",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 320,
+        "h1": 1,
+        "title": "About Hadi Hassan | Creative & Product Design Leader",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4146,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/about-320.png"
+    },
+    {
+      "route": "/about/",
+      "width": 430,
+      "id": "/about/@430",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 430,
+        "h1": 1,
+        "title": "About Hadi Hassan | Creative & Product Design Leader",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4057,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/about-430.png"
+    },
+    {
+      "route": "/about/",
+      "width": 1440,
+      "id": "/about/@1440",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1440,
+        "h1": 1,
+        "title": "About Hadi Hassan | Creative & Product Design Leader",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4144,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/about-1440.png"
+    },
+    {
+      "route": "/resume/",
+      "width": 390,
+      "id": "/resume/@390",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 390,
+        "h1": 1,
+        "title": "Hadi Hassan CV | Creative & Product Design Leader",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4011,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/resume-390.png"
+    },
+    {
+      "route": "/resume/",
+      "width": 1280,
+      "id": "/resume/@1280",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1280,
+        "h1": 1,
+        "title": "Hadi Hassan CV | Creative & Product Design Leader",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4404,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/resume-1280.png"
+    },
+    {
+      "route": "/contact/",
+      "width": 375,
+      "id": "/contact/@375",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 375,
+        "h1": 1,
+        "title": "Contact Hadi Hassan | Leadership & Design Consulting",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4197,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/contact-375.png"
+    },
+    {
+      "route": "/contact/",
+      "width": 1024,
+      "id": "/contact/@1024",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 1024,
+        "h1": 1,
+        "title": "Contact Hadi Hassan | Leadership & Design Consulting",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4031,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/contact-1024.png"
+    },
+    {
+      "route": "/privacy/",
+      "width": 360,
+      "id": "/privacy/@360",
+      "status": "PASS",
+      "errors": [],
+      "metrics": {
+        "scrollWidth": 360,
+        "h1": 1,
+        "title": "Privacy & Enquiry Information | Hadi Hassan Portfolio",
+        "dockFits": true,
+        "brokenImages": []
+      },
+      "menuOpened": true,
+      "focusInside": true,
+      "menuClosed": true,
+      "focusRestored": true,
+      "historyRestored": true,
+      "forwardRestored": true,
+      "historyRoundTripMs": 4171,
+      "configuration": {
+        "ok": false,
+        "status": "builtin",
+        "code": "PUBLIC_CONFIG_NOT_CONFIGURED",
+        "fallback": "built_in",
+        "attempts": [
+          {
+            "file": "runtime-config.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          },
+          {
+            "file": "runtime-config.previous.json",
+            "code": "PUBLIC_CONFIG_NOT_FOUND",
+            "httpStatus": 404
+          }
+        ]
+      },
+      "expectedOptionalResponses": [
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
+        },
+        {
+          "code": "CONSOLE_ERROR",
+          "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
+        }
+      ],
+      "violations": [],
+      "screenshot": "artifacts/seo-browser-20261111/privacy-360.png"
     },
     {
       "route": "/privacy/",
@@ -2899,7 +2894,7 @@
       "metrics": {
         "scrollWidth": 768,
         "h1": 1,
-        "title": "Privacy Policy | Hadi Hassan Design Portfolio",
+        "title": "Privacy & Enquiry Information | Hadi Hassan Portfolio",
         "dockFits": true,
         "brokenImages": []
       },
@@ -2909,7 +2904,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4048,
+      "historyRoundTripMs": 4105,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -2932,26 +2927,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/privacy-768.png"
+      "screenshot": "artifacts/seo-browser-20261111/privacy-768.png"
     },
     {
       "route": "/work/",
@@ -2962,7 +2957,7 @@
       "metrics": {
         "scrollWidth": 320,
         "h1": 1,
-        "title": "Selected Creative Work & Design | Hadi Hassan",
+        "title": "Brand Identity & Product Design Work | Hadi Hassan",
         "dockFits": true,
         "brokenImages": []
       },
@@ -2972,7 +2967,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4024,
+      "historyRoundTripMs": 4290,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -2995,26 +2990,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/work-320.png"
+      "screenshot": "artifacts/seo-browser-20261111/work-320.png"
     },
     {
       "route": "/work/",
@@ -3025,7 +3020,7 @@
       "metrics": {
         "scrollWidth": 430,
         "h1": 1,
-        "title": "Selected Creative Work & Design | Hadi Hassan",
+        "title": "Brand Identity & Product Design Work | Hadi Hassan",
         "dockFits": true,
         "brokenImages": []
       },
@@ -3035,7 +3030,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 3964,
+      "historyRoundTripMs": 4552,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -3058,26 +3053,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/work-430.png"
+      "screenshot": "artifacts/seo-browser-20261111/work-430.png"
     },
     {
       "route": "/work/",
@@ -3088,7 +3083,7 @@
       "metrics": {
         "scrollWidth": 1440,
         "h1": 1,
-        "title": "Selected Creative Work & Design | Hadi Hassan",
+        "title": "Brand Identity & Product Design Work | Hadi Hassan",
         "dockFits": true,
         "brokenImages": []
       },
@@ -3098,7 +3093,7 @@
       "focusRestored": true,
       "historyRestored": true,
       "forwardRestored": true,
-      "historyRoundTripMs": 4000,
+      "historyRoundTripMs": 3979,
       "configuration": {
         "ok": false,
         "status": "builtin",
@@ -3121,26 +3116,26 @@
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.json"
         },
         {
           "code": "CONSOLE_ERROR",
           "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
-          "source": "http://127.0.0.1:49218/intellignce-support/runtime-config.previous.json"
+          "source": "http://127.0.0.1:57776/intellignce-support/runtime-config.previous.json"
         }
       ],
       "violations": [],
-      "screenshot": "docs/browser-evidence/work-1440.png"
+      "screenshot": "artifacts/seo-browser-20261111/work-1440.png"
     }
   ]
 }

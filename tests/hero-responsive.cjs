@@ -7,7 +7,7 @@ const output=path.resolve(process.env.HERO_REVIEW_OUTPUT||path.join(root,'artifa
 const gsapDir=process.env.HERO_REVIEW_GSAP_DIR||path.dirname(require.resolve('gsap/dist/gsap.min.js'));
 const home=read('src/pages/home.html'),hero=home.slice(home.indexOf('<section class="portfolio-hero"'),home.indexOf('<div class="bayfi-body"'));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
-assert.equal(sha(hero),'bafe2419c5332ebc59e93519ed7c94c125a684f9c05d2dee3e55b41f06de608e','Hero copy/markup must stay unchanged');
+assert.equal(sha(hero),JSON.parse(read('design/hero-lock.json')).hero_html,'Hero copy/markup must match the authorized baseline');
 assert.equal(sha(read('src/styles/site.css')),'7255e1f9fe90310502abca9c422d82cc135bf0dcba5aa574650513fd807a8b33','Shared CSS must stay unchanged');
 assert.equal(sha(read('src/app/reel-motion.jsx')),'e8f3ba12f4c7c5285d6d4db18a79447486dc7a0ed37acfb9a25a8113dc613bc2','Reel timing source must stay unchanged');
 const section=cls=>{let a=home.indexOf('<section class="'+cls+'"');assert(a>=0);return home.slice(a,home.indexOf('</section>',a)+10)};

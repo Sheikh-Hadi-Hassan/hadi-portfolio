@@ -63,7 +63,7 @@ const save=reason=>{blockedReason=reason;fs.writeFileSync(evidence,JSON.stringif
     result.expectedOptionalResponses=result.errors.filter(e=>optionalConfigConsole(e,result.configuration,{allowUnconfigured}));
     result.errors=result.errors.filter(e=>!optionalConfigConsole(e,result.configuration,{allowUnconfigured}));
     const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();result.violations=axe.violations.map(v=>({id:v.id,impact:v.impact,targets:v.nodes.map(n=>n.target)}));
-    const screenshot=`docs/browser-evidence/${item.route==='/'?'home':item.route.replaceAll('/','')}-${item.width}.png`;fs.mkdirSync(path.dirname(screenshot),{recursive:true});await page.screenshot({path:screenshot,fullPage:true});result.screenshot=screenshot;
+    const screenshot=path.join(process.env.V01_SCREENSHOT_DIR||'docs/browser-evidence',`${item.route==='/'?'home':item.route.replaceAll('/','')}-${item.width}.png`);fs.mkdirSync(path.dirname(screenshot),{recursive:true});await page.screenshot({path:screenshot,fullPage:true});result.screenshot=screenshot;
     const m=result.metrics;if(m.scrollWidth<=item.width&&m.h1===1&&m.title&&m.dockFits&&!m.brokenImages.length&&!result.errors.length&&!result.violations.length&&result.menuOpened&&result.focusInside&&result.menuClosed&&result.focusRestored&&result.historyRestored&&result.forwardRestored)result.status='PASS';
    }catch(e){result.errors.push({code:'CASE_FAILED',message:String(e).slice(0,500)});}finally{await context?.close();results.push(result);save(null);}
   }

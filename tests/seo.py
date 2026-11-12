@@ -39,7 +39,7 @@ for slug,page in pages.items():
  assert doc.meta.get('robots','').lower().find('noindex')<0,slug
  urls.add(page['canonical'])
  graph=doc.schema[0]['@graph'];assert any(x['@type']=='Person' and x['name']=='Hadi Hassan' for x in graph),slug
- assert any(x['@type']=='WebPage' and x['url']==page['canonical'] for x in graph),slug
+ assert any('WebPage' in ([x['@type']] if isinstance(x['@type'],str) else x['@type']) and x['url']==page['canonical'] for x in graph),slug
  if slug!='home':assert any(x['@type']=='BreadcrumbList' for x in graph),slug
  for img in doc.images:
   assert 'alt' in img,(slug,'missing alt')

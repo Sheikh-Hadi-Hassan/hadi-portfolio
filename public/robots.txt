@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 Sitemap: https://hadi.intellignce.net/sitemap.xml
 Sitemap: https://hadi.intellignce.net/image-sitemap.xml

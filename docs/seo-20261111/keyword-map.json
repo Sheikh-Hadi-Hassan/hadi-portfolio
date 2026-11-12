@@ -1,0 +1,344 @@
+{
+  "date": "2026-11-11",
+  "targetAssumption": "Superseded: owner confirmed leadership jobs and consulting as joint primary goals.",
+  "method": "Public SERP discovery and first-party commercial pages, portfolio/CV fit and query-intent reasoning. No planner account, volume database or conversion data connected. No numeric demand claims.",
+  "sources": {
+    "brand": "https://muzzlabs.com/",
+    "startup": "https://eliaschapuis.com/services/brand-identity-designer",
+    "product": "https://www.moolstudio.com/",
+    "local": "https://thesamosa.co/",
+    "lead": "https://jayystudio.com/contact",
+    "ecommerce": "https://pixel2tech.com/services/branding-and-design",
+    "leadershipPortfolio": "https://www.craigpugsley.co.uk/",
+    "dualFocus": "https://www.nick-clark.com/",
+    "consultingPortfolio": "https://jeremybelcher.co/consulting/",
+    "hiring": "https://creativepool.com/creative-directors"
+  },
+  "routes": [
+    [
+      "/",
+      "creative direction; product design leader",
+      "creative and product design leader in Lahore; creative direction for growing businesses",
+      "Commercial / entity",
+      "High",
+      "local"
+    ],
+    [
+      "/#services",
+      "brand identity design; brand strategy",
+      "brand identity design for startups; hire a brand identity designer in Lahore",
+      "Commercial",
+      "High",
+      "brand"
+    ],
+    [
+      "/#services",
+      "UI/UX design; website design",
+      "UI UX designer for SaaS products; responsive website design for service businesses",
+      "Commercial",
+      "High",
+      "product"
+    ],
+    [
+      "/#services",
+      "product strategy; MVP design",
+      "MVP UX planning for startup founders; SaaS dashboard interface design",
+      "Commercial",
+      "High",
+      "product"
+    ],
+    [
+      "/#services",
+      "campaign design; social media design",
+      "social media campaign design for brands; creative direction for brand campaigns",
+      "Commercial",
+      "High",
+      "local"
+    ],
+    [
+      "/#services",
+      "ecommerce design; packaging design",
+      "brand identity and packaging for ecommerce; ecommerce website design and product visuals",
+      "Commercial",
+      "Medium",
+      "ecommerce"
+    ],
+    [
+      "/#services",
+      "landing page design; UX design",
+      "landing page designer for startups; responsive landing page design services",
+      "Commercial",
+      "High",
+      "product"
+    ],
+    [
+      "/about/",
+      "Hadi Hassan; design leadership",
+      "Hadi Hassan creative and product design leader; founder and product lead at INTELLIGNCE",
+      "Entity / professional background",
+      "High",
+      "local"
+    ],
+    [
+      "/resume/",
+      "Hadi Hassan CV; product design resume",
+      "Hadi Hassan creative leadership CV; Hadi Hassan product design experience",
+      "Navigational / hiring",
+      "Medium",
+      "local"
+    ],
+    [
+      "/contact/",
+      "hire designer; design consultation",
+      "hire Hadi Hassan for brand and product design; discuss a creative direction project",
+      "Transactional",
+      "High",
+      "lead"
+    ],
+    [
+      "/work/",
+      "brand and product design work; design case studies",
+      "Hadi Hassan brand and product design case studies; selected creative direction work",
+      "Portfolio consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/archive/",
+      "design portfolio; creative direction portfolio",
+      "brand identity and UI UX design portfolio; creative direction case studies by Hadi Hassan",
+      "Portfolio consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/privacy/",
+      "portfolio privacy; enquiry information",
+      "Hadi Hassan portfolio privacy; project enquiry data and consent",
+      "Trust / utility",
+      "Supporting",
+      "lead"
+    ],
+    [
+      "/mackenzie-cramblit/",
+      "personal branding; brand identity",
+      "personal brand identity for a career coach; brand strategy for expert-led businesses",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/morganics/",
+      "packaging design; food branding",
+      "food brand identity and packaging design; bilingual food packaging design",
+      "Case-study consideration",
+      "High",
+      "brand"
+    ],
+    [
+      "/linkedin-personal-brand/",
+      "LinkedIn branding; carousel design",
+      "LinkedIn personal branding for consultants; LinkedIn carousel design system",
+      "Case-study consideration",
+      "High",
+      "brand"
+    ],
+    [
+      "/accessorize-by-hl/",
+      "jewellery branding; packaging design",
+      "jewellery brand identity and retail packaging; jewellery logo and visual identity design",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/jules-capital-partners/",
+      "financial branding; brand identity",
+      "financial services brand identity design; real estate finance visual identity",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/intellignce/",
+      "creative direction; brand identity",
+      "brand identity for a creative and digital product practice; INTELLIGNCE identity design",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/fakhr-e-qoum/",
+      "documentary storytelling; creative direction",
+      "documentary creative direction and visual storytelling; documentary research scripting and production",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/edlytics/",
+      "EdTech branding; logo design",
+      "EdTech logo and brand identity design; visual identity for an education technology brand",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/community-campaign/",
+      "campaign design; creative direction",
+      "community campaign creative direction in Lahore; Urdu campaign identity and manifesto design",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/bits-hr-link/",
+      "HR technology branding; brand identity",
+      "HR technology brand identity design; B2B software logo and visual identity",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/al-faraj-media/",
+      "media branding; multilingual logo design",
+      "Islamic media brand identity design; Arabic and Urdu multilingual logo design",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/bw-sports/",
+      "product photography; sports photography",
+      "boxing gear product photography; boxing glove and athlete photography",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/uiux-web-saas/",
+      "SaaS UI UX design; product design",
+      "healthcare dashboard UI UX design; SaaS product design for healthcare and service businesses",
+      "Case-study consideration",
+      "High",
+      "product"
+    ],
+    [
+      "/nicemd-ai/",
+      "healthcare branding; AI brand identity",
+      "healthcare AI brand identity design; logo and visual identity for a digital health platform",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ],
+    [
+      "/ai-animation/",
+      "AI animation; visual storytelling",
+      "AI assisted animation production workflow; animation storyboarding and character development",
+      "Case-study consideration",
+      "Medium",
+      "brand"
+    ]
+  ],
+  "keywordCount": 128,
+  "caseStudyEvidence": "Project-specific variants derive from actual first-party case content, not from competitor search-volume data.",
+  "confirmedLeadFocus": "Leadership hiring plus creative/product design consulting. Lahore/Pakistan and remote international teams; no relocation or immediate availability claim.",
+  "additionalLeadershipTargets": [
+    [
+      "/",
+      "creative and product design leader",
+      "Short-tail",
+      "Leadership / entity"
+    ],
+    [
+      "/about/",
+      "design leadership portfolio",
+      "Short-tail",
+      "Recruiter consideration"
+    ],
+    [
+      "/resume/",
+      "creative director CV Hadi Hassan",
+      "Long-tail",
+      "Recruiter navigation"
+    ],
+    [
+      "/resume/",
+      "product design leadership experience Hadi Hassan",
+      "Long-tail",
+      "Recruiter navigation"
+    ],
+    [
+      "/about/",
+      "creative and product design leader in Lahore",
+      "Long-tail",
+      "Recruiter consideration"
+    ],
+    [
+      "/contact/",
+      "hire a creative and product design leader",
+      "Long-tail",
+      "Leadership hiring"
+    ],
+    [
+      "/contact/",
+      "design leadership consultant",
+      "Short-tail",
+      "Consulting"
+    ],
+    [
+      "/contact/",
+      "product design consultant",
+      "Short-tail",
+      "Consulting"
+    ],
+    [
+      "/contact/",
+      "creative direction consulting",
+      "Short-tail",
+      "Consulting"
+    ],
+    [
+      "/contact/",
+      "brand strategy and product design consulting",
+      "Long-tail",
+      "Consulting"
+    ],
+    [
+      "/about/",
+      "design leadership and consulting portfolio",
+      "Long-tail",
+      "Leadership / consulting"
+    ],
+    [
+      "/uiux-web-saas/",
+      "product design leader healthcare UX portfolio",
+      "Long-tail",
+      "Leadership evidence"
+    ],
+    [
+      "/work/",
+      "creative direction and product design portfolio",
+      "Long-tail",
+      "Leadership evidence"
+    ],
+    [
+      "/contact/",
+      "hire a design lead for brand and product strategy",
+      "Long-tail",
+      "Leadership hiring"
+    ],
+    [
+      "/about/",
+      "brand strategy consultant Lahore",
+      "Long-tail",
+      "Consulting"
+    ],
+    [
+      "/contact/",
+      "product strategy and UX planning consultant",
+      "Long-tail",
+      "Consulting"
+    ]
+  ]
+}

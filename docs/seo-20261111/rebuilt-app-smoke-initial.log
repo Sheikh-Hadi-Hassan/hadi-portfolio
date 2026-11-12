@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(await p.evaluate(()=>document.body.style.overflow===''))
+
+    at /Users/sheikhhadihassan/Documents/Hadi-ntellignce/hadi-portfolio/tests/rebuilt-app-smoke.cjs:6:1125 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

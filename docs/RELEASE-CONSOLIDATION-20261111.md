@@ -1,3 +1,5 @@
+> This report records consolidation commit e3c7ee2. Subsequent owner-requested CV positioning and SEO/AEO/GEO work is recorded in [the resume-led audit](seo-20261111/AUDIT.md). Earlier hero/content observations describe that commit, not later copy revisions.
+
 # Authoritative local development release — 11 November 2026
 
 Branch: `release/consolidated-20261111` in `Sheikh-Hadi-Hassan/hadi-portfolio`.

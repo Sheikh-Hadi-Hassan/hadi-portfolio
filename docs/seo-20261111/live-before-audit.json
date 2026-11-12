@@ -1,0 +1,261 @@
+{
+  "scope": "Read-only production observations before any local SEO deployment; no mutations",
+  "date": "2026-11-11",
+  "results": [
+    {
+      "url": "https://hadi.intellignce.net/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/",
+      "contentType": "text/html",
+      "title": "Hadi Hassan | Creative Director & Brand Identity Designer",
+      "description": "Hadi Hassan is a creative director and brand identity designer in Lahore, Pakistan. Explore logo design, branding, campaigns and digital experiences.",
+      "canonical": [
+        "https://hadi.intellignce.net/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/about/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hadi.intellignce.net/resume/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hadi.intellignce.net/contact/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hadi.intellignce.net/privacy/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hadi.intellignce.net/work/",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://hadi.intellignce.net/archive/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/archive/",
+      "contentType": "text/html",
+      "title": "Brand Identity, UI/UX & Creative Portfolio | Hadi Hassan",
+      "description": "Explore Hadi Hassan’s portfolio of brand identity, logo design, creative campaigns, UI/UX, SaaS applications, product photography and documentary projects.",
+      "canonical": [
+        "https://hadi.intellignce.net/archive/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/mackenzie-cramblit/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/mackenzie-cramblit/",
+      "contentType": "text/html",
+      "title": "Mackenzie Cramblit Personal Branding | Hadi Hassan",
+      "description": "A personal brand identity for career coach Mackenzie Cramblit by Hadi Hassan, connecting audience insight, colour, typography, tone and social applications.",
+      "canonical": [
+        "https://hadi.intellignce.net/mackenzie-cramblit/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/morganics/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/morganics/",
+      "contentType": "text/html",
+      "title": "Morganics Brand Identity & Packaging Design | Hadi Hassan",
+      "description": "Explore Morganics branding and packaging by Hadi Hassan: a botanical monogram, bilingual identity, brand guidelines, jars, pouches and product visuals.",
+      "canonical": [
+        "https://hadi.intellignce.net/morganics/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/linkedin-personal-brand/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/linkedin-personal-brand/",
+      "contentType": "text/html",
+      "title": "LinkedIn Personal Branding & Carousel Design | Hadi Hassan",
+      "description": "Explore LinkedIn personal branding and carousel design by Hadi Hassan: visual content systems for healthcare, finance, construction and technology.",
+      "canonical": [
+        "https://hadi.intellignce.net/linkedin-personal-brand/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/accessorize-by-hl/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/accessorize-by-hl/",
+      "contentType": "text/html",
+      "title": "Accessorize by HL Branding Case Study | Hadi Hassan",
+      "description": "Explore the Accessorize by HL jewellery brand identity by Hadi Hassan: logo design, visual language, brand guidelines, packaging and retail applications.",
+      "canonical": [
+        "https://hadi.intellignce.net/accessorize-by-hl/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/jules-capital-partners/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/jules-capital-partners/",
+      "contentType": "text/html",
+      "title": "Jules Capital Partners Brand Identity | Hadi Hassan",
+      "description": "Jules Capital Partners brand identity by Hadi Hassan: logo design, green colour system, Athelas and Open Sans typography, guidelines and brand applications.",
+      "canonical": [
+        "https://hadi.intellignce.net/jules-capital-partners/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/intellignce/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/intellignce/",
+      "contentType": "text/html",
+      "title": "INTELLIGNCE Brand Identity & Logo Design | Hadi Hassan",
+      "description": "Behind the Intellignce identity: a logo and visual system connecting human creativity with AI innovation. A branding case study by Hadi Hassan.",
+      "canonical": [
+        "https://hadi.intellignce.net/intellignce/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/fakhr-e-qoum/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/fakhr-e-qoum/",
+      "contentType": "text/html",
+      "title": "Fakhr-e-Qoum Documentary Case Study | Hadi Hassan",
+      "description": "Explore behind-the-scenes visuals from Documentary Fakhr-e-Qoum 2023, presented in Hadi Hassan’s film and visual storytelling portfolio.",
+      "canonical": [
+        "https://hadi.intellignce.net/fakhr-e-qoum/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/edlytics/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/edlytics/",
+      "contentType": "text/html",
+      "title": "Edlytics Education Logo & Brand Identity | Hadi Hassan",
+      "description": "Edlytics logo design and brand identity: an education wordmark, green visual language and practical brand applications by Hadi Hassan.",
+      "canonical": [
+        "https://hadi.intellignce.net/edlytics/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/community-campaign/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/community-campaign/",
+      "contentType": "text/html",
+      "title": "Taraqqi Ka Tasalsul — Community Campaign Design | Hadi Hassan",
+      "description": "A Lahore community election campaign case study by Hadi Hassan: research, creative direction, Urdu visual identity, manifesto design, outdoor media and merchandise.",
+      "canonical": [
+        "https://hadi.intellignce.net/community-campaign/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/bits-hr-link/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/bits-hr-link/",
+      "contentType": "text/html",
+      "title": "Bits HR Link Brand Identity | Hadi Hassan",
+      "description": "Bits HR Link brand identity by Hadi Hassan: a geometric logo, lightning-bolt wordmark and visual system for a technology-driven human resources business.",
+      "canonical": [
+        "https://hadi.intellignce.net/bits-hr-link/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/al-faraj-media/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/al-faraj-media/",
+      "contentType": "text/html",
+      "title": "Al Faraj Media Brand Identity | Hadi Hassan",
+      "description": "Al Faraj Media logo and brand identity by Hadi Hassan, combining Islamic architecture, calligraphy, multilingual typography and visual media applications.",
+      "canonical": [
+        "https://hadi.intellignce.net/al-faraj-media/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/bw-sports/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/bw-sports/",
+      "contentType": "text/html",
+      "title": "BW Strike Boxing Gear Photography | Hadi Hassan",
+      "description": "BW Sports product photography by Hadi Hassan for BW Strike boxing gear: athlete portraits, gym scenes, boxing gloves and protective-pad product images.",
+      "canonical": [
+        "https://hadi.intellignce.net/bw-sports/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/uiux-web-saas/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/uiux-web-saas/",
+      "contentType": "text/html",
+      "title": "UI/UX, Website & SaaS Design Portfolio | Hadi Hassan",
+      "description": "Explore Hadi Hassan’s UI/UX portfolio: service websites, landing pages, healthcare platforms, SaaS dashboards and patient application interfaces.",
+      "canonical": [
+        "https://hadi.intellignce.net/uiux-web-saas/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/nicemd-ai/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/nicemd-ai/",
+      "contentType": "text/html",
+      "title": "NiceMD.ai Healthcare Brand Identity & Logo | Hadi Hassan",
+      "description": "NiceMD.ai healthcare branding by Hadi Hassan: a bot logo with lifeline eyes, lime and teal colours, Nexa typography and practical brand identity guidelines.",
+      "canonical": [
+        "https://hadi.intellignce.net/nicemd-ai/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/ai-animation/",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/ai-animation/",
+      "contentType": "text/html",
+      "title": "AI Animation & Visual Storytelling Case Study | Hadi Hassan",
+      "description": "Hadi Hassan’s AI animation case study: storyboarding, character development, AI image generation, Photoshop refinement, sound design and Premiere Pro editing.",
+      "canonical": [
+        "https://hadi.intellignce.net/ai-animation/"
+      ],
+      "h1": 1,
+      "robots": null
+    },
+    {
+      "url": "https://hadi.intellignce.net/robots.txt",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/robots.txt",
+      "contentType": "text/plain",
+      "body": "User-agent: *\nAllow: /\nSitemap: https://hadi.intellignce.net/sitemap.xml\nSitemap: https://hadi.intellignce.net/image-sitemap.xml\n"
+    },
+    {
+      "url": "https://hadi.intellignce.net/sitemap.xml",
+      "status": 200,
+      "finalURL": "https://hadi.intellignce.net/sitemap.xml",
+      "contentType": "application/xml",
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><url><loc>https://hadi.intellignce.net/</loc></url><url><loc>https://hadi.intellignce.net/archive/</loc></url><url><loc>https://hadi.intellignce.net/mackenzie-cramblit/</loc></url><url><loc>https://hadi.intellignce.net/morganics/</loc></url><url><loc>https://hadi.intellignce.net/linkedin-personal-brand/</loc></url><url><loc>https://hadi.intellignce.net/accessorize-by-hl/</loc></url><url><loc>https://hadi.intellignce.net/jules-capital-partners/</loc></url><url><loc>https://hadi.intellignce.net/intellignce/</loc></url><url><loc>https://hadi.intellignce.net/fakhr-e-qoum/</loc></url><url><loc>https://hadi.intellignce.net/edlytics/</loc></url><url><loc>https://hadi.intellignce.net/community-campaign/</loc></url><url><loc>https://hadi.intellignce.net/bits-hr-link/</loc></url><url><loc>https://hadi.intellignce.net/al-faraj-media/</loc></url><url><loc>https://hadi.intellignce.net/bw-sports/</loc></url><url><loc>https://hadi.intellignce.net/uiux-web-saas/</loc></url><url><loc>https://hadi.intellignce.net/nicemd-ai/</loc></url><url><loc>https://hadi.intellignce.net/ai-animation/</loc></url></urlset>"
+    }
+  ]
+}
