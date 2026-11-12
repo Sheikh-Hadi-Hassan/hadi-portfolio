@@ -106,5 +106,9 @@ xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.or
 for url,images in image_urls:
  if images:xml+='<url><loc>'+html.escape(url)+'</loc>'+''.join('<image:image><image:loc>'+html.escape(src)+'</image:loc></image:image>' for src in images)+'</url>'
 (ROOT/'dist/image-sitemap.xml').write_text(xml+'</urlset>')
-robots=ROOT/'dist/robots.txt';robots.write_text(robots.read_text()+'Sitemap: '+BASE+'/image-sitemap.xml\n')
+robots=ROOT/'dist/robots.txt'
+robots_text=robots.read_text()
+sitemap_entry='Sitemap: '+BASE+'/image-sitemap.xml'
+if sitemap_entry not in robots_text.splitlines():
+    robots.write_text(robots_text.rstrip(chr(10))+chr(10)+sitemap_entry+chr(10))
 print(f'Responsive images: {sum(bool(x and x[0]) for x in cache.values())} originals; {saved/1024/1024:.1f} MB saved at the largest generated display size. Image metadata and sitemap added. Originals preserved.')

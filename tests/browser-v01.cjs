@@ -30,6 +30,7 @@ const save=reason=>{blockedReason=reason;fs.writeFileSync(evidence,JSON.stringif
   browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||undefined,headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--disable-gpu']});
   const base=`http://127.0.0.1:${server.address().port}`;
   for(const item of cases){
+    console.log('[BROWSER START]', item.id, `${results.length+1}/${cases.length}`);
    let context;const result={...item,status:'FAIL',errors:[]};
    try{
     context=await browser.newContext({reducedMotion:'reduce',viewport:{width:item.width,height:900}});
@@ -63,9 +64,10 @@ const save=reason=>{blockedReason=reason;fs.writeFileSync(evidence,JSON.stringif
     result.expectedOptionalResponses=result.errors.filter(e=>optionalConfigConsole(e,result.configuration,{allowUnconfigured}));
     result.errors=result.errors.filter(e=>!optionalConfigConsole(e,result.configuration,{allowUnconfigured}));
     const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();result.violations=axe.violations.map(v=>({id:v.id,impact:v.impact,targets:v.nodes.map(n=>n.target)}));
-    const screenshot=`docs/browser-evidence/${item.route==='/'?'home':item.route.replaceAll('/','')}-${item.width}.png`;fs.mkdirSync(path.dirname(screenshot),{recursive:true});await page.screenshot({path:screenshot,fullPage:true});result.screenshot=screenshot;
+    const screenshot=path.join(process.env.V01_SCREENSHOT_DIR||'docs/browser-evidence',`${item.route==='/'?'home':item.route.replaceAll('/','')}-${item.width}.png`);fs.mkdirSync(path.dirname(screenshot),{recursive:true});await page.screenshot({path:screenshot,fullPage:true});result.screenshot=screenshot;
     const m=result.metrics;if(m.scrollWidth<=item.width&&m.h1===1&&m.title&&m.dockFits&&!m.brokenImages.length&&!result.errors.length&&!result.violations.length&&result.menuOpened&&result.focusInside&&result.menuClosed&&result.focusRestored&&result.historyRestored&&result.forwardRestored)result.status='PASS';
-   }catch(e){result.errors.push({code:'CASE_FAILED',message:String(e).slice(0,500)});}finally{await context?.close();results.push(result);save(null);}
+   }catch(e){result.errors.push({code:'CASE_FAILED',message:String(e).slice(0,500)});}finally{await context?.close();results.push(result);save(null);
+    console.log('[BROWSER DONE]', result.id, result.status,JSON.stringify(result.errors||[]));}
   }
   const summary=report(cases,results);console.log(JSON.stringify({executed:summary.executed,passed:summary.passed,failed:summary.failed,blocked:summary.blocked}));if(summary.failed)process.exitCode=1;
  }finally{await browser?.close();await new Promise(r=>server.close(r));}

@@ -25,18 +25,33 @@ profile_values['footer_socials']=''.join(f'<a href="{esc(item["url"])}" class="v
 head=read(Path('components/head.html'));navigation=render(read(Path('components/navigation.html')),profile_values);footer=render(read(Path('components/footer.html')),profile_values)
 BASE=os.environ.get('SITE_URL','https://hadi.intellignce.net').rstrip('/')
 urls=[]
+seo_pages=json.loads(read(Path('data/seo-pages.json')))
+resume_source=json.loads(read(Path('data/resume-source.json')))
 def page(title,description,body,body_class='',path='/',image='/assets/hadi-hassan-social-preview-20261021.png',creative=None):
+ key='home' if path=='/' else path.strip('/')
+ if key in seo_pages:title=seo_pages[key]['title'];description=seo_pages[key]['description']
  url=BASE+path;urls.append(url)
- person={'@type':'Person','@id':BASE+'/#hadi','name':'Hadi Hassan','alternateName':['Sheikh Hadi Hassan','Hadi Hasssan'],'jobTitle':'Creative Director, Design Lead and Brand Identity Designer','url':BASE+'/','email':profile['email'],'telephone':profile['phone'],'address':{'@type':'PostalAddress','addressLocality':'Lahore','addressCountry':'PK'},'sameAs':[item['url'] for item in profile['socials']],'knowsAbout':['Brand identity','Logo design','Creative direction','Campaign design','Packaging','Visual storytelling','Art direction','Graphic design','Website design','Digital product design'],'image':BASE+'/assets/hadi-speaking-original.png','worksFor':{'@type':'Organization','name':'INTELLIGNCE','url':profile['company']}}
- graph=[person,{'@type':'WebSite','@id':BASE+'/#website','name':'Hadi Hassan — Creative Direction & Brand Identity','url':BASE+'/'},{'@type':'WebPage','@id':url+'#webpage','name':title,'description':description,'url':url,'isPartOf':{'@id':BASE+'/#website'},'about':{'@id':BASE+'/#hadi'}}]
+ person={'@type':'Person','@id':BASE+'/#hadi','name':'Hadi Hassan','alternateName':['Sheikh Hadi Hassan'],'jobTitle':profile['professional_title'],'description':profile['role_description'],'url':BASE+'/','email':profile['email'],'telephone':profile['phone'],'address':{'@type':'PostalAddress','addressLocality':'Lahore','addressCountry':'PK'},'sameAs':[item['url'] for item in profile['socials']],'knowsAbout':['Creative direction','Brand strategy','Brand identity','Product strategy','UX planning','UI/UX design','Design systems','Wireframing','MVP delivery','Campaign development','Visual storytelling','Team leadership'],'image':BASE+'/assets/hadi-speaking-original.png','worksFor':{'@id':BASE+'/#intellignce'}}
+ graph=[person,{'@type':'WebSite','@id':BASE+'/#website','name':'Hadi Hassan — Creative & Product Design Leader','url':BASE+'/'},{'@type':'WebPage','@id':url+'#webpage','name':title,'description':description,'url':url,'isPartOf':{'@id':BASE+'/#website'},'about':{'@id':BASE+'/#hadi'}}]
+ organization={'@type':'Organization','@id':BASE+'/#intellignce','name':'INTELLIGNCE','url':profile['company'],'founder':{'@id':BASE+'/#hadi'}}
+ graph.append(organization)
+ graph[1]['publisher']={'@id':BASE+'/#hadi'}
+ graph[2]['author']={'@id':BASE+'/#hadi'}
+ graph[2]['inLanguage']='en'
+ if key in ['about','resume']:
+  graph[2]['@type']=['WebPage','ProfilePage'];graph[2]['mainEntity']={'@id':BASE+'/#hadi'}
+ elif key in ['archive','work']:
+  graph[2]['@type']=['WebPage','CollectionPage']
+ elif key=='contact':graph[2]['@type']=['WebPage','ContactPage']
+ if creative:graph[2]['mainEntity']={'@id':url+'#project'}
  if path=='/':
-  graph.append({'@type':'ItemList','@id':BASE+'/#services','name':'Creative and digital services by Hadi Hassan','itemListElement':[{'@type':'ListItem','position':i+1,'item':{'@type':'Service','name':name,'serviceType':kind,'provider':{'@id':BASE+'/#hadi'},'url':BASE+'/#services'}} for i,(name,kind) in enumerate([('Branding Solutions','Logo design and brand identity'),('Design Solutions','Graphic design and UI/UX design'),('Social Media Creatives','Creative campaigns and social media design'),('E-commerce Solutions','E-commerce design and product photography'),('App Development','Web, SaaS and mobile application development'),('Conversion-Focused Landing Pages','Landing page design and development')])]})
+  graph.append({'@type':'ItemList','@id':BASE+'/#services','name':'Creative and digital services by Hadi Hassan','itemListElement':[{'@type':'ListItem','position':i+1,'item':{'@type':'Service','name':name,'serviceType':kind,'provider':{'@id':BASE+'/#hadi'},'areaServed':'Worldwide','url':BASE+'/#services'}} for i,(name,kind) in enumerate([('Brand Identity & Strategy','Brand strategy and visual identity'),('UI/UX & Website Design','UI/UX and responsive website design'),('Campaign & Social Design','Creative campaigns and social media design'),('E-commerce Design','E-commerce design and product photography'),('Product Strategy & MVPs','Product strategy, UX planning and MVP design'),('Conversion-Focused Landing Pages','Landing page design and development')])]})
  if path!='/':
   crumbs=[{'@type':'ListItem','position':1,'name':'Hadi Hassan','item':BASE+'/'}]
   if creative:crumbs.append({'@type':'ListItem','position':2,'name':'Portfolio','item':BASE+'/archive/'})
   crumbs.append({'@type':'ListItem','position':len(crumbs)+1,'name':creative['title'] if creative else title,'item':url})
   graph.append({'@type':'BreadcrumbList','itemListElement':crumbs})
- if creative:graph.append({'@type':'CreativeWork','name':creative['title'],'description':description,'url':url,'image':BASE+image,'creator':{'@id':BASE+'/#hadi'},'keywords':[creative.get('category','')]+[x.strip() for x in creative.get('services','').split('/') if x.strip()]})
+ if creative:graph.append({'@type':'CreativeWork','@id':url+'#project','name':creative['title'],'description':description,'url':url,'image':BASE+image,'creator':{'@id':BASE+'/#hadi'},'keywords':[creative.get('category','')]+[x.strip() for x in creative.get('services','').split('/') if x.strip()]})
  structured=json.dumps({'@context':'https://schema.org','@graph':graph},ensure_ascii=False).replace('</',r'<\/')
  seo=f'<link rel="canonical" href="{esc(url)}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{esc(url)}"><meta property="og:image" content="{esc(BASE+image)}"><meta property="og:image:alt" content="{esc(title)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{esc(BASE+image)}"><script type="application/ld+json">{structured}</script>'
  return symbols(render(head,{'title':esc(title),'description':esc(description),'body_class':body_class,'seo':seo})+'<a class="skip-link" href="#top">Skip to content</a>'+navigation+body+footer+'</body></html>')
@@ -163,18 +178,23 @@ shutil.copytree(SRC/'fonts',DIST/'assets/fonts',dirs_exist_ok=True)
 print(f'Built {len(projects)+7} pages with shared templates and Pixelarticons.')
 
 (DIST/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(url)+'</loc></url>' for url in urls)+'</urlset>')
-(DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+BASE+'/sitemap.xml\n')
+(DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /api/\nSitemap: '+BASE+'/sitemap.xml\n')
 
 # Keep machine-readable discovery on the same origin and project inventory as HTML.
 (DIST/'llms.txt').write_text('\n'.join([
  '# Hadi Hassan', '',
- '> Creative direction, brand identity and digital experiences. Based in Lahore, Pakistan, working worldwide.', '',
+ '> Hadi Hassan is a Creative & Product Design Leader and Founder & Product Lead at INTELLIGNCE. Based in Lahore, Pakistan, working worldwide.', '',
  '## Primary pages',
  *[f'- {label}: {BASE}{path}' for label,path in [
   ('Home','/'),('Work','/work/'),('Archive','/archive/'),('Resume','/resume/'),
   ('About','/about/'),('Contact','/contact/'),('Privacy','/privacy/')]], '',
  '## Project case studies',
  *[f'- {p["title"]}: {BASE}/{p["slug"]}/' for p in projects], '',
+ '## Profile facts',
+ '10+ years across creative direction, brand systems, digital products, marketing and visual storytelling.',
+ 'Primary enquiries: creative/product design leadership roles and design consulting. Send a role or consulting brief to hadi@intellignce.net.',
+ 'Services include brand strategy, UI/UX, websites, product strategy, MVP planning, campaign direction and visual storytelling.',
+ f'- Current 2026 CV (PDF): {BASE}{resume_source["url"]}', '',
  '## Source guidance',
  'Use the linked pages and original resume PDF for facts. Do not infer client outcomes, pricing or availability.',
  'A consultation is confirmed only by the booking interface after backend verification.', '',

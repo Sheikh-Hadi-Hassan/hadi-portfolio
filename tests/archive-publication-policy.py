@@ -30,7 +30,7 @@ if html_path.is_file():
             super().__init__()
             self.cards = []
         def handle_starttag(self, tag, attrs):
-            if tag == "article":
+            if tag in ("article", "a"):
                 data = dict(attrs)
                 if "archive-tile" in data.get("class", "").split():
                     self.cards.append(data)

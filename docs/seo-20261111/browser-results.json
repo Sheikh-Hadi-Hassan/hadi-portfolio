@@ -1,0 +1,45 @@
+[
+  {
+    "test": "tests/hero-responsive.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 111.08
+  },
+  {
+    "test": "tests/home-sections-browser.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 26.66
+  },
+  {
+    "test": "tests/sera-browser.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 6.64
+  },
+  {
+    "test": "tests/sera-guided-browser.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 63.01
+  },
+  {
+    "test": "tests/rebuilt-app-smoke.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 33.12,
+    "rerunReason": "Bounded wait for native asynchronous dialog close cleanup, retaining the same required outcome."
+  },
+  {
+    "test": "tests/release-navigation.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 10.64
+  },
+  {
+    "test": "docs/content-recovery-20261110/check-archive.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 9.22
+  }
+]

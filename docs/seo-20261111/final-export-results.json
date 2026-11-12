@@ -1,0 +1,20 @@
+[
+  {
+    "test": "tests/rebuilt-app-smoke.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 34.29
+  },
+  {
+    "test": "tests/release-navigation.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 19.96
+  },
+  {
+    "test": "docs/content-recovery-20261110/check-archive.cjs",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 13.78
+  }
+]

@@ -292,3 +292,6 @@ body{background:var(--theme-bg);color:var(--theme-text)}
 
 /* Owner supplied UI project showcases. */
 .product-card .product-showcase{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;border-radius:14px;margin-bottom:24px}.product-card{overflow:hidden}
+
+/* Resume-led introduction and authorship, within the existing type system. */
+.seo-introduction{max-width:70ch;margin:0 0 36px;color:#d4c7df;font-size:16px;line-height:1.7}.seo-introduction a,.case-author a{text-decoration:underline;text-underline-offset:4px}.case-author{font-size:13px;line-height:1.6;color:#c7b7d0;margin-block:14px 24px}
