@@ -47,7 +47,9 @@ def listing(items):return '<ul>'+''.join('<li>'+esc(item)+'</li>' for item in it
 selected=json.loads(read(Path('data/selected-work.json')))
 cover_map={item['slug']:item['cover'] for item in selected if item.get('slug')}
 archive_cards=[]
-archive_records=json.loads(read(Path('data/archive-records.json')))
+archive_records_all=json.loads(read(Path('data/archive-records.json')))
+# Preserve excluded records in the source register, but never render them publicly.
+archive_records=[record for record in archive_records_all if record.get('publication') != 'excluded']
 reference_cards=[]
 for record in archive_records:
  links=''.join(f'<a href="{esc(link["href"])}" target="_blank" rel="noopener noreferrer">{esc(link["label"])} ↗</a>' for link in record['links'])
