@@ -1,0 +1,29 @@
+{
+  "parentCommit": "e3c7ee2e07f8f1bcaf3c1f66d7dcdb0a75e922ab",
+  "confirmedFocus": "Leadership jobs and consulting",
+  "routeCount": 22,
+  "currentResume": {
+    "role": "Creative & Product Design Leader",
+    "url": "/assets/hadi-hassan-resume-2026-11.pdf",
+    "sha256": "ea26b6c2598589c9cc3ae6299359d3b0a83c70279773592182c0dd8784d123b1",
+    "sourceFile": "Resume CV - Hadi Hassan  Creative & Product Design Leader  2026.pdf",
+    "suppliedOn": "2026-11-11",
+    "experience": "10+ years",
+    "professionalRoles": 5,
+    "previousURL": "/assets/hadi-hassan-resume-2026.pdf"
+  },
+  "heroInputs": {
+    "hero_html": "888aaf45950d65b5011ec258d64feca93bbfed269c4a7698359a7109eb7f7767",
+    "hero_css": "f993b65cbcfb221e64a3e2c1babc9b92cb56205912595f636a1e1a2cdf661b26",
+    "shared_css": "7255e1f9fe90310502abca9c422d82cc135bf0dcba5aa574650513fd807a8b33"
+  },
+  "sourceOutputReceiptSHA256": "7b9c1f3530f4b99ceca09f5362186c1db65bbbd17366496d822bb4f83dd2d761",
+  "seraSourceReproducible": true,
+  "backendPHPChanged": false,
+  "mainModified": false,
+  "deployed": false,
+  "exportedResumeDigests": {
+    "/assets/hadi-hassan-resume-2026-11.pdf": "ea26b6c2598589c9cc3ae6299359d3b0a83c70279773592182c0dd8784d123b1",
+    "/assets/hadi-hassan-resume-2026.pdf": "3764361cf236d7cb9424ca8fe40ddfc182f9a64a429d4db8be08f6ea031b7304"
+  }
+}

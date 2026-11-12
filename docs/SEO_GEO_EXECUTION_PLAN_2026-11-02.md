@@ -1,3 +1,5 @@
+> Historical strategy. Current resume-led positioning and measured scope: [11 November audit](seo-20261111/AUDIT.md).
+
 # SEO / AEO / GEO execution plan — 2026-11-02
 
 Status: active on protected branch only. No production deploy, main merge, Search Console submission, Bing submission, credential rotation, or live booking test is authorized by this document.

@@ -196,6 +196,18 @@
       "question": "How long will it take?",
       "answer": "Timelines depend on scope, supplied assets, feedback and availability. Share your target date in the brief. Hadi will confirm feasibility; this assistant cannot promise a delivery date.",
       "action": "brief"
+    },
+    {
+      "id": "leadership-consulting",
+      "question": "Is Hadi interested in leadership roles or consulting?",
+      "answer": "Hadi welcomes conversations about creative and product design leadership roles and consulting. Review the current CV at https://hadi.intellignce.net/resume/ and email hadi@intellignce.net with the role or consulting brief. Start dates, terms and availability need to be discussed directly.",
+      "keywords": [
+        "leadership role",
+        "hiring",
+        "recruiter",
+        "consulting",
+        "career opportunity"
+      ]
     }
   ]
 }

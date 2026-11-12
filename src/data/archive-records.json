@@ -203,7 +203,9 @@
     "width": 900,
     "height": 506,
     "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
-    "sha256": "4a75046c76951efa18fac3010e671a5fed101179eca63081f631dac1312757f3"
+    "sha256": "4a75046c76951efa18fac3010e671a5fed101179eca63081f631dac1312757f3",
+    "publication": "excluded",
+    "exclusionReason": "Owner's November 2, 2026 SEO/content plan explicitly excludes this project pending fresh approval."
   },
   {
     "title": "Food Delivery Platform",
@@ -222,7 +224,9 @@
     "width": 900,
     "height": 506,
     "sourceCommit": "ab2289237cd751e6c261150e8b0fbe2fdd950b30",
-    "sha256": "8eeb5905ccba3f00388dd3786ef769dde9ccef53c9f3221fa0257da7513fc480"
+    "sha256": "8eeb5905ccba3f00388dd3786ef769dde9ccef53c9f3221fa0257da7513fc480",
+    "publication": "excluded",
+    "exclusionReason": "Owner's November 2, 2026 SEO/content plan explicitly excludes this project pending fresh approval."
   },
   {
     "title": "Predestination",

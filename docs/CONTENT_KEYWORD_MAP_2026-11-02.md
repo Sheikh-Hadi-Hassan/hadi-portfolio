@@ -1,3 +1,5 @@
+> Historical editorial map. Current research, page targets and unverified volume fields: [11 November keyword research](seo-20261111/keyword-research.csv).
+
 # Content keyword map — 2026-11-02
 
 Purpose: guide human-first SEO/AEO/GEO editing. These are editorial targets, not a keyword-density checklist. Story, factual accuracy and readability take priority.

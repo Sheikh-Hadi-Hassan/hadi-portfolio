@@ -1,0 +1,7 @@
+tests/hero-responsive.cjs 0
+tests/home-sections-browser.cjs 0
+tests/sera-browser.cjs 0
+tests/sera-guided-browser.cjs 0
+tests/rebuilt-app-smoke.cjs 1
+tests/release-navigation.cjs 0
+docs/content-recovery-20261110/check-archive.cjs 0

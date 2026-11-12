@@ -1,0 +1,61 @@
+
+> hadi-portfolio@1.0.0 test
+> node tests/reel-motion.cjs && node tests/booking-status.mjs && node tests/booking-client-contract.cjs && node tests/booking-recovery.mjs && node tests/sera-consent.cjs && node tests/booking-validation.mjs && node tests/notification-crash.mjs && node tests/sera-discovery.mjs && node tests/sera-errors.mjs && node tests/sera-knowledge.mjs && node tests/admin-control-center.mjs && node tests/admin-public-config.mjs && node tests/admin-cms.mjs && node tests/sera-config-voice.mjs && node tests/admin-cms-content.mjs && node tests/sera-runtime-controls.mjs && node tests/admin-cms-rich.mjs && node tests/admin-staging-security.mjs && node tests/booking-authority.mjs && node tests/sera-openrouter-policy.mjs && node tests/crm-workspace.mjs && node tests/crm-history-search.mjs && node tests/booking-lifecycle.mjs
+
+Desktop/mobile expansion endpoints, statement reveal/reverse timing at 0%, 31%, 100%, sound toggle, pause and cleanup passed.
+Booking status contract: event reservation, Meet pending/ready/failed, cancellation and not-found recovery states pass.
+Pending/failed Meet, invalid event identity/time and tentative events never confirm; integration copies match.
+Persisted lead/event/time correlation required: orphan event and mismatched record stay pending.
+Client rejects incomplete confirmations, retains pending drafts, accepts full event/Meet contract, and does not promote legacy responses.
+PASS: isolated duplicate/mismatched keys, lost Calendar response reconciliation, pending Meet, timeout, Calendar denial, busy slot and uncertain partial notification replay suppression. No external calls. Provider delivery ambiguity requires manual reconciliation.
+Saved lead retains stable reference, supplied contact and visitor zone, state and matching external event ID. Mock persistence only.
+PASS: AI defaults off, explicit enable/disable actions differ, privacy viewing does not consent, focus returns. Static request gate checked; browser/provider behavior remains unverified.
+PASS: withdrawal aborts active request, late-result guard present, consent is not restored from draft storage.
+PASS: stable event reference, malformed IDs/payloads, honeypot, spreadsheet formula escaping, bounded transient retry/no permission retry, fail-closed availability and escaped notification markup. Local contracts only.
+PASS: intent write failure sends nothing; lost post-send acknowledgement blocks replay; pre-send quota failure remains retryable; completed deliveries are skipped. Isolated fake mail/store only.
+PASS: crash after intent but before transmission is quarantined; safe partial quota retry sends only the unattempted recipient.
+PASS: manual-review alerts also quarantine uncertain delivery without automatic duplicate alerts.
+PASS: outbox quarantines lost-ack and corrupt-metadata jobs for manual reconciliation without another send.
+PASS: six canonical service trees terminate without repeated questions; deterministic non-binding brief, reload/session identity, page-only consent, duplicate schema and invalid answer faults.
+PASS: typed recovery policies retain drafts, bound safe retries, forbid uncertain-write retries and replace raw diagnostics. Policy core only.
+PASS: source-referenced profile and 15 projects, bounded relevant retrieval, no-match abstention; no prices or new outcomes generated.
+PASS: Google-identity deny-by-default roles, CSRF, draft/owner approval, immutable revisions/audit, operation replay/mismatch, optimistic conflict, hierarchy cycles, credential-field rejection and lock release. Mock Apps Script only.
+PASS: CRM annotation and cancellation-request revisions link to verified lead lookup; unknown lead rejected; no Calendar or mail APIs available in test.
+PASS: provider metadata drafts persist; activation and credential fields are rejected server-side.
+PASS: authorized report counts actual latest revisions; no invented analytics and no record contents/credentials exported.
+PASS: read projection excludes credential and unknown fields even from manually altered workspace records.
+PASS: later draft preserves approved snapshot; editor cannot archive approved knowledge.
+PASS: explicit approval required and accepted-mutation rate guard rejects excess writes without changing stored rows.
+PASS: owner-only export contains approved public snapshot, excludes drafts/private knowledge, provider/CRM/appointment data and actor identity.
+PASS: actual mock admin draft -> owner approval -> public export -> runtime schema validation; browser fixture derives from this export.
+PASS: CMS draft excluded until explicit owner approval; owner export excludes Sera/private records; editor export denied.
+PASS: approved personality/voice export and duplicate-active-singleton rejection.
+PASS: real mock project draft -> explicit approval -> sanitized CMS export fixture.
+PASS: full case draft/approval/public CMS export, route immutability and exclusion from Sera config.
+PASS: approved trees/skills/policy export, drafts excluded and public admin-tool escalation rejected.
+PASS: failed append writes nothing; lost flush acknowledgement replays the persisted operation once; lock released on both failures.
+PASS: rich content schema enforced server-side; drafts/private actor metadata excluded; approved article/chapter fields retained in CMS export only.
+PASS: public allowlist, corrupt/secret/private-kind rejection, optimistic publication, verified staging readback, rollback and approved FAQ response. No production path written.
+PASS: isolated existing-project metadata edit, escaped preview/canonical, route/image preservation, invalid media/protected-kind/new-project rejection, verified staging, conflict and rollback. Public source/hero untouched.
+PASS: actual mocked admin-approved CMS export compiles with real source assets and preserved routes.
+PASS: approved voice disable blocks start, resumed recognition and read-aloud. Isolated VM.
+PASS: sanitized media import/dedup/rejection, new full case, real-template escaped preview, isolated publish/readback, edit, interrupted publication, version conflict and rollback; source/hero untouched.
+PASS: shared runtime schema, prohibited admin skills/cycles/duplicates, conditional required answers, lead/brief handoff, pinned version through update/reload, consent reset and corrupt-tree answer preservation.
+PASS: bounded rich article/chapter schema, original editorial rendering/escaping, anchor and source-media preservation, explicit image replacement, and rejection of unapproved release files/directories/symlinks before rollback.
+PASS: mutable CMS/Sera/pointer hardlink and directory rejection, preserved victim, failed-write recovery, lock/temp cleanup, 0700/0600 modes and rollback. Isolated staging only.
+PASS: authoritative GET before confirmation; missing/timeout/wrong ID/reference/start/end/timezone remain pending and send nothing; verified invitations persist intent, reconcile lost acknowledgement and never blindly resend. Fake providers only.
+PASS: lost post-invitation GET is reconciled without another PATCH; mismatched Meet request, contradictory failure/link and malformed conference entries never confirm.
+PASS: readback recovery persists missing event identity without reinsertion; failed lead persistence prevents Calendar writes/invitations/mail.
+PASS: final persistence flush failure cannot return confirmation; status reconciles without another event.
+PASS: three-provider approved order plus backwards-compatible two-provider policy, duplicate/unknown/overlong rejection and Apps Script/JS contract parity. No activation.
+PASS: authenticated CRM join, stage/notes/tags/follow-up persistence, revisions, cross-reference protection, role isolation, replay after lost flush, duplicate hints, bounded formula-safe CSV, snapshot pagination across500 records with no duplicates or appended-row drift, script syntax. Fake Sheets only.
+PASS: CRM follow-up rejects impossible/non-date payloads, accepts leap days and intentional overdue dates without rewriting existing records.
+PASS: bounded5-page/1000-row search batches, snapshot continuation, retained results/cursor on failure, no duplicate matches, stage filters,500-result explicit cap and nondecreasing cursor rejection. Actual HTML scanner; fake RPC/data only.
+PASS: shown-result CSV is capped500, formula-neutralized/quoted and excludes private CRM notes.
+PASS: local-date due/overdue/undated/invalid filters classify shown records without treating invalid dates as overdue.
+PASS: owner/CSRF/default-off gates; preview->confirmed cancel/reschedule->same lead/event/public status; ETag concurrency, slot conflicts, durable intent, lost provider/readback/storage acknowledgements, read-only reconciliation/replay and expired preview. Fake Calendar/Sheets/OAuth only; zero live operations.
+PASS: lifecycle requires the actual booking writer/policy and same Sheet in the same ScriptLock scope; post-write slot conflicts quarantine rather than falsely confirm.
+PASS: no-op reschedules, incomplete Meet and mismatched18-column headers cannot request notifications or modify Calendar.
+PASS: disabling writes preserves owner-authorized read-only reconciliation and history, without re-enabling Calendar mutations.
+PASS: late read-only reconciliation uses original event proof, not new-booking notice/horizon rules, and never resends.
+PASS: expired provider authorization has a stable secret-safe diagnostic and no automatic mutation retry.
