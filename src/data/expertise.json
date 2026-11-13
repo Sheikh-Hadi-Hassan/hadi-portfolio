@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "description": "Editorial tags point to existing project case studies or published archive references. No duplicated case-study copy.",
+  "pages": {
+    "creative-direction": {
+      "title": "Creative Direction & Brand Design",
+      "eyebrow": "01 / STRATEGY, IDENTITY & CAMPAIGNS",
+      "statement": "Distinctive brands are built through clear thinking and consistent creative decisions.",
+      "intro": "I connect positioning, visual identity and art direction so a brand can communicate with one recognizable voice across its touchpoints.",
+      "approach": "Begin with the audience and the problem, set a clear visual direction, then develop the system across the places people actually encounter it. The work is as much about decisions and consistency as it is about individual assets.",
+      "capabilities": [
+        "Brand strategy and visual identity",
+        "Art direction and campaign concepts",
+        "Packaging and brand guidelines",
+        "Creative team coordination and cross-disciplinary review"
+      ],
+      "featured": [
+        "morganics",
+        "bits-hr-link",
+        "community-campaign",
+        "intellignce"
+      ],
+      "references": [
+        "Lahore Culture",
+        "Social Media Portfolio"
+      ],
+      "editorial": "Add verified team scope, decision ownership and client-approved outcomes to deepen the leadership stories."
+    },
+    "product-development": {
+      "title": "Product Design & Development",
+      "eyebrow": "02 / UX, INTERFACES & PROTOTYPES",
+      "statement": "Digital experiences should make complex tasks feel clear, usable and coherent.",
+      "intro": "I combine UX planning, interface design, visual systems and front-end implementation awareness, with the product's users and practical constraints in view.",
+      "approach": "Understand the task, map the journey and information hierarchy, then design and refine interfaces that work at the required screen sizes. I work across design and prototyping, without claiming backend or launch ownership where it is not established.",
+      "capabilities": [
+        "UX planning and information architecture",
+        "Responsive web and application interfaces",
+        "Design systems and reusable UI patterns",
+        "Interactive prototyping and front-end collaboration"
+      ],
+      "featured": [
+        "uiux-web-saas"
+      ],
+      "references": [
+        "ClearMetRx",
+        "Care by CallingDr",
+        "Virtual Pharmacy",
+        "MORENT",
+        "Dejong Rental Management",
+        "Travel Management",
+        "App Tech"
+      ],
+      "editorial": "Add individual product briefs, decision rationale, ownership, prototypes and launch status before expanding these previews into complete case studies."
+    },
+    "video-production": {
+      "title": "Video Production & Motion",
+      "eyebrow": "03 / FILM, EDITING & VISUAL STORIES",
+      "statement": "A strong visual story needs direction before it needs effects.",
+      "intro": "I work across production direction, documentary storytelling, editing and motion, including AI-assisted creative workflows where they genuinely serve the narrative.",
+      "approach": "Start with the story and its audience. Shape a sequence through scripting, storyboards and production decisions, then use editing, sound and motion to carry the message without losing clarity or continuity.",
+      "capabilities": [
+        "Documentary direction and production",
+        "Storyboarding, scripting and research",
+        "Video editing, VFX and sound treatment",
+        "Campaign video and AI-assisted animation"
+      ],
+      "featured": [
+        "fakhr-e-qoum",
+        "ai-animation",
+        "community-campaign"
+      ],
+      "references": [],
+      "editorial": "Add a dedicated showreel and production credits with exact responsibilities for each film."
+    }
+  }
+}
