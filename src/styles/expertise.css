@@ -22,7 +22,7 @@
 .expertise-card-action{margin-top:auto;padding-top:14px;border-top:1px solid var(--xp-line);font-size:.83rem;color:var(--xp-accent);font-weight:600}
 .expertise-section .xp-section-intro{display:flex;align-items:end;justify-content:space-between;gap:30px}
 .expertise-section .xp-section-intro .xp-meta{max-width:250px;color:#aaa2af;font-size:.85rem}
-.expertise-page{position:relative;min-height:100vh;padding:clamp(94px,11vw,142px) 0 115px;overflow:hidden}
+.expertise-page{position:relative;min-height:100vh;padding:clamp(94px,11vw,142px) 0 115px;overflow:clip}
 .expertise-page::before{content:"";position:absolute;top:-160px;right:-210px;width:840px;height:740px;pointer-events:none;background:radial-gradient(ellipse,var(--xp-glow) 0,transparent 67%);z-index:-1}
 .expertise-page .expertise-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);align-items:center;gap:clamp(42px,6vw,105px);padding:28px 0 clamp(80px,11vw,152px);min-height:640px}
 .expertise-back{display:inline-flex;align-items:center;color:var(--xp-muted);font-size:.81rem;letter-spacing:.03em;text-decoration:none;margin-bottom:clamp(40px,6vw,80px);border-bottom:1px solid var(--xp-line);padding-bottom:10px}
