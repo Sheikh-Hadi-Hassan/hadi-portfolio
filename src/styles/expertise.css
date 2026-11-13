@@ -179,3 +179,69 @@
 /* Hero typography must stack below the breadcrumb at every breakpoint. */
 .expertise-page .expertise-hero > div > .expertise-kicker{display:block;max-width:100%;margin-bottom:4px}
 @media(max-width:520px){.expertise-page .expertise-back{margin-bottom:24px}.expertise-page .expertise-hero{padding-top:5px}.expertise-page .xp-hero-index{margin-top:24px}}
+
+/* Image integrity: show the complete original artwork on every device.
+   Use contained letterboxing in fixed card/hero frames and intrinsic ratios in case studies. */
+.expertise-section .expertise-nav-card img,
+.expertise-page .expertise-nav-card img,
+.expertise-page .expertise-hero-image,
+.expertise-page .xp-preview-card img,
+.expertise-page .xp-video-trigger img,
+.expertise-page .expertise-project-card img{
+  object-fit:contain;
+  object-position:center;
+  background:#17171d;
+}
+.expertise-section .expertise-nav-card img,
+.expertise-page .expertise-nav-card img{
+  aspect-ratio:1.32;
+  width:100%;
+  height:auto;
+  min-height:0;
+}
+.expertise-page .expertise-hero-image{
+  object-fit:contain;
+  object-position:center;
+  background:#17171d;
+  max-width:100%;
+}
+.expertise-page .xp-showcase-visual img,
+.expertise-page[data-discipline="creative-direction"] .xp-showcase-visual img,
+.expertise-page[data-discipline="product-development"] .xp-showcase-visual img,
+.expertise-page[data-discipline="video-production"] .xp-showcase-visual img{
+  width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+  background:#17171d;
+}
+.expertise-page .xp-preview-card img{
+  width:100%;
+  aspect-ratio:1.4;
+  height:auto;
+}
+.expertise-page .xp-video-trigger img{
+  width:100%;
+  aspect-ratio:16/9;
+  height:auto;
+}
+.expertise-page .xp-showcase-visual:hover img,
+.expertise-page .xp-showcase-visual:focus-visible img,
+.expertise-page .xp-video-trigger:hover img,
+.expertise-page .xp-video-trigger:focus-visible img{
+  transform:none;
+}
+@media(max-width:850px){
+  .expertise-section .expertise-grid .expertise-nav-card img{
+    object-fit:contain;
+    min-height:0;
+  }
+}
+@media(max-width:520px){
+  .expertise-section .expertise-grid .expertise-nav-card img{
+    aspect-ratio:1.55;
+    object-fit:contain;
+  }
+}
