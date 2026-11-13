@@ -37,7 +37,24 @@
       "proof": "Explore Morganics, Bits HR Link and campaign work for examples of brand identity, creative direction and visual consistency.",
       "ctaHeading": "Hiring a creative director or brand design lead?",
       "ctaText": "Explore the selected work and contact me about creative leadership, brand systems or campaign direction.",
-      "ctaLabel": "Discuss a creative leadership role"
+      "ctaLabel": "Discuss a creative leadership role",
+      "experience": [
+        {
+          "title": "INTELLIGNCE",
+          "role": "Founder & Product Lead",
+          "detail": "Creative direction and brand-led digital product work, connecting concept, design decisions and delivery."
+        },
+        {
+          "title": "The Creative OAK",
+          "role": "Founder",
+          "detail": "Brand identity, campaigns, website projects, client communication and coordination of creative work."
+        },
+        {
+          "title": "Tecnomics",
+          "role": "Senior Creative",
+          "detail": "Branding, marketing assets and digital product design across healthcare and business software."
+        }
+      ]
     },
     "product-development": {
       "title": "Product Design & Development",
@@ -76,7 +93,24 @@
       "proof": "Start with the UI/UX and SaaS collection. Additional healthcare, dashboard and application examples are identified as previews until individual problems, decisions, roles and outcomes are documented.",
       "ctaHeading": "Hiring a senior product designer?",
       "ctaText": "Review my interface and product work, then contact me about UX, UI, design systems or digital product roles.",
-      "ctaLabel": "Discuss a product design role"
+      "ctaLabel": "Discuss a product design role",
+      "experience": [
+        {
+          "title": "INTELLIGNCE",
+          "role": "Founder & Product Lead",
+          "detail": "Digital product concepts, interface design and product-led creative direction."
+        },
+        {
+          "title": "Tecnomics",
+          "role": "Senior Creative",
+          "detail": "Digital product design for healthcare and business software alongside branding and marketing."
+        },
+        {
+          "title": "The Landing Page Guy",
+          "role": "User Interface Designer",
+          "detail": "Landing-page and interface work incorporating usability considerations and testing."
+        }
+      ]
     },
     "video-production": {
       "title": "Video Production & Motion",
@@ -109,7 +143,24 @@
       "proof": "Fakhr-e-Qoum, campaign material and animation work demonstrate different parts of the production practice. Exact credits and a consolidated showreel remain editorial priorities.",
       "ctaHeading": "Hiring for video direction or motion leadership?",
       "ctaText": "Review the films and production work, then contact me about creative video, documentary or motion roles.",
-      "ctaLabel": "Discuss a video creative role"
+      "ctaLabel": "Discuss a video creative role",
+      "experience": [
+        {
+          "title": "Fakhr-e-Qoum",
+          "role": "Producer & Director",
+          "detail": "Documentary research, scripting, 51-scene storyboard, production, editing and post-production oversight."
+        },
+        {
+          "title": "Hadi E-Learning",
+          "role": "Video Editing Trainer",
+          "detail": "Editing workflow instruction and project-based guidance for learners."
+        },
+        {
+          "title": "Independent creative work",
+          "role": "Video & Motion",
+          "detail": "Campaign films, editing, visual storytelling and AI-assisted animation documented in the featured work."
+        }
+      ]
     }
   }
 }
