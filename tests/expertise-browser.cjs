@@ -87,6 +87,12 @@ async function run(){
      assert(state.documentWidth<=state.viewportWidth+3,'Horizontal page overflow: '+JSON.stringify(state));
      assert(state.canonical.endsWith('/expertise/'+slug+'/'),'Wrong canonical URL');
      assert(state.title.includes('Hadi Hassan'),'Missing branded SEO title');
+     const heroLabels=await page.evaluate(()=>{
+      const back=document.querySelector('.expertise-back')?.getBoundingClientRect();
+      const label=document.querySelector('.expertise-hero > div > .expertise-kicker')?.getBoundingClientRect();
+      return {backBottom:back?.bottom,labelTop:label?.top};
+     });
+     assert(heroLabels.backBottom<=heroLabels.labelTop+2,'Hero breadcrumb overlaps the role label: '+JSON.stringify(heroLabels));
      const screen=path.join(artifacts,slug+'-'+device.name+'-'+engine+'.png');
      await page.screenshot({path:screen,fullPage:device.name==='desktop',animations:'disabled'});
      // Interactive chapters remain navigable with reduced motion.
