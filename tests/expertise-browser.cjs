@@ -51,8 +51,15 @@ async function run(){
      const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000});
      assert.equal(response.status(),200,'Unexpected HTTP status');
      await page.locator('.expertise-page').waitFor();
-     await page.evaluate(()=>document.fonts.ready);
-     await page.waitForTimeout(500);
+     // A direct recruiter link must not be hidden behind the homepage intro screen.
+     await page.waitForFunction(()=>!document.documentElement.classList.contains('is-loading'),null,{timeout:12000});
+     await page.waitForFunction(()=>document.querySelector('.expertise-hero-image')?.naturalWidth>0,null,{timeout:20000});
+     await page.evaluate(async()=>{
+      // Force below-the-fold imagery to load before full-page screenshots.
+      const images=[...document.querySelectorAll('.expertise-page img')];
+      images.forEach(img=>img.loading='eager');
+      await Promise.all([document.fonts.ready,...images.map(img=>img.decode?.().catch(()=>{})||Promise.resolve())]);
+     });
      const state=await page.evaluate(()=>{
       const main=document.querySelector('.expertise-page');
       const hero=main.querySelector('.expertise-hero-image');
@@ -66,12 +73,14 @@ async function run(){
        documentWidth:document.documentElement.scrollWidth,
        viewportWidth:innerWidth,
        canonical:document.querySelector('link[rel="canonical"]')?.href,
-       title:document.title
+       title:document.title,
+       introVisible:getComputedStyle(document.querySelector('#intro-loader')).display!=='none'
       };
      });
      assert.equal(state.h1,1,'Expected exactly one page heading');
      assert(state.hasAbout&&state.hasSelected&&state.hasExperience&&state.hasCTA,'Missing portfolio chapter');
      assert(state.heroLoaded,'Broken hero image');
+     assert(!state.introVisible,'Intro overlay still covers direct portfolio entry');
      assert(state.documentWidth<=state.viewportWidth+3,'Horizontal page overflow: '+JSON.stringify(state));
      assert(state.canonical.endsWith('/expertise/'+slug+'/'),'Wrong canonical URL');
      assert(state.title.includes('Hadi Hassan'),'Missing branded SEO title');
@@ -82,10 +91,19 @@ async function run(){
      assert.equal(await page.evaluate(()=>location.hash),'#xp-work','Chapter navigation is broken');
      if(slug==='product-development'){
       const buttons=page.locator('[data-xp-filter]');
-      if(await buttons.count()>1){
-       await buttons.nth(1).click();
-       assert.equal(await buttons.nth(1).getAttribute('aria-pressed'),'true','Filter state did not update');
-      }
+      assert(await buttons.count()>1,'Product work filters were not rendered');
+      await buttons.nth(1).click();
+      assert.equal(await buttons.nth(1).getAttribute('aria-pressed'),'true','Filter state did not update');
+      assert(await page.locator('.xp-preview-card:not([hidden])').count()>0,'Filtering hid every project');
+     }
+     if(slug==='video-production'){
+      const play=page.locator('[data-xp-play-video]').first();
+      assert(await play.count()>0,'No playable production preview');
+      await play.click();
+      assert(await page.locator('#xp-video-dialog').evaluate(el=>el.open),'Film dialog did not open');
+      assert(await page.locator('#xp-video-dialog iframe').count()>0,'Player is missing');
+      await page.locator('[data-xp-close-video]').click();
+      assert.equal(await page.locator('#xp-video-dialog iframe').count(),0,'Video continued after close');
      }
      console.log('PASS',slug,device.name,state.documentWidth+'/'+state.viewportWidth);
     }catch(error){failures.push(slug+' / '+device.name+': '+error.stack);console.error('FAIL',slug,device.name,error.message)}
