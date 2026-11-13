@@ -41,6 +41,10 @@ def page(title,description,body,body_class='',path='/',image='/assets/hadi-hassa
  graph[2]['inLanguage']='en'
  if key in ['about','resume']:
   graph[2]['@type']=['WebPage','ProfilePage'];graph[2]['mainEntity']={'@id':BASE+'/#hadi'}
+ elif key.startswith('expertise/'):
+  graph[2]['@type']=['WebPage','ProfilePage']
+  graph[2]['mainEntity']={'@id':BASE+'/#hadi'}
+  graph[2]['keywords']=[key.replace('expertise/','').replace('-',' '),'Creative direction','Professional portfolio']
  elif key in ['archive','work']:
   graph[2]['@type']=['WebPage','CollectionPage']
  elif key=='contact':graph[2]['@type']=['WebPage','ContactPage']
