@@ -175,7 +175,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
  let opener=null;
  const allowedHosts=new Set(['www.youtube.com','youtube.com','www.youtube-nocookie.com','player.vimeo.com','www-ccv.adobe.io']);
  function stop(){slot.replaceChildren();opener?.focus({preventScroll:true})}
- function closeDialog(){if(dialog.open)dialog.close();else stop()}
+ function closeDialog(){slot.replaceChildren();if(dialog.open)dialog.close();else stop()}
  dialog.addEventListener('close',stop);
  dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog()});
  close.addEventListener('click',closeDialog);
