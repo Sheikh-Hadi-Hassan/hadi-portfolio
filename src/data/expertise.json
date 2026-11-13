@@ -54,7 +54,11 @@
           "role": "Senior Creative",
           "detail": "Branding, marketing assets and digital product design across healthcare and business software."
         }
-      ]
+      ],
+      "previewTags": {
+        "Lahore Culture": "identity",
+        "Social Media Portfolio": "campaign"
+      }
     },
     "product-development": {
       "title": "Product Design & Development",
@@ -110,7 +114,16 @@
           "role": "User Interface Designer",
           "detail": "Landing-page and interface work incorporating usability considerations and testing."
         }
-      ]
+      ],
+      "previewTags": {
+        "ClearMetRx": "healthcare",
+        "Care by CallingDr": "healthcare",
+        "Virtual Pharmacy": "healthcare",
+        "MORENT": "operations",
+        "Dejong Rental Management": "operations",
+        "Travel Management": "operations",
+        "App Tech": "other"
+      }
     },
     "video-production": {
       "title": "Video Production & Motion",
