@@ -160,11 +160,26 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             videos = [item for item in featured if item.get('video',{}).get('url')]
             film = (
                 '<section class="expertise-block" id="xp-films" aria-labelledby="xp-films-heading">'
-                + section_header('PLAY THE WORK','Films and production.','Original project viewing links. Project-level credits and work breakdowns are linked in Selected Work.','xp-films-heading')
-                + '<div class="xp-media-links">' + ''.join(
-                    '<a href="'+esc(item['video']['url'])+'" target="_blank" rel="noopener noreferrer">'+esc(item['title'])+' / Watch ↗</a>'
+                + section_header('WATCH THE WORK','Films and production.','Select a film to play it on this page. Playback loads only when requested. External viewing links remain available.','xp-films-heading')
+                + '<div class="xp-video-grid">' + ''.join(
+                    '<article class="xp-video-card"><button type="button" class="xp-video-trigger"'
+                    ' data-xp-play-video="'+esc(item['video'].get('embed') or item['video']['url'])+'"'
+                    ' data-xp-video-title="'+esc(item['title'])+'"'
+                    ' data-xp-video-external="'+esc(item['video']['url'])+'"'
+                    ' aria-label="Play '+esc(item['title'])+' film">'
+                    '<img src="'+esc(item['hero'])+'" loading="lazy" decoding="async" alt="">'
+                    '<span class="xp-play-icon" aria-hidden="true">▶</span></button>'
+                    '<div class="xp-video-card-footer"><div><span class="expertise-kicker">FILM / CREATIVE PRODUCTION</span>'
+                    '<h3>'+esc(item['title'])+'</h3></div>'
+                    '<a href="'+esc(item['video']['url'])+'" target="_blank" rel="noopener noreferrer">Open film ↗</a></div></article>'
                     for item in videos
-                ) + '</div></section>'
+                ) + '</div>'
+                '<dialog id="xp-video-dialog" class="xp-video-dialog" aria-labelledby="xp-video-dialog-title">'
+                '<div class="xp-video-dialog-head"><h2 id="xp-video-dialog-title">Film preview</h2>'
+                '<button type="button" class="xp-video-close" data-xp-close-video aria-label="Close video">Close ×</button></div>'
+                '<div class="xp-video-slot" data-xp-video-slot></div>'
+                '<p class="xp-video-credit">Hosted project player. Playback and captions depend on the original host.</p>'
+                '</dialog></section>'
             )
         experience = (
             '<section class="expertise-block" id="xp-experience" aria-labelledby="xp-experience-heading">'
