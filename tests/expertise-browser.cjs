@@ -2,7 +2,7 @@
  * Standalone desktop/tablet/mobile visual and behavioral QA for expertise portfolios.
  * Run after npm run build: node tests/expertise-browser.cjs
  */
-const {chromium}=require('playwright');
+const {chromium,webkit}=require('playwright');
 const fs=require('fs');
 const http=require('http');
 const path=require('path');
@@ -39,7 +39,10 @@ async function run(){
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
  let browser;
  try{
-  browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+  const useWebKit=process.env.EXPERTISE_BROWSER_ENGINE==='webkit';
+  const browserType=useWebKit?webkit:chromium;
+  const engine=useWebKit?'webkit':'chromium';
+  browser=await browserType.launch(useWebKit?{headless:true}:{headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
   const base='http://127.0.0.1:'+server.address().port;
   const failures=[];
   for(const slug of slugs){
@@ -84,7 +87,7 @@ async function run(){
      assert(state.documentWidth<=state.viewportWidth+3,'Horizontal page overflow: '+JSON.stringify(state));
      assert(state.canonical.endsWith('/expertise/'+slug+'/'),'Wrong canonical URL');
      assert(state.title.includes('Hadi Hassan'),'Missing branded SEO title');
-     const screen=path.join(artifacts,slug+'-'+device.name+'.png');
+     const screen=path.join(artifacts,slug+'-'+device.name+'-'+engine+'.png');
      await page.screenshot({path:screen,fullPage:device.name==='desktop',animations:'disabled'});
      // Interactive chapters remain navigable with reduced motion.
      await page.locator('.xp-sticky-rail a[href="#xp-work"]').click();
@@ -107,7 +110,7 @@ async function run(){
       await page.locator('[data-xp-close-video]').click();
       assert.equal(await page.locator('#xp-video-dialog iframe').count(),0,'Video continued after close');
      }
-     console.log('PASS',slug,device.name,state.documentWidth+'/'+state.viewportWidth);
+     console.log('PASS',engine,slug,device.name,state.documentWidth+'/'+state.viewportWidth);
     }catch(error){failures.push(slug+' / '+device.name+': '+error.stack);console.error('FAIL',slug,device.name,error.message)}
     finally{await context.close()}
    }
