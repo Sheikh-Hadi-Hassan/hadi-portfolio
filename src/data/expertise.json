@@ -24,7 +24,20 @@
         "Lahore Culture",
         "Social Media Portfolio"
       ],
-      "editorial": "Add verified team scope, decision ownership and client-approved outcomes to deepen the leadership stories."
+      "editorial": "Add verified team scope, decision ownership and client-approved outcomes to deepen the leadership stories.",
+      "role": "Creative Director & Brand Design Lead",
+      "audience": "For creative leadership, brand design and campaign direction roles",
+      "aboutHeading": "Hadi as a creative leader",
+      "about": "I lead creative work from the first strategic question through visual direction and execution. My practice connects brand positioning, identities, campaigns and digital touchpoints. The work presented here focuses on the direction I shaped, the decisions behind it and the assets created with collaborators.",
+      "strengths": [
+        "Brand and campaign direction",
+        "Identity systems and art direction",
+        "Cross-disciplinary creative review"
+      ],
+      "proof": "Explore Morganics, Bits HR Link and campaign work for examples of brand identity, creative direction and visual consistency.",
+      "ctaHeading": "Hiring a creative director or brand design lead?",
+      "ctaText": "Explore the selected work and contact me about creative leadership, brand systems or campaign direction.",
+      "ctaLabel": "Discuss a creative leadership role"
     },
     "product-development": {
       "title": "Product Design & Development",
@@ -50,7 +63,20 @@
         "Travel Management",
         "App Tech"
       ],
-      "editorial": "Add individual product briefs, decision rationale, ownership, prototypes and launch status before expanding these previews into complete case studies."
+      "editorial": "Add individual product briefs, decision rationale, ownership, prototypes and launch status before expanding these previews into complete case studies.",
+      "role": "Senior Product Designer",
+      "audience": "For senior UX/UI, product design and digital experience roles",
+      "aboutHeading": "Hadi as a product designer",
+      "about": "I approach product design by organizing complex requirements into understandable user journeys, interface structures and reusable patterns. My background combines UX/UI design, prototyping and practical front-end knowledge. This portfolio distinguishes documented case studies from project previews so you can see what is demonstrated and what still needs a deeper breakdown.",
+      "strengths": [
+        "User flows and information architecture",
+        "Responsive interface and design-system thinking",
+        "Prototypes and front-end collaboration"
+      ],
+      "proof": "Start with the UI/UX and SaaS collection. Additional healthcare, dashboard and application examples are identified as previews until individual problems, decisions, roles and outcomes are documented.",
+      "ctaHeading": "Hiring a senior product designer?",
+      "ctaText": "Review my interface and product work, then contact me about UX, UI, design systems or digital product roles.",
+      "ctaLabel": "Discuss a product design role"
     },
     "video-production": {
       "title": "Video Production & Motion",
@@ -70,7 +96,20 @@
         "community-campaign"
       ],
       "references": [],
-      "editorial": "Add a dedicated showreel and production credits with exact responsibilities for each film."
+      "editorial": "Add a dedicated showreel and production credits with exact responsibilities for each film.",
+      "role": "Video Creative Director & Motion Lead",
+      "audience": "For video creative direction, production and motion roles",
+      "aboutHeading": "Hadi as a visual storyteller",
+      "about": "I develop visual stories across documentary, campaign video, editing and motion design. Depending on the project, my contribution may include concept development, production direction, editing or animation. The project breakdowns should distinguish these responsibilities rather than treating every credit as end-to-end production ownership.",
+      "strengths": [
+        "Documentary and campaign storytelling",
+        "Editing, motion and post-production",
+        "Visual development and AI-assisted workflows"
+      ],
+      "proof": "Fakhr-e-Qoum, campaign material and animation work demonstrate different parts of the production practice. Exact credits and a consolidated showreel remain editorial priorities.",
+      "ctaHeading": "Hiring for video direction or motion leadership?",
+      "ctaText": "Review the films and production work, then contact me about creative video, documentary or motion roles.",
+      "ctaLabel": "Discuss a video creative role"
     }
   }
 }
