@@ -89,6 +89,8 @@ async function run(){
      // Interactive chapters remain navigable with reduced motion.
      await page.locator('.xp-sticky-rail a[href="#xp-work"]').click();
      assert.equal(await page.evaluate(()=>location.hash),'#xp-work','Chapter navigation is broken');
+     const railPosition=await page.locator('.xp-sticky-rail').evaluate(el=>Math.round(el.getBoundingClientRect().top));
+     assert(railPosition>=-3&&railPosition<=6,'Chapter navigation did not stick: top '+railPosition);
      if(slug==='product-development'){
       const buttons=page.locator('[data-xp-filter]');
       assert(await buttons.count()>1,'Product work filters were not rendered');
