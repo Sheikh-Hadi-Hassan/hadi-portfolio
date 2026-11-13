@@ -29,3 +29,17 @@
 6. Verify generated `/expertise/*` pages and metadata in preview before merge or deployment.
 
 No local production build or visual browser verification was completed by this GitHub-only edit session.
+
+## Design iteration: role-specific portfolio experience
+- Editorial hero for each profile, featuring a real portfolio project with overlay credit and project link.
+- Design-specific accent palette per role (creative lavender, product cyan, video coral), unified by existing typography and dark visual identity.
+- In-page chapter navigation: About, Work, Process, Experience, Capabilities, Films (video only), Contact.
+- Role-specific biography and sourced career/project history, not duplicated generic About text.
+- Alternating large-format case-study layouts with actual decision statements and services from original project source.
+- Distinct preview grid for archive items where richer case-study documentation is still absent; status not overstated.
+- Three-step working approach per discipline, video watch links, and targeted email subject/CTA.
+- Native disclosure control inside existing site menu: About Hadi / choose a role-specific portfolio.
+- Responsive layout and reduced motion CSS. Page hero, Sera runtime, original case studies, and booking code remain unchanged.
+
+### Verification status
+GitHub source changes are committed, but the production Next.js build, visual regression inspection and mobile/browser tests have **not** run in this session. The PR must remain draft until those checks pass. The existing single CV still serves all three profiles; do not label it role-specific without generating and approving appropriate variants.
