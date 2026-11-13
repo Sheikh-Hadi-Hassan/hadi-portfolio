@@ -163,3 +163,42 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   });
  }
 })();
+
+
+// Click-to-load film previews. No third-party player is downloaded until the visitor opts in.
+(()=>{
+ const dialog=document.querySelector('#xp-video-dialog');
+ if(!dialog)return;
+ const slot=dialog.querySelector('[data-xp-video-slot]');
+ const title=dialog.querySelector('#xp-video-dialog-title');
+ const close=dialog.querySelector('[data-xp-close-video]');
+ let opener=null;
+ const allowedHosts=new Set(['www.youtube.com','youtube.com','www.youtube-nocookie.com','player.vimeo.com','www-ccv.adobe.io']);
+ function stop(){slot.replaceChildren();opener?.focus({preventScroll:true})}
+ function closeDialog(){if(dialog.open)dialog.close();else stop()}
+ dialog.addEventListener('close',stop);
+ dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog()});
+ close.addEventListener('click',closeDialog);
+ document.querySelectorAll('[data-xp-play-video]').forEach(button=>button.addEventListener('click',()=>{
+  opener=button;
+  const value=button.getAttribute('data-xp-play-video')||'';
+  const external=button.getAttribute('data-xp-video-external')||'';
+  let url;
+  try{url=new URL(value)}catch{url=null}
+  if(!url||url.protocol!=='https:'||!allowedHosts.has(url.hostname)){
+   if(/^https:\/\//.test(external))window.open(external,'_blank','noopener,noreferrer');
+   return;
+  }
+  const frame=document.createElement('iframe');
+  frame.src=url.href;
+  frame.title=(button.getAttribute('data-xp-video-title')||'Project film')+' player';
+  frame.loading='lazy';
+  frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  frame.allowFullscreen=true;
+  frame.referrerPolicy='strict-origin-when-cross-origin';
+  title.textContent=button.getAttribute('data-xp-video-title')||'Film preview';
+  slot.replaceChildren(frame);
+  if(typeof dialog.showModal==='function'){dialog.showModal();close.focus()}
+  else window.open(external,'_blank','noopener,noreferrer');
+ }));
+})();
