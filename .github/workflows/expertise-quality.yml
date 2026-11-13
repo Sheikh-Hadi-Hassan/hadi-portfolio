@@ -1,0 +1,58 @@
+name: Expertise Portfolio Quality
+on:
+  pull_request:
+    paths:
+      - 'scripts/expertise.py'
+      - 'scripts/build.py'
+      - 'src/data/expertise.json'
+      - 'src/data/seo-pages.json'
+      - 'src/site.js'
+      - 'src/styles/expertise.css'
+      - 'src/components/navigation.html'
+      - 'tests/expertise.py'
+      - 'tests/expertise-browser.cjs'
+      - '.github/workflows/expertise-quality.yml'
+  push:
+    branches:
+      - feature/expertise-portfolios-20261113
+  workflow_dispatch:
+
+jobs:
+  expertise-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip pillow
+          npm ci --no-audit --no-fund
+      - name: Validate project taxonomy and static generator syntax
+        run: |
+          python -m py_compile scripts/build.py scripts/expertise.py scripts/prepare-next.py tests/expertise.py
+          python -m unittest discover -s tests -p expertise.py
+      - name: Generate and build portfolio
+        run: npm run build
+      - name: Run expertise and SEO validations
+        run: |
+          python -m unittest discover -s tests -p expertise.py
+          python tests/seo.py
+          python tests/production.py
+      - name: Install Chromium for responsive QA
+        run: npx playwright install --with-deps chromium
+      - name: Test mobile, iPad and desktop layouts
+        run: node tests/expertise-browser.cjs
+      - name: Upload review screenshots and test report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: expertise-portfolio-review
+          path: artifacts/expertise-qa/
+          if-no-files-found: ignore
