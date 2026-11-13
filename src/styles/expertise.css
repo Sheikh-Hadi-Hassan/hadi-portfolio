@@ -160,3 +160,18 @@
 .xp-video-credit{font-size:.78rem;color:var(--xp-muted);padding-top:12px}
 @media(max-width:680px){.xp-video-grid{grid-template-columns:1fr}.xp-video-card-footer{padding:17px}.xp-video-dialog{padding:12px}.xp-play-icon{width:60px;height:60px}.xp-video-dialog-head{padding-bottom:10px}}
 @media(prefers-reduced-motion:reduce){.xp-video-trigger img{transition:none}}
+
+/* Discipline-specific art direction atop the shared visual system. */
+.expertise-page[data-discipline="creative-direction"] .xp-showcase-visual{box-shadow:inset 0 0 0 1px rgba(221,194,255,.12)}
+.expertise-page[data-discipline="creative-direction"] .xp-showcase-visual img{aspect-ratio:1.22;object-fit:cover}
+.expertise-page[data-discipline="creative-direction"] .expertise-heading{letter-spacing:-.075em}
+.expertise-page[data-discipline="product-development"] .xp-showcase-visual{padding:27px 18px 0;background:linear-gradient(145deg,#27394c 0%,#161c25 68%);border-radius:13px}
+.expertise-page[data-discipline="product-development"] .xp-showcase-visual::before{content:"";position:absolute;left:19px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--xp-accent);box-shadow:11px 0 0 #f0d4a7,22px 0 0 #eeaeb1}
+.expertise-page[data-discipline="product-development"] .xp-showcase-visual img{aspect-ratio:1.35;border-radius:8px 8px 0 0;border:1px solid #ffffff25}
+.expertise-page[data-discipline="product-development"] .xp-hero-media::before{border-style:dashed}
+.expertise-page[data-discipline="video-production"] .xp-showcase-visual img{aspect-ratio:16/9}
+.expertise-page[data-discipline="video-production"] .xp-showcase-visual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.22),transparent 24%,transparent 75%,rgba(0,0,0,.28))}
+.expertise-page[data-discipline="video-production"] .xp-showcase{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr)}
+.expertise-page[data-discipline="video-production"] .xp-showcase:nth-child(even){grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr)}
+.expertise-page[data-discipline="video-production"] .expertise-hero-image{aspect-ratio:3/3.4}
+@media(max-width:850px){.expertise-page[data-discipline="video-production"] .xp-showcase,.expertise-page[data-discipline="video-production"] .xp-showcase:nth-child(even){grid-template-columns:1fr}}
