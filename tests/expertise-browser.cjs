@@ -83,6 +83,13 @@ async function run(){
      assert.equal(state.h1,1,'Expected exactly one page heading');
      assert(state.hasAbout&&state.hasSelected&&state.hasExperience&&state.hasCTA,'Missing portfolio chapter');
      assert(state.heroLoaded,'Broken hero image');
+     // Original project visuals must never be cropped by CSS, including on mobile.
+     const imageFits=await page.evaluate(()=>[...document.querySelectorAll(
+      '.expertise-page .expertise-hero-image, .expertise-page .xp-showcase-visual img, .expertise-page .xp-preview-card img, .expertise-page .xp-video-trigger img'
+     )].map(img=>({source:img.currentSrc||img.src,fit:getComputedStyle(img).objectFit,naturalWidth:img.naturalWidth})));
+     assert(imageFits.length>1,'Portfolio project imagery missing');
+     assert(imageFits.every(img=>img.fit==='contain'),'Project image would be cropped: '+JSON.stringify(imageFits.filter(img=>img.fit!=='contain')));
+     assert(imageFits.every(img=>img.naturalWidth>0),'At least one project image did not load');
      assert(!state.introVisible,'Intro overlay still covers direct portfolio entry');
      assert(state.documentWidth<=state.viewportWidth+3,'Horizontal page overflow: '+JSON.stringify(state));
      assert(state.canonical.endsWith('/expertise/'+slug+'/'),'Wrong canonical URL');
