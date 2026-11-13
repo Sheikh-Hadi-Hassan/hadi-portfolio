@@ -48,13 +48,13 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             '</article>'
         )
 
-    def preview_card(record):
+    def preview_card(record, category):
         links = [x for x in record.get('links', []) if x.get('href', '').startswith('https://')]
         slug = re.sub('[^a-z0-9]+','-',record['title'].lower()).strip('-')
         href = links[0]['href'] if links else '/archive/#' + ('social-media-portfolio' if record['title'] == 'Social Media Portfolio' else 'archive-record-' + slug)
         external = ' target="_blank" rel="noopener noreferrer"' if links else ''
         return (
-            '<article class="xp-preview-card" data-xp-reveal data-xp-category="' + esc(record['category']) + '"><img loading="lazy" decoding="async" src="' + esc(record['image'])
+            '<article class="xp-preview-card" data-xp-reveal data-xp-category="' + esc(category) + '"><img loading="lazy" decoding="async" src="' + esc(record['image'])
             + '" alt="' + esc(record['title']) + ' portfolio preview">'
             '<div class="xp-preview-card-inner"><span class="expertise-kicker">' + esc(record['evidence']) + '</span>'
             '<h3>' + esc(record['title']) + '</h3><p>' + esc(record['type']) + '</p>'
@@ -118,9 +118,9 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         )
         references = ''
         filters = ''
-        if len({record.get('category','other') for record in refs}) > 1:
-            categories = sorted({record.get('category','other') for record in refs})
-            labels = {'digital':'Digital products','campaign':'Campaigns','film':'Film','brand':'Brand work','web':'Web experiences'}
+        if len({entry.get('previewTags',{}).get(record['title'],record.get('category','other')) for record in refs}) > 1:
+            categories = sorted({entry.get('previewTags',{}).get(record['title'],record.get('category','other')) for record in refs})
+            labels = {'digital':'Digital products','campaign':'Campaigns','identity':'Brand identity','healthcare':'Healthcare UX','operations':'Operations UX','other':'Other interfaces'}
             filters = (
                 '<div class="xp-filter-group" role="group" aria-label="Filter additional projects">'
                 '<button type="button" class="xp-filter is-active" data-xp-filter="all" aria-pressed="true">All projects</button>'
@@ -133,7 +133,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
                 '<div class="expertise-block-head"><div><span class="expertise-kicker">MORE WORK TO EXPLORE</span>'
                 '<h2 id="xp-more-heading">Additional projects.</h2></div><p class="xp-description">'
                 'These are sourced from existing portfolio previews. A preview is not evidence of a production launch or a verified business result.'
-                '</p></div>' + filters + '<div class="xp-preview-grid">' + ''.join(preview_card(record) for record in refs)
+                '</p></div>' + filters + '<div class="xp-preview-grid">' + ''.join(preview_card(record,entry.get('previewTags',{}).get(record['title'],record.get('category','other'))) for record in refs)
                 + '</div></section>'
             )
         stages = {
