@@ -49,10 +49,12 @@ jobs:
           python -m unittest discover -s tests -p expertise.py
           python tests/seo.py
           python tests/production.py
-      - name: Install Chromium for responsive QA
-        run: npx playwright install --with-deps chromium
-      - name: Test mobile, iPad and desktop layouts
+      - name: Install Chromium and WebKit for responsive QA
+        run: npx playwright install --with-deps chromium webkit
+      - name: Test mobile, iPad and desktop in Chromium
         run: node tests/expertise-browser.cjs
+      - name: Test Safari-style layouts in WebKit
+        run: EXPERTISE_BROWSER_ENGINE=webkit node tests/expertise-browser.cjs
       - name: Upload review screenshots and test report
         uses: actions/upload-artifact@v4
         if: always()
