@@ -36,7 +36,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         decision = project.get('decision', '')
         services = project.get('services', project.get('category',''))
         return (
-            '<article class="xp-showcase">'
+            '<article class="xp-showcase" data-xp-reveal>'
             '<a class="xp-showcase-visual" href="' + href + '"><img src="' + esc(project['hero']) + '" '
             'alt="' + esc(project['title']) + ' project visual" loading="lazy" decoding="async"></a>'
             '<div class="xp-showcase-body"><span class="xp-showcase-number">FEATURED WORK / ' + str(index).zfill(2) + '</span>'
@@ -54,7 +54,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         href = links[0]['href'] if links else '/archive/#' + ('social-media-portfolio' if record['title'] == 'Social Media Portfolio' else 'archive-record-' + slug)
         external = ' target="_blank" rel="noopener noreferrer"' if links else ''
         return (
-            '<article class="xp-preview-card"><img loading="lazy" decoding="async" src="' + esc(record['image'])
+            '<article class="xp-preview-card" data-xp-reveal data-xp-category="' + esc(record['category']) + '"><img loading="lazy" decoding="async" src="' + esc(record['image'])
             + '" alt="' + esc(record['title']) + ' portfolio preview">'
             '<div class="xp-preview-card-inner"><span class="expertise-kicker">' + esc(record['evidence']) + '</span>'
             '<h3>' + esc(record['title']) + '</h3><p>' + esc(record['type']) + '</p>'
@@ -74,6 +74,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         hero = by_slug[hero_projects[slug]]
         other_profiles = [(other,details) for other,details in profiles.items() if other != slug]
 
+        progress = '<div class="xp-scroll-progress" aria-hidden="true"><span></span></div>'
         rail = (
             '<nav class="xp-sticky-rail" aria-label="On this portfolio">'
             '<a href="#xp-about">About Hadi</a><a href="#xp-work">Selected work</a>'
@@ -116,13 +117,23 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             + ''.join(featured_case(item,i+1) for i,item in enumerate(featured)) + '</section>'
         )
         references = ''
+        filters = ''
+        if len({record.get('category','other') for record in refs}) > 1:
+            categories = sorted({record.get('category','other') for record in refs})
+            labels = {'digital':'Digital products','campaign':'Campaigns','film':'Film','brand':'Brand work','web':'Web experiences'}
+            filters = (
+                '<div class="xp-filter-group" role="group" aria-label="Filter additional projects">'
+                '<button type="button" class="xp-filter is-active" data-xp-filter="all" aria-pressed="true">All projects</button>'
+                + ''.join('<button type="button" class="xp-filter" data-xp-filter="'+esc(category)+'" aria-pressed="false">'+esc(labels.get(category,category.title()))+'</button>' for category in categories)
+                + '</div>'
+            )
         if refs:
             references = (
                 '<section class="expertise-block" id="xp-more" aria-labelledby="xp-more-heading">'
                 '<div class="expertise-block-head"><div><span class="expertise-kicker">MORE WORK TO EXPLORE</span>'
                 '<h2 id="xp-more-heading">Additional projects.</h2></div><p class="xp-description">'
                 'These are sourced from existing portfolio previews. A preview is not evidence of a production launch or a verified business result.'
-                '</p></div><div class="xp-preview-grid">' + ''.join(preview_card(record) for record in refs)
+                '</p></div>' + filters + '<div class="xp-preview-grid">' + ''.join(preview_card(record) for record in refs)
                 + '</div></section>'
             )
         stages = {
@@ -135,7 +146,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             '<div class="expertise-block-head"><div><span class="expertise-kicker">HOW I WORK</span>'
             '<h2 id="xp-approach-heading">Thinking before making.</h2></div>'
             '<p class="xp-description">' + esc(entry['approach']) + '</p></div>'
-            '<div class="xp-approach-steps">'
+            '<div class="xp-approach-steps" data-xp-reveal>'
             + ''.join('<article><span>0'+str(i+1)+'</span><h3>'+esc(title)+'</h3><p>'+esc(description)+'</p></article>' for i,(title,description) in enumerate(stages[slug]))
             + '</div></section>'
         )
@@ -181,7 +192,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         )
         body = (
             '<main class="expertise-page" data-discipline="'+esc(slug)+'" id="top"><div class="expertise-inner">'
-            + hero_section + rail + about + work + references + process + experience + capabilities + film + cta + '</div></main>'
+            + progress + hero_section + rail + about + work + references + process + experience + capabilities + film + cta + '</div></main>'
         )
         title = 'Hadi Hassan | '+entry['role']+' Portfolio'
         description = entry['intro']
