@@ -17,6 +17,10 @@ class ExpertiseChecks(unittest.TestCase):
             self.assertTrue(page['featured'])
             self.assertTrue(set(page['featured'])<=projects)
             self.assertTrue(set(page['references'])<=references)
+            self.assertTrue(page.get('role'))
+            self.assertTrue(page.get('about'))
+            self.assertTrue(page.get('ctaLabel'))
+            self.assertGreaterEqual(len(page.get('experience',[])),2)
 
     def test_generated_routes_and_home_navigation(self):
         if not (DIST/'index.html').exists():self.skipTest('run npm run build first')
@@ -31,6 +35,10 @@ class ExpertiseChecks(unittest.TestCase):
             self.assertIn('rel="canonical"',content)
             self.assertIn(url,content)
             self.assertIn('Selected work.',content)
-            self.assertIn('Related expertise.',content)
+            self.assertIn('EXPLORE OTHER DISCIPLINES',content)
+            self.assertIn('id="xp-about"',content)
+            self.assertIn('id="xp-work"',content)
+            self.assertIn('id="xp-experience"',content)
+            self.assertIn('id="xp-contact"',content)
 
 if __name__=='__main__':unittest.main()
