@@ -17,6 +17,10 @@ on:
       - feature/expertise-portfolios-20261113
   workflow_dispatch:
 
+concurrency:
+  group: expertise-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   expertise-validation:
     runs-on: ubuntu-latest
