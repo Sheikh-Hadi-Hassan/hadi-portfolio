@@ -62,10 +62,10 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             '<a href="' + esc(href) + '"' + external + '>Explore available evidence ↗</a></div></article>'
         )
 
-    def section_header(kicker, title, description):
+    def section_header(kicker, title, description, heading_id):
         return (
             '<div class="expertise-block-head"><div><span class="expertise-kicker">' + esc(kicker) + '</span>'
-            '<h2>' + esc(title) + '</h2></div><p class="xp-description">' + esc(description) + '</p></div>'
+            '<h2 id="' + esc(heading_id) + '">' + esc(title) + '</h2></div><p class="xp-description">' + esc(description) + '</p></div>'
         )
 
     for slug,entry in profiles.items():
@@ -77,7 +77,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         rail = (
             '<nav class="xp-sticky-rail" aria-label="On this portfolio">'
             '<a href="#xp-about">About Hadi</a><a href="#xp-work">Selected work</a>'
-            '<a href="#xp-approach">Approach</a><a href="#xp-capabilities">Capabilities</a>'
+            '<a href="#xp-approach">Approach</a><a href="#xp-experience">Experience</a><a href="#xp-capabilities">Capabilities</a>'
             + ('<a href="#xp-films">Watch films</a>' if slug == 'video-production' else '')
             + '<a href="#xp-contact">Contact</a></nav>'
         )
@@ -141,7 +141,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         )
         capabilities = (
             '<section class="expertise-block" id="xp-capabilities" aria-labelledby="xp-capabilities-heading">'
-            + section_header('TOOLS OF THE PRACTICE','What I bring.','Capabilities supported by the work and professional experience shown across this portfolio.')
+            + section_header('TOOLS OF THE PRACTICE','What I bring.','Capabilities supported by the work and professional experience shown across this portfolio.','xp-capabilities-heading')
             + '<ul class="expertise-pill-list">' + ''.join('<li>'+esc(item)+'</li>' for item in entry['capabilities']) + '</ul></section>'
         )
         film = ''
@@ -149,12 +149,24 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             videos = [item for item in featured if item.get('video',{}).get('url')]
             film = (
                 '<section class="expertise-block" id="xp-films" aria-labelledby="xp-films-heading">'
-                + section_header('PLAY THE WORK','Films and production.','Original project viewing links. Project-level credits and work breakdowns are linked in Selected Work.')
+                + section_header('PLAY THE WORK','Films and production.','Original project viewing links. Project-level credits and work breakdowns are linked in Selected Work.','xp-films-heading')
                 + '<div class="xp-media-links">' + ''.join(
                     '<a href="'+esc(item['video']['url'])+'" target="_blank" rel="noopener noreferrer">'+esc(item['title'])+' / Watch ↗</a>'
                     for item in videos
                 ) + '</div></section>'
             )
+        experience = (
+            '<section class="expertise-block" id="xp-experience" aria-labelledby="xp-experience-heading">'
+            '<div class="expertise-block-head"><div><span class="expertise-kicker">RELEVANT PROFESSIONAL HISTORY</span>'
+            '<h2 id="xp-experience-heading">Experience, in context.</h2></div>'
+            '<p class="xp-description">Selected responsibilities from my documented career and projects, chosen for this discipline. Complete employment history is available on my CV.</p></div>'
+            '<div class="xp-experience-list">'
+            + ''.join(
+                '<article class="xp-experience-row"><span class="xp-experience-org">' + esc(job['title']) + '</span>'
+                '<div><h3>' + esc(job['role']) + '</h3><p>' + esc(job['detail']) + '</p></div></article>'
+                for job in entry.get('experience',[])
+            ) + '</div></section>'
+        )
         related = '<div class="expertise-related">'+''.join('<a href="'+routes[other]+'">'+esc(details['role'])+' ↗</a>' for other,details in other_profiles)+'</div>'
         cta = (
             '<section class="expertise-block" id="xp-contact" aria-labelledby="xp-contact-heading">'
@@ -169,7 +181,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         )
         body = (
             '<main class="expertise-page" data-discipline="'+esc(slug)+'" id="top"><div class="expertise-inner">'
-            + hero_section + rail + about + work + references + process + capabilities + film + cta + '</div></main>'
+            + hero_section + rail + about + work + references + process + experience + capabilities + film + cta + '</div></main>'
         )
         title = 'Hadi Hassan | '+entry['role']+' Portfolio'
         description = entry['intro']
