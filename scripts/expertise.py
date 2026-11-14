@@ -9,11 +9,15 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
     routes = {slug: '/expertise/' + slug + '/' for slug in profiles}
     hero_projects = {'creative-direction': 'morganics', 'product-development': 'uiux-web-saas', 'video-production': 'fakhr-e-qoum'}
 
+    def size_attrs(record):
+        width, height = record.get('hero_width',record.get('width')),record.get('hero_height',record.get('height'))
+        return ' width="' + str(width) + '" height="' + str(height) + '"' if isinstance(width,int) and isinstance(height,int) and width>0 and height>0 else ''
+
     def nav_card(slug, entry):
         project = by_slug[hero_projects[slug]]
         return (
             '<a class="expertise-nav-card" href="' + routes[slug] + '">'
-            '<img src="' + esc(project['hero']) + '" alt="" loading="lazy" decoding="async">'
+            '<img src="' + esc(project['hero']) + '"' + size_attrs(project) + ' alt="" loading="lazy" decoding="async">'
             '<span class="expertise-card-copy"><span class="expertise-kicker">' + esc(entry['eyebrow']) + '</span>'
             '<h3>' + esc(entry['role']) + '</h3><p>' + esc(entry['intro']) + '</p>'
             '<span class="expertise-card-action">Explore the portfolio ↗</span></span></a>'
@@ -38,7 +42,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         return (
             '<article class="xp-showcase" data-xp-reveal>'
             '<a class="xp-showcase-visual" href="' + href + '"><img src="' + esc(project['hero']) + '" '
-            'alt="' + esc(project['title']) + ' project visual" loading="lazy" decoding="async"></a>'
+            'alt="' + esc(project['title']) + ' project visual"' + size_attrs(project) + ' loading="lazy" decoding="async"></a>'
             '<div class="xp-showcase-body"><span class="xp-showcase-number">FEATURED WORK / ' + str(index).zfill(2) + '</span>'
             '<h3>' + esc(project['title']) + '</h3>'
             '<p>' + esc(project.get('intro') or project.get('deck') or project['category']) + '</p>'
@@ -54,7 +58,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         href = links[0]['href'] if links else '/archive/#' + ('social-media-portfolio' if record['title'] == 'Social Media Portfolio' else 'archive-record-' + slug)
         external = ' target="_blank" rel="noopener noreferrer"' if links else ''
         return (
-            '<article class="xp-preview-card" data-xp-reveal data-xp-category="' + esc(category) + '"><img loading="lazy" decoding="async" src="' + esc(record['image'])
+            '<article class="xp-preview-card" data-xp-reveal data-xp-category="' + esc(category) + '"><img loading="lazy" decoding="async"' + size_attrs(record) + ' src="' + esc(record['image'])
             + '" alt="' + esc(record['title']) + ' portfolio preview">'
             '<div class="xp-preview-card-inner"><span class="expertise-kicker">' + esc(record['evidence']) + '</span>'
             '<h3>' + esc(record['title']) + '</h3><p>' + esc(record['type']) + '</p>'
@@ -98,7 +102,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             '<div class="xp-hero-actions"><a class="xp-button" href="#xp-work">Explore selected work ↗</a>'
             '<a class="xp-button xp-button-outline" href="#xp-about">About Hadi ↓</a></div>'
             '<div class="xp-hero-index"><b></b><span>Hadi Hassan · Lahore / Worldwide</span></div>'
-            '</div><figure class="xp-hero-media"><img class="expertise-hero-image" src="' + esc(hero['hero'])
+            '</div><figure class="xp-hero-media"><img class="expertise-hero-image"' + size_attrs(hero) + ' src="' + esc(hero['hero'])
             + '" alt="' + esc(hero['title']) + ', selected portfolio project" fetchpriority="high" decoding="async">'
             '<figcaption><span>Selected work / ' + esc(hero['title']) + '</span>'
             '<a href="/' + esc(hero['slug']) + '/">View project ↗</a></figcaption></figure></section>'
