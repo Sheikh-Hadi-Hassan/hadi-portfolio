@@ -245,3 +245,21 @@
     object-fit:contain;
   }
 }
+
+/* Optional cinematic editorial chapters, displayed only when curated owner assets exist. */
+.xp-cinematic-section{position:relative;isolation:isolate;margin:clamp(58px,8vw,120px) 0;padding:clamp(40px,6vw,78px) 0;border-top:1px solid var(--xp-line);border-bottom:1px solid var(--xp-line)}
+.xp-cinematic-heading{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(16px,4vw,64px);align-items:start;padding-bottom:clamp(26px,4vw,48px)}
+.xp-cinematic-heading .expertise-kicker{grid-column:1/-1}
+.xp-cinematic-heading h2,.xp-cinematic-story h2{font-size:clamp(2.45rem,5.2vw,5.5rem);letter-spacing:-.055em;line-height:1.06;margin:0;font-weight:500;text-wrap:balance}
+.xp-cinematic-heading p,.xp-cinematic-story p{max-width:620px;color:var(--xp-muted);font-size:clamp(.95rem,1.18vw,1.1rem);line-height:1.75;margin:0}
+.xp-cinematic-figure{position:relative;margin:0;min-width:0;background:#151719}
+.xp-cinematic-figure img{width:100%;height:auto;object-fit:contain;object-position:center;aspect-ratio:auto;display:block}
+.xp-cinematic-figure figcaption{position:absolute;bottom:14px;left:18px;padding:8px 12px;color:#f8f5f0;background:rgba(12,12,15,.68);backdrop-filter:blur(8px);font-size:.7rem;letter-spacing:.035em;line-height:1.4}
+.xp-cinematic-overhead .xp-cinematic-figure{border:1px solid var(--xp-line)}
+.xp-cinematic-apptech{display:grid;grid-template-columns:minmax(260px,.66fr) minmax(0,1.34fr);gap:clamp(24px,4vw,66px);align-items:center;padding:clamp(35px,6vw,80px) 0}
+.xp-cinematic-apptech .xp-cinematic-story{display:flex;flex-direction:column;align-items:start;gap:clamp(14px,1.8vw,24px)}
+.xp-cinematic-apptech .xp-cinematic-figure{border:1px solid var(--xp-line)}
+.xp-cinematic-note{font-size:.73rem;line-height:1.5;color:var(--xp-muted);margin-top:12px}
+@media(max-width:900px){.xp-cinematic-apptech{grid-template-columns:1fr;gap:25px}.xp-cinematic-heading{grid-template-columns:1fr;gap:16px}}
+@media(max-width:520px){.xp-cinematic-section{margin:48px 0;padding:35px 0}.xp-cinematic-figure figcaption{position:static;display:block;backdrop-filter:none;background:#18191b;padding:9px 12px}.xp-cinematic-heading h2,.xp-cinematic-story h2{font-size:clamp(2.25rem,10vw,3.5rem)}}
+@media(prefers-reduced-motion:reduce){.xp-cinematic-section *{transition:none!important}}
