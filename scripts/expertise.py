@@ -84,7 +84,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         rail = (
             '<nav class="xp-sticky-rail" aria-label="On this portfolio">'
             '<a href="#xp-about">About Hadi</a><a href="#xp-work">Selected work</a>'
-            '<a href="#xp-approach">Approach</a><a href="#xp-experience">Experience</a><a href="#xp-capabilities">Capabilities</a>'
+            '<a href="#xp-approach">Approach</a><a href="#xp-experience">Experience</a><a href="#xp-capabilities">Capabilities</a><a href="#xp-questions">Questions</a>'
             + ('<a href="#xp-films">Watch films</a>' if slug == 'video-production' else '')
             + '<a href="#xp-contact">Contact</a></nav>'
         )
@@ -227,6 +227,23 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
                 for job in entry.get('experience',[])
             ) + '</div></section>'
         )
+        questions = (
+            '<section class="expertise-block xp-questions" id="xp-questions" aria-labelledby="xp-questions-heading">'
+            '<div class="expertise-block-head"><div><span class="expertise-kicker">CLEAR ANSWERS / NO OVERCLAIMS</span>'
+            '<h2 id="xp-questions-heading">Questions, answered.</h2></div>'
+            '<p class="xp-description">A quick reference for hiring teams looking for a specific kind of work and verifiable examples.</p></div>'
+            '<div class="xp-questions-list">'
+            + ''.join('<details class="xp-question"><summary><span>' + esc(item['question']) + '</span><span class="xp-question-plus" aria-hidden="true">+</span></summary>'
+                      '<div class="xp-question-answer"><p>' + esc(item['answer']) + '</p></div></details>'
+                      for item in entry.get('faq',[]))
+            + '</div></section>'
+        )
+        faq_schema = {
+            '@context':'https://schema.org',
+            '@type':'FAQPage',
+            'mainEntity':[{'@type':'Question','name':item['question'],'acceptedAnswer':{'@type':'Answer','text':item['answer']}} for item in entry.get('faq',[])]
+        }
+        faq_json = '<script type="application/ld+json">' + json.dumps(faq_schema,ensure_ascii=False).replace('<','\\u003c') + '</script>'
         related = '<div class="expertise-related">'+''.join('<a href="'+routes[other]+'">'+esc(details['role'])+' ↗</a>' for other,details in other_profiles)+'</div>'
         cta = (
             '<section class="expertise-block" id="xp-contact" aria-labelledby="xp-contact-heading">'
@@ -241,7 +258,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         )
         body = (
             '<main class="expertise-page" data-discipline="'+esc(slug)+'" id="top"><div class="expertise-inner">'
-            + progress + hero_section + rail + about + cinematic_intro + work + cinematic_apptech + references + process + experience + capabilities + film + cta + '</div></main>'
+            + progress + hero_section + rail + about + cinematic_intro + work + cinematic_apptech + references + process + experience + capabilities + questions + film + cta + faq_json + '</div></main>'
         )
         title = 'Hadi Hassan | '+entry['role']+' Portfolio'
         description = entry['intro']
