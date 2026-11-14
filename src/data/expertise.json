@@ -72,7 +72,9 @@
           "question": "Is Hadi available for creative leadership opportunities?",
           "answer": "The portfolio includes direct contact options for creative director, brand design lead and campaign direction opportunities, including remote collaboration."
         }
-      ]
+      ],
+      "heroTitle": "Creative Director",
+      "heroNote": "Brand strategy, identity systems and campaign leadership"
     },
     "product-development": {
       "title": "Product Design & Development",
@@ -151,7 +153,9 @@
           "question": "Does this portfolio include UX process as well as visual design?",
           "answer": "Yes. It explains Hadi's workflow from requirements and task flows to interface systems, and links to existing project work. Unverified research outcomes are not presented as results."
         }
-      ]
+      ],
+      "heroTitle": "Senior Product Designer",
+      "heroNote": "UX architecture, interface systems and digital products"
     },
     "video-production": {
       "title": "Video Production & Motion",
@@ -215,7 +219,9 @@
           "question": "What production responsibilities are documented?",
           "answer": "The project pages distinguish concept, production, editing and animation contributions where documented. Additional detailed credits and a consolidated showreel are planned."
         }
-      ]
+      ],
+      "heroTitle": "Video Creative Director",
+      "heroNote": "Film, editing, motion and production storytelling"
     }
   }
 }
