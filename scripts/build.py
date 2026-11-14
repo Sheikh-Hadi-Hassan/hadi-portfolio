@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build static pages from shared components and project data. No dependencies."""
 from pathlib import Path
+from expertise import render_expertise
 import os
 import json,re,shutil,html
 ROOT=Path(__file__).resolve().parents[1];SRC=ROOT/'src';DIST=ROOT/'dist'
@@ -40,6 +41,10 @@ def page(title,description,body,body_class='',path='/',image='/assets/hadi-hassa
  graph[2]['inLanguage']='en'
  if key in ['about','resume']:
   graph[2]['@type']=['WebPage','ProfilePage'];graph[2]['mainEntity']={'@id':BASE+'/#hadi'}
+ elif key.startswith('expertise/'):
+  graph[2]['@type']=['WebPage','ProfilePage']
+  graph[2]['mainEntity']={'@id':BASE+'/#hadi'}
+  graph[2]['keywords']=[key.replace('expertise/','').replace('-',' '),'Creative direction','Professional portfolio']
  elif key in ['archive','work']:
   graph[2]['@type']=['WebPage','CollectionPage']
  elif key=='contact':graph[2]['@type']=['WebPage','ContactPage']
@@ -55,7 +60,7 @@ def page(title,description,body,body_class='',path='/',image='/assets/hadi-hassa
  structured=json.dumps({'@context':'https://schema.org','@graph':graph},ensure_ascii=False).replace('</',r'<\/')
  seo=f'<link rel="canonical" href="{esc(url)}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{esc(url)}"><meta property="og:image" content="{esc(BASE+image)}"><meta property="og:image:alt" content="{esc(title)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{esc(BASE+image)}"><script type="application/ld+json">{structured}</script>'
  return symbols(render(head,{'title':esc(title),'description':esc(description),'body_class':body_class,'seo':seo})+'<a class="skip-link" href="#top">Skip to content</a>'+navigation+body+footer+'</body></html>')
-(DIST/'index.html').write_text(page('Hadi Hassan | Creative Director & Brand Identity Designer','Hadi Hassan is a Creative Director, Design Lead and Brand Identity Designer in Lahore, working worldwide across branding, campaigns, UI/UX and digital products.',read(Path('pages/home.html'))))
+
 projects=json.loads(read(Path('data/projects.json')));template=read(Path('pages/case-study.html'))
 def listing(items):return '<ul>'+''.join('<li>'+esc(item)+'</li>' for item in items)+'</ul>'
 # Build archive cards from the same project source as their case studies.
@@ -65,6 +70,9 @@ archive_cards=[]
 archive_records_all=json.loads(read(Path('data/archive-records.json')))
 # Preserve excluded records in the source register, but never render them publicly.
 archive_records=[record for record in archive_records_all if record.get('publication') != 'excluded']
+expertise_home=render_expertise(SRC,DIST,page,esc,projects,archive_records)
+home_html=read(Path('pages/home.html')).replace('<section class="cinematic-story" id="story"',expertise_home+'<section class="cinematic-story" id="story"')
+(DIST/'index.html').write_text(page('Hadi Hassan | Creative Director & Brand Identity Designer','Hadi Hassan is a Creative Director, Design Lead and Brand Identity Designer in Lahore, working worldwide across branding, campaigns, UI/UX and digital products.',home_html))
 reference_cards=[]
 for record in archive_records:
  links=''.join(f'<a href="{esc(link["href"])}" target="_blank" rel="noopener noreferrer">{esc(link["label"])} ↗</a>' for link in record['links'])
@@ -175,7 +183,7 @@ for slug in ['about','resume','contact','privacy','work']:
  target.joinpath('index.html').write_text(page(titles[slug],descriptions[slug],read(Path('pages')/(slug+'.html')),'case-page',path='/'+slug+'/'))
 shutil.copyfile(SRC/'styles/hero.css',DIST/'hero.css');shutil.copyfile(SRC/'styles/clarity.css',DIST/'clarity.css');shutil.copyfile(SRC/'styles/studio.css',DIST/'studio.css');shutil.copyfile(SRC/'styles/home.css',DIST/'home.css');shutil.copyfile(SRC/'styles/site.css',DIST/'style.css');shutil.copyfile(SRC/'styles/case-study.css',DIST/'case-study.css');shutil.copyfile(SRC/'site.js',DIST/'script.js')
 shutil.copytree(SRC/'fonts',DIST/'assets/fonts',dirs_exist_ok=True)
-print(f'Built {len(projects)+7} pages with shared templates and Pixelarticons.')
+print(f'Built {len(projects)+10} pages with shared templates and Pixelarticons.')
 
 (DIST/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(url)+'</loc></url>' for url in urls)+'</urlset>')
 (DIST/'robots.txt').write_text('User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /api/\nSitemap: '+BASE+'/sitemap.xml\n')
@@ -187,7 +195,7 @@ print(f'Built {len(projects)+7} pages with shared templates and Pixelarticons.')
  '## Primary pages',
  *[f'- {label}: {BASE}{path}' for label,path in [
   ('Home','/'),('Work','/work/'),('Archive','/archive/'),('Resume','/resume/'),
-  ('About','/about/'),('Contact','/contact/'),('Privacy','/privacy/')]], '',
+  ('About','/about/'),('Creative direction','/expertise/creative-direction/'),('Product development','/expertise/product-development/'),('Video production','/expertise/video-production/'),('Contact','/contact/'),('Privacy','/privacy/')]], '',
  '## Project case studies',
  *[f'- {p["title"]}: {BASE}/{p["slug"]}/' for p in projects], '',
  '## Profile facts',
@@ -200,4 +208,4 @@ print(f'Built {len(projects)+7} pages with shared templates and Pixelarticons.')
  'A consultation is confirmed only by the booking interface after backend verification.', '',
 ]))
 
-with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text()+'\n'+(SRC/'styles/appbar.css').read_text())
+with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text()+'\n'+(SRC/'styles/appbar.css').read_text()+'\n'+(SRC/'styles/expertise.css').read_text())

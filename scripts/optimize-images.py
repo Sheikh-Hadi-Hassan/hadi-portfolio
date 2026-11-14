@@ -91,7 +91,11 @@ for page in sorted((ROOT/'dist').rglob('index.html')):
  canonical=html.unescape(re.search(r'<link rel="canonical" href="([^"]+)"',text).group(1))
  unique={x['contentUrl']:x for x in records}
  def enrich(m):
-  schema=json.loads(m.group(1));graph=schema['@graph'];graph.extend(unique.values())
+  schema=json.loads(m.group(1))
+  # The page may include standalone FAQPage, VideoObject, or other valid JSON-LD.
+  # Enrich only the canonical @graph; do not assume every script uses that shape.
+  if not isinstance(schema,dict) or not isinstance(schema.get('@graph'),list):return m.group(0)
+  graph=schema['@graph'];graph.extend(unique.values())
   for node in graph:
    if node.get('@type')=='CreativeWork':node['image']=[{'@id':x['@id']} for x in unique.values()]
   return '<script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</',r'<\/')+'</script>'
