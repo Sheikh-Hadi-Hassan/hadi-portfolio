@@ -43,3 +43,40 @@ No local production build or visual browser verification was completed by this G
 
 ### Verification status
 GitHub source changes are committed, but the production Next.js build, visual regression inspection and mobile/browser tests have **not** run in this session. The PR must remain draft until those checks pass. The existing single CV still serves all three profiles; do not label it role-specific without generating and approving appropriate variants.
+
+## Reference-inspired refinement (November 2026)
+
+Design reference research:
+- Clay: project-led proof, cinematic framing, and creative direction rather than generic feature grids.
+- Eleken: SaaS specialization, recognizable product contexts, task-centered capabilities, clear hiring narrative.
+- Dreamten: seniority, ownership, constraints and documented outcomes before cosmetic claims.
+- Webflow design: reusable visual language, responsive component patterns and purposeful interactions.
+
+None of the four external layouts or assets are copied. The implementation retains existing site typography (Nebulica, Instrument Sans, IBM Plex Mono), colors from `src/styles/case-study.css` (`--ink`, `--paper`, `--identity`, `--product`, `--systems`), navigation, locked homepage hero and Sera.
+
+### Interaction system
+- Portfolio reading progress and scroll-aware, keyboard-focusable chapter navigation
+- Revealed case studies only when visible (disabled with reduced motion)
+- Product/category preview filters based on documented project type
+- Click-to-load video previews with close-to-stop behavior, no eager third-party embeds
+- Semantic disclosure components for three evidence-grounded questions on each professional identity
+- Three role-specific URLs with distinct semantic H1, introductory copy, case-study proof and career experience
+
+### SEO, answer-engine and generative search readiness
+- Unique canonical URLs, descriptive titles, Open Graph images, semantic headings and natural-language summary copy
+- Existing source-derived ProfilePage graph plus visible answer pairs with corresponding FAQPage structured data
+- Explicit differentiation of published case studies from unverified concept/previews and **no fabricated case metrics**
+- Direct discoverability from homepage and main navigation
+- Static server-rendered HTML, no client-only core copy; appropriate for crawlers that do not execute JS
+- AEO/GEO readiness does **not** guarantee indexing, AI citations, featured answers or rich snippets
+
+### Adaptation of supplied Stageshow skill
+Use the skill's framing, restraint, leading subject, mobile-first composition and cause-driven motion principles. Do **not** replace the owner's real product images with invented UI, fictional dashboards, simulated results or a stock-faux demo. If a genuine interactive product walkthrough is later requested, build it from independently approved product states and test at full-width and compact widths, including a stable poster and reduced-motion fallback.
+
+### Editorial and operational release conditions
+- Owner approval of project ownership, production status, screenshots and exact video credits
+- Real assets imported to `public/assets/expertise/` for optional cinematic photo sections, if approved
+- Browser screenshot inspection at 360, 390, 768, 1024, 1440 widths; Chromium and WebKit
+- Verify all CSS source tokens match the established brand; no generic theme or unauthorized font
+- Run full build, SEO test, links test and responsive suite after final asset import
+- Merge only after final owner approval; do not claim deployed or Lighthouse scores not measured
