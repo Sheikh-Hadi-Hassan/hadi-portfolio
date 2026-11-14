@@ -68,6 +68,12 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             '<h2 id="' + esc(heading_id) + '">' + esc(title) + '</h2></div><p class="xp-description">' + esc(description) + '</p></div>'
         )
 
+    def optional_studio_asset(name):
+        # Optional curated assets. A repo checkout without the owner's image pack
+        # must continue to build without broken images or hidden placeholders.
+        filename = src.parent / 'public' / 'assets' / 'expertise' / name
+        return '/assets/expertise/' + name if filename.is_file() else None
+
     for slug,entry in profiles.items():
         featured = [by_slug[name] for name in entry['featured'] if name in by_slug]
         refs = [by_title[name] for name in entry['references'] if name in by_title]
@@ -181,6 +187,34 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
                 '<p class="xp-video-credit">Hosted project player. Playback and captions depend on the original host.</p>'
                 '</dialog></section>'
             )
+        cinematic_intro = ''
+        cinematic_apptech = ''
+        if slug == 'product-development':
+            overhead = optional_studio_asset('product-process-overhead.webp')
+            studio = optional_studio_asset('apptech-process-studio.webp')
+            if overhead:
+                cinematic_intro = (
+                    '<section class="xp-cinematic-section xp-cinematic-overhead" aria-labelledby="xp-cinematic-heading">'
+                    '<div class="xp-cinematic-heading"><span class="expertise-kicker">THE HUMAN SIDE OF PRODUCT DESIGN</span>'
+                    '<h2 id="xp-cinematic-heading">Clarity begins before the pixels.</h2>'
+                    '<p>Behind each interface is a process of making complex requirements understandable. The workspace image is an editorial illustration, not a record of a usability study.</p></div>'
+                    '<figure class="xp-cinematic-figure"><img src="' + esc(overhead) + '" alt="Overhead editorial studio view showing interface sketches, devices and product design workspace" loading="lazy" decoding="async">'
+                    '<figcaption>Design practice / conceptual studio photography</figcaption></figure>'
+                    '</section>'
+                )
+            if studio:
+                cinematic_apptech = (
+                    '<section class="xp-cinematic-section xp-cinematic-apptech" aria-labelledby="xp-cinematic-apptech-heading">'
+                    '<div class="xp-cinematic-story"><span class="expertise-kicker">PRODUCT THINKING / APPTECH</span>'
+                    '<h2 id="xp-cinematic-apptech-heading">From field problems to interface decisions.</h2>'
+                    '<p>AppTech explores the field technician journey through attendance, location-aware site guidance and records that administrators can review. The product pitch separates technician tasks from admin oversight; the next step is to present the actual task flows and design artifacts alongside the concept screens.</p>'
+                    '<a class="xp-text-link" href="#xp-more">Explore the AppTech project reference ↗</a>'
+                    '<span class="xp-cinematic-note">Illustrative studio composition, not evidence of a live research session</span></div>'
+                    '<figure class="xp-cinematic-figure"><img src="' + esc(studio) + '" alt="Editorial AppTech product design workspace with wide display showing interface screens, flow diagrams and design-system studies" loading="lazy" decoding="async">'
+                    '<figcaption>AppTech / conceptual product design workspace</figcaption></figure>'
+                    '</section>'
+                )
+
         experience = (
             '<section class="expertise-block" id="xp-experience" aria-labelledby="xp-experience-heading">'
             '<div class="expertise-block-head"><div><span class="expertise-kicker">RELEVANT PROFESSIONAL HISTORY</span>'
@@ -207,7 +241,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         )
         body = (
             '<main class="expertise-page" data-discipline="'+esc(slug)+'" id="top"><div class="expertise-inner">'
-            + progress + hero_section + rail + about + work + references + process + experience + capabilities + film + cta + '</div></main>'
+            + progress + hero_section + rail + about + cinematic_intro + work + cinematic_apptech + references + process + experience + capabilities + film + cta + '</div></main>'
         )
         title = 'Hadi Hassan | '+entry['role']+' Portfolio'
         description = entry['intro']
