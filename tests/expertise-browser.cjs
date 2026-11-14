@@ -107,6 +107,9 @@ async function run(){
       return {backBottom:back?.bottom,labelTop:label?.top};
      });
      assert(heroLabels.backBottom<=heroLabels.labelTop+2,'Hero breadcrumb overlaps the role label: '+JSON.stringify(heroLabels));
+     // Interaction assertions scroll to the FAQ; reset to the hero before screenshots.
+     await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,0)});
+     await page.waitForFunction(()=>scrollY<2,null,{timeout:4000});
      const screen=path.join(artifacts,slug+'-'+device.name+'-'+engine+'.png');
      await page.screenshot({path:screen,fullPage:device.name==='desktop',animations:'disabled'});
      // Interactive chapters remain navigable with reduced motion.
