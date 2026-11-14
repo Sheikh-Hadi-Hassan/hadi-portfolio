@@ -368,3 +368,15 @@
 .expertise-page .xp-hero-media::before{inset:12px -12px -12px 12px;opacity:.3}
 @media(max-width:950px){.expertise-page .expertise-hero{padding-top:0}.expertise-page .expertise-heading{font-size:clamp(3.2rem,8vw,6.6rem)}.expertise-page .xp-hero-media{max-width:780px}.expertise-page .expertise-hero-image{aspect-ratio:auto}}
 @media(max-width:600px){.expertise-page{padding-top:78px}.expertise-page .expertise-heading{font-size:clamp(3.05rem,12vw,4.8rem)}.expertise-page .expertise-back{margin-bottom:27px}.expertise-page .xp-hero-specialty{font-size:.76rem;margin-bottom:21px}.expertise-page .expertise-hero-image{aspect-ratio:auto}.expertise-page .xp-hero-media::before{inset:6px -6px -6px 6px}.expertise-page .xp-hero-media figcaption{font-size:.67rem;gap:10px}.expertise-page .xp-hero-media figcaption a{font-size:.67rem}}
+
+/* Laptop fold: keep primary role-specific hiring actions above the floating site dock. */
+@media(min-width:951px){
+ .expertise-page{padding-top:clamp(76px,5.4vw,94px)}
+ .expertise-page .expertise-hero{padding-top:0}
+ .expertise-page .expertise-back{margin-bottom:clamp(28px,3vw,43px)}
+ .expertise-page .expertise-heading{font-size:clamp(3.6rem,6.3vw,7.35rem)}
+ .expertise-page .xp-hero-specialty{margin-bottom:clamp(16px,2vw,26px)}
+ .expertise-page .xp-hero-support{margin:12px 0 22px}
+ .expertise-page .xp-hero-actions{margin-top:19px}
+ .expertise-page .xp-hero-index{margin-top:20px}
+}
