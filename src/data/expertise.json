@@ -58,7 +58,21 @@
       "previewTags": {
         "Lahore Culture": "identity",
         "Social Media Portfolio": "campaign"
-      }
+      },
+      "faq": [
+        {
+          "question": "What creative direction work does Hadi Hassan do?",
+          "answer": "Hadi works across brand positioning, visual identity, art direction, campaign concepts and consistent brand applications. The portfolio features Morganics, Bits HR Link and campaign work."
+        },
+        {
+          "question": "Can I see complete brand identity case studies?",
+          "answer": "Yes. The featured project links open existing case studies with selected visuals and documented creative decisions. Additional campaign references are clearly identified as previews."
+        },
+        {
+          "question": "Is Hadi available for creative leadership opportunities?",
+          "answer": "The portfolio includes direct contact options for creative director, brand design lead and campaign direction opportunities, including remote collaboration."
+        }
+      ]
     },
     "product-development": {
       "title": "Product Design & Development",
@@ -123,7 +137,21 @@
         "Dejong Rental Management": "operations",
         "Travel Management": "operations",
         "App Tech": "other"
-      }
+      },
+      "faq": [
+        {
+          "question": "What does Hadi specialize in as a product designer?",
+          "answer": "Hadi's work covers user journeys, information architecture, responsive application interfaces, design systems, prototypes and collaboration with front-end implementation."
+        },
+        {
+          "question": "Which product-design industries are represented?",
+          "answer": "The available portfolio references include healthcare interfaces, rental and operational tools, travel management and field-work applications. A preview does not imply a production launch."
+        },
+        {
+          "question": "Does this portfolio include UX process as well as visual design?",
+          "answer": "Yes. It explains Hadi's workflow from requirements and task flows to interface systems, and links to existing project work. Unverified research outcomes are not presented as results."
+        }
+      ]
     },
     "video-production": {
       "title": "Video Production & Motion",
@@ -172,6 +200,20 @@
           "title": "Independent creative work",
           "role": "Video & Motion",
           "detail": "Campaign films, editing, visual storytelling and AI-assisted animation documented in the featured work."
+        }
+      ],
+      "faq": [
+        {
+          "question": "What video production work does Hadi Hassan do?",
+          "answer": "The portfolio covers documentary storytelling, campaign video, editing, motion design and visual development, with selected original project references."
+        },
+        {
+          "question": "Can I watch production work on the page?",
+          "answer": "Where a project has an original video link, the film can be opened through a click-to-load player, with a direct external viewing link as an alternative."
+        },
+        {
+          "question": "What production responsibilities are documented?",
+          "answer": "The project pages distinguish concept, production, editing and animation contributions where documented. Additional detailed credits and a consolidated showreel are planned."
         }
       ]
     }
