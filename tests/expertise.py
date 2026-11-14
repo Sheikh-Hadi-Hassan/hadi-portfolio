@@ -40,5 +40,15 @@ class ExpertiseChecks(unittest.TestCase):
             self.assertIn('id="xp-work"',content)
             self.assertIn('id="xp-experience"',content)
             self.assertIn('id="xp-contact"',content)
+            if slug=='product-development':
+                studio=ROOT/'public/assets/expertise/apptech-process-studio.webp'
+                overhead=ROOT/'public/assets/expertise/product-process-overhead.webp'
+                self.assertEqual('id="xp-cinematic-apptech-heading"' in content,studio.is_file())
+                self.assertEqual('id="xp-cinematic-heading"' in content,overhead.is_file())
+                for image in [studio,overhead]:
+                    if image.is_file():
+                        self.assertIn(image.name,content)
+                self.assertNotIn('xp-cinematic-apptech-heading', (DIST/'expertise/creative-direction/index.html').read_text())
+
 
 if __name__=='__main__':unittest.main()
