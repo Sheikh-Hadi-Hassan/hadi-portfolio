@@ -21,6 +21,8 @@ class ExpertiseChecks(unittest.TestCase):
             self.assertTrue(page.get('about'))
             self.assertTrue(page.get('ctaLabel'))
             self.assertGreaterEqual(len(page.get('experience',[])),2)
+            self.assertEqual(len(page.get('faq',[])),3)
+            self.assertTrue(all(item['question'] and item['answer'] for item in page['faq']))
 
     def test_generated_routes_and_home_navigation(self):
         if not (DIST/'index.html').exists():self.skipTest('run npm run build first')
@@ -40,6 +42,10 @@ class ExpertiseChecks(unittest.TestCase):
             self.assertIn('id="xp-work"',content)
             self.assertIn('id="xp-experience"',content)
             self.assertIn('id="xp-contact"',content)
+            self.assertIn('id="xp-questions"',content)
+            self.assertEqual(content.count('class="xp-question"'),3)
+            self.assertIn('"@type": "FAQPage"',content)
+            self.assertIn('"acceptedAnswer"',content)
             if slug=='product-development':
                 studio=ROOT/'public/assets/expertise/apptech-process-studio.webp'
                 overhead=ROOT/'public/assets/expertise/product-process-overhead.webp'
