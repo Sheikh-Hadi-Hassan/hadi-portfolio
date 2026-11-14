@@ -353,3 +353,18 @@
 @media(max-width:1000px){.expertise-section .expertise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.expertise-section .expertise-nav-card{min-height:570px}.expertise-section .expertise-nav-card:last-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:340px}.expertise-section .expertise-nav-card:last-child img{height:100%;max-height:460px;object-fit:contain}.expertise-section .xp-section-intro .xp-meta{display:none}}
 @media(max-width:650px){.expertise-section .expertise-grid{grid-template-columns:1fr}.expertise-section .expertise-nav-card,.expertise-section .expertise-nav-card:last-child{display:flex;min-height:0;grid-column:auto}.expertise-section .expertise-nav-card img,.expertise-section .expertise-nav-card:last-child img{height:auto;aspect-ratio:1.55;max-height:none}.expertise-section .expertise-card-copy h3{min-height:0;font-size:clamp(1.9rem,7vw,2.6rem)}.expertise-section .expertise-nav-card::before{font-size:3.8rem}.expertise-section .expertise-heading{font-size:clamp(3.7rem,14vw,6rem)}}
 @media(prefers-reduced-motion:reduce){.expertise-section .expertise-nav-card{transition:none}.expertise-section .expertise-nav-card:hover{transform:none}}
+
+/* Final screenshot-driven polish: intrinsic image geometry, tighter first-fold storytelling. */
+.expertise-page{padding-top:clamp(82px,7vw,112px)}
+.expertise-page .expertise-hero{min-height:0;gap:clamp(35px,5vw,82px);padding-top:16px;padding-bottom:clamp(68px,8vw,110px)}
+.expertise-page .expertise-heading{font-size:clamp(3.6rem,7.6vw,8.5rem);max-width:920px;margin:20px 0 12px}
+.expertise-page .xp-hero-specialty{font:500 clamp(.75rem,1.05vw,.98rem)/1.5 "IBM Plex Mono",monospace;letter-spacing:.035em;color:var(--xp-accent);max-width:570px;margin:0 0 clamp(22px,3vw,38px)}
+.expertise-page .xp-hero-media{width:100%;max-width:100%;display:block;align-self:center;background:transparent;box-shadow:none}
+.expertise-page .expertise-hero-image,.expertise-page[data-discipline="video-production"] .expertise-hero-image{
+  display:block;width:100%;height:auto;max-height:none;min-height:0;aspect-ratio:auto;object-fit:contain;background:transparent;
+}
+.expertise-page .xp-hero-media figcaption{position:static;background:transparent;border-top:1px solid var(--xp-line);padding:14px 0;line-height:1.55;color:var(--xp-muted)}
+.expertise-page .xp-hero-media figcaption a{color:var(--xp-ink);white-space:nowrap}
+.expertise-page .xp-hero-media::before{inset:12px -12px -12px 12px;opacity:.3}
+@media(max-width:950px){.expertise-page .expertise-hero{padding-top:0}.expertise-page .expertise-heading{font-size:clamp(3.2rem,8vw,6.6rem)}.expertise-page .xp-hero-media{max-width:780px}.expertise-page .expertise-hero-image{aspect-ratio:auto}}
+@media(max-width:600px){.expertise-page{padding-top:78px}.expertise-page .expertise-heading{font-size:clamp(3.05rem,12vw,4.8rem)}.expertise-page .expertise-back{margin-bottom:27px}.expertise-page .xp-hero-specialty{font-size:.76rem;margin-bottom:21px}.expertise-page .expertise-hero-image{aspect-ratio:auto}.expertise-page .xp-hero-media::before{inset:6px -6px -6px 6px}.expertise-page .xp-hero-media figcaption{font-size:.67rem;gap:10px}.expertise-page .xp-hero-media figcaption a{font-size:.67rem}}
