@@ -94,6 +94,13 @@ async function run(){
      assert(state.documentWidth<=state.viewportWidth+3,'Horizontal page overflow: '+JSON.stringify(state));
      assert(state.canonical.endsWith('/expertise/'+slug+'/'),'Wrong canonical URL');
      assert(state.title.includes('Hadi Hassan'),'Missing branded SEO title');
+     const question=page.locator('.xp-question').first();
+     assert.equal(await page.locator('.xp-question').count(),3,'Missing answer-ready content');
+     await question.locator('summary').click();
+     assert(await question.evaluate(el=>el.open),'FAQ disclosure failed');
+     assert(await question.locator('.xp-question-answer').isVisible(),'FAQ answer is not visible');
+     await question.locator('summary').click();
+     assert(!(await question.evaluate(el=>el.open)),'FAQ disclosure did not close');
      const heroLabels=await page.evaluate(()=>{
       const back=document.querySelector('.expertise-back')?.getBoundingClientRect();
       const label=document.querySelector('.expertise-hero > div > .expertise-kicker')?.getBoundingClientRect();
