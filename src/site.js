@@ -231,17 +231,17 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
    const width=deck.clientWidth;
    const compact=width<660;
    // Expose only two depth layers on narrow phones, where every pixel matters.
-   const spacing=compact?clamp(width*.085,22,46):clamp(width*.09,58,112);
+   const spacing=compact?clamp(width*.12,24,54):clamp(width*.145,90,170);
    cards.forEach((card,index)=>{
     const delta=difference(index),depth=Math.abs(delta),visible=depth<=(compact?2:3);
     const side=delta<0?-1:1;
     const x=delta*spacing;
-    const y=depth*(compact?15:22);
-    const scale=Math.max(.62,1-depth*(compact?.09:.075));
-    const tilt=delta*(compact?-2.2:-3);
+    const y=depth*(compact?10:12);
+    const scale=Math.max(.70,1-depth*(compact?.12:.105));
+    const tilt=delta*(compact?-4:-5);
     card.style.transform='translate3d(calc(-50% + '+x+'px),calc(-50% + '+y+'px),0) rotateZ('+tilt+'deg) scale('+scale+')';
     card.style.zIndex=String(100-Math.round(depth*10));
-    card.style.opacity=visible?String(Math.max(.48,1-depth*.12)):'0';
+    card.style.opacity=visible?String(Math.max(.72,1-depth*.12)):'0';
     card.style.visibility=visible?'visible':'hidden';
     card.style.pointerEvents=visible?'auto':'none';
     card.classList.toggle('is-center',depth===0);
