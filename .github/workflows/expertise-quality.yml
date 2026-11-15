@@ -12,6 +12,7 @@ on:
       - 'tests/expertise.py'
       - 'tests/expertise-browser.cjs'
       - 'tests/phone_stack.py'
+      - 'tests/phone-stack-browser.cjs'
       - 'src/data/mobile-screen-stacks.json'
       - '.github/workflows/expertise-quality.yml'
   push:
@@ -56,9 +57,13 @@ jobs:
       - name: Install Chromium and WebKit for responsive QA
         run: npx playwright install --with-deps chromium webkit
       - name: Test mobile, iPad and desktop in Chromium
-        run: node tests/expertise-browser.cjs
+        run: |
+          node tests/expertise-browser.cjs
+          node tests/phone-stack-browser.cjs
       - name: Test Safari-style layouts in WebKit
-        run: EXPERTISE_BROWSER_ENGINE=webkit node tests/expertise-browser.cjs
+        run: |
+          EXPERTISE_BROWSER_ENGINE=webkit node tests/expertise-browser.cjs
+          EXPERTISE_BROWSER_ENGINE=webkit node tests/phone-stack-browser.cjs
       - name: Upload review screenshots and test report
         uses: actions/upload-artifact@v4
         if: always()
