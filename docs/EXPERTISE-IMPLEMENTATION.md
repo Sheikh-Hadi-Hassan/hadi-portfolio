@@ -96,3 +96,18 @@ Owner image usage:
 - Source integrity: `object-fit:contain`, intrinsic image ratios, native project identity, descriptive alt text, responsive layout without cropping
 
 To validate after import: `npm run build`, `python3 -m unittest tests/expertise.py`, and `node tests/expertise-browser.cjs`.
+
+## Phone-stack mobile portfolio / Consumer Connect (November 15)
+
+The Product Design profile now contains a custom-coded, responsive **phone-stack carousel**, inspired by the centered-device and stacked-side-card interaction of the Phone Stack Carousel example, without using an external licensed component.
+
+- Source of truth: `src/data/mobile-screen-stacks.json` (nine original screens, ordered).
+- Rendering: `scripts/expertise.py`, under Product Design before the original product work gallery.
+- Styling: `src/styles/expertise.css`, no clipping or cropping of the screenshot artwork. The 476 × 1097 screen proportions are retained inside a custom handset frame.
+- Interaction: `src/site.js`, infinite forward/reverse looping, buttons, pagination, keyboard arrows and Home/End, touch dragging, wheel and trackpad; reduced-motion support.
+- Accessibility: labeled region, titled screens, descriptive alt text, live counter, keyboard navigation and clear focus.
+- No new product performance claims. Original images are presented as UI examples and not interactive copies of the client product.
+
+The owner-supplied image pack is delivered separately as `consumer-connect-phone-stack-originals.zip`. It holds nine original PNG screenshots converted to **lossless WebP**, not AI-generated or restyled. The ZIP includes `install-phone-stack.sh` that copies the files into `public/assets/expertise/` in the correct feature branch.
+
+**Binary import is necessary to activate the carousel.** Without the images, the generator intentionally skips it to avoid broken screens. After importing the files, use `npm run dev` and visually confirm at 360, 390, 768, 1024, 1440 widths; the browser suite includes an additional set of carousel assertions when the assets exist. Commit and push the image files for review, then rerun CI before merge. Future screen sets can be added to the same JSON collections list with distinct IDs, heading IDs and title text.
