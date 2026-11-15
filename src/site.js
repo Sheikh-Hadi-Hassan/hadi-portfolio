@@ -202,3 +202,93 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   else window.open(external,'_blank','noopener,noreferrer');
  }));
 })();
+
+
+// Responsive original-screen phone stack. No carousel library or external assets.
+// Arrow keys, swipe/drag, trackpad and wheel all use modular infinite navigation.
+(()=>{
+ const stacks=[...document.querySelectorAll('[data-phone-stack]')];
+ if(!stacks.length)return;
+ const clampIndex=(i,n)=>(i%n+n)%n;
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ stacks.forEach(stack=>{
+  const deck=stack.querySelector('.xp-phone-deck');
+  const cards=[...stack.querySelectorAll('[data-phone-slide]')];
+  const dots=[...stack.querySelectorAll('[data-phone-go]')];
+  const title=stack.querySelector('[data-phone-title]');
+  const count=stack.querySelector('[data-phone-count-text]');
+  if(cards.length<2)return;
+  const slides=cards.map(card=>({label:card.getAttribute('aria-label')?.replace(/ screen \d+ of \d+$/,'')||'Screen'}));
+  let active=0,lastWheel=0,down=null;
+  const number=(n)=>String(n).padStart(2,'0');
+  function render(){
+   const width=stack.getBoundingClientRect().width;
+   const isSmall=width<650;
+   const step=Math.min(width*(isSmall?.39:.32),isSmall?170:390);
+   cards.forEach((card,i)=>{
+    let distance=clampIndex(i-active,cards.length);
+    if(distance>cards.length/2)distance-=cards.length;
+    const abs=Math.abs(distance);
+    const visible=abs<=2;
+    const x=distance*step*(abs===2?1.17:1);
+    const scale=abs===0?1:abs===1?(isSmall?.78:.85):.66;
+    const y=abs===0?0:abs===1?26:58;
+    card.style.setProperty('--xp-translate-x',x+'px');
+    card.style.setProperty('--xp-translate-y',y+'px');
+    card.style.setProperty('--xp-rotate',(-distance*(isSmall?12:15))+'deg');
+    card.style.setProperty('--xp-tilt',(distance*(isSmall?3:4))+'deg');
+    card.style.setProperty('--xp-scale',scale);
+    card.style.setProperty('--xp-opacity',visible?(abs===0?1:abs===1?.84:.48):0);
+    card.style.setProperty('--xp-blur',abs===2&&!isSmall?'1.5px':'0px');
+    card.style.setProperty('--xp-layer',String(10-abs));
+    card.style.setProperty('--xp-visible',visible?'visible':'hidden');
+    card.classList.toggle('is-center',abs===0);
+    card.setAttribute('aria-hidden',String(abs!==0));
+    card.inert=abs!==0;
+   });
+   dots.forEach((dot,i)=>dot.setAttribute('aria-current',String(i===active)));
+   if(title)title.textContent=slides[active].label;
+   if(count)count.textContent=number(active+1)+' / '+number(cards.length);
+  }
+  function go(n){
+   active=clampIndex(n,cards.length);
+   render();
+  }
+  stack.querySelector('[data-phone-prev]')?.addEventListener('click',()=>go(active-1));
+  stack.querySelector('[data-phone-next]')?.addEventListener('click',()=>go(active+1));
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
+  stack.addEventListener('keydown',e=>{
+   if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;
+   if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();go(active+1)}
+   if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();go(active-1)}
+   if(e.key==='Home'){e.preventDefault();go(0)}
+   if(e.key==='End'){e.preventDefault();go(cards.length-1)}
+  });
+  deck.addEventListener('pointerdown',e=>{
+   if(e.button!==0)return;
+   down={x:e.clientX,y:e.clientY,id:e.pointerId};
+  });
+  deck.addEventListener('pointerup',e=>{
+   if(!down||e.pointerId!==down.id)return;
+   const dx=e.clientX-down.x;
+   const dy=e.clientY-down.y;
+   down=null;
+   if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.1){go(active+(dx<0?1:-1))}
+  });
+  deck.addEventListener('pointercancel',()=>{down=null});
+  stack.addEventListener('wheel',e=>{
+   if(e.ctrlKey||e.metaKey||e.shiftKey)return;
+   const amount=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;
+   if(Math.abs(amount)<14)return;
+   const now=performance.now();
+   if(now-lastWheel<550){e.preventDefault();return}
+   lastWheel=now;
+   e.preventDefault();
+   go(active+(amount>0?1:-1));
+  },{passive:false});
+  if('ResizeObserver' in window){const ro=new ResizeObserver(render);ro.observe(stack)}
+  else window.addEventListener('resize',render,{passive:true});
+  reduced.addEventListener?.('change',render);
+  render();
+ });
+})();
