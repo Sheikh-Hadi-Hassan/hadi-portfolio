@@ -47,7 +47,15 @@ const html='<!doctype html><html><head><meta name="viewport" content="width=devi
    page.on('pageerror',error=>errors.push(error.message));
    await page.setContent(html,{waitUntil:'load'});
    assert.equal(await page.locator('[data-phone-slide]').count(),9);
-   await page.locator('[data-phone-next]').click();
+   const buttonState=await page.locator('[data-phone-next]').evaluate(el=>{
+    const rect=el.getBoundingClientRect(),style=getComputedStyle(el);
+    const parent=el.parentElement,ps=getComputedStyle(parent);
+    return {rect:{x:rect.x,y:rect.y,width:rect.width,height:rect.height},visibility:style.visibility,
+     display:style.display,opacity:style.opacity,parentDisplay:ps.display,parentVisibility:ps.visibility,
+     carouselRect:document.querySelector('[data-phone-stack]').getBoundingClientRect().toJSON()};
+   });
+   console.log('PHONE CONTROL STATE',device.name,JSON.stringify(buttonState));
+   await page.locator('[data-phone-next]').click({timeout:5000});
    await page.waitForFunction(()=>document.querySelector('[data-phone-count-text]')?.textContent==='02 / 09');
    await page.locator('[data-phone-prev]').click();
    await page.waitForFunction(()=>document.querySelector('[data-phone-count-text]')?.textContent==='01 / 09');
