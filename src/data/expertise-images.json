@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "notes": "All visuals are supplied by the portfolio owner. Preserve complete artwork; do not infer commercial release, metrics, or research results from presentation screenshots. Files are delivered separately in hadi-portfolio-image-update.zip.",
+  "hero": [
+    {
+      "title": "Crent",
+      "kind": "Rental operations dashboard",
+      "asset": "crent-dashboard.webp",
+      "alt": "Crent car rental dashboard in a laptop mockup with blue booking analytics and fleet overview",
+      "copy": "A rental-management interface with booking overview, fleet availability, transactions, and operational controls.",
+      "tag": "UI / Dashboard",
+      "reference": "/archive/"
+    },
+    {
+      "title": "Business OS",
+      "kind": "Business operations concept",
+      "asset": "flow-business-os.webp",
+      "alt": "Psyche business operating system laptop presentation showing revenue reporting and project delivery analytics",
+      "copy": "A product direction for bringing business performance, work delivery, and operational visibility into a coherent interface.",
+      "tag": "PRODUCT CONCEPT / ANALYTICS",
+      "reference": "/archive/"
+    },
+    {
+      "title": "AppTech",
+      "kind": "Field technician app",
+      "asset": "apptech-field-system.webp",
+      "alt": "AppTech field technician app presented on a handheld phone, showing attendance and site guidance functions",
+      "copy": "A mobile concept organized around attendance, location-aware field tasks, and administrator visibility.",
+      "tag": "MOBILE UX / OPERATIONS",
+      "reference": "/archive/"
+    },
+    {
+      "title": "Edlytics",
+      "kind": "Education analytics interface",
+      "asset": "edlytics-learning.webp",
+      "alt": "Edlytics learning dashboard presented on a tablet above a desk, showing education activity and courses",
+      "copy": "A learning-focused dashboard exploring navigation, progress signals, content discovery, and activity summaries.",
+      "tag": "EDUCATION / DASHBOARD",
+      "reference": "/edlytics/"
+    }
+  ],
+  "more": [
+    {
+      "title": "CallingDr",
+      "asset": "callingdr-web.webp",
+      "kind": "Telehealth web experience",
+      "alt": "CallingDr cyan and white healthcare web platform with telemedicine features and provider pages"
+    },
+    {
+      "title": "Care by CallingDr",
+      "asset": "care-visit-history.webp",
+      "kind": "Patient visit history",
+      "alt": "Care by CallingDr visit history and appointment interface displayed on a large curved monitor"
+    },
+    {
+      "title": "Care by CallingDr",
+      "asset": "care-family-selector.webp",
+      "kind": "Family profiles and patient navigation",
+      "alt": "Care by CallingDr interface selecting a family member for a medical visit"
+    },
+    {
+      "title": "Vera Health",
+      "asset": "vera-treatment-selector.webp",
+      "kind": "Treatment selection workflow",
+      "alt": "Vera Health dashboard showing selectable care treatment categories"
+    },
+    {
+      "title": "Consumer Connect",
+      "asset": "consumerconnect-dashboard.webp",
+      "kind": "Research operations dashboard",
+      "alt": "Consumer Connect research dashboard on a tablet showing responses, project activity, and member graphs"
+    },
+    {
+      "title": "ClearMetRx",
+      "asset": "clearmetrx-website.webp",
+      "kind": "Healthcare operations website",
+      "alt": "ClearMetRx medical data website hero with dark navy and lime highlights"
+    },
+    {
+      "title": "Travel management",
+      "asset": "travel-management.webp",
+      "kind": "Agency operations overview",
+      "alt": "Travel booking and agency business management dashboard presentation in a laptop"
+    },
+    {
+      "title": "Grassroots Ventures",
+      "asset": "grassroots-ventures-web.webp",
+      "kind": "Entrepreneurship platform website",
+      "alt": "Grassroots Ventures responsive website with founder imagery, business program sections, and green visual identity"
+    }
+  ]
+}
