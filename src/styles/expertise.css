@@ -652,3 +652,139 @@
 @media(prefers-reduced-motion:reduce){
  .expertise-page .xp-phone-card{transition:none}
 }
+
+
+/* Reference-aligned black stage: five deliberate overlapping phones, complete screens,
+   unobstructed navigation, and caption kept in the section flow. */
+.expertise-page .xp-phone-section{
+  background:#000!important;
+  padding-top:clamp(56px,6vw,94px);
+  padding-bottom:clamp(56px,6vw,94px);
+}
+.expertise-page .xp-phone-carousel{
+  background:#000!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:0;
+  overflow:hidden;
+  padding:clamp(26px,3vw,42px) 0 clamp(26px,3vw,40px);
+}
+.expertise-page .xp-phone-carousel::before{
+  background:none!important;
+}
+.expertise-page .xp-phone-carousel-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding-inline:clamp(20px,5vw,72px);
+  margin-bottom:10px;
+}
+.expertise-page .xp-phone-controls{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:12px;
+  flex-shrink:0;
+}
+.expertise-page .xp-phone-controls button{
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  border:1px solid #505058;
+  border-radius:50%;
+  background:#17171b;
+  color:#f8f8f8;
+}
+.expertise-page .xp-phone-deck{
+  height:clamp(530px,51vw,645px);
+  perspective:none!important;
+  overflow:hidden!important;
+  margin:0 auto 12px;
+  background:#000!important;
+}
+.expertise-page .xp-phone-deck::before,
+.expertise-page .xp-phone-deck::after{
+  display:none!important;
+}
+.expertise-page .xp-phone-card{
+  width:clamp(200px,19.5vw,257px);
+  filter:none!important;
+  transform-origin:center center;
+  transition:transform .6s cubic-bezier(.22,.74,.2,1),opacity .42s ease,visibility .42s;
+}
+.expertise-page .xp-phone-shell{
+  width:100%;
+  aspect-ratio:476/1097;
+  border-radius:34px;
+  padding:7px;
+  background:linear-gradient(120deg,#7b7b80 0%,#151519 9%,#050505 48%,#44444a 96%);
+  box-shadow:0 28px 58px #000c,0 0 0 1px #a7a7aa50;
+  overflow:hidden;
+}
+.expertise-page .xp-phone-screen{
+  overflow:hidden;
+  border-radius:28px;
+  background:#fff;
+}
+.expertise-page .xp-phone-screen img{
+  display:block;
+  width:100%;height:100%;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+.expertise-page .xp-phone-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  padding-inline:clamp(20px,5vw,72px);
+}
+.expertise-page .xp-phone-caption{min-width:0;max-width:500px}
+.expertise-page .xp-phone-hint{display:block;margin-top:7px}
+.expertise-page .xp-phone-pagination{flex-shrink:0}
+@media(max-width:850px){
+ .expertise-page .xp-phone-deck{height:clamp(495px,76vw,630px)}
+ .expertise-page .xp-phone-card{width:clamp(197px,28vw,245px)}
+}
+@media(max-width:650px){
+ .expertise-page .xp-phone-section{padding-inline:0;padding-block:55px}
+ .expertise-page .xp-phone-carousel{
+   margin:0!important;
+   padding:25px 0 34px;
+ }
+ .expertise-page .xp-phone-carousel-top{
+   padding-inline:18px;
+   gap:16px;
+   align-items:flex-end;
+   flex-wrap:wrap;
+ }
+ .expertise-page .xp-phone-controls{
+   margin-left:auto;
+   gap:9px;
+ }
+ .expertise-page .xp-phone-controls button{width:40px;height:40px}
+ .expertise-page .xp-phone-deck{
+   height:clamp(480px,137vw,595px);
+   margin:10px auto 12px;
+ }
+ .expertise-page .xp-phone-card{width:clamp(177px,53vw,235px)}
+ .expertise-page .xp-phone-shell{border-radius:29px;padding:6px}
+ .expertise-page .xp-phone-screen{border-radius:23px}
+ .expertise-page .xp-phone-footer{
+   display:flex;
+   flex-direction:column;
+   align-items:flex-start;
+   gap:17px;
+   padding-inline:20px;
+ }
+}
+@media(max-width:370px){
+ .expertise-page .xp-phone-deck{height:474px}
+ .expertise-page .xp-phone-card{width:178px}
+}
+@media(prefers-reduced-motion:reduce){
+ .expertise-page .xp-phone-card{transition:none!important}
+}
