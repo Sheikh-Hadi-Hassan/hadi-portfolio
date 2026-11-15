@@ -559,3 +559,96 @@
  .xp-phone-card{transition:none!important}
  .xp-phone-controls button,.xp-phone-pagination button{transition:none!important}
 }
+
+
+/* Phone-stack refinement: deliberately compact, layered, and screenshot-faithful.
+   Phones remain portrait and visually complete, never cover-cropped. */
+.expertise-page .xp-phone-carousel{
+  border-radius:0;
+  border-left:0;
+  border-right:0;
+  background:radial-gradient(ellipse at 50% 42%,rgba(95,87,114,.11),transparent 54%),#09090b;
+  overflow:clip;
+  padding-top:clamp(24px,4vw,56px);
+  padding-bottom:clamp(30px,4vw,55px);
+}
+.expertise-page .xp-phone-carousel::before{
+  inset:9% 24% 19%;
+  background:radial-gradient(ellipse,rgba(220,213,236,.09),transparent 72%);
+}
+.expertise-page .xp-phone-deck{
+  height:clamp(630px,62vw,805px);
+  perspective:none;
+  margin-top:clamp(10px,2vw,28px);
+  cursor:grab;
+  touch-action:pan-y;
+}
+.expertise-page .xp-phone-deck.is-dragging{cursor:grabbing}
+.expertise-page .xp-phone-card{
+  width:clamp(245px,26vw,320px);
+  transform-origin:center center;
+  filter:none!important;
+  transition:transform .58s cubic-bezier(.22,.74,.2,1),
+             opacity .42s ease,visibility .42s;
+  will-change:transform;
+  cursor:pointer;
+}
+.expertise-page .xp-phone-card.is-center{cursor:grab}
+.expertise-page .xp-phone-deck.is-dragging .xp-phone-card.is-center{cursor:grabbing}
+.expertise-page .xp-phone-shell{
+  border-radius:clamp(33px,3.4vw,42px);
+  padding:9px;
+  aspect-ratio:476/1097;
+  background:linear-gradient(125deg,#62636a,#101114 11%,#030305 79%,#85858e);
+  border:1px solid #c4c2c04c;
+  box-shadow:0 22px 45px #0009,0 8px 18px #0005,inset 0 0 0 1px #a7a5a744;
+}
+.expertise-page .xp-phone-screen{
+  border-radius:clamp(26px,2.7vw,34px);
+  background:#fff;
+  overflow:hidden;
+}
+.expertise-page .xp-phone-screen img{
+  width:100%;height:100%;
+  object-fit:contain;
+  object-position:center;
+  max-width:100%;
+}
+.expertise-page .xp-phone-sensor,
+.expertise-page .xp-phone-island{
+  display:none!important; /* Original screenshot already includes its native device UI. */
+}
+.expertise-page .xp-phone-card:not(.is-center) .xp-phone-shell{
+  box-shadow:0 14px 35px #000b;
+}
+.expertise-page .xp-phone-card.is-center .xp-phone-shell{
+  box-shadow:0 35px 100px #000c,0 0 0 1px #eeeeee23;
+}
+.expertise-page .xp-phone-controls button{
+  background:#17171b;border-color:#ffffff3a;
+}
+.expertise-page .xp-phone-controls button:hover{
+  background:#27272c;border-color:#fff8;
+}
+.expertise-page .xp-phone-hint{max-width:380px}
+@media(max-width:960px){
+ .expertise-page .xp-phone-deck{height:clamp(615px,85vw,730px)}
+ .expertise-page .xp-phone-card{width:clamp(246px,34vw,305px)}
+}
+@media(max-width:650px){
+ .expertise-page .xp-phone-carousel{margin-inline:-18px;padding-top:22px}
+ .expertise-page .xp-phone-carousel-top{padding-inline:20px;align-items:center}
+ .expertise-page .xp-phone-deck{height:clamp(510px,155vw,690px);margin-top:12px}
+ .expertise-page .xp-phone-card{width:clamp(200px,59vw,270px)}
+ .expertise-page .xp-phone-shell{padding:7px;border-radius:29px}
+ .expertise-page .xp-phone-screen{border-radius:24px}
+ .expertise-page .xp-phone-footer{padding-inline:20px}
+ .expertise-page .xp-phone-hint{max-width:310px}
+}
+@media(max-width:370px){
+ .expertise-page .xp-phone-card{width:clamp(192px,59vw,212px)}
+ .expertise-page .xp-phone-deck{height:540px}
+}
+@media(prefers-reduced-motion:reduce){
+ .expertise-page .xp-phone-card{transition:none}
+}
