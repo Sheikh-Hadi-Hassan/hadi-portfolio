@@ -292,3 +292,12 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   render();
  });
 })();
+
+// Show missing original asset instructions only while previewing on localhost.
+// Public portfolio pages remain clean even if the owner has not uploaded screenshots.
+(()=>{
+ const notices=document.querySelectorAll('[data-local-asset-notice]');
+ if(!notices.length)return;
+ const local=['localhost','127.0.0.1','::1'].includes(location.hostname);
+ notices.forEach(el=>{if(local)el.hidden=false;});
+})();
