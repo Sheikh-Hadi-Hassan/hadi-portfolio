@@ -229,25 +229,27 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   }
   function render(){
    const width=deck.clientWidth;
-   const compact=width<660;
-   // Expose only two depth layers on narrow phones, where every pixel matters.
-   const spacing=compact?clamp(width*.12,24,54):clamp(width*.145,90,170);
+   const compact=width<680;
+   const maxDepth=compact?1:3;
+   // The reference uses ONE upright phone and flat panels behind it.
+   // Keep screenshots intact; apply depth through scale and opacity, not crop or rotation.
+   const step=compact?Math.max(74,width*.24):Math.min(235,Math.max(110,width*.164));
    cards.forEach((card,index)=>{
-    const delta=difference(index),depth=Math.abs(delta),visible=depth<=(compact?2:3);
-    const side=delta<0?-1:1;
-    const x=delta*spacing;
-    const y=depth*(compact?10:12);
-    const scale=Math.max(.70,1-depth*(compact?.12:.105));
-    const tilt=delta*(compact?-4:-5);
-    card.style.transform='translate3d(calc(-50% + '+x+'px),calc(-50% + '+y+'px),0) rotateZ('+tilt+'deg) scale('+scale+')';
-    card.style.zIndex=String(100-Math.round(depth*10));
-    card.style.opacity=visible?String(Math.max(.72,1-depth*.12)):'0';
+    const delta=difference(index),depth=Math.abs(delta),visible=depth<=maxDepth;
+    const x=delta*step;
+    const y=depth*(compact?4:7);
+    const scale=depth===0?1:Math.max(.77,1-depth*(compact?.13:.065));
+    card.style.transform='translate3d(calc(-50% + '+x+'px),calc(-50% + '+y+'px),0) scale('+scale+')';
+    card.style.zIndex=String(100-depth*10);
+    card.style.opacity=visible?String(depth===0?1:Math.max(.4,1-depth*.19)):'0';
     card.style.visibility=visible?'visible':'hidden';
     card.style.pointerEvents=visible?'auto':'none';
     card.classList.toggle('is-center',depth===0);
+    card.classList.toggle('is-side-panel',depth!==0);
     card.setAttribute('aria-hidden',String(depth!==0));
     card.tabIndex=visible?0:-1;
-    card.dataset.stackSide=depth===0?'center':side<0?'left':'right';
+    card.dataset.stackDepth=String(depth);
+    card.dataset.stackSide=depth===0?'center':delta<0?'left':'right';
    });
    if(count)count.textContent=String(current+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
    if(caption)caption.textContent=names[current];
