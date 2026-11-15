@@ -451,3 +451,10 @@
  .xp-phone-deck{height:560px}
  .xp-phone-card{width:214px}
 }
+
+/* Local development diagnostic, never shown on published domains. */
+.xp-local-asset-notice[hidden]{display:none!important}
+.xp-local-asset-notice{margin:22px auto 65px;max-width:960px;padding:clamp(20px,4vw,36px);border:1px solid rgba(244,155,52,.5);border-radius:12px;background:#211b14;color:#f2eee6;line-height:1.65}
+.xp-local-asset-notice strong{display:block;font-size:1.15rem;margin-bottom:8px}
+.xp-local-asset-notice p{font-size:.9rem;color:#d5cdc3;max-width:740px}
+.xp-local-asset-notice code{white-space:normal;overflow-wrap:anywhere;color:#ffb566}
