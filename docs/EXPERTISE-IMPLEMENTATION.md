@@ -80,3 +80,19 @@ Use the skill's framing, restraint, leading subject, mobile-first composition an
 - Verify all CSS source tokens match the established brand; no generic theme or unauthorized font
 - Run full build, SEO test, links test and responsive suite after final asset import
 - Merge only after final owner approval; do not claim deployed or Lighthouse scores not measured
+
+## Importing user-supplied product images (November 15, 2026)
+
+The image curatorial map is `src/data/expertise-images.json`. It selects 4 primary visual case studies and 8 supporting original interface presentations for the **Product Design & Development** page. The art direction favors actual design work rather than QR-code/title slides or repetitive studio photographs.
+
+The images are sourced from owner-supplied conversation attachments and delivered separately as `hadi-portfolio-image-update.zip` (28 optimized WebP assets, 3.1 MB). The full asset filenames and their source uploads are documented in that ZIP's `IMAGE-MAP.json`. No source images were altered, rebranded or cropped.
+
+**Required binary import before publication:** Extract the ZIP and copy the included `public/assets/expertise/*.webp` files into this branch's matching public directory, then commit/push the image files. This connector environment can commit source text but cannot directly transfer local binary image bytes into GitHub. Until the asset import, the generator intentionally hides these new owner-image galleries instead of displaying broken images. The two previously optional cinematic sections use the same directory and file-existence checks.
+
+Owner image usage:
+- Feature stories: Crent rental operations, business OS interface, AppTech field technician app, Edlytics education dashboard
+- Supporting gallery: CallingDr, Care by CallingDr, Vera Health, Consumer Connect, ClearMetRx, Travel management, Grassroots Ventures
+- Cinematic chapter: original studio workspace photography only where it adds process context, with disclosure that staged visuals are not research evidence
+- Source integrity: `object-fit:contain`, intrinsic image ratios, native project identity, descriptive alt text, responsive layout without cropping
+
+To validate after import: `npm run build`, `python3 -m unittest tests/expertise.py`, and `node tests/expertise-browser.cjs`.
