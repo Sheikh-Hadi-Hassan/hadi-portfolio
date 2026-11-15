@@ -204,120 +204,135 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
 })();
 
 
-// Reference-style infinite phone stack; screen collection is data-driven.
-// Continuous spring positioning instead of discrete three-step transitions.
+// Continuously looping, perspective phone-stack gallery.
+// Desktop: click, arrows, trackpad horizontal scroll. Mobile: swipe without blocking vertical page scroll.
 (()=>{
- const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- const clamp=(n,min,max)=>Math.min(max,Math.max(min,n));
- document.querySelectorAll('[data-phone-stack]').forEach(stack=>{
-  const deck=stack.querySelector('.xp-phone-deck');
-  const cards=[...stack.querySelectorAll('[data-phone-slide]')];
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+ document.querySelectorAll('[data-phone-stack]').forEach(root=>{
+  const deck=root.querySelector('.xp-phone-deck');
+  const cards=[...root.querySelectorAll('[data-phone-slide]')];
   if(!deck||cards.length<2)return;
+  const previous=root.querySelector('[data-phone-prev]');
+  const next=root.querySelector('[data-phone-next]');
+  const count=root.querySelector('[data-phone-count-text]');
+  const caption=root.querySelector('[data-phone-title]');
+  const dots=[...root.querySelectorAll('[data-phone-dot]')];
   const total=cards.length;
-  const live=stack.querySelector('[data-phone-count-text]');
   const wrap=n=>((n%total)+total)%total;
-  const nearest=(index,position)=>{
-   let d=index-wrap(position);
-   while(d>total/2)d-=total;
-   while(d< -total/2)d+=total;
+  const offset=(index,at)=>{
+   let d=index-wrap(at);
+   if(d>total/2)d-=total;
+   if(d< -total/2)d+=total;
    return d;
   };
-  let target=0,position=0,velocity=0,last=0,raf=0,drag=null,wheelSum=0,wheelAt=0;
-  let lastInput=performance.now(),autoplayTimer=0;
-  function paint(){
-   const width=deck.clientWidth||stack.clientWidth;
-   const base=clamp(width*.15,37,105);
-   const compact=width<560;
+  let current=0,target=0,frameId=0,drag=null,scrollSum=0,scrollTime=0,changedAt=performance.now();
+  const headings=cards.map(card=>card.getAttribute('aria-label')?.replace(/ screen \d+ of \d+$/,'')||'Mobile screen');
+  function render(){
+   const w=deck.clientWidth;
+   const narrow=w<650;
+   const spacing=narrow?Math.min(w*.27,116):Math.min(w*.245,252);
    cards.forEach((card,index)=>{
-    const d=nearest(index,position),ad=Math.abs(d);
-    const visibility=ad<Math.min(total/2+0.5,4.6);
-    const x=Math.sign(d)*base*(ad<=1?ad:1+(ad-1)*.76);
-    const scale=Math.max(.66,1-.075*ad);
-    const rise=ad*5;
-    const rotation=clamp(-d*7-velocity*1.5,-35,35);
-    card.style.transform='translate3d(calc(-50% + '+x+'px),calc(-50% + '+rise+'px),0) rotateY('+rotation+'deg) scale('+scale+')';
-    card.style.opacity=visibility?String(Math.max(.65,1-ad*.065)):'0';
-    card.style.zIndex=String(100-Math.round(ad*10));
-    card.style.visibility=visibility?'visible':'hidden';
-    card.classList.toggle('is-center',ad<.48);
-    card.setAttribute('aria-hidden',String(ad>=.48));
-    card.inert=ad>=.48;
+    const delta=offset(index,current),abs=Math.abs(delta);
+    const visible=abs<=3.1;
+    const x=delta*spacing;
+    const y=abs*(narrow?18:28);
+    const tilt=delta*(narrow?-9:-11);
+    const rot=delta*(narrow?-7:-10);
+    const scale=Math.max(.69,1-abs*(narrow?.105:.115));
+    card.style.transform='translate3d(calc(-50% + '+x+'px),calc(-50% + '+y+'px),0) rotateZ('+tilt+'deg) rotateY('+rot+'deg) scale('+scale+')';
+    card.style.zIndex=String(100-Math.round(abs*20));
+    card.style.opacity=visible?String(Math.max(.72,1-abs*.08)):'0';
+    card.style.visibility=visible?'visible':'hidden';
+    card.classList.toggle('is-center',abs<.48);
+    card.setAttribute('aria-hidden',String(abs>=.48));
+    card.inert=abs>=.48;
    });
-   if(live)live.textContent=(wrap(Math.round(position))+1)+' of '+total;
+   const active=wrap(Math.round(current));
+   if(count)count.textContent=String(active+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+   if(caption)caption.textContent=headings[active];
+   dots.forEach((dot,i)=>dot.setAttribute('aria-current',String(i===active)));
   }
-  function frame(time){
-   const dt=Math.min((time-last||16)/16.667,2);last=time;
-   if(reduced.matches){position=target;velocity=0}
-   else{
-    const acceleration=(target-position)*.115;
-    velocity=(velocity+acceleration*dt)*Math.pow(.77,dt);
-    position+=velocity*dt;
-    if(Math.abs(target-position)<.0007&&Math.abs(velocity)<.0007){position=target;velocity=0}
+  function tick(){
+   const difference=target-current;
+   current=reduce.matches?target:current+difference*.17;
+   if(Math.abs(target-current)<.002){current=target;frameId=0;render();return}
+   render();frameId=requestAnimationFrame(tick);
+  }
+  function set(nextValue,byUser=true){
+   target=nextValue;
+   if(byUser)changedAt=performance.now();
+   if(!frameId)frameId=requestAnimationFrame(tick);
+  }
+  const go=delta=>set(Math.round(target)+delta);
+  previous?.addEventListener('click',()=>go(-1));
+  next?.addEventListener('click',()=>go(1));
+  dots.forEach(dot=>dot.addEventListener('click',()=>{
+   const index=Number(dot.dataset.phoneDot);
+   if(Number.isNaN(index))return;
+   set(Math.round(target)+offset(index,target));
+  }));
+  deck.addEventListener('pointerdown',event=>{
+   if(event.button!==0)return;
+   drag={id:event.pointerId,x:event.clientX,y:event.clientY,start:target,t:performance.now(),moved:false};
+  });
+  deck.addEventListener('pointermove',event=>{
+   if(!drag||drag.id!==event.pointerId)return;
+   const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
+   if(!drag.moved&&Math.abs(dy)>Math.abs(dx)*1.25&&Math.abs(dy)>8){drag=null;return}
+   if(Math.abs(dx)>8){
+    drag.moved=true;
+    if(!deck.hasPointerCapture?.(event.pointerId))deck.setPointerCapture?.(event.pointerId);
+    const stepSize=Math.max(80,deck.clientWidth*(deck.clientWidth<650?.27:.245));
+    set(drag.start-dx/stepSize);
    }
-   if(Math.abs(position)>total*100){const turns=Math.trunc(position/total)*total;position-=turns;target-=turns}
-   paint();
-   if(position!==target||velocity!==0)raf=requestAnimationFrame(frame);else raf=0;
-  }
-  function activate(next,user=true){
-   target=next;
-   if(user)lastInput=performance.now();
-   if(!raf){last=performance.now();raf=requestAnimationFrame(frame)}
-  }
-  function step(dir){activate(Math.round(target)+dir)}
-  function handlePointerDown(e){
-   if(e.button!==0)return;
-   drag={id:e.pointerId,x:e.clientX,y:e.clientY,from:target,time:performance.now(),moved:false};
-  }
-  function handlePointerMove(e){
-   if(!drag||drag.id!==e.pointerId)return;
-   const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
-   if(!drag.moved&&Math.abs(dy)>Math.abs(dx)*1.3&&Math.abs(dy)>8){drag=null;return}
-   if(Math.abs(dx)>7){
-    drag.moved=true;deck.setPointerCapture?.(e.pointerId);
-    activate(drag.from-dx/clamp(deck.clientWidth*.15,37,105),true);
-   }
-  }
-  function handlePointerUp(e){
-   if(!drag||drag.id!==e.pointerId)return;
-   const dx=e.clientX-drag.x;
+  });
+  function finish(event){
+   if(!drag||drag.id!==event.pointerId)return;
+   const dx=event.clientX-drag.x;
    if(drag.moved){
-    const elapsed=Math.max(70,performance.now()-drag.time);
-    const flick=clamp(-dx/elapsed*140/clamp(deck.clientWidth*.15,37,105),-1.3,1.3);
-    activate(Math.round(target+flick),true);
+    const duration=Math.max(80,performance.now()-drag.t);
+    const boost=clamp(-dx/duration*0.35,-.45,.45);
+    set(Math.round(target+boost));
    }else{
-    const node=e.target.closest('[data-phone-slide]');
-    if(node){const index=cards.indexOf(node);if(index>=0)activate(Math.round(target)+nearest(index,target))}
+    const hit=event.target.closest('[data-phone-slide]');
+    const index=cards.indexOf(hit);
+    if(index>=0)set(Math.round(target)+offset(index,target));
    }
    drag=null;
   }
-  deck.addEventListener('pointerdown',handlePointerDown);
-  deck.addEventListener('pointermove',handlePointerMove);
-  deck.addEventListener('pointerup',handlePointerUp);
-  deck.addEventListener('pointercancel',()=>{if(drag){activate(Math.round(target));drag=null}});
-  stack.addEventListener('wheel',e=>{
-   if(e.ctrlKey||e.metaKey)return;
-   const delta=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;
-   if(Math.abs(delta)<2)return;
-   const now=performance.now();
-   if(now-wheelAt>200)wheelSum=0;
-   wheelAt=now;wheelSum+=delta;
-   if(Math.abs(wheelSum)>38){step(Math.sign(wheelSum));wheelSum=0}
-   e.preventDefault();
-  },{passive:false});
-  stack.addEventListener('keydown',e=>{
-   if(e.key==='ArrowRight'){e.preventDefault();step(1)}
-   else if(e.key==='ArrowLeft'){e.preventDefault();step(-1)}
-   else if(e.key==='Home'){e.preventDefault();activate(0)}
-   else if(e.key==='End'){e.preventDefault();activate(total-1)}
+  deck.addEventListener('pointerup',finish);
+  deck.addEventListener('pointercancel',()=>{if(drag){drag=null;set(Math.round(target))}});
+  root.addEventListener('keydown',event=>{
+   if(event.key==='ArrowRight'){event.preventDefault();go(1)}
+   else if(event.key==='ArrowLeft'){event.preventDefault();go(-1)}
+   else if(event.key==='Home'){event.preventDefault();set(0)}
+   else if(event.key==='End'){event.preventDefault();set(total-1)}
   });
-  if('ResizeObserver' in window){new ResizeObserver(paint).observe(stack)}
-  else window.addEventListener('resize',paint,{passive:true});
-  reduced.addEventListener?.('change',paint);
-  autoplayTimer=setInterval(()=>{
-   if(reduced.matches||document.hidden||drag||performance.now()-lastInput<4500)return;
-   step(1);lastInput=performance.now();
-  },3200);
-  paint();
+  root.addEventListener('wheel',event=>{
+   // Do not hijack normal vertical page navigation.
+   if(event.ctrlKey||event.metaKey||Math.abs(event.deltaX)<Math.abs(event.deltaY))return;
+   const now=performance.now();
+   if(now-scrollTime>260)scrollSum=0;
+   scrollTime=now;
+   scrollSum+=event.deltaX;
+   if(Math.abs(scrollSum)>32){go(Math.sign(scrollSum));scrollSum=0}
+   event.preventDefault();
+  },{passive:false});
+  if('ResizeObserver'in window)new ResizeObserver(render).observe(deck);
+  else window.addEventListener('resize',render,{passive:true});
+  reduce.addEventListener?.('change',render);
+  root.addEventListener('focusin',()=>{changedAt=performance.now()});
+  root.addEventListener('pointerenter',()=>{changedAt=performance.now()});
+  // Gentle auto-advance only when the gallery is idle and visible.
+  const observer='IntersectionObserver'in window?new IntersectionObserver(entries=>{root.dataset.phoneVisible=String(entries.some(e=>e.isIntersecting))},{threshold:.3}):null;
+  if(observer)observer.observe(root);else root.dataset.phoneVisible='true';
+  window.setInterval(()=>{
+   if(reduce.matches||document.hidden||drag||root.dataset.phoneVisible!=='true'||root.matches(':hover')||root.contains(document.activeElement)||performance.now()-changedAt<6000)return;
+   go(1);
+   changedAt=performance.now();
+  },4500);
+  render();
  });
 })();
 
