@@ -560,3 +560,11 @@
  .xp-phone-card{transition:none!important}
  .xp-phone-controls button,.xp-phone-pagination button{transition:none!important}
 }
+
+
+/* Override legacy chrome-hiding rule. These controls are functional and accessible. */
+.expertise-page .xp-phone-carousel-top{display:flex!important}
+.expertise-page .xp-phone-footer{display:flex!important}
+.expertise-page .xp-phone-controls{display:flex!important}
+.expertise-page .xp-phone-pagination{display:flex!important}
+@media(max-width:650px){.expertise-page .xp-phone-footer{display:grid!important}}
