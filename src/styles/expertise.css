@@ -442,3 +442,121 @@
 .xp-local-asset-notice strong{display:block;font-size:1.15rem;margin-bottom:8px}
 .xp-local-asset-notice p{font-size:.9rem;color:#d5cdc3;max-width:740px}
 .xp-local-asset-notice code{white-space:normal;overflow-wrap:anywhere;color:#ffb566}
+
+
+/* Phone stack v2: layered editorial fan, not a flat slider.
+   The real original screenshots remain intact and are never cropped. */
+.expertise-page .xp-phone-section{padding-block:clamp(75px,9vw,135px)}
+.expertise-page .xp-phone-carousel{
+ position:relative;
+ overflow:hidden;
+ isolation:isolate;
+ background:radial-gradient(ellipse 70% 45% at 50% 53%,rgba(124,117,141,.12),transparent 75%),#0b0b0d;
+ border:1px solid rgba(242,238,230,.17);
+ border-radius:0;
+ padding:clamp(22px,3.5vw,55px) 0 clamp(22px,3.5vw,45px);
+}
+.expertise-page .xp-phone-carousel::before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 23%,transparent 77%,rgba(0,0,0,.18));
+}
+.xp-phone-carousel-top,.xp-phone-footer{position:relative;z-index:105}
+.xp-phone-carousel-top{padding-inline:clamp(18px,4vw,64px)}
+.xp-phone-heading{display:grid;gap:7px}
+.xp-phone-eyebrow{font:500 .69rem/1.4 "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--xp-accent)}
+.xp-phone-collection{font-family:"Nebulica","Instrument Sans",sans-serif;font-size:clamp(1.45rem,2.8vw,2.7rem);line-height:1.1;font-weight:500;letter-spacing:-.04em}
+.xp-phone-controls button{border:1px solid rgba(242,238,230,.36);background:#1b1b20;width:clamp(42px,3.7vw,52px);height:clamp(42px,3.7vw,52px);border-radius:50%;color:#f2eee6}
+.xp-phone-controls button:hover,.xp-phone-controls button:focus-visible{background:var(--xp-accent);color:#0b0b0d;border-color:var(--xp-accent)}
+.xp-phone-controls [data-phone-count-text]{font-size:.78rem;letter-spacing:.06em;color:#f2eee6}
+.xp-phone-deck{
+ height:clamp(600px,64vw,840px);
+ margin:0;
+ perspective:1400px;
+ perspective-origin:50% 47%;
+ touch-action:pan-y;
+ overflow:visible;
+ cursor:grab;
+}
+.xp-phone-card{
+ position:absolute;
+ left:50%;top:50%;
+ width:clamp(242px,25.5vw,336px);
+ height:auto;
+ margin:0;
+ transform-origin:center center;
+ transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .4s ease,visibility .4s ease;
+ will-change:transform;
+ pointer-events:auto;
+ cursor:pointer;
+}
+.xp-phone-card.is-center{cursor:grab}
+.xp-phone-shell{
+ aspect-ratio:476/1097;
+ width:100%;
+ display:flex;
+ position:relative;
+ padding:clamp(7px,.8vw,10px);
+ border-radius:clamp(29px,3.2vw,41px);
+ background:linear-gradient(110deg,#5b5c61,#111115 9%,#030305 30%,#191a1d 80%,#77787a);
+ border:1px solid rgba(255,255,255,.28);
+ box-shadow:0 22px 55px rgba(0,0,0,.66),0 60px 110px rgba(0,0,0,.32),inset 0 0 2px #97989b;
+ overflow:visible;
+}
+.xp-phone-shell::before,.xp-phone-shell::after{pointer-events:none}
+.xp-phone-screen{
+ position:relative;
+ width:100%;height:100%;
+ overflow:hidden;
+ border-radius:clamp(22px,2.6vw,31px);
+ background:#fff;
+}
+.xp-phone-screen img{
+ display:block;
+ width:100%;height:100%;
+ object-fit:contain;
+ object-position:center;
+ background:#fff;
+}
+.xp-phone-sensor,.xp-phone-island{display:none!important}
+.xp-phone-card.is-center .xp-phone-shell{
+ box-shadow:0 25px 65px rgba(0,0,0,.78),0 80px 130px rgba(0,0,0,.45),inset 0 0 2px #bdbec2;
+}
+.xp-phone-footer{padding-inline:clamp(18px,4vw,64px);align-items:center}
+.xp-phone-current{font-family:"Nebulica","Instrument Sans",sans-serif;font-size:clamp(1.25rem,2vw,1.9rem);font-weight:500}
+.xp-phone-hint{color:#aca7ae;font-size:.8rem}
+.xp-phone-pagination{gap:8px;max-width:260px}
+.xp-phone-pagination button{width:8px;height:8px;background:#5a555e}
+.xp-phone-pagination button[aria-current="true"]{width:32px;background:var(--xp-accent)}
+@media(max-width:850px){
+ .xp-phone-deck{height:clamp(550px,87vw,780px)}
+ .xp-phone-card{width:clamp(226px,32vw,300px)}
+}
+@media(max-width:650px){
+ .expertise-page .xp-phone-carousel{border-radius:0;padding:20px 0 25px}
+ .xp-phone-carousel-top{padding-inline:18px;gap:10px}
+ .xp-phone-eyebrow{font-size:.57rem}
+ .xp-phone-collection{font-size:1.5rem}
+ .xp-phone-controls{gap:7px}
+ .xp-phone-controls button{width:37px;height:37px;font-size:1.15rem}
+ .xp-phone-controls [data-phone-count-text]{font-size:.64rem;min-width:48px}
+ .xp-phone-deck{height:clamp(500px,153vw,690px);perspective:1100px}
+ .xp-phone-card{width:clamp(206px,56vw,274px)}
+ .xp-phone-shell{padding:7px;border-radius:28px}
+ .xp-phone-screen{border-radius:22px}
+ .xp-phone-footer{padding-inline:18px;display:grid;gap:18px}
+ .xp-phone-current{font-size:1.28rem}
+ .xp-phone-hint{font-size:.73rem;max-width:100%}
+ .xp-phone-pagination{justify-content:flex-start;margin-top:0;max-width:100%;gap:7px}
+ .xp-phone-pagination button{width:7px;height:7px}
+ .xp-phone-pagination button[aria-current="true"]{width:27px}
+}
+@media(max-width:375px){
+ .xp-phone-deck{height:540px}
+ .xp-phone-card{width:205px}
+ .xp-phone-collection{font-size:1.2rem}
+ .xp-phone-carousel-top{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){
+ .xp-phone-card{transition:none!important}
+ .xp-phone-controls button,.xp-phone-pagination button{transition:none!important}
+}
