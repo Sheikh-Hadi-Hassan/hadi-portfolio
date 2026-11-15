@@ -200,7 +200,17 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             for collection in collections:
                 slides = [(slide,optional_studio_asset(slide['src'])) for slide in collection['slides']]
                 if not slides or not all(image for _,image in slides):
-                    continue  # Show only complete owner-supplied screen sequences, no broken files.
+                    missing_assets = [slide['src'] for slide,image in slides if not image]
+                    print('[expertise] MISSING MOBILE SCREENS for ' + collection['title'] + ': ' + ', '.join(missing_assets),flush=True)
+                    decks.append(
+                        '<aside class="xp-local-asset-notice" data-local-asset-notice hidden>'
+                        '<strong>Original mobile screens are not installed locally.</strong>'
+                        '<p>The Consumer Connect phone carousel is ready, but its nine original screenshots are absent. '
+                        'Download both image ZIPs and run <code>bash scripts/import-owner-images.sh ~/Downloads</code> '
+                        'from your repository, then restart <code>npm run dev</code>.</p>'
+                        '</aside>'
+                    )
+                    continue  # Never render broken screen images on a published portfolio.
                 cards = ''.join(
                     '<li class="xp-phone-card" data-phone-slide data-phone-index="' + str(index) + '" '
                     'aria-label="' + esc(slide['title']) + ' screen ' + str(index+1) + ' of ' + str(len(slides)) + '">'
