@@ -204,92 +204,120 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
 })();
 
 
-// Responsive original-screen phone stack. No carousel library or external assets.
-// Arrow keys, swipe/drag, trackpad and wheel all use modular infinite navigation.
+// Reference-style infinite phone stack; screen collection is data-driven.
+// Continuous spring positioning instead of discrete three-step transitions.
 (()=>{
- const stacks=[...document.querySelectorAll('[data-phone-stack]')];
- if(!stacks.length)return;
- const clampIndex=(i,n)=>(i%n+n)%n;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- stacks.forEach(stack=>{
+ const clamp=(n,min,max)=>Math.min(max,Math.max(min,n));
+ document.querySelectorAll('[data-phone-stack]').forEach(stack=>{
   const deck=stack.querySelector('.xp-phone-deck');
   const cards=[...stack.querySelectorAll('[data-phone-slide]')];
-  const dots=[...stack.querySelectorAll('[data-phone-go]')];
-  const title=stack.querySelector('[data-phone-title]');
-  const count=stack.querySelector('[data-phone-count-text]');
-  if(cards.length<2)return;
-  const slides=cards.map(card=>({label:card.getAttribute('aria-label')?.replace(/ screen \d+ of \d+$/,'')||'Screen'}));
-  let active=0,lastWheel=0,down=null;
-  const number=(n)=>String(n).padStart(2,'0');
-  function render(){
-   const width=stack.getBoundingClientRect().width;
-   const isSmall=width<650;
-   const step=Math.min(width*(isSmall?.39:.32),isSmall?170:390);
-   cards.forEach((card,i)=>{
-    let distance=clampIndex(i-active,cards.length);
-    if(distance>cards.length/2)distance-=cards.length;
-    const abs=Math.abs(distance);
-    const visible=abs<=2;
-    const x=distance*step*(abs===2?1.17:1);
-    const scale=abs===0?1:abs===1?(isSmall?.78:.85):.66;
-    const y=abs===0?0:abs===1?26:58;
-    card.style.setProperty('--xp-translate-x',x+'px');
-    card.style.setProperty('--xp-translate-y',y+'px');
-    card.style.setProperty('--xp-rotate',(-distance*(isSmall?12:15))+'deg');
-    card.style.setProperty('--xp-tilt',(distance*(isSmall?3:4))+'deg');
-    card.style.setProperty('--xp-scale',scale);
-    card.style.setProperty('--xp-opacity',visible?(abs===0?1:abs===1?.84:.48):0);
-    card.style.setProperty('--xp-blur',abs===2&&!isSmall?'1.5px':'0px');
-    card.style.setProperty('--xp-layer',String(10-abs));
-    card.style.setProperty('--xp-visible',visible?'visible':'hidden');
-    card.classList.toggle('is-center',abs===0);
-    card.setAttribute('aria-hidden',String(abs!==0));
-    card.inert=abs!==0;
+  if(!deck||cards.length<2)return;
+  const total=cards.length;
+  const live=stack.querySelector('[data-phone-count-text]');
+  const wrap=n=>((n%total)+total)%total;
+  const nearest=(index,position)=>{
+   let d=index-wrap(position);
+   while(d>total/2)d-=total;
+   while(d< -total/2)d+=total;
+   return d;
+  };
+  let target=0,position=0,velocity=0,last=0,raf=0,drag=null,wheelSum=0,wheelAt=0;
+  let lastInput=performance.now(),autoplayTimer=0;
+  function paint(){
+   const width=deck.clientWidth||stack.clientWidth;
+   const base=clamp(width*.15,37,105);
+   const compact=width<560;
+   cards.forEach((card,index)=>{
+    const d=nearest(index,position),ad=Math.abs(d);
+    const visibility=ad<Math.min(total/2+0.5,4.6);
+    const x=Math.sign(d)*base*(ad<=1?ad:1+(ad-1)*.76);
+    const scale=Math.max(.66,1-.075*ad);
+    const rise=ad*5;
+    const rotation=clamp(-d*7-velocity*1.5,-35,35);
+    card.style.transform='translate3d(calc(-50% + '+x+'px),calc(-50% + '+rise+'px),0) rotateY('+rotation+'deg) scale('+scale+')';
+    card.style.opacity=visibility?String(Math.max(.65,1-ad*.065)):'0';
+    card.style.zIndex=String(100-Math.round(ad*10));
+    card.style.visibility=visibility?'visible':'hidden';
+    card.classList.toggle('is-center',ad<.48);
+    card.setAttribute('aria-hidden',String(ad>=.48));
+    card.inert=ad>=.48;
    });
-   dots.forEach((dot,i)=>dot.setAttribute('aria-current',String(i===active)));
-   if(title)title.textContent=slides[active].label;
-   if(count)count.textContent=number(active+1)+' / '+number(cards.length);
+   if(live)live.textContent=(wrap(Math.round(position))+1)+' of '+total;
   }
-  function go(n){
-   active=clampIndex(n,cards.length);
-   render();
+  function frame(time){
+   const dt=Math.min((time-last||16)/16.667,2);last=time;
+   if(reduced.matches){position=target;velocity=0}
+   else{
+    const acceleration=(target-position)*.115;
+    velocity=(velocity+acceleration*dt)*Math.pow(.77,dt);
+    position+=velocity*dt;
+    if(Math.abs(target-position)<.0007&&Math.abs(velocity)<.0007){position=target;velocity=0}
+   }
+   if(Math.abs(position)>total*100){const turns=Math.trunc(position/total)*total;position-=turns;target-=turns}
+   paint();
+   if(position!==target||velocity!==0)raf=requestAnimationFrame(frame);else raf=0;
   }
-  stack.querySelector('[data-phone-prev]')?.addEventListener('click',()=>go(active-1));
-  stack.querySelector('[data-phone-next]')?.addEventListener('click',()=>go(active+1));
-  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
-  stack.addEventListener('keydown',e=>{
-   if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;
-   if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();go(active+1)}
-   if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();go(active-1)}
-   if(e.key==='Home'){e.preventDefault();go(0)}
-   if(e.key==='End'){e.preventDefault();go(cards.length-1)}
-  });
-  deck.addEventListener('pointerdown',e=>{
+  function activate(next,user=true){
+   target=next;
+   if(user)lastInput=performance.now();
+   if(!raf){last=performance.now();raf=requestAnimationFrame(frame)}
+  }
+  function step(dir){activate(Math.round(target)+dir)}
+  function handlePointerDown(e){
    if(e.button!==0)return;
-   down={x:e.clientX,y:e.clientY,id:e.pointerId};
-  });
-  deck.addEventListener('pointerup',e=>{
-   if(!down||e.pointerId!==down.id)return;
-   const dx=e.clientX-down.x;
-   const dy=e.clientY-down.y;
-   down=null;
-   if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.1){go(active+(dx<0?1:-1))}
-  });
-  deck.addEventListener('pointercancel',()=>{down=null});
+   drag={id:e.pointerId,x:e.clientX,y:e.clientY,from:target,time:performance.now(),moved:false};
+  }
+  function handlePointerMove(e){
+   if(!drag||drag.id!==e.pointerId)return;
+   const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+   if(!drag.moved&&Math.abs(dy)>Math.abs(dx)*1.3&&Math.abs(dy)>8){drag=null;return}
+   if(Math.abs(dx)>7){
+    drag.moved=true;deck.setPointerCapture?.(e.pointerId);
+    activate(drag.from-dx/clamp(deck.clientWidth*.15,37,105),true);
+   }
+  }
+  function handlePointerUp(e){
+   if(!drag||drag.id!==e.pointerId)return;
+   const dx=e.clientX-drag.x;
+   if(drag.moved){
+    const elapsed=Math.max(70,performance.now()-drag.time);
+    const flick=clamp(-dx/elapsed*140/clamp(deck.clientWidth*.15,37,105),-1.3,1.3);
+    activate(Math.round(target+flick),true);
+   }else{
+    const node=e.target.closest('[data-phone-slide]');
+    if(node){const index=cards.indexOf(node);if(index>=0)activate(Math.round(target)+nearest(index,target))}
+   }
+   drag=null;
+  }
+  deck.addEventListener('pointerdown',handlePointerDown);
+  deck.addEventListener('pointermove',handlePointerMove);
+  deck.addEventListener('pointerup',handlePointerUp);
+  deck.addEventListener('pointercancel',()=>{if(drag){activate(Math.round(target));drag=null}});
   stack.addEventListener('wheel',e=>{
-   if(e.ctrlKey||e.metaKey||e.shiftKey)return;
-   const amount=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;
-   if(Math.abs(amount)<14)return;
+   if(e.ctrlKey||e.metaKey)return;
+   const delta=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;
+   if(Math.abs(delta)<2)return;
    const now=performance.now();
-   if(now-lastWheel<550){e.preventDefault();return}
-   lastWheel=now;
+   if(now-wheelAt>200)wheelSum=0;
+   wheelAt=now;wheelSum+=delta;
+   if(Math.abs(wheelSum)>38){step(Math.sign(wheelSum));wheelSum=0}
    e.preventDefault();
-   go(active+(amount>0?1:-1));
   },{passive:false});
-  if('ResizeObserver' in window){const ro=new ResizeObserver(render);ro.observe(stack)}
-  else window.addEventListener('resize',render,{passive:true});
-  reduced.addEventListener?.('change',render);
-  render();
+  stack.addEventListener('keydown',e=>{
+   if(e.key==='ArrowRight'){e.preventDefault();step(1)}
+   else if(e.key==='ArrowLeft'){e.preventDefault();step(-1)}
+   else if(e.key==='Home'){e.preventDefault();activate(0)}
+   else if(e.key==='End'){e.preventDefault();activate(total-1)}
+  });
+  if('ResizeObserver' in window){new ResizeObserver(paint).observe(stack)}
+  else window.addEventListener('resize',paint,{passive:true});
+  reduced.addEventListener?.('change',paint);
+  autoplayTimer=setInterval(()=>{
+   if(reduced.matches||document.hidden||drag||performance.now()-lastInput<4500)return;
+   step(1);lastInput=performance.now();
+  },3200);
+  paint();
  });
 })();
 
