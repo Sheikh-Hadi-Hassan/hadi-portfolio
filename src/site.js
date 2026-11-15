@@ -218,7 +218,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   const total=cards.length,prev=root.querySelector('[data-phone-prev]'),next=root.querySelector('[data-phone-next]');
   const count=root.querySelector('[data-phone-count-text]'),caption=root.querySelector('[data-phone-title]');
   const dots=Array.from(root.querySelectorAll('[data-phone-dot]'));
-  const names=cards.map(el=>(el.getAttribute('aria-label')||'Screen').replace(/ screen \\d+ of \\d+$/,''));
+  const names=cards.map(el=>(el.getAttribute('aria-label')||'Screen').replace(/ screen \d+ of \d+$/,''));
   const wrap=n=>((n%total)+total)%total;
   let current=0,gesture=null,ignoreClick=false,wheelSum=0,wheelAt=0;
   function difference(index){
