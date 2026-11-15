@@ -246,7 +246,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
     card.style.visibility=visible?'visible':'hidden';
     card.classList.toggle('is-center',abs<.48);
     card.setAttribute('aria-hidden',String(abs>=.48));
-    card.inert=abs>=.48;
+    // Keep neighboring cards clickable; aria-hidden removes them from screen-reader order.
    });
    const active=wrap(Math.round(current));
    if(count)count.textContent=String(active+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
