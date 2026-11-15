@@ -205,133 +205,109 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
 
 
 // Continuously looping, perspective phone-stack gallery.
-// Desktop: click, arrows, trackpad horizontal scroll. Mobile: swipe without blocking vertical page scroll.
+// Framer-style overlapping phone stack. Original screenshots remain untouched.
+// The active phone stays full size; neighboring phones recede behind it.
+// Circular navigation supports buttons, keys, pointer dragging, and horizontal trackpads.
 (()=>{
  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
- const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+ const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
  document.querySelectorAll('[data-phone-stack]').forEach(root=>{
   const deck=root.querySelector('.xp-phone-deck');
-  const cards=[...root.querySelectorAll('[data-phone-slide]')];
+  const cards=Array.from(root.querySelectorAll('[data-phone-slide]'));
   if(!deck||cards.length<2)return;
-  const previous=root.querySelector('[data-phone-prev]');
-  const next=root.querySelector('[data-phone-next]');
-  const count=root.querySelector('[data-phone-count-text]');
-  const caption=root.querySelector('[data-phone-title]');
-  const dots=[...root.querySelectorAll('[data-phone-dot]')];
-  const total=cards.length;
+  const total=cards.length,prev=root.querySelector('[data-phone-prev]'),next=root.querySelector('[data-phone-next]');
+  const count=root.querySelector('[data-phone-count-text]'),caption=root.querySelector('[data-phone-title]');
+  const dots=Array.from(root.querySelectorAll('[data-phone-dot]'));
+  const names=cards.map(el=>(el.getAttribute('aria-label')||'Screen').replace(/ screen \\d+ of \\d+$/,''));
   const wrap=n=>((n%total)+total)%total;
-  const offset=(index,at)=>{
-   let d=index-wrap(at);
+  let current=0,gesture=null,ignoreClick=false,wheelSum=0,wheelAt=0;
+  function difference(index){
+   let d=index-current;
    if(d>total/2)d-=total;
    if(d< -total/2)d+=total;
    return d;
-  };
-  let current=0,target=0,frameId=0,drag=null,scrollSum=0,scrollTime=0,changedAt=performance.now();
-  const headings=cards.map(card=>card.getAttribute('aria-label')?.replace(/ screen \d+ of \d+$/,'')||'Mobile screen');
+  }
   function render(){
-   const w=deck.clientWidth;
-   const narrow=w<650;
-   const spacing=narrow?Math.min(w*.27,116):Math.min(w*.245,252);
+   const width=deck.clientWidth;
+   const compact=width<660;
+   // Expose only two depth layers on narrow phones, where every pixel matters.
+   const spacing=compact?clamp(width*.085,22,46):clamp(width*.09,58,112);
    cards.forEach((card,index)=>{
-    const delta=offset(index,current),abs=Math.abs(delta);
-    const visible=abs<=3.1;
+    const delta=difference(index),depth=Math.abs(delta),visible=depth<=(compact?2:3);
+    const side=delta<0?-1:1;
     const x=delta*spacing;
-    const y=abs*(narrow?18:28);
-    const tilt=delta*(narrow?-9:-11);
-    const rot=delta*(narrow?-7:-10);
-    const scale=Math.max(.69,1-abs*(narrow?.105:.115));
-    card.style.transform='translate3d(calc(-50% + '+x+'px),calc(-50% + '+y+'px),0) rotateZ('+tilt+'deg) rotateY('+rot+'deg) scale('+scale+')';
-    card.style.zIndex=String(100-Math.round(abs*20));
-    card.style.opacity=visible?String(Math.max(.72,1-abs*.08)):'0';
+    const y=depth*(compact?15:22);
+    const scale=Math.max(.62,1-depth*(compact?.09:.075));
+    const tilt=delta*(compact?-2.2:-3);
+    card.style.transform='translate3d(calc(-50% + '+x+'px),calc(-50% + '+y+'px),0) rotateZ('+tilt+'deg) scale('+scale+')';
+    card.style.zIndex=String(100-Math.round(depth*10));
+    card.style.opacity=visible?String(Math.max(.48,1-depth*.12)):'0';
     card.style.visibility=visible?'visible':'hidden';
-    card.classList.toggle('is-center',abs<.48);
-    card.setAttribute('aria-hidden',String(abs>=.48));
-    // Keep neighboring cards clickable; aria-hidden removes them from screen-reader order.
+    card.style.pointerEvents=visible?'auto':'none';
+    card.classList.toggle('is-center',depth===0);
+    card.setAttribute('aria-hidden',String(depth!==0));
+    card.tabIndex=visible?0:-1;
+    card.dataset.stackSide=depth===0?'center':side<0?'left':'right';
    });
-   const active=wrap(Math.round(current));
-   if(count)count.textContent=String(active+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
-   if(caption)caption.textContent=headings[active];
-   dots.forEach((dot,i)=>dot.setAttribute('aria-current',String(i===active)));
+   if(count)count.textContent=String(current+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+   if(caption)caption.textContent=names[current];
+   dots.forEach((dot,index)=>dot.setAttribute('aria-current',String(index===current)));
   }
-  function tick(){
-   const difference=target-current;
-   current=reduce.matches?target:current+difference*.17;
-   if(Math.abs(target-current)<.002){current=target;frameId=0;render();return}
-   render();frameId=requestAnimationFrame(tick);
+  function select(index){
+   current=wrap(index);
+   render();
   }
-  function set(nextValue,byUser=true){
-   target=nextValue;
-   if(byUser)changedAt=performance.now();
-   if(!frameId)frameId=requestAnimationFrame(tick);
-  }
-  const go=delta=>set(Math.round(target)+delta);
-  previous?.addEventListener('click',()=>go(-1));
-  next?.addEventListener('click',()=>go(1));
-  dots.forEach(dot=>dot.addEventListener('click',()=>{
-   const index=Number(dot.dataset.phoneDot);
-   if(Number.isNaN(index))return;
-   set(Math.round(target)+offset(index,target));
-  }));
+  prev?.addEventListener('click',()=>select(current-1));
+  next?.addEventListener('click',()=>select(current+1));
+  dots.forEach(dot=>dot.addEventListener('click',()=>select(Number(dot.dataset.phoneDot))));
+  deck.addEventListener('click',event=>{
+   if(ignoreClick){ignoreClick=false;return}
+   const card=event.target.closest('[data-phone-slide]');
+   if(!card)return;
+   const index=cards.indexOf(card);
+   if(index!==current&&index>=0)select(index);
+  });
   deck.addEventListener('pointerdown',event=>{
-   if(event.button!==0)return;
-   drag={id:event.pointerId,x:event.clientX,y:event.clientY,start:target,t:performance.now(),moved:false};
+   if(event.pointerType==='mouse'&&event.button!==0)return;
+   gesture={id:event.pointerId,x:event.clientX,y:event.clientY,at:performance.now(),horizontal:false};
   });
   deck.addEventListener('pointermove',event=>{
-   if(!drag||drag.id!==event.pointerId)return;
-   const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
-   if(!drag.moved&&Math.abs(dy)>Math.abs(dx)*1.25&&Math.abs(dy)>8){drag=null;return}
-   if(Math.abs(dx)>8){
-    drag.moved=true;
-    if(!deck.hasPointerCapture?.(event.pointerId))deck.setPointerCapture?.(event.pointerId);
-    const stepSize=Math.max(80,deck.clientWidth*(deck.clientWidth<650?.27:.245));
-    set(drag.start-dx/stepSize);
-   }
+   if(!gesture||event.pointerId!==gesture.id)return;
+   const dx=event.clientX-gesture.x,dy=event.clientY-gesture.y;
+   if(!gesture.horizontal&&Math.abs(dy)>Math.abs(dx)*1.3&&Math.abs(dy)>10){gesture=null;return}
+   if(Math.abs(dx)>12){gesture.horizontal=true;deck.classList.toggle('is-dragging',true)}
   });
   function finish(event){
-   if(!drag||drag.id!==event.pointerId)return;
-   const dx=event.clientX-drag.x;
-   if(drag.moved){
-    const duration=Math.max(80,performance.now()-drag.t);
-    const boost=clamp(-dx/duration*0.35,-.45,.45);
-    set(Math.round(target+boost));
-   }else{
-    const hit=event.target.closest('[data-phone-slide]');
-    const index=cards.indexOf(hit);
-    if(index>=0)set(Math.round(target)+offset(index,target));
+   if(!gesture||event.pointerId!==gesture.id)return;
+   const dx=event.clientX-gesture.x;
+   if(gesture.horizontal&&Math.abs(dx)>35){
+    // One deliberate step per swipe; direction preserved on narrow phones.
+    select(current+(dx<0?1:-1));
+    ignoreClick=true;
    }
-   drag=null;
+   deck.classList.remove('is-dragging');
+   gesture=null;
   }
   deck.addEventListener('pointerup',finish);
-  deck.addEventListener('pointercancel',()=>{if(drag){drag=null;set(Math.round(target))}});
+  deck.addEventListener('pointercancel',()=>{gesture=null;deck.classList.remove('is-dragging')});
   root.addEventListener('keydown',event=>{
-   if(event.key==='ArrowRight'){event.preventDefault();go(1)}
-   else if(event.key==='ArrowLeft'){event.preventDefault();go(-1)}
-   else if(event.key==='Home'){event.preventDefault();set(0)}
-   else if(event.key==='End'){event.preventDefault();set(total-1)}
+   if(event.key==='ArrowRight'){event.preventDefault();select(current+1)}
+   else if(event.key==='ArrowLeft'){event.preventDefault();select(current-1)}
+   else if(event.key==='Home'){event.preventDefault();select(0)}
+   else if(event.key==='End'){event.preventDefault();select(total-1)}
   });
   root.addEventListener('wheel',event=>{
-   // Do not hijack normal vertical page navigation.
-   if(event.ctrlKey||event.metaKey||Math.abs(event.deltaX)<Math.abs(event.deltaY))return;
+   // Vertical page scroll must always remain native.
+   if(event.ctrlKey||event.metaKey||Math.abs(event.deltaX)<=Math.abs(event.deltaY))return;
    const now=performance.now();
-   if(now-scrollTime>260)scrollSum=0;
-   scrollTime=now;
-   scrollSum+=event.deltaX;
-   if(Math.abs(scrollSum)>32){go(Math.sign(scrollSum));scrollSum=0}
+   if(now-wheelAt>250)wheelSum=0;
+   wheelAt=now;wheelSum+=event.deltaX;
+   if(Math.abs(wheelSum)>42){select(current+Math.sign(wheelSum));wheelSum=0}
    event.preventDefault();
   },{passive:false});
-  if('ResizeObserver'in window)new ResizeObserver(render).observe(deck);
-  else window.addEventListener('resize',render,{passive:true});
+  if('ResizeObserver' in window)new ResizeObserver(render).observe(deck);
+  else addEventListener('resize',render,{passive:true});
   reduce.addEventListener?.('change',render);
-  root.addEventListener('focusin',()=>{changedAt=performance.now()});
-  root.addEventListener('pointerenter',()=>{changedAt=performance.now()});
-  // Gentle auto-advance only when the gallery is idle and visible.
-  const observer='IntersectionObserver'in window?new IntersectionObserver(entries=>{root.dataset.phoneVisible=String(entries.some(e=>e.isIntersecting))},{threshold:.3}):null;
-  if(observer)observer.observe(root);else root.dataset.phoneVisible='true';
-  window.setInterval(()=>{
-   if(reduce.matches||document.hidden||drag||root.dataset.phoneVisible!=='true'||root.matches(':hover')||root.contains(document.activeElement)||performance.now()-changedAt<6000)return;
-   go(1);
-   changedAt=performance.now();
-  },4500);
   render();
  });
 })();
