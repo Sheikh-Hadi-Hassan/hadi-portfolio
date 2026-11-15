@@ -24,6 +24,20 @@ class ExpertiseChecks(unittest.TestCase):
             self.assertEqual(len(page.get('faq',[])),3)
             self.assertTrue(all(item['question'] and item['answer'] for item in page['faq']))
 
+    def test_mobile_screen_stack_source_manifest(self):
+        payload=json.loads((SRC/'data/mobile-screen-stacks.json').read_text())
+        self.assertEqual(payload['version'],1)
+        stacks=payload['collections']
+        self.assertTrue(stacks)
+        for stack in stacks:
+            self.assertTrue(stack['id'])
+            self.assertTrue(stack['title'])
+            self.assertGreaterEqual(len(stack['slides']),2)
+            self.assertEqual(len({screen['src'] for screen in stack['slides']}),len(stack['slides']))
+            for slide in stack['slides']:
+                self.assertTrue(slide['src'].endswith('.webp'))
+                self.assertTrue(slide['alt'])
+
     def test_owner_image_curation_is_accessible_and_source_grounded(self):
         data=json.loads((SRC/'data/expertise-images.json').read_text())
         self.assertEqual(data['version'],1)
@@ -68,6 +82,12 @@ class ExpertiseChecks(unittest.TestCase):
                     if image.is_file():
                         self.assertIn(image.name,content)
                 self.assertNotIn('xp-cinematic-apptech-heading', (DIST/'expertise/creative-direction/index.html').read_text())
+                mobile_manifest=json.loads((SRC/'data/mobile-screen-stacks.json').read_text())['collections'][0]
+                mobile_exist=all((ROOT/'public/assets/expertise'/item['src']).is_file() for item in mobile_manifest['slides'])
+                self.assertEqual('data-phone-stack' in content,mobile_exist)
+                if mobile_exist:
+                    self.assertEqual(content.count('data-phone-slide'),len(mobile_manifest['slides']))
+                    for item in mobile_manifest['slides']:self.assertIn(item['src'],content)
                 image_inventory=json.loads((SRC/'data/expertise-images.json').read_text())
                 existing=[item for item in image_inventory['hero']+image_inventory['more'] if (ROOT/'public/assets/expertise'/item['asset']).is_file()]
                 self.assertEqual('id="xp-product-images"' in content,bool(any((ROOT/'public/assets/expertise'/item['asset']).is_file() for item in image_inventory['hero'])))
