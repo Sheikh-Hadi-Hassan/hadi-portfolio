@@ -24,6 +24,19 @@ class ExpertiseChecks(unittest.TestCase):
             self.assertEqual(len(page.get('faq',[])),3)
             self.assertTrue(all(item['question'] and item['answer'] for item in page['faq']))
 
+    def test_owner_image_curation_is_accessible_and_source_grounded(self):
+        data=json.loads((SRC/'data/expertise-images.json').read_text())
+        self.assertEqual(data['version'],1)
+        images=data['hero']+data['more']
+        self.assertGreaterEqual(len(data['hero']),3)
+        self.assertGreaterEqual(len(data['more']),5)
+        self.assertEqual(len({item['asset'] for item in images}),len(images))
+        for item in images:
+            self.assertTrue(item['asset'].endswith('.webp'))
+            self.assertTrue(item['alt'])
+            self.assertTrue(item['title'])
+            self.assertNotIn('http',item['asset'])
+
     def test_generated_routes_and_home_navigation(self):
         if not (DIST/'index.html').exists():self.skipTest('run npm run build first')
         home=(DIST/'index.html').read_text()
@@ -55,6 +68,11 @@ class ExpertiseChecks(unittest.TestCase):
                     if image.is_file():
                         self.assertIn(image.name,content)
                 self.assertNotIn('xp-cinematic-apptech-heading', (DIST/'expertise/creative-direction/index.html').read_text())
+                image_inventory=json.loads((SRC/'data/expertise-images.json').read_text())
+                existing=[item for item in image_inventory['hero']+image_inventory['more'] if (ROOT/'public/assets/expertise'/item['asset']).is_file()]
+                self.assertEqual('id="xp-product-images"' in content,bool(any((ROOT/'public/assets/expertise'/item['asset']).is_file() for item in image_inventory['hero'])))
+                for item in existing:self.assertIn(item['asset'],content)
+
 
 
 if __name__=='__main__':unittest.main()
