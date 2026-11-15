@@ -440,3 +440,14 @@
 @media(max-width:650px){.xp-phone-carousel{border-radius:16px;padding-top:18px;padding-bottom:23px}.xp-phone-deck{height:clamp(480px,135vw,690px);margin-top:9px;perspective:1100px}.xp-phone-card{width:clamp(210px,61vw,285px)}.xp-phone-shell{border-radius:30px;padding:9px}.xp-phone-screen{border-radius:23px}.xp-phone-sensor{top:10px;height:11px}.xp-phone-carousel-top{padding-inline:17px}.xp-phone-footer{padding-inline:17px;display:block}.xp-phone-pagination{justify-content:flex-start;margin-top:17px}.xp-phone-hint{max-width:250px}.xp-phone-controls{gap:9px}.xp-phone-controls button{height:36px;width:36px}.xp-phone-controls [data-phone-count-text]{min-width:52px}.xp-phone-card:not(.is-center){filter:none!important}}
 @media(max-width:370px){.xp-phone-controls [data-phone-count-text]{font-size:.63rem;min-width:45px}.xp-phone-collection{font-size:.73rem}.xp-phone-deck{height:490px}.xp-phone-card{width:214px}}
 @media(prefers-reduced-motion:reduce){.xp-phone-card,.xp-phone-pagination button,.xp-phone-controls button{transition:none!important;animation:none!important}}
+
+/* Keep the full portrait phone inside the stage on short / narrow viewports. */
+@media(max-width:650px){
+ .xp-phone-deck{height:clamp(560px,159vw,730px)}
+ .xp-phone-card{width:clamp(210px,59vw,280px)}
+ .xp-phone-shell{aspect-ratio:.441}
+}
+@media(max-width:370px){
+ .xp-phone-deck{height:560px}
+ .xp-phone-card{width:214px}
+}
