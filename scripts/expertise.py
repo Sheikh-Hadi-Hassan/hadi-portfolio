@@ -214,9 +214,9 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
                 cards = ''.join(
                     '<li class="xp-phone-card" data-phone-slide data-phone-index="' + str(index) + '" '
                     'aria-label="' + esc(slide['title']) + ' screen ' + str(index+1) + ' of ' + str(len(slides)) + '">'
-                    '<div class="xp-phone-shell"><div class="xp-phone-screen"><img src="' + esc(image) + '" '
+                    '<div class="xp-phone-shell"><span class="xp-phone-button xp-phone-button-left" aria-hidden="true"></span><span class="xp-phone-button xp-phone-button-right" aria-hidden="true"></span><div class="xp-phone-screen"><img src="' + esc(image) + '" '
                     'width="476" height="1097" alt="' + esc(slide['alt']) + '" '
-                    'loading="' + ('eager' if index == 0 else 'lazy') + '" decoding="async"></div></div></li>'
+                    'loading="' + ('eager' if index == 0 else 'lazy') + '" decoding="async"><span class="xp-phone-island" aria-hidden="true"></span></div></div></li>'
                     for index,(slide,image) in enumerate(slides)
                 )
                 decks.append(
