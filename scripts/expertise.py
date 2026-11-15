@@ -214,10 +214,9 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
                 cards = ''.join(
                     '<li class="xp-phone-card" data-phone-slide data-phone-index="' + str(index) + '" '
                     'aria-label="' + esc(slide['title']) + ' screen ' + str(index+1) + ' of ' + str(len(slides)) + '">'
-                    '<div class="xp-phone-shell"><div class="xp-phone-sensor" aria-hidden="true"></div>'
-                    '<div class="xp-phone-screen"><img src="' + esc(image) + '" width="476" height="1097" '
-                    'alt="' + esc(slide['alt']) + '" loading="' + ('eager' if index == 0 else 'lazy') + '" '
-                    'decoding="async"></div></div></li>'
+                    '<div class="xp-phone-shell"><div class="xp-phone-screen"><img src="' + esc(image) + '" '
+                    'width="476" height="1097" alt="' + esc(slide['alt']) + '" '
+                    'loading="' + ('eager' if index == 0 else 'lazy') + '" decoding="async"></div></div></li>'
                     for index,(slide,image) in enumerate(slides)
                 )
                 decks.append(
@@ -230,21 +229,11 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
                         'xp-phone-heading'
                     )
                     + '<div class="xp-phone-carousel" data-phone-stack tabindex="0" role="region" '
-                    'aria-roledescription="carousel" aria-label="' + esc(collection['title']) + ' mobile screen showcase" '
+                    'aria-roledescription="carousel" aria-label="' + esc(collection['title']) + ' mobile screens" '
                     'data-phone-count="' + str(len(slides)) + '">'
-                    '<div class="xp-phone-carousel-top"><span class="xp-phone-collection">' + esc(collection['title']) +
-                    '</span><div class="xp-phone-controls">'
-                    '<button type="button" data-phone-prev aria-label="Previous mobile screen">←</button>'
-                    '<span data-phone-count-text aria-live="polite" aria-atomic="true">01 / ' + str(len(slides)).zfill(2) + '</span>'
-                    '<button type="button" data-phone-next aria-label="Next mobile screen">→</button>'
-                    '</div></div>'
                     '<ol class="xp-phone-deck" aria-label="Mobile application screenshots">' + cards + '</ol>'
-                    '<div class="xp-phone-footer"><div class="xp-phone-caption">'
-                    '<span class="xp-phone-current" data-phone-title>' + esc(slides[0][0]['title']) + '</span>'
-                    '<span class="xp-phone-hint">Scroll, drag, swipe or use arrow keys to explore.</span>'
-                    '</div><div class="xp-phone-pagination" data-phone-pagination aria-label="Choose screen">'
-                    + ''.join('<button type="button" data-phone-go="' + str(i) + '" aria-label="Go to screen ' + str(i+1) + '"></button>' for i in range(len(slides))) +
-                    '</div></div></div></section>'
+                    '<span class="sr-only" aria-live="polite" data-phone-count-text>1 of ' + str(len(slides)) + '</span>'
+                    '</div></section>'
                 )
             mobile_stack = ''.join(decks)
         product_showcase = ''
