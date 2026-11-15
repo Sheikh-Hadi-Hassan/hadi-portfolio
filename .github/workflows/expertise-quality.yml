@@ -11,6 +11,8 @@ on:
       - 'src/components/navigation.html'
       - 'tests/expertise.py'
       - 'tests/expertise-browser.cjs'
+      - 'tests/phone_stack.py'
+      - 'src/data/mobile-screen-stacks.json'
       - '.github/workflows/expertise-quality.yml'
   push:
     branches:
@@ -40,8 +42,10 @@ jobs:
           npm ci --no-audit --no-fund
       - name: Validate project taxonomy and static generator syntax
         run: |
-          python -m py_compile scripts/build.py scripts/expertise.py scripts/prepare-next.py tests/expertise.py
+          python -m py_compile scripts/build.py scripts/expertise.py scripts/prepare-next.py tests/expertise.py tests/phone_stack.py
+          node --check src/site.js
           python -m unittest discover -s tests -p expertise.py
+          python -m unittest discover -s tests -p phone_stack.py
       - name: Generate and build portfolio
         run: npm run build
       - name: Run expertise and SEO validations
