@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "consumer-connect",
+      "title": "Consumer Connect",
+      "kicker": "RESEARCH PLATFORM / MOBILE UI",
+      "description": "Nine original mobile interface screens covering onboarding, research projects, survey interaction, preferences and community. Displayed as supplied. The carousel demonstrates screen hierarchy and flow, not a live application.",
+      "slides": [
+        {
+          "src": "consumer-connect-01-home.webp",
+          "title": "Dashboard",
+          "alt": "Original Consumer Connect mobile application screenshot 1: Welcome, project discovery, Connect Rewards, and referrals"
+        },
+        {
+          "src": "consumer-connect-02-projects.webp",
+          "title": "Projects",
+          "alt": "Original Consumer Connect mobile application screenshot 2: Active research projects and project progress"
+        },
+        {
+          "src": "consumer-connect-03-sections.webp",
+          "title": "Study overview",
+          "alt": "Original Consumer Connect mobile application screenshot 3: Completed and available chocolate research sections"
+        },
+        {
+          "src": "consumer-connect-04-choice.webp",
+          "title": "Single choice",
+          "alt": "Original Consumer Connect mobile application screenshot 4: Selection and confirmation of a research response"
+        },
+        {
+          "src": "consumer-connect-05-written.webp",
+          "title": "Written response",
+          "alt": "Original Consumer Connect mobile application screenshot 5: Free-text question in the chocolate research flow"
+        },
+        {
+          "src": "consumer-connect-06-emotion.webp",
+          "title": "Emotional response",
+          "alt": "Original Consumer Connect mobile application screenshot 6: Emotion-based survey selection"
+        },
+        {
+          "src": "consumer-connect-07-preferences.webp",
+          "title": "Preference matrix",
+          "alt": "Original Consumer Connect mobile application screenshot 7: Multi-row chocolate preference survey"
+        },
+        {
+          "src": "consumer-connect-08-rating.webp",
+          "title": "Recommendation",
+          "alt": "Original Consumer Connect mobile application screenshot 8: Likelihood-to-recommend question"
+        },
+        {
+          "src": "consumer-connect-09-community.webp",
+          "title": "Community",
+          "alt": "Original Consumer Connect mobile application screenshot 9: Shoes enthusiast discussion and replies"
+        }
+      ]
+    }
+  ]
+}
