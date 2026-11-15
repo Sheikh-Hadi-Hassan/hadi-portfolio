@@ -406,51 +406,22 @@
 @media(prefers-reduced-motion:reduce){.xp-owner-feature,.xp-owner-gallery-item{transition:none!important}}
 
 /* Native, original-screen carousel for Product Design portfolio. */
-.expertise-page .xp-phone-section{border-top:1px solid var(--xp-line);padding-top:clamp(70px,8vw,125px)}
-.xp-phone-carousel{position:relative;isolation:isolate;overflow:hidden;min-width:0;background:radial-gradient(ellipse at 50% 43%,rgba(70,91,134,.17),transparent 49%),#0b0c11;border:1px solid var(--xp-line);border-radius:clamp(18px,2.4vw,32px);padding:clamp(18px,3vw,45px) 0 clamp(22px,3vw,38px);outline-offset:4px}
+.expertise-page /* Reference-faithful minimal overlapping phone-stack treatment. */
+.xp-phone-section{border-top:1px solid var(--xp-line);padding-top:clamp(70px,8vw,125px)}
+.xp-phone-carousel{position:relative;isolation:isolate;background:#fff;border:0;border-radius:0;overflow:hidden;outline-offset:4px;min-width:0;padding:clamp(24px,4vw,48px) 0}
 .xp-phone-carousel:focus-visible{outline:2px solid var(--xp-accent)}
-.xp-phone-carousel::before{content:"";position:absolute;inset:16% 14% 20%;background:radial-gradient(ellipse,rgba(119,158,216,.12),transparent 67%);pointer-events:none}
-.xp-phone-carousel-top{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:20px;padding-inline:clamp(20px,4vw,56px)}
-.xp-phone-collection{font-size:clamp(.8rem,1.3vw,1rem);color:var(--xp-ink);font-weight:600;letter-spacing:.01em}
-.xp-phone-controls{display:flex;align-items:center;gap:clamp(9px,1.4vw,18px)}
-.xp-phone-controls button{appearance:none;width:clamp(38px,3.3vw,48px);height:clamp(38px,3.3vw,48px);border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(255,255,255,.045);color:#f8f7fa;display:grid;place-items:center;font-size:1.25rem;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
-.xp-phone-controls button:hover,.xp-phone-controls button:focus-visible{background:rgba(255,255,255,.15);border-color:#f5f4f6}
-.xp-phone-controls button:focus-visible,.xp-phone-pagination button:focus-visible{outline:2px solid var(--xp-accent);outline-offset:3px}
-.xp-phone-controls button:active{transform:scale(.96)}
-.xp-phone-controls [data-phone-count-text]{min-width:60px;text-align:center;color:#b4b3bd;font:400 .74rem/1.4 "IBM Plex Mono",monospace;letter-spacing:.1em;white-space:nowrap}
-.xp-phone-deck{position:relative;list-style:none;margin:clamp(16px,2.5vw,34px) 0 0;padding:0;width:100%;height:clamp(580px,65vw,805px);perspective:1700px;perspective-origin:50% 45%;touch-action:pan-y;cursor:grab;user-select:none}
+.xp-phone-deck{position:relative;list-style:none;width:100%;height:clamp(350px,48vw,570px);padding:0;margin:0;perspective:1000px;perspective-origin:50% 50%;touch-action:pan-y;cursor:grab;user-select:none;overflow:hidden}
 .xp-phone-deck:active{cursor:grabbing}
-.xp-phone-card{--xp-depth:0;position:absolute;top:50%;left:50%;width:clamp(258px,28vw,345px);margin:0;transform:translate(calc(-50% + var(--xp-translate-x,0px)),calc(-50% + var(--xp-translate-y,0px))) rotateY(var(--xp-rotate,0deg)) rotateZ(var(--xp-tilt,0deg)) scale(var(--xp-scale,1));opacity:var(--xp-opacity,1);filter:blur(var(--xp-blur,0px));z-index:var(--xp-layer,1);transition:transform .65s cubic-bezier(.23,.9,.25,1),opacity .5s ease,filter .55s ease,visibility .55s;will-change:transform;visibility:var(--xp-visible,visible);pointer-events:none}
-.xp-phone-card.is-center{pointer-events:auto}
-.xp-phone-card:not(.is-center){cursor:pointer}
-.xp-phone-shell{width:100%;position:relative;border-radius:clamp(28px,4vw,43px);padding:clamp(9px,1.15vw,13px);background:linear-gradient(130deg,#8b8f9a 0%,#25272c 7%,#050507 18%,#0e1013 75%,#6e7077 96%);border:1px solid rgba(255,255,255,.4);box-shadow:0 28px 90px rgba(0,0,0,.56),inset 0 0 1px 1px #8b8f97;aspect-ratio:0.441;display:flex}
-.xp-phone-shell::before{content:"";position:absolute;width:3px;height:65px;left:-3px;top:19%;border-radius:4px 0 0 4px;background:#45464b}
-.xp-phone-shell::after{content:"";position:absolute;width:3px;height:44px;right:-3px;top:24%;border-radius:0 4px 4px 0;background:#686972}
-.xp-phone-screen{width:100%;height:100%;border-radius:clamp(21px,3vw,33px);overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;position:relative}
-.xp-phone-screen img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;user-select:none;-webkit-user-drag:none;max-width:100%}
-.xp-phone-sensor{position:absolute;top:12px;left:50%;transform:translateX(-50%);z-index:3;width:25%;height:14px;background:#0b0b0e;border-radius:0 0 13px 13px;opacity:.96;pointer-events:none}
-.xp-phone-footer{position:relative;z-index:10;display:flex;justify-content:space-between;align-items:flex-end;gap:25px;padding-inline:clamp(20px,4vw,56px)}
-.xp-phone-caption{display:grid;gap:6px;min-width:0}
-.xp-phone-current{font-size:clamp(1.12rem,2vw,1.65rem);color:#f4f2f8;font-weight:500;letter-spacing:-.025em;line-height:1.3}
-.xp-phone-hint{color:#a5a5b4;font-size:clamp(.72rem,1vw,.85rem);line-height:1.5}
-.xp-phone-pagination{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
-.xp-phone-pagination button{border:0;border-radius:20px;background:rgba(255,255,255,.27);width:8px;height:8px;padding:0;cursor:pointer;transition:width .2s ease,background .2s}
-.xp-phone-pagination button[aria-current="true"]{width:27px;background:var(--xp-accent)}
-@media(max-width:960px){.xp-phone-deck{height:clamp(560px,90vw,760px)}.xp-phone-card{width:clamp(235px,36vw,310px)}}
-@media(max-width:650px){.xp-phone-carousel{border-radius:16px;padding-top:18px;padding-bottom:23px}.xp-phone-deck{height:clamp(480px,135vw,690px);margin-top:9px;perspective:1100px}.xp-phone-card{width:clamp(210px,61vw,285px)}.xp-phone-shell{border-radius:30px;padding:9px}.xp-phone-screen{border-radius:23px}.xp-phone-sensor{top:10px;height:11px}.xp-phone-carousel-top{padding-inline:17px}.xp-phone-footer{padding-inline:17px;display:block}.xp-phone-pagination{justify-content:flex-start;margin-top:17px}.xp-phone-hint{max-width:250px}.xp-phone-controls{gap:9px}.xp-phone-controls button{height:36px;width:36px}.xp-phone-controls [data-phone-count-text]{min-width:52px}.xp-phone-card:not(.is-center){filter:none!important}}
-@media(max-width:370px){.xp-phone-controls [data-phone-count-text]{font-size:.63rem;min-width:45px}.xp-phone-collection{font-size:.73rem}.xp-phone-deck{height:490px}.xp-phone-card{width:214px}}
-@media(prefers-reduced-motion:reduce){.xp-phone-card,.xp-phone-pagination button,.xp-phone-controls button{transition:none!important;animation:none!important}}
-
-/* Keep the full portrait phone inside the stage on short / narrow viewports. */
-@media(max-width:650px){
- .xp-phone-deck{height:clamp(560px,159vw,730px)}
- .xp-phone-card{width:clamp(210px,59vw,280px)}
- .xp-phone-shell{aspect-ratio:.441}
-}
-@media(max-width:370px){
- .xp-phone-deck{height:560px}
- .xp-phone-card{width:214px}
-}
+.xp-phone-card{position:absolute;left:50%;top:50%;width:clamp(130px,15vw,220px);margin:0;transform-origin:center center;backface-visibility:hidden;will-change:transform;box-shadow:0 10px 23px rgba(0,0,0,.18),0 2px 5px rgba(0,0,0,.17);border-radius:clamp(12px,1.3vw,20px);pointer-events:auto;overflow:hidden}
+.xp-phone-shell{display:block;position:relative;width:100%;padding:0;background:#fff;border:0;box-shadow:none;border-radius:inherit;aspect-ratio:476/1097}
+.xp-phone-shell::before,.xp-phone-shell::after,.xp-phone-sensor{display:none!important}
+.xp-phone-screen{width:100%;height:100%;display:block;background:#fff;border-radius:inherit;overflow:hidden}
+.xp-phone-screen img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;max-width:100%;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.xp-phone-carousel-top,.xp-phone-footer,.xp-phone-controls,.xp-phone-pagination{display:none!important}
+.xp-phone-carousel [data-phone-count-text]{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:650px){.xp-phone-carousel{padding:24px 0}.xp-phone-deck{height:clamp(380px,118vw,540px);perspective:850px}.xp-phone-card{width:clamp(146px,46vw,210px);border-radius:15px}}
+@media(max-width:370px){.xp-phone-deck{height:385px}.xp-phone-card{width:150px}}
+@media(prefers-reduced-motion:reduce){.xp-phone-card{transition:none!important;animation:none!important}}
 
 /* Local development diagnostic, never shown on published domains. */
 .xp-local-asset-notice[hidden]{display:none!important}
