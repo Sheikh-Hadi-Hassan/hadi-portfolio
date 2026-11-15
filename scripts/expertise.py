@@ -231,8 +231,14 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
                     + '<div class="xp-phone-carousel" data-phone-stack tabindex="0" role="region" '
                     'aria-roledescription="carousel" aria-label="' + esc(collection['title']) + ' mobile screens" '
                     'data-phone-count="' + str(len(slides)) + '">'
+                    '<div class="xp-phone-carousel-top"><div class="xp-phone-heading"><span class="xp-phone-eyebrow">INTERACTIVE SCREEN GALLERY / 01</span><span class="xp-phone-collection">' + esc(collection['title']) + '</span></div>'
+                    '<div class="xp-phone-controls"><button type="button" data-phone-prev aria-label="Previous mobile screen">←</button>'
+                    '<span data-phone-count-text aria-live="polite">01 / ' + str(len(slides)).zfill(2) + '</span>'
+                    '<button type="button" data-phone-next aria-label="Next mobile screen">→</button></div></div>'
                     '<ol class="xp-phone-deck" aria-label="Mobile application screenshots">' + cards + '</ol>'
-                    '<span class="sr-only" aria-live="polite" data-phone-count-text>1 of ' + str(len(slides)) + '</span>'
+                    '<div class="xp-phone-footer"><div class="xp-phone-caption"><strong class="xp-phone-current" data-phone-title>' + esc(collection['slides'][0]['title']) + '</strong>'
+                    '<span class="xp-phone-hint">Drag, swipe or use arrows to explore all nine original screens.</span></div>'
+                    '<div class="xp-phone-pagination" aria-label="Choose a screen">' + ''.join('<button type="button" data-phone-dot="' + str(i) + '" aria-label="Go to screen ' + str(i+1) + '" aria-current="' + ('true' if i == 0 else 'false') + '"></button>' for i in range(len(slides))) + '</div></div>'
                     '</div></section>'
                 )
             mobile_stack = ''.join(decks)
