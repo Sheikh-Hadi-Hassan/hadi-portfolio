@@ -32,7 +32,7 @@ for name in "${FILES[@]}"; do git add -- "$DIR/$name"; done
 if git diff --cached --quiet; then
  printf 'All nine original images are already committed.\n'
 else
- git commit -m "Add nine original Consumer Connect mobile screenshots"
+ git commit --only -m "Add nine original Consumer Connect mobile screenshots" -- "${FILES[@]/#/$DIR/}"
 fi
 git push origin "$EXPECTED"
 printf 'Verified all 9 original screenshots and pushed the feature branch.\n'
