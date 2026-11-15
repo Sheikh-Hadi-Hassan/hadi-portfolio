@@ -192,6 +192,38 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
                 '<p class="xp-video-credit">Hosted project player. Playback and captions depend on the original host.</p>'
                 '</dialog></section>'
             )
+        product_showcase = ''
+        if slug == 'product-development':
+            visual_data = json.loads((src / 'data/expertise-images.json').read_text())
+            hero_visuals = [(item,optional_studio_asset(item['asset'])) for item in visual_data['hero']]
+            hero_visuals = [(item,url) for item,url in hero_visuals if url]
+            more_visuals = [(item,optional_studio_asset(item['asset'])) for item in visual_data['more']]
+            more_visuals = [(item,url) for item,url in more_visuals if url]
+            if hero_visuals:
+                product_showcase = (
+                    '<section class="expertise-block xp-owner-showcase" id="xp-product-images" aria-labelledby="xp-owner-showcase-heading">'
+                    + section_header('PRODUCT INTERFACES / ORIGINAL ARTWORK','Designed to solve real tasks.','Selected interface presentations supplied by the portfolio owner. These are examples of visual and interaction design, not proof of production deployment or measured user outcomes.','xp-owner-showcase-heading')
+                    + '<div class="xp-owner-feature-grid">'
+                    + ''.join(
+                        '<article class="xp-owner-feature" data-xp-reveal>'
+                        '<figure><img src="' + esc(url) + '" alt="' + esc(item['alt']) + '" loading="lazy" decoding="async"></figure>'
+                        '<div class="xp-owner-feature-text"><div class="xp-owner-feature-kicker"><span class="expertise-kicker">' + esc(item['tag']) + '</span><span>' + str(i).zfill(2) + ' / 04</span></div>'
+                        '<h3>' + esc(item['title']) + '</h3><p>' + esc(item['copy']) + '</p>'
+                        '<span class="xp-owner-kind">' + esc(item['kind']) + '</span></div></article>'
+                        for i,(item,url) in enumerate(hero_visuals,1)
+                    ) + '</div></section>'
+                )
+            if more_visuals:
+                product_showcase += (
+                    '<section class="expertise-block xp-owner-gallery" aria-labelledby="xp-owner-gallery-heading">'
+                    + section_header('MORE INTERFACE WORK / CURATED RECORD','Across different product contexts.','Selected screens showing healthcare workflows, operations, research and web experiences. Artwork is displayed in full, without cropping or rebranding.','xp-owner-gallery-heading')
+                    + '<div class="xp-owner-gallery-grid">'
+                    + ''.join(
+                        '<figure class="xp-owner-gallery-item" data-xp-reveal><img src="' + esc(url) + '" alt="' + esc(item['alt']) + '" loading="lazy" decoding="async">'
+                        '<figcaption><strong>' + esc(item['title']) + '</strong><span>' + esc(item['kind']) + '</span></figcaption></figure>'
+                        for item,url in more_visuals
+                    ) + '</div></section>'
+                )
         cinematic_intro = ''
         cinematic_apptech = ''
         if slug == 'product-development':
@@ -263,7 +295,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         )
         body = (
             '<main class="expertise-page" data-discipline="'+esc(slug)+'" id="top"><div class="expertise-inner">'
-            + progress + hero_section + rail + about + cinematic_intro + work + cinematic_apptech + references + process + experience + capabilities + questions + film + cta + faq_json + '</div></main>'
+            + progress + hero_section + rail + about + cinematic_intro + product_showcase + work + cinematic_apptech + references + process + experience + capabilities + questions + film + cta + faq_json + '</div></main>'
         )
         title = 'Hadi Hassan | '+entry['role']+' Portfolio'
         description = entry['intro']
