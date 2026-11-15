@@ -192,6 +192,51 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
                 '<p class="xp-video-credit">Hosted project player. Playback and captions depend on the original host.</p>'
                 '</dialog></section>'
             )
+        mobile_stack = ''
+        if slug == 'product-development':
+            stack_data = json.loads((src / 'data/mobile-screen-stacks.json').read_text())
+            collections = stack_data.get('collections',[])
+            decks = []
+            for collection in collections:
+                slides = [(slide,optional_studio_asset(slide['src'])) for slide in collection['slides']]
+                if not slides or not all(image for _,image in slides):
+                    continue  # Show only complete owner-supplied screen sequences, no broken files.
+                cards = ''.join(
+                    '<li class="xp-phone-card" data-phone-slide data-phone-index="' + str(index) + '" '
+                    'aria-label="' + esc(slide['title']) + ' screen ' + str(index+1) + ' of ' + str(len(slides)) + '">'
+                    '<div class="xp-phone-shell"><div class="xp-phone-sensor" aria-hidden="true"></div>'
+                    '<div class="xp-phone-screen"><img src="' + esc(image) + '" width="476" height="1097" '
+                    'alt="' + esc(slide['alt']) + '" loading="' + ('eager' if index == 0 else 'lazy') + '" '
+                    'decoding="async"></div></div></li>'
+                    for index,(slide,image) in enumerate(slides)
+                )
+                decks.append(
+                    '<section class="expertise-block xp-phone-section" id="xp-mobile-showcase" '
+                    'aria-labelledby="xp-phone-heading">'
+                    + section_header(
+                        collection['kicker'],
+                        'A product, screen by screen.',
+                        collection['description'],
+                        'xp-phone-heading'
+                    )
+                    + '<div class="xp-phone-carousel" data-phone-stack tabindex="0" role="region" '
+                    'aria-roledescription="carousel" aria-label="' + esc(collection['title']) + ' mobile screen showcase" '
+                    'data-phone-count="' + str(len(slides)) + '">'
+                    '<div class="xp-phone-carousel-top"><span class="xp-phone-collection">' + esc(collection['title']) +
+                    '</span><div class="xp-phone-controls">'
+                    '<button type="button" data-phone-prev aria-label="Previous mobile screen">←</button>'
+                    '<span data-phone-count-text aria-live="polite" aria-atomic="true">01 / ' + str(len(slides)).zfill(2) + '</span>'
+                    '<button type="button" data-phone-next aria-label="Next mobile screen">→</button>'
+                    '</div></div>'
+                    '<ol class="xp-phone-deck" aria-label="Mobile application screenshots">' + cards + '</ol>'
+                    '<div class="xp-phone-footer"><div class="xp-phone-caption">'
+                    '<span class="xp-phone-current" data-phone-title>' + esc(slides[0][0]['title']) + '</span>'
+                    '<span class="xp-phone-hint">Scroll, drag, swipe or use arrow keys to explore.</span>'
+                    '</div><div class="xp-phone-pagination" data-phone-pagination aria-label="Choose screen">'
+                    + ''.join('<button type="button" data-phone-go="' + str(i) + '" aria-label="Go to screen ' + str(i+1) + '"></button>' for i in range(len(slides))) +
+                    '</div></div></div></section>'
+                )
+            mobile_stack = ''.join(decks)
         product_showcase = ''
         if slug == 'product-development':
             visual_data = json.loads((src / 'data/expertise-images.json').read_text())
@@ -295,7 +340,7 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         )
         body = (
             '<main class="expertise-page" data-discipline="'+esc(slug)+'" id="top"><div class="expertise-inner">'
-            + progress + hero_section + rail + about + cinematic_intro + product_showcase + work + cinematic_apptech + references + process + experience + capabilities + questions + film + cta + faq_json + '</div></main>'
+            + progress + hero_section + rail + about + cinematic_intro + mobile_stack + product_showcase + work + cinematic_apptech + references + process + experience + capabilities + questions + film + cta + faq_json + '</div></main>'
         )
         title = 'Hadi Hassan | '+entry['role']+' Portfolio'
         description = entry['intro']
