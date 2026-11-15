@@ -118,6 +118,27 @@ async function run(){
      const railPosition=await page.locator('.xp-sticky-rail').evaluate(el=>Math.round(el.getBoundingClientRect().top));
      assert(railPosition>=-3&&railPosition<=6,'Chapter navigation did not stick: top '+railPosition);
      if(slug==='product-development'){
+      const stack=page.locator('[data-phone-stack]');
+      if(await stack.count()){
+       const images=page.locator('.xp-phone-screen img');
+       assert.equal(await images.count(),9,'Missing original mobile screenshots');
+       const dimensions=await images.evaluateAll(nodes=>nodes.map(im=>({width:im.naturalWidth,height:im.naturalHeight,fit:getComputedStyle(im).objectFit})));
+       assert(dimensions.every(im=>im.width===476&&im.height===1097&&im.fit==='contain'),'Mobile screenshot resized incorrectly or cropped');
+       const counter=stack.locator('[data-phone-count-text]');
+       await stack.locator('[data-phone-next]').click();
+       await page.waitForFunction(()=>document.querySelector('[data-phone-count-text]')?.textContent==='02 / 09');
+       await stack.locator('[data-phone-prev]').click();
+       await page.waitForFunction(()=>document.querySelector('[data-phone-count-text]')?.textContent==='01 / 09');
+       await stack.locator('[data-phone-prev]').click();
+       assert.equal(await counter.textContent(),'09 / 09','Infinite reverse looping failed');
+       await stack.focus();
+       await page.keyboard.press('ArrowRight');
+       assert.equal(await counter.textContent(),'01 / 09','Keyboard forward looping failed');
+       const viewportWidth=await page.evaluate(()=>document.documentElement.scrollWidth);
+       assert(viewportWidth<=device.width+2,'Phone stack caused horizontal page overflow');
+      }
+     }
+     if(slug==='product-development'){
       const buttons=page.locator('[data-xp-filter]');
       assert(await buttons.count()>1,'Product work filters were not rendered');
       await buttons.nth(1).click();
