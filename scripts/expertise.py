@@ -196,52 +196,62 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
         if slug == 'product-development':
             stack_data = json.loads((src / 'data/mobile-screen-stacks.json').read_text())
             collections = stack_data.get('collections',[])
-            decks = []
+            ready = []
             for collection in collections:
-                slides = [(slide,optional_studio_asset(slide['src'])) for slide in collection['slides']]
-                if not slides or not all(image for _,image in slides):
-                    missing_assets = [slide['src'] for slide,image in slides if not image]
-                    print('[expertise] MISSING MOBILE SCREENS for ' + collection['title'] + ': ' + ', '.join(missing_assets),flush=True)
-                    decks.append(
-                        '<aside class="xp-local-asset-notice" data-local-asset-notice hidden>'
-                        '<strong>Original mobile screens are not installed locally.</strong>'
-                        '<p>The Consumer Connect phone carousel is ready, but its nine original screenshots are absent. '
-                        'Download both image ZIPs and run <code>bash scripts/import-owner-images.sh ~/Downloads</code> '
-                        'from your repository, then restart <code>npm run dev</code>.</p>'
-                        '</aside>'
-                    )
-                    continue  # Never render broken screen images on a published portfolio.
-                cards = ''.join(
-                    '<li class="xp-phone-card" data-phone-slide data-phone-index="' + str(index) + '" '
-                    'aria-label="' + esc(slide['title']) + ' screen ' + str(index+1) + ' of ' + str(len(slides)) + '">'
-                    '<div class="xp-phone-shell"><span class="xp-phone-button xp-phone-button-left" aria-hidden="true"></span><span class="xp-phone-button xp-phone-button-right" aria-hidden="true"></span><div class="xp-phone-screen"><img src="' + esc(image) + '" '
-                    'width="476" height="1097" alt="' + esc(slide['alt']) + '" '
-                    'loading="' + ('eager' if index == 0 else 'lazy') + '" decoding="async"><span class="xp-phone-island" aria-hidden="true"></span></div></div></li>'
-                    for index,(slide,image) in enumerate(slides)
+                slides = [(slide, optional_studio_asset(slide['src'])) for slide in collection['slides']]
+                if slides and all(image for _, image in slides):
+                    ready.append((collection, slides))
+                else:
+                    missing = [slide['src'] for slide, image in slides if not image]
+                    print('[expertise] Screens unavailable for ' + collection['title'] + ': ' + ', '.join(missing), flush=True)
+            if ready:
+                all_cards = []
+                for collection, slides in ready:
+                    for index, (slide, image) in enumerate(slides):
+                        mode = collection.get('mode', 'phone')
+                        all_cards.append(
+                            '<li class="xp-phone-card" data-phone-slide data-phone-project="' + esc(collection['id']) + '" '
+                            'data-phone-mode="' + esc(mode) + '" data-phone-index="' + str(index) + '" '
+                            'aria-label="' + esc(slide['title']) + ' screen ' + str(index+1) + ' of ' + str(len(slides)) + '">'
+                            '<div class="xp-phone-shell"><span class="xp-phone-button xp-phone-button-left" aria-hidden="true"></span>'
+                            '<span class="xp-phone-button xp-phone-button-right" aria-hidden="true"></span>'
+                            '<div class="xp-phone-screen"><img src="' + esc(image) + '" '
+                            'width="476" height="1097" alt="' + esc(slide['alt']) + '" '
+                            'loading="' + ('eager' if not all_cards else 'lazy') + '" decoding="async">'
+                            '<span class="xp-phone-island" aria-hidden="true"></span></div></div></li>'
+                        )
+                first = ready[0][0]
+                tabs = ''.join(
+                    '<button type="button" role="tab" data-phone-project-tab="' + esc(item['id']) + '" '
+                    'aria-selected="' + ('true' if n == 0 else 'false') + '">' + esc(item['title']) + '</button>'
+                    for n, (item, _) in enumerate(ready)
                 )
-                decks.append(
-                    '<section class="expertise-block xp-phone-section" id="xp-mobile-showcase" '
-                    'aria-labelledby="xp-phone-heading">'
-                    + section_header(
-                        collection['kicker'],
-                        'A product, screen by screen.',
-                        collection['description'],
-                        'xp-phone-heading'
-                    )
+                dots = ''.join(
+                    '<button type="button" data-phone-dot="' + str(i) + '" aria-label="Go to screen ' + str(i+1) + '" '
+                    'aria-current="' + ('true' if i == 0 else 'false') + '"></button>'
+                    for i in range(max(len(slides) for _, slides in ready))
+                )
+                mobile_stack = (
+                    '<section class="expertise-block xp-phone-section" id="xp-mobile-showcase" aria-labelledby="xp-phone-heading">'
+                    + section_header('SELECTED PRODUCT EXPERIENCE', 'A product, screen by screen.',
+                                     'Explore selected client and administrative interfaces across projects.', 'xp-phone-heading')
                     + '<div class="xp-phone-carousel" data-phone-stack tabindex="0" role="region" '
-                    'aria-roledescription="carousel" aria-label="' + esc(collection['title']) + ' mobile screens" '
-                    'data-phone-count="' + str(len(slides)) + '">'
-                    '<div class="xp-phone-carousel-top"><div class="xp-phone-heading"><span class="xp-phone-eyebrow">INTERACTIVE SCREEN GALLERY / 01</span><span class="xp-phone-collection">' + esc(collection['title']) + '</span></div>'
-                    '<div class="xp-phone-controls"><button type="button" data-phone-prev aria-label="Previous mobile screen">←</button>'
-                    '<span data-phone-count-text aria-live="polite">01 / ' + str(len(slides)).zfill(2) + '</span>'
-                    '<button type="button" data-phone-next aria-label="Next mobile screen">→</button></div></div>'
-                    '<ol class="xp-phone-deck" aria-label="Mobile application screenshots">' + cards + '</ol>'
-                    '<div class="xp-phone-footer"><div class="xp-phone-caption"><strong class="xp-phone-current" data-phone-title>' + esc(collection['slides'][0]['title']) + '</strong>'
-                    '<span class="xp-phone-hint">Drag, swipe or use arrows to explore all nine original screens.</span></div>'
-                    '<div class="xp-phone-pagination" aria-label="Choose a screen">' + ''.join('<button type="button" data-phone-dot="' + str(i) + '" aria-label="Go to screen ' + str(i+1) + '" aria-current="' + ('true' if i == 0 else 'false') + '"></button>' for i in range(len(slides))) + '</div></div>'
+                    'aria-roledescription="carousel" aria-label="Selected project interface gallery">'
+                    '<div class="xp-project-tabs" role="tablist" aria-label="Choose project">' + tabs + '</div>'
+                    '<div class="xp-phone-carousel-top"><div class="xp-phone-heading">'
+                    '<span class="xp-phone-eyebrow">INTERACTIVE SCREEN GALLERY</span>'
+                    '<span class="xp-phone-collection" data-phone-collection>' + esc(first['title']) + '</span></div>'
+                    '<div class="xp-phone-controls"><button type="button" data-phone-prev aria-label="Previous screen">←</button>'
+                    '<span data-phone-count-text aria-live="polite">01</span>'
+                    '<button type="button" data-phone-next aria-label="Next screen">→</button></div></div>'
+                    '<ol class="xp-phone-deck" aria-label="Original project screenshots">' + ''.join(all_cards) + '</ol>'
+                    '<div class="xp-phone-footer"><div class="xp-phone-caption">'
+                    '<strong class="xp-phone-current" data-phone-title>' + esc(first['slides'][0]['title']) + '</strong>'
+                    '<span class="xp-phone-hint">Scroll, swipe, or use the project tabs. Playback pauses on hover.</span></div>'
+                    '<div class="xp-phone-pagination" aria-label="Choose a screen">' + dots + '</div></div>'
                     '</div></section>'
                 )
-            mobile_stack = ''.join(decks)
+
         product_showcase = ''
         if slug == 'product-development':
             visual_data = json.loads((src / 'data/expertise-images.json').read_text())
