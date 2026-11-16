@@ -1075,3 +1075,78 @@
   transition:none!important;
  }
 }
+
+
+/* Transparent iPhone 16 frame overlay and staggered pixel reveal.
+   Frame by Mobile FIRST, personal/commercial use, no attribution required.
+   The remote PNG is a temporary asset dependency until self-hosted. */
+.expertise-page .xp-gallery-device:not([data-mode="web"]){
+ aspect-ratio:393/800!important;
+ padding:0!important;
+ border:0!important;
+ border-radius:0!important;
+ background:transparent!important;
+ box-shadow:0 25px 55px rgba(0,0,0,.6)!important;
+ overflow:visible!important;
+}
+.expertise-page .xp-gallery-frame{
+ position:absolute;
+ inset:0;
+ z-index:8;
+ pointer-events:none;
+ background:url("https://www.webmobilefirst.com/img/mockups/mockup-apple-iphone-16-2024-transparent.png") center/100% 100% no-repeat;
+}
+.expertise-page .xp-gallery-device .xp-gallery-viewport{
+ position:absolute;
+ left:3%;
+ right:3%;
+ top:2.2%;
+ bottom:2.2%;
+ width:auto!important;
+ height:auto!important;
+ border-radius:clamp(23px,3vw,39px)!important;
+ background:#050506;
+ isolation:isolate;
+ overflow:hidden;
+}
+.expertise-page .xp-gallery-island{display:none!important}
+.expertise-page .xp-gallery-device .xp-gallery-viewport img{
+ width:100%;
+ height:auto;
+ min-height:100%;
+ object-fit:cover;
+}
+.expertise-page .xp-pixel-grid{
+ position:absolute;
+ inset:0;
+ z-index:5;
+ pointer-events:none;
+ display:grid;
+ grid-template-columns:repeat(12,minmax(0,1fr));
+ grid-template-rows:repeat(22,minmax(0,1fr));
+ overflow:hidden;
+}
+.expertise-page .xp-pixel-cell{
+ display:block;
+ background:#0a0b0e;
+ opacity:0;
+}
+.expertise-page .xp-pixel-grid.is-pixelating .xp-pixel-cell{
+ animation:xp-pixel-dissolve .65s steps(2,end) both;
+ animation-delay:var(--px-delay,0ms);
+}
+@keyframes xp-pixel-dissolve{
+ 0%{opacity:1}
+ 42%{opacity:.95}
+ 70%{opacity:.4}
+ 100%{opacity:0}
+}
+/* Administrative screenshots remain unframed; no iPhone overlay for web projects. */
+.expertise-page [data-phone-mode="web"] .xp-gallery-frame{display:none}
+.expertise-page [data-phone-mode="web"] .xp-gallery-viewport{
+ inset:5px;
+ border-radius:10px!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .expertise-page .xp-pixel-grid.is-pixelating .xp-pixel-cell{animation:none!important;opacity:0!important}
+}
