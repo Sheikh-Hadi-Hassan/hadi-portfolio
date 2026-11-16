@@ -1,0 +1,82 @@
+[
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "reduced": false,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: 144 curved image strips, arrows, keyboard, drag, idle pause"
+  },
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "reduced": true,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: complete static/mobile layout"
+  },
+  {
+    "engine": "chromium",
+    "width": 1280,
+    "reduced": false,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: 144 curved image strips, arrows, keyboard, drag, idle pause"
+  },
+  {
+    "engine": "chromium",
+    "width": 1280,
+    "reduced": true,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: complete static/mobile layout"
+  },
+  {
+    "engine": "chromium",
+    "width": 768,
+    "reduced": false,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: complete static/mobile layout"
+  },
+  {
+    "engine": "chromium",
+    "width": 768,
+    "reduced": true,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: complete static/mobile layout"
+  },
+  {
+    "engine": "chromium",
+    "width": 390,
+    "reduced": false,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: complete static/mobile layout"
+  },
+  {
+    "engine": "chromium",
+    "width": 390,
+    "reduced": true,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: complete static/mobile layout"
+  },
+  {
+    "engine": "chromium",
+    "width": 360,
+    "reduced": false,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: complete static/mobile layout"
+  },
+  {
+    "engine": "chromium",
+    "width": 360,
+    "reduced": true,
+    "status": "PASS",
+    "showcase": "PASS: reveal, collapse, stable height and keyboard",
+    "orbit": "PASS: complete static/mobile layout"
+  }
+]

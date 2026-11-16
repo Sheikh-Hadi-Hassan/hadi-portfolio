@@ -215,3 +215,7 @@ with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-flight
 with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-flight.js').read_text())
 
 with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-portfolio.css').read_text())
+
+# Focused progressive enhancements for reference-inspired product components.
+with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-components.css').read_text())
+with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-components.js').read_text())

@@ -1,0 +1,256 @@
+[
+  {
+    "width": 1440,
+    "violations": [
+      {
+        "id": "aria-hidden-focus",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              "li[aria-label=\"Projects screen 2 of 9\"]"
+            ],
+            "html": "<li class=\"xp-phone-card is-sid...\" data-phone-slide=\"\" data-phone-project=\"consumer-connect\" data-phone-mode=\"phone\" data-phone-index=\"1\" aria-label=\"Projects screen 2 of...\" aria-hidden=\"true\" tabindex=\"0\" data-stack-depth=\"1\" data-stack-side=\"right\" style=\"transform: translate...\">"
+          },
+          {
+            "target": [
+              "li[aria-label=\"Study overview screen 3 of 9\"]"
+            ],
+            "html": "<li class=\"xp-phone-card is-sid...\" data-phone-slide=\"\" data-phone-project=\"consumer-connect\" data-phone-mode=\"phone\" data-phone-index=\"2\" aria-label=\"Study overview scree...\" aria-hidden=\"true\" tabindex=\"0\" data-stack-depth=\"2\" data-stack-side=\"right\" style=\"transform: translate...\">"
+          },
+          {
+            "target": [
+              "li[aria-label=\"Single choice screen 4 of 9\"]"
+            ],
+            "html": "<li class=\"xp-phone-card is-sid...\" data-phone-slide=\"\" data-phone-project=\"consumer-connect\" data-phone-mode=\"phone\" data-phone-index=\"3\" aria-label=\"Single choice screen...\" aria-hidden=\"true\" tabindex=\"0\" data-stack-depth=\"3\" data-stack-side=\"right\" style=\"transform: translate...\">"
+          },
+          {
+            "target": [
+              "li[data-phone-index=\"6\"][data-stack-depth=\"3\"][data-stack-side=\"left\"]"
+            ],
+            "html": "<li class=\"xp-phone-card is-sid...\" data-phone-slide=\"\" data-phone-project=\"consumer-connect\" data-phone-mode=\"phone\" data-phone-index=\"6\" aria-label=\"Preference matrix sc...\" aria-hidden=\"true\" tabindex=\"0\" data-stack-depth=\"3\" data-stack-side=\"left\" style=\"transform: translate...\">"
+          },
+          {
+            "target": [
+              "li[data-phone-index=\"7\"]"
+            ],
+            "html": "<li class=\"xp-phone-card is-sid...\" data-phone-slide=\"\" data-phone-project=\"consumer-connect\" data-phone-mode=\"phone\" data-phone-index=\"7\" aria-label=\"Recommendation scree...\" aria-hidden=\"true\" tabindex=\"0\" data-stack-depth=\"2\" data-stack-side=\"left\" style=\"transform: translate...\">"
+          },
+          {
+            "target": [
+              "li[data-phone-index=\"8\"]"
+            ],
+            "html": "<li class=\"xp-phone-card is-sid...\" data-phone-slide=\"\" data-phone-project=\"consumer-connect\" data-phone-mode=\"phone\" data-phone-index=\"8\" aria-label=\"Community screen 9 o...\" aria-hidden=\"true\" tabindex=\"0\" data-stack-depth=\"1\" data-stack-side=\"left\" style=\"transform: translate...\">"
+          }
+        ]
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(2)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(4.36px, 29.93px, -320.44px) rotateY(59.51deg) rotateZ(0deg) scale(0.489); filter: blur(5.51px);\" href=\"#xp-work\" aria-label=\"Explore Omni Help / Mobile experience\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(3)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(3.09px, 8.02px, -386.49px) rotateY(17.82deg) rotateZ(0deg) scale(0.389); filter: blur(6.58px);\" href=\"#xp-work\" ...>"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(4)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Care by CallingDr / Visit history\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(5)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Vera Health / Medicine cabinet\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(6)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Legal management / Dashboard\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(7)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Grassroots Ventures / Website\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(8)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Longwood Reef / Ecommerce\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(9)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Consumer Connect / Website\">"
+          },
+          {
+            "target": [
+              "a[aria-label=\"Explore ClearMetRx / Website\"]"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore ClearMetRx / Website\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(11)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Care by CallingDr / Patient selection\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(12)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Care by CallingDr / Prescriptions\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(13)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Vera Health / Treatment selection\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(14)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Vera Health / Appointment scheduling\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(15)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Vera Health / Family profile\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(16)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Vera Health / Appointments\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(17)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Legal management / Consultation\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(18)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Legal management / Case details\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(19)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Legal management / Dashboard presentation\">"
+          },
+          {
+            "target": [
+              "a[aria-label=\"LinkedIn\"]"
+            ],
+            "html": "<a href=\"https://www.linkedin.com/in/hadi-hasssan/\" class=\"v2ft-bottom-social\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"LinkedIn\"><span aria-hidden=\"true\">in</span></a>"
+          },
+          {
+            "target": [
+              "a[aria-label=\"Behance\"]"
+            ],
+            "html": "<a href=\"https://www.behance.net/hadihasssan\" class=\"v2ft-bottom-social\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Behance\"><span aria-hidden=\"true\">Bē</span></a>"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      "aria-prohibited-attr",
+      "color-contrast",
+      "label-content-name-mismatch"
+    ]
+  },
+  {
+    "width": 390,
+    "violations": [
+      {
+        "id": "aria-hidden-focus",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              "li[aria-label=\"Projects screen 2 of 9\"]"
+            ],
+            "html": "<li class=\"xp-phone-card is-sid...\" data-phone-slide=\"\" data-phone-project=\"consumer-connect\" data-phone-mode=\"phone\" data-phone-index=\"1\" aria-label=\"Projects screen 2 of...\" aria-hidden=\"true\" tabindex=\"0\" data-stack-depth=\"1\" data-stack-side=\"right\" style=\"transform: translate...\">"
+          },
+          {
+            "target": [
+              "li[data-phone-index=\"8\"]"
+            ],
+            "html": "<li class=\"xp-phone-card is-sid...\" data-phone-slide=\"\" data-phone-project=\"consumer-connect\" data-phone-mode=\"phone\" data-phone-index=\"8\" aria-label=\"Community screen 9 o...\" aria-hidden=\"true\" tabindex=\"0\" data-stack-depth=\"1\" data-stack-side=\"left\" style=\"transform: translate...\">"
+          }
+        ]
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              "a[aria-label=\"Explore CallingDr / Website\"]"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(-21.44px, 42.37px, -342.94px) rotateY(50.04deg) rotateZ(0deg) scale(0.475); filter: blur(5.65px);\" href=\"#xp-work\" aria-label=\"Explore CallingDr / Website\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(2)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(-2.64px, 7.42px, -401.59px) rotateY(11.63deg) rotateZ(0deg) scale(0.374); filter: blur(6.75px);\" href=\"#xp-work\" aria-label=\"Explore Omni Help / Mobile experience\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(4)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Care by CallingDr / Visit history\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(5)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Vera Health / Medicine cabinet\">"
+          },
+          {
+            "target": [
+              ".product-flight-card[data-flight-card=\"\"][href$=\"#xp-work\"]:nth-child(6)"
+            ],
+            "html": "<a class=\"product-flight-card\" data-flight-card=\"\" style=\"--flight-aspect: 1.77778; transform: translate(-50%, -50%) translate3d(0px, 0px, -420px) rotateY(0deg) rotateZ(0deg) scale(0.35); filter: blur(7px);\" href=\"#xp-work\" aria-label=\"Explore Legal management / Dashboard\">"
+          },
+          {
+            "target": [
+              "a[aria-label=\"LinkedIn\"]"
+            ],
+            "html": "<a href=\"https://www.linkedin.com/in/hadi-hasssan/\" class=\"v2ft-bottom-social\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"LinkedIn\"><span aria-hidden=\"true\">in</span></a>"
+          },
+          {
+            "target": [
+              "a[aria-label=\"Behance\"]"
+            ],
+            "html": "<a href=\"https://www.behance.net/hadihasssan\" class=\"v2ft-bottom-social\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Behance\"><span aria-hidden=\"true\">Bē</span></a>"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      "aria-prohibited-attr",
+      "color-contrast",
+      "label-content-name-mismatch"
+    ]
+  }
+]

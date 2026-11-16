@@ -1,0 +1,214 @@
+[
+  {
+    "engine": "webkit",
+    "width": 1440,
+    "height": 900,
+    "reduced": false,
+    "status": "PASS",
+    "entranceSampleCount": 30,
+    "entranceChanged": true,
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "hoverTransform": "matrix3d(-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1)",
+    "scroll": {
+      "distance": 1800,
+      "mid": 0.35,
+      "ring": 0.8,
+      "reverseExact": true,
+      "idleStationary": true,
+      "released": true
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 1440,
+    "height": 900,
+    "reduced": true,
+    "status": "PASS",
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 1280,
+    "height": 800,
+    "reduced": false,
+    "status": "PASS",
+    "entranceSampleCount": 30,
+    "entranceChanged": true,
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "hoverTransform": "matrix3d(-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1)",
+    "scroll": {
+      "distance": 1600,
+      "mid": 0.35,
+      "ring": 0.8,
+      "reverseExact": true,
+      "idleStationary": true,
+      "released": true
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 1280,
+    "height": 800,
+    "reduced": true,
+    "status": "PASS",
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 768,
+    "height": 1024,
+    "reduced": false,
+    "status": "PASS",
+    "entranceSampleCount": 30,
+    "entranceChanged": true,
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "scroll": {
+      "distance": 2048,
+      "mid": 0.3496,
+      "ring": 0.7998,
+      "reverseExact": true,
+      "idleStationary": true,
+      "released": true
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 768,
+    "height": 1024,
+    "reduced": true,
+    "status": "PASS",
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 390,
+    "height": 844,
+    "reduced": false,
+    "status": "PASS",
+    "entranceSampleCount": 30,
+    "entranceChanged": true,
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "scroll": {
+      "distance": 1350,
+      "mid": 0.3496,
+      "ring": 0.8,
+      "reverseExact": true,
+      "idleStationary": true,
+      "released": true
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 390,
+    "height": 844,
+    "reduced": true,
+    "status": "PASS",
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 360,
+    "height": 780,
+    "reduced": false,
+    "status": "PASS",
+    "entranceSampleCount": 30,
+    "entranceChanged": true,
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "scroll": {
+      "distance": 1248,
+      "mid": 0.3494,
+      "ring": 0.7997,
+      "reverseExact": true,
+      "idleStationary": true,
+      "released": true
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 360,
+    "height": 780,
+    "reduced": true,
+    "status": "PASS",
+    "accessibility": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "brand": "PASS: homepage palette/type/button geometry; 4 flagships; 9 enlargements; process details; direct contact; redundant sections removed",
+    "gallery": "PASS: next/previous, 4 collections, stationary frame, preserved two-layer 680ms wipe",
+    "pageErrors": []
+  }
+]
