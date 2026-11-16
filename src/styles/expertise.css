@@ -1077,9 +1077,8 @@
 }
 
 
-/* Transparent iPhone 16 frame overlay and staggered pixel reveal.
-   Frame by Mobile FIRST, personal/commercial use, no attribution required.
-   The remote PNG is a temporary asset dependency until self-hosted. */
+/* Self-contained iPhone-inspired glass and titanium device frame.
+   CSS-only, no third-party artwork, licensing requirement, or network dependency. */
 .expertise-page [data-phone-mode="phone"] .xp-gallery-device{
  aspect-ratio:393/800!important;
  padding:0!important;
@@ -1094,7 +1093,12 @@
  inset:0;
  z-index:8;
  pointer-events:none;
- background:url("https://www.webmobilefirst.com/img/mockups/mockup-apple-iphone-16-2024-transparent.png") center/100% 100% no-repeat;
+ box-sizing:border-box;
+ border:clamp(5px,.65vw,9px) solid transparent;
+ border-radius:clamp(30px,3.6vw,47px);
+ background:linear-gradient(#050508,#050508) padding-box,linear-gradient(112deg,#979ca5 0%,#555963 9%,#0b0c10 27%,#050507 72%,#60656f 95%,#b2b4b9 100%) border-box;
+ box-shadow:inset 0 0 0 2px #282a31,0 0 0 1px #878993,0 16px 35px #0009;
+}
 }
 .expertise-page .xp-gallery-device .xp-gallery-viewport{
  position:absolute;
@@ -1163,3 +1167,33 @@
 .expertise-page .xp-gallery-device.is-switching .xp-gallery-viewport img{
  animation:none!important;
 }
+
+/* Integrated device hardware details: crisp Dynamic Island, lens and screen glass. */
+.expertise-page [data-phone-mode="phone"] .xp-gallery-device{
+ border-radius:clamp(32px,3.8vw,49px)!important;
+ overflow:visible!important;
+ filter:drop-shadow(0 16px 38px #000b);
+}
+.expertise-page [data-phone-mode="phone"] .xp-gallery-frame::before{
+ content:"";position:absolute;z-index:9;left:50%;top:2.3%;transform:translateX(-50%);
+ width:30%;height:3.35%;border-radius:999px;
+ background:radial-gradient(circle at 83% 51%,#182638 0 4%,#07080c 5% 17%,transparent 18%),#050509;
+ box-shadow:inset 0 0 0 1px #25262b,0 1px 3px #0009;
+}
+.expertise-page [data-phone-mode="phone"] .xp-gallery-frame::after{
+ content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
+ box-shadow:inset 1px 0 1px #ffffff35,inset -1px 0 1px #ffffff23;
+}
+.expertise-page [data-phone-mode="phone"] .xp-gallery-viewport{
+ left:3%!important;right:3%!important;top:2%!important;bottom:2%!important;
+ border-radius:clamp(27px,3vw,41px)!important;
+}
+.expertise-page [data-phone-mode="web"] .xp-gallery-frame{display:none!important}
+.expertise-page [data-phone-mode="web"] .xp-gallery-viewport{
+ left:5px!important;right:5px!important;top:5px!important;bottom:5px!important;
+ width:auto!important;height:auto!important;border-radius:10px!important;
+}
+/* A real pixel-grid replacement: old screen is obscured before the new one is exposed. */
+.expertise-page .xp-pixel-cell{background:#0a0b0e;}
+.expertise-page .xp-pixel-grid.is-pixelating .xp-pixel-cell{animation:xp-pixel-dissolve .67s steps(3,end) both}
+@media(prefers-reduced-motion:reduce){.expertise-page .xp-pixel-grid.is-pixelating .xp-pixel-cell{animation:none!important;opacity:0!important}}
