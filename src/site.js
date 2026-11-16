@@ -220,7 +220,13 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   const dots=Array.from(root.querySelectorAll('[data-phone-dot]'));
   const names=cards.map(el=>(el.getAttribute('aria-label')||'Screen').replace(/ screen \d+ of \d+$/,''));
   const wrap=n=>((n%total)+total)%total;
-  let current=0,gesture=null,ignoreClick=false,wheelSum=0,wheelAt=0;
+  let current=0,gesture=null,ignoreClick=false,wheelSum=0,wheelAt=0,hover=false,inView=true,autoTimer=null;
+  const stopAuto=()=>{if(autoTimer){clearInterval(autoTimer);autoTimer=null}};
+  function restartAuto(){stopAuto();if(!hover&&inView&&!document.hidden&&!reduce.matches){autoTimer=setInterval(()=>select(current+1),3000)}}
+  root.addEventListener('pointerenter',()=>{hover=true;stopAuto()});
+  root.addEventListener('pointerleave',()=>{hover=false;restartAuto()});
+  document.addEventListener('visibilitychange',restartAuto);
+  if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;restartAuto()},{threshold:.2}).observe(root);
   function difference(index){
    let d=index-current;
    if(d>total/2)d-=total;
@@ -245,6 +251,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
     card.style.visibility=visible?'visible':'hidden';
     card.style.pointerEvents=visible?'auto':'none';
     card.classList.toggle('is-center',depth===0);
+    if(depth===0&&!reduce.matches){card.classList.remove('xp-pop');void card.offsetWidth;card.classList.add('xp-pop')}
     card.classList.toggle('is-side-panel',depth!==0);
     card.setAttribute('aria-hidden',String(depth!==0));
     card.tabIndex=visible?0:-1;
@@ -259,9 +266,9 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
    current=wrap(index);
    render();
   }
-  prev?.addEventListener('click',()=>select(current-1));
-  next?.addEventListener('click',()=>select(current+1));
-  dots.forEach(dot=>dot.addEventListener('click',()=>select(Number(dot.dataset.phoneDot))));
+  prev?.addEventListener('click',()=>{select(current-1);restartAuto()});
+  next?.addEventListener('click',()=>{select(current+1);restartAuto()});
+  dots.forEach(dot=>dot.addEventListener('click',()=>{select(Number(dot.dataset.phoneDot));restartAuto()}));
   deck.addEventListener('click',event=>{
    if(ignoreClick){ignoreClick=false;return}
    const card=event.target.closest('[data-phone-slide]');
@@ -310,7 +317,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   if('ResizeObserver' in window)new ResizeObserver(render).observe(deck);
   else addEventListener('resize',render,{passive:true});
   reduce.addEventListener?.('change',render);
-  render();
+  render();restartAuto();
  });
 })();
 
