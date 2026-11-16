@@ -1200,3 +1200,46 @@
 /* Correct image stacking: all device hardware is transparent over the screenshot. */
 .expertise-page [data-phone-mode="phone"] .xp-gallery-frame{background-color:transparent!important;background-image:none!important;}
 .expertise-page .xp-phone-card[data-stack-depth="3"]{opacity:1!important;}
+
+/* Professional screen-only wipe: the iPhone hardware remains completely still.
+   Two real screenshots overlap within the clipped device viewport for 680ms. */
+.expertise-page .xp-gallery-viewport .xp-screen-layer{
+ position:absolute;inset:0;overflow:hidden;pointer-events:none;
+ backface-visibility:hidden;transform:translate3d(0,0,0);opacity:1;
+ clip-path:inset(0 0 0 0);
+}
+.expertise-page .xp-gallery-viewport .xp-screen-layer.is-current{z-index:1}
+.expertise-page .xp-gallery-viewport .xp-screen-layer.is-leaving{
+ z-index:2;
+ animation:xp-screen-wipe-out 680ms cubic-bezier(.22,1,.36,1) both;
+}
+.expertise-page .xp-gallery-viewport .xp-screen-layer.is-entering{
+ z-index:3;
+ animation:xp-screen-wipe-in 680ms cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes xp-screen-wipe-in{
+ 0%{clip-path:inset(100% 0 0 0);transform:translate3d(0,10%,0) scale(.99);opacity:.98}
+ 100%{clip-path:inset(0 0 0 0);transform:translate3d(0,0,0) scale(1);opacity:1}
+}
+@keyframes xp-screen-wipe-out{
+ 0%{transform:translate3d(0,0,0) scale(1);opacity:1}
+ 100%{transform:translate3d(0,-4%,0) scale(.994);opacity:.94}
+}
+.expertise-page .xp-gallery-viewport .xp-screen-layer img{
+ display:block;width:100%;height:auto;min-height:100%;max-width:none;
+ object-fit:unset!important;object-position:center top;
+ transform:translate3d(0,0,0);
+ transition:transform var(--screen-scroll-duration,3s) linear;
+}
+.expertise-page .xp-gallery-device.is-wiping .xp-screen-layer.is-entering img{
+ transform:translate3d(0,0,0)!important;transition:none!important;
+}
+.expertise-page [data-phone-mode="web"] .xp-gallery-viewport .xp-screen-layer img{
+ width:100%;height:100%;min-height:0;object-fit:contain!important;
+ transform:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .expertise-page .xp-gallery-viewport .xp-screen-layer.is-leaving,
+ .expertise-page .xp-gallery-viewport .xp-screen-layer.is-entering{animation:none!important}
+ .expertise-page .xp-gallery-viewport .xp-screen-layer img{transition:none!important}
+}
