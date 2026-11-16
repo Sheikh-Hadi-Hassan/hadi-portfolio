@@ -973,3 +973,13 @@
 @media(prefers-reduced-motion:reduce){
   .expertise-page .xp-phone-card{transition:none!important}
 }
+
+/* Black-background gallery refinements: single prominent framed center, flat surrounding cards. */
+.expertise-page .xp-phone-section,.expertise-page .xp-phone-carousel{background:#000!important}
+.xp-phone-card.is-side-panel .xp-phone-shell{border:0!important;padding:0!important;border-radius:12px!important;background:#121212!important;box-shadow:0 18px 36px rgba(0,0,0,.8)!important}
+.xp-phone-card.is-side-panel .xp-phone-screen{border-radius:12px!important}
+.xp-phone-card.is-side-panel .xp-phone-button,.xp-phone-card.is-side-panel .xp-phone-island{display:none!important}
+.xp-phone-card{transition:transform .75s cubic-bezier(.19,1,.22,1),opacity .45s ease,visibility .45s ease!important}
+.xp-phone-card.is-center.xp-pop .xp-phone-screen img{animation:xp-screen-reveal .5s cubic-bezier(.22,1,.36,1) both}
+@keyframes xp-screen-reveal{from{opacity:.4;transform:translateY(10px) scale(.97);filter:blur(3px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){.xp-phone-card,.xp-phone-card.is-center.xp-pop .xp-phone-screen img{transition:none!important;animation:none!important}}
