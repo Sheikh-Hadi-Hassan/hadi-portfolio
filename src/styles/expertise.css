@@ -986,7 +986,7 @@
 
 /* Unified four-collection gallery. Text tabs and screen display share the black stage. */
 .expertise-page .xp-project-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:14px 22px 10px;position:relative;z-index:125}
-.expertise-page .xp-project-tabs button{appearance:none;cursor:pointer;border:1px solid #47474a;background:#111;color:#aaa;line-height:1.2;font:600 .84rem/1.2 inherit;padding:12px 19px;border-radius:999px;transition:background .28s ease,color .28s ease,border-color .28s ease}
+.expertise-page .xp-project-tabs button{appearance:none;cursor:pointer;border:1px solid #47474a;background:#111;color:#aaa;line-height:1.2;font-size:.84rem;font-weight:600;line-height:1.2;font-family:inherit;padding:12px 19px;border-radius:999px;transition:background .28s ease,color .28s ease,border-color .28s ease}
 .expertise-page .xp-project-tabs button[aria-selected="true"]{color:#fff;background:#303034;border-color:#929297}
 .expertise-page .xp-project-tabs button:focus-visible{outline:2px solid white;outline-offset:3px}
 .expertise-page .xp-phone-card.is-side-panel .xp-phone-shell,.expertise-page .xp-phone-card.is-side-panel .xp-phone-screen{border-radius:13px!important}
