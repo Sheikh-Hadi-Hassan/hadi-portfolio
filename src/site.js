@@ -275,6 +275,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
    const depthLimit=compact?1:3;
    const selectedMode=cards[selected].dataset.phoneMode||'phone';
    root.dataset.phoneMode=selectedMode;
+   device.dataset.mode=selectedMode;
    const activeImage=cards[selected].querySelector('img');
    const incoming=activeImage?.getAttribute('src')||'';
    if(incoming&&incoming!==activeAsset){
