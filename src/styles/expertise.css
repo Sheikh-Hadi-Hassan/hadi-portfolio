@@ -1002,3 +1002,18 @@
 .expertise-page .xp-phone-card[data-phone-mode="web"] .xp-phone-island,.expertise-page .xp-phone-card[data-phone-mode="web"] .xp-phone-button{display:none!important}
 @media(max-width:680px){.expertise-page .xp-project-tabs{flex-wrap:nowrap;justify-content:flex-start;overflow:auto;scrollbar-width:thin;padding-inline:20px}.expertise-page .xp-project-tabs button{flex:0 0 auto;white-space:nowrap}.expertise-page [data-phone-mode="web"] .xp-phone-card{width:min(62vw,290px)!important}}
 @media(prefers-reduced-motion:reduce){.expertise-page .xp-project-tabs button{transition:none!important}}
+
+/* The center mockup stays stationary while flat background cards travel behind it. */
+.expertise-page .xp-phone-deck{isolation:isolate}
+.expertise-page .xp-gallery-device{position:absolute;z-index:105;left:50%;top:50%;transform:translate(-50%,-50%);box-sizing:border-box;width:clamp(190px,24vw,300px);aspect-ratio:476/1097;padding:5px;border:5px solid #1c1c20;border-radius:clamp(28px,3vw,45px);background:#08090b;box-shadow:0 0 0 1px #68696c,0 28px 65px rgba(0,0,0,.9);pointer-events:none;overflow:hidden}
+.expertise-page .xp-gallery-viewport{width:100%;height:100%;background:#0a0a0a;overflow:hidden;border-radius:clamp(18px,2.35vw,35px)}
+.expertise-page .xp-gallery-viewport img{display:block;width:100%;height:100%;object-fit:fill}
+.expertise-page .xp-gallery-island{position:absolute;z-index:3;left:50%;top:12px;transform:translateX(-50%);background:#070708;border-radius:999px;width:29%;height:2.5%}
+.expertise-page .xp-gallery-device.is-switching .xp-gallery-viewport img{animation:xp-gallery-reveal .52s cubic-bezier(.22,1,.36,1)}
+@keyframes xp-gallery-reveal{0%{opacity:.25;transform:translateY(12px) scale(.97);filter:blur(4px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.expertise-page [data-phone-mode="web"] .xp-gallery-device{width:clamp(250px,32vw,450px);aspect-ratio:4/5;padding:5px;border:1px solid #52565b;border-radius:15px}
+.expertise-page [data-phone-mode="web"] .xp-gallery-viewport{border-radius:10px}
+.expertise-page [data-phone-mode="web"] .xp-gallery-island{display:none}
+.expertise-page [data-phone-mode="web"] .xp-gallery-viewport img{object-fit:contain}
+@media(max-width:680px){.expertise-page .xp-gallery-device{width:clamp(190px,57vw,270px)}.expertise-page [data-phone-mode="web"] .xp-gallery-device{width:min(70vw,300px)}}
+@media(prefers-reduced-motion:reduce){.expertise-page .xp-gallery-device.is-switching .xp-gallery-viewport img{animation:none!important}}
