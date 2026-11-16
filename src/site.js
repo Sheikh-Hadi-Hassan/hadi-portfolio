@@ -268,8 +268,8 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
     const local=sequence.indexOf(index);
     const diff=local>=0?signedDistance(local,screenIndex,total):999;
     const depth=Math.abs(diff);
-    const show=local>=0&&depth<=depthLimit&&!active;
     const active=index===selected;
+    const show=local>=0&&depth<=depthLimit&&!active;
     card.style.transform='translate3d(calc(-50% + '+diff*step+'px),calc(-50% + '+(depth*6)+'px),0) scale('+Math.max(.75,1-depth*.075)+')';
     card.style.zIndex=String(100-depth*10);
     card.style.opacity=show?String(Math.max(.34,.85-depth*.17)):'0';
