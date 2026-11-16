@@ -1080,7 +1080,7 @@
 /* Transparent iPhone 16 frame overlay and staggered pixel reveal.
    Frame by Mobile FIRST, personal/commercial use, no attribution required.
    The remote PNG is a temporary asset dependency until self-hosted. */
-.expertise-page .xp-gallery-device:not([data-mode="web"]){
+.expertise-page [data-phone-mode="phone"] .xp-gallery-device{
  aspect-ratio:393/800!important;
  padding:0!important;
  border:0!important;
@@ -1149,4 +1149,17 @@
 }
 @media(prefers-reduced-motion:reduce){
  .expertise-page .xp-pixel-grid.is-pixelating .xp-pixel-cell{animation:none!important;opacity:0!important}
+}
+
+/* Screen mode guard: the phone frame never overrides web-dashboard dimensions. */
+.expertise-page [data-phone-mode="web"] .xp-gallery-device{
+ aspect-ratio:4/5!important;
+ padding:5px!important;
+ border:1px solid #52565b!important;
+ border-radius:15px!important;
+ background:#08090b!important;
+ overflow:hidden!important;
+}
+.expertise-page .xp-gallery-device.is-switching .xp-gallery-viewport img{
+ animation:none!important;
 }
