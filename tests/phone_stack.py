@@ -27,6 +27,12 @@ class PhoneStackTests(unittest.TestCase):
             self.assertIn(item, js)
         self.assertIn("Math.abs(event.deltaX)>Math.abs(event.deltaY)", js)
 
+    def test_apptech_admin_mobile_viewport_is_not_web_framed(self):
+        data = json.loads((ROOT / "src/data/mobile-screen-stacks.json").read_text())
+        admin = next(item for item in data["collections"] if item["id"] == "apptech-admin")
+        self.assertEqual(admin["mode"], "phone")
+        self.assertEqual(len(admin["slides"]), 4)
+
     def test_pixel_transition_and_local_frame(self):
         js = (ROOT / "src/site.js").read_text()
         css = (ROOT / "src/styles/expertise.css").read_text()
