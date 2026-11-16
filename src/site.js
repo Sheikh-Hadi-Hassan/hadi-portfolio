@@ -224,30 +224,84 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   const device=document.createElement('div');
   device.className='xp-gallery-device';
   device.setAttribute('aria-hidden','true');
-  device.innerHTML='<div class="xp-gallery-viewport"><img alt=""><div class="xp-pixel-grid" aria-hidden="true"></div></div><div class="xp-gallery-frame" aria-hidden="true"></div>';
+  device.innerHTML='<div class="xp-gallery-viewport"><div class="xp-screen-layer is-current"><img alt=""></div><div class="xp-screen-layer"><img alt=""></div></div><div class="xp-gallery-frame" aria-hidden="true"></div>';
   deck.appendChild(device);
-  const deviceImage=device.querySelector('img');
-  const pixelGrid=device.querySelector('.xp-pixel-grid');
-  // A deterministic, staggered 12x22 pixel dissolve. Purely presentational.
-  for(let y=0;y<22;y++)for(let x=0;x<12;x++){
-   const pixel=document.createElement('span');
-   pixel.className='xp-pixel-cell';
-   pixel.style.setProperty('--px-x',String(x));
-   pixel.style.setProperty('--px-y',String(y));
-   pixel.style.setProperty('--px-delay',((x*7+y*11)%19)*16+'ms');
-   pixelGrid.appendChild(pixel);
-  }
+  const viewport=device.querySelector('.xp-gallery-viewport');
+  const screenLayers=Array.from(device.querySelectorAll('.xp-screen-layer'));
+  const screenImages=screenLayers.map(layer=>layer.querySelector('img'));
+  const WIPE_DURATION=680;
+  let activeAsset='',activeLayer=0,screenBusy=false,pendingScreen=null,wipeTimer=null;
   function measureScreenOverflow(){
-   const viewport=device.querySelector('.xp-gallery-viewport');
-   if(!viewport||!deviceImage.naturalWidth||!deviceImage.naturalHeight)return;
-   const renderedHeight=deviceImage.naturalHeight*viewport.clientWidth/deviceImage.naturalWidth;
-   const overflow=Math.max(0,renderedHeight-viewport.clientHeight);
+   const img=screenImages[activeLayer];
+   if(!img.naturalWidth||!img.naturalHeight||!viewport.clientWidth)return;
+   const renderedHeight=img.naturalHeight*viewport.clientWidth/img.naturalWidth;
+   const overflow=device.dataset.mode==='web'?0:Math.max(0,renderedHeight-viewport.clientHeight);
    device.style.setProperty('--screen-overflow',overflow+'px');
    device.style.setProperty('--screen-scroll-duration',Math.min(14,Math.max(2.5,overflow/75))+'s');
   }
-  deviceImage.addEventListener('load',measureScreenOverflow);
-  deck.addEventListener('pointerenter',measureScreenOverflow);
-  let activeAsset='';
+  screenImages.forEach(img=>img.addEventListener('load',()=>{
+   if(img===screenImages[activeLayer])measureScreenOverflow();
+  }));
+  device.addEventListener('pointerenter',measureScreenOverflow);
+  // Keep two real screenshots during the transition, rather than changing one
+  // image source beneath a single black pixel overlay.
+  function showScreen(src,mode){
+   if(!src)return;
+   if(screenBusy){pendingScreen={src,mode};return}
+   if(src===activeAsset)return;
+   const outgoing=screenLayers[activeLayer];
+   const incomingLayer=screenLayers[1-activeLayer];
+   const incomingImage=screenImages[1-activeLayer];
+   if(!activeAsset||reduced.matches){
+    clearTimeout(wipeTimer);
+    outgoing.className='xp-screen-layer';
+    incomingLayer.className='xp-screen-layer is-current';
+    incomingImage.src=src;
+    activeLayer=1-activeLayer;activeAsset=src;
+    device.dataset.mode=mode;
+    device.classList.remove('is-wiping');
+    device.style.setProperty('--screen-overflow','0px');
+    if(incomingImage.complete)measureScreenOverflow();
+    return;
+   }
+   screenBusy=true;
+   incomingLayer.className='xp-screen-layer';
+   incomingImage.src=src;
+   function finish(){
+    if(!screenBusy)return;
+    clearTimeout(wipeTimer);wipeTimer=null;
+    outgoing.className='xp-screen-layer';
+    incomingLayer.className='xp-screen-layer is-current';
+    activeLayer=1-activeLayer;activeAsset=src;screenBusy=false;
+    device.classList.remove('is-wiping');
+    measureScreenOverflow();
+    if(pendingScreen){
+     const next=pendingScreen;pendingScreen=null;
+     if(next.src!==activeAsset)showScreen(next.src,next.mode);
+    }
+   }
+   function begin(){
+    if(!screenBusy)return;
+    if(!incomingImage.naturalWidth){
+     screenBusy=false;incomingLayer.className='xp-screen-layer';
+     if(pendingScreen){const next=pendingScreen;pendingScreen=null;showScreen(next.src,next.mode)}
+     return;
+    }
+    device.dataset.mode=mode;
+    device.classList.add('is-wiping');
+    // Force a new animation even when the user switches slides in quick succession.
+    void incomingLayer.offsetWidth;
+    outgoing.classList.add('is-leaving');
+    incomingLayer.classList.add('is-entering');
+    wipeTimer=setTimeout(finish,WIPE_DURATION+45);
+   }
+   if(typeof incomingImage.decode==='function')incomingImage.decode().then(begin,begin);
+   else if(incomingImage.complete)begin();
+   else{
+    incomingImage.addEventListener('load',begin,{once:true});
+    incomingImage.addEventListener('error',begin,{once:true});
+   }
+  }
   let projectIndex=0,screenIndex=0,hover=false,visible=true,timer=null;
   let gesture=null,suppressClick=false,wheelAccum=0,wheelTime=0,lastWheelAdvance=0;
   const wrap=(index,total)=>((index%total)+total)%total;
@@ -278,15 +332,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
    device.dataset.mode=selectedMode;
    const activeImage=cards[selected].querySelector('img');
    const incoming=activeImage?.getAttribute('src')||'';
-   if(incoming&&incoming!==activeAsset){
-    activeAsset=incoming;
-    deviceImage.setAttribute('src',incoming);
-    device.style.setProperty('--screen-overflow','0px');
-    pixelGrid.classList.remove('is-pixelating');
-    if(!reduced.matches){void pixelGrid.offsetWidth;pixelGrid.classList.add('is-pixelating')}
-    device.classList.remove('is-switching');
-    if(!reduced.matches){void device.offsetWidth;device.classList.add('is-switching')}
-   }
+   showScreen(incoming,selectedMode);
 
    cards.forEach((card,index)=>{
     const local=sequence.indexOf(index);
