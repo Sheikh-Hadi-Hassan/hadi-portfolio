@@ -221,6 +221,13 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   const dots=Array.from(root.querySelectorAll('[data-phone-dot]'));
   const previous=root.querySelector('[data-phone-prev]');
   const next=root.querySelector('[data-phone-next]');
+  const device=document.createElement('div');
+  device.className='xp-gallery-device';
+  device.setAttribute('aria-hidden','true');
+  device.innerHTML='<span class="xp-gallery-island"></span><div class="xp-gallery-viewport"><img alt=""></div>';
+  deck.appendChild(device);
+  const deviceImage=device.querySelector('img');
+  let activeAsset='';
   let projectIndex=0,screenIndex=0,hover=false,visible=true,timer=null;
   let gesture=null,suppressClick=false,wheelAccum=0,wheelTime=0;
   const wrap=(index,total)=>((index%total)+total)%total;
@@ -248,18 +255,27 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
    const depthLimit=compact?1:3;
    const selectedMode=cards[selected].dataset.phoneMode||'phone';
    root.dataset.phoneMode=selectedMode;
+   const activeImage=cards[selected].querySelector('img');
+   const incoming=activeImage?.getAttribute('src')||'';
+   if(incoming&&incoming!==activeAsset){
+    activeAsset=incoming;
+    deviceImage.setAttribute('src',incoming);
+    device.classList.remove('is-switching');
+    if(!reduced.matches){void device.offsetWidth;device.classList.add('is-switching')}
+   }
+
    cards.forEach((card,index)=>{
     const local=sequence.indexOf(index);
     const diff=local>=0?signedDistance(local,screenIndex,total):999;
     const depth=Math.abs(diff);
-    const show=local>=0&&depth<=depthLimit;
+    const show=local>=0&&depth<=depthLimit&&!active;
     const active=index===selected;
     card.style.transform='translate3d(calc(-50% + '+diff*step+'px),calc(-50% + '+(depth*6)+'px),0) scale('+Math.max(.75,1-depth*.075)+')';
     card.style.zIndex=String(100-depth*10);
-    card.style.opacity=show?(active?'1':String(Math.max(.34,.85-depth*.17))):'0';
+    card.style.opacity=show?String(Math.max(.34,.85-depth*.17)):'0';
     card.style.visibility=show?'visible':'hidden';
     card.style.pointerEvents=show?'auto':'none';
-    card.classList.toggle('is-center',active);
+    card.classList.toggle('is-center',false);
     card.classList.toggle('is-side-panel',!active);
     card.setAttribute('aria-hidden',String(!active));
     card.tabIndex=show?0:-1;
