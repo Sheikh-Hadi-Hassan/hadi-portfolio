@@ -53,6 +53,103 @@
           "alt": "Original Consumer Connect mobile application screenshot 9: Shoes enthusiast discussion and replies"
         }
       ]
+    },
+    {
+      "id": "omni-help",
+      "title": "Omni Help",
+      "mode": "phone",
+      "kicker": "PRODUCT EXPERIENCE",
+      "description": "Mobile mental wellness, treatment, booking and consultation screens from original owner-supplied artwork.",
+      "slides": [
+        {
+          "src": "omni-help-01-home.webp",
+          "title": "Welcome",
+          "alt": "Original Omni Help interface: Welcome"
+        },
+        {
+          "src": "omni-help-02-dashboard.webp",
+          "title": "Dashboard",
+          "alt": "Original Omni Help interface: Dashboard"
+        },
+        {
+          "src": "omni-help-03-treatments.webp",
+          "title": "Treatments",
+          "alt": "Original Omni Help interface: Treatments"
+        },
+        {
+          "src": "omni-help-04-doctor-slots.webp",
+          "title": "Appointment slots",
+          "alt": "Original Omni Help interface: Appointment slots"
+        },
+        {
+          "src": "omni-help-05-consultation.webp",
+          "title": "Video consultation",
+          "alt": "Original Omni Help interface: Video consultation"
+        },
+        {
+          "src": "omni-help-06-meditation.webp",
+          "title": "Guided meditation",
+          "alt": "Original Omni Help interface: Guided meditation"
+        },
+        {
+          "src": "omni-help-07-care.webp",
+          "title": "Care waiting screen",
+          "alt": "Original Omni Help interface: Care waiting screen"
+        }
+      ]
+    },
+    {
+      "id": "apptech-client",
+      "title": "AppTech Client",
+      "mode": "phone",
+      "kicker": "PRODUCT EXPERIENCE",
+      "description": "Employee-facing AppTech mobile experience for attendance and building access.",
+      "slides": [
+        {
+          "src": "apptech-client-01-home.webp",
+          "title": "Employee dashboard",
+          "alt": "Original AppTech Client interface: Employee dashboard"
+        },
+        {
+          "src": "apptech-client-02-attendance.webp",
+          "title": "Attendance and location",
+          "alt": "Original AppTech Client interface: Attendance and location"
+        },
+        {
+          "src": "apptech-client-03-buildings.webp",
+          "title": "Building navigation",
+          "alt": "Original AppTech Client interface: Building navigation"
+        }
+      ]
+    },
+    {
+      "id": "apptech-admin",
+      "title": "AppTech Admin",
+      "mode": "web",
+      "kicker": "PRODUCT EXPERIENCE",
+      "description": "Administrative dashboards for people, attendance, building details and risers.",
+      "slides": [
+        {
+          "src": "apptech-admin-01-employees.webp",
+          "title": "Employees",
+          "alt": "Original AppTech Admin interface: Employees"
+        },
+        {
+          "src": "apptech-admin-02-attendance.webp",
+          "title": "Attendance history",
+          "alt": "Original AppTech Admin interface: Attendance history"
+        },
+        {
+          "src": "apptech-admin-03-risers.webp",
+          "title": "Riser details",
+          "alt": "Original AppTech Admin interface: Riser details"
+        },
+        {
+          "src": "apptech-admin-04-workstations.webp",
+          "title": "Building overview",
+          "alt": "Original AppTech Admin interface: Building overview"
+        }
+      ]
     }
   ]
 }
