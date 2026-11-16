@@ -983,3 +983,22 @@
 .xp-phone-card.is-center.xp-pop .xp-phone-screen img{animation:xp-screen-reveal .5s cubic-bezier(.22,1,.36,1) both}
 @keyframes xp-screen-reveal{from{opacity:.4;transform:translateY(10px) scale(.97);filter:blur(3px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
 @media(prefers-reduced-motion:reduce){.xp-phone-card,.xp-phone-card.is-center.xp-pop .xp-phone-screen img{transition:none!important;animation:none!important}}
+
+/* Unified four-collection gallery. Text tabs and screen display share the black stage. */
+.expertise-page .xp-project-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:14px 22px 10px;position:relative;z-index:125}
+.expertise-page .xp-project-tabs button{appearance:none;cursor:pointer;border:1px solid #47474a;background:#111;color:#aaa;line-height:1.2;font:600 .84rem/1.2 inherit;padding:12px 19px;border-radius:999px;transition:background .28s ease,color .28s ease,border-color .28s ease}
+.expertise-page .xp-project-tabs button[aria-selected="true"]{color:#fff;background:#303034;border-color:#929297}
+.expertise-page .xp-project-tabs button:focus-visible{outline:2px solid white;outline-offset:3px}
+.expertise-page .xp-phone-card.is-side-panel .xp-phone-shell,.expertise-page .xp-phone-card.is-side-panel .xp-phone-screen{border-radius:13px!important}
+.expertise-page .xp-phone-card.is-side-panel .xp-phone-shell{border:1px solid #2f3032!important;padding:0!important;background:#111!important}
+.expertise-page .xp-phone-card.is-side-panel .xp-phone-screen img{object-fit:contain!important}
+.expertise-page .xp-phone-card[data-phone-mode="web"] .xp-phone-shell{border-radius:14px!important;padding:3px!important}
+.expertise-page .xp-phone-card[data-phone-mode="web"] .xp-phone-screen{border-radius:11px!important}
+.expertise-page [data-phone-mode="web"] .xp-phone-deck{height:clamp(420px,51vw,650px)!important}
+.expertise-page [data-phone-mode="web"] .xp-phone-card{width:clamp(245px,30vw,440px)!important}
+.expertise-page .xp-phone-card[data-phone-mode="web"] .xp-phone-shell{aspect-ratio:4/5!important;border:1px solid #424448!important}
+.expertise-page .xp-phone-card[data-phone-mode="web"] .xp-phone-screen{aspect-ratio:4/5!important;height:100%!important}
+.expertise-page .xp-phone-card[data-phone-mode="web"] img{width:100%!important;height:100%!important;object-fit:contain!important}
+.expertise-page .xp-phone-card[data-phone-mode="web"] .xp-phone-island,.expertise-page .xp-phone-card[data-phone-mode="web"] .xp-phone-button{display:none!important}
+@media(max-width:680px){.expertise-page .xp-project-tabs{flex-wrap:nowrap;justify-content:flex-start;overflow:auto;scrollbar-width:thin;padding-inline:20px}.expertise-page .xp-project-tabs button{flex:0 0 auto;white-space:nowrap}.expertise-page [data-phone-mode="web"] .xp-phone-card{width:min(62vw,290px)!important}}
+@media(prefers-reduced-motion:reduce){.expertise-page .xp-project-tabs button{transition:none!important}}
