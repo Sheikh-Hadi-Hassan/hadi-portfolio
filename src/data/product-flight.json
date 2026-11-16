@@ -7,88 +7,137 @@
   },
   "cards": [
     {
-      "src": "/assets/expertise/consumer-connect-01-home.webp",
-      "title": "Consumer Connect / Dashboard",
-      "width": 476,
-      "height": 1097,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-02.webp",
+      "title": "CallingDr / Website",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/omni-help-01-home.webp",
-      "title": "Omni Help / Welcome",
-      "width": 1042,
-      "height": 2048,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-11.webp",
+      "title": "Omni Help / Mobile experience",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/apptech-client-01-home.webp",
-      "title": "AppTech Client / Employee dashboard",
-      "width": 695,
-      "height": 2048,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-09.webp",
+      "title": "Consumer Connect / Research dashboard",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/consumer-connect-02-projects.webp",
-      "title": "Consumer Connect / Projects",
-      "width": 476,
-      "height": 1097,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-15.webp",
+      "title": "Care by CallingDr / Visit history",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/omni-help-02-dashboard.webp",
-      "title": "Omni Help / Dashboard",
-      "width": 1042,
-      "height": 2048,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-18.webp",
+      "title": "Vera Health / Medicine cabinet",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/apptech-client-02-attendance.webp",
-      "title": "AppTech Client / Attendance and location",
-      "width": 311,
-      "height": 2047,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-25.webp",
+      "title": "Legal management / Dashboard",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/consumer-connect-03-sections.webp",
-      "title": "Consumer Connect / Study overview",
-      "width": 476,
-      "height": 1097,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-04.webp",
+      "title": "Grassroots Ventures / Website",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/omni-help-03-treatments.webp",
-      "title": "Omni Help / Treatments",
-      "width": 1042,
-      "height": 2048,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-06.webp",
+      "title": "Longwood Reef / Ecommerce",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/apptech-client-03-buildings.webp",
-      "title": "AppTech Client / Building navigation",
-      "width": 476,
-      "height": 2048,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-08.webp",
+      "title": "Consumer Connect / Website",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/consumer-connect-08-rating.webp",
-      "title": "Consumer Connect / Recommendation",
-      "width": 476,
-      "height": 1097,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-13.webp",
+      "title": "ClearMetRx / Website",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/consumer-connect-09-community.webp",
-      "title": "Consumer Connect / Community",
-      "width": 476,
-      "height": 1097,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-16.webp",
+      "title": "Care by CallingDr / Patient selection",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     },
     {
-      "src": "/assets/expertise/apptech-admin-01-employees.webp",
-      "title": "AppTech Admin / Employees",
-      "width": 1654,
-      "height": 1720,
-      "href": "#xp-mobile-showcase"
+      "src": "/assets/expertise/flight-project-17.webp",
+      "title": "Care by CallingDr / Prescriptions",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-19.webp",
+      "title": "Vera Health / Treatment selection",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-20.webp",
+      "title": "Vera Health / Appointment scheduling",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-21.webp",
+      "title": "Vera Health / Family profile",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-22.webp",
+      "title": "Vera Health / Appointments",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-23.webp",
+      "title": "Legal management / Consultation",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-24.webp",
+      "title": "Legal management / Case details",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-26.webp",
+      "title": "Legal management / Dashboard presentation",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
     }
   ]
 }

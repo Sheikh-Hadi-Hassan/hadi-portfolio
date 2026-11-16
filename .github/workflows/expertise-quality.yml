@@ -4,6 +4,8 @@ on:
     paths:
       - 'scripts/optimize-images.py'
       - 'public/assets/expertise/**'
+      - 'scripts/product_portfolio.py'
+      - 'src/styles/product-portfolio.css'
       - 'scripts/product_flight.py'
       - 'src/product-flight.js'
       - 'src/styles/product-flight.css'
@@ -50,7 +52,7 @@ jobs:
           npm ci --no-audit --no-fund
       - name: Validate project taxonomy and static generator syntax
         run: |
-          python -m py_compile scripts/build.py scripts/expertise.py scripts/product_flight.py scripts/prepare-next.py tests/expertise.py tests/phone_stack.py
+          python -m py_compile scripts/build.py scripts/expertise.py scripts/product_flight.py scripts/product_portfolio.py scripts/prepare-next.py tests/expertise.py tests/phone_stack.py
           node --check src/site.js
           node --check src/product-flight.js
           python -m unittest discover -s tests -p expertise.py
@@ -68,12 +70,12 @@ jobs:
         run: |
           node tests/expertise-browser.cjs
           node tests/phone-stack-browser.cjs
-          node tests/product-flight-browser.cjs
+          FLIGHT_EVIDENCE_DIR=docs/product-brand-redesign-20261116 node tests/product-flight-browser.cjs
       - name: Test Safari-style layouts in WebKit
         run: |
           EXPERTISE_BROWSER_ENGINE=webkit node tests/expertise-browser.cjs
           EXPERTISE_BROWSER_ENGINE=webkit node tests/phone-stack-browser.cjs
-          FLIGHT_ENGINE=webkit node tests/product-flight-browser.cjs
+          FLIGHT_EVIDENCE_DIR=docs/product-brand-redesign-20261116 FLIGHT_ENGINE=webkit node tests/product-flight-browser.cjs
       - name: Upload review screenshots and test report
         uses: actions/upload-artifact@v4
         if: always()
@@ -82,5 +84,5 @@ jobs:
           path: |
             artifacts/expertise-qa/
             artifacts/product-flight/
-            docs/flying-hero-20261116/browser-*.json
+            docs/product-brand-redesign-20261116/browser-*.json
           if-no-files-found: ignore

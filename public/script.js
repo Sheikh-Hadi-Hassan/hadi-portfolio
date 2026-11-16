@@ -455,7 +455,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
  const clamp=(v)=>Math.max(0,Math.min(1,v));
  const ease=t=>1-Math.pow(1-t,3),mix=(a,b,t)=>a+(b-a)*t;
  // Deliberate edge composition leaves the headline and primary actions unobstructed.
- const scatter=[[.84,.18,-15],[.94,.45,13],[.79,.76,-9],[.64,.86,11],[.39,.86,-13],[.17,.84,9],[.96,.80,15],[.69,.12,-8],[.48,.71,5],[.07,.78,-12],[.76,.48,9],[.92,.13,-16]];
+ const scatter=[[.84,.18,-15],[.94,.45,13],[.79,.76,-9],[.64,.86,11],[.39,.86,-13],[.17,.84,9],[.96,.80,15],[.69,.12,-8],[.48,.71,5],[.07,.78,-12],[.76,.48,9],[.92,.13,-16],[.86,.61,-7],[.57,.78,8],[.27,.73,-9],[.94,.64,10],[.61,.90,-5],[.83,.90,8],[.10,.91,-8]];
  const mobileScatter=[[.12,.62,-10],[.84,.60,12],[.18,.80,8],[.79,.81,-10],[.47,.71,-7],[.49,.88,9]];
  function schedule(){if(!raf&&visible&&!reduce.matches&&!document.hidden)raf=requestAnimationFrame(paint)}
  function paint(now){
@@ -483,7 +483,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
    card.style.transform=`translate(-50%,-50%) translate3d(${(x*entry).toFixed(2)}px,${(y*entry).toFixed(2)}px,${mix(-420,z,entry).toFixed(2)}px) rotateY(${(ry*entry).toFixed(2)}deg) rotateZ(${(pos[2]*(1-gather)*entry).toFixed(2)}deg) scale(${mix(.35,1,entry).toFixed(3)})`;
    card.style.filter=entry<1?`blur(${((1-entry)*7).toFixed(2)}px)`:'none';
   });
-  entranceDone=elapsed>2.1;
+  entranceDone=elapsed>1.15+(n-1)*.065;
   if(!entranceDone)schedule();
  }
  function mode(){

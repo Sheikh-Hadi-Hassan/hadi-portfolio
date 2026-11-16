@@ -1,0 +1,20 @@
+[
+  {
+    "width": 1440,
+    "violations": [],
+    "incomplete": [
+      "aria-hidden-focus",
+      "aria-prohibited-attr",
+      "color-contrast"
+    ]
+  },
+  {
+    "width": 390,
+    "violations": [],
+    "incomplete": [
+      "aria-hidden-focus",
+      "aria-prohibited-attr",
+      "color-contrast"
+    ]
+  }
+]

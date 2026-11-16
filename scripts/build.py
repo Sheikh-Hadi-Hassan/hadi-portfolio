@@ -213,3 +213,5 @@ with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').r
 # Isolated product hero modules share the existing fingerprinted asset pipeline.
 with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-flight.css').read_text())
 with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-flight.js').read_text())
+
+with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-portfolio.css').read_text())

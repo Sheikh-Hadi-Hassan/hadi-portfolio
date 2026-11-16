@@ -1,0 +1,12 @@
+PASS chromium 1440 motion
+PASS chromium 1440 reduced
+PASS chromium 1280 motion
+PASS chromium 1280 reduced
+PASS chromium 768 motion
+PASS chromium 768 reduced
+FAIL chromium 390 false ENOSPC: no space left on device, open '/Users/sheikhhadihassan/Documents/Hadi-ntellignce/hadi-portfolio-final/artifacts/product-flight/chromium-390-released.png'
+FAIL chromium 390 motion
+PASS chromium 390 reduced
+FAIL chromium 360 false Entrance never changes card transform
+FAIL chromium 360 motion
+PASS chromium 360 reduced

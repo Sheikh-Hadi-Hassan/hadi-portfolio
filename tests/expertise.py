@@ -63,6 +63,23 @@ class ExpertiseChecks(unittest.TestCase):
             content=path.read_text()
             self.assertIn('rel="canonical"',content)
             self.assertIn(url,content)
+            if slug=='product-development':
+                self.assertIn('Selected work.',content)
+                self.assertIn('product-portfolio',content)
+                self.assertEqual(content.count('data-product='),4)
+                self.assertEqual(content.count('data-flight-card'),19)
+                self.assertEqual(content.count('data-full='),9)
+                for product in json.loads((SRC/'data/digital-products.json').read_text())['products']:
+                    self.assertIn(product['url'],content)
+                    self.assertIn(product['image']['src'],content)
+                self.assertIn('id="xp-approach"',content)
+                self.assertIn('id="xp-contact"',content)
+                self.assertIn('data-phone-stack',content)
+                self.assertNotIn('id="xp-about"',content)
+                self.assertNotIn('id="xp-experience"',content)
+                self.assertNotIn('id="xp-questions"',content)
+                self.assertNotIn('xp-cinematic-apptech-heading',content)
+                continue
             self.assertIn('Selected work.',content)
             self.assertIn('EXPLORE OTHER DISCIPLINES',content)
             self.assertIn('id="xp-about"',content)

@@ -1,3 +1,5 @@
+> Artwork update: [19 owner-supplied presentation images](../flying-hero-artwork-20261116/README.md) now replace the raw flying-card screenshots. This report preserves the original implementation evidence.
+
 # Product Design flying-cards hero — 16 November 2026
 
 The Product Design & Development hero now uses the owner's first attached workspace image behind an independently implemented center-out entrance and reversible, scroll-driven 3D ring. The existing Next.js/Python generation pipeline remains authoritative. No deployment, main-branch merge, or change to Sera/booking is part of this work.

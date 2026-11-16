@@ -9,7 +9,8 @@ const path=require('path');
 const assert=require('node:assert/strict');
 const root=path.resolve('out');
 const artifacts=path.resolve('artifacts/expertise-qa');
-const slugs=['creative-direction','product-development','video-production'];
+// Product Design has its own full export, motion, brand and gallery suite.
+const slugs=['creative-direction','video-production'];
 const devices=[
  {name:'mobile-small',width:360,height:780},
  {name:'mobile',width:390,height:844},

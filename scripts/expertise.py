@@ -2,6 +2,7 @@
 import json
 import re
 from product_flight import render_product_flight
+from product_portfolio import render_product_portfolio
 
 def render_expertise(src, dist, page, esc, projects, archive_records):
     profiles = json.loads((src / 'data/expertise.json').read_text())['pages']
@@ -360,6 +361,8 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             '<main class="expertise-page" data-discipline="'+esc(slug)+'" id="top"><div class="expertise-inner">'
             + progress + hero_section + rail + about + cinematic_intro + mobile_stack + product_showcase + work + cinematic_apptech + references + process + experience + capabilities + questions + film + cta + faq_json + '</div></main>'
         )
+        if slug == 'product-development':
+            body = render_product_portfolio(src, esc, hero_section, mobile_stack, progress)
         title = 'Hadi Hassan | '+entry['role']+' Portfolio'
         description = entry['intro']
         path = dist / 'expertise' / slug
