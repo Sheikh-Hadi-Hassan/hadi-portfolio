@@ -224,9 +224,19 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   const device=document.createElement('div');
   device.className='xp-gallery-device';
   device.setAttribute('aria-hidden','true');
-  device.innerHTML='<span class="xp-gallery-island"></span><div class="xp-gallery-viewport"><img alt=""></div>';
+  device.innerHTML='<div class="xp-gallery-viewport"><img alt=""><div class="xp-pixel-grid" aria-hidden="true"></div></div><div class="xp-gallery-frame" aria-hidden="true"></div>';
   deck.appendChild(device);
   const deviceImage=device.querySelector('img');
+  const pixelGrid=device.querySelector('.xp-pixel-grid');
+  // A deterministic, staggered 12x22 pixel dissolve. Purely presentational.
+  for(let y=0;y<22;y++)for(let x=0;x<12;x++){
+   const pixel=document.createElement('span');
+   pixel.className='xp-pixel-cell';
+   pixel.style.setProperty('--px-x',String(x));
+   pixel.style.setProperty('--px-y',String(y));
+   pixel.style.setProperty('--px-delay',((x*7+y*11)%19)*16+'ms');
+   pixelGrid.appendChild(pixel);
+  }
   function measureScreenOverflow(){
    const viewport=device.querySelector('.xp-gallery-viewport');
    if(!viewport||!deviceImage.naturalWidth||!deviceImage.naturalHeight)return;
@@ -271,6 +281,8 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
     activeAsset=incoming;
     deviceImage.setAttribute('src',incoming);
     device.style.setProperty('--screen-overflow','0px');
+    pixelGrid.classList.remove('is-pixelating');
+    if(!reduced.matches){void pixelGrid.offsetWidth;pixelGrid.classList.add('is-pixelating')}
     device.classList.remove('is-switching');
     if(!reduced.matches){void device.offsetWidth;device.classList.add('is-switching')}
    }
