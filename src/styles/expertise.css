@@ -1094,9 +1094,9 @@
  z-index:8;
  pointer-events:none;
  box-sizing:border-box;
- border:clamp(5px,.65vw,9px) solid transparent;
+ border:clamp(5px,.65vw,9px) solid #4c505a;
  border-radius:clamp(30px,3.6vw,47px);
- background:linear-gradient(#050508,#050508) padding-box,linear-gradient(112deg,#979ca5 0%,#555963 9%,#0b0c10 27%,#050507 72%,#60656f 95%,#b2b4b9 100%) border-box;
+ background:transparent!important; /* frame must not paint over the active screenshot */
  box-shadow:inset 0 0 0 2px #282a31,0 0 0 1px #878993,0 16px 35px #0009;
 }
 .expertise-page .xp-gallery-device .xp-gallery-viewport{
@@ -1196,3 +1196,7 @@
 .expertise-page .xp-pixel-cell{background:#0a0b0e;}
 .expertise-page .xp-pixel-grid.is-pixelating .xp-pixel-cell{animation:xp-pixel-dissolve .67s steps(3,end) both}
 @media(prefers-reduced-motion:reduce){.expertise-page .xp-pixel-grid.is-pixelating .xp-pixel-cell{animation:none!important;opacity:0!important}}
+
+/* Correct image stacking: all device hardware is transparent over the screenshot. */
+.expertise-page [data-phone-mode="phone"] .xp-gallery-frame{background-color:transparent!important;background-image:none!important;}
+.expertise-page .xp-phone-card[data-stack-depth="3"]{opacity:1!important;}
