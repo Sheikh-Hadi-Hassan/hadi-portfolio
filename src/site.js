@@ -204,120 +204,147 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
 })();
 
 
-// Continuously looping, perspective phone-stack gallery.
-// Framer-style overlapping phone stack. Original screenshots remain untouched.
-// The active phone stays full size; neighboring phones recede behind it.
-// Circular navigation supports buttons, keys, pointer dragging, and horizontal trackpads.
+// Multi-project carousel: manual scroll, 3-second autoplay, hover pause.
+// Only published collections with all original screenshots installed are rendered.
 (()=>{
- const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
- const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
  document.querySelectorAll('[data-phone-stack]').forEach(root=>{
   const deck=root.querySelector('.xp-phone-deck');
   const cards=Array.from(root.querySelectorAll('[data-phone-slide]'));
-  if(!deck||cards.length<2)return;
-  const total=cards.length,prev=root.querySelector('[data-phone-prev]'),next=root.querySelector('[data-phone-next]');
-  const count=root.querySelector('[data-phone-count-text]'),caption=root.querySelector('[data-phone-title]');
+  const tabs=Array.from(root.querySelectorAll('[data-phone-project-tab]'));
+  if(!deck||!cards.length||!tabs.length)return;
+  const projects=tabs.map(tab=>tab.dataset.phoneProjectTab);
+  const sequences=projects.map(id=>cards.map((card,i)=>card.dataset.phoneProject===id?i:-1).filter(i=>i>=0));
+  const count=root.querySelector('[data-phone-count-text]');
+  const caption=root.querySelector('[data-phone-title]');
+  const collectionLabel=root.querySelector('[data-phone-collection]');
   const dots=Array.from(root.querySelectorAll('[data-phone-dot]'));
-  const names=cards.map(el=>(el.getAttribute('aria-label')||'Screen').replace(/ screen \d+ of \d+$/,''));
-  const wrap=n=>((n%total)+total)%total;
-  let current=0,gesture=null,ignoreClick=false,wheelSum=0,wheelAt=0,hover=false,inView=true,autoTimer=null;
-  const stopAuto=()=>{if(autoTimer){clearInterval(autoTimer);autoTimer=null}};
-  function restartAuto(){stopAuto();if(!hover&&inView&&!document.hidden&&!reduce.matches){autoTimer=setInterval(()=>select(current+1),3000)}}
-  root.addEventListener('pointerenter',()=>{hover=true;stopAuto()});
-  root.addEventListener('pointerleave',()=>{hover=false;restartAuto()});
-  document.addEventListener('visibilitychange',restartAuto);
-  if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;restartAuto()},{threshold:.2}).observe(root);
-  function difference(index){
-   let d=index-current;
+  const previous=root.querySelector('[data-phone-prev]');
+  const next=root.querySelector('[data-phone-next]');
+  let projectIndex=0,screenIndex=0,hover=false,visible=true,timer=null;
+  let gesture=null,suppressClick=false,wheelAccum=0,wheelTime=0;
+  const wrap=(index,total)=>((index%total)+total)%total;
+  const stop=()=>{if(timer!==null){clearInterval(timer);timer=null}};
+  function start(){
+   stop();
+   if(!hover&&visible&&!document.hidden&&!reduced.matches){
+    timer=setInterval(()=>advance(1,false),3000);
+   }
+  }
+  function signedDistance(index,active,total){
+   let d=index-active;
    if(d>total/2)d-=total;
    if(d< -total/2)d+=total;
    return d;
   }
   function render(){
+   const sequence=sequences[projectIndex];
+   const total=sequence.length;
+   if(!total)return;
+   const selected=sequence[screenIndex];
    const width=deck.clientWidth;
    const compact=width<680;
-   const maxDepth=compact?1:3;
-   // The reference uses ONE upright phone and flat panels behind it.
-   // Keep screenshots intact; apply depth through scale and opacity, not crop or rotation.
-   const step=compact?Math.max(74,width*.24):Math.min(235,Math.max(110,width*.164));
+   const step=compact?Math.max(70,width*.23):Math.min(215,Math.max(100,width*.16));
+   const depthLimit=compact?1:3;
+   const selectedMode=cards[selected].dataset.phoneMode||'phone';
+   root.dataset.phoneMode=selectedMode;
    cards.forEach((card,index)=>{
-    const delta=difference(index),depth=Math.abs(delta),visible=depth<=maxDepth;
-    const x=delta*step;
-    const y=depth*(compact?4:7);
-    const scale=depth===0?1:Math.max(.77,1-depth*(compact?.13:.065));
-    card.style.transform='translate3d(calc(-50% + '+x+'px),calc(-50% + '+y+'px),0) scale('+scale+')';
+    const local=sequence.indexOf(index);
+    const diff=local>=0?signedDistance(local,screenIndex,total):999;
+    const depth=Math.abs(diff);
+    const show=local>=0&&depth<=depthLimit;
+    const active=index===selected;
+    card.style.transform='translate3d(calc(-50% + '+diff*step+'px),calc(-50% + '+(depth*6)+'px),0) scale('+Math.max(.75,1-depth*.075)+')';
     card.style.zIndex=String(100-depth*10);
-    card.style.opacity=visible?String(depth===0?1:Math.max(.4,1-depth*.19)):'0';
-    card.style.visibility=visible?'visible':'hidden';
-    card.style.pointerEvents=visible?'auto':'none';
-    card.classList.toggle('is-center',depth===0);
-    if(depth===0&&!reduce.matches){card.classList.remove('xp-pop');void card.offsetWidth;card.classList.add('xp-pop')}
-    card.classList.toggle('is-side-panel',depth!==0);
-    card.setAttribute('aria-hidden',String(depth!==0));
-    card.tabIndex=visible?0:-1;
+    card.style.opacity=show?(active?'1':String(Math.max(.34,.85-depth*.17))):'0';
+    card.style.visibility=show?'visible':'hidden';
+    card.style.pointerEvents=show?'auto':'none';
+    card.classList.toggle('is-center',active);
+    card.classList.toggle('is-side-panel',!active);
+    card.setAttribute('aria-hidden',String(!active));
+    card.tabIndex=show?0:-1;
     card.dataset.stackDepth=String(depth);
-    card.dataset.stackSide=depth===0?'center':delta<0?'left':'right';
+    card.dataset.stackSide=active?'center':diff<0?'left':'right';
    });
-   if(count)count.textContent=String(current+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
-   if(caption)caption.textContent=names[current];
-   dots.forEach((dot,index)=>dot.setAttribute('aria-current',String(index===current)));
+   if(count)count.textContent=String(screenIndex+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+   if(caption)caption.textContent=(cards[selected].getAttribute('aria-label')||'Screen').replace(/ screen \d+ of \d+$/,'');
+   if(collectionLabel)collectionLabel.textContent=tabs[projectIndex].textContent.trim();
+   tabs.forEach((tab,index)=>{const active=index===projectIndex;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1});
+   dots.forEach((dot,index)=>{dot.hidden=index>=total;dot.setAttribute('aria-current',String(index===screenIndex))});
   }
-  function select(index){
-   current=wrap(index);
+  function advance(direction,manual=true){
+   const nextIndex=screenIndex+direction;
+   if(nextIndex>=sequences[projectIndex].length){
+    projectIndex=wrap(projectIndex+1,projects.length);screenIndex=0;
+   }else if(nextIndex<0){
+    projectIndex=wrap(projectIndex-1,projects.length);
+    screenIndex=sequences[projectIndex].length-1;
+   }else screenIndex=nextIndex;
    render();
+   if(manual)start();
   }
-  prev?.addEventListener('click',()=>{select(current-1);restartAuto()});
-  next?.addEventListener('click',()=>{select(current+1);restartAuto()});
-  dots.forEach(dot=>dot.addEventListener('click',()=>{select(Number(dot.dataset.phoneDot));restartAuto()}));
+  tabs.forEach((tab,index)=>tab.addEventListener('click',()=>{
+   projectIndex=index;screenIndex=0;render();start();
+  }));
+  previous?.addEventListener('click',()=>advance(-1));
+  next?.addEventListener('click',()=>advance(1));
+  dots.forEach(dot=>dot.addEventListener('click',()=>{
+   const index=Number(dot.dataset.phoneDot);
+   if(index<sequences[projectIndex].length){screenIndex=index;render();start()}
+  }));
   deck.addEventListener('click',event=>{
-   if(ignoreClick){ignoreClick=false;return}
+   if(suppressClick){suppressClick=false;return}
    const card=event.target.closest('[data-phone-slide]');
    if(!card)return;
-   const index=cards.indexOf(card);
-   if(index!==current&&index>=0)select(index);
+   const index=sequences[projectIndex].indexOf(cards.indexOf(card));
+   if(index>=0){screenIndex=index;render();start()}
   });
   deck.addEventListener('pointerdown',event=>{
    if(event.pointerType==='mouse'&&event.button!==0)return;
-   gesture={id:event.pointerId,x:event.clientX,y:event.clientY,at:performance.now(),horizontal:false};
+   gesture={id:event.pointerId,x:event.clientX,y:event.clientY,horizontal:false};
   });
   deck.addEventListener('pointermove',event=>{
    if(!gesture||event.pointerId!==gesture.id)return;
    const dx=event.clientX-gesture.x,dy=event.clientY-gesture.y;
-   if(!gesture.horizontal&&Math.abs(dy)>Math.abs(dx)*1.3&&Math.abs(dy)>10){gesture=null;return}
-   if(Math.abs(dx)>12){gesture.horizontal=true;deck.classList.toggle('is-dragging',true)}
+   if(Math.abs(dy)>Math.abs(dx)*1.3&&Math.abs(dy)>12){gesture=null;return}
+   if(Math.abs(dx)>12){gesture.horizontal=true;deck.classList.add('is-dragging')}
   });
-  function finish(event){
+  deck.addEventListener('pointerup',event=>{
    if(!gesture||event.pointerId!==gesture.id)return;
    const dx=event.clientX-gesture.x;
-   if(gesture.horizontal&&Math.abs(dx)>35){
-    // One deliberate step per swipe; direction preserved on narrow phones.
-    select(current+(dx<0?1:-1));
-    ignoreClick=true;
-   }
-   deck.classList.remove('is-dragging');
-   gesture=null;
-  }
-  deck.addEventListener('pointerup',finish);
+   if(gesture.horizontal&&Math.abs(dx)>35){advance(dx<0?1:-1);suppressClick=true}
+   gesture=null;deck.classList.remove('is-dragging');
+  });
   deck.addEventListener('pointercancel',()=>{gesture=null;deck.classList.remove('is-dragging')});
   root.addEventListener('keydown',event=>{
-   if(event.key==='ArrowRight'){event.preventDefault();select(current+1)}
-   else if(event.key==='ArrowLeft'){event.preventDefault();select(current-1)}
-   else if(event.key==='Home'){event.preventDefault();select(0)}
-   else if(event.key==='End'){event.preventDefault();select(total-1)}
+   if(event.key==='ArrowRight'){event.preventDefault();advance(1)}
+   else if(event.key==='ArrowLeft'){event.preventDefault();advance(-1)}
+   else if(event.key==='Home'){event.preventDefault();screenIndex=0;render();start()}
+   else if(event.key==='End'){event.preventDefault();screenIndex=sequences[projectIndex].length-1;render();start()}
   });
   root.addEventListener('wheel',event=>{
-   // Vertical page scroll must always remain native.
-   if(event.ctrlKey||event.metaKey||Math.abs(event.deltaX)<=Math.abs(event.deltaY))return;
+   if(event.ctrlKey||event.metaKey)return;
+   const horizontal=Math.abs(event.deltaX)>Math.abs(event.deltaY);
+   const delta=horizontal?event.deltaX:event.deltaY;
+   if(!delta)return;
    const now=performance.now();
-   if(now-wheelAt>250)wheelSum=0;
-   wheelAt=now;wheelSum+=event.deltaX;
-   if(Math.abs(wheelSum)>42){select(current+Math.sign(wheelSum));wheelSum=0}
-   event.preventDefault();
+   if(now-wheelTime>300)wheelAccum=0;
+   wheelTime=now;wheelAccum+=delta;
+   if(Math.abs(wheelAccum)>=65){advance(Math.sign(wheelAccum));wheelAccum=0}
+   if(horizontal)event.preventDefault();
   },{passive:false});
-  if('ResizeObserver' in window)new ResizeObserver(render).observe(deck);
-  else addEventListener('resize',render,{passive:true});
-  reduce.addEventListener?.('change',render);
-  render();restartAuto();
+  root.addEventListener('pointerenter',()=>{hover=true;stop()});
+  root.addEventListener('pointerleave',()=>{hover=false;start()});
+  root.addEventListener('focusin',stop);
+  root.addEventListener('focusout',()=>{if(!root.contains(document.activeElement))start()});
+  document.addEventListener('visibilitychange',start);
+  if('IntersectionObserver'in window){
+   new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;start()},{threshold:.2}).observe(root);
+  }
+  if('ResizeObserver'in window)new ResizeObserver(render).observe(deck);
+  else window.addEventListener('resize',render,{passive:true});
+  reduced.addEventListener?.('change',start);
+  render();start();
  });
 })();
 
