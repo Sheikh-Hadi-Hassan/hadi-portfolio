@@ -125,9 +125,9 @@
     {
       "id": "apptech-admin",
       "title": "AppTech Admin",
-      "mode": "web",
+      "mode": "phone",
       "kicker": "PRODUCT EXPERIENCE",
-      "description": "Administrative dashboards for people, attendance, building details and risers.",
+      "description": "Portrait screenshots of the administrative experience for employees, attendance, building details and risers. Preserve their full source aspect ratios and clip tall pages inside the center device viewport.",
       "slides": [
         {
           "src": "apptech-admin-01-employees.webp",
