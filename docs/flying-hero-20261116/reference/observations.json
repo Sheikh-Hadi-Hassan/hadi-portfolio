@@ -1,0 +1,143 @@
+[
+  {
+    "w": 1440,
+    "states": [
+      {
+        "name": "initial",
+        "y": 0,
+        "height": 2700,
+        "images": 144,
+        "visible": 56
+      },
+      {
+        "name": "intermediate",
+        "y": 550,
+        "height": 2700,
+        "images": 144,
+        "visible": 83
+      },
+      {
+        "name": "ring",
+        "y": 1250,
+        "height": 2700,
+        "images": 144,
+        "visible": 144
+      },
+      {
+        "name": "complete",
+        "y": 1800,
+        "height": 2700,
+        "images": 144,
+        "visible": 144
+      },
+      {
+        "name": "reverse",
+        "y": 550,
+        "height": 2700,
+        "images": 144,
+        "visible": 92
+      },
+      {
+        "name": "returned",
+        "y": 0,
+        "height": 2700,
+        "images": 144,
+        "visible": 55
+      }
+    ]
+  },
+  {
+    "w": 768,
+    "states": [
+      {
+        "name": "initial",
+        "y": 0,
+        "height": 2700,
+        "images": 144,
+        "visible": 54
+      },
+      {
+        "name": "intermediate",
+        "y": 550,
+        "height": 2700,
+        "images": 144,
+        "visible": 84
+      },
+      {
+        "name": "ring",
+        "y": 1250,
+        "height": 2700,
+        "images": 144,
+        "visible": 144
+      },
+      {
+        "name": "complete",
+        "y": 1800,
+        "height": 2700,
+        "images": 144,
+        "visible": 144
+      },
+      {
+        "name": "reverse",
+        "y": 550,
+        "height": 2700,
+        "images": 144,
+        "visible": 92
+      },
+      {
+        "name": "returned",
+        "y": 0,
+        "height": 2700,
+        "images": 144,
+        "visible": 53
+      }
+    ]
+  },
+  {
+    "w": 390,
+    "states": [
+      {
+        "name": "initial",
+        "y": 0,
+        "height": 2700,
+        "images": 144,
+        "visible": 45
+      },
+      {
+        "name": "intermediate",
+        "y": 550,
+        "height": 2700,
+        "images": 144,
+        "visible": 77
+      },
+      {
+        "name": "ring",
+        "y": 1250,
+        "height": 2700,
+        "images": 144,
+        "visible": 144
+      },
+      {
+        "name": "complete",
+        "y": 1800,
+        "height": 2700,
+        "images": 144,
+        "visible": 144
+      },
+      {
+        "name": "reverse",
+        "y": 550,
+        "height": 2700,
+        "images": 144,
+        "visible": 85
+      },
+      {
+        "name": "returned",
+        "y": 0,
+        "height": 2700,
+        "images": 144,
+        "visible": 41
+      }
+    ]
+  }
+]

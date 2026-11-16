@@ -1,0 +1,20 @@
+ M public/image-sitemap.xml
+ M public/llms.txt
+ M public/script.js
+ M public/sitemap.xml
+ M public/style.css
+?? docs/flying-hero-20261116/
+?? public/assets/expertise/apptech-admin-01-employees.webp
+?? public/assets/expertise/apptech-admin-02-attendance.webp
+?? public/assets/expertise/apptech-admin-03-risers.webp
+?? public/assets/expertise/apptech-admin-04-workstations.webp
+?? public/assets/expertise/apptech-client-01-home.webp
+?? public/assets/expertise/apptech-client-02-attendance.webp
+?? public/assets/expertise/apptech-client-03-buildings.webp
+?? public/assets/expertise/omni-help-01-home.webp
+?? public/assets/expertise/omni-help-02-dashboard.webp
+?? public/assets/expertise/omni-help-03-treatments.webp
+?? public/assets/expertise/omni-help-04-doctor-slots.webp
+?? public/assets/expertise/omni-help-05-consultation.webp
+?? public/assets/expertise/omni-help-06-meditation.webp
+?? public/assets/expertise/omni-help-07-care.webp

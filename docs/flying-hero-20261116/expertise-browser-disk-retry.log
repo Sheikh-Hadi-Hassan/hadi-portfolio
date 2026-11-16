@@ -1,0 +1,17 @@
+PASS chromium creative-direction mobile-small 360/360
+PASS chromium creative-direction mobile 390/390
+FAIL creative-direction ipad-portrait ENOSPC: no space left on device, open '/Users/sheikhhadihassan/Documents/Hadi-ntellignce/hadi-portfolio-final/artifacts/expertise-qa/creative-direction-ipad-portrait-chromium.png'
+PASS chromium creative-direction ipad-landscape 1024/1024
+PASS chromium creative-direction desktop 1440/1440
+PASS chromium product-development mobile-small 360/360
+PASS chromium product-development mobile 390/390
+PASS chromium product-development ipad-portrait 768/768
+PASS chromium product-development ipad-landscape 1024/1024
+PASS chromium product-development desktop 1440/1440
+PASS chromium video-production mobile-small 360/360
+PASS chromium video-production mobile 390/390
+PASS chromium video-production ipad-portrait 768/768
+PASS chromium video-production ipad-landscape 1024/1024
+PASS chromium video-production desktop 1440/1440
+Error: 1 expertise browser checks failed
+    at run (/Users/sheikhhadihassan/Documents/Hadi-ntellignce/hadi-portfolio-final/tests/expertise-browser.cjs:169:28)

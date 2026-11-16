@@ -33,13 +33,14 @@ class PhoneStackTests(unittest.TestCase):
         self.assertEqual(admin["mode"], "phone")
         self.assertEqual(len(admin["slides"]), 4)
 
-    def test_pixel_transition_and_local_frame(self):
+    def test_two_layer_wipe_and_local_frame(self):
         js = (ROOT / "src/site.js").read_text()
         css = (ROOT / "src/styles/expertise.css").read_text()
-        self.assertIn("xp-pixel-grid", js)
-        self.assertIn("xp-pixel-cell", js)
+        self.assertIn("xp-screen-layer is-current", js)
+        self.assertIn("const WIPE_DURATION=680", js)
         self.assertIn("device.dataset.mode=selectedMode", js)
-        self.assertIn("@keyframes xp-pixel-dissolve", css)
+        self.assertIn("@keyframes xp-screen-wipe-in", css)
+        self.assertIn("@keyframes xp-screen-wipe-out", css)
         self.assertIn(".xp-gallery-frame::before", css)
         self.assertNotIn("webmobilefirst.com", css)
 

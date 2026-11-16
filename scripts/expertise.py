@@ -1,6 +1,7 @@
 """Build three independent, evidence-led portfolio presentations from verified project data."""
 import json
 import re
+from product_flight import render_product_flight
 
 def render_expertise(src, dist, page, esc, projects, archive_records):
     profiles = json.loads((src / 'data/expertise.json').read_text())['pages']
@@ -108,6 +109,8 @@ def render_expertise(src, dist, page, esc, projects, archive_records):
             '<figcaption><span>Selected work / ' + esc(hero['title']) + '</span>'
             '<a href="/' + esc(hero['slug']) + '/">View project ↗</a></figcaption></figure></section>'
         )
+        if slug == 'product-development':
+            hero_section = render_product_flight(src, entry, esc)
         strengths = ''.join('<li>' + esc(s) + '</li>' for s in entry.get('strengths',[]))
         about = (
             '<section class="expertise-block expertise-profile" id="xp-about" aria-labelledby="xp-about-heading">'

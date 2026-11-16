@@ -1,0 +1,94 @@
+{
+  "background": {
+    "src": "/assets/expertise/product-flight-workspace.jpeg",
+    "width": 1376,
+    "height": 768,
+    "alt": "Editorial product design workspace with interface sketches and a wide display"
+  },
+  "cards": [
+    {
+      "src": "/assets/expertise/consumer-connect-01-home.webp",
+      "title": "Consumer Connect / Dashboard",
+      "width": 476,
+      "height": 1097,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/omni-help-01-home.webp",
+      "title": "Omni Help / Welcome",
+      "width": 1042,
+      "height": 2048,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/apptech-client-01-home.webp",
+      "title": "AppTech Client / Employee dashboard",
+      "width": 695,
+      "height": 2048,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/consumer-connect-02-projects.webp",
+      "title": "Consumer Connect / Projects",
+      "width": 476,
+      "height": 1097,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/omni-help-02-dashboard.webp",
+      "title": "Omni Help / Dashboard",
+      "width": 1042,
+      "height": 2048,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/apptech-client-02-attendance.webp",
+      "title": "AppTech Client / Attendance and location",
+      "width": 311,
+      "height": 2047,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/consumer-connect-03-sections.webp",
+      "title": "Consumer Connect / Study overview",
+      "width": 476,
+      "height": 1097,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/omni-help-03-treatments.webp",
+      "title": "Omni Help / Treatments",
+      "width": 1042,
+      "height": 2048,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/apptech-client-03-buildings.webp",
+      "title": "AppTech Client / Building navigation",
+      "width": 476,
+      "height": 2048,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/consumer-connect-08-rating.webp",
+      "title": "Consumer Connect / Recommendation",
+      "width": 476,
+      "height": 1097,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/consumer-connect-09-community.webp",
+      "title": "Consumer Connect / Community",
+      "width": 476,
+      "height": 1097,
+      "href": "#xp-mobile-showcase"
+    },
+    {
+      "src": "/assets/expertise/apptech-admin-01-employees.webp",
+      "title": "AppTech Admin / Employees",
+      "width": 1654,
+      "height": 1720,
+      "href": "#xp-mobile-showcase"
+    }
+  ]
+}

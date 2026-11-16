@@ -56,6 +56,7 @@ def variants_for(src):
   cache[src]=(variants,w,h)
  return cache[src]
 def display_size(context):
+ if 'product-flight-front' in context:return '(max-width: 680px) 128px, 215px'
  if 'folder-art' in context:return '(max-width: 600px) 90vw, (max-width: 900px) 44vw, 400px'
  if 'project-thumb' in context:return '58px'
  if 'morganics-grid-cover' in context:return '(max-width: 450px) 90vw, 404px'

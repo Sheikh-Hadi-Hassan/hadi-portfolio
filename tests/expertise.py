@@ -86,7 +86,8 @@ class ExpertiseChecks(unittest.TestCase):
                 mobile_exist=all((ROOT/'public/assets/expertise'/item['src']).is_file() for item in mobile_manifest['slides'])
                 self.assertEqual('data-phone-stack' in content,mobile_exist)
                 if mobile_exist:
-                    self.assertEqual(content.count('data-phone-slide'),len(mobile_manifest['slides']))
+                    ready_collections=[collection for collection in json.loads((SRC/'data/mobile-screen-stacks.json').read_text())['collections'] if all((ROOT/'public/assets/expertise'/slide['src']).is_file() for slide in collection['slides'])]
+                    self.assertEqual(content.count('data-phone-slide'),sum(len(collection['slides']) for collection in ready_collections))
                     for item in mobile_manifest['slides']:self.assertIn(item['src'],content)
                 image_inventory=json.loads((SRC/'data/expertise-images.json').read_text())
                 existing=[item for item in image_inventory['hero']+image_inventory['more'] if (ROOT/'public/assets/expertise'/item['asset']).is_file()]

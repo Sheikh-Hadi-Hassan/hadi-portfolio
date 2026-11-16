@@ -1,0 +1,33 @@
+FAIL chromium 1440 false locator.hover: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-flight-card]').first()[22m
+[2m    - locator resolved to <a data-flight-card="" href="#xp-mobile-showcase" class="product-flight-card" aria-label="Explore Consumer Connect / Dashboard">…</a>[22m
+[2m  - attempting hover action[22m
+[2m    2 × waiting for element to be visible and stable[22m
+[2m      - element is visible and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - element is outside of the viewport[22m
+[2m    - retrying hover action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible and stable[22m
+[2m      - element is visible and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - element is outside of the viewport[22m
+[2m    - retrying hover action[22m
+[2m      - waiting 100ms[22m
+[2m    56 × waiting for element to be visible and stable[22m
+[2m       - element is visible and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - element is outside of the viewport[22m
+[2m     - retrying hover action[22m
+[2m       - waiting 500ms[22m
+
+FAIL chromium 1440 motion
+FAIL chromium 1440 true Expected values to be strictly equal:
+
+3 !== 6
+
+FAIL chromium 1440 reduced

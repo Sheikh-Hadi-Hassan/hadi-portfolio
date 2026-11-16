@@ -209,3 +209,7 @@ print(f'Built {len(projects)+10} pages with shared templates and Pixelarticons.'
 ]))
 
 with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text()+'\n'+(SRC/'styles/appbar.css').read_text()+'\n'+(SRC/'styles/expertise.css').read_text())
+
+# Isolated product hero modules share the existing fingerprinted asset pipeline.
+with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-flight.css').read_text())
+with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-flight.js').read_text())

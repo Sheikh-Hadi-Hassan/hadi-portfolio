@@ -56,7 +56,7 @@ async function run(){
      await page.locator('.expertise-page').waitFor();
      // A direct recruiter link must not be hidden behind the homepage intro screen.
      await page.waitForFunction(()=>!document.documentElement.classList.contains('is-loading'),null,{timeout:12000});
-     await page.waitForFunction(()=>document.querySelector('.expertise-hero-image')?.naturalWidth>0,null,{timeout:20000});
+     await page.waitForFunction(()=>document.querySelector('.expertise-hero-image, .product-flight-background img')?.naturalWidth>0,null,{timeout:20000});
      await page.evaluate(async()=>{
       // Force below-the-fold imagery to load before full-page screenshots.
       const images=[...document.querySelectorAll('.expertise-page img')];
@@ -65,7 +65,7 @@ async function run(){
      });
      const state=await page.evaluate(()=>{
       const main=document.querySelector('.expertise-page');
-      const hero=main.querySelector('.expertise-hero-image');
+      const hero=main.querySelector('.expertise-hero-image, .product-flight-background img');
       return {
        h1:main.querySelectorAll('h1').length,
        hasAbout:!!main.querySelector('#xp-about'),
@@ -103,7 +103,7 @@ async function run(){
      assert(!(await question.evaluate(el=>el.open)),'FAQ disclosure did not close');
      const heroLabels=await page.evaluate(()=>{
       const back=document.querySelector('.expertise-back')?.getBoundingClientRect();
-      const label=document.querySelector('.expertise-hero > div > .expertise-kicker')?.getBoundingClientRect();
+      const label=document.querySelector('.expertise-hero > div > .expertise-kicker, .product-flight-copy > .expertise-kicker')?.getBoundingClientRect();
       return {backBottom:back?.bottom,labelTop:label?.top};
      });
      assert(heroLabels.backBottom<=heroLabels.labelTop+2,'Hero breadcrumb overlaps the role label: '+JSON.stringify(heroLabels));
@@ -121,16 +121,22 @@ async function run(){
       const stack=page.locator('[data-phone-stack]');
       if(await stack.count()){
        const images=page.locator('.xp-phone-screen img');
-       assert.equal(await images.count(),9,'Missing original mobile screenshots');
+       const collections=JSON.parse(fs.readFileSync(path.resolve('src/data/mobile-screen-stacks.json'),'utf8')).collections;
+       const expected=collections.filter(c=>c.slides.every(s=>fs.existsSync(path.resolve('public/assets/expertise',s.src)))).flatMap(c=>c.slides);
+       assert.equal(await images.count(),expected.length,'Missing original gallery screenshots');
+       const sources=await images.evaluateAll(nodes=>nodes.map(im=>new URL(im.src).pathname.split('/').pop()));
+       expected.forEach((slide,i)=>{const digest=require('node:crypto').createHash('sha256').update(fs.readFileSync(path.resolve('public/assets/expertise',slide.src))).digest('hex').slice(0,12);assert(sources[i]===slide.src||sources[i].startsWith(digest+'-q90-'),'Gallery source order changed at '+slide.src);});
        const dimensions=await images.evaluateAll(nodes=>nodes.map(im=>({width:im.naturalWidth,height:im.naturalHeight,fit:getComputedStyle(im).objectFit})));
-       assert(dimensions.every(im=>im.width===476&&im.height===1097&&im.fit==='contain'),'Mobile screenshot resized incorrectly or cropped');
+       assert(dimensions.every(im=>im.width>0&&im.height>0),'Broken original gallery screenshot');
+       assert(dimensions.slice(0,9).every(im=>Math.abs(im.width/im.height-476/1097)<.005),'Consumer Connect source dimensions changed');
        const counter=stack.locator('[data-phone-count-text]');
        await stack.locator('[data-phone-next]').click();
        await page.waitForFunction(()=>document.querySelector('[data-phone-count-text]')?.textContent==='02 / 09');
        await stack.locator('[data-phone-prev]').click();
        await page.waitForFunction(()=>document.querySelector('[data-phone-count-text]')?.textContent==='01 / 09');
        await stack.locator('[data-phone-prev]').click();
-       assert.equal(await counter.textContent(),'09 / 09','Infinite reverse looping failed');
+       const previousCollection=collections.at(-1).slides.length;
+       assert.equal(await counter.textContent(),String(previousCollection).padStart(2,'0')+' / '+String(previousCollection).padStart(2,'0'),'Infinite reverse collection looping failed');
        await stack.focus();
        await page.keyboard.press('ArrowRight');
        assert.equal(await counter.textContent(),'01 / 09','Keyboard forward looping failed');

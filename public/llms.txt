@@ -8,6 +8,9 @@
 - Archive: https://hadi.intellignce.net/archive/
 - Resume: https://hadi.intellignce.net/resume/
 - About: https://hadi.intellignce.net/about/
+- Creative direction: https://hadi.intellignce.net/expertise/creative-direction/
+- Product development: https://hadi.intellignce.net/expertise/product-development/
+- Video production: https://hadi.intellignce.net/expertise/video-production/
 - Contact: https://hadi.intellignce.net/contact/
 - Privacy: https://hadi.intellignce.net/privacy/
 

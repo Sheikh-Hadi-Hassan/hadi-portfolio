@@ -1,0 +1,6 @@
+PASS chromium 1440 motion
+PASS chromium 1440 reduced
+PASS chromium 1280 motion
+PASS chromium 1280 reduced
+PASS chromium 768 motion
+PASS chromium 768 reduced

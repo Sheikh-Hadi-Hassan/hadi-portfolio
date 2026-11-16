@@ -1,0 +1,212 @@
+PASS chromium creative-direction mobile-small 360/360
+PASS chromium creative-direction mobile 390/390
+PASS chromium creative-direction ipad-portrait 768/768
+PASS chromium creative-direction ipad-landscape 1024/1024
+PASS chromium creative-direction desktop 1440/1440
+FAIL product-development mobile-small Gallery source order changed
++ actual - expected
+... Skipped lines
+
+  [
+    'consumer-connect-01-home.webp',
+    'consumer-connect-02-projects.webp',
+    'consumer-connect-03-sections.webp',
+    'consumer-connect-04-choice.webp',
+...
+    'consumer-connect-08-rating.webp',
++   '055840f1195c-q90-160.webp',
++   '34d453b3dd5e-q90-1042.webp',
++   'fd7e0276c9fe-q90-1042.webp',
++   '27b8c832074a-q90-1042.webp',
++   'e79428f5b7b4-q90-1042.webp',
++   'cfe779a30bfd-q90-1042.webp',
++   '3364c5666d71-q90-1042.webp',
++   '315056fbb22a-q90-1042.webp',
++   'dc74c2acd6e3-q90-695.webp',
+-   'consumer-connect-09-community.webp',
+-   'omni-help-01-home.webp',
+-   'omni-help-02-dashboard.webp',
+-   'omni-help-03-treatments.webp',
+-   'omni-help-04-doctor-slots.webp',
+-   'omni-help-05-consultation.webp',
+-   'omni-help-06-meditation.webp',
+-   'omni-help-07-care.webp',
+-   'apptech-client-01-home.webp',
+    'apptech-client-02-attendance.webp',
++   'c94d0d9ac042-q90-476.webp',
++   'b50c00a0a31d-q90-1280.webp',
+-   'apptech-client-03-buildings.webp',
+-   'apptech-admin-01-employees.webp',
+    'apptech-admin-02-attendance.webp',
++   '17076a533502-q90-721.webp',
+-   'apptech-admin-03-risers.webp',
+    'apptech-admin-04-workstations.webp'
+  ]
+
+FAIL product-development mobile Gallery source order changed
++ actual - expected
+... Skipped lines
+
+  [
+    'consumer-connect-01-home.webp',
+    'consumer-connect-02-projects.webp',
+    'consumer-connect-03-sections.webp',
+    'consumer-connect-04-choice.webp',
+...
+    'consumer-connect-08-rating.webp',
++   '055840f1195c-q90-160.webp',
++   '34d453b3dd5e-q90-1042.webp',
++   'fd7e0276c9fe-q90-1042.webp',
++   '27b8c832074a-q90-1042.webp',
++   'e79428f5b7b4-q90-1042.webp',
++   'cfe779a30bfd-q90-1042.webp',
++   '3364c5666d71-q90-1042.webp',
++   '315056fbb22a-q90-1042.webp',
++   'dc74c2acd6e3-q90-695.webp',
+-   'consumer-connect-09-community.webp',
+-   'omni-help-01-home.webp',
+-   'omni-help-02-dashboard.webp',
+-   'omni-help-03-treatments.webp',
+-   'omni-help-04-doctor-slots.webp',
+-   'omni-help-05-consultation.webp',
+-   'omni-help-06-meditation.webp',
+-   'omni-help-07-care.webp',
+-   'apptech-client-01-home.webp',
+    'apptech-client-02-attendance.webp',
++   'c94d0d9ac042-q90-476.webp',
++   'b50c00a0a31d-q90-1280.webp',
+-   'apptech-client-03-buildings.webp',
+-   'apptech-admin-01-employees.webp',
+    'apptech-admin-02-attendance.webp',
++   '17076a533502-q90-721.webp',
+-   'apptech-admin-03-risers.webp',
+    'apptech-admin-04-workstations.webp'
+  ]
+
+FAIL product-development ipad-portrait Gallery source order changed
++ actual - expected
+... Skipped lines
+
+  [
+    'consumer-connect-01-home.webp',
+    'consumer-connect-02-projects.webp',
+    'consumer-connect-03-sections.webp',
+    'consumer-connect-04-choice.webp',
+...
+    'consumer-connect-08-rating.webp',
++   '055840f1195c-q90-160.webp',
++   '34d453b3dd5e-q90-1042.webp',
++   'fd7e0276c9fe-q90-1042.webp',
++   '27b8c832074a-q90-1042.webp',
++   'e79428f5b7b4-q90-1042.webp',
++   'cfe779a30bfd-q90-1042.webp',
++   '3364c5666d71-q90-1042.webp',
++   '315056fbb22a-q90-1042.webp',
++   'dc74c2acd6e3-q90-695.webp',
+-   'consumer-connect-09-community.webp',
+-   'omni-help-01-home.webp',
+-   'omni-help-02-dashboard.webp',
+-   'omni-help-03-treatments.webp',
+-   'omni-help-04-doctor-slots.webp',
+-   'omni-help-05-consultation.webp',
+-   'omni-help-06-meditation.webp',
+-   'omni-help-07-care.webp',
+-   'apptech-client-01-home.webp',
+    'apptech-client-02-attendance.webp',
++   'c94d0d9ac042-q90-476.webp',
++   'b50c00a0a31d-q90-1280.webp',
+-   'apptech-client-03-buildings.webp',
+-   'apptech-admin-01-employees.webp',
+    'apptech-admin-02-attendance.webp',
++   '17076a533502-q90-721.webp',
+-   'apptech-admin-03-risers.webp',
+    'apptech-admin-04-workstations.webp'
+  ]
+
+FAIL product-development ipad-landscape Gallery source order changed
++ actual - expected
+... Skipped lines
+
+  [
+    'consumer-connect-01-home.webp',
+    'consumer-connect-02-projects.webp',
+    'consumer-connect-03-sections.webp',
+    'consumer-connect-04-choice.webp',
+...
+    'consumer-connect-08-rating.webp',
++   '055840f1195c-q90-160.webp',
++   '34d453b3dd5e-q90-1042.webp',
++   'fd7e0276c9fe-q90-1042.webp',
++   '27b8c832074a-q90-1042.webp',
++   'e79428f5b7b4-q90-1042.webp',
++   'cfe779a30bfd-q90-1042.webp',
++   '3364c5666d71-q90-1042.webp',
++   '315056fbb22a-q90-1042.webp',
++   'dc74c2acd6e3-q90-695.webp',
+-   'consumer-connect-09-community.webp',
+-   'omni-help-01-home.webp',
+-   'omni-help-02-dashboard.webp',
+-   'omni-help-03-treatments.webp',
+-   'omni-help-04-doctor-slots.webp',
+-   'omni-help-05-consultation.webp',
+-   'omni-help-06-meditation.webp',
+-   'omni-help-07-care.webp',
+-   'apptech-client-01-home.webp',
+    'apptech-client-02-attendance.webp',
++   'c94d0d9ac042-q90-476.webp',
++   'b50c00a0a31d-q90-1280.webp',
+-   'apptech-client-03-buildings.webp',
+-   'apptech-admin-01-employees.webp',
+    'apptech-admin-02-attendance.webp',
++   '17076a533502-q90-721.webp',
+-   'apptech-admin-03-risers.webp',
+    'apptech-admin-04-workstations.webp'
+  ]
+
+FAIL product-development desktop Gallery source order changed
++ actual - expected
+... Skipped lines
+
+  [
+    'consumer-connect-01-home.webp',
+    'consumer-connect-02-projects.webp',
+    'consumer-connect-03-sections.webp',
+    'consumer-connect-04-choice.webp',
+...
+    'consumer-connect-08-rating.webp',
++   '055840f1195c-q90-160.webp',
++   '34d453b3dd5e-q90-1042.webp',
++   'fd7e0276c9fe-q90-1042.webp',
++   '27b8c832074a-q90-1042.webp',
++   'e79428f5b7b4-q90-1042.webp',
++   'cfe779a30bfd-q90-1042.webp',
++   '3364c5666d71-q90-1042.webp',
++   '315056fbb22a-q90-1042.webp',
++   'dc74c2acd6e3-q90-695.webp',
+-   'consumer-connect-09-community.webp',
+-   'omni-help-01-home.webp',
+-   'omni-help-02-dashboard.webp',
+-   'omni-help-03-treatments.webp',
+-   'omni-help-04-doctor-slots.webp',
+-   'omni-help-05-consultation.webp',
+-   'omni-help-06-meditation.webp',
+-   'omni-help-07-care.webp',
+-   'apptech-client-01-home.webp',
+    'apptech-client-02-attendance.webp',
++   'c94d0d9ac042-q90-476.webp',
++   'b50c00a0a31d-q90-1280.webp',
+-   'apptech-client-03-buildings.webp',
+-   'apptech-admin-01-employees.webp',
+    'apptech-admin-02-attendance.webp',
++   '17076a533502-q90-721.webp',
+-   'apptech-admin-03-risers.webp',
+    'apptech-admin-04-workstations.webp'
+  ]
+
+PASS chromium video-production mobile-small 360/360
+PASS chromium video-production mobile 390/390
+PASS chromium video-production ipad-portrait 768/768
+PASS chromium video-production ipad-landscape 1024/1024
+PASS chromium video-production desktop 1440/1440
+Error: 5 expertise browser checks failed
+    at run (/Users/sheikhhadihassan/Documents/Hadi-ntellignce/hadi-portfolio-final/tests/expertise-browser.cjs:167:28)
