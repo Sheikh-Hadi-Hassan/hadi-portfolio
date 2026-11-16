@@ -22,10 +22,20 @@ class PhoneStackTests(unittest.TestCase):
 
     def test_swipe_loop_and_accessibility(self):
         js = (ROOT / "src/site.js").read_text()
-        for item in ("const wrap=n=>", "pointerdown", "pointermove", "pointerup", "ArrowRight",
+        for item in ("const wrap=(index,total)=>", "pointerdown", "pointermove", "pointerup", "ArrowRight",
                      "ArrowLeft", "prefers-reduced-motion", "IntersectionObserver", "data-phone-dot"):
             self.assertIn(item, js)
-        self.assertIn("Math.abs(event.deltaX)<Math.abs(event.deltaY)", js)
+        self.assertIn("Math.abs(event.deltaX)>Math.abs(event.deltaY)", js)
+
+    def test_pixel_transition_and_local_frame(self):
+        js = (ROOT / "src/site.js").read_text()
+        css = (ROOT / "src/styles/expertise.css").read_text()
+        self.assertIn("xp-pixel-grid", js)
+        self.assertIn("xp-pixel-cell", js)
+        self.assertIn("device.dataset.mode=selectedMode", js)
+        self.assertIn("@keyframes xp-pixel-dissolve", css)
+        self.assertIn(".xp-gallery-frame::before", css)
+        self.assertNotIn("webmobilefirst.com", css)
 
     def test_original_screens_are_not_cropped(self):
         css = (ROOT / "src/styles/expertise.css").read_text()
