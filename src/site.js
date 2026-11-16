@@ -227,9 +227,19 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   device.innerHTML='<span class="xp-gallery-island"></span><div class="xp-gallery-viewport"><img alt=""></div>';
   deck.appendChild(device);
   const deviceImage=device.querySelector('img');
+  function measureScreenOverflow(){
+   const viewport=device.querySelector('.xp-gallery-viewport');
+   if(!viewport||!deviceImage.naturalWidth||!deviceImage.naturalHeight)return;
+   const renderedHeight=deviceImage.naturalHeight*viewport.clientWidth/deviceImage.naturalWidth;
+   const overflow=Math.max(0,renderedHeight-viewport.clientHeight);
+   device.style.setProperty('--screen-overflow',overflow+'px');
+   device.style.setProperty('--screen-scroll-duration',Math.min(14,Math.max(2.5,overflow/75))+'s');
+  }
+  deviceImage.addEventListener('load',measureScreenOverflow);
+  deck.addEventListener('pointerenter',measureScreenOverflow);
   let activeAsset='';
   let projectIndex=0,screenIndex=0,hover=false,visible=true,timer=null;
-  let gesture=null,suppressClick=false,wheelAccum=0,wheelTime=0;
+  let gesture=null,suppressClick=false,wheelAccum=0,wheelTime=0,lastWheelAdvance=0;
   const wrap=(index,total)=>((index%total)+total)%total;
   const stop=()=>{if(timer!==null){clearInterval(timer);timer=null}};
   function start(){
@@ -251,7 +261,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
    const selected=sequence[screenIndex];
    const width=deck.clientWidth;
    const compact=width<680;
-   const step=compact?Math.max(70,width*.23):Math.min(215,Math.max(100,width*.16));
+   const step=compact?Math.max(66,width*.215):Math.min(200,Math.max(96,width*.145));
    const depthLimit=compact?1:3;
    const selectedMode=cards[selected].dataset.phoneMode||'phone';
    root.dataset.phoneMode=selectedMode;
@@ -260,6 +270,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
    if(incoming&&incoming!==activeAsset){
     activeAsset=incoming;
     deviceImage.setAttribute('src',incoming);
+    device.style.setProperty('--screen-overflow','0px');
     device.classList.remove('is-switching');
     if(!reduced.matches){void device.offsetWidth;device.classList.add('is-switching')}
    }
@@ -270,9 +281,9 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
     const depth=Math.abs(diff);
     const active=index===selected;
     const show=local>=0&&depth<=depthLimit&&!active;
-    card.style.transform='translate3d(calc(-50% + '+diff*step+'px),calc(-50% + '+(depth*6)+'px),0) scale('+Math.max(.75,1-depth*.075)+')';
+    card.style.transform='translate3d(calc(-50% + '+diff*step+'px),calc(-50% + '+(depth*3)+'px),0) scale('+Math.max(.78,1-depth*.065)+')';
     card.style.zIndex=String(100-depth*10);
-    card.style.opacity=show?String(Math.max(.34,.85-depth*.17)):'0';
+    card.style.opacity=show?'1':'0';
     card.style.visibility=show?'visible':'hidden';
     card.style.pointerEvents=show?'auto':'none';
     card.classList.toggle('is-center',false);
@@ -338,16 +349,18 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
    else if(event.key==='Home'){event.preventDefault();screenIndex=0;render();start()}
    else if(event.key==='End'){event.preventDefault();screenIndex=sequences[projectIndex].length-1;render();start()}
   });
-  root.addEventListener('wheel',event=>{
+  deck.addEventListener('wheel',event=>{
    if(event.ctrlKey||event.metaKey)return;
    const horizontal=Math.abs(event.deltaX)>Math.abs(event.deltaY);
    const delta=horizontal?event.deltaX:event.deltaY;
    if(!delta)return;
    const now=performance.now();
-   if(now-wheelTime>300)wheelAccum=0;
+   if(now-wheelTime>260)wheelAccum=0;
    wheelTime=now;wheelAccum+=delta;
-   if(Math.abs(wheelAccum)>=65){advance(Math.sign(wheelAccum));wheelAccum=0}
-   if(horizontal)event.preventDefault();
+   event.preventDefault();
+   if(Math.abs(wheelAccum)>=65&&now-lastWheelAdvance>600){
+    advance(Math.sign(wheelAccum));wheelAccum=0;lastWheelAdvance=now;
+   }
   },{passive:false});
   root.addEventListener('pointerenter',()=>{hover=true;stop()});
   root.addEventListener('pointerleave',()=>{hover=false;start()});
@@ -357,7 +370,7 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
   if('IntersectionObserver'in window){
    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;start()},{threshold:.2}).observe(root);
   }
-  if('ResizeObserver'in window)new ResizeObserver(render).observe(deck);
+  if('ResizeObserver'in window)new ResizeObserver(()=>{render();measureScreenOverflow()}).observe(deck);
   else window.addEventListener('resize',render,{passive:true});
   reduced.addEventListener?.('change',start);
   render();start();
