@@ -1,0 +1,46 @@
+[
+  {
+    "width": 1440,
+    "reduced": false,
+    "status": "PASS",
+    "cursorMotion": true,
+    "halftoneCanvases": 3,
+    "headlineLines": 2,
+    "uncroppedFan": true,
+    "marqueePause": true,
+    "validCaseAnchors": 3
+  },
+  {
+    "width": 1440,
+    "reduced": true,
+    "status": "PASS",
+    "cursorMotion": false,
+    "halftoneCanvases": 3,
+    "headlineLines": 2,
+    "uncroppedFan": true,
+    "marqueePause": true,
+    "validCaseAnchors": 3
+  },
+  {
+    "width": 390,
+    "reduced": false,
+    "status": "PASS",
+    "cursorMotion": true,
+    "halftoneCanvases": 3,
+    "headlineLines": 2,
+    "uncroppedFan": true,
+    "marqueePause": true,
+    "validCaseAnchors": 3
+  },
+  {
+    "width": 390,
+    "reduced": true,
+    "status": "PASS",
+    "cursorMotion": false,
+    "halftoneCanvases": 3,
+    "headlineLines": 2,
+    "uncroppedFan": true,
+    "marqueePause": true,
+    "validCaseAnchors": 3
+  }
+]

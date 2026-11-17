@@ -11,6 +11,7 @@ on:
       - 'src/product-onlines.js'
       - 'src/styles/product-onlines.css'
       - 'tests/product-onlines-browser.cjs'
+      - 'tests/product-onlines-visual.cjs'
       - 'src/product-components.js'
       - 'src/styles/product-components.css'
       - 'tests/product-components-browser.cjs'
@@ -79,6 +80,7 @@ jobs:
           node tests/expertise-browser.cjs
           node tests/phone-stack-browser.cjs
           node tests/product-onlines-browser.cjs
+          node tests/product-onlines-visual.cjs
       - name: Test Safari-style layouts in WebKit
         run: |
           EXPERTISE_BROWSER_ENGINE=webkit node tests/expertise-browser.cjs
@@ -95,6 +97,6 @@ jobs:
             docs/product-brand-redesign-20261116/browser-*.json
             docs/component-refinement-20261116/components-*.json
             docs/component-refinement-20261116/screenshots/
-            docs/onlines-rebuild-20261117/browser-*.json
-            docs/onlines-rebuild-20261117/screenshots/local-*.png
+            docs/onlines-correction-20261117/browser-*.json
+            docs/onlines-correction-20261117/screenshots/local-*.png
           if-no-files-found: ignore

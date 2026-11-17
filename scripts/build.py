@@ -210,16 +210,6 @@ print(f'Built {len(projects)+10} pages with shared templates and Pixelarticons.'
 
 with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text()+'\n'+(SRC/'styles/appbar.css').read_text()+'\n'+(SRC/'styles/expertise.css').read_text())
 
-# Isolated product hero modules share the existing fingerprinted asset pipeline.
-with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-flight.css').read_text())
-with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-flight.js').read_text())
-
-with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-portfolio.css').read_text())
-
-# Focused progressive enhancements for reference-inspired product components.
-with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-components.css').read_text())
-with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-components.js').read_text())
-
 # Product page replacement requested against the Onlines reference.
 with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-onlines.css').read_text())
 with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-onlines.js').read_text())

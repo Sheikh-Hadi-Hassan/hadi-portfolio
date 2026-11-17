@@ -1,0 +1,43 @@
+{
+  "scope": "Product Design composition and motion correction",
+  "baseCommit": "4d3e22b3856927003560b633b97237956846282e",
+  "branch": "feature/expertise-portfolios-20261113",
+  "preview": "http://127.0.0.1:3000/expertise/product-development/#top",
+  "protectedSources": {
+    "src/pages/home.html": true,
+    "src/styles/hero.css": true,
+    "design/hero-lock.json": true,
+    "src/data/mobile-screen-stacks.json": true,
+    "src/site.js": true,
+    "src/styles/expertise.css": true
+  },
+  "checks": {
+    "acceptanceBuild": "PASS",
+    "npmTest": "PASS - 23 chained suites",
+    "expertisePython": "PASS - 4 tests",
+    "phoneStackPython": "PASS - 7 tests",
+    "seo": "PASS - 25 routes",
+    "production": "PASS - 27 routes",
+    "productBrowser": "PASS - 20 scenarios Chromium and WebKit",
+    "otherExpertiseBrowser": "PASS - both engines, all configured pages and widths",
+    "visualRegressions": "PASS - 4 responsive and motion scenarios",
+    "accessibility": "PASS - zero WCAG A/AA violations in desktop/mobile page and gallery reduced-motion scans",
+    "dependencyAudit": "PASS - 0 production dependency vulnerabilities",
+    "topAnchor": "PASS - header remains visible on direct #top load",
+    "stagedSecretScan": "PASS - 176740 bytes scanned, zero findings (staged diff, not full history)"
+  },
+  "unverified": [
+    "Live provider booking, Calendar, Meet and email transactions",
+    "PHP integrations on static preview",
+    "External TMS service availability"
+  ],
+  "preservation": {
+    "fullPresentations": 19,
+    "phoneScreens": 23,
+    "phoneCollections": 4,
+    "productDestinations": 4,
+    "mainUnchanged": true,
+    "hostingerDeployment": false
+  },
+  "mainRemoteHead": "84f80d83dcd05c742f2697782e2b22d2c08711f3"
+}
