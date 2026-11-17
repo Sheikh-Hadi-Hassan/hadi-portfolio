@@ -1,0 +1,37 @@
+[
+  {
+    "width": 1440,
+    "modal": false,
+    "violations": [],
+    "incomplete": [
+      "color-contrast"
+    ]
+  },
+  {
+    "width": 1440,
+    "modal": true,
+    "violations": [],
+    "incomplete": [
+      "aria-hidden-focus",
+      "aria-prohibited-attr"
+    ]
+  },
+  {
+    "width": 390,
+    "modal": false,
+    "violations": [],
+    "incomplete": [
+      "color-contrast"
+    ]
+  },
+  {
+    "width": 390,
+    "modal": true,
+    "violations": [],
+    "incomplete": [
+      "aria-hidden-focus",
+      "aria-prohibited-attr",
+      "color-contrast"
+    ]
+  }
+]

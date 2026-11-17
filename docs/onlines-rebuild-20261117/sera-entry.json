@@ -1,0 +1,16 @@
+[
+  {
+    "width": 1440,
+    "status": "PASS",
+    "events": 1,
+    "openInterface": true,
+    "scope": "Existing interface entry only; no conversation or provider write"
+  },
+  {
+    "width": 390,
+    "status": "PASS",
+    "events": 1,
+    "openInterface": true,
+    "scope": "Existing interface entry only; no conversation or provider write"
+  }
+]

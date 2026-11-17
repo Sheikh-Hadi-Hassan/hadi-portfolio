@@ -67,8 +67,10 @@ class ExpertiseChecks(unittest.TestCase):
                 self.assertIn('Selected work.',content)
                 self.assertIn('product-portfolio',content)
                 self.assertEqual(content.count('data-product='),4)
-                self.assertEqual(content.count('data-flight-card'),19)
-                self.assertEqual(content.count('data-full='),9)
+                self.assertIn('onlines-page',content)
+                self.assertIn('data-ol-hero',content)
+                self.assertEqual(content.count('data-flight-card'),0)
+                self.assertEqual(content.count('data-full='),19)
                 for product in json.loads((SRC/'data/digital-products.json').read_text())['products']:
                     self.assertIn(product['url'],content)
                     self.assertIn(product['image']['src'],content)

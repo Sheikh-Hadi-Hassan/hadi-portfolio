@@ -1,0 +1,10 @@
+PASS webkit creative-direction mobile-small 360/360
+PASS webkit creative-direction mobile 390/390
+PASS webkit creative-direction ipad-portrait 768/768
+PASS webkit creative-direction ipad-landscape 1024/1024
+PASS webkit creative-direction desktop 1440/1440
+PASS webkit video-production mobile-small 360/360
+PASS webkit video-production mobile 390/390
+PASS webkit video-production ipad-portrait 768/768
+PASS webkit video-production ipad-landscape 1024/1024
+PASS webkit video-production desktop 1440/1440

@@ -1,60 +1,54 @@
-"""A focused product portfolio using the homepage's existing brand components."""
+"""Reference-matched product portfolio; existing content and integrations retained."""
 import json
-import re
 
 def render_product_portfolio(src, esc, hero, mobile_stack, progress):
-    products=json.loads((src/'data/digital-products.json').read_text())['products']
-    by_id={p['id']:p for p in products}
-    product_cards=[]
-    for key in ['tms','apptech','crent','flow']:
-        p=by_id[key];im=p['image']
-        label='Explore the concept' if key=='flow' else 'Open product preview'
-        note='Sign-in required' if key=='apptech' else 'Product presentation' if key=='flow' else p['stage']
-        focus={
-            'tms':('Travel operations','Booking, agency workflows, commissions and reporting in a single interface.'),
-            'apptech':('Field technician workflow','Attendance, building and riser guidance, with shift records an administrator can review.'),
-            'crent':('Rental operations','Booking overview, fleet availability and rental management, connected in one dashboard.'),
-            'flow':('Business operating system','A product direction connecting revenue, project delivery, resources and team visibility.'),
-        }[key]
-        product_cards.append(
-            '<article class="product-card pp-showcase-card" data-product="'+key+'">'
-            '<a class="pp-product-image" href="'+esc(p['url'])+'" target="_blank" rel="noopener noreferrer">'
-            '<img class="product-showcase" src="'+esc(im['src'])+'" width="'+str(im['width'])+'" height="'+str(im['height'])+'" loading="lazy" decoding="async" alt="'+esc(im['alt'])+'">'
-            '<div class="pp-showcase-caption"><h3>'+esc('Flow' if key=='flow' else p['title'])+'</h3><span>'+esc(focus[0])+'</span></div><span class="pp-showcase-launch" aria-hidden="true">↗</span></a>'
-            '<details class="pp-showcase-details"><summary><span class="pp-showcase-summary">Product overview</span><span class="pp-showcase-chevron" aria-hidden="true">⌄</span></summary>'
-            '<div class="pp-showcase-reveal"><div><span class="bf-kicker">'+esc(note)+'</span><p>'+esc(focus[1])+'</p>'
-            '<a class="bf-text-link" href="'+esc(p['url'])+'" target="_blank" rel="noopener noreferrer">'+label+' ↗</a></div></div></details></article>'
-        )
-    featured=(
-        '<section class="digital-products" id="xp-products" aria-labelledby="products-heading"><div class="products-header"><span class="bf-kicker">FEATURED PRODUCTS / 01—04</span>'
-        '<h2 id="products-heading">Ideas made usable.</h2><p>Four products I’m shaping across travel, field operations, rental management and business systems.</p></div>'
-        '<div class="products-grid">'+''.join(product_cards)+'</div></section>'
-    )
+    products={p['id']:p for p in json.loads((src/'data/digital-products.json').read_text())['products']}
     cards=json.loads((src/'data/product-flight.json').read_text())['cards']
-    selected=[cards[i] for i in [0,1,2,3,4,5,6,7,9]]
-    presentations=''.join(
-        '<article class="pp-work-card"><button class="zoom" type="button" data-full="'+esc(c['src'])+'" data-caption="'+esc(c['title'])+'">'
-        '<img src="'+esc(c['src'])+'" width="'+str(c['width'])+'" height="'+str(c['height'])+'" loading="lazy" decoding="async" alt="'+esc(c['title'])+' presentation">'
-        '<span class="pp-orbit-caption"><span><strong>'+esc(c['title'].split(' / ')[0])+'</strong><span>'+esc(c['title'].split(' / ')[-1])+'</span></span><span class="pp-orbit-open" aria-hidden="true">↗</span></span></button>'
-        '</article>'
-        for c in selected
+    def image(path,alt,w=1280,h=720,extra=''):
+        return f'<img src="{esc(path)}" alt="{esc(alt)}" width="{w}" height="{h}" decoding="async" {extra}>'
+    def comment(text,cls=''):
+        return f'<div class="ol-comment {cls}" aria-hidden="true"><span class="ol-avatar">Ψ</span><span><b>Hadi Hassan <small>Design notes</small></b><span>{text}</span></span></div>'
+    def cursor(label,cls):
+        return f'<span class="ol-cursor {cls}" aria-hidden="true"><svg viewBox="0 0 20 24"><path d="M2 1 17 15 9 15 5 22Z"/></svg><span data-label="{esc(label)}">{label}</span></span>'
+    def tool(label,cls):
+        return f'<span class="ol-tool {cls}" aria-hidden="true">{label}</span>'
+    tools=tool('&lt;/&gt;','ol-code')+tool('F','ol-figma')+tool('N','ol-notion')+tool('N.','ol-next')+tool('W','ol-wordpress')
+    wire='<div class="ol-wire" aria-hidden="true"><div>○ ○ ○</div><span></span><i></i><i></i><i></i><i></i></div>'
+    hero_section=(
+        '<section class="ol-hero" data-ol-hero aria-labelledby="expertise-heading"><div class="ol-hero-stage ol-grid">'
+        '<div class="ol-title-wrap" data-ol-drag><h1 id="expertise-heading">product.</h1><span class="ol-selection" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>'
+        '<div class="ol-hero-art ol-art-wire" data-ol-drag>'+wire+'</div>'
+        '<a class="ol-hero-art ol-art-screen" data-ol-drag href="#xp-products" aria-label="Explore TMS travel management">'+image(products['tms']['image']['src'],'TMS travel management interface',1000,800,'fetchpriority="high"')+'</a>'
+        '<a class="ol-hero-art ol-art-laptop" data-ol-drag href="#xp-work" aria-label="Explore selected interface work">'+image(cards[0]['src'],'CallingDr website presentation')+'</a>'
+        '<button type="button" class="ol-hero-art ol-art-phone" data-ol-drag data-ol-gallery aria-label="Open the mobile interface gallery">'+image('/assets/expertise/apptech-client-02-attendance.webp','AppTech attendance interface',560,1174)+'</button>'
+        '<div class="ol-hero-art ol-art-chat" data-ol-drag>'+wire+'</div>'
+        '<button class="ol-ai" type="button" data-ol-ai aria-pressed="false">AI assisted <span></span></button>'
+        '<div class="ol-hero-tools">'+tools+'</div>'+comment('Let’s shape your next product.','ol-hero-note')+comment('Designed around the people using it.','ol-hero-note-two')+
+        cursor('Product designer','ol-cursor-one')+cursor('Founder','ol-cursor-two')+cursor('Creative director','ol-cursor-three')+
+        '<a class="ol-scroll" href="#ol-intro">Scroll to explore <span aria-hidden="true">↓</span></a></div></section>'
     )
-    work=(
-        '<section class="pp-section" id="xp-work" aria-labelledby="xp-work-heading"><header class="pp-section-head"><div><span class="bf-kicker">SELECTED INTERFACE WORK</span><h2 id="xp-work-heading">Selected work.</h2></div>'
-        '<div><p>Healthcare, research and the systems people use every day. A closer look at the interfaces behind the experience.</p><a class="bf-text-link" href="/uiux-web-saas/">Explore the design collection ↗</a></div></header>'
-        '<div class="pp-work-grid" data-work-orbit tabindex="0" role="region" aria-roledescription="carousel" aria-label="Selected design projects">'+presentations+'</div>'
-        '<div class="pp-orbit-controls"><span class="bf-kicker">DRAG TO EXPLORE · OPEN TO LOOK CLOSER</span><div><button type="button" data-orbit-prev aria-label="Previous project">←</button><span data-orbit-count aria-live="polite">01 / 09</span><button type="button" data-orbit-next aria-label="Next project">→</button></div></div>'
-        '<dialog class="lightbox" aria-label="Project presentation"><button type="button" class="close" aria-label="Close project presentation">Close ×</button><img alt=""><p></p></dialog></section>'
-    )
-    # Reuse the homepage's real process component, rather than another visual system.
-    home=(src/'pages/home.html').read_text()
-    process=re.search(r'<section class="creative-process".*?</section>',home,re.S).group()
-    process=process.replace('id="process"','id="xp-approach"').replace('process-title','product-process-title')
-    contact=(
-        '<section class="pp-section pp-contact" id="xp-contact" aria-labelledby="xp-contact-heading"><div><span class="bf-kicker">THE NEXT CONVERSATION</span>'
-        '<h2 id="xp-contact-heading">Let’s make it work.</h2></div><div><p>Product design leadership or a focused consulting brief. Tell me about your team, your product and what needs to change.</p>'
-        '<div class="pp-actions"><a class="bf-button" href="mailto:hadi@intellignce.net?subject=Product%20design%20opportunity">Discuss an opportunity ↗</a>'
-        '<a class="bf-button pp-secondary" href="/resume/">Review my CV ↗</a></div></div></section>'
-    )
-    nav='<nav class="xp-sticky-rail" aria-label="On this portfolio"><a href="#xp-products">Featured products</a><a href="#xp-work">Selected work</a><a href="#xp-mobile-showcase">Screen gallery</a><a href="#xp-approach">Process</a><a href="#xp-contact">Contact</a></nav>'
-    return '<main class="expertise-page product-portfolio" data-discipline="product-development" id="top"><div class="bayfi-body product-portfolio-body">'+progress+hero+nav+featured+work+mobile_stack+process+contact+'</div></main>'
+    intro='<section class="ol-intro ol-dots" id="ol-intro"><h2>I turn complex problems into products people love to use.</h2><p>Product design, creative direction and leadership.<br>Built around real people and business needs.</p></section>'
+    service_data=[('Product strategy &amp;<br>UX research','Understand the people, the problem and what matters. Turn that understanding into a clear product direction.','Research, user journeys and information architecture.', 'Research → direction'),('Interface design &amp;<br>design systems','Make complex workflows feel clear. Design consistent interfaces that teams can build, use and evolve.','Web, SaaS, mobile interfaces and reusable systems.','Design → experience'),('Design leadership &amp;<br>consulting','Connect product decisions, brand and delivery. Support teams with hands-on design direction and focused consulting.','Leadership opportunities and consulting engagements.','Direction → delivery')]
+    services='<section class="ol-services" id="xp-approach" aria-label="Product design services">'+''.join(f'<article class="ol-service"><a class="ol-service-panel" href="#xp-contact"><h3>{t}</h3><p>{d}</p><span class="ol-service-link">Let’s talk <span aria-hidden="true">↗</span></span><span class="ol-service-motif" aria-hidden="true">{motif}</span></a><p>{foot}</p></article>' for t,d,foot,motif in service_data)+'</section>'
+    feature='<section class="ol-feature" aria-labelledby="ol-feature-heading"><div class="ol-feature-card"><div class="ol-feature-copy"><h2 id="ol-feature-heading">From zero to one.</h2><h3>From an early idea to a product your team can move forward with.</h3><p>Research, product architecture, interface design and systems—connected by one clear direction.</p><button type="button" class="ol-button" data-consultation-entry="meeting">Book a conversation</button></div><div class="ol-laptop"><div class="ol-laptop-screen">'+image(cards[2]['src'],'Consumer Connect research dashboard presentation')+'</div><span class="ol-laptop-base"></span></div></div><p class="ol-feature-note">Based in Lahore, Pakistan. Open to remote design leadership and consulting opportunities.</p></section>'
+    floating=''
+    for key in ['tms','apptech','crent','flow']:
+        p=products[key];title='Flow' if key=='flow' else p['title'];im=p['image']
+        floating+=f'<a class="ol-product ol-product-{key}" data-product="{key}" href="{esc(p["url"])}" target="_blank" rel="noopener noreferrer">'+image(im['src'],im['alt'],im['width'],im['height'],'loading="lazy"')+f'<strong>{title} <span aria-hidden="true">↗</span></strong><span>{esc(p["stage"])}</span></a>'
+    product_section='<section class="ol-products ol-grid" id="xp-products" aria-labelledby="ol-products-heading">'+floating+comment('Attendance. Guidance. Accountability.','ol-product-note')+'<div class="ol-products-copy"><h2 id="ol-products-heading">Products built<br>for <span class="ol-highlight">people.</span></h2><a class="ol-button" href="#xp-work">Explore the work</a></div>'+cursor('Product thinking','ol-product-cursor')+'</section>'
+    fan=''.join('<button type="button" class="ol-fan-card" data-ol-gallery aria-label="Open '+esc(cards[i]['title'])+' in the design collection">'+image(cards[i]['src'],cards[i]['title'],1280,720,'loading="lazy"')+'</button>' for i in [0,1,2])
+    work='<section class="ol-work" id="xp-work" aria-labelledby="ol-work-heading"><div class="ol-work-inner"><div class="ol-work-copy"><h2 id="ol-work-heading">The details<br>make the difference.</h2><p>Thoughtful product design connects every interaction, every screen and every decision. Explore the work behind the experience.</p><button type="button" class="ol-button" data-ol-gallery>View portfolio</button> <a class="ol-small-link" href="/uiux-web-saas/">All UI/UX work ↗</a></div><div class="ol-fan">'+fan+comment('Make the workflow feel effortless.','ol-fan-note')+tool('F','ol-fan-tool')+'</div></div><div class="ol-product-marquee" tabindex="0" role="region" aria-label="Featured products"><span>TMS</span><span>AppTech</span><span>Crent</span><span>Flow</span><span>CallingDr</span><span>Omni Help</span><span>Consumer Connect</span></div></section>'
+    cases=[('CallingDr','Telehealth experiences designed around care.','/callingdr/',cards[0]['src']),('Consumer Connect','Making research workflows easier to navigate.','/consumer-connect/',cards[2]['src']),('Omni Help','A clearer path through a mobile care experience.','/omni-help/',cards[1]['src'])]
+    # Link to established canonical evidence, never invent a project route.
+    published={p['slug'] for p in json.loads((src/'data/projects.json').read_text())}
+    case_section='<section class="ol-cases" aria-label="Selected case studies">'
+    for title,desc,url,img in cases:
+        if url.strip('/') not in published:url='/uiux-web-saas/'
+        case_section+='<a class="ol-case" href="'+url+'">'+image(img,title+' project presentation',1280,720,'loading="lazy"')+f'<h3>{title}</h3><p>{desc}</p></a>'
+    case_section+='</section>'
+    contact='<section class="ol-contact" id="xp-contact" aria-labelledby="ol-contact-heading"><div class="ol-contact-art ol-dots"><span class="ol-aa" aria-hidden="true">Aa</span><div class="ol-contact-photo ol-photo-one">'+image('/assets/expertise/product-flight-workspace.jpeg','Hadi’s product design workspace',1376,768,'loading="lazy"')+'</div><div class="ol-contact-photo ol-photo-two">'+image('/assets/hadi-founder-intro.jpg','Hadi Hassan',1200,800,'loading="lazy"')+'</div>'+wire+tool('&lt;/&gt;','ol-contact-code')+tool('F','ol-contact-figma')+tool('N','ol-contact-notion')+cursor('Your next project','ol-contact-cursor')+'</div><div class="ol-contact-copy"><h2 id="ol-contact-heading">Let’s build<br>something together.</h2><p>A leadership role, a product challenge or a consulting brief. Let’s connect your ambition with a clear design direction.</p><div class="ol-contact-actions"><a class="ol-button" href="mailto:hadi@intellignce.net">Let’s talk</a><a class="ol-small-link" href="/resume/">View CV ↗</a><button type="button" class="ol-small-link" data-ol-sera>Ask Sera</button></div></div></section>'
+    gallery_cards=''.join('<button type="button" class="zoom ol-gallery-art" data-full="'+esc(c['src'])+'" data-caption="'+esc(c['title'])+'">'+image(c['src'],c['title'],c['width'],c['height'],'loading="lazy"')+'<span>'+esc(c['title'])+'</span></button>' for c in cards)
+    gallery='<dialog class="ol-gallery" id="ol-gallery" aria-labelledby="ol-gallery-heading"><div class="ol-gallery-head"><h2 id="ol-gallery-heading">Selected work.</h2><button type="button" data-ol-gallery-close>Close ×</button></div><p class="ol-gallery-intro">Nineteen supplied presentations and the complete mobile interface collection.</p><div class="ol-gallery-grid">'+gallery_cards+'</div>'+mobile_stack+'</dialog><dialog class="lightbox" aria-label="Project presentation"><button type="button" class="close" aria-label="Close project presentation">Close ×</button><img alt=""><p></p></dialog>'
+    header='<header class="ol-header"><a href="/" class="ol-brand" aria-label="Hadi Hassan / INTELLIGNCE home"><img src="/assets/intellignce-loader-logo.webp" width="27" height="27" alt=""><span>intellignce</span></a><div><button class="ol-menu" type="button" data-ol-menu>Menu</button><a class="ol-header-contact" href="#xp-contact">Let’s talk</a></div></header>'
+    footer='<footer class="ol-footer"><span>© Hadi Hassan / INTELLIGNCE · Product design &amp; creative leadership</span><div><a href="/">Home</a><a href="/archive/">All projects</a><button type="button" data-footer-info-open>Terms &amp; privacy</button></div></footer>'
+    return '<main class="onlines-page product-portfolio" data-discipline="product-development" id="top">'+header+hero_section+intro+services+feature+product_section+work+case_section+contact+footer+gallery+'</main>'

@@ -219,3 +219,7 @@ with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-portfo
 # Focused progressive enhancements for reference-inspired product components.
 with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-components.css').read_text())
 with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-components.js').read_text())
+
+# Product page replacement requested against the Onlines reference.
+with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-onlines.css').read_text())
+with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-onlines.js').read_text())

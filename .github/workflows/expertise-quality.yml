@@ -8,6 +8,9 @@ on:
       - 'src/styles/product-portfolio.css'
       - 'scripts/product_flight.py'
       - 'src/product-flight.js'
+      - 'src/product-onlines.js'
+      - 'src/styles/product-onlines.css'
+      - 'tests/product-onlines-browser.cjs'
       - 'src/product-components.js'
       - 'src/styles/product-components.css'
       - 'tests/product-components-browser.cjs'
@@ -59,6 +62,7 @@ jobs:
           node --check src/site.js
           node --check src/product-flight.js
           node --check src/product-components.js
+          node --check src/product-onlines.js
           python -m unittest discover -s tests -p expertise.py
           python -m unittest discover -s tests -p phone_stack.py
       - name: Generate and build portfolio
@@ -74,14 +78,12 @@ jobs:
         run: |
           node tests/expertise-browser.cjs
           node tests/phone-stack-browser.cjs
-          FLIGHT_EVIDENCE_DIR=docs/product-brand-redesign-20261116 node tests/product-flight-browser.cjs
-          node tests/product-components-browser.cjs
+          node tests/product-onlines-browser.cjs
       - name: Test Safari-style layouts in WebKit
         run: |
           EXPERTISE_BROWSER_ENGINE=webkit node tests/expertise-browser.cjs
           EXPERTISE_BROWSER_ENGINE=webkit node tests/phone-stack-browser.cjs
-          FLIGHT_EVIDENCE_DIR=docs/product-brand-redesign-20261116 FLIGHT_ENGINE=webkit node tests/product-flight-browser.cjs
-          COMPONENT_ENGINE=webkit node tests/product-components-browser.cjs
+          ONLINES_ENGINE=webkit node tests/product-onlines-browser.cjs
       - name: Upload review screenshots and test report
         uses: actions/upload-artifact@v4
         if: always()
@@ -93,4 +95,6 @@ jobs:
             docs/product-brand-redesign-20261116/browser-*.json
             docs/component-refinement-20261116/components-*.json
             docs/component-refinement-20261116/screenshots/
+            docs/onlines-rebuild-20261117/browser-*.json
+            docs/onlines-rebuild-20261117/screenshots/local-*.png
           if-no-files-found: ignore
