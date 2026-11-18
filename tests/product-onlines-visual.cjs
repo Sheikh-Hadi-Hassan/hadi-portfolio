@@ -3,7 +3,7 @@ const {chromium}=require('playwright');
 const http=require('http');
 const root=require('path').resolve('out');
 const assert=require('node:assert/strict'),fs=require('fs'),path=require('path');
-const out=path.resolve('docs/onlines-fidelity-20261117');
+const out=path.resolve('docs/product-components-20261118');
 const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!f.startsWith(root+path.sep)&&f!==root){res.writeHead(403);return res.end()}if(fs.existsSync(f)&&fs.statSync(f).isDirectory())f=path.join(f,'index.html');if(!fs.existsSync(f)){res.writeHead(404);return res.end()}res.setHeader('content-type',({'.html':'text/html','.js':'application/javascript','.css':'text/css','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.svg':'image/svg+xml','.woff2':'font/woff2'})[path.extname(f)]||'application/octet-stream');fs.createReadStream(f).pipe(res)});
 (async()=>{
  await new Promise(r=>server.listen(0,'127.0.0.1',r));
@@ -17,7 +17,7 @@ const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+decodeURI
    await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(2800);
    assert.equal(await page.locator('.ol-header').count(),0,'The requested composition has no header');
    const geometry=await page.evaluate(()=>({hero:document.querySelector('.ol-hero').offsetHeight,quote:document.querySelector('.ol-intro').offsetHeight,font:getComputedStyle(document.querySelector('h1')).fontFamily,cursors:document.querySelectorAll('.ol-hero-stage [data-cursor]').length,panels:document.querySelectorAll('.ol-hero-art').length,orbit:document.querySelectorAll('.ol-product').length}));
-   assert.equal(geometry.hero,Math.max(550,height-100),'Reference hero height, with header removed');assert(geometry.font.includes('Nebulica'));assert.equal(geometry.cursors,7);assert.equal(geometry.panels,6);assert.equal(geometry.orbit,6);
+   assert(geometry.hero>=820,'Responsive hero contains the complete product component arrangement');assert(geometry.font.includes('Nebulica'));assert.equal(geometry.cursors,3);assert.equal(geometry.panels,6);assert.equal(geometry.orbit,6);
    if(!reduced)assert(Math.abs(geometry.quote-height*(width===1440?3.35:2.5))<=1,'Measured reference pinned-quote travel');
    const cursor=page.locator('.ol-cursor-0'),before=await cursor.getAttribute('style');await page.waitForTimeout(350);assert.equal(before!==await cursor.getAttribute('style'),!reduced,'Independent cursor path is motion-aware');
    await page.screenshot({path:out+`/screenshots/hero-${width}-${reduced}.png`});

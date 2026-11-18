@@ -1,5 +1,6 @@
 """Owner portfolio content arranged to the measured Onlines composition contract."""
 import json
+from product_components import reference_components, showcase_card
 
 
 def render_product_portfolio(src, esc, hero, mobile_stack, progress):
@@ -23,22 +24,22 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
         ext = 'svg'
         return f'<span class="ol-tool {cls}" aria-hidden="true"><img src="/assets/tools/{name}.{ext}" width="30" height="30" alt=""></span>'
 
-    tools = ''.join(tool(n, c) for n, c in [('vscode', 'ol-code'), ('figma', 'ol-figma'), ('notion', 'ol-notion'), ('nextjs', 'ol-next'), ('wordpress', 'ol-wordpress')])
+    ipod, reference_code, pin_service, toolkit = reference_components(products, esc, image)
     wire = '<div class="ol-wire" aria-hidden="true"><div class="ol-window-bar"><i></i><i></i><i></i></div><div class="ol-wire-body"><span class="ol-wire-profile"></span><i></i><i></i><span class="ol-wire-line"></span><i></i><i></i><span class="ol-wire-line"></span></div></div>'
     chat = '<div class="ol-chat" aria-hidden="true"><div class="ol-window-bar"><i></i><i></i><i></i></div><div class="ol-chat-row"><b></b><i></i></div><div class="ol-chat-row"><b></b><i></i></div><div class="ol-chat-row"><b></b><i></i></div><span class="ol-chat-input"></span></div>'
     laptop = '<div class="ol-device-laptop"><div class="ol-device-screen">' + image('/assets/hadi-hassan-social-preview-20261021.png', 'Hadi Hassan — creative direction, visual storytelling and brand design', 1200, 630) + '</div><span class="ol-device-base"></span></div>'
     hero_section = (
         '<section class="ol-hero" data-ol-hero aria-labelledby="expertise-heading"><div class="ol-hero-stage ol-grid">'
-        '<div class="ol-title-wrap" data-ol-drag><h1 id="expertise-heading">product.</h1><span class="ol-selection" aria-hidden="true">' + '<i></i>' * 6 + '</span></div>'
-        '<div class="ol-hero-art ol-art-wire" data-ol-drag data-entry-delay="200" data-depth=".10">' + wire + '</div>'
-        '<div class="ol-hero-art ol-art-code" data-ol-drag data-entry-delay="1600" data-depth=".13"><div class="ol-code-window" aria-hidden="true"><div class="ol-window-bar"><i></i><i></i><i></i></div><pre data-ol-typing>&lt;product&gt;\n  research. design. build.\n&lt;/product&gt;</pre></div></div>'
-        '<div class="ol-hero-art ol-art-chat" data-ol-drag data-entry-delay="1400" data-depth=".08">' + chat + '</div>'
+        '<div class="ol-title-wrap" data-ol-drag><h1 id="expertise-heading">Digital<br>product design</h1><span class="ol-selection" aria-hidden="true">' + '<i></i>' * 6 + '</span></div>'
+        '<div class="ol-hero-art ol-art-wire" data-ol-drag data-entry-delay="200" data-depth=".10">' + ipod + '</div>'
+        '<div class="ol-hero-art ol-art-code" data-ol-drag data-entry-delay="900" data-depth=".04">' + reference_code + '</div>'
+        '<div class="ol-hero-art ol-art-chat" data-ol-drag data-entry-delay="650" data-depth=".03">' + pin_service + '</div>'
         '<a class="ol-hero-art ol-art-screen" data-ol-drag data-entry-delay="400" data-depth=".16" href="#xp-products" aria-label="Explore TMS travel management">' + image(products['tms']['image']['src'], 'TMS travel management interface', 1000, 800, 'fetchpriority="high"') + '</a>'
         '<a class="ol-hero-art ol-art-laptop" data-ol-drag data-entry-delay="800" data-depth=".18" href="#xp-work" aria-label="Explore selected interface work">' + laptop + '</a>'
         '<button type="button" class="ol-hero-art ol-art-phone" data-ol-drag data-entry-delay="1100" data-depth=".11" data-ol-gallery aria-label="Open the mobile interface gallery">' + image('/assets/expertise/apptech-handheld-owner-20261118.png', 'AppTech attendance interface shown on a handheld phone', 1000, 800) + '</button>'
-        '<button class="ol-ai" type="button" data-ol-ai data-entry-delay="900" aria-pressed="false" aria-label="Toggle AI canvas appearance">AI mode <span><i></i></span></button>'
-        '<div class="ol-hero-tools">' + tools + '</div>' + comment('Product design, from research to delivery.', 'ol-hero-note', delay=1200) + comment('SaaS, healthcare and business platforms.', 'ol-hero-note-two', delay=1800) +
-        ''.join(cursor(label, i) for i, label in enumerate(['Developer', 'Client', 'Creative director', 'UI designer', 'UX designer', 'Product lead', 'Developer'])) +
+        '<button class="ol-ai" type="button" data-ol-ai data-entry-delay="400" aria-pressed="false" aria-label="Toggle dark canvas appearance">Dark canvas <span><i></i></span></button>'
+        '<div class="ol-hero-tools">' + toolkit + '</div>' +
+        ''.join(cursor(label, i) for i, label in enumerate(['Designer', 'Developer', 'Client'])) +
         '<a class="ol-scroll" href="#ol-intro" aria-label="Scroll to introduction"><span aria-hidden="true">↓</span></a></div></section>'
     )
     intro = '<section class="ol-intro ol-dots" id="ol-intro"><div class="ol-intro-inner"><h2>I lead product and brand design for SaaS, healthcare and business platforms.</h2><p>Based in Lahore. Working with international teams.<br>Available for design leadership and consulting.</p></div></section>'
@@ -47,6 +48,20 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
     carousel_start = home.index('<section class="bf-work"')
     carousel_end = home.index('</section>', carousel_start) + len('</section>')
     carousel = home[carousel_start:carousel_end].replace('id="work"', 'id="xp-approach"', 1)
+    # Keep the homepage component, with a discipline-specific project collection.
+    selected = []
+    for key, category in [('tms', 'Travel management'), ('apptech', 'Mobile attendance'), ('crent', 'Rental management'), ('flow', 'Business operations')]:
+        product = products[key]
+        selected.append((product['title'], category, product['image'], product['url'], True))
+    for index, title, category in [(0, 'CallingDr', 'Telehealth website'), (1, 'Omni Help', 'Mobile healthcare'), (2, 'Consumer Connect', 'Research dashboard'), (4, 'Vera Health', 'Patient experience'), (5, 'Legal management', 'Case management dashboard')]:
+        selected.append((title, category, cards[index], '#ol-gallery', False))
+    total = len(selected)
+    heading_end = carousel.index('<div class="v2sw-slide v2sw-card-slide">')
+    carousel = carousel[:heading_end].replace('Selected work and explorations', 'Product and UI/UX design').replace('SELECTED PROJECTS / 01–12', f'PRODUCT &amp; UI/UX / 01–{total:02d}').replace('Selected work<br>& explorations.', 'Product design.<br>UI/UX in practice.').replace('Twelve projects. Different challenges. A look at how strategy becomes something you can see, use and recognise.', 'SaaS platforms, mobile apps and healthcare experiences. Selected interfaces designed around real workflows.')
+    for index, (title, category, artwork, href, external) in enumerate(selected, 1):
+        attrs = 'target="_blank" rel="noopener noreferrer"' if external else 'data-ol-gallery'
+        carousel += '<div class="v2sw-slide v2sw-card-slide"><div class="v2sw-card-reveal"><a class="v2sw-card" href="' + esc(href) + '" ' + attrs + '><div class="v2sw-card-media">' + image(artwork['src'], artwork.get('alt', title + ' interface presentation'), artwork['width'], artwork['height'], 'loading="lazy"') + '<span class="v2sw-card-tag">' + esc(category) + '</span></div><div class="v2sw-card-footer"><h3 class="v2sw-card-title">' + esc(title) + '</h3><span class="bf-case-status">↗</span></div><span class="bf-project-count">' + f'{index:02d} / {total:02d}' + '</span></a></div></div>'
+    carousel += '<div class="v2sw-slide v2sw-slide-cta"><h2>Explore the interfaces.<br>See the complete work.</h2><a class="bf-button" href="#ol-gallery" data-ol-gallery>View UI/UX portfolio ↗</a></div></div></section>'
     services = '<div class="bayfi-body ol-home-carousel">' + carousel + '</div>'
     feature = '<section class="ol-feature" aria-labelledby="ol-feature-heading"><div class="ol-feature-container"><div class="ol-feature-card"><div class="ol-feature-copy"><div class="ol-feature-title" data-ol-drag><h2 id="ol-feature-heading">From zero to one.</h2><span class="ol-selection" aria-hidden="true">' + '<i></i>' * 6 + '</span></div><div><h3>I work across research, product architecture, interface design and developer handoff.</h3><p>The selected work includes travel operations, field attendance, car rental and business management products.</p></div><button type="button" class="ol-button" data-consultation-entry="meeting">Book a conversation</button></div><div class="ol-laptop">' + laptop + '</div></div><p class="ol-feature-note">Hadi Hassan · Creative &amp; Product Design Leader · Lahore, Pakistan / Remote</p></div></section>'
     orbit = ''
@@ -62,7 +77,7 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
     marquee_items = ''.join(f'<span class="swiper-slide ol-wordmark">{t}</span>' for t in ['TMS', 'AppTech', 'Crent', 'Flow', 'CallingDr', 'Omni Help', 'Consumer Connect'])
     work = '<section class="ol-work" id="xp-work" aria-labelledby="ol-work-heading"><div class="ol-work-inner"><div class="ol-work-copy"><h2 id="ol-work-heading"><span>UI/UX design.</span><span>Selected work.</span></h2><p>A selection of web, SaaS and mobile interfaces. Open the collection for the full presentations and mobile screen galleries.</p><div class="ol-work-actions"><button type="button" class="ol-button" data-ol-gallery>View portfolio</button><a class="ol-small-link" href="/uiux-web-saas/" aria-label="All UI/UX work">↗</a></div></div><div class="ol-fan">' + fan + comment('Mobile attendance and employee operations.', 'ol-fan-note', label='AppTech') + comment('Travel bookings, agencies and reporting.', 'ol-fan-note-two', label='TMS') + tool('vscode', 'ol-fan-tool') + tool('figma', 'ol-fan-tool-two') + '</div></div><div class="ol-product-marquee swiper" tabindex="0" role="region" aria-label="Featured products"><div class="ol-marquee-track swiper-wrapper">' + marquee_items + marquee_items.replace('class="swiper-slide', 'aria-hidden="true" class="swiper-slide') + '</div></div></section>'
     cases = [('CallingDr', 'Telehealth website and care interfaces.', '/archive/#archive-record-care-by-callingdr', cards[0]['src']), ('Consumer Connect', 'Consumer research dashboard and participant workflows.', '/archive/#archive-record-consumer-connect', cards[2]['src']), ('Omni Help', 'Mobile healthcare and self-care experience.', '/archive/#archive-record-omnihelp', cards[1]['src'])]
-    case_section = '<section class="ol-cases" aria-label="Selected case studies">' + ''.join('<a class="ol-case" href="' + url + '">' + image(img, title + ' project presentation', extra='loading="lazy"') + f'<h3>{title}</h3><p>{desc}</p><span class="ol-case-meta">UI/UX · Project archive <span aria-hidden="true">↗</span></span></a>' for title, desc, url, img in cases) + '</section>'
+    case_section = '<section class="ol-cases ol-preview-grid" aria-label="Selected interface case studies">' + ''.join(showcase_card(i, title, desc, url, img, esc, image) for i, (title, desc, url, img) in enumerate(cases)) + '</section>'
     contact = '<section class="ol-contact" id="xp-contact" aria-labelledby="ol-contact-heading"><div class="ol-contact-inner"><div class="ol-contact-art ol-dots"><span class="ol-aa" aria-hidden="true">Aa</span><div class="ol-contact-metric">' + image(products['flow']['image']['src'], 'Flow business management dashboard', 1000, 800, 'loading="lazy"') + '</div><div class="ol-contact-photo ol-photo-one">' + image('/assets/expertise/product-flight-workspace.jpeg', 'Product design workspace', 1376, 768, 'loading="lazy"') + '</div><div class="ol-contact-photo ol-photo-two">' + image('/assets/hadi-founder-intro.jpg', 'Hadi Hassan', 1200, 800, 'loading="lazy"') + '</div><div class="ol-contact-chat">' + chat + '</div>' + tool('vscode', 'ol-contact-code') + tool('figma', 'ol-contact-figma') + tool('notion', 'ol-contact-notion') + tool('nextjs', 'ol-contact-next') + cursor('Client', 1, 'ol-contact-cursor') + '</div><div class="ol-contact-copy"><h2 id="ol-contact-heading"><span>Have a product</span><span>to discuss?</span></h2><p>Share a product brief, a design leadership opportunity or a consulting enquiry. Let’s discuss the scope and the next step.</p><div class="ol-contact-actions"><a class="ol-button" href="mailto:hadi@intellignce.net">Let’s talk</a><div><a class="ol-small-link" href="/resume/">View CV ↗</a><button type="button" class="ol-small-link" data-ol-sera>Ask Sera</button></div></div></div></div></section>'
     gallery_cards = ''.join('<button type="button" class="zoom ol-gallery-art" data-full="' + esc(c['src']) + '" data-caption="' + esc(c['title']) + '">' + image(c['src'], c['title'], c['width'], c['height'], 'loading="lazy"') + '<span>' + esc(c['title']) + '</span></button>' for c in cards)
     gallery = '<dialog class="ol-gallery" id="ol-gallery" aria-labelledby="ol-gallery-heading"><div class="ol-gallery-head"><h2 id="ol-gallery-heading">Selected work.</h2><button type="button" data-ol-gallery-close>Close ×</button></div><p class="ol-gallery-intro">Nineteen supplied presentations and the complete mobile interface collection.</p><div class="ol-gallery-grid">' + gallery_cards + '</div>' + mobile_stack + '</dialog><dialog class="lightbox" aria-label="Project presentation"><button type="button" class="close" aria-label="Close project presentation">Close ×</button><img alt=""><p></p></dialog>'

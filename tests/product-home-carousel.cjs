@@ -1,4 +1,4 @@
-/** Shared homepage carousel: markup parity, desktop pin, native swipe and reduced motion. */
+/** Shared homepage carousel: discipline-specific content, desktop pin, native swipe and reduced motion. */
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 (async()=>{
@@ -10,11 +10,11 @@ const assert=require('node:assert/strict');
    await page.goto('http://127.0.0.1:3000/expertise/product-development/#top');
    await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(3000);
    const work=page.locator('#xp-approach.bf-work'),track=work.locator('.v2sw-track');
-   assert.equal(await work.locator('.v2sw-card-slide').count(),12);
-   const markup=el=>{const clone=el.cloneNode(true);clone.querySelectorAll('[style]').forEach(e=>e.removeAttribute('style'));return clone.innerHTML};
-   const productMarkup=await work.evaluate(markup);
+   assert.equal(await work.locator('.v2sw-card-slide').count(),9);
+   const titles=await work.locator('.v2sw-card-title').allTextContents();
+   assert.deepEqual(titles,['TMS','AppTech','Crent','Flow by INTELLIGNCE','CallingDr','Omni Help','Consumer Connect','Vera Health','Legal management']);
+   assert.equal(await work.locator('a[target="_blank"]').count(),4);
    const home=await context.newPage();await home.goto('http://127.0.0.1:3000/');
-   assert.equal(productMarkup,await home.locator('.bf-work').evaluate(markup),'Homepage markup is reused unchanged');
    const selectors=['.v2sw-heading','.v2sw-card-title','.v2sw-card-media'];
    const style=async p=>p.evaluate(ss=>ss.map(s=>{const e=document.querySelector('.bf-work '+s),c=getComputedStyle(e);return [c.fontFamily,c.fontSize,c.lineHeight,c.borderRadius,c.color,c.margin,c.letterSpacing]}),selectors);
    assert.deepEqual(await style(page),await style(home),'Shared visual rules match homepage');
@@ -31,7 +31,7 @@ const assert=require('node:assert/strict');
    }
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'No page overflow');
    await work.screenshot({path:`/private/tmp/product-home-carousel-${width}-${reduced}.png`});
-   console.log(`PASS ${width}px reducedMotion=${reduced}: exact markup/styles and scrolling`);
+   console.log(`PASS ${width}px reducedMotion=${reduced}: product-only content, shared styles and scrolling`);
    await context.close();
   }
  }finally{await browser.close()}

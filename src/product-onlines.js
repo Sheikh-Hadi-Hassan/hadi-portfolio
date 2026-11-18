@@ -6,8 +6,6 @@
   const hero = page.querySelector('.ol-hero');
   const stage = hero.querySelector('.ol-hero-stage');
   const quote = page.querySelector('.ol-intro');
-  const codeNode = page.querySelector('[data-ol-typing]');
-  const code = '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <title>Product design</title>\n</head>\n<body>\n  <h1>Research. Design. Build.</h1>\n</body>\n</html>';
   const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
   const sine = t => -(Math.cos(Math.PI * t) - 1) / 2;
   let manualPause = false;
@@ -74,6 +72,7 @@
     elapsed += delta;
     const mobile = innerWidth < 1024;
     floatItems.forEach(item => {
+      if (mobile || item.el.matches('.ol-art-wire,.ol-art-code,.ol-art-chat,:hover,:focus-within')) return;
       const ramp = Math.min(elapsed / 800, 1);
       item.el.style.setProperty('--float-y', (Math.sin(elapsed * item.speed + item.phase) * item.amp * ramp + clamp(scrollY * item.depth * (mobile ? .5 : 1), -56, 56)).toFixed(2) + 'px');
       item.el.style.setProperty('--float-x', (Math.cos(elapsed * item.speed * .8 + item.phase) * item.ampX * ramp).toFixed(2) + 'px');
@@ -95,9 +94,6 @@
         item.phaseStart = elapsed;
       }
     });
-    const typingTime = Math.max(0, elapsed - 1800), cycle = code.length * 45 + 3800, t = typingTime % cycle;
-    const typed = t < code.length * 30 ? Math.floor(t / 30) : t < code.length * 30 + 3000 ? code.length : Math.max(0, code.length - Math.floor((t - code.length * 30 - 3000) / 15));
-    codeNode.textContent = code.slice(0, typed);
     schedule();
   }
 
@@ -113,7 +109,6 @@
       const delay = el.classList.contains('ol-tool') ? 300 + toolIndex++ * 120 : Number(el.dataset.entryDelay || 0);
       setTimeout(() => el.classList.add('is-entered'), quiet() ? 0 : delay);
     }
-    if (quiet()) codeNode.textContent = code;
     schedule();
   }
   let unlockTimer, failsafe;
@@ -177,7 +172,7 @@
   document.addEventListener('visibilitychange', () => {previous = 0;if (document.hidden) {cancelAnimationFrame(frame);frame = 0;unlock()} else schedule()});
   function updateMotion() {
     page.classList.toggle('ol-motion-paused', quiet());syncMarquee();
-    if (quiet()) {unlock();cursorItems.forEach(({el}) => {el.style.removeProperty('--cursor-x');el.style.removeProperty('--cursor-y');el.classList.add('is-entered')});floatItems.forEach(({el}) => ['--float-x','--float-y','--float-r'].forEach(k => el.style.removeProperty(k)));codeNode.textContent = code}
+    if (quiet()) {unlock();cursorItems.forEach(({el}) => {el.style.removeProperty('--cursor-x');el.style.removeProperty('--cursor-y');el.classList.add('is-entered')});floatItems.forEach(({el}) => ['--float-x','--float-y','--float-r'].forEach(k => el.style.removeProperty(k)))}
     previous = 0;quotePending = true;start();schedule();
   }
   reduced.addEventListener('change', updateMotion);
@@ -206,11 +201,44 @@
   page.querySelectorAll('[data-ol-drag]').forEach(el => {
     let drag, moved=false, x=0, y=0;
     el.addEventListener('dragstart',e=>e.preventDefault());
-    el.addEventListener('pointerdown',e=>{if(e.button!==0||e.pointerType==='touch')return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,ox:x,oy:y};moved=false});
+    el.addEventListener('pointerdown',e=>{if(e.button!==0||e.pointerType==='touch'||(e.target.closest('button,input,textarea')&&e.target.closest('button,input,textarea')!==el))return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,ox:x,oy:y};moved=false});
     el.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>5){moved=true;el.setPointerCapture(e.pointerId);x=clamp(drag.ox+dx,-innerWidth*.25,innerWidth*.25);y=clamp(drag.oy+dy,-innerHeight*.3,innerHeight*.3);el.style.setProperty('--drag-x',x+'px');el.style.setProperty('--drag-y',y+'px')}});
     ['pointerup','pointercancel'].forEach(name=>el.addEventListener(name,()=>drag=null));
     el.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopImmediatePropagation();moved=false}},true);
   });
+
+  // Local reference controls: no hosted embeds or third-party runtime dependencies.
+  const player = page.querySelector('.ol-ipod');
+  const projectItems = [...player.querySelectorAll('[data-ipod-item]')];
+  let projectIndex = 0;
+  function showProject(preview = true) {
+    const item = projectItems[projectIndex];
+    projectItems.forEach((entry, index) => entry.setAttribute('aria-pressed', String(index === projectIndex)));
+    player.querySelector('.ol-ipod-menu').hidden = preview;
+    player.querySelector('.ol-ipod-now').hidden = !preview;
+    player.querySelector('.ol-ipod-now img').src = item.dataset.image;
+    player.querySelector('[data-ipod-title]').textContent = item.dataset.title;
+    player.querySelector('[data-ipod-open]').setAttribute('aria-label', 'Open ' + item.dataset.title);
+  }
+  projectItems.forEach((item, index) => item.addEventListener('click', () => {projectIndex = index;showProject()}));
+  player.querySelectorAll('[data-ipod-step]').forEach(button => button.addEventListener('click', () => {projectIndex = (projectIndex + Number(button.dataset.ipodStep) + projectItems.length) % projectItems.length;showProject()}));
+  player.querySelector('[data-ipod-menu]').addEventListener('click', () => showProject(false));
+  player.querySelector('[data-ipod-select]').addEventListener('click', () => showProject());
+  player.querySelector('[data-ipod-open]').addEventListener('click', () => window.open(projectItems[projectIndex].dataset.url, '_blank', 'noopener,noreferrer'));
+  player.addEventListener('keydown', event => {if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;event.preventDefault();projectIndex = (projectIndex + (event.key === 'ArrowRight' ? 1 : -1) + projectItems.length) % projectItems.length;showProject()});
+  page.querySelector('[data-code-copy]').addEventListener('click', async event => {
+    const button = event.currentTarget;
+    const snippet = [...page.querySelectorAll('.ol-code-line')].map(line => line.lastElementChild.textContent).join('\n');
+    try {await navigator.clipboard.writeText(snippet);button.textContent = 'Copied';page.querySelector('.ol-copy-status').textContent = 'Code copied to clipboard';}
+    catch {button.textContent = 'Try again';page.querySelector('.ol-copy-status').textContent = 'Clipboard unavailable. Select the code to copy it.';}
+    setTimeout(() => button.textContent = 'Copy', 2200);
+  });
+  page.querySelectorAll('[data-preview-toggle]').forEach(button => button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(open));
+    document.getElementById(button.getAttribute('aria-controls')).hidden = !open;
+    button.setAttribute('aria-label', (open ? 'Hide ' : 'Show ') + button.closest('.ol-preview').querySelector('h3').textContent + ' project details');
+  }));
 
   // Static image-derived halftone: one render per image/size, no per-frame pixel processing.
   page.querySelectorAll('[data-halftone]').forEach((canvas,index)=>{

@@ -201,3 +201,74 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 
 /* Preserve the homepage carousel’s inherited typography inside this page. */
 .ol-home-carousel{font:400 16px/normal 'Instrument Sans',Arial,sans-serif}
+
+/* Reference studies: iPod / showcase-card-preview / service-card-ui / code showcase.
+   Component measurements and states: docs/product-components-20261118.md. */
+.ol-hero{height:max(820px,100svh);min-height:820px}
+.ol-hero-stage{--hero-center:40%;max-width:1800px;margin:auto}
+.ol-title-wrap{top:39%;max-width:calc(100% - 400px)}
+.ol-title-wrap h1{font-size:clamp(68px,6.5vw,112px);line-height:1.02;letter-spacing:-.045em;white-space:normal;text-wrap:nowrap}
+.ol-title-wrap .ol-selection{width:calc(100% + 36px);height:calc(100% + 32px)}
+.ol-art-wire{left:6%;top:8%;width:170px;height:289px;--rotation:-7deg}
+.ol-art-screen{right:5%;top:7%;width:270px;height:216px;--rotation:5deg;padding:5px;border-radius:14px;box-shadow:0 16px 32px -20px #21162f66}
+.ol-art-screen img{width:100%;height:100%;object-fit:cover;border-radius:9px}
+.ol-art-laptop{left:2%;top:auto;bottom:5%;width:clamp(320px,29vw,480px);--rotation:-7deg}
+.ol-art-phone{right:5%;top:auto;bottom:7%;width:165px;--rotation:6deg;border-radius:14px;box-shadow:0 16px 32px -22px #21162f88}
+.ol-art-phone img{height:238px}
+.ol-art-code{right:23%;top:auto;bottom:8%;width:300px;height:auto;--rotation:-3deg}
+.ol-art-chat{left:32%;top:auto;bottom:8%;width:210px;height:auto;--rotation:4deg}
+.ol-ai{top:32px;right:32px;left:auto;--center-x:0;height:38px;border:1px solid var(--ol-line);gap:10px;border-radius:30px;background:var(--ol-bg);box-shadow:none;font-size:11px!important}
+.ol-ai>span{width:30px;height:18px}.ol-ai>span>i{width:16px;height:16px}.ol-ai[aria-pressed=true]>span>i{translate:12px 0}
+.ol-hero-tools{position:absolute;top:58%;left:50%;transform:translateX(-50%);z-index:6}
+.ol-icon-grid{display:grid;grid-template-columns:repeat(6,40px);gap:12px;color:var(--ol-muted)}
+.ol-discipline-icon{display:grid;place-items:center;width:40px;height:40px;border:1px solid transparent;border-radius:10px;transition:color .2s,border-color .2s,background .2s}
+.ol-discipline-icon svg{width:22px;height:22px}.ol-discipline-icon:hover{color:var(--ol-accent);border-color:var(--ol-line);background:var(--ol-surface)}
+.ol-hero-stage .ol-cursor{opacity:.85}.ol-hero-stage .ol-cursor-0{top:60%;left:24%}.ol-hero-stage .ol-cursor-1{top:20%;right:18%;left:auto}.ol-hero-stage .ol-cursor-2{top:72%;left:70%}
+.ol-ipod{position:relative;display:flex;flex-direction:column;gap:.9375em;width:12.5em;height:21.25em;padding:.9375em;border-radius:1.25em;font-size:13.6px;background:linear-gradient(145deg,#fff,#f5f5f5);box-shadow:0 0 0 1px #0000001a,0 2px 4px #0000001a,0 8px 16px #00000026,0 16px 32px #0003;color:#30352f}
+.ol-ipod:before{content:'';position:absolute;inset:0 0 50%;border-radius:inherit;background:linear-gradient(#ffffff66,#fff0);pointer-events:none}
+.ol-ipod-display{position:relative;width:100%;height:8.75em;flex:none;overflow:hidden;background:linear-gradient(#a0a8a0,#b8c0b8);border:1px solid #999;border-radius:.5em;box-shadow:inset 0 1px 4px #0002}
+.ol-ipod-display:after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(#00000006 0 1px,transparent 1px 3px);pointer-events:none}
+.ol-ipod-status{display:flex;justify-content:space-between;padding:.35em .5em;border-bottom:1px solid #5b645b55;font:600 .65em/1.2 var(--ol-body)}
+.ol-ipod-menu{padding:.3em 0}.ol-ipod-menu button{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:1.95em;padding:.2em .55em;border:0;background:none;color:inherit;text-align:left;font:600 .68em/1.2 var(--ol-body)}
+.ol-ipod-menu button[aria-pressed=true]{background:var(--ol-accent);color:#fff}
+.ol-ipod-now{padding:.45em;text-align:center}.ol-ipod-now img{width:4.25em;height:3em;object-fit:cover;margin:0 auto .25em;border-radius:.2em}.ol-ipod-now strong{display:block;font:600 .65em/1.25 var(--ol-body)}.ol-ipod-now>span{font:.5em var(--ol-body)}
+.ol-ipod-wheel{position:relative;align-self:center;display:grid;place-items:center;width:10.625em;height:10.625em;flex:none;border-radius:50%;background:linear-gradient(145deg,#e8e8e8,#d0d0d0);box-shadow:inset 0 0 0 1px #ffffff80,inset 0 2px 4px #0000001a,0 2px 8px #00000026}
+.ol-ipod-wheel:before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,#ffffff4d,transparent 90deg,#0000001a 180deg,transparent 270deg,#ffffff4d);pointer-events:none}
+.ol-ipod-wheel button{position:absolute;display:grid;place-items:center;width:38px;height:38px;padding:0;border:0;background:transparent;color:#666;font:400 10px/1 var(--ol-body);text-shadow:0 1px #ffffff80}
+.ol-ipod-wheel .ol-ipod-menu-button{top:0;left:50%;transform:translateX(-50%)}.ol-ipod-prev{left:0;top:50%;transform:translateY(-50%)}.ol-ipod-next{right:0;top:50%;transform:translateY(-50%)}.ol-ipod-open{bottom:0;left:50%;transform:translateX(-50%)}
+.ol-ipod-wheel .ol-ipod-select{position:relative;width:3.75em;height:3.75em;font-size:inherit;border-radius:50%;background:linear-gradient(145deg,#fff,#f0f0f0);box-shadow:0 0 0 1px #0000001a,0 2px 4px #0003,inset 0 1px #ffffffcc}
+.ol-pin-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:42px 13px 14px;border-radius:25px;background:#fff!important;color:#21162f!important;box-shadow:.39px .62px 1px -.35px #21162f17,1px 1.7px 2.8px -.7px #21162f17,2.3px 3.7px 6.1px -1px #21162f1a,5px 8px 13.6px -1.4px #21162f1f,13px 21px 34.6px -1.75px #21162f29;transition:rotate .35s,translate .35s}
+.ol-pin-card:hover{rotate:-3deg;translate:0 -4px}.ol-pin-number{font:500 10px/1.4 'IBM Plex Mono',monospace;padding:0 8px;color:#6c6276}
+.ol-pin-content{display:flex;flex-direction:column;gap:12px;min-height:150px;padding:16px 12px;border-radius:16px;border:1px solid #dbc7ed;background:#eee4f8;font:400 12px/1.5 var(--ol-body)}.ol-pin-content strong{font-size:12px;font-weight:600}.ol-pin-content>span{color:#6c6276}
+.ol-pin{position:absolute;top:10px;left:50%;width:17px;height:17px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#dbc1fc,#7631aa 65%,#471c68);box-shadow:-8px 9px 5px #21162f66}
+.ol-pin:after{content:'';position:absolute;left:8px;top:-5px;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#e5d2ff,#8e42bd 65%,#562477);box-shadow:0 2px 3px #21162f55}
+.ol-reference-code{overflow:hidden;width:100%;border-radius:13px;background:#0d1118;color:#b8c1cc;box-shadow:0 4px 9px #21162f33,0 12px 28px #21162f40;font:10px/1.65 'IBM Plex Mono',monospace}
+.ol-code-chrome{height:35px;display:flex;align-items:center;gap:9px;padding:0 12px;background:#191e26;border-bottom:1px solid #ffffff12;color:#838795;font-size:9px}
+.ol-code-lights{display:flex;gap:5px;margin-right:auto}.ol-code-lights i{width:7px;height:7px;border-radius:50%;background:#ff5f57}.ol-code-lights i:nth-child(2){background:#febc2e}.ol-code-lights i:nth-child(3){background:#28c840}
+.ol-code-chrome button{border:1px solid #ffffff26;border-radius:4px;padding:4px 7px;background:none;color:#a9a6b2;font:9px/1 var(--ol-body)}
+.ol-reference-code pre{margin:0;padding:13px 12px;overflow:auto;font:inherit}.ol-code-line{display:grid;grid-template-columns:18px 1fr;gap:8px;white-space:pre}.ol-code-line>span:first-child{color:#4d5360;text-align:right;user-select:none}.ol-syntax-key{color:#cf806f}.ol-syntax-string{color:#bba6ea}.ol-syntax-comment{color:#6a7588}.ol-copy-status{position:absolute;width:1px;height:1px;overflow:hidden}
+.ol-preview-grid{gap:28px;padding:50px 5% 80px;align-items:start}
+.ol-preview{padding:10px 10px 0;border-radius:44px 44px 34px 34px;background:#fff;color:#21162f;box-shadow:0 0 0 1px #21162f0d}
+.onlines-page .ol-preview-media{display:block;position:relative;padding:0;overflow:hidden;border-radius:34px;background:#15101e;aspect-ratio:370/260;box-shadow:0 .8px .8px -.5px #21162f14,0 2.4px 2.4px -1px #21162f14,0 6.4px 6.4px -1.5px #21162f17,0 20px 20px -2px #21162f1f}
+.ol-preview-media>img{width:100%;height:100%;object-fit:cover;transition:scale .5s}.ol-preview-media:hover>img{scale:1.035}
+.ol-preview-caption{position:absolute;inset:auto 0 0;display:flex;align-items:end;justify-content:space-between;gap:12px;padding:40px 24px 22px;background:linear-gradient(transparent,#09070fcc);color:#fff}
+.onlines-page .ol-preview-caption h3{margin:0;font:500 18px/1.2 var(--ol-body);letter-spacing:0}.ol-preview-caption>div>span{display:block;margin-top:3px;font:12px/1.3 var(--ol-body);color:#ded6e6}
+.ol-preview-visit{display:none;padding:12px 15px;border-radius:15px;background:#ffffff30;backdrop-filter:blur(10px);font:12px/1.2 var(--ol-body);white-space:nowrap}
+.ol-preview:is(:hover,:focus-within) .ol-preview-visit{display:block}.ol-preview-toggle{display:grid;place-items:center;width:100%;height:48px;padding:0;background:transparent;border:0;color:#21162f}.ol-preview-toggle svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;transition:rotate .45s}.ol-preview-toggle[aria-expanded=true] svg{rotate:180deg}
+.ol-preview-details{padding:24px;margin-bottom:10px;background:#f4f0f7;border-radius:32px;min-height:200px;font:14px/1.5 var(--ol-body);animation:ol-preview-open .35s ease}.ol-preview-details>div{display:flex;flex-wrap:wrap;gap:7px;padding:12px 0 16px;border-bottom:1px solid #21162f20}.ol-preview-details>div>span{background:#e7dfee;border-radius:8px;padding:7px 9px;font-size:11px}.onlines-page .ol-preview-details p{color:#6c6276}.ol-preview-details>a{display:inline-flex;margin-top:18px;color:#7631aa;min-height:44px;align-items:center}
+@keyframes ol-preview-open{from{opacity:0;translate:0 -8px}to{opacity:1;translate:0 0}}
+@media(min-width:1800px){.ol-art-wire{left:9%}.ol-art-chat{left:34%}.ol-art-code{right:25%}.ol-art-screen{right:9%}.ol-art-phone{right:10%}.ol-art-laptop{left:5%}}
+@media(min-width:768px) and (max-width:1100px){.ol-hero{height:850px}.ol-title-wrap{max-width:calc(100% - 240px);top:42%}.ol-title-wrap h1{font-size:clamp(56px,7vw,76px)}.ol-art-wire{left:4%;top:7%;scale:.8;transform-origin:top left}.ol-art-screen{right:4%;width:220px;height:176px;top:9%}.ol-art-laptop{left:0;width:300px;bottom:6%}.ol-art-chat{left:32%;width:180px;bottom:6%}.ol-art-code{width:260px;right:4%;bottom:7%}.ol-art-phone{width:125px;right:5%;bottom:39%}.ol-art-phone img{height:180px}.ol-hero-art{--art-scale:1}.ol-hero-tools{top:59%}}
+@media(max-width:1100px){
+ .ol-hero{height:auto;min-height:0}.ol-hero-stage{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:30px 18px;padding:94px 20px 70px;min-height:0}
+ .ol-title-wrap{position:relative;grid-column:1/-1;order:0;left:auto;top:auto;width:100%;max-width:none;transform:none}.ol-title-wrap h1{font-size:clamp(34px,8.9vw,66px);line-height:1.08;letter-spacing:-.04em}.ol-title-wrap .ol-selection{width:calc(100% - 4px);height:calc(100% + 20px)}
+ .ol-hero-stage .ol-hero-art{position:relative;left:auto;right:auto;top:auto;bottom:auto;scale:1;--art-scale:1;--rotation:0deg;justify-self:center;max-width:100%;z-index:5}
+ .ol-hero-tools{position:relative;grid-column:1/-1;order:1;left:auto;top:auto;transform:none;justify-self:center}.ol-icon-grid{grid-template-columns:repeat(6,32px);gap:12px}.ol-discipline-icon{width:32px;height:36px}.ol-discipline-icon svg{width:20px;height:20px}
+ .ol-art-wire{order:2;width:150px;height:255px}.ol-ipod{font-size:12px}.ol-art-screen{order:3;width:290px;max-width:100%;height:auto;aspect-ratio:5/4;padding:4px}.ol-art-screen img{height:100%;width:100%}
+ .ol-art-laptop{grid-column:1/-1;order:4;width:min(100%,430px);padding:8px 0}.ol-device-screen{border-width:8px;border-bottom-width:12px}
+ .ol-art-chat{order:5;width:260px;max-width:100%}.ol-pin-card{padding:38px 9px 10px;border-radius:21px;gap:9px}.ol-pin-content{padding:13px 10px;min-height:180px;font-size:11px}.ol-pin-content strong{font-size:12px}
+ .ol-art-phone{order:6;width:165px;max-width:100%}.ol-art-phone img{height:238px}
+ .ol-art-code{order:7;grid-column:1/-1;width:min(100%,430px)}.ol-reference-code{font-size:11px}.ol-code-chrome{height:40px}
+ .ol-hero-stage .ol-cursor{display:none}.ol-ai{top:24px;right:20px;height:36px;font-size:10px!important;transform:none}.ol-scroll{bottom:12px}
+ .ol-preview-grid{padding:30px 20px 60px;grid-template-columns:1fr;gap:30px;max-width:470px;margin:auto}.ol-preview-caption{padding:40px 20px 20px}.ol-preview-details{min-height:170px}.ol-preview-visit{padding:10px;font-size:11px}
+}
