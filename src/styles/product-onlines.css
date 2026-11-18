@@ -51,7 +51,7 @@ body:has(.onlines-page) :is(.app-dock,.v2ft-wrap){display:none}
 .ol-art-laptop{top:calc(var(--hero-center) + 26px);left:-236px;width:546px;--rotation:-4.32deg}
 .ol-device-laptop{position:relative;width:100%;padding:0 9%}
 .ol-device-screen{aspect-ratio:16/10;border:10px solid #211d26;border-top-width:12px;border-bottom-width:18px;border-radius:15px 15px 5px 5px;background:#222;overflow:hidden;box-shadow:0 0 0 2px #aca5ae}
-.ol-device-screen img{width:100%;height:100%;object-fit:cover;object-position:top}
+.ol-device-screen img{width:100%;height:100%;object-fit:contain;object-position:center;background:#000}
 .ol-device-base{display:block;width:122%;height:15px;margin-left:-11%;background:linear-gradient(#c8c4ce,#8e8897 55%,#504953);border-radius:0 0 45% 45%}
 .ol-art-phone{top:calc(var(--hero-center) + 20px);right:-32px;width:162px;--rotation:3.74deg;border:5px solid #231e29;border-radius:24px;background:#fff;box-shadow:0 0 0 2px #bcb4c2;overflow:hidden}
 .ol-art-phone img{width:100%;height:250px;object-fit:cover;object-position:top}

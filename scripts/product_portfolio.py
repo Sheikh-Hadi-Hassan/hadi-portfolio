@@ -26,7 +26,7 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
     tools = ''.join(tool(n, c) for n, c in [('vscode', 'ol-code'), ('figma', 'ol-figma'), ('notion', 'ol-notion'), ('nextjs', 'ol-next'), ('wordpress', 'ol-wordpress')])
     wire = '<div class="ol-wire" aria-hidden="true"><div class="ol-window-bar"><i></i><i></i><i></i></div><div class="ol-wire-body"><span class="ol-wire-profile"></span><i></i><i></i><span class="ol-wire-line"></span><i></i><i></i><span class="ol-wire-line"></span></div></div>'
     chat = '<div class="ol-chat" aria-hidden="true"><div class="ol-window-bar"><i></i><i></i><i></i></div><div class="ol-chat-row"><b></b><i></i></div><div class="ol-chat-row"><b></b><i></i></div><div class="ol-chat-row"><b></b><i></i></div><span class="ol-chat-input"></span></div>'
-    laptop = '<div class="ol-device-laptop"><div class="ol-device-screen">' + image(cards[0]['src'], 'CallingDr website design presentation') + '</div><span class="ol-device-base"></span></div>'
+    laptop = '<div class="ol-device-laptop"><div class="ol-device-screen">' + image('/assets/hadi-hassan-social-preview-20261021.png', 'Hadi Hassan — creative direction, visual storytelling and brand design', 1200, 630) + '</div><span class="ol-device-base"></span></div>'
     hero_section = (
         '<section class="ol-hero" data-ol-hero aria-labelledby="expertise-heading"><div class="ol-hero-stage ol-grid">'
         '<div class="ol-title-wrap" data-ol-drag><h1 id="expertise-heading">product.</h1><span class="ol-selection" aria-hidden="true">' + '<i></i>' * 6 + '</span></div>'
