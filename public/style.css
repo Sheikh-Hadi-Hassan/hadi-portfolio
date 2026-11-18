@@ -1480,3 +1480,6 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 /* Preserve a complete brand label over the portrait preview crop; original opens unchanged. */
 .ol-cover-1:after{content:attr(data-product-title);position:absolute;inset:0 0 auto;height:88px;padding:20px 22px;background:linear-gradient(#0b141b 75%,#0b141b00);color:#fff;text-align:left;font:600 24px/1.2 var(--ol-body);pointer-events:none}
 @media(max-width:1023px){.ol-cover-1:after{height:62px;padding:14px 16px;font-size:18px}}
+
+/* Preserve the homepage carousel’s inherited typography inside this page. */
+.ol-home-carousel{font:400 16px/normal 'Instrument Sans',Arial,sans-serif}

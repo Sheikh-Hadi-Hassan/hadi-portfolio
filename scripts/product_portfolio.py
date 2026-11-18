@@ -42,13 +42,12 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
         '<a class="ol-scroll" href="#ol-intro" aria-label="Scroll to introduction"><span aria-hidden="true">↓</span></a></div></section>'
     )
     intro = '<section class="ol-intro ol-dots" id="ol-intro"><div class="ol-intro-inner"><h2>I lead product and brand design for SaaS, healthcare and business platforms.</h2><p>Based in Lahore. Working with international teams.<br>Available for design leadership and consulting.</p></div></section>'
-    service_data = [
-        ('Product strategy<br>&amp; UX research', 'User journeys, information architecture and workflow design. A clear definition of what to build and why.', 'Research and product direction for complex platforms.'),
-        ('Interface design<br>&amp; design systems', 'Web, mobile and SaaS interfaces. Reusable components and detailed interaction specifications for development.', 'Connected interfaces, from the first screen to the complete system.'),
-        ('Design leadership<br>&amp; consulting', 'Hands-on creative direction across product and brand. Design reviews, team guidance and delivery support.', 'Leadership roles and focused consulting engagements.')
-    ]
-    services = '<section class="ol-services" id="xp-approach" aria-label="Product design services">' + ''.join(
-        f'<article class="ol-service"><a class="ol-service-panel" href="#xp-contact"><canvas class="ol-halftone" data-halftone="{cards[i]["src"]}" aria-hidden="true"></canvas><h3>{t}</h3><p>{d}</p><span class="ol-service-link">Discuss a project <span aria-hidden="true">↗</span></span></a><p>{foot}</p></article>' for i, (t, d, foot) in enumerate(service_data)) + '</section>'
+    # Reuse the authoritative homepage markup and its shared carousel styles.
+    home = (src / 'pages/home.html').read_text()
+    carousel_start = home.index('<section class="bf-work"')
+    carousel_end = home.index('</section>', carousel_start) + len('</section>')
+    carousel = home[carousel_start:carousel_end].replace('id="work"', 'id="xp-approach"', 1)
+    services = '<div class="bayfi-body ol-home-carousel">' + carousel + '</div>'
     feature = '<section class="ol-feature" aria-labelledby="ol-feature-heading"><div class="ol-feature-container"><div class="ol-feature-card"><div class="ol-feature-copy"><div class="ol-feature-title" data-ol-drag><h2 id="ol-feature-heading">From zero to one.</h2><span class="ol-selection" aria-hidden="true">' + '<i></i>' * 6 + '</span></div><div><h3>I work across research, product architecture, interface design and developer handoff.</h3><p>The selected work includes travel operations, field attendance, car rental and business management products.</p></div><button type="button" class="ol-button" data-consultation-entry="meeting">Book a conversation</button></div><div class="ol-laptop">' + laptop + '</div></div><p class="ol-feature-note">Hadi Hassan · Creative &amp; Product Design Leader · Lahore, Pakistan / Remote</p></div></section>'
     orbit = ''
     for index, key in enumerate(['tms', 'apptech', 'crent', 'flow']):

@@ -21,7 +21,7 @@ const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+decodeURI
    if(!reduced)assert(Math.abs(geometry.quote-height*(width===1440?3.35:2.5))<=1,'Measured reference pinned-quote travel');
    const cursor=page.locator('.ol-cursor-0'),before=await cursor.getAttribute('style');await page.waitForTimeout(350);assert.equal(before!==await cursor.getAttribute('style'),!reduced,'Independent cursor path is motion-aware');
    await page.screenshot({path:out+`/screenshots/hero-${width}-${reduced}.png`});
-   await page.waitForFunction(()=>[...document.querySelectorAll('[data-halftone]')].every(e=>e.dataset.halftoneReady==='true'));
+   await page.waitForSelector('#xp-approach.bf-work .v2sw-track');
    for(const selector of['.ol-feature-card','.ol-products-copy','.ol-work-inner','.ol-contact-copy']){
     await page.locator(selector).scrollIntoViewIfNeeded();await page.waitForTimeout(1200);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'No horizontal overflow');
     if(selector==='.ol-feature-card')assert(await page.locator('#ol-feature-heading').evaluate(e=>e.scrollWidth<=e.clientWidth+2),'Brand typography fits reference content column');
