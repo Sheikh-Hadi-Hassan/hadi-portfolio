@@ -1,0 +1,43 @@
+{
+  "completed": "2026-11-18",
+  "branch": "feature/expertise-portfolios-20261113",
+  "baseCommit": "78fec885805a713feff8e0224a0342cc74bb5ad1",
+  "preview": "http://127.0.0.1:3000/expertise/product-development/#top",
+  "preservation": {
+    "src/pages/home.html": true,
+    "src/styles/hero.css": true,
+    "design/hero-lock.json": true,
+    "src/data/mobile-screen-stacks.json": true,
+    "src/site.js": true,
+    "src/styles/expertise.css": true
+  },
+  "checks": {
+    "completeAcceptanceBuild": "PASS",
+    "sourceExportReceipt": "PASS",
+    "sourceTests": "PASS - 4 expertise and 7 phone-stack tests",
+    "seo": "PASS - 25 routes",
+    "production": "PASS - 27 routes",
+    "unitSuites": "PASS - npm test, 23 chained suites",
+    "productBrowser": "PASS - 20 Chromium/WebKit viewport and motion scenarios",
+    "otherExpertiseBrowser": "PASS - both engines across all configured profiles",
+    "accessibility": "PASS - four desktop/mobile page and gallery scans, zero automated WCAG A/AA violations",
+    "dependencies": "PASS - zero audit findings",
+    "visualContract": "PASS - four responsive/motion scenarios plus first-scroll hold/release",
+    "stagedSecretScan": "PASS - zero findings, 415264 staged bytes scanned"
+  },
+  "content": {
+    "header": false,
+    "originalPresentations": 19,
+    "mobileScreens": 23,
+    "phoneCollections": 4,
+    "flagshipProducts": 4,
+    "fullSizeFlagshipPosters": 3
+  },
+  "unverified": [
+    "Live provider booking/Calendar/Meet/email writes",
+    "PHP runtime integrations on static preview",
+    "TMS external availability"
+  ],
+  "mainRemoteHead": "84f80d83dcd05c742f2697782e2b22d2c08711f3",
+  "deployed": false
+}

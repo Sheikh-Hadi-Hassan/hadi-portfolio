@@ -212,4 +212,4 @@ with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').r
 
 # Product page replacement requested against the Onlines reference.
 with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-onlines.css').read_text())
-with (DIST/'script.js').open('a') as f: f.write('\n'+(SRC/'product-onlines.js').read_text())
+with (DIST/'script.js').open('a') as f: f.write('\n'+(ROOT/'node_modules/lenis/dist/lenis.min.js').read_text()+'\n'+(ROOT/'node_modules/swiper/swiper-bundle.min.js').read_text()+'\n'+(SRC/'product-onlines.js').read_text())

@@ -97,6 +97,6 @@ jobs:
             docs/product-brand-redesign-20261116/browser-*.json
             docs/component-refinement-20261116/components-*.json
             docs/component-refinement-20261116/screenshots/
-            docs/onlines-correction-20261117/browser-*.json
-            docs/onlines-correction-20261117/screenshots/local-*.png
+            docs/onlines-fidelity-20261117/browser-*.json
+            docs/onlines-fidelity-20261117/screenshots/local-*.png
           if-no-files-found: ignore

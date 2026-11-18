@@ -70,7 +70,14 @@ class ExpertiseChecks(unittest.TestCase):
                 self.assertIn('onlines-page',content)
                 self.assertIn('data-ol-hero',content)
                 self.assertEqual(content.count('data-flight-card'),0)
-                self.assertEqual(content.count('data-full='),19)
+                presentations=json.loads((SRC/'data/product-flight.json').read_text())['cards']
+                self.assertEqual(len(presentations),19)
+                self.assertEqual(content.count('data-full='),len(presentations)+3)
+                for card in presentations:
+                    self.assertIn('data-full="'+card['src']+'"',content)
+                for name in ['apptech','crent','tms']:
+                    self.assertIn('data-full="/assets/expertise/flagship-'+name+'.png"',content)
+                self.assertNotIn('class="ol-header"',content)
                 for product in json.loads((SRC/'data/digital-products.json').read_text())['products']:
                     self.assertIn(product['url'],content)
                     self.assertIn(product['image']['src'],content)
