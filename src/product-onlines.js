@@ -262,7 +262,7 @@
 
 
 
-/* Independent on-page mobile gallery. No changes to the existing product canvas engine. */
+/* Four-column vertical mobile gallery. Scoped to the product page. */
 (() => {
   const gallery = document.querySelector('.mg-section');
   if (!gallery) return;
@@ -270,73 +270,79 @@
   const tabs = [...gallery.querySelectorAll('[data-mg-tab]')];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let active = panels[0];
+  let resizeFrame = 0;
 
   function fitPhone(img) {
     const viewport = img.closest('.mg-viewport');
     if (!viewport || !img.naturalWidth || !img.naturalHeight) return;
-    const contentHeight = img.naturalHeight * viewport.clientWidth / img.naturalWidth;
-    const distance = Math.max(0, contentHeight - viewport.clientHeight);
-    if (distance > 8 && !reduced.matches) {
-      img.style.setProperty('--mg-scroll', distance.toFixed(1) + 'px');
-      img.style.animation = 'mg-vertical ' + Math.max(14, Math.min(55, 9 + distance / 22)).toFixed(1) + 's ease-in-out infinite alternate';
-    } else {
-      img.style.animation = 'none';
-    }
+    const scaledHeight = img.naturalHeight * viewport.clientWidth / img.naturalWidth;
+    const distance = Math.max(0, scaledHeight - viewport.clientHeight);
+    img.style.setProperty('--mg-scroll', distance.toFixed(1) + 'px');
+    img.style.animation = distance > 8 && !reduced.matches
+      ? 'mg-vertical ' + Math.max(18, Math.min(75, 14 + distance / 18)).toFixed(1) + 's ease-in-out infinite alternate'
+      : 'none';
   }
 
   function configure(panel) {
-    const track = panel.querySelector('[data-mg-track]');
-    const original = panel.querySelector('[data-mg-original]');
-    if (!track || !original) return;
-    track.querySelectorAll('[data-mg-clone]').forEach(node => node.remove());
-    // An exact repeat permits a continuous wrap without a jump in the phone sequence.
-    const clone = original.cloneNode(true);
-    clone.removeAttribute('data-mg-original');
-    clone.dataset.mgClone = '';
-    clone.setAttribute('aria-hidden', 'true');
-    clone.querySelectorAll('img').forEach(img => { img.alt = ''; img.loading = 'lazy'; });
-    clone.querySelectorAll('.mg-phone').forEach(phone => phone.removeAttribute('aria-label'));
-    track.append(clone);
-    const distance = original.getBoundingClientRect().width;
-    track.style.setProperty('--mg-distance', distance.toFixed(1) + 'px');
-    track.style.setProperty('--mg-duration', Math.max(26, distance / 36).toFixed(1) + 's');
-    track.style.animation = 'none';
-    void track.offsetWidth;
-    track.style.animation = '';
-    track.querySelectorAll('img').forEach(img => {
-      if (img.complete && img.naturalWidth) fitPhone(img);
-      else img.addEventListener('load', () => fitPhone(img), {once:true});
+    if (!panel || panel.hidden) return;
+    panel.querySelectorAll('[data-mg-column]').forEach(column => {
+      const track = column.querySelector('[data-mg-track]');
+      const original = column.querySelector('[data-mg-original]');
+      if (!track || !original) return;
+      track.querySelectorAll('[data-mg-clone]').forEach(node => node.remove());
+      const clone = original.cloneNode(true);
+      clone.removeAttribute('data-mg-original');
+      clone.dataset.mgClone = '';
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('img').forEach(img => { img.alt = ''; });
+      clone.querySelectorAll('.mg-phone').forEach(phone => phone.removeAttribute('aria-label'));
+      track.append(clone);
+
+      const distance = original.getBoundingClientRect().height;
+      track.style.setProperty('--mg-distance', distance.toFixed(1) + 'px');
+      // The reference exposes speed 34 but not its unit; use an adjustable px/s approximation.
+      track.style.setProperty('--mg-duration', Math.max(24, distance / 34).toFixed(1) + 's');
+      track.style.animation = 'none';
+      void track.offsetHeight;
+      track.style.animation = '';
+
+      track.querySelectorAll('img').forEach(img => {
+        if (img.complete && img.naturalWidth) fitPhone(img);
+        else img.addEventListener('load', () => fitPhone(img), { once: true });
+      });
     });
   }
+
   function select(id, focus = false) {
     const next = panels.find(panel => panel.dataset.mgPanel === id);
     if (!next) return;
     tabs.forEach(tab => {
-      const on = tab.dataset.mgTab === id;
-      tab.setAttribute('aria-selected', String(on));
-      tab.tabIndex = on ? 0 : -1;
-      if (focus && on) tab.focus({preventScroll:true});
+      const selected = tab.dataset.mgTab === id;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      if (focus && selected) tab.focus({ preventScroll: true });
     });
-    panels.forEach(panel => {panel.hidden = panel !== next;});
+    panels.forEach(panel => { panel.hidden = panel !== next; });
     active = next;
     requestAnimationFrame(() => configure(next));
   }
+
   tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => select(tab.dataset.mgTab));
     tab.addEventListener('keydown', event => {
-      if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault();
       const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 :
         (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
       select(tabs[nextIndex].dataset.mgTab, true);
     });
   });
-  let raf = 0;
+
   function recalculate() {
-    cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(() => configure(active));
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => configure(active));
   }
-  addEventListener('resize', recalculate, {passive:true});
+  addEventListener('resize', recalculate, { passive: true });
   reduced.addEventListener('change', recalculate);
   select(active.dataset.mgPanel);
 })();
