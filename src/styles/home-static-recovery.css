@@ -1,0 +1,137 @@
+/* Recovery layout for homepage sections whose HTML exists but whose styles
+   were absent from the standalone static preview. Scoped to .bayfi-body.
+   No changes to the approved hero, global navigation, or product gallery. */
+.bayfi-body{--home-ink:#f4f0fa;--home-muted:#b4aebe;--home-purple:#9775ee;--home-line:rgba(255,255,255,.18);color:var(--home-ink);background:#0b0a0f;overflow:hidden;font-family:"Instrument Sans",Arial,sans-serif}
+.bayfi-body *, .bayfi-body *:before,.bayfi-body *:after{box-sizing:border-box}
+.bayfi-body>section{position:relative}
+.bayfi-body .bf-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.bayfi-body .bf-kicker{display:block;font:600 11px/1.4 "Instrument Sans",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--home-purple)}
+.bayfi-body :is(.bf-button,.bf-text-link){display:inline-flex;align-items:center;gap:14px;justify-content:center;width:fit-content;text-decoration:none;font:600 14px/1.4 "Instrument Sans",Arial,sans-serif}
+.bayfi-body .bf-button{background:#e7d8fc;color:#291a3d;border-radius:999px;padding:15px 24px}
+.bayfi-body .bf-text-link{color:#ceb9f6;border-bottom:1px solid currentColor;padding-bottom:5px}
+.bayfi-body :is(a,button):focus-visible{outline:3px solid #c7a8ff;outline-offset:3px}
+.bayfi-body h2,.bayfi-body h3,.bayfi-body p,.bayfi-body figure{margin:0}
+.bayfi-body .bf-reel{padding:clamp(64px,8vw,140px) clamp(20px,4vw,72px);background:#0b0a0f}
+.bayfi-body .bf-reel-stage{position:relative;display:grid;grid-template-columns:minmax(70px,1fr) minmax(0,1140px) minmax(70px,1fr);gap:clamp(14px,2vw,34px);align-items:center;max-width:1520px;margin:auto}
+.bayfi-body .bf-reel-word{font:500 clamp(19px,3vw,48px)/1.08 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.04em;text-align:center;color:#e8e0f0}
+.bayfi-body .bf-reel-frame{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid #ffffff25;border-radius:clamp(16px,2vw,34px);background:#19171f;cursor:pointer;padding:0;box-shadow:0 26px 86px #0009}
+.bayfi-body .bf-reel-frame video{display:block;width:100%;height:100%;object-fit:cover}
+.bayfi-body .bf-reel-cursor{position:absolute;right:18px;bottom:18px;border-radius:999px;background:#eee6f6;color:#20152f;padding:10px 14px;font:600 12px/1.2 "Instrument Sans",Arial,sans-serif}
+.bayfi-body .bf-reel-pause{position:absolute;bottom:-50px;left:50%;transform:translateX(-50%);padding:8px 22px;border:1px solid #ffffff55;border-radius:999px;color:#f4f0fa;background:#ffffff15}
+.bayfi-body .v2sv-section{max-width:1550px;margin:auto;padding:clamp(80px,9vw,160px) clamp(20px,5vw,76px);background:#0b0a0f}
+.bayfi-body .v2sv-header{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.63fr);align-items:end;gap:32px;margin-bottom:clamp(42px,6vw,90px)}
+.bayfi-body .v2sv-heading{font:500 clamp(54px,8vw,142px)/.99 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.06em;color:#f5f1fa}
+.bayfi-body .v2sv-sub{max-width:480px;color:#b8afc3;font:400 clamp(16px,1.55vw,21px)/1.5 "Instrument Sans",Arial,sans-serif}
+.bayfi-body .seo-introduction{max-width:930px;margin:0 0 55px;color:#bab4c0;font-size:clamp(15px,1.2vw,18px);line-height:1.75}
+.bayfi-body .seo-introduction a{color:#e3d6fb;text-decoration:underline;text-underline-offset:4px}
+.bayfi-body .bf-service-item{position:relative;border-bottom:1px solid var(--home-line)}
+.bayfi-body .bf-service-item:first-of-type{border-top:1px solid var(--home-line)}
+.bayfi-body .v2sv-divider{display:none}
+.bayfi-body .bf-service-heading{margin:0}
+.bayfi-body .v2sv-row{display:grid;grid-template-columns:clamp(56px,6vw,86px) minmax(0,1fr) minmax(150px,280px) 38px;gap:clamp(12px,2vw,32px);align-items:center;text-align:left;width:100%;border:0;padding:clamp(20px,2.6vw,40px) 0;background:transparent;color:#f3ecf8}
+.bayfi-body .bf-service-icon{width:clamp(54px,5.3vw,78px);height:clamp(54px,5.3vw,78px);object-fit:cover;border-radius:16px}
+.bayfi-body .v2sv-name{font:500 clamp(22px,3.1vw,48px)/1.1 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.035em}
+.bayfi-body .v2sv-row-tags{font-size:13px;line-height:1.5;color:#a79eaf}
+.bayfi-body .bf-service-plus{display:grid;place-items:center;width:36px;height:36px;border:1px solid #ffffff66;border-radius:50%;font-size:24px;font-weight:300;transition:transform .25s}
+.bayfi-body .v2sv-row[aria-expanded=true] .bf-service-plus{transform:rotate(45deg)}
+.bayfi-body .bf-service-preview{position:absolute;right:15%;top:50%;width:clamp(210px,21vw,340px);margin:0;aspect-ratio:1.4;overflow:hidden;transform:translateY(-50%) rotate(-5deg);border-radius:12px;box-shadow:0 15px 50px #0009;opacity:0;pointer-events:none;z-index:3;transition:opacity .22s}
+.bayfi-body .bf-service-preview img{width:100%;height:100%;object-fit:cover}
+@media(hover:hover) and (min-width:1050px){.bayfi-body .bf-service-item:hover .bf-service-preview{opacity:1}}
+.bayfi-body .v2sv-expand-outer{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.bayfi-body .v2sv-expand-outer:not([inert]){max-height:800px}
+.bayfi-body .v2sv-expand-inner{padding:0 0 28px clamp(70px,7vw,110px)}
+.bayfi-body .v2sv-expand-content{max-width:690px;color:#d1cbd8;font-size:17px;line-height:1.7}
+.bayfi-body .bf-pills{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}
+.bayfi-body .bf-pills span{border:1px solid #ffffff47;padding:8px 14px;border-radius:999px;font-size:12px}
+.bayfi-body .bf-manifesto{min-height:85vh;display:grid;align-items:center;background:#e5d9fa;color:#291b3e;padding:clamp(80px,10vw,170px) clamp(20px,5vw,82px)}
+.bayfi-body .bf-manifesto-stage{width:100%;max-width:1540px;margin:auto}
+.bayfi-body .bf-manifesto-lines{max-width:1340px}
+.bayfi-body .bf-manifesto-line{font:500 clamp(30px,4.3vw,72px)/1.18 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.045em;margin:0 0 12px}
+.bayfi-body .bf-manifesto-pill{display:inline-grid;place-items:center;min-width:1.3em;min-height:1.3em;border-radius:999px;background:#322043;color:white;vertical-align:middle;font-size:.65em}
+.bayfi-body .bf-manifesto-progress{display:flex;align-items:center;gap:20px;margin-top:70px;font-size:14px}
+.bayfi-body .bf-manifesto-ticks{display:flex;gap:5px;flex:1;max-width:360px}
+.bayfi-body .bf-manifesto-ticks span{flex:1;height:12px;border:1px solid #45335944}
+.bayfi-body .bf-work{background:#17131c;overflow:hidden}
+.bayfi-body .v2sw-track{display:flex;align-items:stretch;gap:clamp(18px,2.1vw,32px);width:100%;padding:clamp(75px,8vw,145px) clamp(20px,5vw,82px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:thin;overscroll-behavior-x:contain}
+.bayfi-body .v2sw-slide{flex:0 0 clamp(280px,29vw,430px);min-width:0;max-width:calc(100vw - 40px);scroll-snap-align:start}
+.bayfi-body .v2sw-slide-heading{flex-basis:clamp(320px,34vw,520px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:24px}
+.bayfi-body .v2sw-heading{font:500 clamp(44px,5vw,80px)/1.05 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.05em}
+.bayfi-body .v2sw-slide-heading p{font-size:18px;line-height:1.6;max-width:390px;color:var(--home-muted)}
+.bayfi-body .bf-scroll-hint,.bayfi-body .bf-swipe-hint{font-size:12px;letter-spacing:.09em;color:#d8c7f0}
+.bayfi-body .bf-swipe-hint{display:none}
+.bayfi-body .v2sw-card-slide,.bayfi-body .v2sw-card-reveal{display:flex;width:100%}
+.bayfi-body .v2sw-card{display:flex;flex-direction:column;width:100%;height:100%;border-radius:20px;overflow:hidden;color:#2b2336;background:#eee8f5;text-decoration:none}
+.bayfi-body .v2sw-card-media{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:#dcd2e8}
+.bayfi-body .v2sw-card-media img{display:block;width:100%;height:100%;object-fit:cover}
+.bayfi-body .v2sw-card-tag{position:absolute;bottom:12px;left:12px;padding:7px 11px;border-radius:999px;background:#faf8fc;color:#342443;font-size:11px;font-weight:600;max-width:calc(100% - 24px)}
+.bayfi-body .v2sw-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:22px 22px 8px}
+.bayfi-body .v2sw-card-title{font:500 clamp(22px,2vw,30px)/1.13 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.03em}
+.bayfi-body .bf-case-status{font-size:16px}
+.bayfi-body .bf-project-count{display:block;padding:0 22px 22px;font-size:12px;color:#685a72}
+.bayfi-body .v2sw-slide-cta{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:32px;background:#7b62ff;color:#fff;border-radius:22px;padding:32px}
+.bayfi-body .v2sw-slide-cta h2{font:500 clamp(28px,3vw,45px)/1.08 "Nebulica","Instrument Sans",Arial,sans-serif}
+.bayfi-body :is(.digital-products,.hadi-folder,.hpr-wrap,.hfaq-wrap){padding:clamp(84px,9vw,145px) clamp(20px,5vw,82px)}
+.bayfi-body .digital-products{background:#0b0a0f}
+.bayfi-body .products-header{max-width:920px;margin-bottom:50px}
+.bayfi-body .products-header h2{font:500 clamp(43px,5vw,80px)/1.06 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.05em;margin:14px 0 20px}
+.bayfi-body .products-header p{font-size:18px;color:var(--home-muted);line-height:1.6}
+.bayfi-body .products-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1600px;margin:auto}
+.bayfi-body .product-card{display:flex;flex-direction:column;gap:14px;background:#211b2b;padding:15px 15px 24px;border:1px solid #ffffff1e;border-radius:22px;min-width:0}
+.bayfi-body .product-showcase{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:contain;background:#e6e5ed;border-radius:12px}
+.bayfi-body .product-card h3{font-size:clamp(19px,2vw,28px);letter-spacing:-.03em;margin-top:5px}
+.bayfi-body .product-card p{font-size:14px;color:var(--home-muted);line-height:1.5}
+.bayfi-body .product-card>a{color:#e5d8fe;margin-top:auto;font-size:13px;padding-top:7px}
+.bayfi-body .digital-collection{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,85px);align-items:center;padding:clamp(80px,8vw,130px) clamp(20px,5vw,82px);background:#17131c;border-top:1px solid #ffffff18}
+.bayfi-body .digital-collection:nth-of-type(even){background:#211b2b}
+.bayfi-body .digital-collection-copy{max-width:580px}
+.bayfi-body .eyebrow{font-size:11px;letter-spacing:.13em;color:#b9a0e7}
+.bayfi-body .digital-collection h2{font:500 clamp(38px,4.5vw,76px)/1.06 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.05em;margin:20px 0}
+.bayfi-body .digital-collection p{font-size:17px;color:var(--home-muted);line-height:1.7;margin-bottom:25px}
+.bayfi-body .digital-collection .small-link{font-size:13px;border-bottom:1px solid currentColor;padding-bottom:6px}
+.bayfi-body .digital-collection-image{display:block;min-width:0;overflow:hidden;border-radius:23px;background:#32293c}
+.bayfi-body .digital-collection-image img{width:100%;height:auto;max-width:100%!important;object-fit:contain;max-height:600px;margin:auto}
+.bayfi-body .digital-collection-image span{display:block;padding:17px 22px;font-size:12px;letter-spacing:.08em}
+.bayfi-body .hadi-folder{background:#e8e0f5;color:#281b39}
+.bayfi-body .fld-inner{max-width:1500px;margin:auto}
+.bayfi-body .bf-practice-heading h2{font:500 clamp(44px,5vw,82px)/1.05 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.05em;margin:16px 0 45px}
+.bayfi-body .fld-stage{position:relative}
+.bayfi-body .fld-back,.bayfi-body .fld-flap{display:none}
+.bayfi-body .fld-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.bayfi-body .fld-card{position:relative!important;transform:none!important;background:#fff;border:1px solid #38254a22;border-radius:20px;min-width:0;min-height:250px}
+.bayfi-body .fld-card-inner{display:flex;flex-direction:column;justify-content:space-between;height:100%;padding:24px;gap:24px}
+.bayfi-body .fld-label{font-size:12px;letter-spacing:.08em;color:#654d77}
+.bayfi-body .fld-number{font:500 clamp(40px,5vw,70px)/1 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.05em}
+.bayfi-body .fld-sub{font-size:14px;line-height:1.45;color:#685877}
+.bayfi-body .bf-clients{padding:70px 5vw;background:#0e0b15;color:#fff}
+.bayfi-body .bf-client-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.bayfi-body .bf-client-cell{padding:24px;border:1px solid #ffffff33;text-align:center}
+.bayfi-body .hpr-wrap{background:#0e0b15}
+.bayfi-body .hpr-inner{max-width:1550px;margin:auto}
+.bayfi-body .hpr-header{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:50px}
+.bayfi-body .hpr-heading{font:500 clamp(42px,5vw,80px)/1.04 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.05em}
+.bayfi-body .hpr-desc{max-width:380px;color:var(--home-muted);font-size:17px;line-height:1.6}
+.bayfi-body .hpr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.bayfi-body .hpr-card{position:relative;display:flex;flex-direction:column;min-width:0;background:#2b2235;border-radius:22px;overflow:hidden}
+.bayfi-body .folder-art{height:clamp(200px,23vw,340px);overflow:hidden}
+.bayfi-body .folder-art img{width:100%;height:100%;object-fit:cover}
+.bayfi-body .folder-front{display:flex;flex-direction:column;gap:25px;padding:25px}
+.bayfi-body .folder-top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#c8bdd4}
+.bayfi-body .folder-copy h3{font:500 clamp(26px,2.4vw,38px)/1.1 "Nebulica","Instrument Sans",Arial,sans-serif;margin:14px 0}
+.bayfi-body .folder-copy p{font-size:15px;line-height:1.6;color:#cec2d8}
+.bayfi-body .folder-details{border-top:1px solid #ffffff33;margin-top:20px;padding-top:15px;color:#cec2d8}
+.bayfi-body .folder-details summary{display:flex;justify-content:space-between;cursor:pointer}
+.bayfi-body .folder-details ul{padding-left:20px;line-height:1.6}
+.bayfi-body .folder-contact{display:inline-block;padding:10px 0;color:#ede1ff}
+.bayfi-body .hfaq-wrap{background:#e9e0f7;color:#241830}
+.bayfi-body .hfaq-inner{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr);gap:clamp(45px,6vw,110px);max-width:1550px;margin:auto}
+.bayfi-body .hfaq-head-muted{font-size:15px;color:#765e86}
+.bayfi-body .hfaq-head{font:500 clamp(46px,5vw,84px)/1.03 "Nebulica","Instrument Sans",Arial,sans-serif;letter-spacing:-.05em;margin:8px 0 25px}
+.bayfi-body .hfaq-sub{font-size:17px;line-height:1.5;color:#6e5a7c;margin-bottom:24px}
+.bayfi-body .hfaq-accordion details{border-bottom:1px solid #2a1b3c44;padding:22px 0}
+.bayfi-body .hfaq-accordion summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;font-size:clamp(17px,1.4vw,21px);font-weight:600}
+.bayfi-body .hfaq-accordion summary span{font-size:24px}
+.bayfi-body .hfaq-accordion details p{font-size:15px;line-height:1.7;color:#5f4e6e;padding:20px 22px 0 0}
+.bayfi-body .hfaq-accordion details a{text-decoration:underline}
+@media(max-width:1050px){.bayfi-body .bf-reel-stage{grid-template-columns:1fr}.bayfi-body .bf-reel-word{display:none}.bayfi-body .v2sv-row{grid-template-columns:62px minmax(0,1fr) 32px}.bayfi-body .v2sv-row-tags{display:none}.bayfi-body .bf-service-preview{display:none}.bayfi-body .products-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bayfi-body .fld-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.bayfi-body .hpr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.bayfi-body .bf-reel{padding:56px 16px 82px}.bayfi-body .bf-reel-frame{border-radius:14px}.bayfi-body .bf-reel-pause{bottom:-44px}.bayfi-body .v2sv-section{padding:70px 16px}.bayfi-body .v2sv-header{grid-template-columns:1fr;gap:18px;margin-bottom:32px}.bayfi-body .seo-introduction{margin-bottom:30px}.bayfi-body .v2sv-row{grid-template-columns:52px minmax(0,1fr) 30px;gap:14px}.bayfi-body .bf-service-icon{width:52px;height:52px;border-radius:10px}.bayfi-body .v2sv-name{font-size:22px}.bayfi-body .v2sv-expand-inner{padding-left:0}.bayfi-body .bf-manifesto{min-height:65vh;padding:80px 18px}.bayfi-body .bf-manifesto-line{font-size:clamp(29px,7vw,48px)}.bayfi-body .v2sw-track{padding:65px 16px;gap:16px}.bayfi-body .v2sw-slide{flex-basis:min(80vw,330px)}.bayfi-body .v2sw-slide-heading{flex-basis:min(84vw,340px)}.bayfi-body .bf-scroll-hint{display:none}.bayfi-body .bf-swipe-hint{display:block}.bayfi-body .products-grid,.bayfi-body .fld-cards,.bayfi-body .hpr-grid{grid-template-columns:1fr}.bayfi-body :is(.digital-products,.hadi-folder,.hpr-wrap,.hfaq-wrap){padding:75px 16px}.bayfi-body .digital-collection{grid-template-columns:1fr;padding:70px 16px}.bayfi-body .hpr-header{flex-direction:column;align-items:flex-start}.bayfi-body .hfaq-inner{grid-template-columns:1fr;gap:40px}}
+@media(prefers-reduced-motion:reduce){.bayfi-body *, .bayfi-body *:before,.bayfi-body *:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
