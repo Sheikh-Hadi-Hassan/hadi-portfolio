@@ -279,13 +279,13 @@
     const distance = Math.max(0, scaledHeight - viewport.clientHeight);
     img.style.setProperty('--mg-scroll', distance.toFixed(1) + 'px');
     img.style.animation = distance > 8 && !reduced.matches
-      ? 'mg-vertical ' + Math.max(18, Math.min(75, 14 + distance / 18)).toFixed(1) + 's ease-in-out infinite alternate'
+      ? 'mg-vertical ' + Math.max(24, Math.min(150, 12 + distance / 14)).toFixed(1) + 's ease-in-out infinite alternate'
       : 'none';
   }
 
   function configure(panel) {
     if (!panel || panel.hidden) return;
-    panel.querySelectorAll('[data-mg-column]').forEach(column => {
+    panel.querySelectorAll('[data-mg-column]').forEach((column, columnIndex) => {
       const track = column.querySelector('[data-mg-track]');
       const original = column.querySelector('[data-mg-original]');
       if (!track || !original) return;
@@ -301,7 +301,11 @@
       const distance = original.getBoundingClientRect().height;
       track.style.setProperty('--mg-distance', distance.toFixed(1) + 'px');
       // The reference exposes speed 34 but not its unit; use an adjustable px/s approximation.
-      track.style.setProperty('--mg-duration', Math.max(24, distance / 34).toFixed(1) + 's');
+      const duration = Math.max(24, distance / 34);
+      track.style.setProperty('--mg-duration', duration.toFixed(1) + 's');
+      // Offset each column so the clipped card reveals neighboring phones immediately.
+      // Negative delay preserves a continuous cycle without waiting for a first traversal.
+      track.style.animationDelay = '-' + (duration * [0.12, 0.61, 0.39, 0.83][columnIndex]).toFixed(2) + 's';
       track.style.animation = 'none';
       void track.offsetHeight;
       track.style.animation = '';
