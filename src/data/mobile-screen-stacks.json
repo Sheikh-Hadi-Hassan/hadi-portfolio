@@ -150,50 +150,6 @@
           "alt": "Original AppTech Admin interface: Building overview"
         }
       ]
-    },
-    {
-      "id": "morganics",
-      "title": "Morganics",
-      "mode": "phone",
-      "kicker": "ECOMMERCE / MOBILE WEBSITE",
-      "description": "Original responsive ecommerce screens, from discovery to checkout.",
-      "slides": [
-        {
-          "src": "morganics-01-home.webp",
-          "title": "Homepage",
-          "alt": "Morganics mobile ecommerce screenshot: Homepage"
-        },
-        {
-          "src": "morganics-02-collections.webp",
-          "title": "Collections",
-          "alt": "Morganics mobile ecommerce screenshot: Collections"
-        },
-        {
-          "src": "morganics-03-products.webp",
-          "title": "All products",
-          "alt": "Morganics mobile ecommerce screenshot: All products"
-        },
-        {
-          "src": "morganics-04-roots.webp",
-          "title": "Roots and adaptogens",
-          "alt": "Morganics mobile ecommerce screenshot: Roots and adaptogens"
-        },
-        {
-          "src": "morganics-05-product-detail.webp",
-          "title": "Product details",
-          "alt": "Morganics mobile ecommerce screenshot: Product details"
-        },
-        {
-          "src": "morganics-06-cart.webp",
-          "title": "Shopping cart",
-          "alt": "Morganics mobile ecommerce screenshot: Shopping cart"
-        },
-        {
-          "src": "morganics-07-payment.webp",
-          "title": "Payment methods",
-          "alt": "Morganics mobile ecommerce screenshot: Payment methods"
-        }
-      ]
     }
   ]
 }
