@@ -259,3 +259,84 @@
   page.querySelector('[data-consultation-entry="meeting"]').addEventListener('click',()=>{unlock();window.dispatchEvent(new CustomEvent('intellignce:open-consultation',{detail:{booking:true}}))});
   quotePending=true;schedule();
 })();
+
+
+
+/* Independent on-page mobile gallery. No changes to the existing product canvas engine. */
+(() => {
+  const gallery = document.querySelector('.mg-section');
+  if (!gallery) return;
+  const panels = [...gallery.querySelectorAll('[data-mg-panel]')];
+  const tabs = [...gallery.querySelectorAll('[data-mg-tab]')];
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let active = panels[0];
+
+  function fitPhone(img) {
+    const viewport = img.closest('.mg-viewport');
+    if (!viewport || !img.naturalWidth || !img.naturalHeight) return;
+    const contentHeight = img.naturalHeight * viewport.clientWidth / img.naturalWidth;
+    const distance = Math.max(0, contentHeight - viewport.clientHeight);
+    if (distance > 8 && !reduced.matches) {
+      img.style.setProperty('--mg-scroll', distance.toFixed(1) + 'px');
+      img.style.animation = 'mg-vertical ' + Math.max(14, Math.min(55, 9 + distance / 22)).toFixed(1) + 's ease-in-out infinite alternate';
+    } else {
+      img.style.animation = 'none';
+    }
+  }
+
+  function configure(panel) {
+    const track = panel.querySelector('[data-mg-track]');
+    const original = panel.querySelector('[data-mg-original]');
+    if (!track || !original) return;
+    track.querySelectorAll('[data-mg-clone]').forEach(node => node.remove());
+    // An exact repeat permits a continuous wrap without a jump in the phone sequence.
+    const clone = original.cloneNode(true);
+    clone.removeAttribute('data-mg-original');
+    clone.dataset.mgClone = '';
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('img').forEach(img => { img.alt = ''; img.loading = 'lazy'; });
+    clone.querySelectorAll('.mg-phone').forEach(phone => phone.removeAttribute('aria-label'));
+    track.append(clone);
+    const distance = original.getBoundingClientRect().width;
+    track.style.setProperty('--mg-distance', distance.toFixed(1) + 'px');
+    track.style.setProperty('--mg-duration', Math.max(26, distance / 36).toFixed(1) + 's');
+    track.style.animation = 'none';
+    void track.offsetWidth;
+    track.style.animation = '';
+    track.querySelectorAll('img').forEach(img => {
+      if (img.complete && img.naturalWidth) fitPhone(img);
+      else img.addEventListener('load', () => fitPhone(img), {once:true});
+    });
+  }
+  function select(id, focus = false) {
+    const next = panels.find(panel => panel.dataset.mgPanel === id);
+    if (!next) return;
+    tabs.forEach(tab => {
+      const on = tab.dataset.mgTab === id;
+      tab.setAttribute('aria-selected', String(on));
+      tab.tabIndex = on ? 0 : -1;
+      if (focus && on) tab.focus({preventScroll:true});
+    });
+    panels.forEach(panel => {panel.hidden = panel !== next;});
+    active = next;
+    requestAnimationFrame(() => configure(next));
+  }
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => select(tab.dataset.mgTab));
+    tab.addEventListener('keydown', event => {
+      if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 :
+        (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+      select(tabs[nextIndex].dataset.mgTab, true);
+    });
+  });
+  let raf = 0;
+  function recalculate() {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => configure(active));
+  }
+  addEventListener('resize', recalculate, {passive:true});
+  reduced.addEventListener('change', recalculate);
+  select(active.dataset.mgPanel);
+})();
