@@ -208,7 +208,7 @@ print(f'Built {len(projects)+10} pages with shared templates and Pixelarticons.'
  'A consultation is confirmed only by the booking interface after backend verification.', '',
 ]))
 
-with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text()+'\n'+(SRC/'styles/appbar.css').read_text()+'\n'+(SRC/'styles/expertise.css').read_text()+'\n'+(SRC/'styles/footer.css').read_text())
+with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text()+'\n'+(SRC/'styles/appbar.css').read_text()+'\n'+(SRC/'styles/expertise.css').read_text())
 
 # Product page replacement requested against the Onlines reference.
 with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-onlines.css').read_text())
