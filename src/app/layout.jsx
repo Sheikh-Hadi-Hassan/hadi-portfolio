@@ -3,6 +3,7 @@ import '../styles/command.css';
 import '../styles/appbar.css';
 import '../styles/intro.css';
 import '../styles/footer.css';
+import '../styles/home-static-recovery.css';
 import HomeExperience from './home-experience';
 import FooterMotion from './footer-motion';
 import SocialCarousel from './social-carousel';
