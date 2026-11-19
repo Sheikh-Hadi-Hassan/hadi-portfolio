@@ -79,6 +79,58 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
     cases = [('CallingDr', 'Telehealth website and care interfaces.', '/archive/#archive-record-care-by-callingdr', cards[0]['src']), ('Consumer Connect', 'Consumer research dashboard and participant workflows.', '/archive/#archive-record-consumer-connect', cards[2]['src']), ('Omni Help', 'Mobile healthcare and self-care experience.', '/archive/#archive-record-omnihelp', cards[1]['src'])]
     case_section = '<section class="ol-cases ol-preview-grid" aria-label="Selected interface case studies">' + ''.join(showcase_card(i, title, desc, url, img, esc, image) for i, (title, desc, url, img) in enumerate(cases)) + '</section>'
     contact = '<section class="ol-contact" id="xp-contact" aria-labelledby="ol-contact-heading"><div class="ol-contact-inner"><div class="ol-contact-art ol-dots"><span class="ol-aa" aria-hidden="true">Aa</span><div class="ol-contact-metric">' + image(products['flow']['image']['src'], 'Flow business management dashboard', 1000, 800, 'loading="lazy"') + '</div><div class="ol-contact-photo ol-photo-one">' + image('/assets/expertise/product-flight-workspace.jpeg', 'Product design workspace', 1376, 768, 'loading="lazy"') + '</div><div class="ol-contact-photo ol-photo-two">' + image('/assets/hadi-founder-intro.jpg', 'Hadi Hassan', 1200, 800, 'loading="lazy"') + '</div><div class="ol-contact-chat">' + chat + '</div>' + tool('vscode', 'ol-contact-code') + tool('figma', 'ol-contact-figma') + tool('notion', 'ol-contact-notion') + tool('nextjs', 'ol-contact-next') + cursor('Client', 1, 'ol-contact-cursor') + '</div><div class="ol-contact-copy"><h2 id="ol-contact-heading"><span>Have a product</span><span>to discuss?</span></h2><p>Share a product brief, a design leadership opportunity or a consulting enquiry. Let’s discuss the scope and the next step.</p><div class="ol-contact-actions"><a class="ol-button" href="mailto:hadi@intellignce.net">Let’s talk</a><div><a class="ol-small-link" href="/resume/">View CV ↗</a><button type="button" class="ol-small-link" data-ol-sera>Ask Sera</button></div></div></div></div></section>'
+
+    # On-page mobile gallery. The screenshots are original owner-supplied assets.
+    screen_collections = json.loads((src / 'data/mobile-screen-stacks.json').read_text())['collections']
+    # Present AppTech client/admin together in one tab, without mixing projects.
+    project_order = [
+        ('apptech', 'AppTech', ['apptech-client', 'apptech-admin']),
+        ('consumer-connect', 'Consumer Connect', ['consumer-connect']),
+        ('omni-help', 'Omni Help', ['omni-help']),
+        ('morganics', 'Morganics', ['morganics']),
+    ]
+    by_screen_id = {collection['id']: collection for collection in screen_collections}
+    mobile_tabs, mobile_panels = [], []
+    for project_index, (project_id, project_title, source_ids) in enumerate(project_order):
+        screen_items = [(slide, source_id) for source_id in source_ids
+                        if source_id in by_screen_id
+                        for slide in by_screen_id[source_id]['slides']]
+        selected_state = 'true' if project_index == 0 else 'false'
+        mobile_tabs.append(
+            '<button type="button" class="mg-tab" role="tab" aria-selected="' + selected_state
+            + '" aria-controls="mg-panel-' + project_id + '" id="mg-tab-' + project_id
+            + '" data-mg-tab="' + project_id + '">' + esc(project_title) + '</button>'
+        )
+        phones = []
+        for screen_index, (slide, source_id) in enumerate(screen_items):
+            source = '/assets/expertise/' + slide['src']
+            phones.append(
+                '<li class="mg-phone" aria-label="' + esc(project_title + ': ' + slide['title']) + '">'
+                '<div class="mg-device"><div class="mg-viewport"><img src="' + esc(source) + '" '
+                'alt="' + esc(slide['alt']) + '" loading="lazy" decoding="async"></div>'
+                '<span class="mg-island" aria-hidden="true"></span></div>'
+                '<span class="mg-phone-caption">' + esc(slide['title']) + '</span></li>'
+            )
+        mobile_panels.append(
+            '<div class="mg-panel" role="tabpanel" id="mg-panel-' + project_id
+            + '" aria-labelledby="mg-tab-' + project_id + '" data-mg-panel="' + project_id
+            + '"' + ('' if project_index == 0 else ' hidden') + '>'
+            '<div class="mg-marquee" data-mg-marquee><div class="mg-track" data-mg-track>'
+            '<ol class="mg-phones" data-mg-original>' + ''.join(phones) + '</ol>'
+            '</div></div></div>'
+        )
+    mobile_gallery = (
+        '<section class="mg-section" id="xp-mobile-gallery" aria-labelledby="mg-heading">'
+        '<div class="mg-content"><h2 id="mg-heading">UI/UX design Selected work</h2>'
+        '<p>Explore UI/UX case studies for SaaS platforms, MVPs and mobile apps. '
+        'Select a project to explore its original interface screens.</p>'
+        '<div class="mg-tabs" role="tablist" aria-label="Select a UI/UX project">'
+        + ''.join(mobile_tabs) + '</div>'
+        '<div class="mg-card">' + ''.join(mobile_panels) + '</div>'
+        '<p class="mg-note">Original project screenshots. Hover or focus to pause motion.</p>'
+        '</div></section>'
+    )
+
     gallery_cards = ''.join('<button type="button" class="zoom ol-gallery-art" data-full="' + esc(c['src']) + '" data-caption="' + esc(c['title']) + '">' + image(c['src'], c['title'], c['width'], c['height'], 'loading="lazy"') + '<span>' + esc(c['title']) + '</span></button>' for c in cards)
     gallery = '<dialog class="ol-gallery" id="ol-gallery" aria-labelledby="ol-gallery-heading"><div class="ol-gallery-head"><h2 id="ol-gallery-heading">Selected work.</h2><button type="button" data-ol-gallery-close>Close ×</button></div><p class="ol-gallery-intro">Nineteen supplied presentations and the complete mobile interface collection.</p><div class="ol-gallery-grid">' + gallery_cards + '</div>' + mobile_stack + '</dialog><dialog class="lightbox" aria-label="Project presentation"><button type="button" class="close" aria-label="Close project presentation">Close ×</button><img alt=""><p></p></dialog>'
-    return '<main class="onlines-page product-portfolio" data-discipline="product-development" id="top">' + hero_section + intro + services + feature + product_section + work + case_section + contact + gallery + '</main>'
+    return '<main class="onlines-page product-portfolio" data-discipline="product-development" id="top">' + hero_section + intro + services + feature + product_section + work + mobile_gallery + contact + gallery + '</main>'
