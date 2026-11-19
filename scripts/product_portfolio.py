@@ -101,23 +101,35 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
             + '" aria-controls="mg-panel-' + project_id + '" id="mg-tab-' + project_id
             + '" data-mg-tab="' + project_id + '">' + esc(project_title) + '</button>'
         )
-        phones = []
-        for screen_index, (slide, source_id) in enumerate(screen_items):
-            source = '/assets/expertise/' + slide['src']
-            phones.append(
-                '<li class="mg-phone" aria-label="' + esc(project_title + ': ' + slide['title']) + '">'
-                '<div class="mg-device"><div class="mg-viewport"><img src="' + esc(source) + '" '
-                'alt="' + esc(slide['alt']) + '" loading="lazy" decoding="async"></div>'
-                '<span class="mg-island" aria-hidden="true"></span></div>'
-                '<span class="mg-phone-caption">' + esc(slide['title']) + '</span></li>'
-            )
+        # Four independent vertical columns. Repeat a short project collection
+        # across columns so every column has a seamless multi-phone sequence.
+        columns = []
+        if screen_items:
+            for column_index in range(4):
+                phones = []
+                count = max(3, (len(screen_items) + 3) // 4)
+                for offset in range(count):
+                    slide, source_id = screen_items[(column_index + offset * 4) % len(screen_items)]
+                    source = '/assets/expertise/' + slide['src']
+                    phones.append(
+                        '<li class="mg-phone" aria-label="' + esc(project_title + ': ' + slide['title']) + '">'
+                        '<div class="mg-device"><div class="mg-viewport"><img src="' + esc(source) + '" '
+                        'alt="' + esc(slide['alt']) + '" loading="lazy" decoding="async"></div>'
+                        '<span class="mg-island" aria-hidden="true"></span></div>'
+                        '<span class="mg-phone-caption">' + esc(slide['title']) + '</span></li>'
+                    )
+                direction = 'up' if column_index % 2 == 0 else 'down'
+                columns.append(
+                    '<div class="mg-column" data-mg-column data-direction="' + direction + '">'
+                    '<div class="mg-track" data-mg-track>'
+                    '<ol class="mg-phones" data-mg-original>' + ''.join(phones) + '</ol>'
+                    '</div></div>'
+                )
         mobile_panels.append(
             '<div class="mg-panel" role="tabpanel" id="mg-panel-' + project_id
             + '" aria-labelledby="mg-tab-' + project_id + '" data-mg-panel="' + project_id
             + '"' + ('' if project_index == 0 else ' hidden') + '>'
-            '<div class="mg-marquee" data-mg-marquee><div class="mg-track" data-mg-track>'
-            '<ol class="mg-phones" data-mg-original>' + ''.join(phones) + '</ol>'
-            '</div></div></div>'
+            '<div class="mg-marquee" data-mg-marquee><div class="mg-columns">' + ''.join(columns) + '</div></div></div>'
         )
     mobile_gallery = (
         '<section class="mg-section" id="xp-mobile-gallery" aria-labelledby="mg-heading">'
@@ -127,7 +139,7 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
         '<div class="mg-tabs" role="tablist" aria-label="Select a UI/UX project">'
         + ''.join(mobile_tabs) + '</div>'
         '<div class="mg-card">' + ''.join(mobile_panels) + '</div>'
-        '<p class="mg-note">Original project screenshots. Hover or focus to pause motion.</p>'
+        '<p class="mg-note">Original project screenshots with continuous vertical motion.</p>'
         '</div></section>'
     )
 
