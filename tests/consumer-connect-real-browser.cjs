@@ -35,10 +35,10 @@ const server = http.createServer((req,res)=>{
 async function countValue(phone) {
   return (await phone.locator('[data-phone-count-text]').textContent()).trim();
 }
-async function advanceAndCheck(phone, control) {
+async function advanceAndCheck(page, phone, control) {
   const before=await countValue(phone);
   await phone.locator(control).click();
-  await phone.page().waitForFunction(({old})=>{
+  await page.waitForFunction(({old})=>{
     const node=document.querySelector('#ol-gallery [data-phone-count-text]');
     return node && node.textContent.trim()!==old;
   },{old:before});
@@ -116,8 +116,8 @@ async function advanceAndCheck(phone, control) {
         await phone.locator('[data-phone-next]').click();
         assert.equal((await phone.getByRole('tab',{name:'Consumer Connect',exact:true}).getAttribute('aria-selected')),'true');
         assert.equal(await countValue(phone),'01 / 09');
-        await advanceAndCheck(phone,'[data-phone-next]');
-        await advanceAndCheck(phone,'[data-phone-prev]');
+        await advanceAndCheck(page,phone,'[data-phone-next]');
+        await advanceAndCheck(page,phone,'[data-phone-prev]');
 
         // Wheel navigation and native pointer dragging on desktop/tablet.
         if(!device.touch){
