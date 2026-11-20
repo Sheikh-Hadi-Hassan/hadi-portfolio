@@ -16,6 +16,7 @@ const devices = [
   { name: 'mobile-small', width: 360, height: 780, touch: true },
   { name: 'mobile', width: 390, height: 844, touch: true },
   { name: 'tablet', width: 768, height: 1024, touch: false },
+  { name: 'tablet-landscape', width: 1024, height: 768, touch: false },
   { name: 'desktop', width: 1440, height: 900, touch: false },
 ];
 const mime = {'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json',
@@ -151,7 +152,7 @@ async function advanceAndCheck(page, phone, control) {
           });
           assert.notEqual(await countValue(phone),old,'Touch swipe handler did not navigate');
         }
-        if(device.name==='desktop'){
+        if(device.name==='desktop'||device.name==='mobile'){
           await page.locator('.ol-gallery-art').first().scrollIntoViewIfNeeded();
           await page.locator('.ol-gallery-art').first().click();
           assert(await page.locator('.lightbox').evaluate(e=>e.open),'Expandable screenshot lightbox failed');
@@ -161,7 +162,7 @@ async function advanceAndCheck(page, phone, control) {
         assert.deepEqual(errors,[],'Uncaught browser errors');
         result.status='PASS';
         result.visuals=visuals;
-        result.interactions='navigation, wraparound, '+(device.touch?'touch pointer swipe':'mouse wheel and drag')+(device.name==='desktop'?', nested expansion':'');
+        result.interactions='navigation, wraparound, '+(device.touch?'touch pointer swipe':'mouse wheel and drag')+(['desktop','mobile'].includes(device.name)?', nested expansion':'');
       }catch(e){
         result.error=e.stack||String(e);
         await page.screenshot({path:path.join(evidence,'consumer-connect-FAIL-'+name+'-'+device.name+'.png')}).catch(()=>{});
