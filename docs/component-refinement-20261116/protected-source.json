@@ -1,0 +1,8 @@
+{
+  "src/pages/home.html": true,
+  "src/styles/hero.css": true,
+  "design/hero-lock.json": true,
+  "src/data/mobile-screen-stacks.json": true,
+  "src/site.js": true,
+  "src/styles/expertise.css": true
+}

@@ -1,0 +1,66 @@
+/* Product-only flight scene. No homepage, gallery or shared hero selectors. */
+.expertise-page[data-discipline="product-development"]{padding-top:0}
+.product-flight{position:relative;width:100vw;margin-inline:calc((100% - 100vw)/2);height:300svh;background:#090909;isolation:isolate}
+.product-flight-stage{position:sticky;top:0;height:100svh;min-height:760px;overflow:hidden;isolation:isolate}
+.product-flight-background,.product-flight-background img,.product-flight-shade{position:absolute;inset:0;width:100%;height:100%}
+.product-flight-background img{object-fit:cover;object-position:60% 52%;max-width:none}
+.product-flight-shade{background:linear-gradient(90deg,rgba(5,5,7,.72),rgba(5,5,7,.22) 65%,rgba(5,5,7,.15)),linear-gradient(0deg,#08090b 0%,transparent 25%,rgba(0,0,0,.32) 100%);pointer-events:none}
+.product-flight-copy{position:absolute;z-index:20;top:7%;left:5%;width:min(690px,60%);pointer-events:none}
+.product-flight-copy a{pointer-events:auto}
+.product-flight-copy .expertise-back{margin:0 0 32px;color:#e8e4e0;font-family:"IBM Plex Mono",monospace;font-size:11px}
+.product-flight-copy .expertise-kicker{font-family:"IBM Plex Mono",monospace;color:var(--xp-accent)}
+.expertise-page .product-flight h1{font-family:"Nebulica","Instrument Sans",sans-serif;font-size:clamp(60px,6.25vw,96px);font-weight:500;line-height:.98;letter-spacing:-.065em;margin:24px 0;color:#f3efe9;text-shadow:0 2px 28px #0005}
+.product-flight h1>span{display:block;white-space:nowrap;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.product-flight h1>span>span{display:block}
+.product-flight-copy>p{color:#f3efe9;font-size:clamp(15px,1.3vw,19px);line-height:1.55;max-width:440px;margin:20px 0}
+.product-flight .xp-hero-actions{margin-top:24px}
+.product-flight .xp-button-outline{background:#0a0a0aba;border-color:#aaaaaa80}
+.product-flight-cards{position:absolute;inset:0;perspective:1200px;pointer-events:none;z-index:10}
+.product-flight-card{position:absolute;left:50%;top:50%;--flight-height:clamp(80px,8vw,116px);width:calc(var(--flight-height)*var(--flight-aspect,.46));height:var(--flight-height);color:#f3efe9;text-decoration:none;pointer-events:auto;transform:translate(-50%,-50%);will-change:transform;outline-offset:7px}
+.product-flight-flip{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.product-flight-front,.product-flight-back{position:absolute;inset:0;display:flex;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:7px;overflow:hidden;background:#101315;box-shadow:0 12px 28px #0007}
+.product-flight-front img{width:100%;height:100%;object-fit:contain;display:block}
+.product-flight-back{transform:rotateY(180deg);flex-direction:column;justify-content:space-between;padding:10px;font-family:"IBM Plex Mono",monospace;font-size:10px;line-height:1.3;background:#20262a;color:#fff}
+.product-flight-back>span+span{font-size:9px;color:var(--xp-accent)}
+.product-flight-card:focus-visible .product-flight-flip{transform:rotateY(180deg)}
+.product-flight-caption{position:absolute;z-index:25;bottom:110px;left:5%;right:5%;display:flex;justify-content:space-between;gap:25px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;color:#d2cdd2;pointer-events:none}
+.product-flight.is-ready h1>span>span{animation:product-flight-heading 1.2s cubic-bezier(.22,1,.36,1) both}
+.product-flight.is-ready h1>span:nth-child(2)>span{animation-delay:.16s}
+@keyframes product-flight-heading{from{transform:translateY(112%)}to{transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine){.product-flight-card:hover .product-flight-flip{transform:rotateY(180deg)}}
+@media(min-width:681px) and (max-width:1000px){.product-flight-copy{top:9%;width:80%}.expertise-page .product-flight h1{font-size:clamp(65px,9vw,90px)}.product-flight-copy>p{max-width:420px}.product-flight-card{--flight-height:80px}.product-flight-background img{object-position:62% center}}
+@media(max-width:680px){
+ .product-flight{height:260svh}
+ .product-flight-stage{min-height:740px}
+ .product-flight-background img{object-position:60% center}
+ .product-flight-shade{background:linear-gradient(0deg,#08090b 0%,#08090b20 35%,#08090ba8 70%,#08090be0 100%)}
+ .product-flight-copy{top:6%;left:6%;width:88%}
+ .product-flight-copy .expertise-back{margin-bottom:26px;font-size:10px}
+ .product-flight-copy .expertise-kicker{font-size:9px}
+ .expertise-page .product-flight h1{font-size:clamp(45px,12.6vw,70px);line-height:1.02;margin:20px 0}
+ .product-flight-copy>p{font-size:14px;max-width:320px;line-height:1.5}
+ .product-flight .xp-hero-actions{gap:8px;margin-top:20px}
+ .product-flight .xp-button{font-size:10px;padding:12px 13px;min-height:44px}
+ .product-flight-card{--flight-height:60px}
+ .product-flight-card:nth-child(n+7){display:none}
+ .product-flight-caption{bottom:110px;left:6%;right:6%;font-size:8px;letter-spacing:.03em}
+ .product-flight-caption>span:first-child{max-width:110px}
+}
+/* Static by default: usable if JS fails and complete reduced-motion alternative. */
+.product-flight:not(.is-ready){height:auto}
+.product-flight:not(.is-ready) .product-flight-stage{position:relative;height:100svh}
+.product-flight:not(.is-ready) .product-flight-cards{display:flex;align-items:end;justify-content:end;gap:12px;padding:0 6% 180px}
+.product-flight:not(.is-ready) .product-flight-card{position:relative;left:auto;top:auto;transform:none;flex-shrink:0}
+.product-flight:not(.is-ready) .product-flight-card:nth-child(n+4){display:none}
+@media(prefers-reduced-motion:reduce){
+ .product-flight,.product-flight.is-ready{height:auto}
+ .product-flight-stage{position:relative;height:auto;min-height:940px}
+ .product-flight-copy{position:relative;top:auto;left:auto;width:88%;padding-top:55px;margin:0 auto}
+ .product-flight.is-ready .product-flight-cards,.product-flight .product-flight-cards{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding:35px 6% 165px;perspective:none}
+ .product-flight .product-flight-card{position:relative;left:auto;top:auto;transform:none!important;filter:none!important;--flight-height:80px;will-change:auto}
+ .product-flight .product-flight-card:nth-child(n+7){display:none}
+ .product-flight .product-flight-flip{transition:none;transform:none!important}
+ .product-flight h1>span>span{animation:none!important}
+ .product-flight-caption{bottom:100px}
+}
+@media(prefers-reduced-motion:reduce){.product-flight:not(.is-ready) .product-flight-card:nth-child(-n+6){display:block}}

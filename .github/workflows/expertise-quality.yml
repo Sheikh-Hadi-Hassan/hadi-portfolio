@@ -1,0 +1,104 @@
+name: Expertise Portfolio Quality
+on:
+  pull_request:
+    paths:
+      - 'scripts/optimize-images.py'
+      - 'public/assets/expertise/**'
+      - 'scripts/product_portfolio.py'
+      - 'src/styles/product-portfolio.css'
+      - 'scripts/product_flight.py'
+      - 'src/product-flight.js'
+      - 'src/product-onlines.js'
+      - 'src/styles/product-onlines.css'
+      - 'tests/product-onlines-browser.cjs'
+      - 'tests/product-onlines-visual.cjs'
+      - 'src/product-components.js'
+      - 'src/styles/product-components.css'
+      - 'tests/product-components-browser.cjs'
+      - 'src/styles/product-flight.css'
+      - 'src/data/product-flight.json'
+      - 'tests/product-flight-browser.cjs'
+      - 'scripts/expertise.py'
+      - 'scripts/build.py'
+      - 'src/data/expertise.json'
+      - 'src/data/seo-pages.json'
+      - 'src/site.js'
+      - 'src/styles/expertise.css'
+      - 'src/components/navigation.html'
+      - 'tests/expertise.py'
+      - 'tests/expertise-browser.cjs'
+      - 'tests/phone_stack.py'
+      - 'tests/phone-stack-browser.cjs'
+      - 'src/data/mobile-screen-stacks.json'
+      - '.github/workflows/expertise-quality.yml'
+  push:
+    branches:
+      - feature/expertise-portfolios-20261113
+  workflow_dispatch:
+
+concurrency:
+  group: expertise-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  expertise-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip pillow
+          npm ci --no-audit --no-fund
+      - name: Validate project taxonomy and static generator syntax
+        run: |
+          python -m py_compile scripts/build.py scripts/expertise.py scripts/product_flight.py scripts/product_portfolio.py scripts/prepare-next.py tests/expertise.py tests/phone_stack.py
+          node --check src/site.js
+          node --check src/product-flight.js
+          node --check src/product-components.js
+          node --check src/product-onlines.js
+          python -m unittest discover -s tests -p expertise.py
+          python -m unittest discover -s tests -p phone_stack.py
+      - name: Generate and build portfolio
+        run: npm run build
+      - name: Run expertise and SEO validations
+        run: |
+          python -m unittest discover -s tests -p expertise.py
+          python tests/seo.py
+          python tests/production.py
+      - name: Install Chromium and WebKit for responsive QA
+        run: npx playwright install --with-deps chromium webkit
+      - name: Test mobile, iPad and desktop in Chromium
+        run: |
+          node tests/expertise-browser.cjs
+          node tests/phone-stack-browser.cjs
+          node tests/consumer-connect-real-browser.cjs
+          node tests/product-onlines-browser.cjs
+          node tests/product-onlines-visual.cjs
+      - name: Test Safari-style layouts in WebKit
+        run: |
+          EXPERTISE_BROWSER_ENGINE=webkit node tests/expertise-browser.cjs
+          EXPERTISE_BROWSER_ENGINE=webkit node tests/phone-stack-browser.cjs
+          EXPERTISE_BROWSER_ENGINE=webkit node tests/consumer-connect-real-browser.cjs
+          ONLINES_ENGINE=webkit node tests/product-onlines-browser.cjs
+      - name: Upload review screenshots and test report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: expertise-portfolio-review
+          path: |
+            artifacts/expertise-qa/
+            artifacts/product-flight/
+            docs/product-brand-redesign-20261116/browser-*.json
+            docs/component-refinement-20261116/components-*.json
+            docs/component-refinement-20261116/screenshots/
+            docs/onlines-fidelity-20261117/browser-*.json
+            docs/onlines-fidelity-20261117/screenshots/local-*.png
+          if-no-files-found: ignore

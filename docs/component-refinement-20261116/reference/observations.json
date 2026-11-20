@@ -1,0 +1,231 @@
+[
+  {
+    "name": "phone",
+    "url": "https://phonestackcarousel.framer.website/",
+    "text": "Create a free website with Framer, the website builder loved by startups, designers and agencies.",
+    "height": 900,
+    "images": [
+      {
+        "w": 288,
+        "h": 590,
+        "x": 720,
+        "y": 450
+      },
+      {
+        "w": 288,
+        "h": 590,
+        "x": 854,
+        "y": 178
+      },
+      {
+        "w": 288,
+        "h": 590,
+        "x": 1319,
+        "y": 226
+      },
+      {
+        "w": 288,
+        "h": 590,
+        "x": 720,
+        "y": 450
+      },
+      {
+        "w": 288,
+        "h": 590,
+        "x": 111,
+        "y": 202
+      },
+      {
+        "w": 324,
+        "h": 702,
+        "x": 558,
+        "y": 99
+      },
+      {
+        "w": 324,
+        "h": 702,
+        "x": 558,
+        "y": 99
+      },
+      {
+        "w": 324,
+        "h": 702,
+        "x": 558,
+        "y": 99
+      },
+      {
+        "w": 324,
+        "h": 702,
+        "x": 558,
+        "y": 99
+      },
+      {
+        "w": 324,
+        "h": 702,
+        "x": 558,
+        "y": 99
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Create a free website with Framer, the website builder loved by startups, designers and agencies.",
+        "label": null
+      }
+    ]
+  },
+  {
+    "name": "flight",
+    "url": "https://flyingcardshero.framer.website/",
+    "text": "Ideas\nin flight\nWatch them\ncome (\nalive\nalive\nalive\n)\n\nEvery image you drop in takes flight orbiting, gathering and landing\nin one smooth story.\n\nCreate a free website with Framer, the website builder loved by startups, designers and agencies.",
+    "height": 2700,
+    "images": [
+      {
+        "w": 130,
+        "h": 173,
+        "x": 877,
+        "y": 358
+      },
+      {
+        "w": 130,
+        "h": 173,
+        "x": 884,
+        "y": 356
+      },
+      {
+        "w": 130,
+        "h": 173,
+        "x": 890,
+        "y": 355
+      },
+      {
+        "w": 130,
+        "h": 173,
+        "x": 897,
+        "y": 353
+      },
+      {
+        "w": 150,
+        "h": 150,
+        "x": 548,
+        "y": 553
+      },
+      {
+        "w": 150,
+        "h": 150,
+        "x": 545,
+        "y": 557
+      },
+      {
+        "w": 150,
+        "h": 150,
+        "x": 542,
+        "y": 560
+      },
+      {
+        "w": 150,
+        "h": 150,
+        "x": 538,
+        "y": 564
+      },
+      {
+        "w": 168,
+        "h": 134,
+        "x": 641,
+        "y": 135
+      },
+      {
+        "w": 168,
+        "h": 134,
+        "x": 641,
+        "y": 133
+      },
+      {
+        "w": 168,
+        "h": 134,
+        "x": 641,
+        "y": 132
+      },
+      {
+        "w": 168,
+        "h": 134,
+        "x": 640,
+        "y": 129
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Create a free website with Framer, the website builder loved by startups, designers and agencies.",
+        "label": null
+      }
+    ]
+  },
+  {
+    "name": "showcase",
+    "url": "https://showcasecardpreview.framer.website/",
+    "text": "Adella AI\n\nProduct Design\n\nCreate a free website with Framer, the website builder loved by startups, designers and agencies.",
+    "height": 900,
+    "images": [
+      {
+        "w": 370,
+        "h": 260,
+        "x": 535,
+        "y": 301
+      }
+    ],
+    "buttons": [
+      {
+        "text": "",
+        "label": null
+      },
+      {
+        "text": "Create a free website with Framer, the website builder loved by startups, designers and agencies.",
+        "label": null
+      }
+    ]
+  },
+  {
+    "name": "lychee",
+    "url": "https://bold-lychee-277407.framer.app/",
+    "text": "Create a free website with Framer, the website builder loved by startups, designers and agencies.",
+    "height": 900,
+    "images": [],
+    "buttons": [
+      {
+        "text": "",
+        "label": "Open Nav in motion"
+      },
+      {
+        "text": "",
+        "label": "Open Lucent Drift"
+      },
+      {
+        "text": "",
+        "label": "Open Velvet Static"
+      },
+      {
+        "text": "",
+        "label": "Open Soft Collision"
+      },
+      {
+        "text": "",
+        "label": "Open Phantom Layers"
+      },
+      {
+        "text": "",
+        "label": "Open Liquid Echo"
+      },
+      {
+        "text": "",
+        "label": "Open Blue Mirage"
+      },
+      {
+        "text": "",
+        "label": "Open Neon Bloom"
+      },
+      {
+        "text": "Create a free website with Framer, the website builder loved by startups, designers and agencies.",
+        "label": null
+      }
+    ]
+  }
+]

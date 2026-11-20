@@ -1,0 +1,33 @@
+{
+  "chromium": {
+    "status": "PASS",
+    "scenarios": 10
+  },
+  "other-expertise-chromium": {
+    "status": "PASS",
+    "scenarios": 10
+  },
+  "webkit": {
+    "status": "PASS",
+    "scenarios": 10
+  },
+  "other-expertise-webkit": {
+    "status": "PASS",
+    "scenarios": 10
+  },
+  "fullGuardedBuildReceipt": "PASS",
+  "next": "16.4.6",
+  "dependencyAudit": "0 vulnerabilities reported",
+  "npmSuite": "23 scripts passed",
+  "expertiseSourceTests": 4,
+  "phoneSourceTests": 7,
+  "seoPages": 25,
+  "exportRoutes": 27,
+  "responsiveImageElements": 569,
+  "accessibility": "4 WCAG-tagged Axe scans, 0 violations; incomplete checks retained",
+  "seraEntry": "Desktop and mobile interface entry passed; live conversation/provider writes not exercised",
+  "booking": "20 interface/event entry scenarios passed; live provider writes not exercised",
+  "protectedSources": "Six homepage/hero/phone files byte-identical",
+  "preview": "http://127.0.0.1:3000/expertise/product-development/",
+  "externalProducts": "Exact owner URLs retained; TMS previously returned 404; authenticated workflows unverified"
+}

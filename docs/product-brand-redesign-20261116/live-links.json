@@ -1,0 +1,34 @@
+[
+  {
+    "id": "apptech",
+    "url": "https://app-tech-six.vercel.app/app",
+    "status": 200,
+    "finalUrl": "https://app-tech-six.vercel.app/login",
+    "title": "AppTech",
+    "text": "contrast\n\nAPPTECH\n\nSign in\n\nUse your work email. Registration is disabled.\n\nEmail\nPassword\nvisibility\nSign in\n\nForgot password?"
+  },
+  {
+    "id": "crent",
+    "url": "https://crent.vercel.app/",
+    "status": 200,
+    "finalUrl": "https://crent.vercel.app/",
+    "title": "Crent",
+    "text": "MAIN MENU\nDashboard\nCar Unit\nBooking\nReminder\nInbox\nCalendar\nExpense\nPayment\nCustomer\nPREFERENCES\nSettings\nHelp & Center\nLog Out\n78.423\nTotal Revenue\n15.2%\n32.567\nNew Booking\n5.2%\n41.411\nRented Cars\n21.2%\n28.623\nAvailable Cars\n7.2%\nBooking Overview\nJan 2025 - Jun 2025\nJan\nFeb\nMar\nApr\nMay\nJun\n$0\n$50k\n$100k\n$150k\n$200k\nCar Availability\nCar Number\nJan"
+  },
+  {
+    "id": "tms",
+    "url": "https://tms-theta-eight.vercel.app/login",
+    "status": 404,
+    "finalUrl": "https://tms-theta-eight.vercel.app/login",
+    "title": "404: NOT_FOUND",
+    "text": "This page doesn’t exist\n\nIt may have been moved, removed, or never existed.\n\n404 NOT_FOUND\n\nbom1::bxbq6-1794826302194-86ce56d23d0c\n\nVIEW DOCUMENTATION\nCOPY DEBUG PROMPT"
+  },
+  {
+    "id": "flow",
+    "url": "https://flow.intellignce.net/",
+    "status": 200,
+    "finalUrl": "https://flow.intellignce.net/",
+    "title": "Flow by Intellignce — AI-first Business Operating System Deck 2026",
+    "text": "INTELLIGNCE\nHUMAN + ARTIFICIAL INTELLIGENCE\nINVESTMENT OPPORTUNITY · POST-MVP EDITION\nOne business.\nOne language.\nOne intelligence layer.\n\nFLOW creates a continuously updated Business Twin, then combines BLM reasoning, deterministic business logic, evidence and governed execution to help management understand what is happening — and what to do next"
+  }
+]

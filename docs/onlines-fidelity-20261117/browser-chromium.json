@@ -1,0 +1,183 @@
+[
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "reduced": false,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 3015,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "drag": "PASS",
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "reduced": true,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 859.1875,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 1280,
+    "reduced": false,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 3015,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 1280,
+    "reduced": true,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 859.1875,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 768,
+    "reduced": false,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 2250,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 768,
+    "reduced": true,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 451.59375,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 390,
+    "reduced": false,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 2250,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 390,
+    "reduced": true,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 576.1875,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 360,
+    "reduced": false,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 2250,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 360,
+    "reduced": true,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 613.1875,
+      "links": [
+        "/archive/#archive-record-care-by-callingdr",
+        "/archive/#archive-record-consumer-connect",
+        "/archive/#archive-record-omnihelp"
+      ]
+    },
+    "gallery": "PASS: artwork modal, nested lightbox, preserved phone next/collections and close",
+    "booking": "PASS: owner booking event and existing interface entry; no provider write",
+    "pageErrors": []
+  }
+]

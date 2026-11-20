@@ -1,0 +1,74 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "reduced": false,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 3015,
+      "font": "Nebulica, \"Instrument Sans\", sans-serif",
+      "cursors": 7,
+      "panels": 6,
+      "orbit": 6
+    },
+    "referenceFanDimensions": true,
+    "fullPresentation": true,
+    "marqueePause": true
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "reduced": true,
+    "status": "PASS",
+    "geometry": {
+      "hero": 800,
+      "quote": 859,
+      "font": "Nebulica, \"Instrument Sans\", sans-serif",
+      "cursors": 7,
+      "panels": 6,
+      "orbit": 6
+    },
+    "referenceFanDimensions": true,
+    "fullPresentation": true,
+    "marqueePause": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "reduced": false,
+    "status": "PASS",
+    "geometry": {
+      "hero": 744,
+      "quote": 2110,
+      "font": "Nebulica, \"Instrument Sans\", sans-serif",
+      "cursors": 7,
+      "panels": 6,
+      "orbit": 6
+    },
+    "referenceFanDimensions": true,
+    "fullPresentation": true,
+    "marqueePause": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "reduced": true,
+    "status": "PASS",
+    "geometry": {
+      "hero": 744,
+      "quote": 576,
+      "font": "Nebulica, \"Instrument Sans\", sans-serif",
+      "cursors": 7,
+      "panels": 6,
+      "orbit": 6
+    },
+    "referenceFanDimensions": true,
+    "fullPresentation": true,
+    "marqueePause": true
+  },
+  {
+    "introHold": "PASS",
+    "release": "PASS"
+  }
+]

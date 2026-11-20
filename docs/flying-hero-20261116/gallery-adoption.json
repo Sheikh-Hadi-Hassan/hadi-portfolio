@@ -1,0 +1,12 @@
+{
+  "adoptedRemoteHead": "c1229360c26fc1c798c584393d9195142f66eaa1",
+  "method": "fast-forward; existing four remote commits retained without edits",
+  "protectedAfterAdoption": {
+    "src/pages/home.html": "3d3a8ce31fe894120cbd355e275842cb2ade0947052fae99ad5fdeb5e24a3756",
+    "src/styles/hero.css": "f993b65cbcfb221e64a3e2c1babc9b92cb56205912595f636a1e1a2cdf661b26",
+    "design/hero-lock.json": "de02dcb356c0a999ac43d9510a636b71c7115a01bbdeabce72c8ec04b90bd9f8",
+    "src/data/mobile-screen-stacks.json": "c7d98e987d79dc54fce4387b4d5473464212eb4e323e19eab741450af54eef50",
+    "src/site.js": "71c062d5d24aaefea75e63491537093a7effd58472c40b03ee88e47f31aeaaf1",
+    "src/styles/expertise.css": "08adfc2a30b03413f1bc4ccdfc62616b1fe92314dd80d426d119f00d9b33e765"
+  }
+}

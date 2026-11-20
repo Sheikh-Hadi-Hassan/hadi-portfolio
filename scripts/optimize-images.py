@@ -56,6 +56,7 @@ def variants_for(src):
   cache[src]=(variants,w,h)
  return cache[src]
 def display_size(context):
+ if 'product-flight-front' in context:return '(max-width: 680px) 110px, 210px'
  if 'folder-art' in context:return '(max-width: 600px) 90vw, (max-width: 900px) 44vw, 400px'
  if 'project-thumb' in context:return '58px'
  if 'morganics-grid-cover' in context:return '(max-width: 450px) 90vw, 404px'
@@ -91,7 +92,11 @@ for page in sorted((ROOT/'dist').rglob('index.html')):
  canonical=html.unescape(re.search(r'<link rel="canonical" href="([^"]+)"',text).group(1))
  unique={x['contentUrl']:x for x in records}
  def enrich(m):
-  schema=json.loads(m.group(1));graph=schema['@graph'];graph.extend(unique.values())
+  schema=json.loads(m.group(1))
+  # The page may include standalone FAQPage, VideoObject, or other valid JSON-LD.
+  # Enrich only the canonical @graph; do not assume every script uses that shape.
+  if not isinstance(schema,dict) or not isinstance(schema.get('@graph'),list):return m.group(0)
+  graph=schema['@graph'];graph.extend(unique.values())
   for node in graph:
    if node.get('@type')=='CreativeWork':node['image']=[{'@id':x['@id']} for x in unique.values()]
   return '<script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</',r'<\/')+'</script>'

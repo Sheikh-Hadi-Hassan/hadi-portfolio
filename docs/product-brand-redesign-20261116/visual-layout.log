@@ -1,0 +1,22 @@
+1440 {
+  overflow: 0,
+  sections: [
+    'product-flight',
+    'xp-products',
+    'xp-work',
+    'xp-mobile-showcase',
+    'xp-approach',
+    'xp-contact'
+  ]
+}
+390 {
+  overflow: 0,
+  sections: [
+    'product-flight',
+    'xp-products',
+    'xp-work',
+    'xp-mobile-showcase',
+    'xp-approach',
+    'xp-contact'
+  ]
+}

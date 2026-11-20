@@ -1,0 +1,60 @@
+{
+  "verifiedAt": "2026-11-16T16:10:36.271073+05:00",
+  "parentCommit": "ecc9469cf17ede19639fdc394e0b92710fe307fc",
+  "branch": "feature/expertise-portfolios-20261113",
+  "build": "PASS: full guarded acceptance build and current source/export receipt",
+  "npmTest": "PASS: 23 scripts; TMPDIR=/private/tmp on macOS",
+  "sourceTests": {
+    "expertise": 4,
+    "phone": 7,
+    "status": "PASS"
+  },
+  "seo": "PASS: 25 canonical pages",
+  "exportAudit": "PASS: 27 routes, local assets/links, IDs, image-viewer sources and hydration",
+  "browsers": {
+    "chromium": {
+      "productScenarios": 10,
+      "passed": 10,
+      "heroAxeViolations": 0
+    },
+    "webkit": {
+      "productScenarios": 10,
+      "passed": 10,
+      "heroAxeViolations": 0
+    }
+  },
+  "otherExpertisePages": {
+    "chromium": 10,
+    "webkit": 10,
+    "status": "PASS"
+  },
+  "actualExportBrowserTotal": 40,
+  "fullPageAxeViewports": [
+    1440,
+    390
+  ],
+  "fullPageAxeViolations": 0,
+  "fullPageAxeIncompleteRules": [
+    "aria-hidden-focus",
+    "aria-prohibited-attr",
+    "color-contrast"
+  ],
+  "presentationImages": 19,
+  "curatedWorkTiles": 9,
+  "flagships": [
+    "TMS",
+    "AppTech",
+    "Crent",
+    "Flow"
+  ],
+  "sections": 6,
+  "protectedSourcesMatch": true,
+  "tmsUrlOwnerConfirmed": true,
+  "tmsReachability": "HTTP 404; exact owner-confirmed URL retained",
+  "preview": "http://127.0.0.1:3000/expertise/product-development/",
+  "previewMode": "verified static export; server remains running",
+  "deployed": false,
+  "mainModified": false,
+  "stagedSecretScan": "PASS: zero findings in staged changes",
+  "receiptSha256": "8026452f21ca27df4e9ba81fab7975887b7a46968498544caa93dad5f82bdb98"
+}

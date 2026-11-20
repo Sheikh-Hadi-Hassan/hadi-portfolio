@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "description": "Editorial tags point to existing project case studies or published archive references. No duplicated case-study copy.",
+  "pages": {
+    "creative-direction": {
+      "title": "Creative Direction & Brand Design",
+      "eyebrow": "01 / STRATEGY, IDENTITY & CAMPAIGNS",
+      "statement": "Distinctive brands are built through clear thinking and consistent creative decisions.",
+      "intro": "I connect positioning, visual identity and art direction so a brand can communicate with one recognizable voice across its touchpoints.",
+      "approach": "Begin with the audience and the problem, set a clear visual direction, then develop the system across the places people actually encounter it. The work is as much about decisions and consistency as it is about individual assets.",
+      "capabilities": [
+        "Brand strategy and visual identity",
+        "Art direction and campaign concepts",
+        "Packaging and brand guidelines",
+        "Creative team coordination and cross-disciplinary review"
+      ],
+      "featured": [
+        "morganics",
+        "bits-hr-link",
+        "community-campaign",
+        "intellignce"
+      ],
+      "references": [
+        "Lahore Culture",
+        "Social Media Portfolio"
+      ],
+      "editorial": "Add verified team scope, decision ownership and client-approved outcomes to deepen the leadership stories.",
+      "role": "Creative Director & Brand Design Lead",
+      "audience": "For creative leadership, brand design and campaign direction roles",
+      "aboutHeading": "Hadi as a creative leader",
+      "about": "I lead creative work from the first strategic question through visual direction and execution. My practice connects brand positioning, identities, campaigns and digital touchpoints. The work presented here focuses on the direction I shaped, the decisions behind it and the assets created with collaborators.",
+      "strengths": [
+        "Brand and campaign direction",
+        "Identity systems and art direction",
+        "Cross-disciplinary creative review"
+      ],
+      "proof": "Explore Morganics, Bits HR Link and campaign work for examples of brand identity, creative direction and visual consistency.",
+      "ctaHeading": "Hiring a creative director or brand design lead?",
+      "ctaText": "Explore the selected work and contact me about creative leadership, brand systems or campaign direction.",
+      "ctaLabel": "Discuss a creative leadership role",
+      "experience": [
+        {
+          "title": "INTELLIGNCE",
+          "role": "Founder & Product Lead",
+          "detail": "Creative direction and brand-led digital product work, connecting concept, design decisions and delivery."
+        },
+        {
+          "title": "The Creative OAK",
+          "role": "Founder",
+          "detail": "Brand identity, campaigns, website projects, client communication and coordination of creative work."
+        },
+        {
+          "title": "Tecnomics",
+          "role": "Senior Creative",
+          "detail": "Branding, marketing assets and digital product design across healthcare and business software."
+        }
+      ],
+      "previewTags": {
+        "Lahore Culture": "identity",
+        "Social Media Portfolio": "campaign"
+      },
+      "faq": [
+        {
+          "question": "What creative direction work does Hadi Hassan do?",
+          "answer": "Hadi works across brand positioning, visual identity, art direction, campaign concepts and consistent brand applications. The portfolio features Morganics, Bits HR Link and campaign work."
+        },
+        {
+          "question": "Can I see complete brand identity case studies?",
+          "answer": "Yes. The featured project links open existing case studies with selected visuals and documented creative decisions. Additional campaign references are clearly identified as previews."
+        },
+        {
+          "question": "Is Hadi available for creative leadership opportunities?",
+          "answer": "The portfolio includes direct contact options for creative director, brand design lead and campaign direction opportunities, including remote collaboration."
+        }
+      ],
+      "heroTitle": "Creative Director",
+      "heroNote": "Brand strategy, identity systems and campaign leadership"
+    },
+    "product-development": {
+      "title": "Product Design & Development",
+      "eyebrow": "02 / UX, INTERFACES & PROTOTYPES",
+      "statement": "Digital experiences should make complex tasks feel clear, usable and coherent.",
+      "intro": "I combine UX planning, interface design, visual systems and front-end implementation awareness, with the product's users and practical constraints in view.",
+      "approach": "Understand the task, map the journey and information hierarchy, then design and refine interfaces that work at the required screen sizes. I work across design and prototyping, without claiming backend or launch ownership where it is not established.",
+      "capabilities": [
+        "UX planning and information architecture",
+        "Responsive web and application interfaces",
+        "Design systems and reusable UI patterns",
+        "Interactive prototyping and front-end collaboration"
+      ],
+      "featured": [
+        "uiux-web-saas"
+      ],
+      "references": [
+        "ClearMetRx",
+        "Care by CallingDr",
+        "Virtual Pharmacy",
+        "MORENT",
+        "Dejong Rental Management",
+        "Travel Management",
+        "App Tech"
+      ],
+      "editorial": "Add individual product briefs, decision rationale, ownership, prototypes and launch status before expanding these previews into complete case studies.",
+      "role": "Senior Product Designer",
+      "audience": "For senior UX/UI, product design and digital experience roles",
+      "aboutHeading": "Hadi as a product designer",
+      "about": "I approach product design by organizing complex requirements into understandable user journeys, interface structures and reusable patterns. My background combines UX/UI design, prototyping and practical front-end knowledge. This portfolio distinguishes documented case studies from project previews so you can see what is demonstrated and what still needs a deeper breakdown.",
+      "strengths": [
+        "User flows and information architecture",
+        "Responsive interface and design-system thinking",
+        "Prototypes and front-end collaboration"
+      ],
+      "proof": "Start with the UI/UX and SaaS collection. Additional healthcare, dashboard and application examples are identified as previews until individual problems, decisions, roles and outcomes are documented.",
+      "ctaHeading": "Hiring a senior product designer?",
+      "ctaText": "Review my interface and product work, then contact me about UX, UI, design systems or digital product roles.",
+      "ctaLabel": "Discuss a product design role",
+      "experience": [
+        {
+          "title": "INTELLIGNCE",
+          "role": "Founder & Product Lead",
+          "detail": "Digital product concepts, interface design and product-led creative direction."
+        },
+        {
+          "title": "Tecnomics",
+          "role": "Senior Creative",
+          "detail": "Digital product design for healthcare and business software alongside branding and marketing."
+        },
+        {
+          "title": "The Landing Page Guy",
+          "role": "User Interface Designer",
+          "detail": "Landing-page and interface work incorporating usability considerations and testing."
+        }
+      ],
+      "previewTags": {
+        "ClearMetRx": "healthcare",
+        "Care by CallingDr": "healthcare",
+        "Virtual Pharmacy": "healthcare",
+        "MORENT": "operations",
+        "Dejong Rental Management": "operations",
+        "Travel Management": "operations",
+        "App Tech": "other"
+      },
+      "faq": [
+        {
+          "question": "What does Hadi specialize in as a product designer?",
+          "answer": "Hadi's work covers user journeys, information architecture, responsive application interfaces, design systems, prototypes and collaboration with front-end implementation."
+        },
+        {
+          "question": "Which product-design industries are represented?",
+          "answer": "The available portfolio references include healthcare interfaces, rental and operational tools, travel management and field-work applications. A preview does not imply a production launch."
+        },
+        {
+          "question": "Does this portfolio include UX process as well as visual design?",
+          "answer": "Yes. It explains Hadi's workflow from requirements and task flows to interface systems, and links to existing project work. Unverified research outcomes are not presented as results."
+        }
+      ],
+      "heroTitle": "Senior Product Designer",
+      "heroNote": "UX architecture, interface systems and digital products"
+    },
+    "video-production": {
+      "title": "Video Production & Motion",
+      "eyebrow": "03 / FILM, EDITING & VISUAL STORIES",
+      "statement": "A strong visual story needs direction before it needs effects.",
+      "intro": "I work across production direction, documentary storytelling, editing and motion, including AI-assisted creative workflows where they genuinely serve the narrative.",
+      "approach": "Start with the story and its audience. Shape a sequence through scripting, storyboards and production decisions, then use editing, sound and motion to carry the message without losing clarity or continuity.",
+      "capabilities": [
+        "Documentary direction and production",
+        "Storyboarding, scripting and research",
+        "Video editing, VFX and sound treatment",
+        "Campaign video and AI-assisted animation"
+      ],
+      "featured": [
+        "fakhr-e-qoum",
+        "ai-animation",
+        "community-campaign"
+      ],
+      "references": [],
+      "editorial": "Add a dedicated showreel and production credits with exact responsibilities for each film.",
+      "role": "Video Creative Director & Motion Lead",
+      "audience": "For video creative direction, production and motion roles",
+      "aboutHeading": "Hadi as a visual storyteller",
+      "about": "I develop visual stories across documentary, campaign video, editing and motion design. Depending on the project, my contribution may include concept development, production direction, editing or animation. The project breakdowns should distinguish these responsibilities rather than treating every credit as end-to-end production ownership.",
+      "strengths": [
+        "Documentary and campaign storytelling",
+        "Editing, motion and post-production",
+        "Visual development and AI-assisted workflows"
+      ],
+      "proof": "Fakhr-e-Qoum, campaign material and animation work demonstrate different parts of the production practice. Exact credits and a consolidated showreel remain editorial priorities.",
+      "ctaHeading": "Hiring for video direction or motion leadership?",
+      "ctaText": "Review the films and production work, then contact me about creative video, documentary or motion roles.",
+      "ctaLabel": "Discuss a video creative role",
+      "experience": [
+        {
+          "title": "Fakhr-e-Qoum",
+          "role": "Producer & Director",
+          "detail": "Documentary research, scripting, 51-scene storyboard, production, editing and post-production oversight."
+        },
+        {
+          "title": "Hadi E-Learning",
+          "role": "Video Editing Trainer",
+          "detail": "Editing workflow instruction and project-based guidance for learners."
+        },
+        {
+          "title": "Independent creative work",
+          "role": "Video & Motion",
+          "detail": "Campaign films, editing, visual storytelling and AI-assisted animation documented in the featured work."
+        }
+      ],
+      "faq": [
+        {
+          "question": "What video production work does Hadi Hassan do?",
+          "answer": "The portfolio covers documentary storytelling, campaign video, editing, motion design and visual development, with selected original project references."
+        },
+        {
+          "question": "Can I watch production work on the page?",
+          "answer": "Where a project has an original video link, the film can be opened through a click-to-load player, with a direct external viewing link as an alternative."
+        },
+        {
+          "question": "What production responsibilities are documented?",
+          "answer": "The project pages distinguish concept, production, editing and animation contributions where documented. Additional detailed credits and a consolidated showreel are planned."
+        }
+      ],
+      "heroTitle": "Video Creative Director",
+      "heroNote": "Film, editing, motion and production storytelling"
+    }
+  }
+}

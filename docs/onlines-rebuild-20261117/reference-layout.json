@@ -1,0 +1,284 @@
+{
+  "1440": {
+    "height": 9050,
+    "headings": [
+      {
+        "text": "internet.",
+        "tag": "H3",
+        "class": "home-hero__titulo is-draggable",
+        "rect": {
+          "x": 377.546875,
+          "y": 390.5,
+          "w": 685,
+          "h": 95
+        },
+        "style": {
+          "font": "700 180px / 95px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Hacemos sitios web de alta calidad para empresas, gobiernos y organizaciones.",
+        "tag": "H1",
+        "class": "home-quote-block__titulo js-quote-texto",
+        "rect": {
+          "x": 245,
+          "y": 1206.40625,
+          "w": 950,
+          "h": 384
+        },
+        "style": {
+          "font": "700 96px / 96px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Dise\u00f1o de\nexperiencias y\nde interfaces",
+        "tag": "H3",
+        "class": "card-servicio__titulo js-card-servicio-titulo",
+        "rect": {
+          "x": 74,
+          "y": 3987,
+          "w": 345,
+          "h": 105
+        },
+        "style": {
+          "font": "500 36px / 36px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(255, 255, 255)"
+        }
+      },
+      {
+        "text": "Desarrollo de sitios\nweb a medida",
+        "tag": "H3",
+        "class": "card-servicio__titulo js-card-servicio-titulo",
+        "rect": {
+          "x": 547.328125,
+          "y": 3987,
+          "w": 345,
+          "h": 68
+        },
+        "style": {
+          "font": "500 36px / 36px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(255, 255, 255)"
+        }
+      },
+      {
+        "text": "Servicios digitales\npersonalizados",
+        "tag": "H3",
+        "class": "card-servicio__titulo js-card-servicio-titulo",
+        "rect": {
+          "x": 1020.65625,
+          "y": 3987,
+          "w": 345,
+          "h": 68
+        },
+        "style": {
+          "font": "500 36px / 36px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(255, 255, 255)"
+        }
+      },
+      {
+        "text": "De cero a uno",
+        "tag": "H3",
+        "class": "home-bloque-dark-mode__titulo",
+        "rect": {
+          "x": 225,
+          "y": 4927.1875,
+          "w": 550,
+          "h": 79
+        },
+        "style": {
+          "font": "600 72px / 79.2px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Un equipo que ama internet.",
+        "tag": "H3",
+        "class": "home-equipo__titulo",
+        "rect": {
+          "x": 111.625,
+          "y": 6100.46875,
+          "w": 1217,
+          "h": 134
+        },
+        "style": {
+          "font": "700 96px / 134.4px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Los detalles\nno son detalles",
+        "tag": "H3",
+        "class": "home-portfolio__titulo",
+        "rect": {
+          "x": 140,
+          "y": 6852.46875,
+          "w": 557,
+          "h": 144
+        },
+        "style": {
+          "font": "700 72px / 72px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Hagamos un\nproyecto juntos",
+        "tag": "H3",
+        "class": "home-contacto__titulo",
+        "rect": {
+          "x": 695,
+          "y": 8433.59375,
+          "w": 515,
+          "h": 144
+        },
+        "style": {
+          "font": "700 72px / 72px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      }
+    ],
+    "sections": []
+  },
+  "390": {
+    "height": 9160,
+    "headings": [
+      {
+        "text": "internet.",
+        "tag": "H3",
+        "class": "home-hero__titulo is-draggable",
+        "rect": {
+          "x": 78.453125,
+          "y": 359,
+          "w": 233,
+          "h": 64
+        },
+        "style": {
+          "font": "700 64px / 64px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Hacemos sitios web de alta calidad para empresas, gobiernos y organizaciones.",
+        "tag": "H1",
+        "class": "home-quote-block__titulo js-quote-texto",
+        "rect": {
+          "x": 20,
+          "y": 1298.90625,
+          "w": 350,
+          "h": 148
+        },
+        "style": {
+          "font": "700 37px / 37px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Dise\u00f1o de experiencias\ny de interfaces",
+        "tag": "H3",
+        "class": "card-servicio__titulo js-card-servicio-titulo",
+        "rect": {
+          "x": 44,
+          "y": 3179,
+          "w": 302,
+          "h": 51
+        },
+        "style": {
+          "font": "500 28px / 28px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(255, 255, 255)"
+        }
+      },
+      {
+        "text": "Desarrollo de sitios\nweb a medida",
+        "tag": "H3",
+        "class": "card-servicio__titulo js-card-servicio-titulo",
+        "rect": {
+          "x": 44,
+          "y": 3598.1875,
+          "w": 302,
+          "h": 51
+        },
+        "style": {
+          "font": "500 28px / 28px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(255, 255, 255)"
+        }
+      },
+      {
+        "text": "Servicios digitales\npersonalizados",
+        "tag": "H3",
+        "class": "card-servicio__titulo js-card-servicio-titulo",
+        "rect": {
+          "x": 44,
+          "y": 4057.375,
+          "w": 302,
+          "h": 51
+        },
+        "style": {
+          "font": "500 28px / 28px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(255, 255, 255)"
+        }
+      },
+      {
+        "text": "De cero a uno",
+        "tag": "H3",
+        "class": "home-bloque-dark-mode__titulo",
+        "rect": {
+          "x": 36,
+          "y": 4655.15625,
+          "w": 318,
+          "h": 46
+        },
+        "style": {
+          "font": "600 42px / 46.2px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Un equipo que\nama internet.",
+        "tag": "H3",
+        "class": "home-equipo__titulo",
+        "rect": {
+          "x": 71.46875,
+          "y": 5640,
+          "w": 247,
+          "h": 91
+        },
+        "style": {
+          "font": "700 38px / 45.6px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Los detalles\nno son detalles",
+        "tag": "H3",
+        "class": "home-portfolio__titulo",
+        "rect": {
+          "x": 16,
+          "y": 6130,
+          "w": 358,
+          "h": 81
+        },
+        "style": {
+          "font": "700 38px / 38px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      },
+      {
+        "text": "Hagamos un\nproyecto juntos",
+        "tag": "H3",
+        "class": "home-contacto__titulo",
+        "rect": {
+          "x": 16,
+          "y": 8705.765625,
+          "w": 358,
+          "h": 86
+        },
+        "style": {
+          "font": "700 40px / 40px \"Inter Display\", \"Inter Display Fallback\", sans-serif",
+          "color": "rgb(29, 29, 31)"
+        }
+      }
+    ],
+    "sections": []
+  }
+}

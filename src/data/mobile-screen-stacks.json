@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "consumer-connect",
+      "title": "Consumer Connect",
+      "kicker": "RESEARCH PLATFORM / MOBILE UI",
+      "description": "Nine original mobile interface screens covering onboarding, research projects, survey interaction, preferences and community. Displayed as supplied. The carousel demonstrates screen hierarchy and flow, not a live application.",
+      "slides": [
+        {
+          "src": "consumer-connect-01-home.webp",
+          "title": "Dashboard",
+          "alt": "Original Consumer Connect mobile application screenshot 1: Welcome, project discovery, Connect Rewards, and referrals"
+        },
+        {
+          "src": "consumer-connect-02-projects.webp",
+          "title": "Projects",
+          "alt": "Original Consumer Connect mobile application screenshot 2: Active research projects and project progress"
+        },
+        {
+          "src": "consumer-connect-03-sections.webp",
+          "title": "Study overview",
+          "alt": "Original Consumer Connect mobile application screenshot 3: Completed and available chocolate research sections"
+        },
+        {
+          "src": "consumer-connect-04-choice.webp",
+          "title": "Single choice",
+          "alt": "Original Consumer Connect mobile application screenshot 4: Selection and confirmation of a research response"
+        },
+        {
+          "src": "consumer-connect-05-written.webp",
+          "title": "Written response",
+          "alt": "Original Consumer Connect mobile application screenshot 5: Free-text question in the chocolate research flow"
+        },
+        {
+          "src": "consumer-connect-06-emotion.webp",
+          "title": "Emotional response",
+          "alt": "Original Consumer Connect mobile application screenshot 6: Emotion-based survey selection"
+        },
+        {
+          "src": "consumer-connect-07-preferences.webp",
+          "title": "Preference matrix",
+          "alt": "Original Consumer Connect mobile application screenshot 7: Multi-row chocolate preference survey"
+        },
+        {
+          "src": "consumer-connect-08-rating.webp",
+          "title": "Recommendation",
+          "alt": "Original Consumer Connect mobile application screenshot 8: Likelihood-to-recommend question"
+        },
+        {
+          "src": "consumer-connect-09-community.webp",
+          "title": "Community",
+          "alt": "Original Consumer Connect mobile application screenshot 9: Shoes enthusiast discussion and replies"
+        }
+      ]
+    },
+    {
+      "id": "omni-help",
+      "title": "Omni Help",
+      "mode": "phone",
+      "kicker": "PRODUCT EXPERIENCE",
+      "description": "Mobile mental wellness, treatment, booking and consultation screens from original owner-supplied artwork.",
+      "slides": [
+        {
+          "src": "omni-help-01-home.webp",
+          "title": "Welcome",
+          "alt": "Original Omni Help interface: Welcome"
+        },
+        {
+          "src": "omni-help-02-dashboard.webp",
+          "title": "Dashboard",
+          "alt": "Original Omni Help interface: Dashboard"
+        },
+        {
+          "src": "omni-help-03-treatments.webp",
+          "title": "Treatments",
+          "alt": "Original Omni Help interface: Treatments"
+        },
+        {
+          "src": "omni-help-04-doctor-slots.webp",
+          "title": "Appointment slots",
+          "alt": "Original Omni Help interface: Appointment slots"
+        },
+        {
+          "src": "omni-help-05-consultation.webp",
+          "title": "Video consultation",
+          "alt": "Original Omni Help interface: Video consultation"
+        },
+        {
+          "src": "omni-help-06-meditation.webp",
+          "title": "Guided meditation",
+          "alt": "Original Omni Help interface: Guided meditation"
+        },
+        {
+          "src": "omni-help-07-care.webp",
+          "title": "Care waiting screen",
+          "alt": "Original Omni Help interface: Care waiting screen"
+        }
+      ]
+    },
+    {
+      "id": "apptech-client",
+      "title": "AppTech Client",
+      "mode": "phone",
+      "kicker": "PRODUCT EXPERIENCE",
+      "description": "Employee-facing AppTech mobile experience for attendance and building access.",
+      "slides": [
+        {
+          "src": "apptech-client-01-home.webp",
+          "title": "Employee dashboard",
+          "alt": "Original AppTech Client interface: Employee dashboard"
+        },
+        {
+          "src": "apptech-client-02-attendance.webp",
+          "title": "Attendance and location",
+          "alt": "Original AppTech Client interface: Attendance and location"
+        },
+        {
+          "src": "apptech-client-03-buildings.webp",
+          "title": "Building navigation",
+          "alt": "Original AppTech Client interface: Building navigation"
+        }
+      ]
+    },
+    {
+      "id": "apptech-admin",
+      "title": "AppTech Admin",
+      "mode": "phone",
+      "kicker": "PRODUCT EXPERIENCE",
+      "description": "Portrait screenshots of the administrative experience for employees, attendance, building details and risers. Preserve their full source aspect ratios and clip tall pages inside the center device viewport.",
+      "slides": [
+        {
+          "src": "apptech-admin-01-employees.webp",
+          "title": "Employees",
+          "alt": "Original AppTech Admin interface: Employees"
+        },
+        {
+          "src": "apptech-admin-02-attendance.webp",
+          "title": "Attendance history",
+          "alt": "Original AppTech Admin interface: Attendance history"
+        },
+        {
+          "src": "apptech-admin-03-risers.webp",
+          "title": "Riser details",
+          "alt": "Original AppTech Admin interface: Riser details"
+        },
+        {
+          "src": "apptech-admin-04-workstations.webp",
+          "title": "Building overview",
+          "alt": "Original AppTech Admin interface: Building overview"
+        }
+      ]
+    }
+  ]
+}

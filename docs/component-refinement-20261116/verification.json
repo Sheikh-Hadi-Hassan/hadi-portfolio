@@ -1,0 +1,29 @@
+{
+  "components-chromium": {
+    "status": "PASS",
+    "scenarios": 10
+  },
+  "components-webkit": {
+    "status": "PASS",
+    "scenarios": 10
+  },
+  "browser-chromium": {
+    "status": "PASS",
+    "scenarios": 10
+  },
+  "browser-webkit": {
+    "status": "PASS",
+    "scenarios": 10
+  },
+  "guardedBuildReceipt": "PASS",
+  "npm23ScriptSuite": "PASS",
+  "expertiseSourceTests": 4,
+  "protectedPhoneSourceTests": 7,
+  "seoCanonicalPages": 25,
+  "exportedRoutes": 27,
+  "protectedSource": "PASS: six protected files byte-identical",
+  "accessibility": "Remaining existing hero/phone findings retained in accessibility.json; no new-card/gallery violation target",
+  "integrations": "Live provider writes and authenticated applications unverified; static preview does not execute PHP",
+  "TMS": "Owner-provided exact URL preserved; previously observed 404",
+  "Framer": "Independent native implementations; original packages not installed"
+}

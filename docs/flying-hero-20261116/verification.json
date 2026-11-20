@@ -1,0 +1,62 @@
+{
+  "verifiedAt": "2026-11-16T15:35:41.089275+05:00",
+  "branch": "feature/expertise-portfolios-20261113",
+  "parent": "c1229360c26fc1c798c584393d9195142f66eaa1",
+  "build": "PASS: full npm run build:acceptance and matching receipt",
+  "receiptSha256": "d03bd8cd1378af74f860c86f98abfb5b155df2888796aeb465d0a613472cd38e",
+  "npmTest": "PASS: 23 scripts with TMPDIR=/private/tmp; initial default macOS symlink guard rejection retained in npm-test.log",
+  "sourceChecks": {
+    "expertise": 4,
+    "phoneStack": 7,
+    "seoCanonicalPages": 25,
+    "exportedProductionRoutes": 27,
+    "status": "PASS"
+  },
+  "browser": {
+    "chromium": {
+      "actualExportScenarios": 10,
+      "passed": 10,
+      "axeViolations": 0,
+      "axeIncompleteRules": [
+        "color-contrast"
+      ]
+    },
+    "webkit": {
+      "actualExportScenarios": 10,
+      "passed": 10,
+      "axeViolations": 0,
+      "axeIncompleteRules": [
+        "color-contrast"
+      ]
+    }
+  },
+  "existingExpertiseExportScenarios": {
+    "chromium": 15,
+    "webkit": 15,
+    "status": "PASS"
+  },
+  "syntheticPhoneFixtureScenarios": {
+    "chromium": 5,
+    "webkit": 5,
+    "status": "PASS"
+  },
+  "actualExportBrowserTotal": 50,
+  "fixtureBrowserTotal": 10,
+  "protectedSourceHashesMatchAdoptedRemote": true,
+  "homepageHeroLock": "PASS: unchanged",
+  "livePreview": "http://127.0.0.1:3000/expertise/product-development/",
+  "deployed": false,
+  "mainModified": false,
+  "unverified": [
+    "Live provider/CRM/enquiry/mail/Calendar/Meet writes",
+    "Physical-device GPU performance",
+    "Photographic-background contrast for all animation pixels"
+  ],
+  "failureHistory": [
+    "First-pass card aspect token and static six-card visibility fixed before final acceptance",
+    "Initial TMPDIR staging symlink rejection; passed using the real path without guard changes",
+    "Stale nine-screen/pixel fixture assumptions updated to current manifest and two-layer wipe",
+    "Transient ENOSPC screenshot failure; complete final browser rerun passed"
+  ],
+  "stagedSecretScan": "PASS: gitleaks staged changes, zero findings; not a claim about all historical commits"
+}

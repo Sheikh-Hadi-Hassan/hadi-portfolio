@@ -1,0 +1,143 @@
+{
+  "background": {
+    "src": "/assets/expertise/product-flight-workspace.jpeg",
+    "width": 1376,
+    "height": 768,
+    "alt": "Editorial product design workspace with interface sketches and a wide display"
+  },
+  "cards": [
+    {
+      "src": "/assets/expertise/flight-project-02.webp",
+      "title": "CallingDr / Website",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-11.webp",
+      "title": "Omni Help / Mobile experience",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-09.webp",
+      "title": "Consumer Connect / Research dashboard",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-15.webp",
+      "title": "Care by CallingDr / Visit history",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-18.webp",
+      "title": "Vera Health / Medicine cabinet",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-25.webp",
+      "title": "Legal management / Dashboard",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-04.webp",
+      "title": "Grassroots Ventures / Website",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-06.webp",
+      "title": "Longwood Reef / Ecommerce",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-08.webp",
+      "title": "Consumer Connect / Website",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-13.webp",
+      "title": "ClearMetRx / Website",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-16.webp",
+      "title": "Care by CallingDr / Patient selection",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-17.webp",
+      "title": "Care by CallingDr / Prescriptions",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-19.webp",
+      "title": "Vera Health / Treatment selection",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-20.webp",
+      "title": "Vera Health / Appointment scheduling",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-21.webp",
+      "title": "Vera Health / Family profile",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-22.webp",
+      "title": "Vera Health / Appointments",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-23.webp",
+      "title": "Legal management / Consultation",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-24.webp",
+      "title": "Legal management / Case details",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    },
+    {
+      "src": "/assets/expertise/flight-project-26.webp",
+      "title": "Legal management / Dashboard presentation",
+      "width": 1280,
+      "height": 720,
+      "href": "#xp-work"
+    }
+  ]
+}

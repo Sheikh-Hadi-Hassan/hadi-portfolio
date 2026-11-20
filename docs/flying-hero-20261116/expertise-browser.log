@@ -1,0 +1,15 @@
+PASS chromium creative-direction mobile-small 360/360
+PASS chromium creative-direction mobile 390/390
+PASS chromium creative-direction ipad-portrait 768/768
+PASS chromium creative-direction ipad-landscape 1024/1024
+PASS chromium creative-direction desktop 1440/1440
+PASS chromium product-development mobile-small 360/360
+PASS chromium product-development mobile 390/390
+PASS chromium product-development ipad-portrait 768/768
+PASS chromium product-development ipad-landscape 1024/1024
+PASS chromium product-development desktop 1440/1440
+PASS chromium video-production mobile-small 360/360
+PASS chromium video-production mobile 390/390
+PASS chromium video-production ipad-portrait 768/768
+PASS chromium video-production ipad-landscape 1024/1024
+PASS chromium video-production desktop 1440/1440
