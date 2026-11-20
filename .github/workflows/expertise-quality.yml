@@ -79,12 +79,14 @@ jobs:
         run: |
           node tests/expertise-browser.cjs
           node tests/phone-stack-browser.cjs
+          node tests/consumer-connect-real-browser.cjs
           node tests/product-onlines-browser.cjs
           node tests/product-onlines-visual.cjs
       - name: Test Safari-style layouts in WebKit
         run: |
           EXPERTISE_BROWSER_ENGINE=webkit node tests/expertise-browser.cjs
           EXPERTISE_BROWSER_ENGINE=webkit node tests/phone-stack-browser.cjs
+          EXPERTISE_BROWSER_ENGINE=webkit node tests/consumer-connect-real-browser.cjs
           ONLINES_ENGINE=webkit node tests/product-onlines-browser.cjs
       - name: Upload review screenshots and test report
         uses: actions/upload-artifact@v4

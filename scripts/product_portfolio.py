@@ -39,7 +39,7 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
         '<button type="button" class="ol-hero-art ol-art-phone" data-ol-drag data-entry-delay="1100" data-depth=".11" data-ol-gallery aria-label="Open the mobile interface gallery">' + image('/assets/expertise/apptech-handheld-owner-20261118.png', 'AppTech attendance interface shown on a handheld phone', 1000, 800) + '</button>'
         '<button class="ol-ai" type="button" data-ol-ai data-entry-delay="400" aria-pressed="false" aria-label="Toggle dark canvas appearance">Dark canvas <span><i></i></span></button>'
         '<div class="ol-hero-tools">' + toolkit + '</div>' +
-        ''.join(cursor(label, i) for i, label in enumerate(['Designer', 'Developer', 'Client'])) +
+        ''.join(cursor(label, i) for i, label in enumerate(['Designer', 'Developer', 'Client', 'Research', 'Product', 'Strategy', 'Quality'])) +
         '<a class="ol-scroll" href="#ol-intro" aria-label="Scroll to introduction"><span aria-hidden="true">↓</span></a></div></section>'
     )
     intro = '<section class="ol-intro ol-dots" id="ol-intro"><div class="ol-intro-inner"><h2>I lead product and brand design for SaaS, healthcare and business platforms.</h2><p>Based in Lahore. Working with international teams.<br>Available for design leadership and consulting.</p></div></section>'

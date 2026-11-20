@@ -17,7 +17,7 @@ const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+decodeURI
    await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(2800);
    assert.equal(await page.locator('.ol-header').count(),0,'The requested composition has no header');
    const geometry=await page.evaluate(()=>({hero:document.querySelector('.ol-hero').offsetHeight,quote:document.querySelector('.ol-intro').offsetHeight,font:getComputedStyle(document.querySelector('h1')).fontFamily,cursors:document.querySelectorAll('.ol-hero-stage [data-cursor]').length,panels:document.querySelectorAll('.ol-hero-art').length,orbit:document.querySelectorAll('.ol-product').length}));
-   assert(geometry.hero>=820,'Responsive hero contains the complete product component arrangement');assert(geometry.font.includes('Nebulica'));assert.equal(geometry.cursors,3);assert.equal(geometry.panels,6);assert.equal(geometry.orbit,6);
+   assert(geometry.hero>=820,'Responsive hero contains the complete product component arrangement');assert(geometry.font.includes('Nebulica'));assert.equal(geometry.cursors,7);assert.equal(geometry.panels,6);assert.equal(geometry.orbit,6);
    if(!reduced)assert(Math.abs(geometry.quote-height*(width===1440?3.35:2.5))<=1,'Measured reference pinned-quote travel');
    const cursor=page.locator('.ol-cursor-0'),before=await cursor.getAttribute('style');await page.waitForTimeout(350);assert.equal(before!==await cursor.getAttribute('style'),!reduced,'Independent cursor path is motion-aware');
    await page.screenshot({path:out+`/screenshots/hero-${width}-${reduced}.png`});
