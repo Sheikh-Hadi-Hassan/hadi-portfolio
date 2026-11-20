@@ -92,6 +92,8 @@ async function advanceAndCheck(page, phone, control) {
             carouselBackground:getComputedStyle(root).backgroundColor,
             leftFade:getComputedStyle(deck,'::before').backgroundImage,
             rightFade:getComputedStyle(deck,'::after').backgroundImage,
+            leftFadeDisplay:getComputedStyle(deck,'::before').display,
+            rightFadeDisplay:getComputedStyle(deck,'::after').display,
             island:getComputedStyle(frame,'::before').content,
             deviceBorderRadius:getComputedStyle(device).borderRadius,
             deviceCenterError:Math.abs(dr.left+dr.width/2-(rect.left+rect.width/2)),
@@ -104,6 +106,8 @@ async function advanceAndCheck(page, phone, control) {
         assert.equal(visuals.carouselBackground,'rgb(0, 0, 0)','Carousel is not black');
         assert(visuals.leftFade.includes('linear-gradient'),'Missing left black fade');
         assert(visuals.rightFade.includes('linear-gradient'),'Missing right black fade');
+        assert.notEqual(visuals.leftFadeDisplay,'none','Left fade is suppressed by CSS override');
+        assert.notEqual(visuals.rightFadeDisplay,'none','Right fade is suppressed by CSS override');
         assert(visuals.leftFade.includes('0, 0, 0') && visuals.rightFade.includes('0, 0, 0'),'Fade must use black');
         assert(visuals.island!=='none'&&visuals.island!=='normal','Dynamic Island overlay missing');
         assert(visuals.deviceCenterError<=3,'Centered iPhone is misaligned');

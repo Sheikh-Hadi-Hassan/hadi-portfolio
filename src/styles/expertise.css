@@ -1243,3 +1243,33 @@
  .expertise-page .xp-gallery-viewport .xp-screen-layer.is-entering{animation:none!important}
  .expertise-page .xp-gallery-viewport .xp-screen-layer img{transition:none!important}
 }
+
+
+/* Consumer Connect acceptance: the later fan-stack overrides must not disable the
+   requested bilateral black fades. Keep the center device unobstructed. */
+.expertise-page .xp-phone-section,
+.expertise-page .xp-phone-carousel,
+.expertise-page .xp-phone-deck {background:#000!important}
+.expertise-page .xp-phone-deck::before,
+.expertise-page .xp-phone-deck::after{
+ display:block!important;
+ content:"";
+ position:absolute;
+ top:0;
+ bottom:0;
+ width:clamp(100px,27%,390px)!important;
+ pointer-events:none;
+ z-index:110;
+}
+.expertise-page .xp-phone-deck::before{
+ left:0;
+ background:linear-gradient(90deg,#000 0%,rgba(0,0,0,.97) 16%,rgba(0,0,0,.83) 48%,rgba(0,0,0,.35) 78%,rgba(0,0,0,0) 100%);
+}
+.expertise-page .xp-phone-deck::after{
+ right:0;
+ background:linear-gradient(270deg,#000 0%,rgba(0,0,0,.97) 16%,rgba(0,0,0,.83) 48%,rgba(0,0,0,.35) 78%,rgba(0,0,0,0) 100%);
+}
+@media(max-width:650px){
+ .expertise-page .xp-phone-deck::before,
+ .expertise-page .xp-phone-deck::after{width:19%!important}
+}
