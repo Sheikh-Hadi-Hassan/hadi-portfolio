@@ -177,7 +177,7 @@
   }
   reduced.addEventListener('change', updateMotion);
   const motionButton = page.querySelector('[data-ol-motion]');
-  motionButton.addEventListener('click', () => {manualPause = !manualPause;motionButton.setAttribute('aria-pressed', String(manualPause));motionButton.textContent = manualPause ? 'Resume motion' : 'Pause motion';updateMotion()});
+  motionButton?.addEventListener('click', () => {manualPause = !manualPause;motionButton.setAttribute('aria-pressed', String(manualPause));motionButton.textContent = manualPause ? 'Resume motion' : 'Pause motion';updateMotion()});
   page.querySelector('[data-ol-ai]').addEventListener('click', event => {
     const button = event.currentTarget, on = button.getAttribute('aria-pressed') !== 'true';
     button.setAttribute('aria-pressed', String(on));page.classList.toggle('ol-ai-on', on);firstIntent();
