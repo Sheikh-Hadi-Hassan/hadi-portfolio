@@ -1,6 +1,5 @@
 /* Measured composition contract. Brand typography and palette remain INTELLIGNCE. */
 body:has(.onlines-page){padding-bottom:0;background:#f4f0f7}
-body:has(.onlines-page) :is(.app-dock,.v2ft-wrap){display:none}
 .onlines-page{
  --ol-bg:#f4f0f7;--ol-text:#21162f;--ol-muted:#6c6276;--ol-line:#21162f26;
  --ol-accent:#7631aa;--ol-accent-hover:#61238e;--ol-surface:#fffc;
