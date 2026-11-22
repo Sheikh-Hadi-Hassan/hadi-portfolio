@@ -21,11 +21,11 @@ assert.match(nextLayout, /<FooterMotion\/>/);
 assert.ok(!nextLayout.includes('/footer-static.js'), 'static initializer must not run in Next.js');
 assert.equal((html.match(/<footer class="v2ft-wrap hadi-footer"/g) || []).length, 1);
 // Source design uses a deep-violet gradient and readable, scoped tokens.
-assert.match(css, /footer\\.v2ft-wrap\\.hadi-footer\\s*\\{\\s*--footer-ink: #f8f4ff;\\s*--footer-muted: #d6c5ef;\\s*--wordmark-ink: #e3c3ff;/);
-assert.match(css, /linear-gradient\\(120deg, #25074f 0%, #1b063c 55%, #23054b 100%\\)/);
-assert.match(css, /\\.hadi-footer \\.footer-wordmark-fallback\\s*\\{\\s*color: var\\(--wordmark-ink\\)/);
-assert.match(css, /\\.hadi-footer a:focus-visible,/);
-assert.match(runtime, /getPropertyValue\\('--wordmark-ink'\\)/);
+assert.match(css, /footer\.v2ft-wrap\.hadi-footer\s*\{\s*--footer-ink: #f8f4ff;\s*--footer-muted: #d6c5ef;\s*--wordmark-ink: #e3c3ff;/);
+assert.match(css, /linear-gradient\(120deg, #25074f 0%, #1b063c 55%, #23054b 100%\)/);
+assert.match(css, /\.hadi-footer \.footer-wordmark-fallback\s*\{\s*color: var\(--wordmark-ink\)/);
+assert.match(css, /\.hadi-footer a:focus-visible,/);
+assert.match(runtime, /getPropertyValue\('--wordmark-ink'\)/);
 
 // Conservative solid-color proxy for the lightest planned background glow.
 // Real gradient contrast still requires rendered browser acceptance.
