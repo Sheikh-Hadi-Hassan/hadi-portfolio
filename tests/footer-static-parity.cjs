@@ -1,0 +1,31 @@
+const fs = require('node:fs');
+const assert = require('node:assert/strict');
+
+const read = path => fs.readFileSync(path, 'utf8');
+const builder = read('scripts/build.py');
+const head = read('src/components/head.html');
+const css = read('src/styles/footer.css');
+const html = read('src/components/footer.html');
+const nextLayout = read('src/app/layout.jsx');
+const nextWrapper = read('src/app/footer-motion.jsx');
+const staticEntry = read('src/footer-static.js');
+const runtime = read('src/footer-runtime.js');
+
+assert.match(builder, /SRC\/'styles\/footer\.css'/);
+assert.match(builder, /SRC\/'footer-runtime\.js'/);
+assert.match(builder, /SRC\/'footer-static\.js'/);
+assert.match(head, /<script type="module" src="\/footer-static\.js"><\/script>/);
+assert.match(staticEntry, /import \{ initializeFooter \} from '\.\/footer-runtime\.js'/);
+assert.match(nextWrapper, /import \{ initializeFooter \} from '\.\.\/footer-runtime'/);
+assert.match(nextLayout, /<FooterMotion\/>/);
+assert.ok(!nextLayout.includes('/footer-static.js'), 'static initializer must not run in Next.js');
+assert.equal((html.match(/<footer class="v2ft-wrap hadi-footer"/g) || []).length, 1);
+assert.match(css, /\.v2ft-wrap\s*\{[^}]*background:\s*#7b62ff/i);
+assert.match(css, /@keyframes footer-dot-wave/);
+assert.match(css, /prefers-reduced-motion:reduce/);
+assert.match(css, /\.v2ft-wordmark\.is-ready \.footer-wordmark-fallback/);
+assert.match(runtime, /document\.fonts\?\.ready/);
+assert.match(runtime, /getImageData/);
+assert.match(runtime, /pointermove/);
+assert.match(runtime, /IntersectionObserver/);
+console.log('PASS: static CSS, module loading, React parity and original footer design contract');
