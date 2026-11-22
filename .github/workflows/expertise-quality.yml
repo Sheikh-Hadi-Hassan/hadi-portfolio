@@ -24,6 +24,13 @@ on:
       - 'src/data/seo-pages.json'
       - 'src/site.js'
       - 'src/styles/expertise.css'
+      - 'src/styles/footer.css'
+      - 'src/footer-runtime.js'
+      - 'src/footer-static.js'
+      - 'src/app/footer-motion.jsx'
+      - 'src/components/head.html'
+      - 'tests/footer-controls.cjs'
+      - 'tests/footer-static-parity.cjs'
       - 'src/components/navigation.html'
       - 'tests/expertise.py'
       - 'tests/expertise-browser.cjs'
@@ -68,6 +75,15 @@ jobs:
           python -m unittest discover -s tests -p phone_stack.py
       - name: Generate and build portfolio
         run: npm run build
+      - name: Verify shared footer runtime and built assets
+        run: |
+          node tests/footer-controls.cjs
+          node tests/footer-static-parity.cjs
+          test -f dist/footer-runtime.js
+          test -f dist/footer-static.js
+          grep -Fq -- '--wordmark-ink: #e3c3ff' dist/style.css
+          grep -Fq 'footer-static.js' dist/index.html
+          grep -Fq 'linear-gradient(120deg, #25074f' dist/style.css
       - name: Run expertise and SEO validations
         run: |
           python -m unittest discover -s tests -p expertise.py
