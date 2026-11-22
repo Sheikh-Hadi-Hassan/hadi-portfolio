@@ -182,6 +182,9 @@ for slug in ['about','resume','contact','privacy','work']:
 
  target.joinpath('index.html').write_text(page(titles[slug],descriptions[slug],read(Path('pages')/(slug+'.html')),'case-page',path='/'+slug+'/'))
 shutil.copyfile(SRC/'styles/hero.css',DIST/'hero.css');shutil.copyfile(SRC/'styles/clarity.css',DIST/'clarity.css');shutil.copyfile(SRC/'styles/studio.css',DIST/'studio.css');shutil.copyfile(SRC/'styles/home.css',DIST/'home.css');shutil.copyfile(SRC/'styles/site.css',DIST/'style.css');shutil.copyfile(SRC/'styles/case-study.css',DIST/'case-study.css');shutil.copyfile(SRC/'site.js',DIST/'script.js')
+# Static-only ES modules; Next.js imports the same footer runtime via FooterMotion.
+shutil.copyfile(SRC/'footer-runtime.js', DIST/'footer-runtime.js')
+shutil.copyfile(SRC/'footer-static.js', DIST/'footer-static.js')
 shutil.copytree(SRC/'fonts',DIST/'assets/fonts',dirs_exist_ok=True)
 print(f'Built {len(projects)+10} pages with shared templates and Pixelarticons.')
 
@@ -208,7 +211,7 @@ print(f'Built {len(projects)+10} pages with shared templates and Pixelarticons.'
  'A consultation is confirmed only by the booking interface after backend verification.', '',
 ]))
 
-with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text()+'\n'+(SRC/'styles/appbar.css').read_text()+'\n'+(SRC/'styles/expertise.css').read_text())
+with (DIST/'style.css').open('a') as f:f.write('\n'+(SRC/'styles/command.css').read_text()+'\n'+(SRC/'styles/appbar.css').read_text()+'\n'+(SRC/'styles/expertise.css').read_text()+'\n'+(SRC/'styles/footer.css').read_text())
 
 # Product page replacement requested against the Onlines reference.
 with (DIST/'style.css').open('a') as f: f.write('\n'+(SRC/'styles/product-onlines.css').read_text())
