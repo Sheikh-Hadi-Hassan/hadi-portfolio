@@ -61,10 +61,11 @@ const assert = require('node:assert/strict');
   };
   const source = fs.readFileSync('src/footer-runtime.js', 'utf8')
     .replace('export function initializeFooter', 'function initializeFooter');
-  vm.runInNewContext(source + ';globalThis.mountFooter = initializeFooter;', sandbox);
-  const cleanup = sandbox.mountFooter();
+  vm.runInNewContext(source + ';globalThis.startFooterTest = initializeFooter;', sandbox);
+  const cleanup = sandbox.startFooterTest();
   const firstClick = legal.events.click;
-  const duplicateCleanup = sandbox.mountFooter();
+  assert.equal(typeof firstClick, 'function', 'privacy control must bind a click handler');
+  const duplicateCleanup = sandbox.startFooterTest();
   assert.equal(legal.events.click, firstClick, 'initializer must not install duplicate listeners');
   duplicateCleanup();
   firstClick();
