@@ -204,8 +204,21 @@ jobs:
           referenced=set(re.findall(r'(?:src|href|poster)="/assets/([^"?#]+)',markup))
           for relative in referenced:
               assert (root/'assets'/html.unescape(relative)).is_file(), 'Homepage asset missing: '+relative
-          refs=set(re.findall(r'/_next/static/[^"<>\s]+',markup))
-          local_refs=[x.split('?')[0].split('&quot;')[0] for x in refs if '.js' in x or '.css' in x]
+          # Parse actual network-loading HTML tags, not escaped Next Flight JSON strings.
+          from html.parser import HTMLParser
+          class NextAssets(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.urls=[]
+              def handle_starttag(self,tag,attrs):
+                  attrs=dict(attrs)
+                  url=attrs.get('src') if tag=='script' else attrs.get('href') if tag=='link' else None
+                  if url and url.startswith('/_next/static/') and ('.js' in url or '.css' in url):
+                      self.urls.append(url.split('?')[0])
+          parser=NextAssets()
+          parser.feed(markup)
+          local_refs=sorted(set(parser.urls))
+          assert local_refs, 'No Next.js script or stylesheet tags found'
           for local in local_refs:
               assert (root/local.lstrip('/')).is_file(), 'Next.js referenced bundle missing: '+local
           markers=('hadi-work','hadi-showreel','hadi-statement','hadi-practice')
