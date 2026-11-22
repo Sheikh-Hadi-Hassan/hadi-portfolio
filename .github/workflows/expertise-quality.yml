@@ -187,8 +187,20 @@ jobs:
           images=[p for p in (root/'assets').rglob('*') if p.suffix.lower() in ('.webp','.png','.jpg','.jpeg','.svg','.avif')]
           assert fonts, 'No exported fonts'
           assert images, 'No exported images'
+          # The existing optimizer replaces approved hero sources with hashed responsive WebPs.
+          # The existing prune-export step can then omit unused source files from out/.
+          # Authenticate the responsive derivatives against the original tracked source bytes.
+          import hashlib
+          hero_verified={}
           for name in ('hero-stage.webp','hero-subject-enhanced.png'):
-              assert (root/'assets'/name).is_file(), 'Approved hero asset missing: '+name
+              original=Path('public/assets')/name
+              assert original.is_file(), 'Approved hero source missing: '+name
+              digest=hashlib.sha256(original.read_bytes()).hexdigest()[:12]
+              variants=sorted((root/'assets/responsive').glob(digest+'-q90-*.webp'))
+              targets=[root/'assets'/name]+variants
+              referenced_targets=[p for p in targets if p.is_file() and ('/assets/'+p.relative_to(root/'assets').as_posix()) in markup]
+              assert referenced_targets, 'Approved hero original or optimized image missing from export: '+name
+              hero_verified[name]=[p.relative_to(root).as_posix() for p in referenced_targets]
           referenced=set(re.findall(r'(?:src|href|poster)="/assets/([^"?#]+)',markup))
           for relative in referenced:
               assert (root/'assets'/html.unescape(relative)).is_file(), 'Homepage asset missing: '+relative
@@ -206,7 +218,7 @@ jobs:
           Path('canonical-export-validation.json').write_text(json.dumps({
               'candidate_sha':'97544b9151eb9a19d51c5b0c757d7c065f232a7b',
               'next_js_chunks':len(js),'font_files':len(fonts),'image_files':len(images),
-              'homepage_asset_references':len(referenced),'motion_controllers':motion,
+              'homepage_asset_references':len(referenced),'approved_hero_derivatives':hero_verified,'motion_controllers':motion,
               'checks':{'export_html':True,'bundle_references':True,'stylesheets':True,
                         'fonts':True,'images':True,'homepage_assets':True,'motion_bundles':True,
                         'hydration':True}
