@@ -20,7 +20,29 @@ assert.match(nextWrapper, /import \{ initializeFooter \} from '\.\.\/footer-runt
 assert.match(nextLayout, /<FooterMotion\/>/);
 assert.ok(!nextLayout.includes('/footer-static.js'), 'static initializer must not run in Next.js');
 assert.equal((html.match(/<footer class="v2ft-wrap hadi-footer"/g) || []).length, 1);
-assert.match(css, /\.v2ft-wrap\s*\{[^}]*background:\s*#7b62ff/i);
+// Source design uses a deep-violet gradient and readable, scoped tokens.
+assert.match(css, /footer\\.v2ft-wrap\\.hadi-footer\\s*\\{\\s*--footer-ink: #f8f4ff;\\s*--footer-muted: #d6c5ef;\\s*--wordmark-ink: #e3c3ff;/);
+assert.match(css, /linear-gradient\\(120deg, #25074f 0%, #1b063c 55%, #23054b 100%\\)/);
+assert.match(css, /\\.hadi-footer \\.footer-wordmark-fallback\\s*\\{\\s*color: var\\(--wordmark-ink\\)/);
+assert.match(css, /\\.hadi-footer a:focus-visible,/);
+assert.match(runtime, /getPropertyValue\\('--wordmark-ink'\\)/);
+
+// Conservative solid-color proxy for the lightest planned background glow.
+// Real gradient contrast still requires rendered browser acceptance.
+const luminance = (hex) => {
+  const channels = hex.slice(1).match(/../g).map(s => parseInt(s, 16) / 255)
+    .map(v => v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
+  return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+};
+const contrast = (a, b) => {
+  const x = luminance(a), y = luminance(b);
+  return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
+};
+for (const foreground of ['#f8f4ff', '#d6c5ef', '#e3c3ff']) {
+  assert.ok(contrast(foreground, '#5c1aa0') >= 4.5,
+    foreground + ' must meet AA against bright-violet reference');
+}
+assert.ok(contrast('#25074d', '#f2e9ff') >= 4.5, 'CTA contrast must meet AA');
 assert.match(css, /@keyframes footer-dot-wave/);
 assert.match(css, /prefers-reduced-motion:reduce/);
 assert.match(css, /\.v2ft-wordmark\.is-ready \.footer-wordmark-fallback/);
