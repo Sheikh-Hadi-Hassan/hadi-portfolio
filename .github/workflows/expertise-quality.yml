@@ -49,7 +49,7 @@ concurrency:
 
 jobs:
   expertise-validation:
-    if: github.event_name != 'pull_request' || github.head_ref != 'ci/p0-03d-canonical-home-export-20261122'
+    if: github.event_name != 'pull_request' || !contains(fromJSON('["ci/p0-03d-canonical-home-export-20261122","ci/p0-03e-canonical-home-browser-20261123"]'), github.head_ref)
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
@@ -341,3 +341,161 @@ jobs:
           retention-days: 3
           compression-level: 0
           if-no-files-found: error
+
+
+  canonical-home-browser:
+    name: P0-03E authentic-export browser inspection
+    if: github.event_name == 'pull_request' && github.head_ref == 'ci/p0-03e-canonical-home-browser-20261123' && github.base_ref == 'fix/p0-03a-home-static-bayfi-css-20261122'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 97544b9151eb9a19d51c5b0c757d7c065f232a7b
+          persist-credentials: false
+      - name: Download original export without rebuilding
+        uses: actions/download-artifact@v4
+        with:
+          name: p0-03d-canonical-next-export
+          run-id: 45010820457
+          repository: Sheikh-Hadi-Hassan/hadi-portfolio
+          github-token: ${{ github.token }}
+          path: p0-03e-input
+      - name: Verify archive provenance and every exported file, then extract
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 97544b9151eb9a19d51c5b0c757d7c065f232a7b
+          python3 - <<'PY'
+          import pathlib,json,hashlib,zipfile,stat
+          root=pathlib.Path('p0-03e-input')
+          assert sorted(x.name for x in root.iterdir())==['canonical-next-export.zip','provenance.json']
+          m=json.loads((root/'provenance.json').read_text())
+          assert m['candidate_sha']==m['checkout_sha']=='97544b9151eb9a19d51c5b0c757d7c065f232a7b'
+          assert str(m['workflow_run_id'])=='45010820457'
+          assert m['repository']=='Sheikh-Hadi-Hassan/hadi-portfolio' and m['source_unchanged'] is True
+          assert all(m['validation']['checks'].values())
+          assert m['security']['private_file_check']=='PASS'
+          assert m['security']['high_confidence_secret_scan']=='PASS'
+          archive=root/'canonical-next-export.zip'
+          assert archive.stat().st_size==m['export_zip_size']
+          def digest(f):
+              h=hashlib.sha256()
+              for block in iter(lambda:f.read(1048576),b''):h.update(block)
+              return h.hexdigest()
+          with archive.open('rb') as f: assert digest(f)==m['export_zip_sha256']=='096b83442580ba5338d66e2c4c0a3ef6e1e8b6c475dc05aa04393c884a9d7edd'
+          expected={x['path']:x for x in m['export_files']}
+          assert len(expected)==m['export_file_count']==2325
+          dest=pathlib.Path('p0-03e-review/site')
+          assert not dest.exists()
+          with zipfile.ZipFile(archive) as z:
+              infos=z.infolist()
+              assert z.testzip() is None and len(infos)==len(set(x.filename for x in infos))
+              assert set(expected)==set(x.filename for x in infos)
+              for x in infos:
+                  p=pathlib.PurePosixPath(x.filename)
+                  assert x.filename and not p.is_absolute() and not x.filename.startswith('/') and '\\' not in x.filename
+                  assert all(y not in ('..','.','') for y in p.parts)
+                  assert not x.is_dir() and not stat.S_ISLNK(x.external_attr>>16)
+                  assert x.file_size==expected[x.filename]['size']
+                  with z.open(x) as f: assert digest(f)==expected[x.filename]['sha256'],x.filename
+              dest.mkdir(parents=True)
+              for x in infos:
+                  target=dest.joinpath(*pathlib.PurePosixPath(x.filename).parts)
+                  target.parent.mkdir(parents=True,exist_ok=True)
+                  with z.open(x) as src,target.open('xb') as out:
+                      for chunk in iter(lambda:src.read(1048576),b''):out.write(chunk)
+          assert (dest/'index.html').is_file() and list((dest/'_next/static').rglob('*.js'))
+          pathlib.Path('p0-03e-qa').mkdir(exist_ok=True)
+          pathlib.Path('p0-03e-qa/provenance.json').write_text(json.dumps({'candidate_sha':m['candidate_sha'],'source_run':m['workflow_run_id'],'inner_sha256':m['export_zip_sha256'],'file_count':len(expected),'security':m['security'],'build_performed':False},indent=2))
+          print('PASS: authenticated 2325-file export extracted')
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install browser testing dependencies without building
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Run real Chromium scroll and interaction captures
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -B -m http.server 8775 --bind 127.0.0.1 --directory p0-03e-review/site >/tmp/p0-03e-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do if curl -fsS -o /dev/null http://127.0.0.1:8775/; then break; fi; sleep 1; done
+          curl -fsS -o /dev/null http://127.0.0.1:8775/
+          cat > /tmp/p0-03e-browser.cjs <<'JS'
+          const {chromium}=require(process.cwd()+'/node_modules/playwright'),fs=require('fs'),path=require('path');
+          const out='p0-03e-qa',base='http://127.0.0.1:8775';
+          const targets=[['Hero','.portfolio-hero'],['Showreel','.bf-reel'],['Manifesto','.bf-manifesto'],['Selected work','#work'],['Services','#services'],['Experience','#practice'],['Digital products','#products'],['Digital collection','.digital-collection'],['Process','#process'],['Brands','#clients'],['Story','#story'],['Collaboration','#engagements'],['FAQ','#questions'],['Navigation','.menu-toggle'],['Footer','.v2ft-wrap'],['SERA','[data-sera-launch]'],['Booking','[data-consultation-entry]']];
+          (async()=>{
+            const browser=await chromium.launch({headless:true,args:['--no-sandbox']});const results=[];
+            try{
+              for(const viewport of [{name:'desktop',width:1440,height:900},{name:'tablet',width:768,height:1024},{name:'mobile',width:390,height:844}]){
+                const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height},reducedMotion:'no-preference'});
+                const page=await context.newPage(),errors=[],failed=[];
+                page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+                page.on('requestfailed',r=>failed.push({url:r.url(),reason:r.failure()?.errorText}));
+                const response=await page.goto(base+'/',{waitUntil:'domcontentloaded',timeout:45000});
+                await page.waitForTimeout(1200);
+                const urls=await page.locator('script[src*="/_next/static/"],link[href*="/_next/static/"]').evaluateAll(a=>a.map(x=>x.src||x.href));
+                const firstAsset=urls[0]?await page.request.get(urls[0]).then(r=>r.status()).catch(()=>null):null;
+                const components=[];
+                await page.screenshot({path:path.join(out,viewport.name+'-initial.png')});
+                for(const [name,selector] of targets){
+                  const loc=page.locator(selector).first();
+                  if(!(await loc.count())){components.push({name,status:'NOT VERIFIED',reason:'Selector absent'});continue}
+                  const samples=[];
+                  try{
+                    const top=await loc.evaluate(e=>e.getBoundingClientRect().top+scrollY);
+                    await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),Math.max(0,top-viewport.height/3));
+                    for(let stage=0;stage<3;stage++){
+                      if(stage)await page.mouse.wheel(0,viewport.height*.65);
+                      await page.waitForTimeout(450);
+                      samples.push(await page.evaluate(sel=>{
+                        const el=document.querySelector(sel),rect=el?.getBoundingClientRect();
+                        const triggers=window.ScrollTrigger?.getAll?.().map(x=>({id:x.vars?.id,start:x.start,end:x.end,progress:x.progress}))??null;
+                        return {scrollY,rect:rect?{x:rect.x,y:rect.y,width:rect.width,height:rect.height}:null,transform:el?getComputedStyle(el).transform:null,triggers};
+                      },selector));
+                      if(viewport.name==='desktop' && ['Hero','Showreel','Manifesto','Selected work','Services','Experience','Footer'].includes(name))
+                        await page.screenshot({path:path.join(out,name.toLowerCase().replace(/\W+/g,'-')+'-'+stage+'.png')});
+                    }
+                    components.push({name,status:'NOT VERIFIED',reason:'Rendered and measured; full behavior and reference parity require evidence review',samples});
+                  }catch(e){components.push({name,status:'FAIL',reason:String(e)})}
+                }
+                const interaction={};
+                for(const [key,selector] of [['navigation','.menu-toggle'],['showreel','.bf-reel-pause'],['faq','#questions summary']]){
+                  const loc=page.locator(selector).first();
+                  if(await loc.count())try{await loc.click({timeout:4000});interaction[key]={clicked:true};if(key==='navigation'){interaction[key].dialogOpen=await page.locator('#site-menu').evaluate(e=>e.open);await page.keyboard.press('Escape')}if(key==='faq'){interaction[key].detailsOpen=await loc.evaluate(e=>e.closest('details')?.open);await loc.focus();await page.keyboard.press('Enter');interaction[key].keyboardToggled=await loc.evaluate(e=>e.closest('details')?.open===false)}}catch(e){interaction[key]={error:String(e)}}
+                }
+                results.push({viewport,http:response.status(),firstNextAssetStatus:firstAsset,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2),errors,failed,components,interaction});
+                await context.close();
+              }
+              let reference={status:'REFERENCE UNAVAILABLE'};
+              const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'no-preference'}),page=await context.newPage();
+              try{const res=await page.goto('https://hadi.intellignce.net/',{waitUntil:'domcontentloaded',timeout:20000});
+                if(res?.ok()){await page.screenshot({path:out+'/live-reference-desktop.png'});reference={status:'CAPTURED; PARITY NOT VERIFIED',http:res.status()}}
+                else reference={status:'REFERENCE UNAVAILABLE',http:res?.status()}
+              }catch(e){reference={status:'REFERENCE UNAVAILABLE',error:String(e)}}
+              await context.close();
+              fs.writeFileSync(out+'/browser-report.json',JSON.stringify({candidate:'97544b9151eb9a19d51c5b0c757d7c065f232a7b',artifact:14749892390,reference,results,note:'No GSAP mocking. NOT VERIFIED does not mean PASS.'},null,2));
+              fs.writeFileSync(out+'/acceptance-matrix.md',['# P0-03E homepage acceptance evidence','',...targets.map(([name])=>name+': '+results.map(r=>r.components.find(c=>c.name===name)?.status).join(' / ')),'','Screenshots and detailed observed scroll geometry in browser-report.json. Rendering alone is not design parity.'].join('\n'));
+              console.log('Evidence captured across three viewports; reference:',reference.status);
+            }finally{await browser.close()}
+          })().catch(e=>{console.error(e);process.exitCode=1})
+          JS
+          node /tmp/p0-03e-browser.cjs
+      - name: Upload lightweight browser evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-03e-canonical-home-browser-evidence
+          path: p0-03e-qa/
+          retention-days: 7
+          if-no-files-found: warn
