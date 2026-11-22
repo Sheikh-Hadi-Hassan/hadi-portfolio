@@ -298,7 +298,11 @@ jobs:
           file_names=[p.relative_to(root).as_posix() for p in files]
           with zipfile.ZipFile(archive) as z:
               assert z.testzip() is None, 'Corrupt export ZIP'
-              assert sorted(z.namelist())==file_names, 'Incomplete or extra ZIP contents'
+              members=z.namelist()
+              assert len(members)==len(set(members)), 'Duplicate export ZIP entries'
+              missing=set(file_names)-set(members)
+              extra=set(members)-set(file_names)
+              assert not missing and not extra, 'ZIP inventory mismatch: missing='+str(len(missing))+' extra='+str(len(extra))
           validation=json.loads(Path('canonical-export-validation.json').read_text())
           security=json.loads(Path('canonical-export-security.json').read_text())
           assert all(validation['checks'].values())
