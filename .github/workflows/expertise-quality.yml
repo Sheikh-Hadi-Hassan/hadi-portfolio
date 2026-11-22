@@ -49,6 +49,7 @@ concurrency:
 
 jobs:
   expertise-validation:
+    if: github.event_name != 'pull_request' || github.head_ref != 'ci/p0-03d-canonical-home-export-20261122'
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
@@ -118,3 +119,196 @@ jobs:
             docs/onlines-fidelity-20261117/browser-*.json
             docs/onlines-fidelity-20261117/screenshots/local-*.png
           if-no-files-found: ignore
+
+  canonical-next-export:
+    name: P0-03D authenticated Next.js export
+    if: github.event_name == 'pull_request' && github.head_ref == 'ci/p0-03d-canonical-home-export-20261122' && github.base_ref == 'fix/p0-03a-home-static-bayfi-css-20261122'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out exact approved candidate (no persisted credentials)
+        uses: actions/checkout@v4
+        with:
+          ref: '97544b9151eb9a19d51c5b0c757d7c065f232a7b'
+          persist-credentials: false
+      - name: Authenticate candidate revision
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "97544b9151eb9a19d51c5b0c757d7c065f232a7b"
+          test -z "$(git status --porcelain)"
+          echo "PASS: exact 40-character candidate commit checked out"
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing build dependencies
+        run: |
+          set -euo pipefail
+          python3 -m pip install pillow
+          npm ci --no-audit --no-fund
+      - name: Build canonical Next.js production-origin export
+        env:
+          SITE_URL: https://hadi.intellignce.net
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: |
+          set -euo pipefail
+          npm run build
+          test "$(git rev-parse HEAD)" = "97544b9151eb9a19d51c5b0c757d7c065f232a7b"
+      - name: Validate frontend assets and original motion bundles
+        run: |
+          set -euo pipefail
+          python3 tests/export-hydration.py out
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, re, html
+          root=Path('out')
+          page=root/'index.html'
+          assert page.is_file() and page.stat().st_size > 1000, 'Missing canonical homepage'
+          markup=page.read_text(errors='replace')
+          assert '/_next/static/' in markup, 'Missing Next.js client script references'
+          assert 'id="site-content"' in markup or 'id=\"site-content\"' in markup, 'Missing Next.js page shell'
+          static=root/'_next/static'
+          js=sorted(static.rglob('*.js'))
+          assert js, 'Next.js client JavaScript bundles missing'
+          assert list(static.rglob('*.css')), 'Next.js CSS chunks missing'
+          for name in ('style.css','hero.css','bayfi-port.css','bayfi-brand.css'):
+              assert (root/name).is_file(), 'Missing stylesheet: '+name
+          fonts=[p for p in (root/'assets').rglob('*') if p.suffix.lower() in ('.woff','.woff2','.ttf')]
+          images=[p for p in (root/'assets').rglob('*') if p.suffix.lower() in ('.webp','.png','.jpg','.jpeg','.svg','.avif')]
+          assert fonts, 'No exported fonts'
+          assert images, 'No exported images'
+          for name in ('hero-stage.webp','hero-subject-enhanced.png'):
+              assert (root/'assets'/name).is_file(), 'Approved hero asset missing: '+name
+          referenced=set(re.findall(r'(?:src|href|poster)="/assets/([^"?#]+)',markup))
+          for relative in referenced:
+              assert (root/'assets'/html.unescape(relative)).is_file(), 'Homepage asset missing: '+relative
+          refs=set(re.findall(r'/_next/static/[^"<>\s]+',markup))
+          local_refs=[x.split('?')[0].split('&quot;')[0] for x in refs if '.js' in x or '.css' in x]
+          for local in local_refs:
+              assert (root/local.lstrip('/')).is_file(), 'Next.js referenced bundle missing: '+local
+          markers=('hadi-work','hadi-showreel','hadi-statement','hadi-practice')
+          bundle_bytes=[(p,p.read_bytes()) for p in js]
+          motion={}
+          for marker in markers:
+              matches=[p.relative_to(root).as_posix() for p,data in bundle_bytes if marker.encode() in data]
+              assert matches, 'Original motion controller absent from client bundles: '+marker
+              motion[marker]=matches
+          Path('canonical-export-validation.json').write_text(json.dumps({
+              'candidate_sha':'97544b9151eb9a19d51c5b0c757d7c065f232a7b',
+              'next_js_chunks':len(js),'font_files':len(fonts),'image_files':len(images),
+              'homepage_asset_references':len(referenced),'motion_controllers':motion,
+              'checks':{'export_html':True,'bundle_references':True,'stylesheets':True,
+                        'fonts':True,'images':True,'homepage_assets':True,'motion_bundles':True,
+                        'hydration':True}
+          },indent=2))
+          print('PASS: authenticated Next.js files and original motion bundles')
+          PY
+      - name: High-confidence secret and private-file scan
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,runpy,json
+          root=Path('out')
+          checker=runpy.run_path('scripts/package-hostinger.py')
+          checker['assert_no_private_files'](root)
+          patterns={
+              'private-key-header':rb'-----BEGIN (?:RSA |EC |OPENSSH |ENCRYPTED )?PRIVATE KEY-----',
+              'aws-access-key':rb'\b(?:AKIA|ASIA)[0-9A-Z]{16}\b',
+              'github-access-token':rb'(?:gh[pousr]_[A-Za-z0-9_]{36,}|github_pat_[A-Za-z0-9_]{50,})',
+              'openai-secret-key':rb'sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{40,}',
+              'stripe-live-secret':rb'sk_live_[A-Za-z0-9]{20,}',
+              'slack-token':rb'xox[baprs]-[A-Za-z0-9-]{24,}'
+          }
+          extensions={'.html','.js','.mjs','.css','.map','.json','.xml','.txt','.svg','.md','.php','.env'}
+          findings=[]
+          scanned=0
+          for path in root.rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in extensions: continue
+              scanned+=1
+              content=path.read_bytes()
+              for label,pattern in patterns.items():
+                  if re.search(pattern,content):
+                      findings.append({'file':path.relative_to(root).as_posix(),'rule':label})
+          if findings:
+              print('FAIL: detected high-confidence private material', json.dumps(findings))
+              raise SystemExit(1)
+          Path('canonical-export-security.json').write_text(json.dumps({
+              'private_file_check':'PASS','high_confidence_secret_scan':'PASS',
+              'text_files_scanned':scanned,'rules':list(patterns)},indent=2))
+          print('PASS: no forbidden files or high-confidence tokens found')
+          PY
+      - name: Package validated frontend with existing secure packager
+        run: |
+          set -euo pipefail
+          python3 scripts/package-hostinger.py "$PWD/canonical-next-export.zip"
+      - name: Generate complete SHA-256 provenance
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,os,json,subprocess,zipfile
+          candidate='97544b9151eb9a19d51c5b0c757d7c065f232a7b'
+          actual=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          assert actual==candidate
+          root=Path('out')
+          archive=Path('canonical-next-export.zip')
+          def sha256(path):
+              h=hashlib.sha256()
+              with path.open('rb') as stream:
+                  for block in iter(lambda:stream.read(1024*1024),b''):
+                      h.update(block)
+              return h.hexdigest()
+          files=sorted([p for p in root.rglob('*') if p.is_file()])
+          file_names=[p.relative_to(root).as_posix() for p in files]
+          with zipfile.ZipFile(archive) as z:
+              assert z.testzip() is None, 'Corrupt export ZIP'
+              assert sorted(z.namelist())==file_names, 'Incomplete or extra ZIP contents'
+          validation=json.loads(Path('canonical-export-validation.json').read_text())
+          security=json.loads(Path('canonical-export-security.json').read_text())
+          assert all(validation['checks'].values())
+          assert security['high_confidence_secret_scan']=='PASS'
+          manifest={
+              'purpose':'P0-03D canonical Next.js homepage preview',
+              'repository':'Sheikh-Hadi-Hassan/hadi-portfolio',
+              'candidate_sha':candidate,
+              'checkout_sha':actual,
+              'workflow_run_id':os.environ['GITHUB_RUN_ID'],
+              'workflow_attempt':os.environ['GITHUB_RUN_ATTEMPT'],
+              'workflow_url':'https://github.com/Sheikh-Hadi-Hassan/hadi-portfolio/actions/runs/'+os.environ['GITHUB_RUN_ID'],
+              'source_unchanged':True,
+              'build_command':'SITE_URL=https://hadi.intellignce.net npm run build',
+              'export_root':'out/',
+              'export_file_count':len(files),
+              'export_files':[{'path':name,'size':p.stat().st_size,'sha256':sha256(p)}
+                              for name,p in zip(file_names,files)],
+              'export_zip':'canonical-next-export.zip',
+              'export_zip_size':archive.stat().st_size,
+              'export_zip_sha256':sha256(archive),
+              'validation':validation,
+              'security':security
+          }
+          Path('provenance.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          print('PASS: full export inventory and provenance recorded; files:',len(files))
+          print('ZIP SHA-256:',manifest['export_zip_sha256'])
+          PY
+      - name: Upload authenticated export and provenance
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-03d-canonical-next-export
+          path: |
+            canonical-next-export.zip
+            provenance.json
+          retention-days: 3
+          compression-level: 0
+          if-no-files-found: error
