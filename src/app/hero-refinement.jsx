@@ -22,7 +22,7 @@ function useReducedMotion(){
 }
 function RoleLines({lines}){return <>{lines.map((line,i)=><span className="p0h-role-line" key={i+'-'+line}>{line}</span>)}</>}
 function Roles({paused,reduced}){
- const [index,setIndex]=useState(0),[transition,setTransition]=useState(false),[visible,setVisible]=useState(true);
+ const [index,setIndex]=useState(0),[transition,setTransition]=useState(false),[visible,setVisible]=useState(true),[hovered,setHovered]=useState(false);
  const timer=useRef(0);
  useEffect(()=>{
   const update=()=>setVisible(!document.hidden);
@@ -30,19 +30,21 @@ function Roles({paused,reduced}){
   return()=>document.removeEventListener('visibilitychange',update);
  },[]);
  useEffect(()=>{
-  if(reduced||paused||!visible||transition)return;
+  // Hover stops the next title cycle. An in-flight 500 ms transition completes cleanly.
+  if(reduced||paused||hovered||!visible||transition)return;
   timer.current=window.setTimeout(()=>setTransition(true),HOLD);
   return()=>{window.clearTimeout(timer.current);timer.current=0};
- },[index,reduced,paused,visible,transition]);
+ },[index,reduced,paused,hovered,visible,transition]);
  useEffect(()=>{
   if(!transition)return;
   const timeout=window.setTimeout(()=>{setIndex(i=>(i+1)%ROLES.length);setTransition(false)},TRANSITION);
   return()=>window.clearTimeout(timeout);
  },[transition]);
- return <div className="p0h-role-group" data-p0h-role-root data-p0h-cycle-ms={HOLD+TRANSITION}>
+ return <div className="p0h-role-group" data-p0h-role-root data-p0h-cycle-ms={HOLD+TRANSITION} data-p0h-hovered={hovered?'true':'false'}
+  onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}>
   <div className="p0h-role-viewport" aria-hidden="true">
-   <div className={'p0h-role-current'+(transition?' is-leaving':'')} data-p0h-current><RoleLines lines={ROLES[index]}/></div>
-   <div className={'p0h-role-incoming'+(transition?' is-arriving':'')}><RoleLines lines={ROLES[(index+1)%ROLES.length]}/></div>
+   <div className={'p0h-role-current'+(transition?' is-leaving':'')+(index===1?' is-long':'')} data-p0h-current><RoleLines lines={ROLES[index]}/></div>
+   <div className={'p0h-role-incoming'+(transition?' is-arriving':'')+((index+1)%ROLES.length===1?' is-long':'')}><RoleLines lines={ROLES[(index+1)%ROLES.length]}/></div>
   </div>
  </div>;
 }
