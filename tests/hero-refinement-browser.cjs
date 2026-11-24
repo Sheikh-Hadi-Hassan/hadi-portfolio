@@ -38,7 +38,8 @@ async function inspect(browser,name,width,height,motion){
   entry.observations.push('100svh, original portrait, semantic H1, slider and scoped components verified');
   if(name==='desktop'){
    const role=page.locator('[data-p0h-current]');
-   const first=await role.innerText();await page.waitForTimeout(4750);
+   const first=await role.innerText();
+   await page.waitForFunction(previous=>{const el=document.querySelector('[data-p0h-current]');return el&&el.innerText!==previous&&!el.classList.contains('is-leaving')},first,{timeout:11000});
    assert.notEqual(await role.innerText(),first,'Rotating title did not advance');
    const pause=page.locator('.p0h-motion-control');assert.equal(await pause.getAttribute('aria-label'),'Pause rotating professional titles');await pause.click();
    assert.equal(await pause.getAttribute('aria-pressed'),'true');
