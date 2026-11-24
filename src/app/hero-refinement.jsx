@@ -20,7 +20,7 @@ function useReducedMotion(){
  },[]);
  return reduced;
 }
-function RoleLines({lines}){return <>{lines.map((line,i)=><span className="p0h-role-line" key={i+'-'+line}>{line}</span>)}</>}
+function RoleLines({lines}){return <>{lines.map((line,i)=><span className="p0h-role-line" key={i+'-'+line}>{line}{i===lines.length-1&&<span className="p0h-role-period" aria-hidden="true" data-p0h-period>.</span>}</span>)}</>}
 function Roles({paused,reduced}){
  const [index,setIndex]=useState(0),[transition,setTransition]=useState(false),[visible,setVisible]=useState(true),[hovered,setHovered]=useState(false);
  const timer=useRef(0);
@@ -40,7 +40,7 @@ function Roles({paused,reduced}){
   const timeout=window.setTimeout(()=>{setIndex(i=>(i+1)%ROLES.length);setTransition(false)},TRANSITION);
   return()=>window.clearTimeout(timeout);
  },[transition]);
- return <div className="p0h-role-group" data-p0h-role-root data-p0h-cycle-ms={HOLD+TRANSITION} data-p0h-hovered={hovered?'true':'false'}
+ return <div className="p0h-role-group" data-p0h-role-root data-p0h-cycle-ms={HOLD+TRANSITION} data-p0h-hovered={hovered?'true':'false'} data-p0h-paused={paused||hovered||!visible?'true':'false'}
   onPointerEnter={event=>{if(event.pointerType==='mouse'||event.pointerType==='pen')setHovered(true)}}
   onPointerLeave={event=>{if(event.pointerType==='mouse'||event.pointerType==='pen')setHovered(false)}}>
   <div className="p0h-role-viewport" aria-hidden="true">

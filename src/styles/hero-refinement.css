@@ -252,3 +252,56 @@
     font-size: clamp(32px, 4.6vw, 46px);
   }
 }
+
+
+/* P0-HERO V5.2: animate punctuation, not the whole word block.
+   Scoped to the homepage portal. Never touch the locked hero CSS. */
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-period{
+ display:inline-block;
+ position:relative;
+ margin-left:.025em;
+ font-size:.52em;
+ font-weight:600;
+ line-height:1;
+ vertical-align:baseline;
+ color:#ce9eea;
+ transform-origin:50% 100%;
+ animation:p0h-period-spring 1050ms linear infinite;
+ will-change:transform;
+}
+@keyframes p0h-period-spring{
+ 0%,12%,100%{transform:translateY(0) scale(1)}
+ 26%{transform:translateY(-.27em) scale(1.06,.94)}
+ 41%{transform:translateY(.045em) scale(.95,1.05)}
+ 54%{transform:translateY(-.12em) scale(1.025,.975)}
+ 67%{transform:translateY(0) scale(.985,1.015)}
+ 79%{transform:translateY(-.035em) scale(1)}
+ 90%{transform:translateY(0) scale(1)}
+}
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-group[data-p0h-paused="true"] .p0h-role-period{
+ animation-play-state:paused;
+}
+/* Minimal 500ms text dissolve: no full-line slide, bounce or return glitch. */
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-leaving{
+ animation:p0h-role-dissolve-out 500ms cubic-bezier(.25,.8,.3,1) both;
+}
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-arriving{
+ animation:p0h-role-dissolve-in 500ms cubic-bezier(.25,.8,.3,1) both;
+}
+@keyframes p0h-role-dissolve-out{
+ from{opacity:1;transform:translate3d(0,0,0)}
+ to{opacity:0;transform:translate3d(0,-.07em,0)}
+}
+@keyframes p0h-role-dissolve-in{
+ from{opacity:0;transform:translate3d(0,.09em,0)}
+ to{opacity:1;transform:translate3d(0,0,0)}
+}
+@media(prefers-reduced-motion:reduce){
+ .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-period{
+  animation:none!important;transform:none!important;
+ }
+ .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-leaving,
+ .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-arriving{
+  animation:none!important;
+ }
+}
