@@ -46,6 +46,16 @@ async function roleInfo(page){
    documentWidth:document.documentElement.scrollWidth,windowWidth:innerWidth};
  });
 }
+async function stableRoleInfo(page){
+ // Browsers may begin the next scheduled transition between two awaited calls.
+ // Sample only settled frames; do not classify an intentionally exiting title as clipped.
+ for(let attempt=0;attempt<15;attempt++){
+  const sample=await roleInfo(page);
+  if(sample.currentAnimation==='none'&&sample.currentOpacity==='1'&&sample.incomingOpacity==='0')return sample;
+  await page.waitForTimeout(75);
+ }
+ throw new Error('Title did not return to a stable frame');
+}
 function fits(info){
  for(const rect of info.textRects){
   assert(rect.width>0,'Empty measured role line '+rect.text);
@@ -68,7 +78,7 @@ async function testCase(browser,[name,w,h,motion]){
   assert.equal(await page.locator('[data-p0h-semantic]').count(),1,'Missing stable SEO identity');
   assert.equal(await page.locator(SEL).count(),1,'Hero role viewport missing');
   await settled(page);
-  const first=await roleInfo(page);
+  const first=await stableRoleInfo(page);
   assert.equal(first.cycle,'3000','Three-second role cycle not retained');
   assert.equal(await page.locator('.p0h-role-viewport').evaluate(e=>getComputedStyle(e).pointerEvents),'auto','Pointer-hit area disabled');
   assert.equal(first.transition.split(',')[0],'0s','Resting title must never animate backward on state reset');
@@ -76,7 +86,7 @@ async function testCase(browser,[name,w,h,motion]){
   if(motion==='reduce'){
    const before=first.title;
    await page.waitForTimeout(3550);
-   assert.equal((await roleInfo(page)).title,before,'Title rotates with reduced motion');
+   assert.equal((await stableRoleInfo(page)).title,before,'Title rotates with reduced motion');
    assert.equal(await page.locator('.p0h-motion-control').count(),0,'Unexpected motion button');
   }else{
    let previous=first.title;
@@ -86,14 +96,14 @@ async function testCase(browser,[name,w,h,motion]){
      return el?.innerText!==previous&&!el.classList.contains('is-leaving');
     },previous,{timeout:6000});
     await settled(page);
-    const info=await roleInfo(page);fits(info);
+    const info=await stableRoleInfo(page);fits(info);
     result.roles.push({name:info.title,size:info.fontSize,long:info.long});
     if(info.title.includes('STRATEGIST'))assert(info.long,'Long title class not restored');
     previous=info.title;
    }
    assert.equal(new Set(result.roles.map(r=>r.name)).size,4,'Four unique roles not observed');
    await page.waitForFunction(previous=>{const el=document.querySelector('.p0h-role-current');return el&&el.innerText!==previous&&!el.classList.contains('is-leaving')},previous,{timeout:6000});
-   assert.equal((await roleInfo(page)).title,first.title,'Rotation did not loop back to initial role');
+   assert.equal((await stableRoleInfo(page)).title,first.title,'Rotation did not loop back to initial role');
   }
   if(name==='desktop'){
    const root=page.locator(SEL);
@@ -101,18 +111,18 @@ async function testCase(browser,[name,w,h,motion]){
    await root.hover({position:{x:Math.min(45,Math.max(10,first.viewport.width/4)),y:Math.min(20,h/20)}});
    assert.equal(await root.getAttribute('data-p0h-hovered'),'true','Hover did not activate pause');
    await page.waitForTimeout(650);await settled(page);
-   const frozen=await roleInfo(page);
+   const frozen=await stableRoleInfo(page);
    await page.waitForTimeout(3650);
-   assert.equal((await roleInfo(page)).title,frozen.title,'Title changed during sustained hover');
+   assert.equal((await stableRoleInfo(page)).title,frozen.title,'Title changed during sustained hover');
    const pausedBtn=page.getByRole('button',{name:'Pause hero motion'});
    await pausedBtn.click();assert.equal(await root.getAttribute('data-p0h-hovered'),'false','Hover failed to clear on pointer exit');
-   const buttonStopped=await roleInfo(page);
+   const buttonStopped=await stableRoleInfo(page);
    await page.waitForTimeout(3550);
-   assert.equal((await roleInfo(page)).title,buttonStopped.title,'Manual pause not preserved after hover exit');
+   assert.equal((await stableRoleInfo(page)).title,buttonStopped.title,'Manual pause not preserved after hover exit');
    await page.getByRole('button',{name:'Resume hero motion'}).click();
-   const resuming=await roleInfo(page);
+   const resuming=await stableRoleInfo(page);
    await page.waitForFunction(previous=>{const el=document.querySelector('.p0h-role-current');return el?.innerText!==previous&&!el.classList.contains('is-leaving')},resuming.title,{timeout:5500});
-   const next=await roleInfo(page);fits(next);
+   const next=await stableRoleInfo(page);fits(next);
    result.hoverPause='PASS';result.manualPause='PASS';result.resume='PASS';
   }
   assert.equal(errors.length,0,'JavaScript errors: '+errors.join(' / '));
