@@ -64,7 +64,7 @@ async function testCase(browser,[name,w,h,motion]){
   const first=await roleInfo(page);
   assert.equal(first.cycle,'3000','Three-second role cycle not retained');
   assert.equal(await page.locator('.p0h-role-viewport').evaluate(e=>getComputedStyle(e).pointerEvents),'auto','Pointer-hit area disabled');
-  assert.equal(first.transition.split(',')[0],'0.5s','Incorrect title transition duration');
+  assert.equal(first.transition.split(',')[0],motion==='reduce'?'0s':'0.5s','Incorrect motion-mode transition duration');
   fits(first);result.roles.push({name:first.title,size:first.fontSize,hovered:first.hovered});
   if(motion==='reduce'){
    const before=first.title;
