@@ -78,6 +78,9 @@ async function evaluateCase(browser,name,settings,fn){
   try{return !(n.status===404&&knownOptionalPaths.has(new URL(n.url).pathname))}catch{return true}
  });
  if(unexpected.length){detail.status='FAIL';detail.error=(detail.error||'')+' Unexpected failed HTTP requests: '+JSON.stringify(unexpected.slice(0,8))}
+ const known404s=diagnostic.network.filter(n=>n.status===404&&knownOptionalPaths.has(new URL(n.url).pathname)).length;
+ const unexpectedConsole=diagnostic.consoleErrors.filter(s=>!/Failed to load resource:.*404/.test(s));
+ if(unexpectedConsole.length||diagnostic.consoleErrors.length>known404s){detail.status='FAIL';detail.error=(detail.error||'')+' Unexpected browser console errors: '+JSON.stringify(diagnostic.consoleErrors)}
  results.push(detail);
  await context.close();
  console.log(name+': '+detail.status+(detail.error?' '+detail.error.slice(0,250):''));
@@ -100,11 +103,15 @@ async function main(){
     r.steps.push({action:'Tab focus',state:await verify(page,0,true,'keyboard focus')});
     await page.evaluate(()=>{window.__serviceClicks=0;document.querySelector('[data-service-toggle]').addEventListener('click',()=>window.__serviceClicks++);});
     for(const [key,shouldOpen] of [['Enter',false],['Enter',true],['Space',false],['Space',true]]){
+      const beforeY=await page.evaluate(()=>scrollY);
       const before=await page.evaluate(()=>window.__serviceClicks);
       await page.keyboard.press(key);
       const after=await page.evaluate(()=>window.__serviceClicks);
       assert.equal(after-before,1,key+': expected one native click');
-      r.steps.push({action:key,state:await verify(page,0,shouldOpen,key)});
+      const verified=await verify(page,0,shouldOpen,key);
+      const scrollDelta=await page.evaluate(()=>scrollY)-beforeY;
+      assert(Math.abs(scrollDelta)<150,key+': unexpected scrolling '+scrollDelta+' px');
+      r.steps.push({action:key,scrollDelta,state:verified});
     }
     r.screenshots.push(await snap(page,'keyboard-'+config.name+'-expanded'));
     await page.keyboard.press('Escape');
@@ -140,11 +147,20 @@ async function main(){
     await load(page);
     const first=page.locator('[data-service-toggle]').first(),second=page.locator('[data-service-toggle]').nth(1);
     assert.equal(await page.evaluate(()=>matchMedia('(hover: hover) and (pointer: fine)').matches),false,'Touch emulation still matches fine hover');
+    await first.scrollIntoViewIfNeeded();
+    const tapStartY=await page.evaluate(()=>scrollY);
     await first.tap();
-    r.steps.push({action:'first tap opens',state:await verify(page,0,true,'first touch')});
+    const firstState=await verify(page,0,true,'first touch');
+    const firstScrollDelta=await page.evaluate(()=>scrollY)-tapStartY;
+    assert(Math.abs(firstScrollDelta)<150,'First tap unexpectedly scrolled '+firstScrollDelta+' px');
+    r.steps.push({action:'first tap opens',scrollDelta:firstScrollDelta,state:firstState});
     r.screenshots.push(await snap(page,'touch-open'));
+    const tapCloseY=await page.evaluate(()=>scrollY);
     await first.tap();
-    r.steps.push({action:'second tap closes',state:await verify(page,0,false,'second touch')});
+    const closedState=await verify(page,0,false,'second touch');
+    const closedScrollDelta=await page.evaluate(()=>scrollY)-tapCloseY;
+    assert(Math.abs(closedScrollDelta)<150,'Second tap unexpectedly scrolled '+closedScrollDelta+' px');
+    r.steps.push({action:'second tap closes',scrollDelta:closedScrollDelta,state:closedState});
     r.screenshots.push(await snap(page,'touch-closed'));
     await second.tap();
     await verify(page,1,true,'touch second service');
