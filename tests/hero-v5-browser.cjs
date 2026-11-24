@@ -86,8 +86,11 @@ async function checkHome(browser,[name,width,height,motion]){
    assert.equal(new Set(seen.slice(0,4)).size,4,'Not all four professional titles rotate');
    assert.equal(seen[0],seen[4],'Animation fails to loop');
    await page.waitForFunction(()=>!document.querySelector('[data-p0h-current]')?.classList.contains('is-leaving'));
-   const motion=page.getByRole('button',{name:'Pause hero motion'});
-   await motion.click();assert.equal(await motion.getAttribute('aria-pressed'),'true');
+   const motion=page.locator('.p0h-motion-control');
+   assert.equal(await motion.getAttribute('aria-label'),'Pause hero motion');
+   await motion.click();
+   assert.equal(await motion.getAttribute('aria-label'),'Resume hero motion');
+   assert.equal(await motion.getAttribute('aria-pressed'),'true');
    const frozen=await role.innerText();await page.waitForTimeout(3400);assert.equal(await role.innerText(),frozen,'Paused title advanced');
    const marquee=page.locator('.p0h-project-track-0');
    assert.equal(await marquee.evaluate(e=>getComputedStyle(e).animationPlayState),'paused','Marquee not paused');
