@@ -41,7 +41,8 @@ function Roles({paused,reduced}){
   return()=>window.clearTimeout(timeout);
  },[transition]);
  return <div className="p0h-role-group" data-p0h-role-root data-p0h-cycle-ms={HOLD+TRANSITION} data-p0h-hovered={hovered?'true':'false'}
-  onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}>
+  onPointerEnter={event=>{if(event.pointerType==='mouse'||event.pointerType==='pen')setHovered(true)}}
+  onPointerLeave={event=>{if(event.pointerType==='mouse'||event.pointerType==='pen')setHovered(false)}}>
   <div className="p0h-role-viewport" aria-hidden="true">
    <div className={'p0h-role-current'+(transition?' is-leaving':'')+(index===1?' is-long':'')} data-p0h-current><RoleLines lines={ROLES[index]}/></div>
    <div className={'p0h-role-incoming'+(transition?' is-arriving':'')+((index+1)%ROLES.length===1?' is-long':'')}><RoleLines lines={ROLES[(index+1)%ROLES.length]}/></div>
