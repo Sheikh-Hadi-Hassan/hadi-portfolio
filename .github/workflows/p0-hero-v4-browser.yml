@@ -1,0 +1,104 @@
+name: P0-HERO-01 V4 isolated browser acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/app/home-experience.jsx'
+      - 'src/app/hero-refinement.jsx'
+      - 'src/styles/hero-refinement.css'
+      - 'tests/hero-refinement-browser.cjs'
+      - '.github/workflows/p0-hero-v4-browser.yml'
+permissions:
+  contents: read
+concurrency:
+  group: p0-hero-v4-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  hero-v4:
+    if: github.event_name == 'pull_request' && github.head_ref == 'feature/p0-hero01-v4-integration-20261124'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout isolated branch without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          fetch-depth: 50
+      - name: Verify source scope and unchanged hero-lock baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=d7b0493eafdbd68e92c750ec9757d5a0e8d77388
+          test "$(git merge-base "$BASE" HEAD)" = "$BASE"
+          git diff --name-only "$BASE" HEAD | sort >/tmp/p0h-changed.txt
+          cat /tmp/p0h-changed.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          expected={'src/app/home-experience.jsx','src/app/hero-refinement.jsx','src/styles/hero-refinement.css','tests/hero-refinement-browser.cjs','.github/workflows/p0-hero-v4-browser.yml'}
+          assert set(Path('/tmp/p0h-changed.txt').read_text().splitlines())==expected
+          print('PASS: exact five approved changed files')
+          PY
+          git diff --check "$BASE" HEAD
+          python3 scripts/verify-hero-lock.py
+          test -z "$(git status --porcelain)"
+      - name: Check isolated runner scratch disk
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os
+          st=os.statvfs('.')
+          free=st.f_bavail*st.f_frsize
+          print('Scratch disk free bytes:',free)
+          assert free>5_000_000_000
+          PY
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install existing pinned dependencies and Chromium
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install pillow
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Build only the isolated proposed homepage revision
+        shell: bash
+        env:
+          SITE_URL: https://hadi.intellignce.net
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: |
+          set -euo pipefail
+          node --check tests/hero-refinement-browser.cjs
+          npm run build
+          test -s out/index.html
+          test -d out/_next/static
+          test -f out/expertise/product-development/index.html
+          python3 scripts/verify-hero-lock.py
+      - name: Test real integrated homepage in Chromium
+        shell: bash
+        env:
+          P0H_BASE_URL: http://127.0.0.1:8778
+          P0H_EVIDENCE_DIR: artifacts/p0-hero-v4
+        run: |
+          set -euo pipefail
+          python3 -B -m http.server 8778 --bind 127.0.0.1 --directory out >/tmp/p0h-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 45); do
+            if curl -fsS -o /dev/null http://127.0.0.1:8778/; then break; fi
+            sleep 1
+          done
+          curl -fsS -o /dev/null http://127.0.0.1:8778/
+          node tests/hero-refinement-browser.cjs
+      - name: Upload compact browser screenshots and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-hero01-v4-integrated-browser-evidence
+          path: artifacts/p0-hero-v4/
+          retention-days: 7
+          if-no-files-found: warn
