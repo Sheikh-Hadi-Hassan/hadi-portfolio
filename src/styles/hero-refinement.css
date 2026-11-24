@@ -15,7 +15,6 @@
 .p0h-role-group{position:relative;width:100%;max-width:100%;min-width:0}
 .p0h-role-viewport{position:relative;width:100%;height:clamp(108px,10vw,150px);overflow:hidden;isolation:isolate}
 .p0h-role-current,.p0h-role-incoming{position:absolute;inset:0;font-family:'Nebulica','Instrument Sans',sans-serif;font-weight:500;font-size:clamp(41px,4.1vw,63px);letter-spacing:-.038em;line-height:1.105;color:var(--p0h-ink);transition:transform 570ms cubic-bezier(.2,.8,.2,1),opacity 570ms cubic-bezier(.2,.8,.2,1);will-change:transform,opacity}
-.p0h-role-current.is-long,.p0h-role-incoming.is-long{font-size:clamp(34px,3.5vw,53px)}
 .p0h-role-line{display:block;height:1.105em;white-space:nowrap}
 .p0h-role-current{opacity:1;transform:translate3d(0,0,0)}
 .p0h-role-current.is-leaving{opacity:0;transform:translate3d(0,-36%,0)}
@@ -58,7 +57,6 @@
  .p0h-role-group{width:100%;text-align:center}
  .p0h-role-viewport{height:clamp(94px,12vw,132px)}
  .p0h-role-current,.p0h-role-incoming{font-size:clamp(37px,5.4vw,58px)}
- .p0h-role-current.is-long,.p0h-role-incoming.is-long{font-size:clamp(34px,4.7vw,49px)}
  .p0h-motion-control{right:5%}
  .p0h-value-title{font-size:clamp(21px,2.8vw,27px)!important}
  .p0h-project-slider{margin-top:14px}
@@ -73,7 +71,6 @@
  .portfolio-root .portfolio-hero.p0h-enhanced .hero-location span{font-size:9px}
  .p0h-role-viewport{height:clamp(72px,12vh,96px)}
  .p0h-role-current,.p0h-role-incoming{font-size:clamp(31px,8vw,44px)}
- .p0h-role-current.is-long,.p0h-role-incoming.is-long{font-size:clamp(28px,7.2vw,40px)}
  .p0h-motion-control{right:0;top:0;width:30px;height:30px}
  .portfolio-root .portfolio-hero.p0h-enhanced .hero-summary{grid-area:summary;max-width:none;margin:0 auto;align-self:start}
  .p0h-summary-content{text-align:center}
@@ -96,7 +93,6 @@
  .portfolio-root .portfolio-hero.p0h-enhanced .hero-scene{padding:12px 12px 0;gap:5px 9px}
  .p0h-role-viewport{height:69px}
  .p0h-role-current,.p0h-role-incoming{font-size:28px}
- .p0h-role-current.is-long,.p0h-role-incoming.is-long{font-size:25px}
  .p0h-value-title{font-size:17px!important}
  .p0h-value-copy{font-size:10px!important;line-height:1.35!important}
  .p0h-project-slider{margin-top:6px;padding:6px 0}
@@ -212,14 +208,6 @@
 .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-group .p0h-role-viewport {
   pointer-events: auto;
 }
-/* 'STRATEGIST' must fit its own viewport on wide screens and small phones.
-   Container units follow the real title width, not the full window width. */
-.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-long,
-.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-long {
-  font-size: clamp(22px, 8cqw, 50px);
-}
-
-
 /* V5.1 animation correction: an outgoing role exits once, while the incoming
    role enters once. When React advances the index, snap the now-correct layers
    to their resting state: do not run a reverse CSS transition on reset. */
@@ -243,63 +231,47 @@
   to { opacity:1; transform:translate3d(0,0,0); }
 }
 
-
-/* Tablet-wide title rows are shorter than desktop. Cap the long-role type to
-   preserve both lines inside the fixed title viewport at 700–1099 px. */
-@media (min-width:700px) and (max-width:1099px) {
-  .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-long,
-  .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-long {
-    font-size: clamp(32px, 4.6vw, 46px);
-  }
+/* V5.3: all four professional titles share one type scale per viewport.
+   Fit the longest word ('STRATEGIST') without changing individual-role size.
+   Constrain to the actual left-column width; do not animate font-size/layout. */
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current,
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming{
+ font-size:clamp(22px,8cqw,50px);
+ font-weight:500;
+ letter-spacing:-.038em;
+ transform:none;
+ transition:none;
+ animation:none;
+ will-change:auto;
 }
-
-
-/* P0-HERO V5.2: animate punctuation, not the whole word block.
-   Scoped to the homepage portal. Never touch the locked hero CSS. */
-.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-period{
- display:inline-block;
- position:relative;
- margin-left:.025em;
- font-size:.52em;
- font-weight:600;
- line-height:1;
- vertical-align:baseline;
- color:#ce9eea;
- transform-origin:50% 100%;
- animation:p0h-period-spring 1050ms linear infinite;
- will-change:transform;
-}
-@keyframes p0h-period-spring{
- 0%,12%,100%{transform:translateY(0) scale(1)}
- 26%{transform:translateY(-.27em) scale(1.06,.94)}
- 41%{transform:translateY(.045em) scale(.95,1.05)}
- 54%{transform:translateY(-.12em) scale(1.025,.975)}
- 67%{transform:translateY(0) scale(.985,1.015)}
- 79%{transform:translateY(-.035em) scale(1)}
- 90%{transform:translateY(0) scale(1)}
-}
-.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-group[data-p0h-paused="true"] .p0h-role-period{
- animation-play-state:paused;
-}
-/* Minimal 500ms text dissolve: no full-line slide, bounce or return glitch. */
 .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-leaving{
- animation:p0h-role-dissolve-out 500ms cubic-bezier(.25,.8,.3,1) both;
+ animation:p0h-v53-fade-out 500ms cubic-bezier(.35,0,.65,1) both;
 }
 .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-arriving{
- animation:p0h-role-dissolve-in 500ms cubic-bezier(.25,.8,.3,1) both;
+ animation:p0h-v53-fade-in 500ms cubic-bezier(.35,0,.65,1) both;
 }
-@keyframes p0h-role-dissolve-out{
- from{opacity:1;transform:translate3d(0,0,0)}
- to{opacity:0;transform:translate3d(0,-.07em,0)}
+@keyframes p0h-v53-fade-out{
+ from{opacity:1}
+ to{opacity:0}
 }
-@keyframes p0h-role-dissolve-in{
- from{opacity:0;transform:translate3d(0,.09em,0)}
- to{opacity:1;transform:translate3d(0,0,0)}
+@keyframes p0h-v53-fade-in{
+ from{opacity:0}
+ to{opacity:1}
+}
+/* Layout changes dictate type scale, never the current professional role. */
+@media(min-width:700px) and (max-width:1099px){
+ .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current,
+ .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming{
+  font-size:clamp(32px,4.6vw,46px);
+ }
+}
+@media(max-width:699px){
+ .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current,
+ .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming{
+  font-size:clamp(23px,7.3vw,40px);
+ }
 }
 @media(prefers-reduced-motion:reduce){
- .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-period{
-  animation:none!important;transform:none!important;
- }
  .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-leaving,
  .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-arriving{
   animation:none!important;
