@@ -201,3 +201,20 @@
  .p0h-role-current,.p0h-role-incoming{transition:none!important}
  .p0h-summary-eyebrow .p0h-motion-control{display:none!important}
 }
+
+
+/* P0-HERO-01 V5.1: fit all role titles to their own column and enable hover pausing.
+   This stays scoped to the home-only enhancement; no hero-lock or global CSS edits. */
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-group {
+  container-type: inline-size;
+  pointer-events: auto;
+}
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-group .p0h-role-viewport {
+  pointer-events: auto;
+}
+/* 'STRATEGIST' must fit its own viewport on wide screens and small phones.
+   Container units follow the real title width, not the full window width. */
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-long,
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-long {
+  font-size: clamp(22px, 8cqw, 50px);
+}
