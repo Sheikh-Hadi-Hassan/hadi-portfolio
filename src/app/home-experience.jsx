@@ -6,5 +6,6 @@ const Motion=dynamic(()=>import('./motion'),{ssr:false});
 const ReelMotion=dynamic(()=>import('./reel-motion'),{ssr:false});
 const FolderMotion=dynamic(()=>import('./folder-motion'),{ssr:false});
 const HeroDither=dynamic(()=>import('./hero-dither'),{ssr:false});
-export default function HomeExperience(){const path=usePathname();if(path==='/expertise/product-development/'||path==='/expertise/product-development')return <Motion/>;if(path!=='/')return null;return <><Motion/><ReelMotion/><FolderMotion/><HeroDither/></>}
+const HeroRefinement=dynamic(()=>import('./hero-refinement'),{ssr:false});
+export default function HomeExperience(){const path=usePathname();if(path==='/expertise/product-development/'||path==='/expertise/product-development')return <Motion/>;if(path!=='/')return null;return <><Motion/><ReelMotion/><FolderMotion/><HeroDither/><HeroRefinement/></>}
 
