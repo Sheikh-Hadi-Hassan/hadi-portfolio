@@ -40,10 +40,10 @@ async function inspect(browser,name,width,height,motion){
    const role=page.locator('[data-p0h-current]');
    const first=await role.innerText();await page.waitForTimeout(4750);
    assert.notEqual(await role.innerText(),first,'Rotating title did not advance');
-   const pause=page.getByRole('button',{name:'Pause rotating professional titles'});await pause.click();
+   const pause=page.locator('.p0h-motion-control');assert.equal(await pause.getAttribute('aria-label'),'Pause rotating professional titles');await pause.click();
    assert.equal(await pause.getAttribute('aria-pressed'),'true');
    const stopped=await role.innerText();await page.waitForTimeout(4400);assert.equal(await role.innerText(),stopped,'Paused title advanced');
-   await page.getByRole('button',{name:'Resume rotating professional titles'}).click();
+   await pause.click();
    const slider=page.getByRole('button',{name:'Pause the selected project slider'});await slider.click();
    assert.equal(await slider.getAttribute('aria-pressed'),'true');await page.getByRole('button',{name:'Resume the selected project slider'}).click();
    entry.observations.push('Role rotation and both pause/resume controls respond');
