@@ -20,7 +20,7 @@ function useReducedMotion(){
  },[]);
  return reduced;
 }
-function RoleLines({lines}){return <>{lines.map((line,i)=><span className="p0h-role-line" key={i+'-'+line}>{line}{i===lines.length-1&&<span className="p0h-role-period" aria-hidden="true" data-p0h-period>.</span>}</span>)}</>}
+function RoleLines({lines}){return <>{lines.map((line,i)=><span className="p0h-role-line" key={i+'-'+line}>{line}</span>)}</>}
 function Roles({paused,reduced}){
  const [index,setIndex]=useState(0),[transition,setTransition]=useState(false),[visible,setVisible]=useState(true),[hovered,setHovered]=useState(false);
  const timer=useRef(0);
@@ -44,8 +44,8 @@ function Roles({paused,reduced}){
   onPointerEnter={event=>{if(event.pointerType==='mouse'||event.pointerType==='pen')setHovered(true)}}
   onPointerLeave={event=>{if(event.pointerType==='mouse'||event.pointerType==='pen')setHovered(false)}}>
   <div className="p0h-role-viewport" aria-hidden="true">
-   <div className={'p0h-role-current'+(transition?' is-leaving':'')+(index===1?' is-long':'')} data-p0h-current><RoleLines lines={ROLES[index]}/></div>
-   <div className={'p0h-role-incoming'+(transition?' is-arriving':'')+((index+1)%ROLES.length===1?' is-long':'')}><RoleLines lines={ROLES[(index+1)%ROLES.length]}/></div>
+   <div className={'p0h-role-current'+(transition?' is-leaving':'')} data-p0h-current><RoleLines lines={ROLES[index]}/></div>
+   <div className={'p0h-role-incoming'+(transition?' is-arriving':'')}><RoleLines lines={ROLES[(index+1)%ROLES.length]}/></div>
   </div>
  </div>;
 }
