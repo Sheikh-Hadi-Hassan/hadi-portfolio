@@ -1,0 +1,111 @@
+name: P0-HERO V5.1 role fit and hover acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/app/hero-refinement.jsx'
+      - 'src/styles/hero-refinement.css'
+      - 'tests/hero-title-hover-browser.cjs'
+      - '.github/workflows/p0-hero-role-hover.yml'
+permissions:
+  contents: read
+concurrency:
+  group: p0-hero-role-hover-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  role-hover:
+    if: github.event_name == 'pull_request' && github.head_ref == 'fix/p0-hero-v5-title-fit-hover-20261125'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout exact proposed commit without stored credentials
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          fetch-depth: 50
+      - name: Enforce original V5 parent, narrow scope and hero-lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=f4bb8a18cb06899a47c9989ed837abd4f7bc8f36
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          test "$(git merge-base "$BASE" HEAD)" = "$BASE"
+          git diff --name-only "$BASE" HEAD | sort >/tmp/p0-role-hover-changed.txt
+          cat /tmp/p0-role-hover-changed.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          expected={
+            'src/app/hero-refinement.jsx',
+            'src/styles/hero-refinement.css',
+            'tests/hero-title-hover-browser.cjs',
+            '.github/workflows/p0-hero-role-hover.yml'
+          }
+          changed=set(Path('/tmp/p0-role-hover-changed.txt').read_text().splitlines())
+          assert changed==expected, {'missing':expected-changed,'unexpected':changed-expected}
+          print('PASS: only 4 authorized role hover/title files changed')
+          PY
+          git diff --check "$BASE" HEAD
+          python3 scripts/verify-hero-lock.py
+          test -z "$(git status --porcelain)"
+      - name: Verify isolated scratch space
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os
+          stat=os.statvfs('.')
+          free=stat.f_bavail*stat.f_frsize
+          print('Free scratch bytes',free)
+          assert free>5_000_000_000
+          PY
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install pinned dependencies and real Chromium
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install pillow
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Build exact candidate and retain protected hero
+        shell: bash
+        env:
+          SITE_URL: https://hadi.intellignce.net
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: |
+          set -euo pipefail
+          node --check tests/hero-title-hover-browser.cjs
+          npm run build
+          test -s out/index.html
+          test -f out/expertise/product-development/index.html
+          test -f out/resume/index.html
+          test -d out/_next/static
+          python3 scripts/verify-hero-lock.py
+      - name: Verify title fitting and hover/resume in Chromium
+        shell: bash
+        env:
+          P0H_BASE_URL: http://127.0.0.1:8781
+          P0H_EVIDENCE_DIR: artifacts/p0-hero-role-hover
+        run: |
+          set -euo pipefail
+          python3 -B -m http.server 8781 --bind 127.0.0.1 --directory out >/tmp/p0-role-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 45); do
+            if curl -fsS -o /dev/null http://127.0.0.1:8781/; then break; fi
+            sleep 1
+          done
+          curl -fsS -o /dev/null http://127.0.0.1:8781/
+          node tests/hero-title-hover-browser.cjs
+      - name: Upload QA screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-hero-role-hover-qa
+          path: artifacts/p0-hero-role-hover/
+          retention-days: 7
+          if-no-files-found: warn
