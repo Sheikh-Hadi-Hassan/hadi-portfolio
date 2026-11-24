@@ -32,7 +32,9 @@ async function roleInfo(page){
   const textRects=[...el.querySelectorAll('.p0h-role-line')].map(line=>{
     const range=document.createRange();range.selectNodeContents(line);
     const rect=range.getBoundingClientRect();
-    return {text:line.textContent,x:rect.x,right:rect.right,y:rect.y,bottom:rect.bottom,width:rect.width};
+    const lineBox=line.getBoundingClientRect();
+    // Range measures font-glyph overhangs; vertical clipping uses the actual line box.
+    return {text:line.textContent,x:rect.x,right:rect.right,y:lineBox.y,bottom:lineBox.bottom,width:rect.width};
   });
   const css=getComputedStyle(el);
   return {title:el.innerText,hovered:root.getAttribute('data-p0h-hovered'),
