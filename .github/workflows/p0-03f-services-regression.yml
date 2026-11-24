@@ -25,6 +25,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
+          fetch-depth: 8
       - name: Authenticate pinned baseline and narrow changed-file scope
         shell: bash
         run: |
