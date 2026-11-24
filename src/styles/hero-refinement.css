@@ -242,3 +242,13 @@
   from { opacity:0; transform:translate3d(0,52%,0); }
   to { opacity:1; transform:translate3d(0,0,0); }
 }
+
+
+/* Tablet-wide title rows are shorter than desktop. Cap the long-role type to
+   preserve both lines inside the fixed title viewport at 700–1099 px. */
+@media (min-width:700px) and (max-width:1099px) {
+  .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-long,
+  .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-long {
+    font-size: clamp(32px, 4.6vw, 46px);
+  }
+}
