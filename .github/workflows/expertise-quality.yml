@@ -650,6 +650,7 @@ jobs:
               lines.push('','## Interpretation','','Reported PASS covers only tested observable behavior, not total visual acceptance. Source repairs require separate authorization.');
               fs.writeFileSync(path.join(output,'p0-03e2-matrix.md'),lines.join('\n')+'\n');
               console.log('P0-03E2 RESULT',JSON.stringify({matrix,network,viewports:results.map(r=>({name:r.config.name,http:r.http,overflow:r.overflow?.diff,service:r.services?.status,animation:Object.fromEntries(Object.entries(r.animations||{}).map(([k,v])=>[k,v.status]))})),reference:ref.status}));
+              console.log('P0-03E2 DETAIL',JSON.stringify(results.map(r=>({viewport:r.config?.name,readiness:r.readiness&&{stable:r.readiness.stable,overlayGone:r.readiness.overlayGone,heroImagesLoaded:r.readiness.heroImagesLoaded,fontsReady:r.readiness.fontsReady,observations:r.readiness.observations},services:r.services,interactions:r.interaction,httpErrors:r.diagnostic?.httpErrors,exceptions:r.diagnostic?.errors,failedRequests:r.diagnostic?.failed}))));
             }finally{await browser.close()}
           })().catch(e=>{console.error(e);process.exitCode=1})
           JS
