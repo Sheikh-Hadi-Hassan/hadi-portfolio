@@ -1,5 +1,5 @@
 'use strict';
-// Browser acceptance of V5.1 role animation and hover-to-pause. No production writes.
+// Browser acceptance of V5.3 uniform typography, restrained fade, hover pause. No production writes.
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
@@ -36,16 +36,18 @@ async function roleInfo(page){
     // Range measures font-glyph overhangs; vertical clipping uses the actual line box.
     return {text:line.textContent,x:rect.x,right:rect.right,y:lineBox.y,bottom:lineBox.bottom,width:rect.width};
   });
-  const css=getComputedStyle(el),period=el.querySelector('[data-p0h-period]'),pcss=period&&getComputedStyle(period);
+  const css=getComputedStyle(el),incoming=getComputedStyle(root.querySelector('.p0h-role-incoming'));
   return {title:el.innerText,hovered:root.getAttribute('data-p0h-hovered'),
-   pauseState:root.getAttribute('data-p0h-paused'),periodCount:el.querySelectorAll('[data-p0h-period]').length,
-   periodText:period?.textContent,periodAnimation:pcss?.animationName,
-   periodPlayState:pcss?.animationPlayState,periodSize:pcss?.fontSize,
+   pauseState:root.getAttribute('data-p0h-paused'),
+   decorativePunctuation:root.querySelectorAll('[data-p0h-period],.p0h-role-period').length,
+   incomingFontSize:incoming.fontSize,incomingFontFamily:incoming.fontFamily,
+   currentFontFamily:css.fontFamily,currentFontWeight:css.fontWeight,
+   currentTransform:css.transform,incomingTransform:incoming.transform,
    viewport:{x:box.x,right:box.right,y:box.y,bottom:box.bottom,width:box.width},
    textRects,fontSize:css.fontSize,transition:css.transitionDuration,
-   currentOpacity:css.opacity,incomingOpacity:getComputedStyle(root.querySelector('.p0h-role-incoming')).opacity,
+   currentOpacity:css.opacity,incomingOpacity:incoming.opacity,
    currentAnimation:css.animationName,
-   long:el.classList.contains('is-long'),cycle:root.dataset.p0hCycleMs,
+   long:el.classList.contains('is-long')||root.querySelector('.is-long')!==null,cycle:root.dataset.p0hCycleMs,
    documentWidth:document.documentElement.scrollWidth,windowWidth:innerWidth};
  });
 }
@@ -71,9 +73,12 @@ function fits(info){
  assert.equal(info.currentOpacity,'1','Current title not fully visible at rest');
  assert.equal(info.incomingOpacity,'0','Incoming title visible at rest (double-transition regression)');
  assert.equal(info.currentAnimation,'none','Unexpected role animation at rest');
- assert.equal(info.periodCount,1,'Exactly one period must be attached to current role');
- assert.equal(info.periodText,'.','Missing animated period character');
- assert(parseFloat(info.periodSize)<parseFloat(info.fontSize)*.7,'Period should be a small typographic accent');
+ assert.equal(info.decorativePunctuation,0,'Unwanted bouncing punctuation remains');
+ assert.equal(info.long,false,'Role-specific font-size class remains');
+ assert.equal(info.fontSize,info.incomingFontSize,'Current and incoming title use different font sizes');
+ assert.equal(info.currentFontFamily,info.incomingFontFamily,'Role typeface changed');
+ assert.equal(info.currentTransform,'none','Resting current title must not move');
+ assert.equal(info.incomingTransform,'none','Resting incoming title must not move');
 }
 async function testCase(browser,[name,w,h,motion]){
  const context=await browser.newContext({viewport:{width:w,height:h},reducedMotion:motion});
@@ -90,14 +95,11 @@ async function testCase(browser,[name,w,h,motion]){
   assert.equal(first.transition.split(',')[0],'0s','Resting title must never animate backward on state reset');
   fits(first);result.roles.push({name:first.title,size:first.fontSize,hovered:first.hovered});
   if(motion==='reduce'){
-   assert.equal(first.periodAnimation,'none','Period must be motionless with reduced-motion preference');
    const before=first.title;
    await page.waitForTimeout(3550);
    assert.equal((await stableRoleInfo(page)).title,before,'Title rotates with reduced motion');
    assert.equal(await page.locator('.p0h-motion-control').count(),0,'Unexpected motion button');
   }else{
-   assert.equal(first.periodAnimation,'p0h-period-spring','Springy period keyframe missing');
-   assert.equal(first.periodPlayState,'running','Period should animate while title runs');
    let previous=first.title;
    for(let i=0;i<3;i++){
     await page.waitForFunction(previous=>{
@@ -106,8 +108,8 @@ async function testCase(browser,[name,w,h,motion]){
     },previous,{timeout:6000});
     await settled(page);
     const info=await stableRoleInfo(page);fits(info);
-    result.roles.push({name:info.title,size:info.fontSize,long:info.long});
-    if(info.title.includes('STRATEGIST'))assert(info.long,'Long title class not restored');
+    result.roles.push({name:info.title,size:info.fontSize});
+    assert.equal(info.fontSize,first.fontSize,'Title size changed from '+first.title+' to '+info.title);
     previous=info.title;
    }
    assert.equal(new Set(result.roles.map(r=>r.name)).size,4,'Four unique roles not observed');
@@ -119,20 +121,17 @@ async function testCase(browser,[name,w,h,motion]){
    await settled(page);
    await root.hover({position:{x:Math.min(45,Math.max(10,first.viewport.width/4)),y:Math.min(20,h/20)}});
    assert.equal(await root.getAttribute('data-p0h-hovered'),'true','Hover did not activate pause');
-   assert.equal((await stableRoleInfo(page)).periodPlayState,'paused','Springy period must pause on hover');
    await page.waitForTimeout(650);await settled(page);
    const frozen=await stableRoleInfo(page);
    await page.waitForTimeout(3650);
    assert.equal((await stableRoleInfo(page)).title,frozen.title,'Title changed during sustained hover');
    const pausedBtn=page.getByRole('button',{name:'Pause hero motion'});
    await pausedBtn.click();assert.equal(await root.getAttribute('data-p0h-hovered'),'false','Hover failed to clear on pointer exit');
-   assert.equal((await stableRoleInfo(page)).periodPlayState,'paused','Period must honor manual pause after pointer exit');
    const buttonStopped=await stableRoleInfo(page);
    await page.waitForTimeout(3550);
    assert.equal((await stableRoleInfo(page)).title,buttonStopped.title,'Manual pause not preserved after hover exit');
    await page.getByRole('button',{name:'Resume hero motion'}).click();
    const resuming=await stableRoleInfo(page);
-   assert.equal(resuming.periodPlayState,'running','Period must resume bouncing after manual resume');
    await page.waitForFunction(previous=>{const el=document.querySelector('.p0h-role-current');return el?.innerText!==previous&&!el.classList.contains('is-leaving')},resuming.title,{timeout:5500});
    const next=await stableRoleInfo(page);fits(next);
    result.hoverPause='PASS';result.manualPause='PASS';result.resume='PASS';
@@ -165,7 +164,7 @@ async function testCase(browser,[name,w,h,motion]){
  }finally{await browser.close()}
  const pass=results.filter(x=>x.status==='PASS').length,fail=results.length-pass;
  fs.writeFileSync(path.join(OUT,'report.json'),JSON.stringify({pass,fail,results},null,2));
- fs.writeFileSync(path.join(OUT,'acceptance-matrix.md'),['# P0-HERO-01 V5.1 browser acceptance','','| Scenario | Result |','|---|---|',...results.map(x=>'| '+x.name+' | '+x.status+' |')].join('\n'));
+ fs.writeFileSync(path.join(OUT,'acceptance-matrix.md'),['# P0-HERO-01 V5.3 browser acceptance','','| Scenario | Result |','|---|---|',...results.map(x=>'| '+x.name+' | '+x.status+' |')].join('\n'));
  console.log('P0-HERO ROLE HOVER SUMMARY '+JSON.stringify({pass,fail,cases:results.map(x=>({name:x.name,status:x.status,reason:x.reason?.slice(0,160)}))}));
  if(fail)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exitCode=1});
