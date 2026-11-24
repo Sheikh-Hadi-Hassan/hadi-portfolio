@@ -1,5 +1,5 @@
 'use client';
-import {useEffect,useState} from 'react';
+import {useEffect,useState,useRef} from 'react';
 import {createPortal} from 'react-dom';
 import '../styles/hero-refinement.css';
 
@@ -17,15 +17,19 @@ function RoleLines({lines}){return <>{lines.map((line,i)=><span className="p0h-r
 function Roles(){
  const [index,setIndex]=useState(0),[transition,setTransition]=useState(false),[paused,setPaused]=useState(false),[visible,setVisible]=useState(true);
  const reduced=useReducedMotion();
+ const timerRef=useRef(0),pausedRef=useRef(false);
  useEffect(()=>{const fn=()=>setVisible(!document.hidden);fn();document.addEventListener('visibilitychange',fn);return()=>document.removeEventListener('visibilitychange',fn)},[]);
- useEffect(()=>{if(reduced||paused||!visible||transition)return;const t=setTimeout(()=>setTransition(true),HOLD);return()=>clearTimeout(t)},[index,reduced,paused,visible,transition]);
+ useEffect(()=>{if(reduced||paused||!visible||transition)return;
+  timerRef.current=setTimeout(()=>{timerRef.current=0;if(!pausedRef.current)setTransition(true)},HOLD);
+  return()=>{clearTimeout(timerRef.current);timerRef.current=0};
+ },[index,reduced,paused,visible,transition]);
  useEffect(()=>{if(!transition)return;const t=setTimeout(()=>{setIndex(i=>(i+1)%ROLES.length);setTransition(false)},TRANSITION);return()=>clearTimeout(t)},[transition]);
  return <div className="p0h-role-group" data-p0h-role-root>
   <div className="p0h-role-viewport" aria-hidden="true">
    <div className={'p0h-role-current'+(transition?' is-leaving':'')+(index===1?' is-long':'')} data-p0h-current><RoleLines lines={ROLES[index]}/></div>
    <div className={'p0h-role-incoming'+(transition?' is-arriving':'')+((index+1)%ROLES.length===1?' is-long':'')}><RoleLines lines={ROLES[(index+1)%ROLES.length]}/></div>
   </div>
-  {!reduced&&<button className="p0h-motion-control" type="button" aria-pressed={paused} aria-label={paused?'Resume rotating professional titles':'Pause rotating professional titles'} onClick={()=>setPaused(v=>!v)}><span aria-hidden="true">{paused?'▶':'Ⅱ'}</span></button>}
+  {!reduced&&<button className="p0h-motion-control" type="button" aria-pressed={paused} aria-label={paused?'Resume rotating professional titles':'Pause rotating professional titles'} onClick={()=>{pausedRef.current=!pausedRef.current;if(pausedRef.current){clearTimeout(timerRef.current);timerRef.current=0}setPaused(pausedRef.current)}}><span aria-hidden="true">{paused?'▶':'Ⅱ'}</span></button>}
  </div>;
 }
 function ProjectMark({name}){return <span className={'p0h-project-mark p0h-mark-'+name.toLowerCase().replace(/[^a-z]+/g,'-')}>{name}</span>}
