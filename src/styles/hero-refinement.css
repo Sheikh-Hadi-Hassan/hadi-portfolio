@@ -201,3 +201,54 @@
  .p0h-role-current,.p0h-role-incoming{transition:none!important}
  .p0h-summary-eyebrow .p0h-motion-control{display:none!important}
 }
+
+
+/* P0-HERO-01 V5.1: fit all role titles to their own column and enable hover pausing.
+   This stays scoped to the home-only enhancement; no hero-lock or global CSS edits. */
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-group {
+  container-type: inline-size;
+  pointer-events: auto;
+}
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-group .p0h-role-viewport {
+  pointer-events: auto;
+}
+/* 'STRATEGIST' must fit its own viewport on wide screens and small phones.
+   Container units follow the real title width, not the full window width. */
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-long,
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-long {
+  font-size: clamp(22px, 8cqw, 50px);
+}
+
+
+/* V5.1 animation correction: an outgoing role exits once, while the incoming
+   role enters once. When React advances the index, snap the now-correct layers
+   to their resting state: do not run a reverse CSS transition on reset. */
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current,
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming {
+  transition: none;
+  animation: none;
+}
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-leaving {
+  animation: p0h-role-exit 500ms cubic-bezier(.2,.8,.2,1) both;
+}
+.portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-arriving {
+  animation: p0h-role-enter 500ms cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes p0h-role-exit {
+  from { opacity:1; transform:translate3d(0,0,0); }
+  to { opacity:0; transform:translate3d(0,-36%,0); }
+}
+@keyframes p0h-role-enter {
+  from { opacity:0; transform:translate3d(0,52%,0); }
+  to { opacity:1; transform:translate3d(0,0,0); }
+}
+
+
+/* Tablet-wide title rows are shorter than desktop. Cap the long-role type to
+   preserve both lines inside the fixed title viewport at 700–1099 px. */
+@media (min-width:700px) and (max-width:1099px) {
+  .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-current.is-long,
+  .portfolio-root .portfolio-hero.p0h-enhanced .p0h-role-incoming.is-long {
+    font-size: clamp(32px, 4.6vw, 46px);
+  }
+}
