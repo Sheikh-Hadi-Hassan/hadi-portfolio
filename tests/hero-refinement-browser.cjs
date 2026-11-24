@@ -45,8 +45,8 @@ async function inspect(browser,name,width,height,motion){
    assert.equal(await pause.getAttribute('aria-pressed'),'true');
    const stopped=await role.innerText();await page.waitForTimeout(4400);assert.equal(await role.innerText(),stopped,'Paused title advanced');
    await pause.click();
-   const slider=page.getByRole('button',{name:'Pause the selected project slider'});await slider.click();
-   assert.equal(await slider.getAttribute('aria-pressed'),'true');await page.getByRole('button',{name:'Resume the selected project slider'}).click();
+   const slider=page.locator('.p0h-project-heading');assert.equal(await slider.getAttribute('aria-label'),'Pause the selected project slider');await slider.click();
+   assert.equal(await slider.getAttribute('aria-pressed'),'true');await slider.click();
    entry.observations.push('Role rotation and both pause/resume controls respond');
    await page.mouse.move(100,200);await page.waitForTimeout(550);
    const bg=await page.locator('.parallax-backdrop').evaluate(e=>e.style.getPropertyValue('--bg-x'));
