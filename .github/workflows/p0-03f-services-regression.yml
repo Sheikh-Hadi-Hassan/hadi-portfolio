@@ -1,0 +1,109 @@
+name: P0-03F Services real-browser regression
+on:
+  pull_request:
+    paths:
+      - 'src/app/motion.jsx'
+      - 'tests/services-keyboard-real-browser.cjs'
+      - '.github/workflows/p0-03f-services-regression.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: p0-03f-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  services-regression:
+    name: Patched Next.js export - Chromium keyboard hover touch
+    if: github.event_name == 'pull_request' && github.head_ref == 'fix/p0-03f-services-keyboard-ci-20261124'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout only the proposed patch, without credentials
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Authenticate pinned baseline and narrow changed-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=97544b9151eb9a19d51c5b0c757d7c065f232a7b
+          test "$(git merge-base "$BASE" HEAD)" = "$BASE"
+          git diff --name-only "$BASE" HEAD | sort > /tmp/p0-03f-changed.txt
+          cat /tmp/p0-03f-changed.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          changed=set(Path('/tmp/p0-03f-changed.txt').read_text().splitlines())
+          allowed={'src/app/motion.jsx','tests/services-keyboard-real-browser.cjs','.github/workflows/p0-03f-services-regression.yml'}
+          assert changed==allowed,(changed,allowed)
+          print('PASS: only three explicitly allowed source, test, workflow paths differ')
+          PY
+          git diff --check "$BASE" HEAD
+          test -z "$(git status --porcelain)"
+      - name: Inspect isolated runner disk before generating output
+        shell: bash
+        run: |
+          set -euo pipefail
+          df -h .
+          du -sh . public/assets 2>/dev/null || true
+          python3 - <<'PY'
+          import os
+          v=os.statvfs('.')
+          free=v.f_bavail*v.f_frsize
+          print('Runner scratch disk free bytes:',free)
+          assert free>5_000_000_000,'Insufficient isolated runner disk; no build started'
+          PY
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install pinned build and browser dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install pillow
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Build patched source only inside disposable runner
+        shell: bash
+        env:
+          SITE_URL: https://hadi.intellignce.net
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: |
+          set -euo pipefail
+          node --check tests/services-keyboard-real-browser.cjs
+          npm run build
+          test -s out/index.html
+          test -d out/_next/static
+          test -f out/expertise/product-development/index.html
+          du -sh out .next generated 2>/dev/null || true
+      - name: Run Chromium against patched Next.js static runtime
+        shell: bash
+        env:
+          P0_03F_BASE_URL: http://127.0.0.1:8776
+          P0_03F_EVIDENCE_DIR: artifacts/p0-03f
+        run: |
+          set -euo pipefail
+          python3 -B -m http.server 8776 --bind 127.0.0.1 --directory out >/tmp/p0-03f-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 45); do
+            if curl -fsS -o /dev/null http://127.0.0.1:8776/; then break; fi
+            sleep 1
+          done
+          curl -fsS -o /dev/null http://127.0.0.1:8776/
+          curl -fsS -o /dev/null http://127.0.0.1:8776/expertise/product-development/
+          node tests/services-keyboard-real-browser.cjs
+      - name: Publish only lightweight test evidence and screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p0-03f-patched-services-chromium-evidence
+          path: artifacts/p0-03f/
+          retention-days: 7
+          if-no-files-found: warn
