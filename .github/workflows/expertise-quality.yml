@@ -482,9 +482,9 @@ jobs:
             page.on('requestfailed',r=>failed.push({url:cleanURL(r.url()),type:r.resourceType(),error:r.failure()?.errorText?.slice(0,100)}));
             return {errors,httpErrors,failed};
           }
-          async function readiness(page){
+          async function readiness(page,prefix){
             // Preserve the intentional loading state before waiting for the reveal.
-            await page.screenshot({path:path.join(output,'loading-'+page.viewportSize().width+'.png')});
+            await page.screenshot({path:path.join(output,prefix+'-loading-'+page.viewportSize().width+'.png')});
             await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.querySelectorAll('.portfolio-hero img')].map(img=>img.decode?.().catch(()=>{})||Promise.resolve()))});
             let records=[],stable=0,previous='';
             for(let i=0;i<48;i++){
@@ -502,7 +502,7 @@ jobs:
               previous=fingerprint;
               if(stable>=5&&state.overlays.length===0&&state.images.every(x=>x.complete&&x.naturalWidth>0))break;
             }
-            await page.screenshot({path:path.join(output,'revealed-'+page.viewportSize().width+'.png')});
+            await page.screenshot({path:path.join(output,prefix+'-revealed-'+page.viewportSize().width+'.png')});
             const last=records.at(-1);
             return {stable:stable>=5,overlayGone:last?.overlays.length===0,heroImagesLoaded:last?.images.every(x=>x.complete&&x.naturalWidth>0),fontsReady:last?.fonts==='loaded',observations:records.length,last};
           }
@@ -584,7 +584,7 @@ jobs:
             let response,ready,animations={},service={},interaction={};
             try{
               response=await page.goto(origin+'/',{waitUntil:'domcontentloaded',timeout:45000});
-              ready=await readiness(page);
+              ready=await readiness(page,config.name);
               for(const [name,selector,...items] of traceNames)
                 animations[name]=await scrollSequence(page,config,name,selector,...items);
               service=await services(page);
@@ -607,7 +607,7 @@ jobs:
             try{
               const response=await page.goto('https://hadi.intellignce.net/',{waitUntil:'domcontentloaded',timeout:24000});
               if(!response?.ok())return {status:'REFERENCE UNAVAILABLE',http:response?.status()};
-              const ready=await readiness(page);
+              const ready=await readiness(page,'reference');
               await page.screenshot({path:path.join(output,'reference-hero-revealed.png')});
               for(const [name,selector] of traceNames){
                 const loc=page.locator(selector).first();
