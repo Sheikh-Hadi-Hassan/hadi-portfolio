@@ -1,0 +1,130 @@
+name: P0-HERO-01 V5 isolated browser acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/app/hero-refinement.jsx'
+      - 'src/styles/hero-refinement.css'
+      - 'src/pages/resume.html'
+      - 'src/data/seo-pages.json'
+      - 'tests/hero-v5-browser.cjs'
+      - '.github/workflows/p0-hero-v5-browser.yml'
+permissions:
+  contents: read
+concurrency:
+  group: p0-hero-v5-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  hero-v5:
+    if: github.event_name == 'pull_request' && github.head_ref == 'feature/p0-hero01-v5-content-logos-resume-20261125'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout exact candidate without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          fetch-depth: 50
+      - name: Verify review baseline, changed scope and hero lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=cdc885bbad43b1edba25e2a9e3218ee21898e79e
+          test "$(git merge-base "$BASE" HEAD)" = "$BASE"
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          git diff --name-only "$BASE" HEAD | sort >/tmp/p0v5-changed.txt
+          cat /tmp/p0v5-changed.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          expected={
+            'src/app/hero-refinement.jsx',
+            'src/styles/hero-refinement.css',
+            'src/pages/resume.html',
+            'src/data/seo-pages.json',
+            'tests/hero-v5-browser.cjs',
+            '.github/workflows/p0-hero-v5-browser.yml'
+          }
+          changed=set(Path('/tmp/p0v5-changed.txt').read_text().splitlines())
+          assert changed==expected, {'missing':expected-changed,'extra':changed-expected}
+          print('PASS: exact six approved V5 scope files')
+          PY
+          git diff --check "$BASE" HEAD
+          python3 scripts/verify-hero-lock.py
+          test -z "$(git status --porcelain)"
+      - name: Validate dependency and résumé provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          source=json.loads(Path('src/data/resume-source.json').read_text())
+          path=Path('public')/source['url'].lstrip('/')
+          assert path.is_file(), path
+          digest=hashlib.sha256(path.read_bytes()).hexdigest()
+          assert digest==source['sha256'], {'expected':source['sha256'],'actual':digest}
+          assert path.read_bytes()[:4]==b'%PDF'
+          print('PASS: Original résumé PDF and SHA-256 preserved:',digest)
+          PY
+      - name: Verify isolated runner scratch disk
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os
+          st=os.statvfs('.');free=st.f_bavail*st.f_frsize
+          print('Scratch disk free bytes:',free)
+          assert free>5_000_000_000
+          PY
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install pinned deps and Chromium on isolated runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install pillow
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Build exact candidate and verify original hero
+        shell: bash
+        env:
+          SITE_URL: https://hadi.intellignce.net
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: |
+          set -euo pipefail
+          node --check tests/hero-v5-browser.cjs
+          npm run build
+          test -s out/index.html
+          test -s out/resume/index.html
+          test -f out/assets/hadi-hassan-resume-2026-11.pdf
+          test -f out/expertise/product-development/index.html
+          test -d out/_next/static
+          python3 scripts/verify-hero-lock.py
+      - name: Verify integrated UI and résumé in real Chromium
+        shell: bash
+        env:
+          P0H_BASE_URL: http://127.0.0.1:8779
+          P0H_EVIDENCE_DIR: artifacts/p0-hero-v5
+        run: |
+          set -euo pipefail
+          python3 -B -m http.server 8779 --bind 127.0.0.1 --directory out >/tmp/p0v5-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 45); do
+            if curl -fsS -o /dev/null http://127.0.0.1:8779/; then break; fi
+            sleep 1
+          done
+          curl -fsS -o /dev/null http://127.0.0.1:8779/
+          node tests/hero-v5-browser.cjs
+      - name: Upload browser screenshots and acceptance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-hero01-v5-browser-evidence
+          path: artifacts/p0-hero-v5/
+          retention-days: 7
+          if-no-files-found: warn
