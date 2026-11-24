@@ -49,6 +49,7 @@ concurrency:
 
 jobs:
   expertise-validation:
+    if: github.event_name != 'pull_request' || !contains(fromJSON('["ci/p0-03d-canonical-home-export-20261122","ci/p0-03e-canonical-home-browser-20261123"]'), github.head_ref)
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
@@ -118,3 +119,547 @@ jobs:
             docs/onlines-fidelity-20261117/browser-*.json
             docs/onlines-fidelity-20261117/screenshots/local-*.png
           if-no-files-found: ignore
+
+  canonical-next-export:
+    name: P0-03D authenticated Next.js export
+    if: github.event_name == 'pull_request' && github.head_ref == 'ci/p0-03d-canonical-home-export-20261122' && github.base_ref == 'fix/p0-03a-home-static-bayfi-css-20261122'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out exact approved candidate (no persisted credentials)
+        uses: actions/checkout@v4
+        with:
+          ref: '97544b9151eb9a19d51c5b0c757d7c065f232a7b'
+          persist-credentials: false
+      - name: Authenticate candidate revision
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "97544b9151eb9a19d51c5b0c757d7c065f232a7b"
+          test -z "$(git status --porcelain)"
+          echo "PASS: exact 40-character candidate commit checked out"
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing build dependencies
+        run: |
+          set -euo pipefail
+          python3 -m pip install pillow
+          npm ci --no-audit --no-fund
+      - name: Build canonical Next.js production-origin export
+        env:
+          SITE_URL: https://hadi.intellignce.net
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: |
+          set -euo pipefail
+          npm run build
+          test "$(git rev-parse HEAD)" = "97544b9151eb9a19d51c5b0c757d7c065f232a7b"
+      - name: Validate frontend assets and original motion bundles
+        run: |
+          set -euo pipefail
+          python3 tests/export-hydration.py out
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, re, html
+          root=Path('out')
+          page=root/'index.html'
+          assert page.is_file() and page.stat().st_size > 1000, 'Missing canonical homepage'
+          markup=page.read_text(errors='replace')
+          assert '/_next/static/' in markup, 'Missing Next.js client script references'
+          assert 'id="site-content"' in markup or 'id=\"site-content\"' in markup, 'Missing Next.js page shell'
+          static=root/'_next/static'
+          js=sorted(static.rglob('*.js'))
+          assert js, 'Next.js client JavaScript bundles missing'
+          assert list(static.rglob('*.css')), 'Next.js CSS chunks missing'
+          for name in ('style.css','hero.css','bayfi-port.css','bayfi-brand.css'):
+              assert (root/name).is_file(), 'Missing stylesheet: '+name
+          fonts=[p for p in (root/'assets').rglob('*') if p.suffix.lower() in ('.woff','.woff2','.ttf')]
+          images=[p for p in (root/'assets').rglob('*') if p.suffix.lower() in ('.webp','.png','.jpg','.jpeg','.svg','.avif')]
+          assert fonts, 'No exported fonts'
+          assert images, 'No exported images'
+          # The existing optimizer replaces approved hero sources with hashed responsive WebPs.
+          # The existing prune-export step can then omit unused source files from out/.
+          # Authenticate the responsive derivatives against the original tracked source bytes.
+          import hashlib
+          hero_verified={}
+          for name in ('hero-stage.webp','hero-subject-enhanced.png'):
+              original=Path('public/assets')/name
+              assert original.is_file(), 'Approved hero source missing: '+name
+              digest=hashlib.sha256(original.read_bytes()).hexdigest()[:12]
+              variants=sorted((root/'assets/responsive').glob(digest+'-q90-*.webp'))
+              targets=[root/'assets'/name]+variants
+              referenced_targets=[p for p in targets if p.is_file() and ('/assets/'+p.relative_to(root/'assets').as_posix()) in markup]
+              assert referenced_targets, 'Approved hero original or optimized image missing from export: '+name
+              hero_verified[name]=[p.relative_to(root).as_posix() for p in referenced_targets]
+          referenced=set(re.findall(r'(?:src|href|poster)="/assets/([^"?#]+)',markup))
+          for relative in referenced:
+              assert (root/'assets'/html.unescape(relative)).is_file(), 'Homepage asset missing: '+relative
+          # Parse actual network-loading HTML tags, not escaped Next Flight JSON strings.
+          from html.parser import HTMLParser
+          class NextAssets(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.urls=[]
+              def handle_starttag(self,tag,attrs):
+                  attrs=dict(attrs)
+                  url=attrs.get('src') if tag=='script' else attrs.get('href') if tag=='link' else None
+                  if url and url.startswith('/_next/static/') and ('.js' in url or '.css' in url):
+                      self.urls.append(url.split('?')[0])
+          parser=NextAssets()
+          parser.feed(markup)
+          local_refs=sorted(set(parser.urls))
+          assert local_refs, 'No Next.js script or stylesheet tags found'
+          for local in local_refs:
+              assert (root/local.lstrip('/')).is_file(), 'Next.js referenced bundle missing: '+local
+          markers=('hadi-work','hadi-showreel','hadi-statement','hadi-practice')
+          bundle_bytes=[(p,p.read_bytes()) for p in js]
+          motion={}
+          for marker in markers:
+              matches=[p.relative_to(root).as_posix() for p,data in bundle_bytes if marker.encode() in data]
+              assert matches, 'Original motion controller absent from client bundles: '+marker
+              motion[marker]=matches
+          Path('canonical-export-validation.json').write_text(json.dumps({
+              'candidate_sha':'97544b9151eb9a19d51c5b0c757d7c065f232a7b',
+              'next_js_chunks':len(js),'font_files':len(fonts),'image_files':len(images),
+              'homepage_asset_references':len(referenced),'approved_hero_derivatives':hero_verified,'motion_controllers':motion,
+              'checks':{'export_html':True,'bundle_references':True,'stylesheets':True,
+                        'fonts':True,'images':True,'homepage_assets':True,'motion_bundles':True,
+                        'hydration':True}
+          },indent=2))
+          print('PASS: authenticated Next.js files and original motion bundles')
+          PY
+      - name: High-confidence secret and private-file scan
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,runpy,json
+          root=Path('out')
+          checker=runpy.run_path('scripts/package-hostinger.py')
+          checker['assert_no_private_files'](root)
+          patterns={
+              'private-key-header':rb'-----BEGIN (?:RSA |EC |OPENSSH |ENCRYPTED )?PRIVATE KEY-----',
+              'aws-access-key':rb'\b(?:AKIA|ASIA)[0-9A-Z]{16}\b',
+              'github-access-token':rb'(?:gh[pousr]_[A-Za-z0-9_]{36,}|github_pat_[A-Za-z0-9_]{50,})',
+              'openai-secret-key':rb'sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{40,}',
+              'stripe-live-secret':rb'sk_live_[A-Za-z0-9]{20,}',
+              'slack-token':rb'xox[baprs]-[A-Za-z0-9-]{24,}'
+          }
+          extensions={'.html','.js','.mjs','.css','.map','.json','.xml','.txt','.svg','.md','.php','.env'}
+          findings=[]
+          scanned=0
+          for path in root.rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in extensions: continue
+              scanned+=1
+              content=path.read_bytes()
+              for label,pattern in patterns.items():
+                  if re.search(pattern,content):
+                      findings.append({'file':path.relative_to(root).as_posix(),'rule':label})
+          if findings:
+              print('FAIL: detected high-confidence private material', json.dumps(findings))
+              raise SystemExit(1)
+          Path('canonical-export-security.json').write_text(json.dumps({
+              'private_file_check':'PASS','high_confidence_secret_scan':'PASS',
+              'text_files_scanned':scanned,'rules':list(patterns)},indent=2))
+          print('PASS: no forbidden files or high-confidence tokens found')
+          PY
+      - name: Package validated frontend with existing secure packager
+        run: |
+          set -euo pipefail
+          python3 scripts/package-hostinger.py "$PWD/canonical-next-export.zip"
+      - name: Generate complete SHA-256 provenance
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,os,json,subprocess,zipfile
+          candidate='97544b9151eb9a19d51c5b0c757d7c065f232a7b'
+          actual=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          assert actual==candidate
+          root=Path('out')
+          archive=Path('canonical-next-export.zip')
+          def sha256(path):
+              h=hashlib.sha256()
+              with path.open('rb') as stream:
+                  for block in iter(lambda:stream.read(1024*1024),b''):
+                      h.update(block)
+              return h.hexdigest()
+          files=sorted([p for p in root.rglob('*') if p.is_file()])
+          file_names=[p.relative_to(root).as_posix() for p in files]
+          with zipfile.ZipFile(archive) as z:
+              assert z.testzip() is None, 'Corrupt export ZIP'
+              members=z.namelist()
+              assert len(members)==len(set(members)), 'Duplicate export ZIP entries'
+              missing=set(file_names)-set(members)
+              extra=set(members)-set(file_names)
+              assert not missing and not extra, 'ZIP inventory mismatch: missing='+str(len(missing))+' extra='+str(len(extra))
+          validation=json.loads(Path('canonical-export-validation.json').read_text())
+          security=json.loads(Path('canonical-export-security.json').read_text())
+          assert all(validation['checks'].values())
+          assert security['high_confidence_secret_scan']=='PASS'
+          manifest={
+              'purpose':'P0-03D canonical Next.js homepage preview',
+              'repository':'Sheikh-Hadi-Hassan/hadi-portfolio',
+              'candidate_sha':candidate,
+              'checkout_sha':actual,
+              'workflow_run_id':os.environ['GITHUB_RUN_ID'],
+              'workflow_attempt':os.environ['GITHUB_RUN_ATTEMPT'],
+              'workflow_url':'https://github.com/Sheikh-Hadi-Hassan/hadi-portfolio/actions/runs/'+os.environ['GITHUB_RUN_ID'],
+              'source_unchanged':True,
+              'build_command':'SITE_URL=https://hadi.intellignce.net npm run build',
+              'export_root':'out/',
+              'export_file_count':len(files),
+              'export_files':[{'path':name,'size':p.stat().st_size,'sha256':sha256(p)}
+                              for name,p in zip(file_names,files)],
+              'export_zip':'canonical-next-export.zip',
+              'export_zip_size':archive.stat().st_size,
+              'export_zip_sha256':sha256(archive),
+              'validation':validation,
+              'security':security
+          }
+          Path('provenance.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          print('PASS: full export inventory and provenance recorded; files:',len(files))
+          print('ZIP SHA-256:',manifest['export_zip_sha256'])
+          PY
+      - name: Upload authenticated export and provenance
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-03d-canonical-next-export
+          path: |
+            canonical-next-export.zip
+            provenance.json
+          retention-days: 3
+          compression-level: 0
+          if-no-files-found: error
+
+
+  canonical-home-browser:
+    name: P0-03E authentic-export browser inspection
+    if: github.event_name == 'pull_request' && github.head_ref == 'ci/p0-03e-canonical-home-browser-20261123' && github.base_ref == 'fix/p0-03a-home-static-bayfi-css-20261122'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 97544b9151eb9a19d51c5b0c757d7c065f232a7b
+          persist-credentials: false
+      - name: Download original export without rebuilding
+        uses: actions/download-artifact@v4
+        with:
+          name: p0-03d-canonical-next-export
+          run-id: 45010820457
+          repository: Sheikh-Hadi-Hassan/hadi-portfolio
+          github-token: ${{ github.token }}
+          path: p0-03e-input
+      - name: Verify archive provenance and every exported file, then extract
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 97544b9151eb9a19d51c5b0c757d7c065f232a7b
+          python3 - <<'PY'
+          import pathlib,json,hashlib,zipfile,stat
+          root=pathlib.Path('p0-03e-input')
+          assert sorted(x.name for x in root.iterdir())==['canonical-next-export.zip','provenance.json']
+          m=json.loads((root/'provenance.json').read_text())
+          assert m['candidate_sha']==m['checkout_sha']=='97544b9151eb9a19d51c5b0c757d7c065f232a7b'
+          assert str(m['workflow_run_id'])=='45010820457'
+          assert m['repository']=='Sheikh-Hadi-Hassan/hadi-portfolio' and m['source_unchanged'] is True
+          assert all(m['validation']['checks'].values())
+          assert m['security']['private_file_check']=='PASS'
+          assert m['security']['high_confidence_secret_scan']=='PASS'
+          archive=root/'canonical-next-export.zip'
+          assert archive.stat().st_size==m['export_zip_size']
+          def digest(f):
+              h=hashlib.sha256()
+              for block in iter(lambda:f.read(1048576),b''):h.update(block)
+              return h.hexdigest()
+          with archive.open('rb') as f: assert digest(f)==m['export_zip_sha256']=='096b83442580ba5338d66e2c4c0a3ef6e1e8b6c475dc05aa04393c884a9d7edd'
+          expected={x['path']:x for x in m['export_files']}
+          assert len(expected)==m['export_file_count']==2325
+          dest=pathlib.Path('p0-03e-review/site')
+          assert not dest.exists()
+          with zipfile.ZipFile(archive) as z:
+              infos=z.infolist()
+              assert z.testzip() is None and len(infos)==len(set(x.filename for x in infos))
+              assert set(expected)==set(x.filename for x in infos)
+              for x in infos:
+                  p=pathlib.PurePosixPath(x.filename)
+                  assert x.filename and not p.is_absolute() and not x.filename.startswith('/') and '\\' not in x.filename
+                  assert all(y not in ('..','.','') for y in p.parts)
+                  assert not x.is_dir() and not stat.S_ISLNK(x.external_attr>>16)
+                  assert x.file_size==expected[x.filename]['size']
+                  with z.open(x) as f: assert digest(f)==expected[x.filename]['sha256'],x.filename
+              dest.mkdir(parents=True)
+              for x in infos:
+                  target=dest.joinpath(*pathlib.PurePosixPath(x.filename).parts)
+                  target.parent.mkdir(parents=True,exist_ok=True)
+                  with z.open(x) as src,target.open('xb') as out:
+                      for chunk in iter(lambda:src.read(1048576),b''):out.write(chunk)
+          assert (dest/'index.html').is_file() and list((dest/'_next/static').rglob('*.js'))
+          pathlib.Path('p0-03e-qa').mkdir(exist_ok=True)
+          pathlib.Path('p0-03e-qa/provenance.json').write_text(json.dumps({'candidate_sha':m['candidate_sha'],'source_run':m['workflow_run_id'],'inner_sha256':m['export_zip_sha256'],'file_count':len(expected),'security':m['security'],'build_performed':False},indent=2))
+          print('PASS: authenticated 2325-file export extracted')
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install browser testing dependencies without building
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: P0-03E2 targeted browser acceptance with measured states
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -B -m http.server 8775 --bind 127.0.0.1 --directory p0-03e-review/site >/tmp/p0-03e-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl -fsS -o /dev/null http://127.0.0.1:8775/; then break; fi
+            sleep 1
+          done
+          curl -fsS -o /dev/null http://127.0.0.1:8775/
+          cat > /tmp/p0-03e2-browser.cjs <<'JS'
+          const {chromium}=require(process.cwd()+'/node_modules/playwright');
+          const fs=require('fs'),path=require('path');
+          const output='p0-03e-qa';
+          fs.mkdirSync(output,{recursive:true});
+          const origin='http://127.0.0.1:8775';
+          const configs=[
+            {name:'desktop',width:1440,height:900,motion:'no-preference'},
+            {name:'tablet',width:768,height:1024,motion:'no-preference'},
+            {name:'mobile',width:390,height:844,motion:'no-preference'},
+            {name:'reduced-motion',width:1440,height:900,motion:'reduce'}
+          ];
+          const components=[
+            ['Hero','.portfolio-hero','src/pages/home.html; src/styles/hero.css'],
+            ['Showreel','.bf-reel','src/pages/home.html; homepage GSAP controller'],
+            ['Manifesto','.bf-manifesto','src/pages/home.html; homepage GSAP controller'],
+            ['Selected work','#work','src/pages/home.html; homepage GSAP controller'],
+            ['Services','#services','src/pages/home.html; homepage service controller'],
+            ['Experience folder','#practice','src/app/folder-motion.jsx; src/pages/home.html'],
+            ['Digital products','#products','src/pages/home.html'],
+            ['Digital collections','.digital-collection','src/pages/home.html'],
+            ['Process','#process','src/pages/home.html'],
+            ['Brand logos','#clients','src/pages/home.html'],
+            ['Personal story','#story','src/pages/home.html'],
+            ['Collaboration','#engagements','src/pages/home.html'],
+            ['FAQ','#questions','src/pages/home.html'],
+            ['Navigation','.menu-toggle','src/components/navigation.html; src/site.js'],
+            ['Footer','footer','src/styles/footer.css; src/footer-runtime.js'],
+            ['SERA entry','[data-sera-launch]','SERA launch controller'],
+            ['Booking entry','[data-consultation-entry]','booking entry controller']
+          ];
+          const traceNames=[
+            ['Showreel','.bf-reel','.bf-reel-stage','.bf-reel-frame'],
+            ['Manifesto','.bf-manifesto','.bf-manifesto-percent','.bf-manifesto-line'],
+            ['Selected work','#work','.v2sw-track','.v2sw-slide'],
+            ['Experience folder','#practice','.fld-stage','.fld-card']
+          ];
+          const cleanURL=(raw)=>{
+            try{const u=new URL(raw);return u.origin+u.pathname;}catch{return '[invalid URL]'}
+          };
+          function fileName(s){return s.toLowerCase().replace(/[^a-z0-9-]+/g,'-')}
+          function addListeners(page){
+            const errors=[],httpErrors=[],failed=[];
+            page.on('pageerror',e=>errors.push({type:'exception',message:String(e.message).slice(0,400)}));
+            page.on('console',m=>{if(m.type()==='error')errors.push({type:'console',message:m.text().slice(0,400).replace(/https?:\/\/[^\s"'<>]+/g,'[URL]')})});
+            page.on('response',r=>{if(r.status()>=400)httpErrors.push({url:cleanURL(r.url()),status:r.status(),type:r.request().resourceType()})});
+            page.on('requestfailed',r=>failed.push({url:cleanURL(r.url()),type:r.resourceType(),error:r.failure()?.errorText?.slice(0,100)}));
+            return {errors,httpErrors,failed};
+          }
+          async function readiness(page,prefix){
+            // Preserve the intentional loading state before waiting for the reveal.
+            await page.screenshot({path:path.join(output,prefix+'-loading-'+page.viewportSize().width+'.png')});
+            await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.querySelectorAll('.portfolio-hero img')].map(img=>img.decode?.().catch(()=>{})||Promise.resolve()))});
+            let records=[],stable=0,previous='';
+            for(let i=0;i<48;i++){
+              await page.waitForTimeout(250);
+              const state=await page.evaluate(()=>{
+                const h=document.querySelector('.portfolio-hero'),r=h?.getBoundingClientRect(),s=h?getComputedStyle(h):null;
+                const overlays=[...document.querySelectorAll('[class*="loader"],[class*="preloader"],[class*="intro"],[class*="splash"]')]
+                  .filter(e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return r.width>innerWidth*.6&&r.height>innerHeight*.5&&s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)>.05})
+                  .slice(0,5).map(e=>({className:String(e.className).slice(0,120),opacity:getComputedStyle(e).opacity}));
+                return {h:r?{top:r.top,height:r.height}:null,opacity:s?.opacity,overlays,title:document.querySelector('#hero-heading')?.innerText,fonts:document.fonts.status,images:[...document.querySelectorAll('.portfolio-hero img')].map(e=>({complete:e.complete,naturalWidth:e.naturalWidth}))};
+              });
+              records.push(state);
+              const fingerprint=JSON.stringify({opacity:state.opacity,overlays:state.overlays,images:state.images});
+              if(fingerprint===previous)stable++;else stable=0;
+              previous=fingerprint;
+              if(stable>=5&&state.overlays.length===0&&state.images.every(x=>x.complete&&x.naturalWidth>0))break;
+            }
+            await page.screenshot({path:path.join(output,prefix+'-revealed-'+page.viewportSize().width+'.png')});
+            const last=records.at(-1);
+            return {stable:stable>=5,overlayGone:last?.overlays.length===0,heroImagesLoaded:last?.images.every(x=>x.complete&&x.naturalWidth>0),fontsReady:last?.fonts==='loaded',observations:records.length,last};
+          }
+          async function measure(page,sel,items){
+            return page.evaluate(({sel,items})=>{
+              const pick=(selector)=>{
+                const e=document.querySelector(selector);
+                if(!e)return null;
+                const r=e.getBoundingClientRect(),s=getComputedStyle(e);
+                return {text:e.innerText?.slice(0,90),rect:{x:+r.x.toFixed(2),y:+r.y.toFixed(2),w:+r.width.toFixed(2),h:+r.height.toFixed(2)},transform:s.transform,opacity:s.opacity,position:s.position,visibility:s.visibility,ariaExpanded:e.getAttribute('aria-expanded'),className:typeof e.className==='string'?e.className.slice(0,160):'',scrollLeft:e.scrollLeft};
+              };
+              return {scrollY,innerHeight,section:pick(sel),items:items.map(pick),percent:document.querySelector('.bf-manifesto-percent')?.textContent?.trim(),horizontalScroll:document.querySelector('.v2sw-track')?.scrollLeft,bodyOverflow:document.documentElement.scrollWidth-innerWidth};
+            },{sel,items});
+          }
+          async function scrollSequence(page,config,name,selector,...targets){
+            const loc=page.locator(selector).first();
+            if(!await loc.count())return {status:'NOT VERIFIED',reason:'Section selector missing'};
+            const snapshots=[];
+            const bounds=await loc.evaluate(e=>{const r=e.getBoundingClientRect();return {top:r.top+scrollY,height:r.height}});
+            const before=Math.max(0,Math.floor(bounds.top-config.height*.85));
+            const total=Math.max(300,Math.min(6500,bounds.height+config.height*1.8));
+            for(const [step,fraction] of [['begin',0],['middle',.5],['end',1],['unpin',1.28]]){
+              const target=Math.floor(before+total*fraction);
+              const old=await page.evaluate(()=>scrollY);
+              // Real wheel input; no callback or ScrollTrigger progress mocking.
+              await page.mouse.wheel(0,target-old);
+              await page.waitForTimeout(config.motion==='reduce'?550:950);
+              const sample=await measure(page,selector,targets);
+              snapshots.push({step,target,observed:sample});
+              if(name==='Showreel'||name==='Manifesto'||name==='Selected work'||name==='Experience folder')
+                await page.screenshot({path:path.join(output,fileName(config.name+'-'+name+'-'+step)+'.png'),animations:'allow'});
+            }
+            const signatures=snapshots.map(s=>JSON.stringify({items:s.observed.items.map(x=>x&&{transform:x.transform,opacity:x.opacity,rect:x.rect,scrollLeft:x.scrollLeft}),percent:s.observed.percent,horizontalScroll:s.observed.horizontalScroll}));
+            const changed=new Set(signatures).size>1;
+            // A visual change is evidence of motion, not necessarily correct pinning or full design parity.
+            return {status:changed?'PASS':'NOT VERIFIED',claim:changed?'Observed rendered values changed during natural wheel scroll; pinning parity still unverified':'No independently measurable animation transition',bounds,snapshots};
+          }
+          async function services(page){
+            const loc=page.locator('[data-service-toggle]').first();
+            if(!await loc.count())return {status:'NOT VERIFIED',reason:'No service toggle'};
+            try{
+              await loc.scrollIntoViewIfNeeded();
+              const before=await loc.getAttribute('aria-expanded');
+              await loc.hover();await page.waitForTimeout(400);
+              const hover=await loc.evaluate(e=>({expanded:e.getAttribute('aria-expanded'),style:getComputedStyle(e).transform,preview:e.closest('.bf-service-item')?.className}));
+              await page.screenshot({path:path.join(output,'services-hover.png')});
+              await page.mouse.move(2,2);await page.waitForTimeout(300);
+              const leave=await loc.evaluate(e=>({expanded:e.getAttribute('aria-expanded'),item:e.closest('.bf-service-item')?.className}));
+              await loc.click();await page.waitForTimeout(300);
+              const afterClick=await loc.getAttribute('aria-expanded');
+              await page.screenshot({path:path.join(output,'services-click.png')});
+              await loc.focus();await page.keyboard.press('Enter');await page.waitForTimeout(300);
+              const afterKeyboard=await loc.getAttribute('aria-expanded');
+              await page.keyboard.press('Escape');await page.waitForTimeout(250);
+              const afterEscape=await loc.getAttribute('aria-expanded');
+              const toggled=afterClick!==before&&afterKeyboard!==afterClick;
+              return {status:toggled?'PASS':'FAIL',reason:toggled?'Accordion click and keyboard changed expanded state':'Service expanded state failed click or keyboard toggle',before,hover,leave,afterClick,afterKeyboard,afterEscape};
+            }catch(e){return {status:'FAIL',reason:'Service interaction threw: '+String(e).slice(0,300)}}
+          }
+          async function sanity(page){
+            const result={};
+            const video=page.locator('.bf-reel video').first();
+            if(await video.count())result.video=await video.evaluate(e=>({readyState:e.readyState,paused:e.paused,muted:e.muted,networkState:e.networkState}));
+            const pause=page.locator('.bf-reel-pause').first();
+            if(await pause.count())try{
+              await pause.scrollIntoViewIfNeeded();await pause.click({timeout:4000});result.pauseAfter=await video.evaluate(e=>e.paused);await pause.click({timeout:4000});result.resumeAfter=await video.evaluate(e=>e.paused)
+            }catch(e){result.pauseError=String(e).slice(0,200)}
+            const menu=page.locator('.menu-toggle').first();
+            if(await menu.count())try{await menu.click({timeout:4000});result.menuOpen=await page.locator('#site-menu').evaluate(e=>e.open);await page.keyboard.press('Escape');result.menuClosed=await page.locator('#site-menu').evaluate(e=>!e.open)}catch(e){result.menuError=String(e).slice(0,200)}
+            const faq=page.locator('#questions summary').first();
+            if(await faq.count())try{await faq.click({timeout:4000});result.faqClicked=await faq.evaluate(e=>e.closest('details')?.open);await faq.focus();await page.keyboard.press('Enter');result.faqKeyboard=await faq.evaluate(e=>!e.closest('details')?.open)}catch(e){result.faqError=String(e).slice(0,200)}
+            result.sera=await page.locator('[data-sera-launch]').count();
+            result.booking=await page.locator('[data-consultation-entry]').count();
+            return result;
+          }
+          async function scan(browser,config){
+            const context=await browser.newContext({viewport:{width:config.width,height:config.height},reducedMotion:config.motion,deviceScaleFactor:1});
+            const page=await context.newPage(),diagnostic=addListeners(page);
+            let response,ready,animations={},service={},interaction={};
+            try{
+              response=await page.goto(origin+'/',{waitUntil:'domcontentloaded',timeout:45000});
+              ready=await readiness(page,config.name);
+              for(const [name,selector,...items] of traceNames)
+                animations[name]=await scrollSequence(page,config,name,selector,...items);
+              service=await services(page);
+              interaction=await sanity(page);
+              await page.screenshot({path:path.join(output,config.name+'-footer.png')});
+              const present={};
+              for(const [name,selector,source] of components)present[name]={selector,source,exists:await page.locator(selector).count()>0};
+              const overflow=await page.evaluate(()=>({diff:document.documentElement.scrollWidth-innerWidth,documentWidth:document.documentElement.scrollWidth,viewport:innerWidth}));
+              const result={config,http:response?.status(),readiness:ready,animations,services:service,interaction,components:present,overflow,diagnostic};
+              await context.close();
+              return result;
+            }catch(e){
+              await context.close();
+              return {config,status:'FAIL',reason:String(e),diagnostic};
+            }
+          }
+          async function reference(browser){
+            const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'no-preference'});
+            const page=await context.newPage(),diagnostic=addListeners(page);
+            try{
+              const response=await page.goto('https://hadi.intellignce.net/',{waitUntil:'domcontentloaded',timeout:24000});
+              if(!response?.ok())return {status:'REFERENCE UNAVAILABLE',http:response?.status()};
+              const ready=await readiness(page,'reference');
+              await page.screenshot({path:path.join(output,'reference-hero-revealed.png')});
+              for(const [name,selector] of traceNames){
+                const loc=page.locator(selector).first();
+                if(!await loc.count())continue;
+                await loc.scrollIntoViewIfNeeded();await page.waitForTimeout(550);
+                await page.screenshot({path:path.join(output,'reference-'+fileName(name)+'.png')});
+              }
+              return {status:'CAPTURED; MANUAL VISUAL PARITY REVIEW REQUIRED',http:response.status(),readiness:ready,diagnostic};
+            }catch(e){return {status:'REFERENCE UNAVAILABLE',error:String(e).slice(0,200)}}finally{await context.close()}
+          }
+          (async()=>{
+            const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+            try{
+              const results=[];
+              for(const config of configs)results.push(await scan(browser,config));
+              const ref=await reference(browser);
+              const matrix={};
+              for(const [name,selector,source] of components){
+                const evidence=results.filter(r=>r.components?.[name]?.exists);
+                if(!evidence.length){matrix[name]={status:'NOT VERIFIED',reason:'Missing or not captured in actual browser',source};continue}
+                if(name==='Services'){
+                  const pass=results.filter(r=>r.services?.status==='PASS').length;
+                  const fail=results.filter(r=>r.services?.status==='FAIL').length;
+                  matrix[name]={status:fail?'FAIL':pass===4?'PASS':'NOT VERIFIED',reason:'Service accordion click/keyboard tested; hover state in raw report',source};
+                }else if(Object.hasOwn(results[0].animations||{},name)){
+                  const scans=results.map(r=>r.animations?.[name]).filter(Boolean);
+                  const pass=scans.filter(x=>x.status==='PASS').length;
+                  matrix[name]={status:pass>=2?'PASS':'NOT VERIFIED',reason:'Natural-scroll rendered-property transitions; correct pinning and visual parity separately unverified',source};
+                }else matrix[name]={status:'NOT VERIFIED',reason:'Rendered; full functional/visual evidence not established',source};
+              }
+              const network=[...new Map(results.flatMap(r=>r.diagnostic?.httpErrors||[]).map(x=>[x.status+':'+x.url,x])).values()];
+              const summary={candidate:'97544b9151eb9a19d51c5b0c757d7c065f232a7b',originalArtifact:14749892390,originalRun:45010820457,reference:ref,networkErrors:network,results,matrix,notes:['No mocked GSAP progress','Viewport and natural scrolling measurements are direct DOM observations','A changing transform alone does not prove correct pinning','Static export does not exercise production backends','Screenshots must be reviewed for visual parity']};
+              fs.writeFileSync(path.join(output,'p0-03e2-report.json'),JSON.stringify(summary,null,2));
+              const lines=['# P0-03E2 Targeted Homepage Browser Acceptance','',
+                'Candidate: 97544b9151eb9a19d51c5b0c757d7c065f232a7b',
+                'Reference: '+ref.status,'','| Component | Status | Evidence / limitation |','| --- | --- | --- |'];
+              for(const [name,item] of Object.entries(matrix))lines.push('| '+name+' | '+item.status+' | '+item.reason+' |');
+              lines.push('','## HTTP error responses','',network.length?network.map(x=>'- '+x.status+' '+x.type+' '+x.url).join('\n'):'No HTTP >=400 observed','','## Responsive diagnostics');
+              for(const r of results)lines.push('- '+r.config.name+': HTTP '+r.http+', overflow '+r.overflow?.diff+'px, console exceptions '+(r.diagnostic?.errors?.length??'unknown'));
+              lines.push('','## Interpretation','','Reported PASS covers only tested observable behavior, not total visual acceptance. Source repairs require separate authorization.');
+              fs.writeFileSync(path.join(output,'p0-03e2-matrix.md'),lines.join('\n')+'\n');
+              console.log('P0-03E2 RESULT',JSON.stringify({matrix,network,viewports:results.map(r=>({name:r.config.name,http:r.http,overflow:r.overflow?.diff,service:r.services?.status,animation:Object.fromEntries(Object.entries(r.animations||{}).map(([k,v])=>[k,v.status]))})),reference:ref.status}));
+              console.log('P0-03E2 DETAIL',JSON.stringify(results.map(r=>({viewport:r.config?.name,readiness:r.readiness&&{stable:r.readiness.stable,overlayGone:r.readiness.overlayGone,heroImagesLoaded:r.readiness.heroImagesLoaded,fontsReady:r.readiness.fontsReady,observations:r.readiness.observations},services:r.services,interactions:r.interaction,httpErrors:r.diagnostic?.httpErrors,exceptions:r.diagnostic?.errors,failedRequests:r.diagnostic?.failed}))));
+            }finally{await browser.close()}
+          })().catch(e=>{console.error(e);process.exitCode=1})
+          JS
+          node /tmp/p0-03e2-browser.cjs
+      - name: Upload lightweight browser evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-03e-canonical-home-browser-evidence
+          path: p0-03e-qa/
+          retention-days: 7
+          if-no-files-found: warn
