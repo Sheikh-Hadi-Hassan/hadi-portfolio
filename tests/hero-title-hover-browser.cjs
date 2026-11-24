@@ -38,6 +38,8 @@ async function roleInfo(page){
   return {title:el.innerText,hovered:root.getAttribute('data-p0h-hovered'),
    viewport:{x:box.x,right:box.right,y:box.y,bottom:box.bottom,width:box.width},
    textRects,fontSize:css.fontSize,transition:css.transitionDuration,
+   currentOpacity:css.opacity,incomingOpacity:getComputedStyle(root.querySelector('.p0h-role-incoming')).opacity,
+   currentAnimation:css.animationName,
    long:el.classList.contains('is-long'),cycle:root.dataset.p0hCycleMs,
    documentWidth:document.documentElement.scrollWidth,windowWidth:innerWidth};
  });
@@ -51,6 +53,9 @@ function fits(info){
   assert(rect.bottom<=info.viewport.bottom+2,'Role line '+rect.text+' overflows beneath title');
  }
  assert(info.documentWidth<=info.windowWidth+3,'Document horizontal overflow');
+ assert.equal(info.currentOpacity,'1','Current title not fully visible at rest');
+ assert.equal(info.incomingOpacity,'0','Incoming title visible at rest (double-transition regression)');
+ assert.equal(info.currentAnimation,'none','Unexpected role animation at rest');
 }
 async function testCase(browser,[name,w,h,motion]){
  const context=await browser.newContext({viewport:{width:w,height:h},reducedMotion:motion});
@@ -64,7 +69,7 @@ async function testCase(browser,[name,w,h,motion]){
   const first=await roleInfo(page);
   assert.equal(first.cycle,'3000','Three-second role cycle not retained');
   assert.equal(await page.locator('.p0h-role-viewport').evaluate(e=>getComputedStyle(e).pointerEvents),'auto','Pointer-hit area disabled');
-  assert.equal(first.transition.split(',')[0],motion==='reduce'?'0s':'0.5s','Incorrect motion-mode transition duration');
+  assert.equal(first.transition.split(',')[0],'0s','Resting title must never animate backward on state reset');
   fits(first);result.roles.push({name:first.title,size:first.fontSize,hovered:first.hovered});
   if(motion==='reduce'){
    const before=first.title;
