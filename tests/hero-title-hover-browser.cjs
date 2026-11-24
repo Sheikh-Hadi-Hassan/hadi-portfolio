@@ -1,5 +1,5 @@
 'use strict';
-// Browser acceptance of V5.3 uniform typography, restrained fade, hover pause. No production writes.
+// Browser acceptance of V5.4 staggered line mask, uniform typography and hover pause. No production writes.
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
@@ -43,6 +43,7 @@ async function roleInfo(page){
    incomingFontSize:incoming.fontSize,incomingFontFamily:incoming.fontFamily,
    currentFontFamily:css.fontFamily,currentFontWeight:css.fontWeight,
    currentTransform:css.transform,incomingTransform:incoming.transform,
+   effect:viewport.getAttribute('data-p0h-effect'),
    viewport:{x:box.x,right:box.right,y:box.y,bottom:box.bottom,width:box.width},
    textRects,fontSize:css.fontSize,transition:css.transitionDuration,
    currentOpacity:css.opacity,incomingOpacity:incoming.opacity,
@@ -74,6 +75,7 @@ function fits(info){
  assert.equal(info.incomingOpacity,'0','Incoming title visible at rest (double-transition regression)');
  assert.equal(info.currentAnimation,'none','Unexpected role animation at rest');
  assert.equal(info.decorativePunctuation,0,'Unwanted bouncing punctuation remains');
+ assert.equal(info.effect,'staggered-line-mask','Expected scoped V5.4 reveal is missing');
  assert.equal(info.long,false,'Role-specific font-size class remains');
  assert.equal(info.fontSize,info.incomingFontSize,'Current and incoming title use different font sizes');
  assert.equal(info.currentFontFamily,info.incomingFontFamily,'Role typeface changed');
@@ -100,6 +102,27 @@ async function testCase(browser,[name,w,h,motion]){
    assert.equal((await stableRoleInfo(page)).title,before,'Title rotates with reduced motion');
    assert.equal(await page.locator('.p0h-motion-control').count(),0,'Unexpected motion button');
   }else{
+   await page.waitForFunction(()=>document.querySelector('.p0h-role-incoming.is-arriving .p0h-role-line'),null,{timeout:5500});
+   const midMotion=await page.evaluate(()=>{
+     const viewport=document.querySelector('.p0h-role-viewport[data-p0h-effect]');
+     const incoming=[...viewport.querySelectorAll('.p0h-role-incoming.is-arriving .p0h-role-line')];
+     const outgoing=[...viewport.querySelectorAll('.p0h-role-current.is-leaving .p0h-role-line')];
+     return {incoming:incoming.map(el=>({name:getComputedStyle(el).animationName,delay:getComputedStyle(el).animationDelay,fontSize:getComputedStyle(el).fontSize})),
+      outgoing:outgoing.map(el=>({name:getComputedStyle(el).animationName,fontSize:getComputedStyle(el).fontSize})),
+      parentIncoming:getComputedStyle(viewport.querySelector('.p0h-role-incoming')).animationName};
+   });
+   assert.equal(midMotion.incoming.length,2,'Both incoming headline lines must reveal');
+   assert.equal(midMotion.outgoing.length,2,'Both outgoing headline lines must exit');
+   for(const x of midMotion.incoming){
+    assert.equal(x.name,'p0h-v54-line-enter','Expected restrained masked entrance');
+    assert.equal(x.fontSize,first.fontSize,'Lettering changed size during entrance');
+   }
+   for(const x of midMotion.outgoing){
+    assert.equal(x.name,'p0h-v54-line-exit','Expected restrained masked exit');
+    assert.equal(x.fontSize,first.fontSize,'Lettering changed size during exit');
+   }
+   assert.notEqual(midMotion.incoming[0].delay,midMotion.incoming[1].delay,'Role lines lack the requested stagger');
+   assert.equal(midMotion.parentIncoming,'none','Full headline block must not have a competing animation');
    let previous=first.title;
    for(let i=0;i<3;i++){
     await page.waitForFunction(previous=>{
@@ -164,7 +187,7 @@ async function testCase(browser,[name,w,h,motion]){
  }finally{await browser.close()}
  const pass=results.filter(x=>x.status==='PASS').length,fail=results.length-pass;
  fs.writeFileSync(path.join(OUT,'report.json'),JSON.stringify({pass,fail,results},null,2));
- fs.writeFileSync(path.join(OUT,'acceptance-matrix.md'),['# P0-HERO-01 V5.3 browser acceptance','','| Scenario | Result |','|---|---|',...results.map(x=>'| '+x.name+' | '+x.status+' |')].join('\n'));
+ fs.writeFileSync(path.join(OUT,'acceptance-matrix.md'),['# P0-HERO-01 V5.4 browser acceptance','','| Scenario | Result |','|---|---|',...results.map(x=>'| '+x.name+' | '+x.status+' |')].join('\n'));
  console.log('P0-HERO ROLE HOVER SUMMARY '+JSON.stringify({pass,fail,cases:results.map(x=>({name:x.name,status:x.status,reason:x.reason?.slice(0,160)}))}));
  if(fail)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exitCode=1});

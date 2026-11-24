@@ -43,7 +43,7 @@ function Roles({paused,reduced}){
  return <div className="p0h-role-group" data-p0h-role-root data-p0h-cycle-ms={HOLD+TRANSITION} data-p0h-hovered={hovered?'true':'false'} data-p0h-paused={paused||hovered||!visible?'true':'false'}
   onPointerEnter={event=>{if(event.pointerType==='mouse'||event.pointerType==='pen')setHovered(true)}}
   onPointerLeave={event=>{if(event.pointerType==='mouse'||event.pointerType==='pen')setHovered(false)}}>
-  <div className="p0h-role-viewport" aria-hidden="true">
+  <div className="p0h-role-viewport" aria-hidden="true" data-p0h-effect="staggered-line-mask">
    <div className={'p0h-role-current'+(transition?' is-leaving':'')} data-p0h-current><RoleLines lines={ROLES[index]}/></div>
    <div className={'p0h-role-incoming'+(transition?' is-arriving':'')}><RoleLines lines={ROLES[(index+1)%ROLES.length]}/></div>
   </div>
