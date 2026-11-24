@@ -1,4 +1,4 @@
-name: P0-HERO V5.2 spring period and hover acceptance
+name: P0-HERO V5.3 uniform typography and crossfade acceptance
 on:
   pull_request:
     paths:
@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   role-hover:
-    if: github.event_name == 'pull_request' && github.head_ref == 'feature/p0-hero-v52-spring-period-20261125'
+    if: github.event_name == 'pull_request' && github.head_ref == 'fix/p0-hero-v53-uniform-type-crossfade-20261125'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -23,11 +23,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
           fetch-depth: 50
-      - name: Enforce V5.1 review parent, narrow scope and hero-lock
+      - name: Enforce V5.2 review parent, narrow scope and hero-lock
         shell: bash
         run: |
           set -euo pipefail
-          BASE=412b61fc6d85bdfaad7447b35b2f457f14617a3d
+          BASE=b5e021a28dbb823a4893b2c873270b3fbe11c10b
           test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
           test "$(git merge-base "$BASE" HEAD)" = "$BASE"
           git diff --name-only "$BASE" HEAD | sort >/tmp/p0-role-hover-changed.txt
@@ -42,7 +42,7 @@ jobs:
           }
           changed=set(Path('/tmp/p0-role-hover-changed.txt').read_text().splitlines())
           assert changed==expected, {'missing':expected-changed,'unexpected':changed-expected}
-          print('PASS: only 4 authorized role-period files changed')
+          print('PASS: only 4 authorized V5.3 typography and motion files changed')
           PY
           git diff --check "$BASE" HEAD
           python3 scripts/verify-hero-lock.py
@@ -85,7 +85,7 @@ jobs:
           test -f out/resume/index.html
           test -d out/_next/static
           python3 scripts/verify-hero-lock.py
-      - name: Verify springy punctuation, fitting and pause/resume in Chromium
+      - name: Verify no punctuation, equal type sizes, clipping and hover/resume in Chromium
         shell: bash
         env:
           P0H_BASE_URL: http://127.0.0.1:8781
@@ -105,7 +105,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p0-hero-v52-spring-qa
+          name: p0-hero-v53-uniform-type-qa
           path: artifacts/p0-hero-role-hover/
           retention-days: 7
           if-no-files-found: warn
