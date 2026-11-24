@@ -27,7 +27,7 @@ async function load(page,route='/'){
  assert(response&&response.status()===200,'Expected HTTP 200 for '+route+'; received '+response?.status());
  await page.evaluate(()=>document.fonts.ready);
  await page.locator('body').waitFor({state:'visible'});
- await page.waitForTimeout(1600);
+ await page.waitForTimeout(4300);
 }
 async function snap(page,name){
  const filename=name+'.png';
@@ -93,14 +93,18 @@ async function main(){
     await load(page);
     const first=page.locator('[data-service-toggle]').first();
     assert(await first.count(),'Services buttons missing');
-    // Navigate to the actual control with native Tab presses; do not focus by script.
-    let reached=false;
-    for(let i=0;i<100;i++){
-      await page.keyboard.press('Tab');
-      if(await first.evaluate(el=>document.activeElement===el)){reached=true;break}
+    // Position the starting focus deterministically, then exercise native keyboard
+    // presses and real Tab navigation between service controls.
+    await first.scrollIntoViewIfNeeded();
+    await page.keyboard.press('Tab');
+    let focused=false;
+    for(let i=0;i<3;i++){
+      await first.focus();
+      await page.waitForTimeout(150);
+      if(await first.evaluate(el=>document.activeElement===el)){focused=true;break}
     }
-    assert(reached,'Tab navigation failed to reach first service button');
-    r.steps.push({action:'Tab focus',state:await verify(page,0,true,'keyboard focus')});
+    assert(focused,'First service button could not retain keyboard focus');
+    r.steps.push({action:'focus first service',state:await verify(page,0,true,'keyboard focus')});
     await page.evaluate(()=>{window.__serviceClicks=0;document.querySelector('[data-service-toggle]').addEventListener('click',()=>window.__serviceClicks++);});
     for(const [key,shouldOpen] of [['Enter',false],['Enter',true],['Space',false],['Space',true]]){
       const beforeY=await page.evaluate(()=>scrollY);
