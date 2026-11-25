@@ -20,7 +20,9 @@
     "test:evidence": "python3 tests/requirements-matrix.py && python3 tests/v1-evidence.py",
     "test:booking-lifecycle-browser": "node tests/booking-lifecycle-browser.cjs",
     "test:home-content": "python3 tests/home-content.py && node tests/reel-motion.cjs && node tests/folder-geometry.mjs",
-    "test:home-sections-browser": "node tests/home-sections-browser.cjs"
+    "test:home-sections-browser": "node tests/home-sections-browser.cjs",
+    "test:gallery": "node --test tests/gallery-core.test.mjs && node tests/gallery-admin.test.mjs",
+    "test:gallery-browser": "node tests/gallery-browser.cjs"
   },
   "dependencies": {
     "gsap": "3.15.0",
