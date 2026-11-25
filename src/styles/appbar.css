@@ -36,7 +36,7 @@ body .app-dock span.dock-sera-face {
 
 /* App bar material: frosted violet glass, soft ambient light and polished edges. */
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  body .app-dock {
+  body .app-dock, .bayfi-body .liquid-glass {
     background:
       radial-gradient(ellipse at 18% 0%, rgba(226, 205, 250, .12), transparent 65%),
       linear-gradient(170deg, rgba(76, 59, 92, .55), rgba(30, 22, 43, .72));
@@ -50,7 +50,7 @@ body .app-dock span.dock-sera-face {
   }
 }
 @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
-  body .app-dock {
+  body .app-dock, .bayfi-body .liquid-glass {
     background: #211a2d;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
