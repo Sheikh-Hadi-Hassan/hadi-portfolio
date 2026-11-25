@@ -224,6 +224,7 @@ body{background:var(--theme-bg);color:var(--theme-text)}
 .portfolio-root .site-menu .menu-links a:hover{color:var(--theme-accent-hover)}
 .portfolio-root .menu-close{background:var(--theme-raised);border-color:var(--theme-border);color:var(--theme-text)}
 .bayfi-body :is(.bf-reel,.bf-manifesto,.bf-work,.hpr-wrap,.hfaq-wrap){background:var(--theme-bg);color:var(--theme-text)}
+.bayfi-body .bf-reel{background:radial-gradient(ellipse 58% 72% at 4% -8%, rgba(111, 35, 199, .62), transparent 78%), radial-gradient(ellipse 47% 65% at 98% 100%, rgba(95, 17, 187, .65), transparent 77%), linear-gradient(120deg, #25074f 0%, #1b063c 55%, #23054b 100%);color:var(--theme-text)}
 .bayfi-body :is(.hadi-folder,.bf-process,.bf-clients){background:var(--theme-surface);color:var(--theme-text)}
 .bayfi-body .bf-process .v2hw-grid-card{background:#191320;border-color:var(--theme-border)}
 .bayfi-body .bf-process .v2hw-card-visual{color:var(--theme-accent)}
