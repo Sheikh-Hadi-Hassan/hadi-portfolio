@@ -3,6 +3,7 @@
 from pathlib import Path
 from expertise import render_expertise
 import os
+import subprocess
 import json,re,shutil,html
 ROOT=Path(__file__).resolve().parents[1];SRC=ROOT/'src';DIST=ROOT/'dist'
 def read(path):return (SRC/path).read_text()
@@ -64,14 +65,14 @@ def page(title,description,body,body_class='',path='/',image='/assets/hadi-hassa
 projects=json.loads(read(Path('data/projects.json')));template=read(Path('pages/case-study.html'))
 def listing(items):return '<ul>'+''.join('<li>'+esc(item)+'</li>' for item in items)+'</ul>'
 # Build archive cards from the same project source as their case studies.
-selected=json.loads(read(Path('data/selected-work.json')))
-cover_map={item['slug']:item['cover'] for item in selected if item.get('slug')}
+cover_map={item['slug']:item['portfolio']['cover'] for item in projects if item.get('portfolio',{}).get('cover')}
 archive_cards=[]
 archive_records_all=json.loads(read(Path('data/archive-records.json')))
 # Preserve excluded records in the source register, but never render them publicly.
 archive_records=[record for record in archive_records_all if record.get('publication') != 'excluded']
 expertise_home=render_expertise(SRC,DIST,page,esc,projects,archive_records)
-home_html=read(Path('pages/home.html')).replace('<section class="cinematic-story" id="story"',expertise_home+'<section class="cinematic-story" id="story"')
+gallery=subprocess.run(['node',str(ROOT/'scripts/render-gallery.mjs')],check=True,capture_output=True,text=True).stdout
+home_html=read(Path('pages/home.html')).replace('{{dynamic_gallery}}',gallery).replace('<section class="cinematic-story" id="story"',expertise_home+'<section class="cinematic-story" id="story"')
 (DIST/'index.html').write_text(page('Hadi Hassan | Creative Director & Brand Identity Designer','Hadi Hassan is a Creative Director, Design Lead and Brand Identity Designer in Lahore, working worldwide across branding, campaigns, UI/UX and digital products.',home_html))
 reference_cards=[]
 for record in archive_records:
@@ -82,7 +83,7 @@ for record in archive_records:
 for position,project in enumerate(projects):
  category=project.get('archive_filter') or ('digital' if project['slug']=='uiux-web-saas' else 'photography' if project['slug']=='bw-sports' else 'film' if project['slug']=='fakhr-e-qoum' else 'campaign' if project['slug'] in ['linkedin-personal-brand','community-campaign'] else 'identity')
  cover=cover_map.get(project['slug'],project['hero'])
- width,height=(808,632) if project['slug'] in cover_map else (project['hero_width'],project['hero_height'])
+ width,height=(project.get('portfolio',{}).get('coverWidth') or project['hero_width'],project.get('portfolio',{}).get('coverHeight') or project['hero_height'])
  archive_cards.append(f'<a class="archive-tile" data-category="{category}" href="/{esc(project["slug"])}/"><div class="archive-media"><img src="{esc(cover)}" width="{width}" height="{height}" loading="lazy" decoding="async" alt="{esc(project["title"])} — {esc(project["category"])}"><span class="archive-open" aria-hidden="true">{icon("arrow-up-right") if (ROOT/"vendor/pixelarticons/arrow-up-right.svg").exists() else icon("external-link")}</span></div><div class="archive-caption"><div><h2>{esc(project["title"])}</h2><p>{esc(project["category"])}</p></div><span class="archive-number" aria-hidden="true">{position+1:02d}</span></div></a>')
 explorer_slides=[];explorer_thumbs=[]
 for j,project in enumerate(projects):
