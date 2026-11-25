@@ -444,3 +444,8 @@ const observer=new MutationObserver(()=>{if(connect())observer.disconnect()});ob
  const local=['localhost','127.0.0.1','::1'].includes(location.hostname);
  notices.forEach(el=>{if(local)el.hidden=false;});
 })();
+
+/* Homepage Selected Work: progressive enhancement; no API or public data writes. */
+if(document.querySelector('[data-portfolio-gallery]')){
+ import('/portfolio-gallery-client.mjs').then(module=>module.mountPortfolioGallery()).catch(error=>console.error('Gallery enhancement failed',error));
+}
