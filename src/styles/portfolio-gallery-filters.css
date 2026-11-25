@@ -25,3 +25,14 @@
  .bayfi-body .v2sw-gallery-meta{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.bayfi-body .v2sw-gallery-filter{transition:none}}
+
+/* Opt-in glass controls; geometry and gallery behavior remain unchanged. */
+.bayfi-body .v2sw-gallery-filter.liquid-glass,.bayfi-body .v2sw-gallery-controls button.liquid-glass{color:#f4eafa;background:#392647;border-color:#b99acb70;box-shadow:inset 0 1px 1px #f9dcff40}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ .bayfi-body .v2sw-gallery-filter.liquid-glass,.bayfi-body .v2sw-gallery-controls button.liquid-glass{background:radial-gradient(ellipse at 18% 0%,rgba(226,205,250,.12),transparent 65%),linear-gradient(170deg,rgba(76,59,92,.55),rgba(30,22,43,.72));border-color:rgba(220,197,239,.27);box-shadow:inset 0 1px 1px rgba(255,244,255,.30),inset 0 -1px 2px rgba(195,160,229,.13),0 0 18px rgba(158,117,202,.07)}
+}
+.bayfi-body .v2sw-gallery-filter.liquid-glass:hover,.bayfi-body .v2sw-gallery-controls button.liquid-glass:hover:not(:disabled){border-color:#e6c0ffb0;color:#fff;background:linear-gradient(165deg,#77549ac9,#44275de8)}
+.bayfi-body .v2sw-gallery-filter.liquid-glass[aria-pressed="true"]{color:#fff;border-color:#edc5ffb0;background:radial-gradient(ellipse at 12% 0%,#e9adff65,transparent 65%),linear-gradient(135deg,#7041b9,#9a3988);box-shadow:inset 0 1px 1px #ffeaff99,inset 0 -1px 2px #d19aff55,0 0 12px #a96bd833}
+.bayfi-body .v2sw-gallery-meta{color:#bfb4cb}
+@media(prefers-reduced-transparency:reduce){.bayfi-body .v2sw-gallery-filter.liquid-glass,.bayfi-body .v2sw-gallery-controls button.liquid-glass{background:#392647;-webkit-backdrop-filter:none;backdrop-filter:none}.bayfi-body .v2sw-gallery-filter.liquid-glass[aria-pressed="true"]{background:#7041b9}}
+@media(forced-colors:active){.bayfi-body .v2sw-gallery-filter.liquid-glass,.bayfi-body .v2sw-gallery-controls button.liquid-glass{background:ButtonFace;color:ButtonText;border-color:ButtonText;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}.bayfi-body .v2sw-gallery-filter.liquid-glass[aria-pressed="true"]{background:Highlight;color:HighlightText;border-color:Highlight}}
