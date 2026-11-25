@@ -10,5 +10,18 @@ setOpen(false);const enter=()=>{if(hover.matches)setOpen(true)},leave=()=>{if(ho
 const pointerDown=()=>{pointerFocusing=true},pointerCancel=()=>{pointerFocusing=false};const bindings=[[item,'pointerenter',enter],[item,'pointerleave',leave],[item,'pointermove',move],[item,'focusin',focus],[item,'focusout',blur],[item,'keydown',escape],[button,'pointerdown',pointerDown],[button,'pointercancel',pointerCancel],[button,'click',click]];bindings.forEach(([el,event,fn])=>el.addEventListener(event,fn));cleanups.push(()=>{clearTimeout(timer);bindings.forEach(([el,event,fn])=>el.removeEventListener(event,fn))});});
 const accordions=[...root.querySelectorAll('.hfaq-accordion details')];accordions.forEach(detail=>{const toggle=()=>{if(detail.open)accordions.forEach(other=>{if(other!==detail)other.open=false});ScrollTrigger.refresh()};detail.addEventListener('toggle',toggle);cleanups.push(()=>detail.removeEventListener('toggle',toggle));});
 context=gsap.context(()=>{media=gsap.matchMedia();media.add('(prefers-reduced-motion: no-preference)',()=>{root.querySelectorAll('[data-bf-reveal]').forEach(el=>gsap.fromTo(el,{y:28,opacity:.2},{y:0,opacity:1,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}}));});media.add('(min-width: 900px) and (min-height: 700px) and (prefers-reduced-motion: no-preference)',()=>{const work=root.querySelector('.bf-work'),track=root.querySelector('.v2sw-track');gsap.to(track,{x:()=>-Math.max(0,track.scrollWidth-work.clientWidth),ease:'none',scrollTrigger:{id:'hadi-work',refreshPriority:80,trigger:work,pin:true,start:'top top',end:()=>'+='+Math.max(1,track.scrollWidth-work.clientWidth),scrub:1,invalidateOnRefresh:true,anticipatePin:1}});});},root);
+
+/* Exactly one owner for the homepage pin. Re-measure after data-driven filtering. */
+const gallery=root.querySelector('[data-portfolio-gallery]');
+if(gallery){
+ const work=gallery,track=gallery.querySelector('.v2sw-track');
+ const before=()=>{const pin=ScrollTrigger.getById('hadi-work');if(pin){if(pin.isActive)window.scrollTo({top:Math.ceil(pin.start),behavior:'instant'});pin.animation?.progress(0)}gsap.set(track,{x:0});};
+ const changed=()=>{ScrollTrigger.refresh(true)};
+ const navigate=event=>{const pin=ScrollTrigger.getById('hadi-work');if(!pin)return;const shown=[...gallery.querySelectorAll('[data-gallery-card]:not([hidden])')],item=shown[event.detail?.index||0];if(!item)return;const distance=Math.max(0,track.scrollWidth-work.clientWidth),left=Math.max(0,item.offsetLeft);window.scrollTo({top:pin.start+Math.min(distance,left),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});};
+ gallery.addEventListener('portfolio:gallery:beforeChange',before);
+ gallery.addEventListener('portfolio:gallery:changed',changed);
+ gallery.addEventListener('portfolio:gallery:navigate',navigate);
+ cleanups.push(()=>{gallery.removeEventListener('portfolio:gallery:beforeChange',before);gallery.removeEventListener('portfolio:gallery:changed',changed);gallery.removeEventListener('portfolio:gallery:navigate',navigate)});
+}
 const refresh=()=>ScrollTrigger.refresh();root.querySelectorAll('img').forEach(img=>{if(!img.complete){img.addEventListener('load',refresh,{once:true});cleanups.push(()=>img.removeEventListener('load',refresh))}});ScrollTrigger.sort();ScrollTrigger.refresh();}
 setup();return()=>{cancelled=true;cleanups.forEach(fn=>fn());media?.revert();context?.revert();};},[]);return null}
