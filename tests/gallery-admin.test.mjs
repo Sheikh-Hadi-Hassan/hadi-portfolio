@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {compileCMS,stageCMS} from '../scripts/admin/stage-cms.mjs';
+import {publishIsolatedCMS,readIsolatedCMS} from '../scripts/admin/cms-release.mjs';
+const projects=JSON.parse(fs.readFileSync('src/data/projects.json','utf8'));
+const profile=JSON.parse(fs.readFileSync('src/data/profile.json','utf8'));
+const original=JSON.stringify(projects),p=projects[0];
+const data=Object.fromEntries(['slug','title','deck','category','intro','seo_title','seo_description','hero'].map(k=>[k,p[k]]));
+data.portfolio={...p.portfolio,categoryIds:['branding','gallery-new-category']};
+const records=[{id:'gallery-new-category',kind:'portfolioCategory',version:1,data:{label:'Art Direction',order:75}},{id:'gallery-first-case',kind:'project',version:2,data}];
+const snapshot={schemaVersion:1,releaseId:crypto.randomUUID(),createdAt:new Date().toISOString(),records};
+const bundle=compileCMS(snapshot,projects,profile,'public');
+assert.equal(JSON.stringify(projects),original,'compile mutated source');
+assert.equal(bundle.categories.find(c=>c.id==='gallery-new-category').label,'Art Direction');
+assert(bundle.projects[0].portfolio.categoryIds.includes('gallery-new-category'));
+assert.equal(bundle.projects[0].portfolio.visibility,'published');
+assert.throws(()=>compileCMS({...snapshot,records:[{...records[0],data:{...records[0].data,label:'',order:75}}]},projects,profile,'public'),/CATEGORY_INVALID/);
+const archived={...records[0],data:{...records[0].data,archived:true}};
+assert.throws(()=>compileCMS({...snapshot,records:[archived,records[1]]},projects,profile,'public'),/ARCHIVED_CATEGORY_IN_USE/);
+const hidden={...records[1],data:{...data,portfolio:{...data.portfolio,visibility:'hidden'}}};
+const hiddenBundle=compileCMS({...snapshot,records:[records[0],hidden]},projects,profile,'public');
+assert.equal(hiddenBundle.projects[0].portfolio.visibility,'hidden');
+const folder=fs.mkdtempSync(path.join(os.tmpdir(),'portfolio-category-'));
+try{
+ const dir=path.join(folder,'staging','cms');
+ const stage=stageCMS(bundle,dir);
+ assert(stage.verified&&stage.production===false);
+ const released=publishIsolatedCMS(dir);
+ assert(released.production===false);
+ assert.equal(readIsolatedCMS(dir).categories.find(c=>c.id==='gallery-new-category').label,'Art Direction');
+}finally{fs.rmSync(folder,{recursive:true,force:true})}
+console.log('PASS: existing Admin CMS category creation, assignment, rename/archival safety, hidden visibility, signed local staging and isolated release; public site unchanged.');
