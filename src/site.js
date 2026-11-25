@@ -19,7 +19,7 @@ document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('clic
  const count=archive.querySelector('[data-archive-count]');
  buttons.forEach(btn=>btn.addEventListener('click',()=>{
   buttons.forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});
-  let visible=0;tiles.forEach(tile=>{tile.hidden=btn.dataset.filter!=='all'&&tile.dataset.category!==btn.dataset.filter;if(!tile.hidden)visible++});
+  let visible=0;tiles.forEach(tile=>{tile.hidden=btn.dataset.filter!=='all'&&!(tile.dataset.categoryIds||'').split(' ').includes(btn.dataset.filter);if(!tile.hidden)visible++});
   if(count)count.textContent=String(visible);
  }));
 })();
