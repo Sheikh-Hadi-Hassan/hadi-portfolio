@@ -296,3 +296,16 @@ body{background:var(--theme-bg);color:var(--theme-text)}
 
 /* Resume-led introduction and authorship, within the existing type system. */
 .seo-introduction{max-width:70ch;margin:0 0 36px;color:#d4c7df;font-size:16px;line-height:1.7}.seo-introduction a,.case-author a{text-decoration:underline;text-underline-offset:4px}.case-author{font-size:13px;line-height:1.6;color:#c7b7d0;margin-block:14px 24px}
+
+/* Practice: readable narrow-screen and short-viewport fallback, scoped to homepage. */
+@media (max-width:600px), (max-height:649px) {
+ #practice:not(.is-animated) .fld-inner{min-height:0;height:auto;padding:48px clamp(16px,4vw,24px);overflow:visible;gap:24px}
+ #practice:not(.is-animated) .fld-stage{width:100%;max-width:680px;height:auto;padding-bottom:0;min-width:0}
+ #practice:not(.is-animated) .fld-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ #practice:not(.is-animated) .fld-card{position:relative;width:100%;max-width:none;min-width:0;height:auto;min-height:160px;transform:none}
+ #practice:not(.is-animated) .fld-card-inner{min-height:160px;padding:14px;gap:10px;overflow-wrap:anywhere}
+ #practice:not(.is-animated) .fld-number{font-size:clamp(30px,8vw,44px)}
+ #practice:not(.is-animated) .fld-card:last-child{grid-column:1/-1}
+ #practice:not(.is-animated) .fld-back,#practice:not(.is-animated) .fld-flap{display:none}
+}
+@media (max-width:360px){#practice:not(.is-animated) .fld-cards{grid-template-columns:minmax(0,1fr)}}
