@@ -1,0 +1,38 @@
+[
+  {
+    "id": "branding",
+    "label": "Branding",
+    "order": 10,
+    "status": "active"
+  },
+  {
+    "id": "packaging",
+    "label": "Packaging",
+    "order": 20,
+    "status": "active"
+  },
+  {
+    "id": "ui-ux",
+    "label": "UI/UX",
+    "order": 30,
+    "status": "active"
+  },
+  {
+    "id": "marketing-campaigns",
+    "label": "Marketing & Campaigns",
+    "order": 40,
+    "status": "active"
+  },
+  {
+    "id": "video-motion",
+    "label": "Video & Motion",
+    "order": 50,
+    "status": "active"
+  },
+  {
+    "id": "photography",
+    "label": "Photography",
+    "order": 60,
+    "status": "active"
+  }
+]

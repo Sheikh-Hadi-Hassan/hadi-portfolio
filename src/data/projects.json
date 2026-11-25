@@ -194,7 +194,19 @@
           "/assets/mackenzie-29.webp"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 1,
+      "categoryIds": [
+        "branding"
+      ],
+      "cover": "/assets/work-cover-01.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "Mackenzie Cramblit",
+      "cardCategory": "Personal brand identity"
+    }
   },
   {
     "slug": "morganics",
@@ -1059,7 +1071,20 @@
           "/assets/morganics-cover.png"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 2,
+      "categoryIds": [
+        "branding",
+        "packaging"
+      ],
+      "cover": "/assets/work-cover-02.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "Morganics",
+      "cardCategory": "Brand identity & packaging"
+    }
   },
   {
     "slug": "linkedin-personal-brand",
@@ -1359,7 +1384,20 @@
           "/assets/linkedin-brand-26.webp"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 3,
+      "categoryIds": [
+        "branding",
+        "marketing-campaigns"
+      ],
+      "cover": "/assets/work-cover-03.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "LinkedIn Personal Brand",
+      "cardCategory": "Personal brand design system"
+    }
   },
   {
     "slug": "accessorize-by-hl",
@@ -1558,7 +1596,19 @@
           "/assets/accessorize-by-hl-19.webp"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 12,
+      "categoryIds": [
+        "branding"
+      ],
+      "cover": "/assets/work-cover-12.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "Accessorize by HL",
+      "cardCategory": "Brand identity & guidelines"
+    }
   },
   {
     "slug": "jules-capital-partners",
@@ -1692,7 +1742,19 @@
           "/assets/jules-capital-22.webp"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 7,
+      "categoryIds": [
+        "branding"
+      ],
+      "cover": "/assets/work-cover-07.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "Jules Capital Partners",
+      "cardCategory": "Brand identity & visual system"
+    }
   },
   {
     "slug": "intellignce",
@@ -1894,7 +1956,19 @@
           "/assets/intellignce-15.webp"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 4,
+      "categoryIds": [
+        "branding"
+      ],
+      "cover": "/assets/work-cover-04.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "Intellignce",
+      "cardCategory": "Brand identity"
+    }
   },
   {
     "slug": "fakhr-e-qoum",
@@ -1989,7 +2063,19 @@
           "/assets/fakhr-e-qoum-3.webp"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 6,
+      "categoryIds": [
+        "video-motion"
+      ],
+      "cover": "/assets/work-cover-06.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "Fakhr-e-Qoum",
+      "cardCategory": "Documentary & storytelling"
+    }
   },
   {
     "slug": "edlytics",
@@ -2090,7 +2176,19 @@
           "/assets/edlytics-5.webp"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 9,
+      "categoryIds": [
+        "branding"
+      ],
+      "cover": "/assets/work-cover-09.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "Edlytics",
+      "cardCategory": "Logo design"
+    }
   },
   {
     "slug": "community-campaign",
@@ -2516,7 +2614,15 @@
         "embed": "https://www.instagram.com/reel/DT-ZVP6jO5V/embed/",
         "title": "Taraqqi Ka Tasalsul — campaign reel 12"
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 28,
+      "categoryIds": [
+        "marketing-campaigns"
+      ],
+      "cover": "/assets/community-campaign-1.webp"
+    }
   },
   {
     "slug": "bits-hr-link",
@@ -2659,7 +2765,19 @@
           "/assets/bits-hr-link-23.webp"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 5,
+      "categoryIds": [
+        "branding"
+      ],
+      "cover": "/assets/work-cover-05.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "Bits HR Link",
+      "cardCategory": "Brand identity"
+    }
   },
   {
     "slug": "al-faraj-media",
@@ -2773,7 +2891,19 @@
           "/assets/al-faraj-07-lossless.webp"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 11,
+      "categoryIds": [
+        "branding"
+      ],
+      "cover": "/assets/work-cover-11.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "Al Faraj Media",
+      "cardCategory": "Logo design"
+    }
   },
   {
     "slug": "bw-sports",
@@ -3084,7 +3214,19 @@
           "/assets/bw-sports-cover.png"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 8,
+      "categoryIds": [
+        "photography"
+      ],
+      "cover": "/assets/work-cover-08.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "BW Sports",
+      "cardCategory": "Product photography"
+    }
   },
   {
     "slug": "uiux-web-saas",
@@ -3332,7 +3474,15 @@
           "/assets/uiux-project-20.jpg"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 32,
+      "categoryIds": [
+        "ui-ux"
+      ],
+      "cover": "/assets/uiux-project-02.jpg"
+    }
   },
   {
     "slug": "nicemd-ai",
@@ -3451,7 +3601,19 @@
           "/assets/nicemd-28.jpg"
         ]
       }
-    ]
+    ],
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 10,
+      "categoryIds": [
+        "branding"
+      ],
+      "cover": "/assets/work-cover-10.webp",
+      "coverWidth": 808,
+      "coverHeight": 632,
+      "cardTitle": "NiceMD.ai",
+      "cardCategory": "Healthcare brand identity"
+    }
   },
   {
     "slug": "ai-animation",
@@ -4125,6 +4287,14 @@
       "title": "How I Made an Animated Video Using AI Only",
       "url": "https://www-ccv.adobe.io/v1/player/ccv/JYbzVThIJgG/embed?api_key=behance1&bgcolor=%23191919",
       "embed": "https://www-ccv.adobe.io/v1/player/ccv/JYbzVThIJgG/embed?api_key=behance1&bgcolor=%23191919"
+    },
+    "portfolio": {
+      "visibility": "published",
+      "displayOrder": 34,
+      "categoryIds": [
+        "video-motion"
+      ],
+      "cover": "/assets/ai-animation-040.webp"
     }
   }
 ]

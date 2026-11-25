@@ -1,0 +1,72 @@
+name: P0 gallery and private CMS staging QA
+on:
+  pull_request:
+    paths:
+      - 'src/data/projects.json'
+      - 'src/data/portfolio-categories.json'
+      - 'src/pages/home.html'
+      - 'src/pages/archive.html'
+      - 'src/client/portfolio-gallery-client.mjs'
+      - 'src/lib/portfolio-gallery-core.mjs'
+      - 'src/styles/portfolio-gallery-filters.css'
+      - 'scripts/render-gallery.mjs'
+      - 'scripts/build.py'
+      - 'scripts/prepare-next.py'
+      - 'src/site.js'
+      - 'src/app/motion.jsx'
+      - 'src/app/layout.jsx'
+      - 'scripts/admin/**'
+      - 'integrations/leads-portal/ControlCenter.gs'
+      - 'integrations/leads-portal/ControlCenter.html'
+      - 'tests/gallery-*.mjs'
+      - 'tests/gallery-browser.cjs'
+      - '.github/workflows/p0-gallery-qa.yml'
+permissions:
+  contents: read
+jobs:
+  gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: npm ci --no-audit --no-fund
+      - run: python3 -m pip install pillow
+      - name: Verify data integrity, categories and protected hero lock
+        run: |
+          node --test tests/gallery-core.test.mjs
+          node tests/gallery-admin.test.mjs
+          python3 scripts/verify-hero-lock.py
+      - name: Existing CMS and staged-release regression suite
+        run: |
+          node tests/admin-cms.mjs
+          node tests/admin-cms-rich.mjs
+          node tests/admin-staging-security.mjs
+      - name: Build exact static-export candidate
+        env:
+          SITE_URL: https://hadi.intellignce.net
+        run: |
+          npm run build
+          python3 tests/production.py
+      - name: Chromium at five responsive widths
+        run: |
+          npx playwright install --with-deps chromium
+          python3 -m http.server 8781 --directory out --bind 127.0.0.1 >/tmp/gallery-http.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS -o /dev/null http://127.0.0.1:8781/ && break || sleep 1; done
+          P0_GALLERY_URL=http://127.0.0.1:8781 node tests/gallery-browser.cjs
+      - name: Preserve screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-gallery-qa
+          path: artifacts/p0-gallery/
+          retention-days: 7
+          if-no-files-found: ignore

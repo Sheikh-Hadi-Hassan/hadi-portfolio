@@ -43,12 +43,9 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
         '<a class="ol-scroll" href="#ol-intro" aria-label="Scroll to introduction"><span aria-hidden="true">↓</span></a></div></section>'
     )
     intro = '<section class="ol-intro ol-dots" id="ol-intro"><div class="ol-intro-inner"><h2>I lead product and brand design for SaaS, healthcare and business platforms.</h2><p>Based in Lahore. Working with international teams.<br>Available for design leadership and consulting.</p></div></section>'
-    # Reuse the authoritative homepage markup and its shared carousel styles.
-    home = (src / 'pages/home.html').read_text()
-    carousel_start = home.index('<section class="bf-work"')
-    carousel_end = home.index('</section>', carousel_start) + len('</section>')
-    carousel = home[carousel_start:carousel_end].replace('id="work"', 'id="xp-approach"', 1)
-    # Keep the homepage component, with a discipline-specific project collection.
+    # Preserve the original Product Design-specific gallery heading without reading homepage cards.
+    # The homepage has an independent data-driven gallery; this page retains its approved case list.
+    carousel = "<section class=\"bf-work\" id=\"xp-approach\" aria-label=\"Product and UI/UX design\"><div class=\"v2sw-track\" tabindex=\"0\" aria-label=\"Project gallery. Swipe or scroll horizontally to explore.\"><div class=\"v2sw-slide v2sw-slide-heading\"><span class=\"bf-kicker\">PRODUCT &amp; UI/UX / 01–09</span><h2 class=\"v2sw-heading\">Product design.<br>UI/UX in practice.</h2><p>SaaS platforms, mobile apps and healthcare experiences. Selected interfaces designed around real workflows.</p><span class=\"bf-scroll-hint\">SCROLL TO EXPLORE →</span><span class=\"bf-swipe-hint\">SWIPE TO EXPLORE →</span></div>"
     selected = []
     for key, category in [('tms', 'Travel management'), ('apptech', 'Mobile attendance'), ('crent', 'Rental management'), ('flow', 'Business operations')]:
         product = products[key]
@@ -56,8 +53,6 @@ def render_product_portfolio(src, esc, hero, mobile_stack, progress):
     for index, title, category in [(0, 'CallingDr', 'Telehealth website'), (1, 'Omni Help', 'Mobile healthcare'), (2, 'Consumer Connect', 'Research dashboard'), (4, 'Vera Health', 'Patient experience'), (5, 'Legal management', 'Case management dashboard')]:
         selected.append((title, category, cards[index], '#ol-gallery', False))
     total = len(selected)
-    heading_end = carousel.index('<div class="v2sw-slide v2sw-card-slide">')
-    carousel = carousel[:heading_end].replace('Selected work and explorations', 'Product and UI/UX design').replace('SELECTED PROJECTS / 01–12', f'PRODUCT &amp; UI/UX / 01–{total:02d}').replace('Selected work<br>& explorations.', 'Product design.<br>UI/UX in practice.').replace('Twelve projects. Different challenges. A look at how strategy becomes something you can see, use and recognise.', 'SaaS platforms, mobile apps and healthcare experiences. Selected interfaces designed around real workflows.')
     for index, (title, category, artwork, href, external) in enumerate(selected, 1):
         attrs = 'target="_blank" rel="noopener noreferrer"' if external else 'data-ol-gallery'
         carousel += '<div class="v2sw-slide v2sw-card-slide"><div class="v2sw-card-reveal"><a class="v2sw-card" href="' + esc(href) + '" ' + attrs + '><div class="v2sw-card-media">' + image(artwork['src'], artwork.get('alt', title + ' interface presentation'), artwork['width'], artwork['height'], 'loading="lazy"') + '<span class="v2sw-card-tag">' + esc(category) + '</span></div><div class="v2sw-card-footer"><h3 class="v2sw-card-title">' + esc(title) + '</h3><span class="bf-case-status">↗</span></div><span class="bf-project-count">' + f'{index:02d} / {total:02d}' + '</span></a></div></div>'

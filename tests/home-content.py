@@ -1,7 +1,10 @@
 from pathlib import Path
 from html.parser import HTMLParser
-import hashlib,json,re
+import hashlib,json,re,subprocess
 r=Path(__file__).resolve().parents[1];s=(r/'src/pages/home.html').read_text()
+if '{{dynamic_gallery}}' in s:
+ gallery=subprocess.run(['node',str(r/'scripts/render-gallery.mjs')],capture_output=True,text=True,check=True).stdout
+ s=s.replace('{{dynamic_gallery}}',gallery)
 class Sections(HTMLParser):
  def __init__(self,text):super().__init__();self.sections=[];self.headings=[];self.links=[];self.ids=[];self.feed(text)
  def handle_starttag(self,tag,attrs):
