@@ -1,0 +1,27 @@
+/* P0 gallery-only enhancements: preserve approved cards, covers and GSAP choreography. */
+.bayfi-body .bf-work[data-portfolio-gallery]{position:relative}
+.bayfi-body .v2sw-gallery-toolbar{position:absolute;top:14px;left:clamp(14px,2.5vw,44px);right:clamp(14px,2.5vw,44px);z-index:25;display:flex;gap:14px;align-items:center;justify-content:space-between;color:#18141f;pointer-events:auto}
+.bayfi-body .v2sw-gallery-filters{display:flex;gap:7px;align-items:center;overflow-x:auto;overscroll-behavior-x:contain;max-width:calc(100% - 210px);padding:5px 2px;scrollbar-width:thin}
+.bayfi-body .v2sw-gallery-filter{font:500 11px/1.3 'Instrument Sans',sans-serif;letter-spacing:.01em;color:#605b68;flex:0 0 auto;white-space:nowrap;cursor:pointer;border:1px solid #28213335;border-radius:999px;padding:10px 13px;background:#ffffffb8;transition:background .22s,border-color .22s,color .22s}
+.bayfi-body .v2sw-gallery-filter span{opacity:.65;margin-left:5px;font-variant-numeric:tabular-nums}
+.bayfi-body .v2sw-gallery-filter:hover{color:#22182c;border-color:#7b62ff88;background:#fff}
+.bayfi-body .v2sw-gallery-filter[aria-pressed="true"]{color:#fff;border-color:#6345d8;background:#6b51eb}
+.bayfi-body .v2sw-gallery-meta{display:flex;gap:12px;align-items:center;white-space:nowrap;font:500 11px/1.3 'Instrument Sans',sans-serif;color:#514953}
+.bayfi-body .v2sw-gallery-controls{display:flex;gap:5px}
+.bayfi-body .v2sw-gallery-controls button{width:35px;height:35px;border:1px solid #776b80aa;border-radius:50%;color:#3c2f51;background:#fffc;cursor:pointer;display:grid;place-items:center}
+.bayfi-body .v2sw-gallery-controls button:disabled{opacity:.35;cursor:default}
+.bayfi-body .v2sw-gallery-filter:focus-visible,.bayfi-body .v2sw-gallery-controls button:focus-visible{outline:2px solid #7b62ff;outline-offset:3px}
+.bayfi-body .bf-work[data-portfolio-gallery] .v2sw-track{padding-top:62px;box-sizing:border-box}
+.bayfi-body .bf-work[data-portfolio-gallery] .v2sw-slide[hidden]{display:none!important}
+.bayfi-body .bf-work[data-portfolio-gallery] [data-gallery-empty]:not([hidden]){position:absolute;top:62%;left:24px;z-index:2;color:#514953}
+@media(max-width:899px),(max-height:699px),(prefers-reduced-motion:reduce){
+ .bayfi-body .bf-work[data-portfolio-gallery] .v2sw-track{padding-top:98px}
+ .bayfi-body .v2sw-gallery-toolbar{top:8px;display:grid;gap:5px}
+ .bayfi-body .v2sw-gallery-filters{max-width:calc(100vw - 32px)}
+ .bayfi-body .v2sw-gallery-meta{justify-content:space-between}
+}
+@media(max-width:640px){
+ .bayfi-body .v2sw-gallery-filter{font-size:10px;padding:8px 10px}
+ .bayfi-body .v2sw-gallery-meta{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.bayfi-body .v2sw-gallery-filter{transition:none}}
